@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Grammar Trainer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>English Grammar Trainer</h1>
+      </header>
+
+      <section class="controls">
+        <label for="level-select">Уровень</label>
+        <select id="level-select"></select>
+        <label for="session-size">Вопросов</label>
+        <select id="session-size">
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50" selected>50</option>
+          <option value="70">70</option>
+          <option value="100">100</option>
+        </select>
+        <label for="start-from">с №</label>
+        <input id="start-from" type="number" min="1" placeholder="1" style="width:64px" />
+        <button id="new-session" type="button">Новая сессия</button>
+      </section>
+
+      <section class="stats">
+        <div><span id="position">1 / 1</span></div>
+        <div>Верно: <span id="correct-count">0</span></div>
+        <div>Ошибок: <span id="wrong-count">0</span></div>
+      </section>
+
+      <section class="card">
+        <div id="card-content">
+          <div class="question-meta">Вопрос №<span id="question-id">1</span></div>
+          <p id="question-text" class="question-text">Загрузка...</p>
+          <div class="question-translation-row">
+            <p id="question-translation" class="question-translation"></p>
+            <button id="speak-word-btn" type="button" class="speak-word-btn" disabled>
+              Озвучить
+            </button>
+          </div>
+          <p id="word-translation" class="word-translation"></p>
+
+          <div class="options">
+            <div class="options-title">Варианты</div>
+            <ul>
+              <li id="option-a"></li>
+              <li id="option-b"></li>
+              <li id="option-c"></li>
+            </ul>
+          </div>
+
+          <label for="answer-input">Твой ответ</label>
+          <input
+            id="answer-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Например: helps"
+          />
+
+          <div class="buttons">
+            <button id="prev-btn" type="button">← Предыдущий</button>
+            <button id="check-btn" type="button">Проверить</button>
+            <button id="next-btn" type="button">Следующий →</button>
+          </div>
+
+          <p id="feedback" class="feedback"></p>
+          <p id="hint" class="hint"></p>
+        </div>
+      </section>
+    </main>
+
+    <div id="session-complete" class="sc-overlay" hidden>
+      <div class="sc-modal">
+        <button
+          id="session-complete-close"
+          type="button"
+          class="sc-close-btn"
+          aria-label="Закрыть окно результатов"
+        >
+          ×
+        </button>
+        <div class="sc-icon">🎉</div>
+        <h2 class="sc-title">Сессия завершена!</h2>
+        <div class="sc-stats">
+          <div class="sc-stat sc-stat--ok">
+            <span class="sc-stat-num" id="sc-correct">0</span>
+            <span class="sc-stat-label">верно</span>
+          </div>
+          <div class="sc-stat sc-stat--bad">
+            <span class="sc-stat-num" id="sc-wrong">0</span>
+            <span class="sc-stat-label">ошибок</span>
+          </div>
+          <div class="sc-stat">
+            <span class="sc-stat-num" id="sc-pct">0%</span>
+            <span class="sc-stat-label">результат</span>
+          </div>
+        </div>
+        <button id="next-session-btn" type="button" class="sc-next-btn">
+          Запустить следующую сессию →
+        </button>
+      </div>
+    </div>
+
+    <script src="./questions.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
