@@ -6,6 +6,42 @@
     ? window.GRAMMAR_QUESTIONS
     : {};
   const levelNames = Object.keys(allLevels).sort();
+  const QUESTION_TRANSLATION_OVERRIDES = {
+    "A1-A2:232": "Я отправил ей любовную записку.",
+  };
+
+  function fixBrokenWordSpacing(value) {
+    let fixed = String(value || "");
+    let prev = "";
+    while (fixed !== prev) {
+      prev = fixed;
+      fixed = fixed.replace(/\b([A-Za-z]{2,})\s+([A-Za-z])\b/g, "$1$2");
+    }
+    return fixed;
+  }
+
+  function sanitizeQuestion(question) {
+    if (!question || typeof question !== "object") return question;
+
+    const options = question.options && typeof question.options === "object"
+      ? Object.fromEntries(
+          Object.entries(question.options).map(([key, value]) => [key, fixBrokenWordSpacing(value)])
+        )
+      : question.options;
+
+    return {
+      ...question,
+      prompt: fixBrokenWordSpacing(question.prompt),
+      answer: fixBrokenWordSpacing(question.answer),
+      options,
+    };
+  }
+
+  Object.keys(allLevels).forEach((level) => {
+    const questions = allLevels[level];
+    if (!Array.isArray(questions)) return;
+    allLevels[level] = questions.map(sanitizeQuestion);
+  });
 
   const refs = {
     levelSelect: document.getElementById("level-select"),
@@ -130,6 +166,11 @@
 
   function currentLevel() {
     return refs.levelSelect.value;
+  }
+
+  function questionTranslationOverride(question, level = currentLevel()) {
+    if (!question || typeof question.id !== "number") return "";
+    return QUESTION_TRANSLATION_OVERRIDES[`${level}:${question.id}`] || "";
   }
 
   function orderedQuestionsForLevel(level) {
@@ -262,7 +303,13 @@
     const resolvedAnswer = String(answer || "").trim();
     if (!basePrompt || !resolvedAnswer) return basePrompt;
     if (/\.{3,}/.test(basePrompt)) {
-      return basePrompt.replace(/\.{3,}/g, resolvedAnswer);
+      return basePrompt.replace(/\.{3,}/g, (match, offset, source) => {
+        const prevChar = offset > 0 ? source[offset - 1] : "";
+        const nextChar = source[offset + match.length] || "";
+        const needsSpaceBefore = /[A-Za-z0-9'"]/.test(prevChar);
+        const needsSpaceAfter = /[A-Za-z0-9'"]/.test(nextChar);
+        return `${needsSpaceBefore ? " " : ""}${resolvedAnswer}${needsSpaceAfter ? " " : ""}`;
+      });
     }
     return basePrompt;
   }
@@ -503,6 +550,12 @@
     const resolvedPrompt = fillPromptWithAnswer(question && question.prompt, question && question.answer);
     if (!resolvedPrompt) {
       setQuestionTranslation("");
+      return;
+    }
+
+    const overrideTranslation = questionTranslationOverride(question);
+    if (overrideTranslation) {
+      setQuestionTranslation(`(${overrideTranslation})`);
       return;
     }
 
