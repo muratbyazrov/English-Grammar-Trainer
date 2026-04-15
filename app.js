@@ -24,6 +24,7 @@
     prevBtn: document.getElementById("prev-btn"),
     nextBtn: document.getElementById("next-btn"),
     startFrom: document.getElementById("start-from"),
+    autoSpeakCorrect: document.getElementById("auto-speak-correct"),
     feedback: document.getElementById("feedback"),
     hint: document.getElementById("hint"),
     optionA: document.getElementById("option-a"),
@@ -109,6 +110,8 @@
     wordTranslationRequestId: 0,
     selectedWordForSpeech: "",
     speechVoices: [],
+    autoSpeakCorrect: true,
+    speechPlaybackToken: 0,
   };
 
   function asNumber(value, fallback) {
@@ -173,6 +176,7 @@
         level: currentLevel(),
         sessionSize: refs.sessionSize.value,
         startFrom: refs.startFrom.value,
+        autoSpeakCorrect: state.autoSpeakCorrect,
         sessionIds: state.session.map((q) => q.id),
         idx: state.idx,
         correct: state.correct,
@@ -189,6 +193,7 @@
       window.clearTimeout(state.autoNextTimer);
       state.autoNextTimer = null;
     }
+    stopSpeech();
   }
 
   function restoreProgress() {
@@ -230,6 +235,9 @@
       if (parsed.startFrom) {
         refs.startFrom.value = parsed.startFrom;
       }
+
+      state.autoSpeakCorrect = parsed.autoSpeakCorrect !== false;
+      refs.autoSpeakCorrect.checked = state.autoSpeakCorrect;
 
       state.session = session;
       state.idx = idx;
@@ -307,6 +315,59 @@
     refs.speakWordBtn.disabled = !normalized;
   }
 
+  function buildEnglishUtterance(text) {
+    if (!("speechSynthesis" in window) || typeof window.SpeechSynthesisUtterance !== "function") {
+      return null;
+    }
+
+    const normalized = String(text || "").trim();
+    if (!normalized) return null;
+
+    const utterance = new window.SpeechSynthesisUtterance(normalized);
+    const voices = state.speechVoices.length ? state.speechVoices : window.speechSynthesis.getVoices();
+    const preferredVoice = pickPreferredEnglishVoice(voices);
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+      utterance.lang = preferredVoice.lang || "en-US";
+    } else {
+      utterance.lang = "en-US";
+    }
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+    return utterance;
+  }
+
+  function stopSpeech() {
+    state.speechPlaybackToken += 1;
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+  }
+
+  function speakEnglishText(text, { onComplete } = {}) {
+    const utterance = buildEnglishUtterance(text);
+    if (!utterance) {
+      return false;
+    }
+
+    const token = state.speechPlaybackToken + 1;
+    state.speechPlaybackToken = token;
+
+    const finish = () => {
+      if (token !== state.speechPlaybackToken) return;
+      if (typeof onComplete === "function") {
+        onComplete();
+      }
+    };
+
+    utterance.addEventListener("end", finish, { once: true });
+    utterance.addEventListener("error", finish, { once: true });
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+    return true;
+  }
+
   function refreshSpeechVoices() {
     if (!("speechSynthesis" in window)) {
       state.speechVoices = [];
@@ -342,25 +403,10 @@
     const word = state.selectedWordForSpeech;
     if (!word) return;
 
-    if (!("speechSynthesis" in window) || typeof window.SpeechSynthesisUtterance !== "function") {
+    const started = speakEnglishText(word);
+    if (!started) {
       setWordTranslation("Озвучка недоступна в этом браузере.");
-      return;
     }
-
-    const utterance = new window.SpeechSynthesisUtterance(word);
-    const voices = state.speechVoices.length ? state.speechVoices : window.speechSynthesis.getVoices();
-    const preferredVoice = pickPreferredEnglishVoice(voices);
-    if (preferredVoice) {
-      utterance.voice = preferredVoice;
-      utterance.lang = preferredVoice.lang || "en-US";
-    } else {
-      utterance.lang = "en-US";
-    }
-    utterance.rate = 0.9;
-    utterance.pitch = 1;
-
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
   }
 
   function extractTopTranslations(payload, limit = 3) {
@@ -511,8 +557,32 @@
     refs.sessionComplete.hidden = true;
   }
 
+  function queueNextQuestionAfterCorrect(question) {
+    clearAutoNextTimer();
+
+    const resolvedPrompt = fillPromptWithAnswer(question && question.prompt, question && question.answer);
+    if (state.autoSpeakCorrect && resolvedPrompt) {
+      const started = speakEnglishText(resolvedPrompt, {
+        onComplete: () => {
+          nextQuestion();
+          saveProgress();
+        },
+      });
+      if (started) {
+        return;
+      }
+    }
+
+    state.autoNextTimer = window.setTimeout(() => {
+      state.autoNextTimer = null;
+      nextQuestion();
+      saveProgress();
+    }, AUTO_NEXT_DELAY_MS);
+  }
+
   function render() {
     hideSessionComplete();
+    stopSpeech();
     state.sentenceTranslationRequestId += 1;
     state.wordTranslationRequestId += 1;
 
@@ -614,12 +684,7 @@
       setFeedback("Верно!", true);
       playCorrectSound();
       flashCorrect();
-      clearAutoNextTimer();
-      state.autoNextTimer = window.setTimeout(() => {
-        state.autoNextTimer = null;
-        nextQuestion();
-        saveProgress();
-      }, AUTO_NEXT_DELAY_MS);
+      queueNextQuestionAfterCorrect(q);
     } else {
       if (!state.wrongCounted) {
         state.wrong += 1;
@@ -677,6 +742,11 @@
     speakSelectedWord();
   });
 
+  refs.autoSpeakCorrect.addEventListener("change", () => {
+    state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
+    saveProgress();
+  });
+
   if ("speechSynthesis" in window) {
     refreshSpeechVoices();
     window.speechSynthesis.addEventListener("voiceschanged", refreshSpeechVoices);
@@ -726,6 +796,7 @@
 
   const restored = restoreProgress();
   if (!restored) {
+    state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
     state.session = pickSession();
     saveProgress();
   }
