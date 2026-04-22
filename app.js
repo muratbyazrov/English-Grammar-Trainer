@@ -11,13 +11,7 @@
   };
 
   function fixBrokenWordSpacing(value) {
-    let fixed = String(value || "");
-    let prev = "";
-    while (fixed !== prev) {
-      prev = fixed;
-      fixed = fixed.replace(/\b([A-Za-z]{2,})\s+([A-Za-z])\b/g, "$1$2");
-    }
-    return fixed;
+    return String(value || "");
   }
 
   function sanitizeQuestion(question) {
