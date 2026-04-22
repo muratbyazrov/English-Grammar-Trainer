@@ -40,11 +40,9 @@ def clean_text(value: str) -> str:
     value = value.replace("\u2019", "'").replace("`", "'")
     value = value.replace("\u2026", "...")
     value = re.sub(r"([A-Za-z])\s*'\s*([A-Za-z])", r"\1'\2", value)
-    prev = None
-    while value != prev:
-        prev = value
-        value = re.sub(r"\b([A-Za-z]{2,})\s+([A-Za-z])\b", r"\1\2", value)
-        value = re.sub(r"\b([A-Za-z])\s+([A-Za-z])\b", r"\1\2", value)
+    # Merge only isolated single-letter sequences (OCR artifact: "s e n t" → "sent")
+    # Uses 3+ single letters in a row to avoid merging real words like "her a" → "hera"
+    value = re.sub(r"\b([A-Za-z])( [A-Za-z]){2,}\b", lambda m: m.group().replace(" ", ""), value)
     value = re.sub(r"\s+([.,!?;:])", r"\1", value)
     return value.strip()
 
