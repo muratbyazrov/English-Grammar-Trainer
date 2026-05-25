@@ -6,6 +6,8 @@
     ? window.GRAMMAR_QUESTIONS
     : {};
   const levelNames = Object.keys(allLevels).sort();
+  let currentMode = 'grammar';
+  const vocabTopics = (window.VOCABULARY_DATA && Array.isArray(window.VOCABULARY_DATA)) ? window.VOCABULARY_DATA : [];
   const QUESTION_TRANSLATION_OVERRIDES = {
     "A1-A2:232": "Я отправил ей любовную записку.",
   };
@@ -47,7 +49,6 @@
     questionId: document.getElementById("question-id"),
     questionText: document.getElementById("question-text"),
     questionTranslation: document.getElementById("question-translation"),
-    wordTranslation: document.getElementById("word-translation"),
     speakWordBtn: document.getElementById("speak-word-btn"),
     answerInput: document.getElementById("answer-input"),
     checkBtn: document.getElementById("check-btn"),
@@ -66,6 +67,17 @@
     scPct: document.getElementById("sc-pct"),
     scCloseBtn: document.getElementById("session-complete-close"),
     nextSessionBtn: document.getElementById("next-session-btn"),
+    tabGrammar: document.getElementById('tab-grammar'),
+    tabVocab: document.getElementById('tab-vocab'),
+    controlsGrammar: document.getElementById('controls-grammar'),
+    controlsVocab: document.getElementById('controls-vocab'),
+    vocabTopic: document.getElementById('vocab-topic'),
+    vocabSessionSize: document.getElementById('vocab-session-size'),
+    vocabNewSession: document.getElementById('vocab-new-session'),
+    autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
+    optionsSection: document.getElementById('options-section'),
+    questionMeta: document.getElementById('question-meta'),
+    vocabModeLabel: document.getElementById('vocab-mode-label'),
   };
 
   const card = document.querySelector(".card");
@@ -137,12 +149,13 @@
     autoNextTimer: null,
     translationCache: new Map(),
     sentenceTranslationRequestId: 0,
-    wordTranslationRequestId: 0,
-    selectedWordForSpeech: "",
+    selectedSentenceForSpeech: "",
     speechVoices: [],
     autoSpeakCorrect: true,
     speechPlaybackToken: 0,
   };
+
+  const vocabState = { session: [], idx: 0, correct: 0, wrong: 0, checkedCurrent: false, wrongCounted: false };
 
   function asNumber(value, fallback) {
     const parsed = Number(value);
@@ -208,6 +221,7 @@
   function saveProgress() {
     try {
       const payload = {
+        mode: currentMode,
         level: currentLevel(),
         sessionSize: refs.sessionSize.value,
         startFrom: refs.startFrom.value,
@@ -216,6 +230,15 @@
         idx: state.idx,
         correct: state.correct,
         wrong: state.wrong,
+        vocabulary: {
+          topic: refs.vocabTopic.value,
+          sessionSize: refs.vocabSessionSize.value,
+          autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
+          sessionIds: vocabState.session.map((item) => item.id),
+          idx: vocabState.idx,
+          correct: vocabState.correct,
+          wrong: vocabState.wrong,
+        },
       };
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
     } catch (_error) {
@@ -278,6 +301,10 @@
       state.idx = idx;
       state.correct = correct;
       state.wrong = wrong;
+      restoreVocabProgress(parsed.vocabulary);
+      if (parsed.mode === 'vocabulary') {
+        currentMode = 'vocabulary';
+      }
       return true;
     } catch (_error) {
       return false;
@@ -309,50 +336,16 @@
   }
 
   function renderQuestionText(prompt) {
-    const text = displayPrompt(prompt);
-    const parts = text.split(/(\s+)/);
-    const fragment = document.createDocumentFragment();
-
-    parts.forEach((part) => {
-      if (!part) return;
-      if (/^\s+$/.test(part)) {
-        fragment.appendChild(document.createTextNode(part));
-        return;
-      }
-
-      const match = part.match(/^([^A-Za-z']*)([A-Za-z]+(?:'[A-Za-z]+)?)([^A-Za-z']*)$/);
-      if (!match) {
-        fragment.appendChild(document.createTextNode(part));
-        return;
-      }
-
-      const [, prefix, word, suffix] = match;
-      if (prefix) fragment.appendChild(document.createTextNode(prefix));
-
-      const span = document.createElement("span");
-      span.className = "question-word";
-      span.textContent = word;
-      span.dataset.word = word.toLowerCase();
-      fragment.appendChild(span);
-
-      if (suffix) fragment.appendChild(document.createTextNode(suffix));
-    });
-
-    refs.questionText.textContent = "";
-    refs.questionText.appendChild(fragment);
+    refs.questionText.textContent = displayPrompt(prompt);
   }
 
   function setQuestionTranslation(text) {
     refs.questionTranslation.textContent = text;
   }
 
-  function setWordTranslation(text) {
-    refs.wordTranslation.textContent = text;
-  }
-
-  function setSelectedWordForSpeech(word) {
-    const normalized = String(word || "").trim();
-    state.selectedWordForSpeech = normalized;
+  function setSelectedSentenceForSpeech(sentence) {
+    const normalized = String(sentence || "").trim();
+    state.selectedSentenceForSpeech = normalized;
     refs.speakWordBtn.disabled = !normalized;
   }
 
@@ -440,46 +433,14 @@
     return candidates.length ? candidates[0].voice : null;
   }
 
-  function speakSelectedWord() {
-    const word = state.selectedWordForSpeech;
-    if (!word) return;
+  function speakSelectedSentence() {
+    const sentence = state.selectedSentenceForSpeech;
+    if (!sentence) return;
 
-    const started = speakEnglishText(word);
+    const started = speakEnglishText(sentence);
     if (!started) {
-      setWordTranslation("Озвучка недоступна в этом браузере.");
+      setQuestionTranslation("Озвучка недоступна в этом браузере.");
     }
-  }
-
-  function extractTopTranslations(payload, limit = 3) {
-    if (!payload) return [];
-
-    const results = [];
-    const seen = new Set();
-    const add = (value) => {
-      const cleaned = String(value || "").trim();
-      if (!cleaned) return;
-      const key = cleaned.toLowerCase();
-      if (seen.has(key)) return;
-      seen.add(key);
-      results.push(cleaned);
-    };
-
-    if (payload && Array.isArray(payload.sentences)) {
-      payload.sentences.forEach((s) => add(s && s.trans));
-    }
-
-    if (payload && Array.isArray(payload.dict)) {
-      payload.dict.forEach((entry) => {
-        if (!entry || !Array.isArray(entry.terms)) return;
-        entry.terms.forEach((term) => add(term));
-      });
-    }
-
-    if (Array.isArray(payload) && Array.isArray(payload[0])) {
-      payload[0].forEach((chunk) => add(Array.isArray(chunk) ? chunk[0] : ""));
-    }
-
-    return results.slice(0, limit);
   }
 
   function extractSentenceTranslation(payload) {
@@ -510,21 +471,6 @@
     return response.json();
   }
 
-  async function getWordTranslations(word) {
-    const cacheKey = `word:${word.toLowerCase()}`;
-    const cached = state.translationCache.get(cacheKey);
-    if (cached) {
-      return cached;
-    }
-
-    const payload = await fetchTranslationPayload(word);
-    const translated = extractTopTranslations(payload, 3);
-    if (translated.length) {
-      state.translationCache.set(cacheKey, translated);
-    }
-    return translated;
-  }
-
   async function getSentenceTranslation(sentence) {
     const cacheKey = `sentence:${sentence}`;
     const cached = state.translationCache.get(cacheKey);
@@ -542,6 +488,7 @@
 
   async function showQuestionTranslation(question) {
     const resolvedPrompt = fillPromptWithAnswer(question && question.prompt, question && question.answer);
+    setSelectedSentenceForSpeech(resolvedPrompt);
     if (!resolvedPrompt) {
       setQuestionTranslation("");
       return;
@@ -549,54 +496,68 @@
 
     const overrideTranslation = questionTranslationOverride(question);
     if (overrideTranslation) {
-      setQuestionTranslation(`(${overrideTranslation})`);
+      setQuestionTranslation(overrideTranslation);
       return;
     }
 
     if (question && typeof question.translation === "string" && question.translation.trim()) {
-      setQuestionTranslation(`(${question.translation.trim()})`);
+      setQuestionTranslation(question.translation.trim());
       return;
     }
 
     const reqId = state.sentenceTranslationRequestId + 1;
     state.sentenceTranslationRequestId = reqId;
-    setQuestionTranslation("(Перевожу предложение...)");
+    setQuestionTranslation("Перевожу предложение...");
 
     try {
       const translated = await getSentenceTranslation(resolvedPrompt);
       if (reqId !== state.sentenceTranslationRequestId) return;
       if (!translated) {
-        setQuestionTranslation("(Не нашел перевод предложения.)");
+        setQuestionTranslation("Не нашел перевод предложения.");
         return;
       }
-      setQuestionTranslation(`(${translated})`);
+      setQuestionTranslation(translated);
     } catch (_error) {
       if (reqId !== state.sentenceTranslationRequestId) return;
-      setQuestionTranslation("(Не удалось получить перевод предложения. Проверь интернет.)");
+      setQuestionTranslation("Не удалось получить перевод предложения. Проверь интернет.");
     }
   }
 
-  async function handleQuestionWordClick(wordEl) {
-    const word = String(wordEl.dataset.word || "").trim();
-    if (!word) return;
-    setSelectedWordForSpeech(word);
+  async function showVocabSentenceTranslation(item) {
+    const sentence = item && item.example ? item.example : "";
+    setSelectedSentenceForSpeech(sentence);
+    if (!sentence) {
+      setQuestionTranslation("");
+      return;
+    }
 
-    const reqId = state.wordTranslationRequestId + 1;
-    state.wordTranslationRequestId = reqId;
-    setWordTranslation(`Переводим "${word}"...`);
+    const formatVocabTranslation = (translation) => {
+      const sentenceTranslation = String(translation || "").trim();
+      const wordTranslation = String((item && item.translation) || "").trim();
+      if (!sentenceTranslation) return "";
+      return wordTranslation ? `${sentenceTranslation} (${wordTranslation})` : sentenceTranslation;
+    };
+
+    if (item && typeof item.sentenceTranslation === "string" && item.sentenceTranslation.trim()) {
+      setQuestionTranslation(formatVocabTranslation(item.sentenceTranslation));
+      return;
+    }
+
+    const reqId = state.sentenceTranslationRequestId + 1;
+    state.sentenceTranslationRequestId = reqId;
+    setQuestionTranslation("Перевожу предложение...");
 
     try {
-      const translated = await getWordTranslations(word);
-      if (reqId !== state.wordTranslationRequestId) return;
-      if (!translated.length) {
-        setWordTranslation(`Не нашел перевод для "${word}".`);
+      const translated = await getSentenceTranslation(sentence);
+      if (reqId !== state.sentenceTranslationRequestId || currentMode !== 'vocabulary') return;
+      if (!translated) {
+        setQuestionTranslation("Не нашел перевод предложения.");
         return;
       }
-      const formatted = translated.map((item, i) => `${i + 1}) ${item}`).join("; ");
-      setWordTranslation(`"${word}" → ${formatted}`);
+      setQuestionTranslation(formatVocabTranslation(translated));
     } catch (_error) {
-      if (reqId !== state.wordTranslationRequestId) return;
-      setWordTranslation(`Не удалось получить перевод для "${word}". Проверь интернет.`);
+      if (reqId !== state.sentenceTranslationRequestId || currentMode !== 'vocabulary') return;
+      setQuestionTranslation("Не удалось получить перевод предложения. Проверь интернет.");
     }
   }
 
@@ -627,18 +588,205 @@
     }, AUTO_NEXT_DELAY_MS);
   }
 
+  function pickVocabSession() {
+    const topicValue = refs.vocabTopic.value;
+    let words = [];
+    if (topicValue === 'all') {
+      vocabTopics.forEach(t => { words = words.concat(t.words || []); });
+    } else {
+      const topic = vocabTopics.find(t => t.topic === topicValue);
+      words = topic ? (topic.words || []) : [];
+    }
+    const sizeRaw = refs.vocabSessionSize.value;
+    if (sizeRaw === 'all') return words.slice();
+    const size = Number(sizeRaw);
+    return words.slice(0, Math.max(1, Math.min(size, words.length)));
+  }
+
+  function ensureVocabTopicOptions() {
+    if (refs.vocabTopic.options.length > 0) return;
+
+    const allOpt = document.createElement('option');
+    allOpt.value = 'all';
+    allOpt.textContent = 'Все темы';
+    refs.vocabTopic.appendChild(allOpt);
+    vocabTopics.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t.topic;
+      opt.textContent = t.topic;
+      refs.vocabTopic.appendChild(opt);
+    });
+  }
+
+  function vocabById() {
+    const result = new Map();
+    vocabTopics.forEach((topic) => {
+      (topic.words || []).forEach((item) => {
+        if (item && typeof item.id === "number") {
+          result.set(item.id, item);
+        }
+      });
+    });
+    return result;
+  }
+
+  function restoreVocabProgress(saved) {
+    ensureVocabTopicOptions();
+    if (!saved || typeof saved !== "object") return false;
+
+    const topicValue = String(saved.topic || "");
+    const hasTopic = Array.from(refs.vocabTopic.options).some((opt) => opt.value === topicValue);
+    if (hasTopic) {
+      refs.vocabTopic.value = topicValue;
+    }
+
+    const sizeValue = String(saved.sessionSize || "");
+    const hasSize = Array.from(refs.vocabSessionSize.options).some((opt) => opt.value === sizeValue);
+    if (hasSize) {
+      refs.vocabSessionSize.value = sizeValue;
+    }
+
+    refs.autoSpeakCorrectVocab.checked = saved.autoSpeakCorrect !== false;
+
+    const ids = Array.isArray(saved.sessionIds) ? saved.sessionIds : [];
+    const byId = vocabById();
+    const session = ids.map((id) => byId.get(id)).filter(Boolean);
+    vocabState.session = session.length ? session : pickVocabSession();
+    vocabState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, vocabState.session.length - 1)));
+    vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
+    vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
+    return Boolean(vocabState.session.length);
+  }
+
+  function renderVocab() {
+    hideSessionComplete();
+    stopSpeech();
+    state.sentenceTranslationRequestId += 1;
+
+    const w = vocabState.session[vocabState.idx];
+    if (!w) {
+      refs.questionText.textContent = 'Слова не найдены.';
+      refs.questionTranslation.textContent = '';
+      setSelectedSentenceForSpeech("");
+      return;
+    }
+
+    refs.position.textContent = `${vocabState.idx + 1} / ${vocabState.session.length}`;
+    refs.correctCount.textContent = String(vocabState.correct);
+    refs.wrongCount.textContent = String(vocabState.wrong);
+
+    renderQuestionText(w.gapExample || w.example);
+    setSelectedSentenceForSpeech(w.example || w.gapExample || '');
+
+    refs.questionTranslation.classList.add('vocab-hint');
+    void showVocabSentenceTranslation(w);
+
+    refs.answerInput.value = '';
+    refs.answerInput.focus();
+    setFeedback('', null);
+    vocabState.checkedCurrent = false;
+    vocabState.wrongCounted = false;
+  }
+
+  function checkVocabAnswer() {
+    const w = vocabState.session[vocabState.idx];
+    if (!w || vocabState.checkedCurrent) return;
+
+    const user = normalize(refs.answerInput.value);
+    if (!user) {
+      setFeedback('Сначала впиши ответ.', false);
+      return;
+    }
+
+    if (user === normalize(w.answer)) {
+      vocabState.correct += 1;
+      vocabState.checkedCurrent = true;
+      playCorrectSound();
+      flashCorrect();
+      setFeedback('Верно!', true);
+      refs.correctCount.textContent = String(vocabState.correct);
+      saveProgress();
+      queueVocabNextAfterCorrect(w);
+    } else {
+      if (!vocabState.wrongCounted) {
+        vocabState.wrong += 1;
+        vocabState.wrongCounted = true;
+        refs.wrongCount.textContent = String(vocabState.wrong);
+      }
+      playWrongSound();
+      setFeedback('Почти. Правильный ответ: ' + w.answer, false);
+      saveProgress();
+    }
+  }
+
+  function nextVocabQuestion() {
+    if (!vocabState.session.length) return;
+    vocabState.idx += 1;
+    if (vocabState.idx >= vocabState.session.length) {
+      vocabState.idx = vocabState.session.length - 1;
+      showSessionComplete();
+      saveProgress();
+      return;
+    }
+    renderVocab();
+    saveProgress();
+  }
+
+  function queueVocabNextAfterCorrect(w) {
+    clearAutoNextTimer();
+    if (state.autoSpeakCorrect && w.example) {
+      const started = speakEnglishText(w.example, {
+        onComplete: () => {
+          nextVocabQuestion();
+          saveProgress();
+        },
+      });
+      if (started) return;
+    }
+    state.autoNextTimer = window.setTimeout(() => {
+      state.autoNextTimer = null;
+      nextVocabQuestion();
+      saveProgress();
+    }, AUTO_NEXT_DELAY_MS);
+  }
+
+  function switchMode(mode) {
+    currentMode = mode;
+    refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
+    refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
+    refs.controlsGrammar.hidden = mode !== 'grammar';
+    refs.controlsVocab.hidden = mode !== 'vocabulary';
+    refs.optionsSection.hidden = mode !== 'grammar';
+    refs.questionMeta.hidden = mode !== 'grammar';
+    refs.vocabModeLabel.hidden = mode !== 'vocabulary';
+
+    if (mode === 'vocabulary') {
+      ensureVocabTopicOptions();
+      state.autoSpeakCorrect = refs.autoSpeakCorrectVocab.checked;
+      if (!vocabState.session.length) {
+        vocabState.session = pickVocabSession();
+        vocabState.idx = 0;
+        vocabState.correct = 0;
+        vocabState.wrong = 0;
+      }
+      renderVocab();
+    } else {
+      refs.questionTranslation.classList.remove('vocab-hint');
+      render();
+    }
+    saveProgress();
+  }
+
   function render() {
     hideSessionComplete();
     stopSpeech();
     state.sentenceTranslationRequestId += 1;
-    state.wordTranslationRequestId += 1;
 
     const q = currentQuestion();
     if (!q) {
       refs.questionText.textContent = "Вопросы не найдены.";
       setQuestionTranslation("");
-      setWordTranslation("");
-      setSelectedWordForSpeech("");
+      setSelectedSentenceForSpeech("");
       return;
     }
 
@@ -648,8 +796,7 @@
     refs.questionId.textContent = String(q.id);
     renderQuestionText(q.prompt);
     setQuestionTranslation("");
-    setWordTranslation("Нажми на слово в вопросе, чтобы увидеть перевод слова.");
-    setSelectedWordForSpeech("");
+    setSelectedSentenceForSpeech(fillPromptWithAnswer(q.prompt, q.answer));
     refs.optionA.textContent = `a) ${q.options.a}`;
     refs.optionB.textContent = `b) ${q.options.b}`;
     refs.optionC.textContent = `c) ${q.options.c}`;
@@ -712,6 +859,7 @@
   });
 
   refs.checkBtn.addEventListener("click", () => {
+    if (currentMode === 'vocabulary') { checkVocabAnswer(); return; }
     const q = currentQuestion();
     if (!q || state.checkedCurrent) {
       return;
@@ -747,6 +895,13 @@
 
 
   refs.prevBtn.addEventListener("click", () => {
+    if (currentMode === 'vocabulary') {
+      clearAutoNextTimer();
+      vocabState.idx = Math.max(0, vocabState.idx - 1);
+      renderVocab();
+      saveProgress();
+      return;
+    }
     if (state.idx <= 0) return;
     clearAutoNextTimer();
     state.idx -= 1;
@@ -755,6 +910,7 @@
   });
 
   refs.nextBtn.addEventListener("click", () => {
+    if (currentMode === 'vocabulary') { nextVocabQuestion(); return; }
     clearAutoNextTimer();
     nextQuestion();
     saveProgress();
@@ -776,17 +932,8 @@
     }
   });
 
-  refs.questionText.addEventListener("click", (event) => {
-    const wordEl = event.target.closest(".question-word");
-    if (!wordEl || !refs.questionText.contains(wordEl)) {
-      return;
-    }
-    void handleQuestionWordClick(wordEl);
-    refs.answerInput.focus();
-  });
-
   refs.speakWordBtn.addEventListener("click", () => {
-    speakSelectedWord();
+    speakSelectedSentence();
   });
 
   refs.autoSpeakCorrect.addEventListener("change", () => {
@@ -814,6 +961,45 @@
 
   refs.scCloseBtn.addEventListener("click", () => {
     hideSessionComplete();
+  });
+
+  refs.tabGrammar.addEventListener('click', () => switchMode('grammar'));
+  refs.tabVocab.addEventListener('click', () => switchMode('vocabulary'));
+
+  refs.vocabNewSession.addEventListener('click', () => {
+    clearAutoNextTimer();
+    ensureVocabTopicOptions();
+    vocabState.session = pickVocabSession();
+    vocabState.idx = 0;
+    vocabState.correct = 0;
+    vocabState.wrong = 0;
+    renderVocab();
+    saveProgress();
+  });
+
+  refs.autoSpeakCorrectVocab.addEventListener('change', () => {
+    state.autoSpeakCorrect = refs.autoSpeakCorrectVocab.checked;
+    saveProgress();
+  });
+
+  refs.vocabTopic.addEventListener('change', () => {
+    clearAutoNextTimer();
+    vocabState.session = pickVocabSession();
+    vocabState.idx = 0;
+    vocabState.correct = 0;
+    vocabState.wrong = 0;
+    renderVocab();
+    saveProgress();
+  });
+
+  refs.vocabSessionSize.addEventListener('change', () => {
+    clearAutoNextTimer();
+    vocabState.session = pickVocabSession();
+    vocabState.idx = 0;
+    vocabState.correct = 0;
+    vocabState.wrong = 0;
+    renderVocab();
+    saveProgress();
   });
 
   if (!levelNames.length) {
@@ -845,7 +1031,13 @@
   if (!restored) {
     state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
     state.session = pickSession();
+    ensureVocabTopicOptions();
+    vocabState.session = pickVocabSession();
     saveProgress();
   }
-  render();
+  if (currentMode === 'vocabulary') {
+    switchMode('vocabulary');
+  } else {
+    render();
+  }
 })();

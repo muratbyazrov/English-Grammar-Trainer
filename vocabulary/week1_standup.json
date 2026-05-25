@@ -1,0 +1,207 @@
+{
+  "topic": "Standup & meetings",
+  "words": [
+    {
+      "word": "to be in progress",
+      "translation": "в работе / делаю прямо сейчас",
+      "example": "The auth refactor is still in progress.",
+      "sentenceTranslation": "Рефакторинг аутентификации всё ещё в работе.",
+      "answer": "in progress"
+    },
+    {
+      "word": "to pick up a ticket",
+      "translation": "взять задачу в работу",
+      "example": "I picked up the caching ticket this morning.",
+      "sentenceTranslation": "Сегодня утром я взял в работу задачу по кэшированию.",
+      "answer": "picked up"
+    },
+    {
+      "word": "to wrap up",
+      "translation": "заканчивать, завершать",
+      "example": "I'm wrapping up the API integration today.",
+      "sentenceTranslation": "Сегодня я завершаю интеграцию API.",
+      "answer": "wrapping up"
+    },
+    {
+      "word": "to push to review",
+      "translation": "отправить на ревью",
+      "example": "I pushed the PR to review — waiting for feedback.",
+      "sentenceTranslation": "Я отправил PR на ревью и жду обратной связи.",
+      "answer": "pushed"
+    },
+    {
+      "word": "to address comments",
+      "translation": "обработать, исправить по комментариям",
+      "example": "I addressed review comments, should be mergeable now.",
+      "sentenceTranslation": "Я обработал / исправил комментарии с ревью, теперь должно быть можно мержить.",
+      "answer": "addressed"
+    },
+    {
+      "word": "to land",
+      "translation": "влить / смержить изменение (a PR/change)",
+      "example": "The fix landed in main yesterday.",
+      "sentenceTranslation": "Вчера фикс влили в main / он попал в main.",
+      "answer": "landed"
+    },
+    {
+      "word": "to roll out",
+      "translation": "выкатить / деплоить постепенно",
+      "example": "We're rolling out the endpoint to 10% of users.",
+      "sentenceTranslation": "Мы постепенно выкатываем эндпоинт на 10% пользователей.",
+      "answer": "rolling out"
+    },
+    {
+      "word": "to circle back",
+      "translation": "вернуться к теме позже",
+      "example": "Let's circle back to this after the standup.",
+      "sentenceTranslation": "Давай вернёмся к этому после стендапа.",
+      "answer": "circle back"
+    },
+    {
+      "word": "on track",
+      "translation": "всё идёт по плану",
+      "example": "The migration is on track for Friday.",
+      "sentenceTranslation": "Миграция идёт по плану к пятнице."
+    },
+    {
+      "word": "to spike on",
+      "translation": "провести быстрое исследование",
+      "example": "I'll spike on the Kafka integration today.",
+      "sentenceTranslation": "Сегодня я проведу быстрое исследование по интеграции с Kafka.",
+      "answer": "spike on"
+    },
+    {
+      "word": "blocker",
+      "translation": "то, что мешает двигаться дальше",
+      "example": "I have a blocker — waiting on access to prod logs.",
+      "sentenceTranslation": "У меня блокер: жду доступ к production-логам."
+    },
+    {
+      "word": "to be blocked on",
+      "translation": "быть заблокированным чем-то",
+      "example": "I'm blocked on the design decision from last week.",
+      "sentenceTranslation": "Я заблокирован решением по дизайну с прошлой недели.",
+      "answer": "blocked on"
+    },
+    {
+      "word": "to unblock",
+      "translation": "разблокировать / помочь с блокером",
+      "example": "Can someone unblock me on the DB permissions?",
+      "sentenceTranslation": "Может кто-нибудь разблокировать меня по правам доступа к базе данных?",
+      "answer": "unblock"
+    },
+    {
+      "word": "dependency",
+      "translation": "зависимость от другой задачи / команды",
+      "example": "This ticket has a dependency on the infra team.",
+      "sentenceTranslation": "Эта задача зависит от infra-команды."
+    },
+    {
+      "word": "to get stuck",
+      "translation": "застрять, не продвигаться",
+      "example": "I got stuck on the serialization issue.",
+      "sentenceTranslation": "Я застрял на проблеме с сериализацией.",
+      "answer": "got stuck"
+    },
+    {
+      "word": "to flag",
+      "translation": "обратить внимание / поднять проблему",
+      "example": "I want to flag a potential issue with the migration.",
+      "sentenceTranslation": "Я хочу обратить внимание на потенциальную проблему с миграцией.",
+      "answer": "flag"
+    },
+    {
+      "word": "to raise a concern",
+      "translation": "высказать беспокойство / сомнение",
+      "example": "I want to raise a concern about the deadline.",
+      "sentenceTranslation": "Я хочу высказать опасение по поводу дедлайна.",
+      "answer": "raise a concern"
+    },
+    {
+      "word": "to sync with",
+      "translation": "скоординироваться / созвониться",
+      "example": "I'll sync with Anna on the schema design.",
+      "sentenceTranslation": "Я скоординируюсь / синхронизируюсь с Анной по дизайну схемы.",
+      "answer": "sync with"
+    },
+    {
+      "word": "to pair on",
+      "translation": "работать вместе над задачей",
+      "example": "Can we pair on this? It's getting complex.",
+      "sentenceTranslation": "Можем поработать вместе над этим в паре? Задача становится сложной.",
+      "answer": "pair on"
+    },
+    {
+      "word": "to hand off",
+      "translation": "передать задачу другому",
+      "example": "I'm handing off the ticket to Mike while I'm on leave.",
+      "sentenceTranslation": "Я передаю задачу Майку, пока я в отпуске.",
+      "answer": "handing off"
+    },
+    {
+      "word": "to loop in",
+      "translation": "включить кого-то в обсуждение",
+      "example": "Let's loop in the security team before we deploy.",
+      "sentenceTranslation": "Давай подключим команду безопасности перед деплоем.",
+      "answer": "loop in"
+    },
+    {
+      "word": "to take offline",
+      "translation": "обсудить отдельно, не на звонке",
+      "example": "Good question — let's take that offline.",
+      "sentenceTranslation": "Хороший вопрос, давай вынесем это из звонка и обсудим отдельно.",
+      "answer": "offline"
+    },
+    {
+      "word": "heads-up",
+      "translation": "предварительное уведомление",
+      "example": "Just a heads-up — I'll be OOO on Thursday.",
+      "sentenceTranslation": "Просто короткое предупреждение: в четверг я буду вне офиса."
+    },
+    {
+      "word": "OOO (out of office)",
+      "translation": "вне офиса / недоступен",
+      "example": "I'm OOO Monday, back Tuesday.",
+      "sentenceTranslation": "В понедельник я вне офиса, вернусь во вторник.",
+      "answer": "OOO"
+    },
+    {
+      "word": "roughly / approximately",
+      "translation": "примерно (без точных обязательств)",
+      "example": "Roughly two days, depending on the review.",
+      "sentenceTranslation": "Примерно два дня, в зависимости от ревью."
+    },
+    {
+      "word": "it depends on",
+      "translation": "зависит от — для оценки сроков",
+      "example": "It depends on how complex the edge cases are.",
+      "sentenceTranslation": "Это зависит от того, насколько сложные пограничные случаи."
+    },
+    {
+      "word": "I'll need to look into it",
+      "translation": "нужно разобраться перед ответом",
+      "example": "I'll need to look into it before giving an estimate.",
+      "sentenceTranslation": "Мне нужно будет разобраться в этом, прежде чем дать оценку.",
+      "answer": "look into it"
+    },
+    {
+      "word": "as far as I know",
+      "translation": "насколько мне известно",
+      "example": "As far as I know, the staging deploy is fine.",
+      "sentenceTranslation": "Насколько мне известно, деплой на staging прошёл нормально."
+    },
+    {
+      "word": "to give a rough estimate",
+      "translation": "дать примерную оценку",
+      "example": "I can give a rough estimate — maybe 3–5 days.",
+      "sentenceTranslation": "Я могу дать примерную оценку: возможно, 3-5 дней.",
+      "answer": "give a rough estimate"
+    },
+    {
+      "word": "might / could",
+      "translation": "снижает категоричность высказывания",
+      "example": "This might take longer than expected.",
+      "sentenceTranslation": "Это может занять больше времени, чем ожидалось."
+    }
+  ]
+}

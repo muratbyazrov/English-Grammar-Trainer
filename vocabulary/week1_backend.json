@@ -1,0 +1,197 @@
+{
+  "topic": "Backend & APIs",
+  "words": [
+    {
+      "word": "expose",
+      "translation": "открывать наружу (endpoint, port)",
+      "example": "We expose a REST endpoint at /users.",
+      "sentenceTranslation": "Мы открываем наружу REST-эндпоинт по адресу /users."
+    },
+    {
+      "word": "consume",
+      "translation": "потреблять / вызывать (API, service)",
+      "example": "The frontend consumes our API.",
+      "sentenceTranslation": "Фронтенд использует / вызывает наш API.",
+      "answer": "consumes"
+    },
+    {
+      "word": "handle",
+      "translation": "обрабатывать (request, error, event)",
+      "example": "This middleware handles authentication.",
+      "sentenceTranslation": "Этот middleware обрабатывает аутентификацию.",
+      "answer": "handles"
+    },
+    {
+      "word": "parse",
+      "translation": "разобрать / распарсить",
+      "example": "We parse the request body before validation.",
+      "sentenceTranslation": "Мы парсим / разбираем тело запроса перед валидацией."
+    },
+    {
+      "word": "serialize / deserialize",
+      "translation": "сериализовать / десериализовать",
+      "example": "The response is serialized to JSON.",
+      "sentenceTranslation": "Ответ сериализуется в JSON.",
+      "answer": "serialized"
+    },
+    {
+      "word": "paginate",
+      "translation": "разбивать на страницы",
+      "example": "The endpoint paginates results using limit and offset.",
+      "sentenceTranslation": "Эндпоинт разбивает результаты на страницы с помощью limit и offset.",
+      "answer": "paginates"
+    },
+    {
+      "word": "throttle / rate-limit",
+      "translation": "ограничивать количество запросов",
+      "example": "We throttle requests to 100 per minute.",
+      "sentenceTranslation": "Мы ограничиваем количество запросов до 100 в минуту."
+    },
+    {
+      "word": "authenticate / authorize",
+      "translation": "аутентифицировать vs авторизовать",
+      "example": "First we authenticate, then authorize.",
+      "sentenceTranslation": "Сначала мы аутентифицируем, затем авторизуем."
+    },
+    {
+      "word": "validate",
+      "translation": "проверять (данные, схему, параметры)",
+      "example": "Always validate the payload before hitting the DB.",
+      "sentenceTranslation": "Всегда валидируй / проверяй payload перед обращением к базе данных."
+    },
+    {
+      "word": "propagate",
+      "translation": "пробрасывать (error, event)",
+      "example": "The error propagates up the middleware chain.",
+      "sentenceTranslation": "Ошибка пробрасывается вверх по цепочке middleware.",
+      "answer": "propagates"
+    },
+    {
+      "word": "intercept",
+      "translation": "перехватывать (request, response)",
+      "example": "We intercept every request to log the trace ID.",
+      "sentenceTranslation": "Мы перехватываем каждый запрос, чтобы записать trace ID в лог."
+    },
+    {
+      "word": "offload",
+      "translation": "передавать задачу (в очередь, воркер)",
+      "example": "We offload email sending to a background queue.",
+      "sentenceTranslation": "Мы передаём задачу отправки писем в фоновую очередь."
+    },
+    {
+      "word": "payload",
+      "translation": "тело запроса / передаваемые данные",
+      "example": "The payload includes user ID and preferences.",
+      "sentenceTranslation": "Тело запроса содержит ID пользователя и настройки."
+    },
+    {
+      "word": "middleware",
+      "translation": "промежуточный обработчик",
+      "example": "Auth middleware runs before the route handler.",
+      "sentenceTranslation": "Промежуточный обработчик аутентификации выполняется перед обработчиком маршрута."
+    },
+    {
+      "word": "idempotency",
+      "translation": "идемпотентность",
+      "example": "Use PUT for idempotency — it's safe to retry.",
+      "sentenceTranslation": "Используй PUT для идемпотентности: такой запрос безопасно повторять."
+    },
+    {
+      "word": "latency",
+      "translation": "задержка (время между запросом и ответом)",
+      "example": "P99 latency is under 200ms.",
+      "sentenceTranslation": "Задержка P99 меньше 200 мс."
+    },
+    {
+      "word": "throughput",
+      "translation": "пропускная способность",
+      "example": "Higher throughput means the system handles more requests per second.",
+      "sentenceTranslation": "Более высокая пропускная способность означает, что система обрабатывает больше запросов в секунду."
+    },
+    {
+      "word": "contract",
+      "translation": "API-контракт / соглашение об интерфейсе",
+      "example": "We shouldn't break the API contract without versioning.",
+      "sentenceTranslation": "Нельзя ломать API-контракт без версионирования."
+    },
+    {
+      "word": "backward compatibility",
+      "translation": "обратная совместимость",
+      "example": "This change breaks backward compatibility.",
+      "sentenceTranslation": "Это изменение нарушает обратную совместимость."
+    },
+    {
+      "word": "bottleneck",
+      "translation": "узкое место",
+      "example": "The DB query is the bottleneck here.",
+      "sentenceTranslation": "Запрос к базе данных здесь является узким местом."
+    },
+    {
+      "word": "race condition",
+      "translation": "состояние гонки",
+      "example": "Two requests hit the same record — classic race condition.",
+      "sentenceTranslation": "Два запроса попали в одну и ту же запись: классическое состояние гонки."
+    },
+    {
+      "word": "retry logic",
+      "translation": "логика повторных попыток",
+      "example": "We added retry logic with exponential backoff.",
+      "sentenceTranslation": "Мы добавили логику повторных попыток с экспоненциальной задержкой."
+    },
+    {
+      "word": "graceful degradation",
+      "translation": "корректная деградация при сбое",
+      "example": "If the cache is down, we fall back — graceful degradation.",
+      "sentenceTranslation": "Если кэш недоступен, мы переключаемся на запасной вариант: это корректная деградация."
+    },
+    {
+      "word": "circuit breaker",
+      "translation": "паттерн остановки вызовов к упавшему сервису",
+      "example": "The circuit breaker opens after 5 consecutive failures.",
+      "sentenceTranslation": "Circuit breaker открывается и останавливает вызовы после 5 ошибок подряд."
+    },
+    {
+      "word": "under the hood",
+      "translation": "внутри / как устроено на самом деле",
+      "example": "Under the hood, it uses a connection pool.",
+      "sentenceTranslation": "Внутри, под капотом, он использует пул соединений."
+    },
+    {
+      "word": "downstream / upstream",
+      "translation": "сервисы ниже/выше по цепочке",
+      "example": "The failure in the downstream service caused a timeout.",
+      "sentenceTranslation": "Сбой в downstream-сервисе ниже по цепочке вызвал таймаут."
+    },
+    {
+      "word": "happy path",
+      "translation": "успешный сценарий без ошибок",
+      "example": "The happy path works; edge cases are the issue.",
+      "sentenceTranslation": "Успешный сценарий без ошибок работает; проблема в пограничных случаях."
+    },
+    {
+      "word": "edge case",
+      "translation": "граничный / нетипичный случай",
+      "example": "What if the list is empty? That's an edge case.",
+      "sentenceTranslation": "А что, если список пустой? Это пограничный случай."
+    },
+    {
+      "word": "fall back to",
+      "translation": "переключиться на запасной вариант",
+      "example": "If Redis is down, we fall back to the database.",
+      "sentenceTranslation": "Если Redis недоступен, мы переключаемся на базу данных."
+    },
+    {
+      "word": "tie into",
+      "translation": "интегрироваться с (системой)",
+      "example": "This service ties into the notification system.",
+      "sentenceTranslation": "Этот сервис интегрируется с системой уведомлений.",
+      "answer": "ties into"
+    },
+    {
+      "word": "spin up",
+      "translation": "запустить / поднять (сервер, контейнер)",
+      "example": "We spin up a new instance during peak load.",
+      "sentenceTranslation": "Мы запускаем / поднимаем новый инстанс во время пиковой нагрузки."
+    }
+  ]
+}

@@ -9,10 +9,15 @@
   <body>
     <main class="app">
       <header class="topbar">
-        <h1>English Grammar Trainer</h1>
+        <h1>English Trainer</h1>
       </header>
 
-      <section class="controls">
+      <nav class="mode-tabs">
+        <button id="tab-grammar" class="mode-tab mode-tab--active" type="button">Грамматика</button>
+        <button id="tab-vocab" class="mode-tab" type="button">Словарь</button>
+      </nav>
+
+      <section id="controls-grammar" class="controls">
         <label for="level-select">Уровень</label>
         <select id="level-select"></select>
         <label for="session-size">Вопросов</label>
@@ -32,6 +37,22 @@
         <button id="new-session" type="button">Новая сессия</button>
       </section>
 
+      <section id="controls-vocab" class="controls" hidden>
+        <label for="vocab-topic">Тема</label>
+        <select id="vocab-topic"></select>
+        <label for="vocab-session-size">Слов</label>
+        <select id="vocab-session-size">
+          <option value="20" selected>20</option>
+          <option value="30">30</option>
+          <option value="all">Все</option>
+        </select>
+        <label class="toggle-option" for="auto-speak-correct-vocab">
+          <input id="auto-speak-correct-vocab" type="checkbox" checked />
+          Озвучивать после верного ответа
+        </label>
+        <button id="vocab-new-session" type="button">Новая сессия</button>
+      </section>
+
       <section class="stats">
         <div><span id="position">1 / 1</span></div>
         <div>Верно: <span id="correct-count">0</span></div>
@@ -40,17 +61,17 @@
 
       <section class="card">
         <div id="card-content">
-          <div class="question-meta">Вопрос №<span id="question-id">1</span></div>
+          <div id="question-meta" class="question-meta">Вопрос №<span id="question-id">1</span></div>
+          <div id="vocab-mode-label" class="vocab-mode-label" hidden>Введите пропущенное слово</div>
           <p id="question-text" class="question-text">Загрузка...</p>
           <div class="question-translation-row">
             <p id="question-translation" class="question-translation"></p>
             <button id="speak-word-btn" type="button" class="speak-word-btn" disabled>
-              Озвучить
+              Озвучить предложение
             </button>
           </div>
-          <p id="word-translation" class="word-translation"></p>
 
-          <div class="options">
+          <div class="options" id="options-section">
             <div class="options-title">Варианты</div>
             <ul>
               <li id="option-a"></li>
@@ -112,6 +133,7 @@
     </div>
 
     <script src="./questions.js"></script>
+    <script src="./vocabulary.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
