@@ -715,6 +715,8 @@
       }
       playWrongSound();
       setFeedback('Почти. Правильный ответ: ' + w.answer, false);
+      refs.answerInput.value = '';
+      refs.answerInput.focus();
       saveProgress();
     }
   }
@@ -888,6 +890,8 @@
       }
       setFeedback(`Почти. Правильный ответ: ${q.answer}`, false);
       playWrongSound();
+      refs.answerInput.value = '';
+      refs.answerInput.focus();
     }
 
     saveProgress();

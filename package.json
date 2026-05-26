@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build-vocab": "node build.js"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "topic": "Standup & IT Communication",
+  "words": [
+    {
+      "word": "kick off",
+      "translation": "начинать / дать старт",
+      "example": "Let's kick off our standup meeting.",
+      "sentenceTranslation": "Давайте начнём наш стендап"
+    },
+    {
+      "word": "run into",
+      "translation": "столкнуться с (проблемой)",
+      "example": "I've run into some issues with the database migration.",
+      "sentenceTranslation": "Я столкнулся с проблемами при миграции базы данных"
+    },
+    {
+      "word": "dig deeper",
+      "translation": "копнуть глубже / разобраться подробнее",
+      "example": "I think I need to dig deeper into our service logs.",
+      "sentenceTranslation": "Думаю, мне нужно глубже разобраться в логах нашего сервиса"
+    },
+    {
+      "word": "further",
+      "translation": "дальше / подробнее / глубже",
+      "example": "I might need to discuss it further with the team.",
+      "sentenceTranslation": "Возможно, мне нужно обсудить это подробнее с командой"
+    },
+    {
+      "word": "clarification",
+      "translation": "уточнение / разъяснение",
+      "example": "I've been waiting for some clarification on the requirements.",
+      "sentenceTranslation": "Я ждал уточнений по требованиям"
+    },
+    {
+      "word": "swamped",
+      "translation": "завален (делами / задачами)",
+      "example": "I've been swamped with meetings all morning.",
+      "sentenceTranslation": "Меня всё утро заваливало встречами"
+    },
+    {
+      "word": "tricky",
+      "translation": "сложный / коварный / непростой",
+      "example": "This edge case turned out to be quite tricky.",
+      "sentenceTranslation": "Этот граничный случай оказался довольно коварным"
+    },
+    {
+      "word": "mention",
+      "translation": "упомянуть / сказать",
+      "example": "I wanted to mention that the deploy is scheduled for tonight.",
+      "sentenceTranslation": "Хотел упомянуть, что деплой запланирован на сегодня вечером"
+    },
+    {
+      "word": "suppose",
+      "translation": "предполагать / думать",
+      "example": "I suppose we should discuss this in a separate call.",
+      "sentenceTranslation": "Думаю, нам стоит обсудить это на отдельном звонке"
+    },
+    {
+      "word": "bring up",
+      "translation": "поднять тему / упомянуть",
+      "example": "I wanted to bring up a concern about the API performance.",
+      "sentenceTranslation": "Хотел поднять вопрос о производительности API"
+    },
+    {
+      "word": "implement",
+      "translation": "реализовывать / внедрять",
+      "example": "Yesterday I was implementing the new authentication flow.",
+      "sentenceTranslation": "Вчера я реализовывал новый флоу авторизации"
+    },
+    {
+      "word": "properly",
+      "translation": "правильно / корректно / должным образом",
+      "example": "The service doesn't handle errors properly yet.",
+      "sentenceTranslation": "Сервис пока не обрабатывает ошибки корректно"
+    },
+    {
+      "word": "causing",
+      "translation": "вызывающий / приводящий к",
+      "example": "It's causing inconsistencies in the UI.",
+      "sentenceTranslation": "Это вызывает несоответствия в интерфейсе"
+    },
+    {
+      "word": "dealing with",
+      "translation": "справляться с / иметь дело с",
+      "example": "I'm currently dealing with a race condition in the payment service.",
+      "sentenceTranslation": "Сейчас я разбираюсь с гонкой состояний в сервисе платежей"
+    },
+    {
+      "word": "concerning",
+      "translation": "тревожный / вызывающий беспокойство",
+      "example": "That latency spike sounds concerning.",
+      "sentenceTranslation": "Этот всплеск задержки звучит тревожно"
+    },
+    {
+      "word": "leads",
+      "translation": "зацепки / наводки",
+      "example": "Do you have any leads on the cause of the bug?",
+      "sentenceTranslation": "Есть ли у тебя какие-нибудь зацепки по причине бага?"
+    },
+    {
+      "word": "suspect",
+      "translation": "подозревать / предполагать",
+      "example": "I suspect it's a caching issue on the backend.",
+      "sentenceTranslation": "Подозреваю, что это проблема с кешированием на бэкенде"
+    },
+    {
+      "word": "particularly",
+      "translation": "особенно / в частности",
+      "example": "The performance is bad, particularly under high load.",
+      "sentenceTranslation": "Производительность плохая, особенно под высокой нагрузкой"
+    },
+    {
+      "word": "rapidly",
+      "translation": "быстро / стремительно",
+      "example": "The number of errors is growing rapidly.",
+      "sentenceTranslation": "Количество ошибок растёт стремительно"
+    },
+    {
+      "word": "blocker",
+      "translation": "блокер / препятствие",
+      "example": "I have a blocker — I'm waiting for access to the staging environment.",
+      "sentenceTranslation": "У меня блокер — жду доступа к тестовой среде"
+    },
+    {
+      "word": "unblock",
+      "translation": "разблокировать / снять блокер",
+      "example": "Can someone help unblock me on this ticket?",
+      "sentenceTranslation": "Кто-нибудь может помочь снять блокер с этой задачи?"
+    },
+    {
+      "word": "on track",
+      "translation": "по плану / в графике",
+      "example": "The feature is on track for the Friday release.",
+      "sentenceTranslation": "Фича идёт по плану к пятничному релизу"
+    },
+    {
+      "word": "behind schedule",
+      "translation": "отстаём от графика / с опозданием",
+      "example": "We're a bit behind schedule due to the unexpected bug.",
+      "sentenceTranslation": "Мы немного отстаём от графика из-за неожиданного бага"
+    },
+    {
+      "word": "wrap up",
+      "translation": "завершать / подытожить",
+      "example": "I should wrap up the refactoring by end of day.",
+      "sentenceTranslation": "Я должен завершить рефакторинг к концу дня"
+    },
+    {
+      "word": "pick up",
+      "translation": "взять в работу / подхватить",
+      "example": "I'm going to pick up the next ticket from the backlog.",
+      "sentenceTranslation": "Я собираюсь взять следующий тикет из бэклога"
+    },
+    {
+      "word": "follow up",
+      "translation": "вернуться к вопросу / проследить",
+      "example": "I'll follow up with the DevOps team about the deployment issue.",
+      "sentenceTranslation": "Я вернусь к вопросу с командой DevOps по поводу проблемы с деплоем"
+    },
+    {
+      "word": "reach out",
+      "translation": "обратиться / связаться",
+      "example": "I'll reach out to the backend team for help.",
+      "sentenceTranslation": "Я обращусь за помощью к бэкенд-команде"
+    },
+    {
+      "word": "sync up",
+      "translation": "синхронизироваться / созвониться",
+      "example": "Let's sync up after the standup to discuss the architecture.",
+      "sentenceTranslation": "Давайте созвонимся после стендапа, чтобы обсудить архитектуру"
+    },
+    {
+      "word": "estimate",
+      "translation": "оценка (времени) / оценивать",
+      "example": "My estimate for this task is two days.",
+      "sentenceTranslation": "Моя оценка по этой задаче — два дня"
+    },
+    {
+      "word": "spike",
+      "translation": "исследовательская задача / спайк",
+      "example": "I did a spike on the new payment gateway integration.",
+      "sentenceTranslation": "Я провёл исследование по интеграции нового платёжного шлюза"
+    },
+    {
+      "word": "pending",
+      "translation": "ожидает / в ожидании",
+      "example": "The PR is pending review from the senior dev.",
+      "sentenceTranslation": "Пулл-реквест ожидает ревью от синьора"
+    },
+    {
+      "word": "hand off",
+      "translation": "передать (задачу) / передача",
+      "example": "I'll hand off this ticket to Alex since he knows the module better.",
+      "sentenceTranslation": "Я передам этот тикет Алексу, так как он лучше знает модуль"
+    }
+  ]
+}
