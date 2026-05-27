@@ -699,12 +699,14 @@
     }
 
     if (user === normalize(w.answer)) {
-      vocabState.correct += 1;
+      if (!vocabState.wrongCounted) {
+        vocabState.correct += 1;
+        refs.correctCount.textContent = String(vocabState.correct);
+      }
       vocabState.checkedCurrent = true;
       playCorrectSound();
       flashCorrect();
       setFeedback('Верно!', true);
-      refs.correctCount.textContent = String(vocabState.correct);
       saveProgress();
       queueVocabNextAfterCorrect(w);
     } else {
@@ -876,7 +878,10 @@
     }
 
     if (user === target) {
-      state.correct += 1;
+      if (!state.wrongCounted) {
+        state.correct += 1;
+        refs.correctCount.textContent = String(state.correct);
+      }
       state.checkedCurrent = true;
       setFeedback("Верно!", true);
       playCorrectSound();
