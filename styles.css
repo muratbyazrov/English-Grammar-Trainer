@@ -66,6 +66,10 @@ body {
   font-weight: 600;
 }
 
+.course-progress {
+  color: var(--muted);
+}
+
 .toggle-option {
   display: inline-flex;
   align-items: center;

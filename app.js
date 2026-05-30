@@ -44,6 +44,8 @@
     sessionSize: document.getElementById("session-size"),
     newSession: document.getElementById("new-session"),
     position: document.getElementById("position"),
+    courseProgress: document.getElementById("course-progress"),
+    coursePosition: document.getElementById("course-position"),
     correctCount: document.getElementById("correct-count"),
     wrongCount: document.getElementById("wrong-count"),
     questionId: document.getElementById("question-id"),
@@ -206,6 +208,19 @@
 
   function questionByIdForLevel(level) {
     return new Map(orderedQuestionsForLevel(level).map((q) => [q.id, q]));
+  }
+
+  function coursePositionForQuestion(question, level = currentLevel()) {
+    const questions = orderedQuestionsForLevel(level);
+    if (!question || !questions.length) {
+      return { current: 0, total: questions.length };
+    }
+
+    const index = questions.findIndex((item) => item.id === question.id);
+    return {
+      current: index >= 0 ? index + 1 : 0,
+      total: questions.length,
+    };
   }
 
   function pickSession() {
@@ -696,6 +711,7 @@
     }
 
     refs.position.textContent = `${vocabState.idx + 1} / ${vocabState.session.length}`;
+    refs.courseProgress.hidden = true;
     refs.correctCount.textContent = String(vocabState.correct);
     refs.wrongCount.textContent = String(vocabState.wrong);
 
@@ -819,6 +835,9 @@
     }
 
     refs.position.textContent = `${state.idx + 1} / ${state.session.length}`;
+    const coursePosition = coursePositionForQuestion(q);
+    refs.courseProgress.hidden = false;
+    refs.coursePosition.textContent = `${q.id} из ${coursePosition.total}`;
     refs.correctCount.textContent = String(state.correct);
     refs.wrongCount.textContent = String(state.wrong);
     refs.questionId.textContent = String(q.id);
