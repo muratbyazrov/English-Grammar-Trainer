@@ -507,7 +507,7 @@ window.VOCABULARY_DATA = [
         "word": "circuit breaker",
         "translation": "паттерн остановки вызовов к упавшему сервису",
         "example": "The circuit breaker opens after 5 consecutive failures.",
-        "sentenceTranslation": "Circuit breaker открывается и останавливает вызовы после 5 ошибок подряд.",
+        "sentenceTranslation": "Защитный механизм размыкает цепочку вызовов после 5 ошибок подряд.",
         "gapExample": "The ___ opens after 5 consecutive failures.",
         "answer": "circuit breaker"
       },
@@ -525,7 +525,7 @@ window.VOCABULARY_DATA = [
         "word": "downstream / upstream",
         "translation": "сервисы ниже/выше по цепочке",
         "example": "The failure in the downstream service caused a timeout.",
-        "sentenceTranslation": "Сбой в downstream-сервисе ниже по цепочке вызвал таймаут.",
+        "sentenceTranslation": "Сбой в зависимом сервисе дальше по цепочке вызвал таймаут.",
         "gapExample": "The failure in the ___ service caused a timeout.",
         "answer": "downstream / upstream"
       },

@@ -165,10 +165,28 @@
   function normalize(text) {
     return String(text || "")
       .toLowerCase()
-      .replace(/[’`]/g, "'")
+      .replace(/[\u2018\u2019`]/g, "'")
       .replace(/\s+/g, " ")
-      .replace(/^[\s.,!?;:\"“”'()\-]+|[\s.,!?;:\"“”'()\-]+$/g, "")
+      .replace(/^[\s.,!?;:"'\u201c\u201d\u2018\u2019()\-]+|[\s.,!?;:"'\u201c\u201d\u2018\u2019()\-]+$/g, "")
       .trim();
+  }
+
+  function isAnswerMatch(userNorm, targetNorm) {
+    if (userNorm === targetNorm) return true;
+
+    const comparable = (s) => String(s || "").replace(/[-\s]+/g, " ").trim();
+    if (comparable(userNorm) === comparable(targetNorm)) return true;
+
+    // Если ответ содержит альтернативы через "/", принимаем любую из них.
+    const alternatives = targetNorm
+      .split("/")
+      .map((part) => part.trim())
+      .filter(Boolean);
+    if (alternatives.length > 1) {
+      return alternatives.some((part) => userNorm === part || comparable(userNorm) === comparable(part));
+    }
+
+    return false;
   }
 
   function currentLevel() {
@@ -316,7 +334,13 @@
   }
 
   function displayPrompt(prompt) {
-    return String(prompt || "").replace(/\.{3,}/g, "____");
+    return String(prompt || "").replace(/\.{3,}/g, (match, offset, source) => {
+      const prevChar = offset > 0 ? source[offset - 1] : "";
+      const nextChar = source[offset + match.length] || "";
+      const needsSpaceBefore = /[A-Za-z0-9'"]/.test(prevChar);
+      const needsSpaceAfter = /[A-Za-z0-9'"]/.test(nextChar);
+      return `${needsSpaceBefore ? " " : ""}____${needsSpaceAfter ? " " : ""}`;
+    });
   }
 
   function fillPromptWithAnswer(prompt, answer) {
@@ -698,7 +722,7 @@
       return;
     }
 
-    if (user === normalize(w.answer)) {
+    if (isAnswerMatch(user, normalize(w.answer))) {
       if (!vocabState.wrongCounted) {
         vocabState.correct += 1;
         refs.correctCount.textContent = String(vocabState.correct);
@@ -815,10 +839,15 @@
   }
 
   function showSessionComplete() {
-    const total = state.session.length;
-    const correct = state.correct;
-    const wrong = state.wrong;
-    const pct = total > 0 ? Math.max(0, Math.round(((total - wrong) / total) * 100)) : 0;
+    const stats = currentMode === 'vocabulary' ? vocabState : state;
+    const total = stats.session.length;
+    const correct = stats.correct;
+    const missed = Math.max(0, total - stats.correct - stats.wrong);
+    if (missed > 0) {
+      stats.wrong += missed;
+    }
+    const wrong = stats.wrong;
+    const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((correct / total) * 100))) : 0;
 
     // Обновляем стат-бар
     refs.position.textContent = `${total} / ${total}`;
@@ -877,7 +906,7 @@
       return;
     }
 
-    if (user === target) {
+    if (isAnswerMatch(user, target)) {
       if (!state.wrongCounted) {
         state.correct += 1;
         refs.correctCount.textContent = String(state.correct);
