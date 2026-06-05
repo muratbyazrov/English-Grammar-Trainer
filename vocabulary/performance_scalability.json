@@ -1,0 +1,164 @@
+{
+  "topic": "Performance & Scalability",
+  "words": [
+    {
+      "word": "latency",
+      "translation": "задержка — время между запросом и ответом",
+      "example": "P99 latency is under 200ms — we're within the SLA.",
+      "sentenceTranslation": "Задержка P99 меньше 200 мс — мы укладываемся в SLA."
+    },
+    {
+      "word": "throughput",
+      "translation": "пропускная способность — запросов в единицу времени",
+      "example": "Throughput dropped to 2k RPS after the deploy.",
+      "sentenceTranslation": "Пропускная способность упала до 2 тысяч запросов в секунду после деплоя."
+    },
+    {
+      "word": "response time",
+      "translation": "время ответа сервера",
+      "example": "Average response time increased after the migration.",
+      "sentenceTranslation": "Среднее время ответа увеличилось после миграции."
+    },
+    {
+      "word": "error rate",
+      "translation": "процент ошибочных запросов",
+      "example": "The error rate spiked to 5% during peak traffic.",
+      "sentenceTranslation": "Процент ошибочных запросов резко вырос до 5% во время пикового трафика."
+    },
+    {
+      "word": "p95 / p99",
+      "translation": "95-й / 99-й перцентиль задержки",
+      "example": "P99 latency is 800ms — that's too high for our use case.",
+      "sentenceTranslation": "Задержка P99 составляет 800 мс — это слишком много для нашего сценария.",
+      "answer": "P99"
+    },
+    {
+      "word": "bottleneck",
+      "translation": "узкое место — что тормозит всю систему",
+      "example": "The bottleneck is in the database layer — queries are too slow.",
+      "sentenceTranslation": "Узкое место находится на уровне базы данных — запросы слишком медленные."
+    },
+    {
+      "word": "latency spike",
+      "translation": "резкий скачок задержки",
+      "example": "We saw latency spikes every time traffic went above 3k RPS.",
+      "sentenceTranslation": "Мы видели резкие скачки задержки каждый раз, когда трафик превышал 3 тысячи запросов в секунду.",
+      "answer": "latency spikes"
+    },
+    {
+      "word": "memory leak",
+      "translation": "утечка памяти",
+      "example": "The service crashes every few hours — looks like a memory leak.",
+      "sentenceTranslation": "Сервис падает каждые несколько часов — похоже на утечку памяти."
+    },
+    {
+      "word": "CPU spike",
+      "translation": "резкий рост потребления CPU",
+      "example": "There's a CPU spike every time the batch job runs.",
+      "sentenceTranslation": "Резкий рост потребления CPU происходит каждый раз, когда запускается пакетная задача."
+    },
+    {
+      "word": "timeout",
+      "translation": "превышение времени ожидания",
+      "example": "Requests are timing out after 30 seconds — something is blocking.",
+      "sentenceTranslation": "Запросы превышают время ожидания через 30 секунд — что-то блокирует выполнение.",
+      "answer": "timing out"
+    },
+    {
+      "word": "degraded performance",
+      "translation": "ухудшение производительности",
+      "example": "Users are reporting degraded performance during peak hours.",
+      "sentenceTranslation": "Пользователи сообщают об ухудшении производительности в часы пик."
+    },
+    {
+      "word": "scale vertically",
+      "translation": "вертикальное масштабирование — мощнее железо",
+      "example": "We scaled vertically but it's not a long-term solution.",
+      "sentenceTranslation": "Мы масштабировались вертикально, но это не долгосрочное решение.",
+      "answer": "scaled vertically"
+    },
+    {
+      "word": "scale horizontally",
+      "translation": "горизонтальное масштабирование — больше инстансов",
+      "example": "We scaled horizontally to three instances to handle the load.",
+      "sentenceTranslation": "Мы масштабировались горизонтально до трёх инстансов, чтобы справиться с нагрузкой.",
+      "answer": "scaled horizontally"
+    },
+    {
+      "word": "autoscaling",
+      "translation": "автоматическое масштабирование по нагрузке",
+      "example": "Autoscaling kicks in when CPU usage goes above 70%.",
+      "sentenceTranslation": "Автоматическое масштабирование включается, когда использование CPU превышает 70%."
+    },
+    {
+      "word": "peak load / peak traffic",
+      "translation": "пиковая нагрузка",
+      "example": "The service handles peak load without issues now.",
+      "sentenceTranslation": "Теперь сервис справляется с пиковой нагрузкой без проблем.",
+      "answer": "peak load"
+    },
+    {
+      "word": "increase / go up",
+      "translation": "расти, увеличиваться",
+      "example": "Latency increased significantly after the last deploy.",
+      "sentenceTranslation": "Задержка значительно выросла после последнего деплоя.",
+      "answer": "increased"
+    },
+    {
+      "word": "decrease / go down / drop",
+      "translation": "падать, снижаться",
+      "example": "Response time dropped by 40% after we added caching.",
+      "sentenceTranslation": "Время ответа снизилось на 40% после того, как мы добавили кэширование.",
+      "answer": "dropped"
+    },
+    {
+      "word": "spike",
+      "translation": "резко вырасти кратковременно",
+      "example": "CPU usage spiked to 95% during the batch job.",
+      "sentenceTranslation": "Использование CPU кратковременно выросло до 95% во время пакетной задачи.",
+      "answer": "spiked"
+    },
+    {
+      "word": "stabilize",
+      "translation": "стабилизироваться",
+      "example": "Latency stabilized after we restarted the service.",
+      "sentenceTranslation": "Задержка стабилизировалась после того, как мы перезапустили сервис.",
+      "answer": "stabilized"
+    },
+    {
+      "word": "reduce",
+      "translation": "снизить целенаправленно",
+      "example": "We reduced memory usage by 30% after the optimization.",
+      "sentenceTranslation": "Мы снизили использование памяти на 30% после оптимизации.",
+      "answer": "reduced"
+    },
+    {
+      "word": "improve",
+      "translation": "улучшить / улучшиться",
+      "example": "Performance improved significantly after query optimization.",
+      "sentenceTranslation": "Производительность значительно улучшилась после оптимизации запросов.",
+      "answer": "improved"
+    },
+    {
+      "word": "degrade",
+      "translation": "ухудшиться о производительности",
+      "example": "Performance degrades under heavy load — we need to investigate.",
+      "sentenceTranslation": "Производительность ухудшается при высокой нагрузке — нужно разобраться.",
+      "answer": "degrades"
+    },
+    {
+      "word": "fluctuate",
+      "translation": "колебаться, быть нестабильным",
+      "example": "Response times are fluctuating — something is inconsistent.",
+      "sentenceTranslation": "Время ответа колеблется — что-то работает нестабильно.",
+      "answer": "fluctuating"
+    },
+    {
+      "word": "recover",
+      "translation": "восстановиться после сбоя или деградации",
+      "example": "The service recovered automatically after the circuit breaker reset.",
+      "sentenceTranslation": "Сервис автоматически восстановился после сброса circuit breaker.",
+      "answer": "recovered"
+    }
+  ]
+}

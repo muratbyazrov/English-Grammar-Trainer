@@ -1,9 +1,230 @@
 window.VOCABULARY_DATA = [
   {
-    "topic": "Standup & IT Communication",
+    "topic": "Performance & Scalability",
     "words": [
       {
         "id": 1,
+        "word": "latency",
+        "translation": "задержка — время между запросом и ответом",
+        "example": "P99 latency is under 200ms — we're within the SLA.",
+        "sentenceTranslation": "Задержка P99 меньше 200 мс — мы укладываемся в SLA.",
+        "gapExample": "P99 ___ is under 200ms — we're within the SLA.",
+        "answer": "latency"
+      },
+      {
+        "id": 2,
+        "word": "throughput",
+        "translation": "пропускная способность — запросов в единицу времени",
+        "example": "Throughput dropped to 2k RPS after the deploy.",
+        "sentenceTranslation": "Пропускная способность упала до 2 тысяч запросов в секунду после деплоя.",
+        "gapExample": "___ dropped to 2k RPS after the deploy.",
+        "answer": "throughput"
+      },
+      {
+        "id": 3,
+        "word": "response time",
+        "translation": "время ответа сервера",
+        "example": "Average response time increased after the migration.",
+        "sentenceTranslation": "Среднее время ответа увеличилось после миграции.",
+        "gapExample": "Average ___ increased after the migration.",
+        "answer": "response time"
+      },
+      {
+        "id": 4,
+        "word": "error rate",
+        "translation": "процент ошибочных запросов",
+        "example": "The error rate spiked to 5% during peak traffic.",
+        "sentenceTranslation": "Процент ошибочных запросов резко вырос до 5% во время пикового трафика.",
+        "gapExample": "The ___ spiked to 5% during peak traffic.",
+        "answer": "error rate"
+      },
+      {
+        "id": 5,
+        "word": "p95 / p99",
+        "translation": "95-й / 99-й перцентиль задержки",
+        "example": "P99 latency is 800ms — that's too high for our use case.",
+        "sentenceTranslation": "Задержка P99 составляет 800 мс — это слишком много для нашего сценария.",
+        "gapExample": "___ latency is 800ms — that's too high for our use case.",
+        "answer": "P99"
+      },
+      {
+        "id": 6,
+        "word": "bottleneck",
+        "translation": "узкое место — что тормозит всю систему",
+        "example": "The bottleneck is in the database layer — queries are too slow.",
+        "sentenceTranslation": "Узкое место находится на уровне базы данных — запросы слишком медленные.",
+        "gapExample": "The ___ is in the database layer — queries are too slow.",
+        "answer": "bottleneck"
+      },
+      {
+        "id": 7,
+        "word": "latency spike",
+        "translation": "резкий скачок задержки",
+        "example": "We saw latency spikes every time traffic went above 3k RPS.",
+        "sentenceTranslation": "Мы видели резкие скачки задержки каждый раз, когда трафик превышал 3 тысячи запросов в секунду.",
+        "gapExample": "We saw ___ every time traffic went above 3k RPS.",
+        "answer": "latency spikes"
+      },
+      {
+        "id": 8,
+        "word": "memory leak",
+        "translation": "утечка памяти",
+        "example": "The service crashes every few hours — looks like a memory leak.",
+        "sentenceTranslation": "Сервис падает каждые несколько часов — похоже на утечку памяти.",
+        "gapExample": "The service crashes every few hours — looks like a ___.",
+        "answer": "memory leak"
+      },
+      {
+        "id": 9,
+        "word": "CPU spike",
+        "translation": "резкий рост потребления CPU",
+        "example": "There's a CPU spike every time the batch job runs.",
+        "sentenceTranslation": "Резкий рост потребления CPU происходит каждый раз, когда запускается пакетная задача.",
+        "gapExample": "There's a ___ every time the batch job runs.",
+        "answer": "CPU spike"
+      },
+      {
+        "id": 10,
+        "word": "timeout",
+        "translation": "превышение времени ожидания",
+        "example": "Requests are timing out after 30 seconds — something is blocking.",
+        "sentenceTranslation": "Запросы превышают время ожидания через 30 секунд — что-то блокирует выполнение.",
+        "gapExample": "Requests are ___ after 30 seconds — something is blocking.",
+        "answer": "timing out"
+      },
+      {
+        "id": 11,
+        "word": "degraded performance",
+        "translation": "ухудшение производительности",
+        "example": "Users are reporting degraded performance during peak hours.",
+        "sentenceTranslation": "Пользователи сообщают об ухудшении производительности в часы пик.",
+        "gapExample": "Users are reporting ___ during peak hours.",
+        "answer": "degraded performance"
+      },
+      {
+        "id": 12,
+        "word": "scale vertically",
+        "translation": "вертикальное масштабирование — мощнее железо",
+        "example": "We scaled vertically but it's not a long-term solution.",
+        "sentenceTranslation": "Мы масштабировались вертикально, но это не долгосрочное решение.",
+        "gapExample": "We ___ but it's not a long-term solution.",
+        "answer": "scaled vertically"
+      },
+      {
+        "id": 13,
+        "word": "scale horizontally",
+        "translation": "горизонтальное масштабирование — больше инстансов",
+        "example": "We scaled horizontally to three instances to handle the load.",
+        "sentenceTranslation": "Мы масштабировались горизонтально до трёх инстансов, чтобы справиться с нагрузкой.",
+        "gapExample": "We ___ to three instances to handle the load.",
+        "answer": "scaled horizontally"
+      },
+      {
+        "id": 14,
+        "word": "autoscaling",
+        "translation": "автоматическое масштабирование по нагрузке",
+        "example": "Autoscaling kicks in when CPU usage goes above 70%.",
+        "sentenceTranslation": "Автоматическое масштабирование включается, когда использование CPU превышает 70%.",
+        "gapExample": "___ kicks in when CPU usage goes above 70%.",
+        "answer": "autoscaling"
+      },
+      {
+        "id": 15,
+        "word": "peak load / peak traffic",
+        "translation": "пиковая нагрузка",
+        "example": "The service handles peak load without issues now.",
+        "sentenceTranslation": "Теперь сервис справляется с пиковой нагрузкой без проблем.",
+        "gapExample": "The service handles ___ without issues now.",
+        "answer": "peak load"
+      },
+      {
+        "id": 16,
+        "word": "increase / go up",
+        "translation": "расти, увеличиваться",
+        "example": "Latency increased significantly after the last deploy.",
+        "sentenceTranslation": "Задержка значительно выросла после последнего деплоя.",
+        "gapExample": "Latency ___ significantly after the last deploy.",
+        "answer": "increased"
+      },
+      {
+        "id": 17,
+        "word": "decrease / go down / drop",
+        "translation": "падать, снижаться",
+        "example": "Response time dropped by 40% after we added caching.",
+        "sentenceTranslation": "Время ответа снизилось на 40% после того, как мы добавили кэширование.",
+        "gapExample": "Response time ___ by 40% after we added caching.",
+        "answer": "dropped"
+      },
+      {
+        "id": 18,
+        "word": "spike",
+        "translation": "резко вырасти кратковременно",
+        "example": "CPU usage spiked to 95% during the batch job.",
+        "sentenceTranslation": "Использование CPU кратковременно выросло до 95% во время пакетной задачи.",
+        "gapExample": "CPU usage ___ to 95% during the batch job.",
+        "answer": "spiked"
+      },
+      {
+        "id": 19,
+        "word": "stabilize",
+        "translation": "стабилизироваться",
+        "example": "Latency stabilized after we restarted the service.",
+        "sentenceTranslation": "Задержка стабилизировалась после того, как мы перезапустили сервис.",
+        "gapExample": "Latency ___ after we restarted the service.",
+        "answer": "stabilized"
+      },
+      {
+        "id": 20,
+        "word": "reduce",
+        "translation": "снизить целенаправленно",
+        "example": "We reduced memory usage by 30% after the optimization.",
+        "sentenceTranslation": "Мы снизили использование памяти на 30% после оптимизации.",
+        "gapExample": "We ___ memory usage by 30% after the optimization.",
+        "answer": "reduced"
+      },
+      {
+        "id": 21,
+        "word": "improve",
+        "translation": "улучшить / улучшиться",
+        "example": "Performance improved significantly after query optimization.",
+        "sentenceTranslation": "Производительность значительно улучшилась после оптимизации запросов.",
+        "gapExample": "Performance ___ significantly after query optimization.",
+        "answer": "improved"
+      },
+      {
+        "id": 22,
+        "word": "degrade",
+        "translation": "ухудшиться о производительности",
+        "example": "Performance degrades under heavy load — we need to investigate.",
+        "sentenceTranslation": "Производительность ухудшается при высокой нагрузке — нужно разобраться.",
+        "gapExample": "Performance ___ under heavy load — we need to investigate.",
+        "answer": "degrades"
+      },
+      {
+        "id": 23,
+        "word": "fluctuate",
+        "translation": "колебаться, быть нестабильным",
+        "example": "Response times are fluctuating — something is inconsistent.",
+        "sentenceTranslation": "Время ответа колеблется — что-то работает нестабильно.",
+        "gapExample": "Response times are ___ — something is inconsistent.",
+        "answer": "fluctuating"
+      },
+      {
+        "id": 24,
+        "word": "recover",
+        "translation": "восстановиться после сбоя или деградации",
+        "example": "The service recovered automatically after the circuit breaker reset.",
+        "sentenceTranslation": "Сервис автоматически восстановился после сброса circuit breaker.",
+        "gapExample": "The service ___ automatically after the circuit breaker reset.",
+        "answer": "recovered"
+      }
+    ]
+  },
+  {
+    "topic": "Standup & IT Communication",
+    "words": [
+      {
+        "id": 25,
         "word": "kick off",
         "translation": "начинать / дать старт",
         "example": "Let's kick off our standup meeting.",
@@ -12,7 +233,7 @@ window.VOCABULARY_DATA = [
         "answer": "kick off"
       },
       {
-        "id": 2,
+        "id": 26,
         "word": "run into",
         "translation": "столкнуться с (проблемой)",
         "example": "I've run into some issues with the database migration.",
@@ -21,7 +242,7 @@ window.VOCABULARY_DATA = [
         "answer": "run into"
       },
       {
-        "id": 3,
+        "id": 27,
         "word": "dig deeper",
         "translation": "копнуть глубже / разобраться подробнее",
         "example": "I think I need to dig deeper into our service logs.",
@@ -30,7 +251,7 @@ window.VOCABULARY_DATA = [
         "answer": "dig deeper"
       },
       {
-        "id": 4,
+        "id": 28,
         "word": "further",
         "translation": "дальше / подробнее / глубже",
         "example": "I might need to discuss it further with the team.",
@@ -39,7 +260,7 @@ window.VOCABULARY_DATA = [
         "answer": "further"
       },
       {
-        "id": 5,
+        "id": 29,
         "word": "clarification",
         "translation": "уточнение / разъяснение",
         "example": "I've been waiting for some clarification on the requirements.",
@@ -48,7 +269,7 @@ window.VOCABULARY_DATA = [
         "answer": "clarification"
       },
       {
-        "id": 6,
+        "id": 30,
         "word": "swamped",
         "translation": "завален (делами / задачами)",
         "example": "I've been swamped with meetings all morning.",
@@ -57,7 +278,7 @@ window.VOCABULARY_DATA = [
         "answer": "swamped"
       },
       {
-        "id": 7,
+        "id": 31,
         "word": "tricky",
         "translation": "сложный / коварный / непростой",
         "example": "This edge case turned out to be quite tricky.",
@@ -66,7 +287,7 @@ window.VOCABULARY_DATA = [
         "answer": "tricky"
       },
       {
-        "id": 8,
+        "id": 32,
         "word": "mention",
         "translation": "упомянуть / сказать",
         "example": "I wanted to mention that the deploy is scheduled for tonight.",
@@ -75,7 +296,7 @@ window.VOCABULARY_DATA = [
         "answer": "mention"
       },
       {
-        "id": 9,
+        "id": 33,
         "word": "suppose",
         "translation": "предполагать / думать",
         "example": "I suppose we should discuss this in a separate call.",
@@ -84,7 +305,7 @@ window.VOCABULARY_DATA = [
         "answer": "suppose"
       },
       {
-        "id": 10,
+        "id": 34,
         "word": "bring up",
         "translation": "поднять тему / упомянуть",
         "example": "I wanted to bring up a concern about the API performance.",
@@ -93,7 +314,7 @@ window.VOCABULARY_DATA = [
         "answer": "bring up"
       },
       {
-        "id": 11,
+        "id": 35,
         "word": "implement",
         "translation": "реализовывать / внедрять",
         "example": "Yesterday I was implementing the new authentication flow.",
@@ -102,7 +323,7 @@ window.VOCABULARY_DATA = [
         "answer": "implement"
       },
       {
-        "id": 12,
+        "id": 36,
         "word": "properly",
         "translation": "правильно / корректно / должным образом",
         "example": "The service doesn't handle errors properly yet.",
@@ -111,7 +332,7 @@ window.VOCABULARY_DATA = [
         "answer": "properly"
       },
       {
-        "id": 13,
+        "id": 37,
         "word": "causing",
         "translation": "вызывающий / приводящий к",
         "example": "It's causing inconsistencies in the UI.",
@@ -120,7 +341,7 @@ window.VOCABULARY_DATA = [
         "answer": "causing"
       },
       {
-        "id": 14,
+        "id": 38,
         "word": "dealing with",
         "translation": "справляться с / иметь дело с",
         "example": "I'm currently dealing with a race condition in the payment service.",
@@ -129,7 +350,7 @@ window.VOCABULARY_DATA = [
         "answer": "dealing with"
       },
       {
-        "id": 15,
+        "id": 39,
         "word": "concerning",
         "translation": "тревожный / вызывающий беспокойство",
         "example": "That latency spike sounds concerning.",
@@ -138,7 +359,7 @@ window.VOCABULARY_DATA = [
         "answer": "concerning"
       },
       {
-        "id": 16,
+        "id": 40,
         "word": "leads",
         "translation": "зацепки / наводки",
         "example": "Do you have any leads on the cause of the bug?",
@@ -147,7 +368,7 @@ window.VOCABULARY_DATA = [
         "answer": "leads"
       },
       {
-        "id": 17,
+        "id": 41,
         "word": "suspect",
         "translation": "подозревать / предполагать",
         "example": "I suspect it's a caching issue on the backend.",
@@ -156,7 +377,7 @@ window.VOCABULARY_DATA = [
         "answer": "suspect"
       },
       {
-        "id": 18,
+        "id": 42,
         "word": "particularly",
         "translation": "особенно / в частности",
         "example": "The performance is bad, particularly under high load.",
@@ -165,7 +386,7 @@ window.VOCABULARY_DATA = [
         "answer": "particularly"
       },
       {
-        "id": 19,
+        "id": 43,
         "word": "rapidly",
         "translation": "быстро / стремительно",
         "example": "The number of errors is growing rapidly.",
@@ -174,7 +395,7 @@ window.VOCABULARY_DATA = [
         "answer": "rapidly"
       },
       {
-        "id": 20,
+        "id": 44,
         "word": "blocker",
         "translation": "блокер / препятствие",
         "example": "I have a blocker — I'm waiting for access to the staging environment.",
@@ -183,7 +404,7 @@ window.VOCABULARY_DATA = [
         "answer": "blocker"
       },
       {
-        "id": 21,
+        "id": 45,
         "word": "unblock",
         "translation": "разблокировать / снять блокер",
         "example": "Can someone help unblock me on this ticket?",
@@ -192,7 +413,7 @@ window.VOCABULARY_DATA = [
         "answer": "unblock"
       },
       {
-        "id": 22,
+        "id": 46,
         "word": "on track",
         "translation": "по плану / в графике",
         "example": "The feature is on track for the Friday release.",
@@ -201,7 +422,7 @@ window.VOCABULARY_DATA = [
         "answer": "on track"
       },
       {
-        "id": 23,
+        "id": 47,
         "word": "behind schedule",
         "translation": "отстаём от графика / с опозданием",
         "example": "We're a bit behind schedule due to the unexpected bug.",
@@ -210,7 +431,7 @@ window.VOCABULARY_DATA = [
         "answer": "behind schedule"
       },
       {
-        "id": 24,
+        "id": 48,
         "word": "wrap up",
         "translation": "завершать / подытожить",
         "example": "I should wrap up the refactoring by end of day.",
@@ -219,7 +440,7 @@ window.VOCABULARY_DATA = [
         "answer": "wrap up"
       },
       {
-        "id": 25,
+        "id": 49,
         "word": "pick up",
         "translation": "взять в работу / подхватить",
         "example": "I'm going to pick up the next ticket from the backlog.",
@@ -228,7 +449,7 @@ window.VOCABULARY_DATA = [
         "answer": "pick up"
       },
       {
-        "id": 26,
+        "id": 50,
         "word": "follow up",
         "translation": "вернуться к вопросу / проследить",
         "example": "I'll follow up with the DevOps team about the deployment issue.",
@@ -237,7 +458,7 @@ window.VOCABULARY_DATA = [
         "answer": "follow up"
       },
       {
-        "id": 27,
+        "id": 51,
         "word": "reach out",
         "translation": "обратиться / связаться",
         "example": "I'll reach out to the backend team for help.",
@@ -246,7 +467,7 @@ window.VOCABULARY_DATA = [
         "answer": "reach out"
       },
       {
-        "id": 28,
+        "id": 52,
         "word": "sync up",
         "translation": "синхронизироваться / созвониться",
         "example": "Let's sync up after the standup to discuss the architecture.",
@@ -255,7 +476,7 @@ window.VOCABULARY_DATA = [
         "answer": "sync up"
       },
       {
-        "id": 29,
+        "id": 53,
         "word": "estimate",
         "translation": "оценка (времени) / оценивать",
         "example": "My estimate for this task is two days.",
@@ -264,7 +485,7 @@ window.VOCABULARY_DATA = [
         "answer": "estimate"
       },
       {
-        "id": 30,
+        "id": 54,
         "word": "spike",
         "translation": "исследовательская задача / спайк",
         "example": "I did a spike on the new payment gateway integration.",
@@ -273,7 +494,7 @@ window.VOCABULARY_DATA = [
         "answer": "spike"
       },
       {
-        "id": 31,
+        "id": 55,
         "word": "pending",
         "translation": "ожидает / в ожидании",
         "example": "The PR is pending review from the senior dev.",
@@ -282,7 +503,7 @@ window.VOCABULARY_DATA = [
         "answer": "pending"
       },
       {
-        "id": 32,
+        "id": 56,
         "word": "hand off",
         "translation": "передать (задачу) / передача",
         "example": "I'll hand off this ticket to Alex since he knows the module better.",
@@ -296,7 +517,7 @@ window.VOCABULARY_DATA = [
     "topic": "Backend & APIs",
     "words": [
       {
-        "id": 33,
+        "id": 57,
         "word": "expose",
         "translation": "открывать наружу (endpoint, port)",
         "example": "We expose a REST endpoint at /users.",
@@ -305,7 +526,7 @@ window.VOCABULARY_DATA = [
         "answer": "expose"
       },
       {
-        "id": 34,
+        "id": 58,
         "word": "consume",
         "translation": "потреблять / вызывать (API, service)",
         "example": "The frontend consumes our API.",
@@ -314,7 +535,7 @@ window.VOCABULARY_DATA = [
         "answer": "consumes"
       },
       {
-        "id": 35,
+        "id": 59,
         "word": "handle",
         "translation": "обрабатывать (request, error, event)",
         "example": "This middleware handles authentication.",
@@ -323,7 +544,7 @@ window.VOCABULARY_DATA = [
         "answer": "handles"
       },
       {
-        "id": 36,
+        "id": 60,
         "word": "parse",
         "translation": "разобрать / распарсить",
         "example": "We parse the request body before validation.",
@@ -332,7 +553,7 @@ window.VOCABULARY_DATA = [
         "answer": "parse"
       },
       {
-        "id": 37,
+        "id": 61,
         "word": "serialize / deserialize",
         "translation": "сериализовать / десериализовать",
         "example": "The response is serialized to JSON.",
@@ -341,7 +562,7 @@ window.VOCABULARY_DATA = [
         "answer": "serialized"
       },
       {
-        "id": 38,
+        "id": 62,
         "word": "paginate",
         "translation": "разбивать на страницы",
         "example": "The endpoint paginates results using limit and offset.",
@@ -350,7 +571,7 @@ window.VOCABULARY_DATA = [
         "answer": "paginates"
       },
       {
-        "id": 39,
+        "id": 63,
         "word": "throttle / rate-limit",
         "translation": "ограничивать количество запросов",
         "example": "We throttle requests to 100 per minute.",
@@ -359,7 +580,7 @@ window.VOCABULARY_DATA = [
         "answer": "throttle / rate-limit"
       },
       {
-        "id": 40,
+        "id": 64,
         "word": "authenticate / authorize",
         "translation": "аутентифицировать vs авторизовать",
         "example": "First we authenticate, then authorize.",
@@ -368,7 +589,7 @@ window.VOCABULARY_DATA = [
         "answer": "authenticate / authorize"
       },
       {
-        "id": 41,
+        "id": 65,
         "word": "validate",
         "translation": "проверять (данные, схему, параметры)",
         "example": "Always validate the payload before hitting the DB.",
@@ -377,7 +598,7 @@ window.VOCABULARY_DATA = [
         "answer": "validate"
       },
       {
-        "id": 42,
+        "id": 66,
         "word": "propagate",
         "translation": "пробрасывать (error, event)",
         "example": "The error propagates up the middleware chain.",
@@ -386,7 +607,7 @@ window.VOCABULARY_DATA = [
         "answer": "propagates"
       },
       {
-        "id": 43,
+        "id": 67,
         "word": "intercept",
         "translation": "перехватывать (request, response)",
         "example": "We intercept every request to log the trace ID.",
@@ -395,7 +616,7 @@ window.VOCABULARY_DATA = [
         "answer": "intercept"
       },
       {
-        "id": 44,
+        "id": 68,
         "word": "offload",
         "translation": "передавать задачу (в очередь, воркер)",
         "example": "We offload email sending to a background queue.",
@@ -404,7 +625,7 @@ window.VOCABULARY_DATA = [
         "answer": "offload"
       },
       {
-        "id": 45,
+        "id": 69,
         "word": "payload",
         "translation": "тело запроса / передаваемые данные",
         "example": "The payload includes user ID and preferences.",
@@ -413,7 +634,7 @@ window.VOCABULARY_DATA = [
         "answer": "payload"
       },
       {
-        "id": 46,
+        "id": 70,
         "word": "middleware",
         "translation": "промежуточный обработчик",
         "example": "Auth middleware runs before the route handler.",
@@ -422,7 +643,7 @@ window.VOCABULARY_DATA = [
         "answer": "middleware"
       },
       {
-        "id": 47,
+        "id": 71,
         "word": "idempotency",
         "translation": "идемпотентность",
         "example": "Use PUT for idempotency — it's safe to retry.",
@@ -431,7 +652,7 @@ window.VOCABULARY_DATA = [
         "answer": "idempotency"
       },
       {
-        "id": 48,
+        "id": 72,
         "word": "latency",
         "translation": "задержка (время между запросом и ответом)",
         "example": "P99 latency is under 200ms.",
@@ -440,7 +661,7 @@ window.VOCABULARY_DATA = [
         "answer": "latency"
       },
       {
-        "id": 49,
+        "id": 73,
         "word": "throughput",
         "translation": "пропускная способность",
         "example": "Higher throughput means the system handles more requests per second.",
@@ -449,7 +670,7 @@ window.VOCABULARY_DATA = [
         "answer": "throughput"
       },
       {
-        "id": 50,
+        "id": 74,
         "word": "contract",
         "translation": "API-контракт / соглашение об интерфейсе",
         "example": "We shouldn't break the API contract without versioning.",
@@ -458,7 +679,7 @@ window.VOCABULARY_DATA = [
         "answer": "contract"
       },
       {
-        "id": 51,
+        "id": 75,
         "word": "backward compatibility",
         "translation": "обратная совместимость",
         "example": "This change breaks backward compatibility.",
@@ -467,7 +688,7 @@ window.VOCABULARY_DATA = [
         "answer": "backward compatibility"
       },
       {
-        "id": 52,
+        "id": 76,
         "word": "bottleneck",
         "translation": "узкое место",
         "example": "The DB query is the bottleneck here.",
@@ -476,7 +697,7 @@ window.VOCABULARY_DATA = [
         "answer": "bottleneck"
       },
       {
-        "id": 53,
+        "id": 77,
         "word": "race condition",
         "translation": "состояние гонки",
         "example": "Two requests hit the same record — classic race condition.",
@@ -485,7 +706,7 @@ window.VOCABULARY_DATA = [
         "answer": "race condition"
       },
       {
-        "id": 54,
+        "id": 78,
         "word": "retry logic",
         "translation": "логика повторных попыток",
         "example": "We added retry logic with exponential backoff.",
@@ -494,7 +715,7 @@ window.VOCABULARY_DATA = [
         "answer": "retry logic"
       },
       {
-        "id": 55,
+        "id": 79,
         "word": "graceful degradation",
         "translation": "корректная деградация при сбое",
         "example": "If the cache is down, we fall back — graceful degradation.",
@@ -503,7 +724,7 @@ window.VOCABULARY_DATA = [
         "answer": "graceful degradation"
       },
       {
-        "id": 56,
+        "id": 80,
         "word": "circuit breaker",
         "translation": "паттерн остановки вызовов к упавшему сервису",
         "example": "The circuit breaker opens after 5 consecutive failures.",
@@ -512,7 +733,7 @@ window.VOCABULARY_DATA = [
         "answer": "circuit breaker"
       },
       {
-        "id": 57,
+        "id": 81,
         "word": "under the hood",
         "translation": "внутри / как устроено на самом деле",
         "example": "Under the hood, it uses a connection pool.",
@@ -521,7 +742,7 @@ window.VOCABULARY_DATA = [
         "answer": "under the hood"
       },
       {
-        "id": 58,
+        "id": 82,
         "word": "downstream / upstream",
         "translation": "сервисы ниже/выше по цепочке",
         "example": "The failure in the downstream service caused a timeout.",
@@ -530,7 +751,7 @@ window.VOCABULARY_DATA = [
         "answer": "downstream / upstream"
       },
       {
-        "id": 59,
+        "id": 83,
         "word": "happy path",
         "translation": "успешный сценарий без ошибок",
         "example": "The happy path works; edge cases are the issue.",
@@ -539,7 +760,7 @@ window.VOCABULARY_DATA = [
         "answer": "happy path"
       },
       {
-        "id": 60,
+        "id": 84,
         "word": "edge case",
         "translation": "граничный / нетипичный случай",
         "example": "What if the list is empty? That's an edge case.",
@@ -548,7 +769,7 @@ window.VOCABULARY_DATA = [
         "answer": "edge case"
       },
       {
-        "id": 61,
+        "id": 85,
         "word": "fall back to",
         "translation": "переключиться на запасной вариант",
         "example": "If Redis is down, we fall back to the database.",
@@ -557,7 +778,7 @@ window.VOCABULARY_DATA = [
         "answer": "fall back to"
       },
       {
-        "id": 62,
+        "id": 86,
         "word": "tie into",
         "translation": "интегрироваться с (системой)",
         "example": "This service ties into the notification system.",
@@ -566,7 +787,7 @@ window.VOCABULARY_DATA = [
         "answer": "ties into"
       },
       {
-        "id": 63,
+        "id": 87,
         "word": "spin up",
         "translation": "запустить / поднять (сервер, контейнер)",
         "example": "We spin up a new instance during peak load.",
@@ -580,7 +801,7 @@ window.VOCABULARY_DATA = [
     "topic": "Standup & meetings",
     "words": [
       {
-        "id": 64,
+        "id": 88,
         "word": "to be in progress",
         "translation": "в работе / делаю прямо сейчас",
         "example": "The auth refactor is still in progress.",
@@ -589,7 +810,7 @@ window.VOCABULARY_DATA = [
         "answer": "in progress"
       },
       {
-        "id": 65,
+        "id": 89,
         "word": "to pick up a ticket",
         "translation": "взять задачу в работу",
         "example": "I picked up the caching ticket this morning.",
@@ -598,7 +819,7 @@ window.VOCABULARY_DATA = [
         "answer": "picked up"
       },
       {
-        "id": 66,
+        "id": 90,
         "word": "to wrap up",
         "translation": "заканчивать, завершать",
         "example": "I'm wrapping up the API integration today.",
@@ -607,7 +828,7 @@ window.VOCABULARY_DATA = [
         "answer": "wrapping up"
       },
       {
-        "id": 67,
+        "id": 91,
         "word": "to push to review",
         "translation": "отправить на ревью",
         "example": "I pushed the PR to review — waiting for feedback.",
@@ -616,7 +837,7 @@ window.VOCABULARY_DATA = [
         "answer": "pushed"
       },
       {
-        "id": 68,
+        "id": 92,
         "word": "to address comments",
         "translation": "обработать, исправить по комментариям",
         "example": "I addressed review comments, should be mergeable now.",
@@ -625,7 +846,7 @@ window.VOCABULARY_DATA = [
         "answer": "addressed"
       },
       {
-        "id": 69,
+        "id": 93,
         "word": "to land",
         "translation": "влить / смержить изменение (a PR/change)",
         "example": "The fix landed in main yesterday.",
@@ -634,7 +855,7 @@ window.VOCABULARY_DATA = [
         "answer": "landed"
       },
       {
-        "id": 70,
+        "id": 94,
         "word": "to roll out",
         "translation": "выкатить / деплоить постепенно",
         "example": "We're rolling out the endpoint to 10% of users.",
@@ -643,7 +864,7 @@ window.VOCABULARY_DATA = [
         "answer": "rolling out"
       },
       {
-        "id": 71,
+        "id": 95,
         "word": "to circle back",
         "translation": "вернуться к теме позже",
         "example": "Let's circle back to this after the standup.",
@@ -652,7 +873,7 @@ window.VOCABULARY_DATA = [
         "answer": "circle back"
       },
       {
-        "id": 72,
+        "id": 96,
         "word": "on track",
         "translation": "всё идёт по плану",
         "example": "The migration is on track for Friday.",
@@ -661,7 +882,7 @@ window.VOCABULARY_DATA = [
         "answer": "on track"
       },
       {
-        "id": 73,
+        "id": 97,
         "word": "to spike on",
         "translation": "провести быстрое исследование",
         "example": "I'll spike on the Kafka integration today.",
@@ -670,7 +891,7 @@ window.VOCABULARY_DATA = [
         "answer": "spike on"
       },
       {
-        "id": 74,
+        "id": 98,
         "word": "blocker",
         "translation": "то, что мешает двигаться дальше",
         "example": "I have a blocker — waiting on access to prod logs.",
@@ -679,7 +900,7 @@ window.VOCABULARY_DATA = [
         "answer": "blocker"
       },
       {
-        "id": 75,
+        "id": 99,
         "word": "to be blocked on",
         "translation": "быть заблокированным чем-то",
         "example": "I'm blocked on the design decision from last week.",
@@ -688,7 +909,7 @@ window.VOCABULARY_DATA = [
         "answer": "blocked on"
       },
       {
-        "id": 76,
+        "id": 100,
         "word": "to unblock",
         "translation": "разблокировать / помочь с блокером",
         "example": "Can someone unblock me on the DB permissions?",
@@ -697,7 +918,7 @@ window.VOCABULARY_DATA = [
         "answer": "unblock"
       },
       {
-        "id": 77,
+        "id": 101,
         "word": "dependency",
         "translation": "зависимость от другой задачи / команды",
         "example": "This ticket has a dependency on the infra team.",
@@ -706,7 +927,7 @@ window.VOCABULARY_DATA = [
         "answer": "dependency"
       },
       {
-        "id": 78,
+        "id": 102,
         "word": "to get stuck",
         "translation": "застрять, не продвигаться",
         "example": "I got stuck on the serialization issue.",
@@ -715,7 +936,7 @@ window.VOCABULARY_DATA = [
         "answer": "got stuck"
       },
       {
-        "id": 79,
+        "id": 103,
         "word": "to flag",
         "translation": "обратить внимание / поднять проблему",
         "example": "I want to flag a potential issue with the migration.",
@@ -724,7 +945,7 @@ window.VOCABULARY_DATA = [
         "answer": "flag"
       },
       {
-        "id": 80,
+        "id": 104,
         "word": "to raise a concern",
         "translation": "высказать беспокойство / сомнение",
         "example": "I want to raise a concern about the deadline.",
@@ -733,7 +954,7 @@ window.VOCABULARY_DATA = [
         "answer": "raise a concern"
       },
       {
-        "id": 81,
+        "id": 105,
         "word": "to sync with",
         "translation": "скоординироваться / созвониться",
         "example": "I'll sync with Anna on the schema design.",
@@ -742,7 +963,7 @@ window.VOCABULARY_DATA = [
         "answer": "sync with"
       },
       {
-        "id": 82,
+        "id": 106,
         "word": "to pair on",
         "translation": "работать вместе над задачей",
         "example": "Can we pair on this? It's getting complex.",
@@ -751,7 +972,7 @@ window.VOCABULARY_DATA = [
         "answer": "pair on"
       },
       {
-        "id": 83,
+        "id": 107,
         "word": "to hand off",
         "translation": "передать задачу другому",
         "example": "I'm handing off the ticket to Mike while I'm on leave.",
@@ -760,7 +981,7 @@ window.VOCABULARY_DATA = [
         "answer": "handing off"
       },
       {
-        "id": 84,
+        "id": 108,
         "word": "to loop in",
         "translation": "включить кого-то в обсуждение",
         "example": "Let's loop in the security team before we deploy.",
@@ -769,7 +990,7 @@ window.VOCABULARY_DATA = [
         "answer": "loop in"
       },
       {
-        "id": 85,
+        "id": 109,
         "word": "to take offline",
         "translation": "обсудить отдельно, не на звонке",
         "example": "Good question — let's take that offline.",
@@ -778,7 +999,7 @@ window.VOCABULARY_DATA = [
         "answer": "offline"
       },
       {
-        "id": 86,
+        "id": 110,
         "word": "heads-up",
         "translation": "предварительное уведомление",
         "example": "Just a heads-up — I'll be OOO on Thursday.",
@@ -787,7 +1008,7 @@ window.VOCABULARY_DATA = [
         "answer": "heads-up"
       },
       {
-        "id": 87,
+        "id": 111,
         "word": "OOO (out of office)",
         "translation": "вне офиса / недоступен",
         "example": "I'm OOO Monday, back Tuesday.",
@@ -796,7 +1017,7 @@ window.VOCABULARY_DATA = [
         "answer": "OOO"
       },
       {
-        "id": 88,
+        "id": 112,
         "word": "roughly / approximately",
         "translation": "примерно (без точных обязательств)",
         "example": "Roughly two days, depending on the review.",
@@ -805,7 +1026,7 @@ window.VOCABULARY_DATA = [
         "answer": "roughly / approximately"
       },
       {
-        "id": 89,
+        "id": 113,
         "word": "it depends on",
         "translation": "зависит от — для оценки сроков",
         "example": "It depends on how complex the edge cases are.",
@@ -814,7 +1035,7 @@ window.VOCABULARY_DATA = [
         "answer": "it depends on"
       },
       {
-        "id": 90,
+        "id": 114,
         "word": "I'll need to look into it",
         "translation": "нужно разобраться перед ответом",
         "example": "I'll need to look into it before giving an estimate.",
@@ -823,7 +1044,7 @@ window.VOCABULARY_DATA = [
         "answer": "look into it"
       },
       {
-        "id": 91,
+        "id": 115,
         "word": "as far as I know",
         "translation": "насколько мне известно",
         "example": "As far as I know, the staging deploy is fine.",
@@ -832,7 +1053,7 @@ window.VOCABULARY_DATA = [
         "answer": "as far as I know"
       },
       {
-        "id": 92,
+        "id": 116,
         "word": "to give a rough estimate",
         "translation": "дать примерную оценку",
         "example": "I can give a rough estimate — maybe 3–5 days.",
@@ -841,7 +1062,7 @@ window.VOCABULARY_DATA = [
         "answer": "give a rough estimate"
       },
       {
-        "id": 93,
+        "id": 117,
         "word": "might / could",
         "translation": "снижает категоричность высказывания",
         "example": "This might take longer than expected.",
