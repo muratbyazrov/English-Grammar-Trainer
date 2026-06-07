@@ -96,7 +96,7 @@ for (const file of files) {
       ? w.gapExample.trim()
       : buildGapExample(w.example || '', w.word || '', w.answer || '');
 
-    return {
+    const entry = {
       id:                 globalId++,
       word:               (w.word               || '').trim(),
       translation:        (w.translation        || '').trim(),
@@ -105,6 +105,8 @@ for (const file of files) {
       gapExample,
       answer,
     };
+    if (w.infinitive) entry.infinitive = w.infinitive.trim();
+    return entry;
   });
 
   // Merge into an existing topic with the same name (handles multiple files per topic)

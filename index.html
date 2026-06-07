@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=3" />
   </head>
   <body>
     <main class="app">
@@ -14,7 +14,11 @@
 
       <nav class="mode-tabs">
         <button id="tab-grammar" class="mode-tab mode-tab--active" type="button">Грамматика</button>
-        <button id="tab-vocab" class="mode-tab" type="button">Словарь</button>
+        <div class="vocab-tab-group" id="vocab-tab-group">
+          <button id="tab-vocab" class="mode-tab vocab-tab-main" type="button">Словарь</button>
+          <button id="vocab-mode-btn-sentences" class="vocab-mode-btn" type="button">предл.</button>
+          <button id="vocab-mode-btn-words" class="vocab-mode-btn" type="button">слова</button>
+        </div>
       </nav>
 
       <section id="controls-grammar" class="controls">
@@ -38,14 +42,19 @@
       </section>
 
       <section id="controls-vocab" class="controls" hidden>
-        <label for="vocab-topic">Тема</label>
-        <select id="vocab-topic"></select>
-        <label for="vocab-session-size">Слов</label>
-        <select id="vocab-session-size">
-          <option value="20" selected>20</option>
-          <option value="30">30</option>
-          <option value="all">Все</option>
-        </select>
+        <span class="control-pair">
+          <label for="vocab-topic">Тема</label>
+          <select id="vocab-topic"></select>
+        </span>
+        <span class="control-pair">
+          <label for="vocab-session-size">Слов</label>
+          <select id="vocab-session-size">
+            <option value="20" selected>20</option>
+            <option value="30">30</option>
+            <option value="all">Все</option>
+          </select>
+        </span>
+
         <label class="toggle-option" for="auto-speak-correct-vocab">
           <input id="auto-speak-correct-vocab" type="checkbox" checked />
           Озвучивать после верного ответа

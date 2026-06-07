@@ -1,14 +1,16 @@
 {
-  "topic": "Backend & APIs",
+  "topic": "Бэкенд и API",
   "words": [
     {
       "word": "expose",
+      "infinitive": "to expose",
       "translation": "открывать наружу (endpoint, port)",
       "example": "We expose a REST endpoint at /users.",
       "sentenceTranslation": "Мы открываем наружу REST-эндпоинт по адресу /users."
     },
     {
       "word": "consume",
+      "infinitive": "to consume",
       "translation": "потреблять / вызывать (API, service)",
       "example": "The frontend consumes our API.",
       "sentenceTranslation": "Фронтенд использует / вызывает наш API.",
@@ -16,6 +18,7 @@
     },
     {
       "word": "handle",
+      "infinitive": "to handle",
       "translation": "обрабатывать (request, error, event)",
       "example": "This middleware handles authentication.",
       "sentenceTranslation": "Этот middleware обрабатывает аутентификацию.",
@@ -23,12 +26,14 @@
     },
     {
       "word": "parse",
+      "infinitive": "to parse",
       "translation": "разобрать / распарсить",
       "example": "We parse the request body before validation.",
       "sentenceTranslation": "Мы парсим / разбираем тело запроса перед валидацией."
     },
     {
       "word": "serialize / deserialize",
+      "infinitive": "to serialize / to deserialize",
       "translation": "сериализовать / десериализовать",
       "example": "The response is serialized to JSON.",
       "sentenceTranslation": "Ответ сериализуется в JSON.",
@@ -36,6 +41,7 @@
     },
     {
       "word": "paginate",
+      "infinitive": "to paginate",
       "translation": "разбивать на страницы",
       "example": "The endpoint paginates results using limit and offset.",
       "sentenceTranslation": "Эндпоинт разбивает результаты на страницы с помощью limit и offset.",
@@ -43,24 +49,28 @@
     },
     {
       "word": "throttle / rate-limit",
+      "infinitive": "to throttle / to rate-limit",
       "translation": "ограничивать количество запросов",
       "example": "We throttle requests to 100 per minute.",
       "sentenceTranslation": "Мы ограничиваем количество запросов до 100 в минуту."
     },
     {
       "word": "authenticate / authorize",
+      "infinitive": "to authenticate / to authorize",
       "translation": "аутентифицировать vs авторизовать",
       "example": "First we authenticate, then authorize.",
       "sentenceTranslation": "Сначала мы аутентифицируем, затем авторизуем."
     },
     {
       "word": "validate",
+      "infinitive": "to validate",
       "translation": "проверять (данные, схему, параметры)",
       "example": "Always validate the payload before hitting the DB.",
       "sentenceTranslation": "Всегда валидируй / проверяй payload перед обращением к базе данных."
     },
     {
       "word": "propagate",
+      "infinitive": "to propagate",
       "translation": "пробрасывать (error, event)",
       "example": "The error propagates up the middleware chain.",
       "sentenceTranslation": "Ошибка пробрасывается вверх по цепочке middleware.",
@@ -68,12 +78,14 @@
     },
     {
       "word": "intercept",
+      "infinitive": "to intercept",
       "translation": "перехватывать (request, response)",
       "example": "We intercept every request to log the trace ID.",
       "sentenceTranslation": "Мы перехватываем каждый запрос, чтобы записать trace ID в лог."
     },
     {
       "word": "offload",
+      "infinitive": "to offload",
       "translation": "передавать задачу (в очередь, воркер)",
       "example": "We offload email sending to a background queue.",
       "sentenceTranslation": "Мы передаём задачу отправки писем в фоновую очередь."
@@ -176,12 +188,14 @@
     },
     {
       "word": "fall back to",
+      "infinitive": "to fall back to",
       "translation": "переключиться на запасной вариант",
       "example": "If Redis is down, we fall back to the database.",
       "sentenceTranslation": "Если Redis недоступен, мы переключаемся на базу данных."
     },
     {
       "word": "tie into",
+      "infinitive": "to tie into",
       "translation": "интегрироваться с (системой)",
       "example": "This service ties into the notification system.",
       "sentenceTranslation": "Этот сервис интегрируется с системой уведомлений.",
@@ -189,6 +203,7 @@
     },
     {
       "word": "spin up",
+      "infinitive": "to spin up",
       "translation": "запустить / поднять (сервер, контейнер)",
       "example": "We spin up a new instance during peak load.",
       "sentenceTranslation": "Мы запускаем / поднимаем новый инстанс во время пиковой нагрузки."

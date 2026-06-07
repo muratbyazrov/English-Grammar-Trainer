@@ -66,6 +66,17 @@ body {
   font-weight: 600;
 }
 
+.control-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+#vocab-topic {
+  width: 200px;
+}
+
 .course-progress {
   color: var(--muted);
 }
@@ -277,6 +288,48 @@ button:hover {
 .mode-tab--active {
   background: var(--accent);
   color: #fff;
+  border-color: var(--accent);
+}
+
+.vocab-tab-group {
+  display: inline-flex;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.vocab-tab-group .vocab-tab-main {
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid var(--line);
+}
+
+.vocab-tab-group.vocab-active .vocab-tab-main {
+  border-color: var(--accent);
+}
+
+.vocab-mode-btn {
+  padding: 5px 10px;
+  border: none;
+  border-left: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.82em;
+  color: var(--muted);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vocab-mode-btn:first-of-type {
+  border-left: none;
+}
+
+.vocab-mode-btn--active {
+  background: color-mix(in srgb, var(--accent) 15%, white);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.vocab-tab-group.vocab-active {
   border-color: var(--accent);
 }
 

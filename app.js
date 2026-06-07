@@ -77,6 +77,9 @@
     vocabSessionSize: document.getElementById('vocab-session-size'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
+    vocabTabGroup: document.getElementById('vocab-tab-group'),
+    vocabModeBtnSentences: document.getElementById('vocab-mode-btn-sentences'),
+    vocabModeBtnWords: document.getElementById('vocab-mode-btn-words'),
     optionsSection: document.getElementById('options-section'),
     questionMeta: document.getElementById('question-meta'),
     vocabModeLabel: document.getElementById('vocab-mode-label'),
@@ -177,7 +180,9 @@
     if (userNorm === targetNorm) return true;
 
     const comparable = (s) => String(s || "").replace(/[-\s]+/g, " ").trim();
-    if (comparable(userNorm) === comparable(targetNorm)) return true;
+    const comparableUser = comparable(userNorm);
+    const comparableTarget = comparable(targetNorm);
+    if (comparableUser === comparableTarget) return true;
 
     // Если ответ содержит альтернативы через "/", принимаем любую из них.
     const alternatives = targetNorm
@@ -185,8 +190,12 @@
       .map((part) => part.trim())
       .filter(Boolean);
     if (alternatives.length > 1) {
-      return alternatives.some((part) => userNorm === part || comparable(userNorm) === comparable(part));
+      return alternatives.some((part) => userNorm === part || comparableUser === comparable(part));
     }
+
+    const isMultiWordTarget = comparableTarget.split(" ").filter(Boolean).length > 1;
+    const isSingleWordUser = comparableUser.split(" ").filter(Boolean).length === 1;
+    if (isMultiWordTarget && isSingleWordUser) return false;
 
     return false;
   }
@@ -266,6 +275,7 @@
         vocabulary: {
           topic: refs.vocabTopic.value,
           sessionSize: refs.vocabSessionSize.value,
+          exerciseMode: _vocabExerciseMode,
           autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
           sessionIds: vocabState.session.map((item) => item.id),
           idx: vocabState.idx,
@@ -686,6 +696,9 @@
     }
 
     refs.autoSpeakCorrectVocab.checked = saved.autoSpeakCorrect !== false;
+    if (saved.exerciseMode === 'words' || saved.exerciseMode === 'sentences') {
+      setVocabExerciseMode(saved.exerciseMode);
+    }
 
     const ids = Array.isArray(saved.sessionIds) ? saved.sessionIds : [];
     const byId = vocabById();
@@ -695,6 +708,18 @@
     vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
     vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
     return Boolean(vocabState.session.length);
+  }
+
+  let _vocabExerciseMode = 'sentences';
+
+  function vocabExerciseMode() {
+    return _vocabExerciseMode;
+  }
+
+  function setVocabExerciseMode(mode) {
+    _vocabExerciseMode = mode;
+    refs.vocabModeBtnSentences.classList.toggle('vocab-mode-btn--active', mode === 'sentences');
+    refs.vocabModeBtnWords.classList.toggle('vocab-mode-btn--active', mode === 'words');
   }
 
   function renderVocab() {
@@ -715,11 +740,19 @@
     refs.correctCount.textContent = String(vocabState.correct);
     refs.wrongCount.textContent = String(vocabState.wrong);
 
-    renderQuestionText(w.gapExample || w.example);
-    setSelectedSentenceForSpeech(w.example || w.gapExample || '');
-
-    refs.questionTranslation.classList.add('vocab-hint');
-    void showVocabSentenceTranslation(w);
+    if (vocabExerciseMode() === 'words') {
+      refs.vocabModeLabel.textContent = 'Переведите на английский';
+      renderQuestionText(w.translation);
+      setSelectedSentenceForSpeech(w.infinitive || w.word);
+      refs.questionTranslation.classList.remove('vocab-hint');
+      setQuestionTranslation('');
+    } else {
+      refs.vocabModeLabel.textContent = 'Введите пропущенное слово';
+      renderQuestionText(w.gapExample || w.example);
+      setSelectedSentenceForSpeech(w.example || w.gapExample || '');
+      refs.questionTranslation.classList.add('vocab-hint');
+      void showVocabSentenceTranslation(w);
+    }
 
     refs.answerInput.value = '';
     refs.answerInput.focus();
@@ -738,7 +771,9 @@
       return;
     }
 
-    if (isAnswerMatch(user, normalize(w.answer))) {
+    const wordTarget = w.infinitive || w.word;
+    const target = vocabExerciseMode() === 'words' ? normalize(wordTarget) : normalize(w.answer);
+    if (isAnswerMatch(user, target)) {
       if (!vocabState.wrongCounted) {
         vocabState.correct += 1;
         refs.correctCount.textContent = String(vocabState.correct);
@@ -756,7 +791,8 @@
         refs.wrongCount.textContent = String(vocabState.wrong);
       }
       playWrongSound();
-      setFeedback('Почти. Правильный ответ: ' + w.answer, false);
+      const correctAnswer = vocabExerciseMode() === 'words' ? (w.infinitive || w.word) : w.answer;
+      setFeedback('Почти. Правильный ответ: ' + correctAnswer, false);
       refs.answerInput.value = '';
       refs.answerInput.focus();
       saveProgress();
@@ -778,8 +814,9 @@
 
   function queueVocabNextAfterCorrect(w) {
     clearAutoNextTimer();
-    if (state.autoSpeakCorrect && w.example) {
-      const started = speakEnglishText(w.example, {
+    const textToSpeak = vocabExerciseMode() === 'words' ? (w.infinitive || w.word) : w.example;
+    if (state.autoSpeakCorrect && textToSpeak) {
+      const started = speakEnglishText(textToSpeak, {
         onComplete: () => {
           nextVocabQuestion();
           saveProgress();
@@ -798,6 +835,7 @@
     currentMode = mode;
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
+    refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
     refs.optionsSection.hidden = mode !== 'grammar';
@@ -1059,6 +1097,28 @@
     saveProgress();
   });
 
+  refs.vocabModeBtnSentences.addEventListener('click', () => {
+    setVocabExerciseMode('sentences');
+    if (currentMode !== 'vocabulary') switchMode('vocabulary');
+    clearAutoNextTimer();
+    vocabState.idx = 0;
+    vocabState.correct = 0;
+    vocabState.wrong = 0;
+    renderVocab();
+    saveProgress();
+  });
+
+  refs.vocabModeBtnWords.addEventListener('click', () => {
+    setVocabExerciseMode('words');
+    if (currentMode !== 'vocabulary') switchMode('vocabulary');
+    clearAutoNextTimer();
+    vocabState.idx = 0;
+    vocabState.correct = 0;
+    vocabState.wrong = 0;
+    renderVocab();
+    saveProgress();
+  });
+
   if (!levelNames.length) {
     refs.questionText.textContent =
       "Не удалось загрузить вопросы. Проверь, что рядом есть файл questions.js.";
@@ -1084,6 +1144,7 @@
     saveProgress();
   });
 
+  setVocabExerciseMode(_vocabExerciseMode);
   const restored = restoreProgress();
   if (!restored) {
     state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;

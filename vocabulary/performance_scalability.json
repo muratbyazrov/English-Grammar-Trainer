@@ -1,23 +1,13 @@
 {
-  "topic": "Performance & Scalability",
+  "topic": "Производительность и масштабируемость",
   "words": [
-    {
-      "word": "latency",
-      "translation": "задержка — время между запросом и ответом",
-      "example": "P99 latency is under 200ms — we're within the SLA.",
-      "sentenceTranslation": "Задержка P99 меньше 200 мс — мы укладываемся в SLA."
-    },
-    {
-      "word": "throughput",
-      "translation": "пропускная способность — запросов в единицу времени",
-      "example": "Throughput dropped to 2k RPS after the deploy.",
-      "sentenceTranslation": "Пропускная способность упала до 2 тысяч запросов в секунду после деплоя."
-    },
     {
       "word": "response time",
       "translation": "время ответа сервера",
       "example": "Average response time increased after the migration.",
-      "sentenceTranslation": "Среднее время ответа увеличилось после миграции."
+      "sentenceTranslation": "Среднее время ответа увеличилось после миграции.",
+      "gapExample": "Average ___ increased after the migration.",
+      "answer": "response time"
     },
     {
       "word": "error rate",
@@ -31,12 +21,6 @@
       "example": "P99 latency is 800ms — that's too high for our use case.",
       "sentenceTranslation": "Задержка P99 составляет 800 мс — это слишком много для нашего сценария.",
       "answer": "P99"
-    },
-    {
-      "word": "bottleneck",
-      "translation": "узкое место — что тормозит всю систему",
-      "example": "The bottleneck is in the database layer — queries are too slow.",
-      "sentenceTranslation": "Узкое место находится на уровне базы данных — запросы слишком медленные."
     },
     {
       "word": "latency spike",
@@ -72,6 +56,7 @@
     },
     {
       "word": "scale vertically",
+      "infinitive": "to scale vertically",
       "translation": "вертикальное масштабирование — мощнее железо",
       "example": "We scaled vertically but it's not a long-term solution.",
       "sentenceTranslation": "Мы масштабировались вертикально, но это не долгосрочное решение.",
@@ -79,6 +64,7 @@
     },
     {
       "word": "scale horizontally",
+      "infinitive": "to scale horizontally",
       "translation": "горизонтальное масштабирование — больше инстансов",
       "example": "We scaled horizontally to three instances to handle the load.",
       "sentenceTranslation": "Мы масштабировались горизонтально до трёх инстансов, чтобы справиться с нагрузкой.",
@@ -99,6 +85,7 @@
     },
     {
       "word": "increase / go up",
+      "infinitive": "to increase / to go up",
       "translation": "расти, увеличиваться",
       "example": "Latency increased significantly after the last deploy.",
       "sentenceTranslation": "Задержка значительно выросла после последнего деплоя.",
@@ -106,6 +93,7 @@
     },
     {
       "word": "decrease / go down / drop",
+      "infinitive": "to decrease / to go down / to drop",
       "translation": "падать, снижаться",
       "example": "Response time dropped by 40% after we added caching.",
       "sentenceTranslation": "Время ответа снизилось на 40% после того, как мы добавили кэширование.",
@@ -113,6 +101,7 @@
     },
     {
       "word": "spike",
+      "infinitive": "to spike",
       "translation": "резко вырасти кратковременно",
       "example": "CPU usage spiked to 95% during the batch job.",
       "sentenceTranslation": "Использование CPU кратковременно выросло до 95% во время пакетной задачи.",
@@ -120,6 +109,7 @@
     },
     {
       "word": "stabilize",
+      "infinitive": "to stabilize",
       "translation": "стабилизироваться",
       "example": "Latency stabilized after we restarted the service.",
       "sentenceTranslation": "Задержка стабилизировалась после того, как мы перезапустили сервис.",
@@ -127,6 +117,7 @@
     },
     {
       "word": "reduce",
+      "infinitive": "to reduce",
       "translation": "снизить целенаправленно",
       "example": "We reduced memory usage by 30% after the optimization.",
       "sentenceTranslation": "Мы снизили использование памяти на 30% после оптимизации.",
@@ -134,6 +125,7 @@
     },
     {
       "word": "improve",
+      "infinitive": "to improve",
       "translation": "улучшить / улучшиться",
       "example": "Performance improved significantly after query optimization.",
       "sentenceTranslation": "Производительность значительно улучшилась после оптимизации запросов.",
@@ -141,13 +133,15 @@
     },
     {
       "word": "degrade",
-      "translation": "ухудшиться о производительности",
+      "infinitive": "to degrade",
+      "translation": "ухудшиться (о производительности)",
       "example": "Performance degrades under heavy load — we need to investigate.",
       "sentenceTranslation": "Производительность ухудшается при высокой нагрузке — нужно разобраться.",
       "answer": "degrades"
     },
     {
       "word": "fluctuate",
+      "infinitive": "to fluctuate",
       "translation": "колебаться, быть нестабильным",
       "example": "Response times are fluctuating — something is inconsistent.",
       "sentenceTranslation": "Время ответа колеблется — что-то работает нестабильно.",
@@ -155,6 +149,7 @@
     },
     {
       "word": "recover",
+      "infinitive": "to recover",
       "translation": "восстановиться после сбоя или деградации",
       "example": "The service recovered automatically after the circuit breaker reset.",
       "sentenceTranslation": "Сервис автоматически восстановился после сброса circuit breaker.",
