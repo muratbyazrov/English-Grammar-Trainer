@@ -8,6 +8,46 @@
   const levelNames = Object.keys(allLevels).sort();
   let currentMode = 'grammar';
   const vocabTopics = (window.VOCABULARY_DATA && Array.isArray(window.VOCABULARY_DATA)) ? window.VOCABULARY_DATA : [];
+  const ALL_GRAMMAR_TOPICS_VALUE = "all";
+  const GRAMMAR_TOPICS = {
+    "A1-A2": [
+      { id: "present-simple-positive", title: "Present Simple: утверждения", from: 1, to: 20 },
+      { id: "present-simple-negative", title: "Present Simple: отрицания", from: 21, to: 40 },
+      { id: "present-simple-yes-no", title: "Present Simple: общие вопросы", from: 41, to: 70 },
+      { id: "present-simple-special", title: "Present Simple: специальные вопросы", from: 71, to: 90 },
+      { id: "to-be-present", title: "To be: am/is/are", from: 91, to: 170 },
+      { id: "past-simple-irregular", title: "Past Simple: неправильные глаголы", from: 171, to: 307 },
+      { id: "to-be-past", title: "To be: was/were", from: 308, to: 390 },
+      { id: "future-simple", title: "Future Simple: will/won't", from: 391, to: 420 },
+      { id: "present-continuous", title: "Present Continuous", from: 421, to: 510 },
+      { id: "present-simple-vs-continuous", title: "Present Simple vs Continuous", from: 511, to: 570 },
+      { id: "so-such", title: "So / such", from: 571, to: 607 },
+      { id: "verb-patterns-like-want", title: "Verb patterns: want / would like / like", from: 608, to: 680 },
+      { id: "have-have-got", title: "Have / have got", from: 681, to: 730 },
+      { id: "modals-can-must", title: "Modal verbs: can / must", from: 731, to: 809 },
+      { id: "have-to-could-may", title: "Have to / could / may", from: 810, to: 910 },
+      { id: "passive-present", title: "Passive Voice: Present Simple", from: 911, to: 1011 },
+      { id: "passive-past", title: "Passive Voice: Past Simple", from: 1012, to: 1061 },
+      { id: "passive-future", title: "Passive Voice: Future Simple", from: 1062, to: 1111 },
+      { id: "time-clauses", title: "Time clauses: when / after / before", from: 1112, to: 1162 },
+      { id: "conditionals", title: "Conditionals: if-clauses", from: 1163, to: 1213 },
+      { id: "imperatives-there-be", title: "Imperatives + there is/are", from: 1214, to: 1263 },
+      { id: "there-will-be-going-to", title: "There will be / going to", from: 1264, to: 1414 },
+      { id: "make-do-short-answers", title: "Make / do + short answers", from: 1415, to: 1666 },
+      { id: "pronouns-possessives", title: "Pronouns and possessives", from: 1667, to: 1716 },
+      { id: "quantifiers", title: "Quantifiers: many / much / few / little", from: 1717, to: 1878 },
+      { id: "adjectives-adverbs", title: "Adjectives and adverbs", from: 1879, to: 1928 },
+      { id: "comparatives", title: "Comparatives", from: 1929, to: 1978 },
+      { id: "superlatives", title: "Superlatives", from: 1979, to: 2026 },
+      { id: "object-possessive-pronouns", title: "Object and possessive pronouns", from: 2027, to: 2076 },
+      { id: "articles-time-prepositions", title: "Articles + time prepositions", from: 2077, to: 2176 },
+      { id: "adjective-prepositions", title: "Prepositions after adjectives and verbs", from: 2177, to: 2228 },
+      { id: "tag-questions-present", title: "Tag questions: present", from: 2229, to: 2329 },
+      { id: "tag-questions-past", title: "Tag questions: past", from: 2330, to: 2379 },
+      { id: "tag-questions-have-modals", title: "Tag questions: have got / modals", from: 2380, to: 2450 },
+      { id: "infinitive-gerund", title: "Infinitive and gerund", from: 2451, to: 2499 },
+    ],
+  };
   const QUESTION_TRANSLATION_OVERRIDES = {
     "A1-A2:232": "Я отправил ей любовную записку.",
   };
@@ -41,6 +81,7 @@
 
   const refs = {
     levelSelect: document.getElementById("level-select"),
+    grammarTopic: document.getElementById("grammar-topic"),
     sessionSize: document.getElementById("session-size"),
     newSession: document.getElementById("new-session"),
     position: document.getElementById("position"),
@@ -184,6 +225,10 @@
     const comparableTarget = comparable(targetNorm);
     if (comparableUser === comparableTarget) return true;
 
+    // Скобки в ответе — необязательная часть. "to fire" принимается для "to fire (an alert)".
+    const withoutParens = normalize(targetNorm.replace(/\s*\(.*$/, ""));
+    if (withoutParens && (userNorm === withoutParens || comparableUser === comparable(withoutParens))) return true;
+
     // Если ответ содержит альтернативы через "/", принимаем любую из них.
     const alternatives = targetNorm
       .split("/")
@@ -215,12 +260,62 @@
     return src.slice().sort((a, b) => a.id - b.id);
   }
 
+  function grammarTopicsForLevel(level) {
+    const topics = GRAMMAR_TOPICS[level] || [];
+    const questions = orderedQuestionsForLevel(level);
+    if (!questions.length) return [];
+
+    return topics
+      .map((topic) => {
+        const count = questions.filter((q) => q.id >= topic.from && q.id <= topic.to).length;
+        return { ...topic, count };
+      })
+      .filter((topic) => topic.count > 0);
+  }
+
+  function currentGrammarTopic() {
+    return refs.grammarTopic.value || ALL_GRAMMAR_TOPICS_VALUE;
+  }
+
+  function selectedGrammarTopicForLevel(level = currentLevel()) {
+    const topicId = currentGrammarTopic();
+    if (topicId === ALL_GRAMMAR_TOPICS_VALUE) return null;
+    return grammarTopicsForLevel(level).find((topic) => topic.id === topicId) || null;
+  }
+
+  function questionsForCurrentGrammarTopic(level = currentLevel()) {
+    const questions = orderedQuestionsForLevel(level);
+    const topic = selectedGrammarTopicForLevel(level);
+    if (!topic) return questions;
+    return questions.filter((q) => q.id >= topic.from && q.id <= topic.to);
+  }
+
+  function ensureGrammarTopicOptions(level = currentLevel(), preferredValue = refs.grammarTopic.value) {
+    const previous = preferredValue || ALL_GRAMMAR_TOPICS_VALUE;
+    refs.grammarTopic.innerHTML = "";
+
+    const allOpt = document.createElement("option");
+    allOpt.value = ALL_GRAMMAR_TOPICS_VALUE;
+    allOpt.textContent = "Все темы";
+    refs.grammarTopic.appendChild(allOpt);
+
+    grammarTopicsForLevel(level).forEach((topic) => {
+      const opt = document.createElement("option");
+      opt.value = topic.id;
+      opt.textContent = `${topic.title} (${topic.count})`;
+      refs.grammarTopic.appendChild(opt);
+    });
+
+    const hasPrevious = Array.from(refs.grammarTopic.options).some((opt) => opt.value === previous);
+    refs.grammarTopic.value = hasPrevious ? previous : ALL_GRAMMAR_TOPICS_VALUE;
+  }
+
   function questionByIdForLevel(level) {
     return new Map(orderedQuestionsForLevel(level).map((q) => [q.id, q]));
   }
 
   function coursePositionForQuestion(question, level = currentLevel()) {
-    const questions = orderedQuestionsForLevel(level);
+    const questions = questionsForCurrentGrammarTopic(level);
     if (!question || !questions.length) {
       return { current: 0, total: questions.length };
     }
@@ -233,7 +328,7 @@
   }
 
   function pickSession() {
-    const questions = orderedQuestionsForLevel(currentLevel());
+    const questions = questionsForCurrentGrammarTopic();
     const sizeRaw = refs.sessionSize.value;
     const fromId = parseInt(refs.startFrom.value, 10);
     const startIndex = Number.isFinite(fromId) && fromId >= 1
@@ -265,6 +360,7 @@
       const payload = {
         mode: currentMode,
         level: currentLevel(),
+        grammarTopic: currentGrammarTopic(),
         sessionSize: refs.sessionSize.value,
         startFrom: refs.startFrom.value,
         autoSpeakCorrect: state.autoSpeakCorrect,
@@ -311,10 +407,15 @@
 
       const level = parsed.level && allLevels[parsed.level] ? parsed.level : levelNames[0];
       if (level) refs.levelSelect.value = level;
+      ensureGrammarTopicOptions(level, parsed.grammarTopic);
       const byId = questionByIdForLevel(level);
       const session = parsed.sessionIds
         .map((id) => byId.get(id))
         .filter(Boolean)
+        .filter((q) => {
+          const topic = selectedGrammarTopicForLevel(level);
+          return !topic || (q.id >= topic.from && q.id <= topic.to);
+        })
         .sort((a, b) => a.id - b.id);
 
       if (!session.length) {
@@ -836,6 +937,8 @@
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
+    refs.vocabModeBtnSentences.disabled = mode !== 'vocabulary';
+    refs.vocabModeBtnWords.disabled = mode !== 'vocabulary';
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
     refs.optionsSection.hidden = mode !== 'grammar';
@@ -875,7 +978,9 @@
     refs.position.textContent = `${state.idx + 1} / ${state.session.length}`;
     const coursePosition = coursePositionForQuestion(q);
     refs.courseProgress.hidden = false;
-    refs.coursePosition.textContent = `${q.id} из ${coursePosition.total}`;
+    refs.coursePosition.textContent = selectedGrammarTopicForLevel()
+      ? `${q.id} · ${coursePosition.current} из ${coursePosition.total} в теме`
+      : `${q.id} из ${coursePosition.total}`;
     refs.correctCount.textContent = String(state.correct);
     refs.wrongCount.textContent = String(state.wrong);
     refs.questionId.textContent = String(q.id);
@@ -1049,7 +1154,11 @@
 
   refs.nextSessionBtn.addEventListener("click", () => {
     const lastQ = state.session[state.session.length - 1];
-    const nextId = lastQ ? lastQ.id + 1 : 1;
+    const topic = selectedGrammarTopicForLevel();
+    let nextId = lastQ ? lastQ.id + 1 : (topic ? topic.from : 1);
+    if (topic && nextId > topic.to) {
+      nextId = topic.from;
+    }
     refs.startFrom.value = String(nextId);
     refs.newSession.click();
   });
@@ -1136,6 +1245,24 @@
 
   refs.levelSelect.addEventListener("change", () => {
     clearAutoNextTimer();
+    ensureGrammarTopicOptions(currentLevel());
+    state.session = pickSession();
+    state.idx = 0;
+    state.correct = 0;
+    state.wrong = 0;
+    render();
+    saveProgress();
+  });
+
+  refs.grammarTopic.addEventListener("change", () => {
+    clearAutoNextTimer();
+    const topic = selectedGrammarTopicForLevel();
+    if (topic) {
+      const fromId = parseInt(refs.startFrom.value, 10);
+      if (!Number.isFinite(fromId) || fromId < topic.from || fromId > topic.to) {
+        refs.startFrom.value = String(topic.from);
+      }
+    }
     state.session = pickSession();
     state.idx = 0;
     state.correct = 0;
@@ -1145,6 +1272,7 @@
   });
 
   setVocabExerciseMode(_vocabExerciseMode);
+  ensureGrammarTopicOptions(levelNames[0]);
   const restored = restoreProgress();
   if (!restored) {
     state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;

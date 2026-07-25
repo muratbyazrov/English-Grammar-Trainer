@@ -24,6 +24,13 @@
       <section id="controls-grammar" class="controls">
         <label for="level-select">Уровень</label>
         <select id="level-select"></select>
+        <label for="grammar-topic">Тема</label>
+        <select id="grammar-topic"></select>
+        <label class="toggle-option" for="auto-speak-correct">
+          <input id="auto-speak-correct" type="checkbox" checked />
+          Озвучка
+        </label>
+        <button id="new-session" type="button">Новая сессия</button>
         <label for="session-size">Вопросов</label>
         <select id="session-size">
           <option value="20">20</option>
@@ -34,11 +41,6 @@
         </select>
         <label for="start-from">с №</label>
         <input id="start-from" type="number" min="1" placeholder="1" style="width:64px" />
-        <label class="toggle-option" for="auto-speak-correct">
-          <input id="auto-speak-correct" type="checkbox" checked />
-          Озвучивать предложение после верного ответа
-        </label>
-        <button id="new-session" type="button">Новая сессия</button>
       </section>
 
       <section id="controls-vocab" class="controls" hidden>
@@ -57,7 +59,7 @@
 
         <label class="toggle-option" for="auto-speak-correct-vocab">
           <input id="auto-speak-correct-vocab" type="checkbox" checked />
-          Озвучивать после верного ответа
+          Озвучка
         </label>
         <button id="vocab-new-session" type="button">Новая сессия</button>
       </section>

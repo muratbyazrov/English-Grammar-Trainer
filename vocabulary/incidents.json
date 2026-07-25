@@ -1,0 +1,192 @@
+{
+  "topic": "Инциденты и инцидент-коллы",
+  "words": [
+    {
+      "word": "alert",
+      "translation": "уведомление о проблеме",
+      "example": "We got an alert about a high error rate at 11am.",
+      "sentenceTranslation": "Мы получили уведомление о высоком уровне ошибок в 11 утра"
+    },
+    {
+      "word": "fire (an alert)",
+      "infinitive": "to fire (an alert)",
+      "translation": "сработать (об алерте)",
+      "example": "The alert fired when error rate went above 5%.",
+      "sentenceTranslation": "Алерт сработал, когда уровень ошибок превысил 5%"
+    },
+    {
+      "word": "page someone",
+      "infinitive": "to page someone",
+      "translation": "вызвать дежурного",
+      "example": "The on-call engineer got paged at 3am.",
+      "sentenceTranslation": "Дежурного инженера вызвали в 3 часа ночи"
+    },
+    {
+      "word": "on-call",
+      "translation": "дежурный инженер",
+      "example": "Who is on-call this week?",
+      "sentenceTranslation": "Кто дежурит на этой неделе?"
+    },
+    {
+      "word": "outage",
+      "translation": "отказ, недоступность сервиса",
+      "example": "We had a 20-minute outage last night.",
+      "sentenceTranslation": "Прошлой ночью у нас был 20-минутный отказ сервиса"
+    },
+    {
+      "word": "incident call / bridge",
+      "translation": "экстренный звонок команды во время инцидента",
+      "example": "Can everyone jump on the incident call?",
+      "sentenceTranslation": "Все могут подключиться к инцидент-коллу?"
+    },
+    {
+      "word": "jump on a call",
+      "infinitive": "to jump on a call",
+      "translation": "быстро подключиться к звонку",
+      "example": "We need everyone to jump on a call right now.",
+      "sentenceTranslation": "Нам нужно, чтобы все прямо сейчас подключились к звонку"
+    },
+    {
+      "word": "incident commander",
+      "translation": "ведущий инцидент — координирует команду",
+      "example": "The incident commander assigns tasks and tracks progress.",
+      "sentenceTranslation": "Ведущий инцидент распределяет задачи и следит за прогрессом"
+    },
+    {
+      "word": "own the incident",
+      "infinitive": "to own the incident",
+      "translation": "взять ответственность за инцидент",
+      "example": "Alex is owning this incident — he's coordinating everything.",
+      "sentenceTranslation": "Алекс ведёт этот инцидент — он координирует всё"
+    },
+    {
+      "word": "status update",
+      "translation": "обновление о статусе",
+      "example": "Can you give us a quick status update?",
+      "sentenceTranslation": "Можешь дать нам краткое обновление по статусу?"
+    },
+    {
+      "word": "assess the impact",
+      "infinitive": "to assess the impact",
+      "translation": "оценить масштаб проблемы",
+      "example": "First we need to assess the impact — how many users are affected?",
+      "sentenceTranslation": "Сначала нам нужно оценить масштаб — сколько пользователей пострадало?"
+    },
+    {
+      "word": "affected users",
+      "translation": "пострадавшие пользователи",
+      "example": "About 20% of users are affected by the outage.",
+      "sentenceTranslation": "Около 20% пользователей пострадали от отказа сервиса"
+    },
+    {
+      "word": "severity",
+      "translation": "серьёзность / уровень инцидента (sev1, sev2)",
+      "example": "This is a sev1 — the whole service is down.",
+      "sentenceTranslation": "Это sev1 — весь сервис лежит"
+    },
+    {
+      "word": "narrow down",
+      "infinitive": "to narrow down",
+      "translation": "сузить круг поиска причины",
+      "example": "We're trying to narrow down where exactly it's failing.",
+      "sentenceTranslation": "Мы пытаемся сузить круг поиска — где именно происходит сбой"
+    },
+    {
+      "word": "reproduce",
+      "infinitive": "to reproduce",
+      "translation": "воспроизвести проблему",
+      "example": "Can anyone reproduce this locally?",
+      "sentenceTranslation": "Кто-нибудь может воспроизвести это локально?"
+    },
+    {
+      "word": "root cause",
+      "translation": "корневая причина",
+      "example": "The root cause was an unoptimized query under high load.",
+      "sentenceTranslation": "Корневой причиной был неоптимизированный запрос при высокой нагрузке"
+    },
+    {
+      "word": "roll back",
+      "infinitive": "to roll back",
+      "translation": "откатить изменения",
+      "example": "We decided to roll back to the previous version.",
+      "sentenceTranslation": "Мы решили откатиться до предыдущей версии"
+    },
+    {
+      "word": "revert",
+      "infinitive": "to revert",
+      "translation": "отменить изменения в коде или конфиге",
+      "example": "I reverted the config change and the service recovered.",
+      "sentenceTranslation": "Я откатил изменение конфига, и сервис восстановился"
+    },
+    {
+      "word": "hotfix",
+      "translation": "срочный фикс в продакшен",
+      "example": "We pushed a hotfix and error rate dropped immediately.",
+      "sentenceTranslation": "Мы залили хотфикс, и уровень ошибок сразу упал"
+    },
+    {
+      "word": "workaround",
+      "translation": "временное решение, не финальное",
+      "example": "We applied a workaround for now — proper fix comes tomorrow.",
+      "sentenceTranslation": "Пока мы применили временное решение — нормальный фикс будет завтра"
+    },
+    {
+      "word": "mitigate",
+      "infinitive": "to mitigate",
+      "translation": "снизить последствия, частично решить",
+      "example": "We mitigated the issue by adding more pods.",
+      "sentenceTranslation": "Мы снизили последствия, добавив больше подов"
+    },
+    {
+      "word": "recover",
+      "infinitive": "to recover",
+      "translation": "восстановиться после сбоя",
+      "example": "The service recovered within 10 minutes after the rollback.",
+      "sentenceTranslation": "Сервис восстановился в течение 10 минут после отката"
+    },
+    {
+      "word": "stabilize",
+      "infinitive": "to stabilize",
+      "translation": "стабилизироваться",
+      "example": "Latency stabilized after we scaled out.",
+      "sentenceTranslation": "Задержка стабилизировалась после масштабирования"
+    },
+    {
+      "word": "postmortem / post-incident review",
+      "translation": "разбор инцидента после его закрытия",
+      "example": "We'll do a postmortem tomorrow to go over what happened.",
+      "sentenceTranslation": "Завтра проведём постмортем, чтобы разобрать, что произошло"
+    },
+    {
+      "word": "timeline",
+      "translation": "хронология — что когда произошло",
+      "example": "Can you put together a timeline of the incident?",
+      "sentenceTranslation": "Можешь составить хронологию инцидента?"
+    },
+    {
+      "word": "contributing factor",
+      "translation": "сопутствующий фактор — не главная причина",
+      "example": "Lack of monitoring was a contributing factor.",
+      "sentenceTranslation": "Отсутствие мониторинга было сопутствующим фактором"
+    },
+    {
+      "word": "action item",
+      "translation": "конкретное действие по итогам разбора",
+      "example": "The main action item is to add better alerting.",
+      "sentenceTranslation": "Главный action item — добавить более качественный алертинг"
+    },
+    {
+      "word": "prevent",
+      "infinitive": "to prevent",
+      "translation": "предотвратить",
+      "example": "What can we do to prevent this from happening again?",
+      "sentenceTranslation": "Что мы можем сделать, чтобы предотвратить повторение?"
+    },
+    {
+      "word": "blameless",
+      "translation": "без обвинений — культура разбора без поиска виноватых",
+      "example": "Our postmortems are blameless — we focus on systems, not people.",
+      "sentenceTranslation": "Наши постмортемы проходят без обвинений — мы фокусируемся на системах, а не на людях"
+    }
+  ]
+}
