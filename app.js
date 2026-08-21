@@ -1,6 +1,8 @@
 (function () {
   const STORAGE_KEY = "english-grammar-trainer.progress.v2";
   const AUTO_NEXT_DELAY_MS = 450;
+  const DEFAULT_ANSWER_PLACEHOLDER = "Например: helps";
+  const EMPTY_ENTER_SPEAK_PLACEHOLDER = "Нажмите Enter еще раз, чтобы озвучить";
 
   const allLevels = (window.GRAMMAR_QUESTIONS && typeof window.GRAMMAR_QUESTIONS === "object" && !Array.isArray(window.GRAMMAR_QUESTIONS))
     ? window.GRAMMAR_QUESTIONS
@@ -53,7 +55,10 @@
   };
 
   function fixBrokenWordSpacing(value) {
-    return String(value || "");
+    return String(value || "")
+      .replace(/\bandI\b/g, "and I")
+      .replace(/\bshea\b/gi, "she a")
+      .replace(/\btimesa month\b/gi, "times a month");
   }
 
   function sanitizeQuestion(question) {
@@ -82,7 +87,6 @@
   const refs = {
     levelSelect: document.getElementById("level-select"),
     grammarTopic: document.getElementById("grammar-topic"),
-    sessionSize: document.getElementById("session-size"),
     newSession: document.getElementById("new-session"),
     position: document.getElementById("position"),
     courseProgress: document.getElementById("course-progress"),
@@ -97,7 +101,6 @@
     checkBtn: document.getElementById("check-btn"),
     prevBtn: document.getElementById("prev-btn"),
     nextBtn: document.getElementById("next-btn"),
-    startFrom: document.getElementById("start-from"),
     autoSpeakCorrect: document.getElementById("auto-speak-correct"),
     feedback: document.getElementById("feedback"),
     hint: document.getElementById("hint"),
@@ -115,7 +118,6 @@
     controlsGrammar: document.getElementById('controls-grammar'),
     controlsVocab: document.getElementById('controls-vocab'),
     vocabTopic: document.getElementById('vocab-topic'),
-    vocabSessionSize: document.getElementById('vocab-session-size'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
     vocabTabGroup: document.getElementById('vocab-tab-group'),
@@ -199,6 +201,7 @@
     speechVoices: [],
     autoSpeakCorrect: true,
     speechPlaybackToken: 0,
+    emptyVocabEnterPromptIdx: -1,
   };
 
   const vocabState = { session: [], idx: 0, correct: 0, wrong: 0, checkedCurrent: false, wrongCounted: false };
@@ -310,10 +313,6 @@
     refs.grammarTopic.value = hasPrevious ? previous : ALL_GRAMMAR_TOPICS_VALUE;
   }
 
-  function questionByIdForLevel(level) {
-    return new Map(orderedQuestionsForLevel(level).map((q) => [q.id, q]));
-  }
-
   function coursePositionForQuestion(question, level = currentLevel()) {
     const questions = questionsForCurrentGrammarTopic(level);
     if (!question || !questions.length) {
@@ -328,20 +327,7 @@
   }
 
   function pickSession() {
-    const questions = questionsForCurrentGrammarTopic();
-    const sizeRaw = refs.sessionSize.value;
-    const fromId = parseInt(refs.startFrom.value, 10);
-    const startIndex = Number.isFinite(fromId) && fromId >= 1
-      ? questions.findIndex((q) => q.id >= fromId)
-      : 0;
-    const pool = questions.slice(startIndex === -1 ? 0 : startIndex);
-
-    if (sizeRaw === "all") {
-      return pool;
-    }
-
-    const size = Number(sizeRaw);
-    return pool.slice(0, Math.max(1, Math.min(size, pool.length)));
+    return questionsForCurrentGrammarTopic();
   }
 
   function setFeedback(text, ok) {
@@ -361,19 +347,14 @@
         mode: currentMode,
         level: currentLevel(),
         grammarTopic: currentGrammarTopic(),
-        sessionSize: refs.sessionSize.value,
-        startFrom: refs.startFrom.value,
         autoSpeakCorrect: state.autoSpeakCorrect,
-        sessionIds: state.session.map((q) => q.id),
         idx: state.idx,
         correct: state.correct,
         wrong: state.wrong,
         vocabulary: {
           topic: refs.vocabTopic.value,
-          sessionSize: refs.vocabSessionSize.value,
           exerciseMode: _vocabExerciseMode,
           autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
-          sessionIds: vocabState.session.map((item) => item.id),
           idx: vocabState.idx,
           correct: vocabState.correct,
           wrong: vocabState.wrong,
@@ -401,22 +382,14 @@
       }
 
       const parsed = JSON.parse(raw);
-      if (!parsed || !Array.isArray(parsed.sessionIds)) {
+      if (!parsed || typeof parsed !== "object") {
         return false;
       }
 
       const level = parsed.level && allLevels[parsed.level] ? parsed.level : levelNames[0];
       if (level) refs.levelSelect.value = level;
       ensureGrammarTopicOptions(level, parsed.grammarTopic);
-      const byId = questionByIdForLevel(level);
-      const session = parsed.sessionIds
-        .map((id) => byId.get(id))
-        .filter(Boolean)
-        .filter((q) => {
-          const topic = selectedGrammarTopicForLevel(level);
-          return !topic || (q.id >= topic.from && q.id <= topic.to);
-        })
-        .sort((a, b) => a.id - b.id);
+      const session = questionsForCurrentGrammarTopic(level);
 
       if (!session.length) {
         return false;
@@ -425,19 +398,6 @@
       const idx = Math.max(0, Math.min(asNumber(parsed.idx, 0), session.length - 1));
       const correct = Math.max(0, asNumber(parsed.correct, 0));
       const wrong = Math.max(0, asNumber(parsed.wrong, 0));
-      const sizeValue = String(parsed.sessionSize || "");
-      const hasSizeOption = Array.from(refs.sessionSize.options).some(
-        (opt) => opt.value === sizeValue
-      );
-
-      if (hasSizeOption) {
-        refs.sessionSize.value = sizeValue;
-      }
-
-      if (parsed.startFrom) {
-        refs.startFrom.value = parsed.startFrom;
-      }
-
       state.autoSpeakCorrect = parsed.autoSpeakCorrect !== false;
       refs.autoSpeakCorrect.checked = state.autoSpeakCorrect;
 
@@ -747,10 +707,7 @@
       const topic = vocabTopics.find(t => t.topic === topicValue);
       words = topic ? (topic.words || []) : [];
     }
-    const sizeRaw = refs.vocabSessionSize.value;
-    if (sizeRaw === 'all') return words.slice();
-    const size = Number(sizeRaw);
-    return words.slice(0, Math.max(1, Math.min(size, words.length)));
+    return words.slice();
   }
 
   function ensureVocabTopicOptions() {
@@ -768,18 +725,6 @@
     });
   }
 
-  function vocabById() {
-    const result = new Map();
-    vocabTopics.forEach((topic) => {
-      (topic.words || []).forEach((item) => {
-        if (item && typeof item.id === "number") {
-          result.set(item.id, item);
-        }
-      });
-    });
-    return result;
-  }
-
   function restoreVocabProgress(saved) {
     ensureVocabTopicOptions();
     if (!saved || typeof saved !== "object") return false;
@@ -790,21 +735,12 @@
       refs.vocabTopic.value = topicValue;
     }
 
-    const sizeValue = String(saved.sessionSize || "");
-    const hasSize = Array.from(refs.vocabSessionSize.options).some((opt) => opt.value === sizeValue);
-    if (hasSize) {
-      refs.vocabSessionSize.value = sizeValue;
-    }
-
     refs.autoSpeakCorrectVocab.checked = saved.autoSpeakCorrect !== false;
     if (saved.exerciseMode === 'words' || saved.exerciseMode === 'sentences') {
       setVocabExerciseMode(saved.exerciseMode);
     }
 
-    const ids = Array.isArray(saved.sessionIds) ? saved.sessionIds : [];
-    const byId = vocabById();
-    const session = ids.map((id) => byId.get(id)).filter(Boolean);
-    vocabState.session = session.length ? session : pickVocabSession();
+    vocabState.session = pickVocabSession();
     vocabState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, vocabState.session.length - 1)));
     vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
     vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
@@ -856,6 +792,7 @@
     }
 
     refs.answerInput.value = '';
+    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
     refs.answerInput.focus();
     setFeedback('', null);
     vocabState.checkedCurrent = false;
@@ -992,6 +929,7 @@
     refs.optionC.textContent = `c) ${q.options.c}`;
 
     refs.answerInput.value = "";
+    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
     refs.answerInput.focus();
     refs.hint.textContent = "";
     setFeedback("", null);
@@ -1116,20 +1054,34 @@
     saveProgress();
   });
 
-  refs.sessionSize.addEventListener("change", () => {
-    clearAutoNextTimer();
-    state.session = pickSession();
-    state.idx = 0;
-    state.correct = 0;
-    state.wrong = 0;
-    render();
-    saveProgress();
-  });
-
   refs.answerInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
+      if (currentMode === 'vocabulary' && !normalize(refs.answerInput.value)) {
+        const shouldSpeak =
+          vocabState.idx === state.emptyVocabEnterPromptIdx &&
+          refs.answerInput.placeholder === EMPTY_ENTER_SPEAK_PLACEHOLDER;
+
+        if (shouldSpeak) {
+          event.preventDefault();
+          speakSelectedSentence();
+          return;
+        }
+
+        state.emptyVocabEnterPromptIdx = vocabState.idx;
+        refs.answerInput.placeholder = EMPTY_ENTER_SPEAK_PLACEHOLDER;
+        event.preventDefault();
+        return;
+      } else {
+        state.emptyVocabEnterPromptIdx = -1;
+        refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+      }
       refs.checkBtn.click();
     }
+  });
+
+  refs.answerInput.addEventListener("input", () => {
+    state.emptyVocabEnterPromptIdx = -1;
+    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
   });
 
   refs.speakWordBtn.addEventListener("click", () => {
@@ -1146,20 +1098,18 @@
     window.speechSynthesis.addEventListener("voiceschanged", refreshSpeechVoices);
   }
 
-  refs.startFrom.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      refs.newSession.click();
-    }
-  });
-
   refs.nextSessionBtn.addEventListener("click", () => {
-    const lastQ = state.session[state.session.length - 1];
-    const topic = selectedGrammarTopicForLevel();
-    let nextId = lastQ ? lastQ.id + 1 : (topic ? topic.from : 1);
-    if (topic && nextId > topic.to) {
-      nextId = topic.from;
+    hideSessionComplete();
+    clearAutoNextTimer();
+    if (currentMode === 'vocabulary') {
+      vocabState.session = pickVocabSession();
+      vocabState.idx = 0;
+      vocabState.correct = 0;
+      vocabState.wrong = 0;
+      renderVocab();
+      saveProgress();
+      return;
     }
-    refs.startFrom.value = String(nextId);
     refs.newSession.click();
   });
 
@@ -1187,16 +1137,6 @@
   });
 
   refs.vocabTopic.addEventListener('change', () => {
-    clearAutoNextTimer();
-    vocabState.session = pickVocabSession();
-    vocabState.idx = 0;
-    vocabState.correct = 0;
-    vocabState.wrong = 0;
-    renderVocab();
-    saveProgress();
-  });
-
-  refs.vocabSessionSize.addEventListener('change', () => {
     clearAutoNextTimer();
     vocabState.session = pickVocabSession();
     vocabState.idx = 0;
@@ -1256,13 +1196,6 @@
 
   refs.grammarTopic.addEventListener("change", () => {
     clearAutoNextTimer();
-    const topic = selectedGrammarTopicForLevel();
-    if (topic) {
-      const fromId = parseInt(refs.startFrom.value, 10);
-      if (!Number.isFinite(fromId) || fromId < topic.from || fromId > topic.to) {
-        refs.startFrom.value = String(topic.from);
-      }
-    }
     state.session = pickSession();
     state.idx = 0;
     state.correct = 0;
@@ -1284,6 +1217,6 @@
   if (currentMode === 'vocabulary') {
     switchMode('vocabulary');
   } else {
-    render();
+    switchMode('grammar');
   }
 })();

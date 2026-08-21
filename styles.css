@@ -121,16 +121,6 @@ input {
   background: #fff;
 }
 
-#start-from::-webkit-outer-spin-button,
-#start-from::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-#start-from {
-  -moz-appearance: textfield;
-}
-
 button {
   border: 1px solid transparent;
   border-radius: 8px;
