@@ -19,6 +19,12 @@
           <button id="vocab-mode-btn-sentences" class="vocab-mode-btn" type="button">предл.</button>
           <button id="vocab-mode-btn-words" class="vocab-mode-btn" type="button">слова</button>
         </div>
+        <div class="theory-tab-group" id="theory-tab-group">
+          <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
+          <span id="controls-theory" class="theory-topic-control" hidden>
+            <select id="theory-topic" aria-label="Тема теории"></select>
+          </span>
+        </div>
       </nav>
 
       <section id="controls-grammar" class="controls">
@@ -46,9 +52,8 @@
         <button id="vocab-new-session" type="button">Начать заново</button>
       </section>
 
-      <section class="stats">
+      <section id="stats-section" class="stats">
         <div>Прогресс: <span id="position">1 / 1</span></div>
-        <div id="course-progress" class="course-progress">Вопрос: №<span id="course-position">1 из 1</span></div>
         <div>Верно: <span id="correct-count">0</span></div>
         <div>Ошибок: <span id="wrong-count">0</span></div>
       </section>
@@ -91,6 +96,11 @@
           <p id="feedback" class="feedback"></p>
           <p id="hint" class="hint"></p>
         </div>
+
+        <article id="theory-panel" class="theory-panel" hidden>
+          <h2 id="theory-title"></h2>
+          <div id="theory-body"></div>
+        </article>
       </section>
     </main>
 

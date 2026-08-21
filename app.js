@@ -53,6 +53,162 @@
   const QUESTION_TRANSLATION_OVERRIDES = {
     "A1-A2:232": "Я отправил ей любовную записку.",
   };
+  const THEORY_TOPICS = [
+    {
+      id: "due-to",
+      title: "Due to",
+      subtitle: "из-за, вследствие чего-то",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Due to объясняет причину. После него обычно стоит существительное или verb + ing, но не полноценное предложение с подлежащим и глаголом.",
+            "Можно ставить в начале предложения или в середине: Due to high load, the service crashed. The service crashed due to high load.",
+          ],
+        },
+        {
+          title: "Структура",
+          examples: [
+            ["due to high load", "из-за высокой нагрузки"],
+            ["due to increasing traffic", "из-за растущего трафика"],
+            ["because the load increased", "когда нужна полная причина-предложение"],
+          ],
+        },
+        {
+          title: "Типичные tech-контексты",
+          items: [
+            "The deploy failed due to failing tests.",
+            "Latency spiked due to a sudden traffic increase.",
+            "The query slowed down due to missing indexes.",
+            "The incident lasted longer due to poor monitoring.",
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Сервис упал из-за неправильной конфигурации.",
+            "CPU usage вырос из-за утечки памяти.",
+            "Миграция заняла много времени из-за недостатка документации.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "whether-if",
+      title: "Whether / if",
+      subtitle: "ли после know, check, ask, wonder, tell, see",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Whether и if переводятся как «ли», когда мы говорим о проверке, знании или сомнении.",
+            "После whether/if порядок слов как в обычном утверждении, а не как в вопросе.",
+          ],
+        },
+        {
+          title: "Структура",
+          examples: [
+            ["Tell me whether the service is working.", "Скажи, работает ли сервис."],
+            ["I don't know if the PR is ready.", "Я не знаю, готов ли PR."],
+            ["Can you check whether the tests are passing?", "Можешь проверить, проходят ли тесты?"],
+          ],
+        },
+        {
+          title: "Не путай с if = если",
+          items: [
+            "If the build passes, we deploy. Здесь if означает «если».",
+            "I don't know if the build passes. Здесь if означает «ли».",
+            "Подсказка: если можно подставить «является ли это правдой, что», это whether/if = «ли».",
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Я не знаю, смержили ли уже PR.",
+            "Проверь, проходят ли тесты после последнего деплоя.",
+            "Я не уверен, восстановился ли сервис после инцидента.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "manage-to",
+      title: "Manage to",
+      subtitle: "удалось, получилось сделать что-то непростое",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Manage to подчеркивает, что действие получилось сделать, хотя это было непросто или неочевидно.",
+            "Структура всегда одна: manage to + infinitive.",
+          ],
+        },
+        {
+          title: "Сравнение",
+          examples: [
+            ["We managed to deploy before the deadline.", "Успели задеплоить, хотя было непросто."],
+            ["We were able to deploy before the deadline.", "Нейтральный факт: смогли."],
+            ["We could deploy before the deadline.", "Была такая возможность."],
+          ],
+        },
+        {
+          title: "Правильные формы",
+          items: [
+            "managed to fix",
+            "didn't manage to reproduce",
+            "did you manage to find",
+            "managed fixing - неправильно",
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Нам удалось предотвратить отказ, откатив конфиг.",
+            "Тебе удалось оценить масштаб проблемы до incident call?",
+            "Команде не удалось воспроизвести проблему под нагрузкой.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "aware-of",
+      title: "Aware of",
+      subtitle: "знать о чем-то, быть в курсе, осознавать",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Aware of звучит чуть формальнее, чем know, и часто используется для рисков, проблем, инцидентов и важных изменений.",
+            "После aware всегда нужен предлог of.",
+          ],
+        },
+        {
+          title: "Структура",
+          examples: [
+            ["Are you aware of the issue?", "Ты в курсе проблемы?"],
+            ["We're aware of the outage.", "Мы в курсе отказа."],
+            ["I wasn't aware of the config change.", "Я не знал об изменении конфига."],
+          ],
+        },
+        {
+          title: "Три частых контекста",
+          items: [
+            "be aware of - быть в курсе прямо сейчас.",
+            "become aware of - узнать, обнаружить.",
+            "make someone aware of - уведомить, поставить в известность.",
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Все в курсе инцидента?",
+            "Мы узнали о проблеме через мониторинг.",
+            "Я хочу поставить команду в известность об этом риске до деплоя.",
+          ],
+        },
+      ],
+    },
+  ];
 
   function fixBrokenWordSpacing(value) {
     return String(value || "")
@@ -89,8 +245,6 @@
     grammarTopic: document.getElementById("grammar-topic"),
     newSession: document.getElementById("new-session"),
     position: document.getElementById("position"),
-    courseProgress: document.getElementById("course-progress"),
-    coursePosition: document.getElementById("course-position"),
     correctCount: document.getElementById("correct-count"),
     wrongCount: document.getElementById("wrong-count"),
     questionId: document.getElementById("question-id"),
@@ -114,9 +268,12 @@
     scCloseBtn: document.getElementById("session-complete-close"),
     nextSessionBtn: document.getElementById("next-session-btn"),
     tabGrammar: document.getElementById('tab-grammar'),
+    tabTheory: document.getElementById('tab-theory'),
     tabVocab: document.getElementById('tab-vocab'),
     controlsGrammar: document.getElementById('controls-grammar'),
+    controlsTheory: document.getElementById('controls-theory'),
     controlsVocab: document.getElementById('controls-vocab'),
+    theoryTopic: document.getElementById('theory-topic'),
     vocabTopic: document.getElementById('vocab-topic'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
@@ -126,6 +283,11 @@
     optionsSection: document.getElementById('options-section'),
     questionMeta: document.getElementById('question-meta'),
     vocabModeLabel: document.getElementById('vocab-mode-label'),
+    statsSection: document.getElementById('stats-section'),
+    cardContent: document.getElementById('card-content'),
+    theoryPanel: document.getElementById('theory-panel'),
+    theoryTitle: document.getElementById('theory-title'),
+    theoryBody: document.getElementById('theory-body'),
   };
 
   const card = document.querySelector(".card");
@@ -313,19 +475,6 @@
     refs.grammarTopic.value = hasPrevious ? previous : ALL_GRAMMAR_TOPICS_VALUE;
   }
 
-  function coursePositionForQuestion(question, level = currentLevel()) {
-    const questions = questionsForCurrentGrammarTopic(level);
-    if (!question || !questions.length) {
-      return { current: 0, total: questions.length };
-    }
-
-    const index = questions.findIndex((item) => item.id === question.id);
-    return {
-      current: index >= 0 ? index + 1 : 0,
-      total: questions.length,
-    };
-  }
-
   function pickSession() {
     return questionsForCurrentGrammarTopic();
   }
@@ -358,6 +507,9 @@
           idx: vocabState.idx,
           correct: vocabState.correct,
           wrong: vocabState.wrong,
+        },
+        theory: {
+          topic: refs.theoryTopic.value,
         },
       };
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
@@ -406,8 +558,9 @@
       state.correct = correct;
       state.wrong = wrong;
       restoreVocabProgress(parsed.vocabulary);
-      if (parsed.mode === 'vocabulary') {
-        currentMode = 'vocabulary';
+      restoreTheoryProgress(parsed.theory);
+      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory') {
+        currentMode = parsed.mode;
       }
       return true;
     } catch (_error) {
@@ -773,7 +926,6 @@
     }
 
     refs.position.textContent = `${vocabState.idx + 1} / ${vocabState.session.length}`;
-    refs.courseProgress.hidden = true;
     refs.correctCount.textContent = String(vocabState.correct);
     refs.wrongCount.textContent = String(vocabState.wrong);
 
@@ -869,20 +1021,122 @@
     }, AUTO_NEXT_DELAY_MS);
   }
 
+  function ensureTheoryTopicOptions() {
+    if (refs.theoryTopic.options.length > 0) return;
+
+    THEORY_TOPICS.forEach((topic) => {
+      const opt = document.createElement('option');
+      opt.value = topic.id;
+      opt.textContent = topic.title;
+      refs.theoryTopic.appendChild(opt);
+    });
+  }
+
+  function restoreTheoryProgress(saved) {
+    ensureTheoryTopicOptions();
+    if (!saved || typeof saved !== "object") return false;
+
+    const topicValue = String(saved.topic || "");
+    const hasTopic = Array.from(refs.theoryTopic.options).some((opt) => opt.value === topicValue);
+    if (hasTopic) {
+      refs.theoryTopic.value = topicValue;
+      return true;
+    }
+    return false;
+  }
+
+  function appendTheoryList(parent, items) {
+    const list = document.createElement('ul');
+    list.className = 'theory-list';
+    items.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      list.appendChild(li);
+    });
+    parent.appendChild(list);
+  }
+
+  function appendTheoryExamples(parent, examples) {
+    const list = document.createElement('div');
+    list.className = 'theory-examples';
+    examples.forEach(([english, russian]) => {
+      const row = document.createElement('div');
+      row.className = 'theory-example';
+
+      const phrase = document.createElement('div');
+      phrase.className = 'theory-example-en';
+      phrase.textContent = english;
+
+      const translation = document.createElement('div');
+      translation.className = 'theory-example-ru';
+      translation.textContent = russian;
+
+      row.appendChild(phrase);
+      row.appendChild(translation);
+      list.appendChild(row);
+    });
+    parent.appendChild(list);
+  }
+
+  function renderTheory() {
+    hideSessionComplete();
+    clearAutoNextTimer();
+    ensureTheoryTopicOptions();
+
+    const topic = THEORY_TOPICS.find((item) => item.id === refs.theoryTopic.value) || THEORY_TOPICS[0];
+    if (!topic) {
+      refs.theoryTitle.textContent = 'Теория не найдена';
+      refs.theoryBody.textContent = '';
+      return;
+    }
+
+    refs.theoryTopic.value = topic.id;
+    refs.theoryTitle.textContent = topic.title;
+    refs.theoryBody.innerHTML = '';
+
+    if (topic.subtitle) {
+      const subtitle = document.createElement('p');
+      subtitle.className = 'theory-subtitle';
+      subtitle.textContent = topic.subtitle;
+      refs.theoryBody.appendChild(subtitle);
+    }
+
+    topic.sections.forEach((section) => {
+      const block = document.createElement('section');
+      block.className = 'theory-section';
+
+      const heading = document.createElement('h3');
+      heading.textContent = section.title;
+      block.appendChild(heading);
+
+      if (section.items) appendTheoryList(block, section.items);
+      if (section.examples) appendTheoryExamples(block, section.examples);
+
+      refs.theoryBody.appendChild(block);
+    });
+  }
+
   function switchMode(mode) {
     currentMode = mode;
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
+    refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
     refs.vocabModeBtnSentences.disabled = mode !== 'vocabulary';
     refs.vocabModeBtnWords.disabled = mode !== 'vocabulary';
     refs.controlsGrammar.hidden = mode !== 'grammar';
+    refs.controlsTheory.hidden = mode !== 'theory';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
+    refs.statsSection.hidden = mode === 'theory';
+    refs.cardContent.hidden = mode === 'theory';
+    refs.theoryPanel.hidden = mode !== 'theory';
     refs.optionsSection.hidden = mode !== 'grammar';
     refs.questionMeta.hidden = mode !== 'grammar';
     refs.vocabModeLabel.hidden = mode !== 'vocabulary';
 
-    if (mode === 'vocabulary') {
+    if (mode === 'theory') {
+      renderTheory();
+    } else if (mode === 'vocabulary') {
       ensureVocabTopicOptions();
       state.autoSpeakCorrect = refs.autoSpeakCorrectVocab.checked;
       if (!vocabState.session.length) {
@@ -913,11 +1167,6 @@
     }
 
     refs.position.textContent = `${state.idx + 1} / ${state.session.length}`;
-    const coursePosition = coursePositionForQuestion(q);
-    refs.courseProgress.hidden = false;
-    refs.coursePosition.textContent = selectedGrammarTopicForLevel()
-      ? `${q.id} · ${coursePosition.current} из ${coursePosition.total} в теме`
-      : `${q.id} из ${coursePosition.total}`;
     refs.correctCount.textContent = String(state.correct);
     refs.wrongCount.textContent = String(state.wrong);
     refs.questionId.textContent = String(q.id);
@@ -1118,6 +1367,7 @@
   });
 
   refs.tabGrammar.addEventListener('click', () => switchMode('grammar'));
+  refs.tabTheory.addEventListener('click', () => switchMode('theory'));
   refs.tabVocab.addEventListener('click', () => switchMode('vocabulary'));
 
   refs.vocabNewSession.addEventListener('click', () => {
@@ -1143,6 +1393,11 @@
     vocabState.correct = 0;
     vocabState.wrong = 0;
     renderVocab();
+    saveProgress();
+  });
+
+  refs.theoryTopic.addEventListener('change', () => {
+    renderTheory();
     saveProgress();
   });
 
@@ -1205,6 +1460,7 @@
   });
 
   setVocabExerciseMode(_vocabExerciseMode);
+  ensureTheoryTopicOptions();
   ensureGrammarTopicOptions(levelNames[0]);
   const restored = restoreProgress();
   if (!restored) {
@@ -1214,7 +1470,9 @@
     vocabState.session = pickVocabSession();
     saveProgress();
   }
-  if (currentMode === 'vocabulary') {
+  if (currentMode === 'theory') {
+    switchMode('theory');
+  } else if (currentMode === 'vocabulary') {
     switchMode('vocabulary');
   } else {
     switchMode('grammar');
