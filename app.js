@@ -208,6 +208,138 @@
         },
       ],
     },
+    {
+      id: "passive-voice-table",
+      title: "Passive Voice: таблица",
+      subtitle: "когда важно действие и результат, а не исполнитель",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Passive Voice нужен, когда объект получает действие: индекс создается, схема обновляется, запрос выполняется.",
+            "Общая структура: be в нужном времени + V-ed / past participle.",
+            "Исполнителя можно добавить через by, но в IT-контексте его часто опускают, если он не важен.",
+          ],
+        },
+        {
+          title: "Времена и структура",
+          examples: [
+            ["Present Simple: is / are + V-ed", "The query is executed automatically."],
+            ["Past Simple: was / were + V-ed", "The config was reverted after the incident."],
+            ["Present Continuous: is / are + being + V-ed", "The migration is being tested right now."],
+            ["Past Continuous: was / were + being + V-ed", "The service was being monitored when it crashed."],
+            ["Present Perfect: has / have + been + V-ed", "The PR has been reviewed already."],
+            ["Past Perfect: had + been + V-ed", "The index had been dropped before we noticed."],
+            ["Future Simple: will + be + V-ed", "The schema will be updated next sprint."],
+            ["Modal verbs: modal + be + V-ed", "The transaction should be rolled back immediately."],
+          ],
+        },
+        {
+          title: "Модальные - отдельно, часто используются",
+          examples: [
+            ["should be", "The lock should be released after the transaction."],
+            ["must be", "All queries must be validated before execution."],
+            ["can be", "The migration can be rolled back if something breaks."],
+            ["might be", "The deadlock might be caused by the batch job."],
+            ["needs to be", "The index needs to be created before deploy."],
+          ],
+        },
+        {
+          title: "Упражнение 1 - переделайте в пассив",
+          items: [
+            "Postgres rolled back the transaction automatically.",
+            "The team dropped the index by mistake during the migration.",
+            "Someone has already reviewed the execution plan.",
+            "We are currently testing the migration on staging.",
+            "Alex optimized the query and reduced latency by 40%.",
+            "The system had already committed the transaction before the error occurred.",
+            "We will update the schema next sprint.",
+            "Someone must fix the constraint violation before we deploy.",
+            "The team is running the migration without downtime.",
+            "We should acquire the lock before modifying the row.",
+          ],
+        },
+        {
+          title: "Упражнение 2 - перевод на английский: пассив",
+          items: [
+            "Индекс был создан на столбце user_id, чтобы ускорить запросы.",
+            "Транзакция была откачена из-за нарушения ограничения.",
+            "Схема будет обновлена на следующей неделе без остановки сервиса.",
+            "План выполнения сейчас анализируется - мы ищем последовательный перебор.",
+            "Строка должна быть заблокирована перед изменением, чтобы избежать взаимной блокировки.",
+            "Миграция уже была протестирована на стейджинге до деплоя.",
+            "Все запросы должны быть оптимизированы перед релизом.",
+            "Соединение было получено из пула, но так и не освобождено.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "get-v-ed",
+      title: "Get + V-ed",
+      subtitle: "разговорный аналог пассивного залога с оттенком события или результата",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Get + past participle означает, что что-то происходит с подлежащим, часто неожиданно или в результате чьих-то действий.",
+            "В IT это звучит естественно в устной речи: на стендапах, incident calls и в чате.",
+          ],
+          examples: [
+            ["The deploy got reverted.", "The deploy was reverted."],
+            ["The PR got merged.", "The PR was merged."],
+          ],
+        },
+        {
+          title: "Чем отличается от to be + past participle",
+          items: [
+            "To be - нейтрально, формально, описательно: The transaction was rolled back.",
+            "Get - разговорно, динамично, часто с оттенком неожиданности или результата: The transaction got rolled back.",
+          ],
+        },
+        {
+          title: "Структура",
+          items: [
+            "get + past participle - всегда правильная форма глагола.",
+            "Правильно: got merged, got reverted, got blocked, got paged.",
+            "Неправильно: got merge, got revert.",
+          ],
+        },
+        {
+          title: "Часто с рефлексивным значением",
+          items: [
+            "Иногда get + V-ed означает, что подлежащее само попало в ситуацию.",
+          ],
+          examples: [
+            ["I got paged at 3am.", "меня подняли в 3 ночи"],
+            ["We got blocked on the infra dependency.", "мы застряли из-за зависимости"],
+            ["The service got overloaded.", "сервис перегрузился"],
+          ],
+        },
+        {
+          title: "В IT-контексте",
+          items: [
+            "The PR finally got merged after three rounds of review.",
+            "The config got reverted and the service recovered.",
+            "We got paged during the night - the database got overloaded.",
+            "The migration got rolled back because of a constraint violation.",
+            "The query got optimized and latency dropped significantly.",
+            "I got blocked on this for two days.",
+            "The index got dropped accidentally during the migration.",
+          ],
+        },
+        {
+          title: "Упражнение - замените пассив на get + V-ed",
+          items: [
+            "The PR was finally merged after three rounds of review.",
+            "The config was reverted and the service recovered immediately.",
+            "The migration was rolled back because of a constraint violation.",
+            "The index was dropped accidentally during the migration.",
+            "The on-call engineer was paged at 3am when the database went down.",
+          ],
+        },
+      ],
+    },
   ];
 
   function fixBrokenWordSpacing(value) {
