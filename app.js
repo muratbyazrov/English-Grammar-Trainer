@@ -514,32 +514,91 @@
       .trim();
   }
 
-  function isAnswerMatch(userNorm, targetNorm) {
-    if (userNorm === targetNorm) return true;
+  function answerOptionsFromText(target) {
+    return String(target || "")
+      .split("/")
+      .map((part, index) => ({
+        text: part.trim(),
+        weight: index === 0 ? 1 : 0.8,
+      }))
+      .filter((item) => item.text);
+  }
 
+  function answerOptionsForVocabItem(item) {
+    if (item && Array.isArray(item.answers) && item.answers.length) {
+      return item.answers
+        .map((answer, index) => ({
+          text: String((answer && answer.text) || "").trim(),
+          weight: Number.isFinite(Number(answer && answer.weight))
+            ? Number(answer.weight)
+            : (index === 0 ? 1 : 0.8),
+        }))
+        .filter((answer) => answer.text);
+    }
+
+    return answerOptionsFromText((item && (item.infinitive || item.word)) || "");
+  }
+
+  function primaryAnswerText(options) {
+    return (Array.isArray(options) && options[0] && options[0].text) || "";
+  }
+
+  function getAnswerMatch(userNorm, targetNorm, answerOptions) {
     const comparable = (s) => String(s || "").replace(/[-\s]+/g, " ").trim();
     const comparableUser = comparable(userNorm);
     const comparableTarget = comparable(targetNorm);
-    if (comparableUser === comparableTarget) return true;
+
+    const options = Array.isArray(answerOptions) && answerOptions.length
+      ? answerOptions
+      : answerOptionsFromText(targetNorm);
+    const primaryAnswer = primaryAnswerText(options) || targetNorm;
+
+    if (options.length > 1) {
+      const matchedIndex = options.findIndex((option) => {
+        const optionNorm = normalize(option.text);
+        return userNorm === optionNorm || comparableUser === comparable(optionNorm);
+      });
+
+      if (matchedIndex !== -1) {
+        return {
+          matched: true,
+          isAlternative: matchedIndex > 0,
+          primaryAnswer,
+          weight: options[matchedIndex].weight,
+        };
+      }
+    }
+
+    if (userNorm === targetNorm || comparableUser === comparableTarget) {
+      return { matched: true, isAlternative: false, primaryAnswer, weight: 1 };
+    }
 
     // Скобки в ответе — необязательная часть. "to fire" принимается для "to fire (an alert)".
     const withoutParens = normalize(targetNorm.replace(/\s*\(.*$/, ""));
-    if (withoutParens && (userNorm === withoutParens || comparableUser === comparable(withoutParens))) return true;
-
-    // Если ответ содержит альтернативы через "/", принимаем любую из них.
-    const alternatives = targetNorm
-      .split("/")
-      .map((part) => part.trim())
-      .filter(Boolean);
-    if (alternatives.length > 1) {
-      return alternatives.some((part) => userNorm === part || comparableUser === comparable(part));
+    if (withoutParens && (userNorm === withoutParens || comparableUser === comparable(withoutParens))) {
+      return { matched: true, isAlternative: false, primaryAnswer: withoutParens, weight: 1 };
     }
 
     const isMultiWordTarget = comparableTarget.split(" ").filter(Boolean).length > 1;
     const isSingleWordUser = comparableUser.split(" ").filter(Boolean).length === 1;
-    if (isMultiWordTarget && isSingleWordUser) return false;
+    if (isMultiWordTarget && isSingleWordUser) {
+      return { matched: false, isAlternative: false, primaryAnswer, weight: 0 };
+    }
 
-    return false;
+    return { matched: false, isAlternative: false, primaryAnswer, weight: 0 };
+  }
+
+  function isAnswerMatch(userNorm, targetNorm) {
+    return getAnswerMatch(userNorm, targetNorm).matched;
+  }
+
+  function shuffleItems(items) {
+    const shuffled = items.slice();
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   }
 
   function currentLevel() {
@@ -636,6 +695,7 @@
           topic: refs.vocabTopic.value,
           exerciseMode: _vocabExerciseMode,
           autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
+          order: vocabState.session.map((item) => item && item.id).filter((id) => id != null),
           idx: vocabState.idx,
           correct: vocabState.correct,
           wrong: vocabState.wrong,
@@ -985,14 +1045,35 @@
 
   function pickVocabSession() {
     const topicValue = refs.vocabTopic.value;
-    let words = [];
     if (topicValue === 'all') {
-      vocabTopics.forEach(t => { words = words.concat(t.words || []); });
+      return vocabTopics.flatMap(t => shuffleItems(t.words || []));
     } else {
       const topic = vocabTopics.find(t => t.topic === topicValue);
-      words = topic ? (topic.words || []) : [];
+      return shuffleItems(topic ? (topic.words || []) : []);
     }
-    return words.slice();
+  }
+
+  function vocabWordsForTopicValue(topicValue) {
+    if (topicValue === 'all') {
+      return vocabTopics.flatMap(t => t.words || []);
+    }
+    const topic = vocabTopics.find(t => t.topic === topicValue);
+    return topic ? (topic.words || []).slice() : [];
+  }
+
+  function restoreVocabSessionFromOrder(order, topicValue) {
+    if (!Array.isArray(order) || !order.length) return [];
+
+    const wordsById = new Map(
+      vocabWordsForTopicValue(topicValue)
+        .filter((item) => item && item.id != null)
+        .map((item) => [String(item.id), item])
+    );
+    const restored = order
+      .map((id) => wordsById.get(String(id)))
+      .filter(Boolean);
+
+    return restored.length === wordsById.size ? restored : [];
   }
 
   function ensureVocabTopicOptions() {
@@ -1025,7 +1106,10 @@
       setVocabExerciseMode(saved.exerciseMode);
     }
 
-    vocabState.session = pickVocabSession();
+    vocabState.session = restoreVocabSessionFromOrder(saved.order, refs.vocabTopic.value);
+    if (!vocabState.session.length) {
+      vocabState.session = pickVocabSession();
+    }
     vocabState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, vocabState.session.length - 1)));
     vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
     vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
@@ -1064,7 +1148,7 @@
     if (vocabExerciseMode() === 'words') {
       refs.vocabModeLabel.textContent = 'Переведите на английский';
       renderQuestionText(w.translation);
-      setSelectedSentenceForSpeech(w.infinitive || w.word);
+      setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
       refs.questionTranslation.classList.remove('vocab-hint');
       setQuestionTranslation('');
     } else {
@@ -1093,9 +1177,13 @@
       return;
     }
 
-    const wordTarget = w.infinitive || w.word;
+    const wordOptions = answerOptionsForVocabItem(w);
+    const wordTarget = primaryAnswerText(wordOptions) || w.infinitive || w.word;
     const target = vocabExerciseMode() === 'words' ? normalize(wordTarget) : normalize(w.answer);
-    if (isAnswerMatch(user, target)) {
+    const match = vocabExerciseMode() === 'words'
+      ? getAnswerMatch(user, target, wordOptions)
+      : getAnswerMatch(user, target);
+    if (match.matched) {
       if (!vocabState.wrongCounted) {
         vocabState.correct += 1;
         refs.correctCount.textContent = String(vocabState.correct);
@@ -1103,7 +1191,7 @@
       vocabState.checkedCurrent = true;
       playCorrectSound();
       flashCorrect();
-      setFeedback('Верно!', true);
+      setFeedback(match.isAlternative ? `Верно! (а можно еще: ${match.primaryAnswer})` : 'Верно!', true);
       saveProgress();
       queueVocabNextAfterCorrect(w);
     } else {
@@ -1113,7 +1201,9 @@
         refs.wrongCount.textContent = String(vocabState.wrong);
       }
       playWrongSound();
-      const correctAnswer = vocabExerciseMode() === 'words' ? (w.infinitive || w.word) : w.answer;
+      const correctAnswer = vocabExerciseMode() === 'words'
+        ? (primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word)
+        : w.answer;
       setFeedback('Почти. Правильный ответ: ' + correctAnswer, false);
       refs.answerInput.value = '';
       refs.answerInput.focus();
@@ -1136,7 +1226,9 @@
 
   function queueVocabNextAfterCorrect(w) {
     clearAutoNextTimer();
-    const textToSpeak = vocabExerciseMode() === 'words' ? (w.infinitive || w.word) : w.example;
+    const textToSpeak = vocabExerciseMode() === 'words'
+      ? (primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word)
+      : w.example;
     if (state.autoSpeakCorrect && textToSpeak) {
       const started = speakEnglishText(textToSpeak, {
         onComplete: () => {

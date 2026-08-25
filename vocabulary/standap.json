@@ -2,168 +2,374 @@
   "topic": "Стендап и IT-коммуникация",
   "words": [
     {
-      "word": "kick off",
-      "infinitive": "to kick off",
+      "word": "kick off / start",
+      "infinitive": "to kick off / to start",
       "translation": "начинать / дать старт",
       "example": "Let's kick off our standup meeting.",
-      "sentenceTranslation": "Давайте начнём наш стендап"
+      "sentenceTranslation": "Давайте начнём наш стендап",
+      "answers": [
+        {
+          "text": "to kick off",
+          "weight": 1
+        },
+        {
+          "text": "to start",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "run into",
       "infinitive": "to run into",
       "translation": "столкнуться с (проблемой)",
       "example": "I've run into some issues with the database migration.",
-      "sentenceTranslation": "Я столкнулся с проблемами при миграции базы данных"
+      "sentenceTranslation": "Я столкнулся с проблемами при миграции базы данных",
+      "answers": [
+        {
+          "text": "to run into",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "dig deeper",
-      "infinitive": "to dig deeper",
+      "word": "dig deeper / look deeper",
+      "infinitive": "to dig deeper / to look deeper",
       "translation": "копнуть глубже / разобраться подробнее",
       "example": "I think I need to dig deeper into our service logs.",
-      "sentenceTranslation": "Думаю, мне нужно глубже разобраться в логах нашего сервиса"
+      "sentenceTranslation": "Думаю, мне нужно глубже разобраться в логах нашего сервиса",
+      "answers": [
+        {
+          "text": "to dig deeper",
+          "weight": 1
+        },
+        {
+          "text": "to look deeper",
+          "weight": 0.85
+        }
+      ]
     },
     {
-      "word": "further",
+      "word": "further / in more detail",
       "translation": "дальше / подробнее / глубже",
       "example": "I might need to discuss it further with the team.",
-      "sentenceTranslation": "Возможно, мне нужно обсудить это подробнее с командой"
+      "sentenceTranslation": "Возможно, мне нужно обсудить это подробнее с командой",
+      "answers": [
+        {
+          "text": "further",
+          "weight": 1
+        },
+        {
+          "text": "in more detail",
+          "weight": 0.85
+        }
+      ]
     },
     {
-      "word": "clarification",
+      "word": "clarification / explanation",
       "translation": "уточнение / разъяснение",
       "example": "I've been waiting for some clarification on the requirements.",
-      "sentenceTranslation": "Я ждал уточнений по требованиям"
+      "sentenceTranslation": "Я ждал уточнений по требованиям",
+      "answers": [
+        {
+          "text": "clarification",
+          "weight": 1
+        },
+        {
+          "text": "explanation",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "swamped",
       "translation": "завален (делами / задачами)",
       "example": "I've been swamped with meetings all morning.",
-      "sentenceTranslation": "Меня всё утро заваливало встречами"
+      "sentenceTranslation": "Меня всё утро заваливало встречами",
+      "answers": [
+        {
+          "text": "swamped",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "tricky",
+      "word": "tricky / challenging",
       "translation": "сложный / коварный / непростой",
       "example": "This edge case turned out to be quite tricky.",
-      "sentenceTranslation": "Этот граничный случай оказался довольно коварным"
+      "sentenceTranslation": "Этот граничный случай оказался довольно коварным",
+      "answers": [
+        {
+          "text": "tricky",
+          "weight": 1
+        },
+        {
+          "text": "challenging",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "mention",
       "infinitive": "to mention",
       "translation": "упомянуть / сказать",
       "example": "I wanted to mention that the deploy is scheduled for tonight.",
-      "sentenceTranslation": "Хотел упомянуть, что деплой запланирован на сегодня вечером"
+      "sentenceTranslation": "Хотел упомянуть, что деплой запланирован на сегодня вечером",
+      "answers": [
+        {
+          "text": "to mention",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "suppose",
-      "infinitive": "to suppose",
+      "word": "suppose / think",
+      "infinitive": "to suppose / to think",
       "translation": "предполагать / думать",
       "example": "I suppose we should discuss this in a separate call.",
-      "sentenceTranslation": "Думаю, нам стоит обсудить это на отдельном звонке"
+      "sentenceTranslation": "Думаю, нам стоит обсудить это на отдельном звонке",
+      "answers": [
+        {
+          "text": "to suppose",
+          "weight": 1
+        },
+        {
+          "text": "to think",
+          "weight": 0.8
+        }
+      ]
     },
     {
-      "word": "bring up",
-      "infinitive": "to bring up",
+      "word": "bring up / raise",
+      "infinitive": "to bring up / to raise",
       "translation": "поднять тему / упомянуть",
       "example": "I wanted to bring up a concern about the API performance.",
-      "sentenceTranslation": "Хотел поднять вопрос о производительности API"
+      "sentenceTranslation": "Хотел поднять вопрос о производительности API",
+      "answers": [
+        {
+          "text": "to bring up",
+          "weight": 1
+        },
+        {
+          "text": "to raise",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "implement",
       "infinitive": "to implement",
       "translation": "реализовывать / внедрять",
       "example": "Yesterday I was implementing the new authentication flow.",
-      "sentenceTranslation": "Вчера я реализовывал новый флоу авторизации"
+      "sentenceTranslation": "Вчера я реализовывал новый флоу авторизации",
+      "answers": [
+        {
+          "text": "to implement",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "properly",
+      "word": "properly / correctly",
       "translation": "правильно / корректно / должным образом",
       "example": "The service doesn't handle errors properly yet.",
-      "sentenceTranslation": "Сервис пока не обрабатывает ошибки корректно"
+      "sentenceTranslation": "Сервис пока не обрабатывает ошибки корректно",
+      "answers": [
+        {
+          "text": "properly",
+          "weight": 1
+        },
+        {
+          "text": "correctly",
+          "weight": 0.9
+        }
+      ]
     },
     {
-      "word": "causing",
-      "infinitive": "to cause",
+      "word": "causing / leading to",
+      "infinitive": "to cause / to lead to",
       "translation": "вызывающий / приводящий к",
       "example": "It's causing inconsistencies in the UI.",
-      "sentenceTranslation": "Это вызывает несоответствия в интерфейсе"
+      "sentenceTranslation": "Это вызывает несоответствия в интерфейсе",
+      "answers": [
+        {
+          "text": "to cause",
+          "weight": 1
+        },
+        {
+          "text": "to lead to",
+          "weight": 0.9
+        }
+      ]
     },
     {
-      "word": "dealing with",
-      "infinitive": "to deal with",
+      "word": "dealing with / handling",
+      "infinitive": "to deal with / to handle",
       "translation": "справляться с / иметь дело с",
       "example": "I'm currently dealing with a race condition in the payment service.",
-      "sentenceTranslation": "Сейчас я разбираюсь с гонкой состояний в сервисе платежей"
+      "sentenceTranslation": "Сейчас я разбираюсь с гонкой состояний в сервисе платежей",
+      "answers": [
+        {
+          "text": "to deal with",
+          "weight": 1
+        },
+        {
+          "text": "to handle",
+          "weight": 0.85
+        }
+      ]
     },
     {
-      "word": "concerning",
+      "word": "concerning / worrying",
       "translation": "тревожный / вызывающий беспокойство",
       "example": "That latency spike sounds concerning.",
-      "sentenceTranslation": "Этот всплеск задержки звучит тревожно"
+      "sentenceTranslation": "Этот всплеск задержки звучит тревожно",
+      "answers": [
+        {
+          "text": "concerning",
+          "weight": 1
+        },
+        {
+          "text": "worrying",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "leads",
       "translation": "зацепки / наводки",
       "example": "Do you have any leads on the cause of the bug?",
-      "sentenceTranslation": "Есть ли у тебя какие-нибудь зацепки по причине бага?"
+      "sentenceTranslation": "Есть ли у тебя какие-нибудь зацепки по причине бага?",
+      "answers": [
+        {
+          "text": "leads",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "suspect",
       "infinitive": "to suspect",
       "translation": "подозревать / предполагать",
       "example": "I suspect it's a caching issue on the backend.",
-      "sentenceTranslation": "Подозреваю, что это проблема с кешированием на бэкенде"
+      "sentenceTranslation": "Подозреваю, что это проблема с кешированием на бэкенде",
+      "answers": [
+        {
+          "text": "to suspect",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "particularly",
+      "word": "particularly / especially",
       "translation": "особенно / в частности",
       "example": "The performance is bad, particularly under high load.",
-      "sentenceTranslation": "Производительность плохая, особенно под высокой нагрузкой"
+      "sentenceTranslation": "Производительность плохая, особенно под высокой нагрузкой",
+      "answers": [
+        {
+          "text": "particularly",
+          "weight": 1
+        },
+        {
+          "text": "especially",
+          "weight": 0.9
+        }
+      ]
     },
     {
-      "word": "rapidly",
+      "word": "rapidly / quickly",
       "translation": "быстро / стремительно",
       "example": "The number of errors is growing rapidly.",
-      "sentenceTranslation": "Количество ошибок растёт стремительно"
+      "sentenceTranslation": "Количество ошибок растёт стремительно",
+      "answers": [
+        {
+          "text": "rapidly",
+          "weight": 1
+        },
+        {
+          "text": "quickly",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "behind schedule",
       "translation": "отстаём от графика / с опозданием",
       "example": "We're a bit behind schedule due to the unexpected bug.",
-      "sentenceTranslation": "Мы немного отстаём от графика из-за неожиданного бага"
+      "sentenceTranslation": "Мы немного отстаём от графика из-за неожиданного бага",
+      "answers": [
+        {
+          "text": "behind schedule",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "follow up",
       "infinitive": "to follow up",
       "translation": "вернуться к вопросу / проследить",
       "example": "I'll follow up with the DevOps team about the deployment issue.",
-      "sentenceTranslation": "Я вернусь к вопросу с командой DevOps по поводу проблемы с деплоем"
+      "sentenceTranslation": "Я вернусь к вопросу с командой DevOps по поводу проблемы с деплоем",
+      "answers": [
+        {
+          "text": "to follow up",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "reach out",
-      "infinitive": "to reach out",
+      "word": "reach out / contact",
+      "infinitive": "to reach out / to contact",
       "translation": "обратиться / связаться",
       "example": "I'll reach out to the backend team for help.",
-      "sentenceTranslation": "Я обращусь за помощью к бэкенд-команде"
+      "sentenceTranslation": "Я обращусь за помощью к бэкенд-команде",
+      "answers": [
+        {
+          "text": "to reach out",
+          "weight": 1
+        },
+        {
+          "text": "to contact",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "sync up",
       "infinitive": "to sync up",
       "translation": "синхронизироваться / созвониться",
       "example": "Let's sync up after the standup to discuss the architecture.",
-      "sentenceTranslation": "Давайте созвонимся после стендапа, чтобы обсудить архитектуру"
+      "sentenceTranslation": "Давайте созвонимся после стендапа, чтобы обсудить архитектуру",
+      "answers": [
+        {
+          "text": "to sync up",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "estimate",
       "infinitive": "to estimate",
       "translation": "оценка (времени) / оценивать",
       "example": "My estimate for this task is two days.",
-      "sentenceTranslation": "Моя оценка по этой задаче — два дня"
+      "sentenceTranslation": "Моя оценка по этой задаче — два дня",
+      "answers": [
+        {
+          "text": "to estimate",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "pending",
       "translation": "ожидает / в ожидании",
       "example": "The PR is pending review from the senior dev.",
-      "sentenceTranslation": "Пулл-реквест ожидает ревью от синьора"
+      "sentenceTranslation": "Пулл-реквест ожидает ревью от синьора",
+      "answers": [
+        {
+          "text": "pending",
+          "weight": 1
+        }
+      ]
     }
   ]
 }

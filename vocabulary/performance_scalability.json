@@ -7,52 +7,108 @@
       "example": "Average response time increased after the migration.",
       "sentenceTranslation": "Среднее время ответа увеличилось после миграции.",
       "gapExample": "Average ___ increased after the migration.",
-      "answer": "response time"
+      "answer": "response time",
+      "answers": [
+        {
+          "text": "response time",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "error rate",
       "translation": "процент ошибочных запросов",
       "example": "The error rate spiked to 5% during peak traffic.",
-      "sentenceTranslation": "Процент ошибочных запросов резко вырос до 5% во время пикового трафика."
+      "sentenceTranslation": "Процент ошибочных запросов резко вырос до 5% во время пикового трафика.",
+      "answers": [
+        {
+          "text": "error rate",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "p95 / p99",
       "translation": "95-й / 99-й перцентиль задержки",
       "example": "P99 latency is 800ms — that's too high for our use case.",
       "sentenceTranslation": "Задержка P99 составляет 800 мс — это слишком много для нашего сценария.",
-      "answer": "P99"
+      "answer": "P99",
+      "answers": [
+        {
+          "text": "p95",
+          "weight": 1
+        },
+        {
+          "text": "p99",
+          "weight": 0.95
+        }
+      ]
     },
     {
       "word": "latency spike",
       "translation": "резкий скачок задержки",
       "example": "We saw latency spikes every time traffic went above 3k RPS.",
       "sentenceTranslation": "Мы видели резкие скачки задержки каждый раз, когда трафик превышал 3 тысячи запросов в секунду.",
-      "answer": "latency spikes"
+      "answer": "latency spikes",
+      "answers": [
+        {
+          "text": "latency spike",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "memory leak",
       "translation": "утечка памяти",
       "example": "The service crashes every few hours — looks like a memory leak.",
-      "sentenceTranslation": "Сервис падает каждые несколько часов — похоже на утечку памяти."
+      "sentenceTranslation": "Сервис падает каждые несколько часов — похоже на утечку памяти.",
+      "answers": [
+        {
+          "text": "memory leak",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "CPU spike",
       "translation": "резкий рост потребления CPU",
       "example": "There's a CPU spike every time the batch job runs.",
-      "sentenceTranslation": "Резкий рост потребления CPU происходит каждый раз, когда запускается пакетная задача."
+      "sentenceTranslation": "Резкий рост потребления CPU происходит каждый раз, когда запускается пакетная задача.",
+      "answers": [
+        {
+          "text": "CPU spike",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "timeout",
+      "word": "timeout / time-out",
       "translation": "превышение времени ожидания",
       "example": "Requests are timing out after 30 seconds — something is blocking.",
       "sentenceTranslation": "Запросы превышают время ожидания через 30 секунд — что-то блокирует выполнение.",
-      "answer": "timing out"
+      "answer": "timing out",
+      "answers": [
+        {
+          "text": "timeout",
+          "weight": 1
+        },
+        {
+          "text": "time-out",
+          "weight": 0.95
+        }
+      ]
     },
     {
       "word": "degraded performance",
       "translation": "ухудшение производительности",
       "example": "Users are reporting degraded performance during peak hours.",
-      "sentenceTranslation": "Пользователи сообщают об ухудшении производительности в часы пик."
+      "sentenceTranslation": "Пользователи сообщают об ухудшении производительности в часы пик.",
+      "answers": [
+        {
+          "text": "degraded performance",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "scale vertically",
@@ -60,7 +116,13 @@
       "translation": "вертикальное масштабирование — мощнее железо",
       "example": "We scaled vertically but it's not a long-term solution.",
       "sentenceTranslation": "Мы масштабировались вертикально, но это не долгосрочное решение.",
-      "answer": "scaled vertically"
+      "answer": "scaled vertically",
+      "answers": [
+        {
+          "text": "to scale vertically",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "scale horizontally",
@@ -68,20 +130,46 @@
       "translation": "горизонтальное масштабирование — больше инстансов",
       "example": "We scaled horizontally to three instances to handle the load.",
       "sentenceTranslation": "Мы масштабировались горизонтально до трёх инстансов, чтобы справиться с нагрузкой.",
-      "answer": "scaled horizontally"
+      "answer": "scaled horizontally",
+      "answers": [
+        {
+          "text": "to scale horizontally",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "autoscaling",
+      "word": "autoscaling / auto-scaling",
       "translation": "автоматическое масштабирование по нагрузке",
       "example": "Autoscaling kicks in when CPU usage goes above 70%.",
-      "sentenceTranslation": "Автоматическое масштабирование включается, когда использование CPU превышает 70%."
+      "sentenceTranslation": "Автоматическое масштабирование включается, когда использование CPU превышает 70%.",
+      "answers": [
+        {
+          "text": "autoscaling",
+          "weight": 1
+        },
+        {
+          "text": "auto-scaling",
+          "weight": 0.95
+        }
+      ]
     },
     {
       "word": "peak load / peak traffic",
       "translation": "пиковая нагрузка",
       "example": "The service handles peak load without issues now.",
       "sentenceTranslation": "Теперь сервис справляется с пиковой нагрузкой без проблем.",
-      "answer": "peak load"
+      "answer": "peak load",
+      "answers": [
+        {
+          "text": "peak load",
+          "weight": 1
+        },
+        {
+          "text": "peak traffic",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "increase / go up",
@@ -89,7 +177,17 @@
       "translation": "расти, увеличиваться",
       "example": "Latency increased significantly after the last deploy.",
       "sentenceTranslation": "Задержка значительно выросла после последнего деплоя.",
-      "answer": "increased"
+      "answer": "increased",
+      "answers": [
+        {
+          "text": "to increase",
+          "weight": 1
+        },
+        {
+          "text": "to go up",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "decrease / go down / drop",
@@ -97,7 +195,21 @@
       "translation": "падать, снижаться",
       "example": "Response time dropped by 40% after we added caching.",
       "sentenceTranslation": "Время ответа снизилось на 40% после того, как мы добавили кэширование.",
-      "answer": "dropped"
+      "answer": "dropped",
+      "answers": [
+        {
+          "text": "to decrease",
+          "weight": 1
+        },
+        {
+          "text": "to go down",
+          "weight": 0.9
+        },
+        {
+          "text": "to drop",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "spike",
@@ -105,7 +217,13 @@
       "translation": "резко вырасти кратковременно",
       "example": "CPU usage spiked to 95% during the batch job.",
       "sentenceTranslation": "Использование CPU кратковременно выросло до 95% во время пакетной задачи.",
-      "answer": "spiked"
+      "answer": "spiked",
+      "answers": [
+        {
+          "text": "to spike",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "stabilize",
@@ -113,7 +231,13 @@
       "translation": "стабилизироваться",
       "example": "Latency stabilized after we restarted the service.",
       "sentenceTranslation": "Задержка стабилизировалась после того, как мы перезапустили сервис.",
-      "answer": "stabilized"
+      "answer": "stabilized",
+      "answers": [
+        {
+          "text": "to stabilize",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "reduce",
@@ -121,31 +245,67 @@
       "translation": "снизить целенаправленно",
       "example": "We reduced memory usage by 30% after the optimization.",
       "sentenceTranslation": "Мы снизили использование памяти на 30% после оптимизации.",
-      "answer": "reduced"
+      "answer": "reduced",
+      "answers": [
+        {
+          "text": "to reduce",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "improve",
-      "infinitive": "to improve",
+      "word": "improve / get better",
+      "infinitive": "to improve / to get better",
       "translation": "улучшить / улучшиться",
       "example": "Performance improved significantly after query optimization.",
       "sentenceTranslation": "Производительность значительно улучшилась после оптимизации запросов.",
-      "answer": "improved"
+      "answer": "improved",
+      "answers": [
+        {
+          "text": "to improve",
+          "weight": 1
+        },
+        {
+          "text": "to get better",
+          "weight": 0.85
+        }
+      ]
     },
     {
-      "word": "degrade",
-      "infinitive": "to degrade",
+      "word": "degrade / get worse",
+      "infinitive": "to degrade / to get worse",
       "translation": "ухудшиться (о производительности)",
       "example": "Performance degrades under heavy load — we need to investigate.",
       "sentenceTranslation": "Производительность ухудшается при высокой нагрузке — нужно разобраться.",
-      "answer": "degrades"
+      "answer": "degrades",
+      "answers": [
+        {
+          "text": "to degrade",
+          "weight": 1
+        },
+        {
+          "text": "to get worse",
+          "weight": 0.85
+        }
+      ]
     },
     {
-      "word": "fluctuate",
-      "infinitive": "to fluctuate",
+      "word": "fluctuate / vary",
+      "infinitive": "to fluctuate / to vary",
       "translation": "колебаться, быть нестабильным",
       "example": "Response times are fluctuating — something is inconsistent.",
       "sentenceTranslation": "Время ответа колеблется — что-то работает нестабильно.",
-      "answer": "fluctuating"
+      "answer": "fluctuating",
+      "answers": [
+        {
+          "text": "to fluctuate",
+          "weight": 1
+        },
+        {
+          "text": "to vary",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "recover",
@@ -153,7 +313,13 @@
       "translation": "восстановиться после сбоя или деградации",
       "example": "The service recovered automatically after the circuit breaker reset.",
       "sentenceTranslation": "Сервис автоматически восстановился после сброса circuit breaker.",
-      "answer": "recovered"
+      "answer": "recovered",
+      "answers": [
+        {
+          "text": "to recover",
+          "weight": 1
+        }
+      ]
     }
   ]
 }

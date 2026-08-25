@@ -9,6 +9,8 @@
  *   sentenceTranslation — Russian translation of the example
  *   answer           — (optional) the form that appears in the example, e.g. "kicked off"
  *                      If omitted, the script tries to find `word` in the example.
+ *   answers          — accepted answers for word-translation mode:
+ *                      [{ text: "to run a query", weight: 1 }, ...]
  *   gapExample       — (optional) pre-built gap sentence. Auto-generated if omitted.
  *
  * Run: node build.js
@@ -56,6 +58,31 @@ function buildGapExample(example, word, answer) {
 
   // Nothing matched — return example unchanged (no gap)
   return example;
+}
+
+function normalizeAnswers(value) {
+  if (!Array.isArray(value)) return [];
+
+  return value
+    .map((item, index) => {
+      if (typeof item === 'string') {
+        return { text: item.trim(), weight: index === 0 ? 1 : 0.8 };
+      }
+      if (!item || typeof item !== 'object') return null;
+
+      const text = String(item.text || '').trim();
+      if (!text) return null;
+
+      const weight = Number(item.weight);
+      const entry = {
+        text,
+        weight: Number.isFinite(weight) ? weight : (index === 0 ? 1 : 0.8),
+      };
+
+      if (item.note) entry.note = String(item.note).trim();
+      return entry;
+    })
+    .filter(Boolean);
 }
 
 // Collect all JSON files sorted alphabetically
@@ -106,6 +133,8 @@ for (const file of files) {
       answer,
     };
     if (w.infinitive) entry.infinitive = w.infinitive.trim();
+    const answers = normalizeAnswers(w.answers);
+    if (answers.length) entry.answers = answers;
     return entry;
   });
 

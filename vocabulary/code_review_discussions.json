@@ -2,130 +2,266 @@
   "topic": "Code Review и технические обсуждения",
   "words": [
     {
-      "word": "to allow",
+      "word": "to allow / to permit",
       "translation": "позволять, разрешать",
       "example": "This flag allows the client to retry failed requests.",
       "sentenceTranslation": "Этот флаг позволяет клиенту повторять упавшие запросы.",
-      "answer": "allow"
+      "answer": "allow",
+      "answers": [
+        {
+          "text": "to allow",
+          "weight": 1
+        },
+        {
+          "text": "to permit",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "average",
       "translation": "среднее значение / средний",
       "example": "The average response time increased after the deploy.",
       "sentenceTranslation": "Среднее время ответа выросло после деплоя.",
-      "answer": "average"
+      "answer": "average",
+      "answers": [
+        {
+          "text": "average",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "significantly",
+      "word": "significantly / substantially",
       "translation": "значительно, существенно",
       "example": "Memory usage dropped significantly after the refactoring.",
       "sentenceTranslation": "Потребление памяти значительно снизилось после рефакторинга.",
-      "answer": "significantly"
+      "answer": "significantly",
+      "answers": [
+        {
+          "text": "significantly",
+          "weight": 1
+        },
+        {
+          "text": "substantially",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "overall",
       "translation": "в целом, в общем",
       "example": "Overall, the approach looks solid to me.",
       "sentenceTranslation": "В целом подход мне кажется надёжным.",
-      "answer": "overall"
+      "answer": "overall",
+      "answers": [
+        {
+          "text": "overall",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "obviously",
+      "word": "obviously / clearly",
       "translation": "очевидно, явно",
       "example": "Obviously, we need to handle the error case here.",
       "sentenceTranslation": "Очевидно, нам нужно обработать случай с ошибкой здесь.",
-      "answer": "obviously"
+      "answer": "obviously",
+      "answers": [
+        {
+          "text": "obviously",
+          "weight": 1
+        },
+        {
+          "text": "clearly",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "inevitable",
       "translation": "неизбежный, неминуемый",
       "example": "Some downtime during the migration is inevitable.",
       "sentenceTranslation": "Некоторый простой во время миграции неизбежен.",
-      "answer": "inevitable"
+      "answer": "inevitable",
+      "answers": [
+        {
+          "text": "inevitable",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "to determine",
       "translation": "определять, выяснять",
       "example": "We need to determine the root cause before deploying a fix.",
       "sentenceTranslation": "Нам нужно определить первопричину, прежде чем деплоить фикс.",
-      "answer": "determine"
+      "answer": "determine",
+      "answers": [
+        {
+          "text": "to determine",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "lack of",
+      "word": "lack of / absence of",
       "translation": "нехватка, отсутствие",
       "example": "The bug was caused by a lack of input validation.",
       "sentenceTranslation": "Баг был вызван отсутствием валидации входных данных.",
-      "answer": "lack of"
+      "answer": "lack of",
+      "answers": [
+        {
+          "text": "lack of",
+          "weight": 1
+        },
+        {
+          "text": "absence of",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "approach",
       "translation": "подход, способ решения",
       "example": "I'm not sure this approach scales well under load.",
       "sentenceTranslation": "Не уверен, что этот подход хорошо масштабируется под нагрузкой.",
-      "answer": "approach"
+      "answer": "approach",
+      "answers": [
+        {
+          "text": "approach",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "to address",
+      "word": "to address / to resolve",
       "translation": "устранять, исправлять, решать (проблему)",
       "example": "I'll address the performance concern in the next PR.",
       "sentenceTranslation": "Я устраню проблему с производительностью в следующем PR.",
-      "answer": "address"
+      "answer": "address",
+      "answers": [
+        {
+          "text": "to address",
+          "weight": 1
+        },
+        {
+          "text": "to resolve",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "comments",
       "translation": "комментарии (на ревью)",
       "example": "I left some comments about error handling in the diff.",
       "sentenceTranslation": "Я оставил несколько комментариев по обработке ошибок в диффе.",
-      "answer": "comments"
+      "answer": "comments",
+      "answers": [
+        {
+          "text": "comments",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "refactoring",
       "translation": "рефакторинг — улучшение кода без изменения поведения",
       "example": "This refactoring makes the logic much easier to follow.",
       "sentenceTranslation": "Этот рефакторинг делает логику значительно проще для понимания.",
-      "answer": "refactoring"
+      "answer": "refactoring",
+      "answers": [
+        {
+          "text": "refactoring",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "concern",
+      "word": "concern / worry",
       "translation": "опасение, беспокойство (по поводу чего-то)",
       "example": "My main concern is the lack of monitoring for this service.",
       "sentenceTranslation": "Моё главное опасение — это отсутствие мониторинга для этого сервиса.",
-      "answer": "concern"
+      "answer": "concern",
+      "answers": [
+        {
+          "text": "concern",
+          "weight": 1
+        },
+        {
+          "text": "worry",
+          "weight": 0.8
+        }
+      ]
     },
     {
       "word": "client",
       "translation": "клиент (сервиса или библиотеки)",
       "example": "The client retries up to three times before giving up.",
       "sentenceTranslation": "Клиент делает до трёх повторных попыток, прежде чем сдаться.",
-      "answer": "client"
+      "answer": "client",
+      "answers": [
+        {
+          "text": "client",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "monitoring",
       "translation": "мониторинг — наблюдение за состоянием системы",
       "example": "We should add monitoring before rolling this out to prod.",
       "sentenceTranslation": "Нам стоит добавить мониторинг перед выкаткой этого в прод.",
-      "answer": "monitoring"
+      "answer": "monitoring",
+      "answers": [
+        {
+          "text": "monitoring",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "during",
       "translation": "во время, в процессе",
       "example": "Several errors occurred during the load test.",
       "sentenceTranslation": "Во время нагрузочного теста возникло несколько ошибок.",
-      "answer": "during"
+      "answer": "during",
+      "answers": [
+        {
+          "text": "during",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "usage",
+      "word": "usage / consumption",
       "translation": "использование, потребление (ресурсов)",
       "example": "CPU usage spiked during the batch job.",
       "sentenceTranslation": "Потребление CPU резко выросло во время batch-задачи.",
-      "answer": "usage"
+      "answer": "usage",
+      "answers": [
+        {
+          "text": "usage",
+          "weight": 1
+        },
+        {
+          "text": "consumption",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "to recover",
       "translation": "восстанавливаться (после сбоя)",
       "example": "The service should recover automatically after a restart.",
       "sentenceTranslation": "Сервис должен автоматически восстанавливаться после перезапуска.",
-      "answer": "recover"
+      "answer": "recover",
+      "answers": [
+        {
+          "text": "to recover",
+          "weight": 1
+        }
+      ]
     }
   ]
 }

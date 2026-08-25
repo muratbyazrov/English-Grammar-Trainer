@@ -5,188 +5,394 @@
       "word": "alert",
       "translation": "уведомление о проблеме",
       "example": "We got an alert about a high error rate at 11am.",
-      "sentenceTranslation": "Мы получили уведомление о высоком уровне ошибок в 11 утра"
+      "sentenceTranslation": "Мы получили уведомление о высоком уровне ошибок в 11 утра",
+      "answers": [
+        {
+          "text": "alert",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "fire (an alert)",
       "infinitive": "to fire (an alert)",
       "translation": "сработать (об алерте)",
       "example": "The alert fired when error rate went above 5%.",
-      "sentenceTranslation": "Алерт сработал, когда уровень ошибок превысил 5%"
+      "sentenceTranslation": "Алерт сработал, когда уровень ошибок превысил 5%",
+      "answers": [
+        {
+          "text": "to fire (an alert)",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "page someone",
       "infinitive": "to page someone",
       "translation": "вызвать дежурного",
       "example": "The on-call engineer got paged at 3am.",
-      "sentenceTranslation": "Дежурного инженера вызвали в 3 часа ночи"
+      "sentenceTranslation": "Дежурного инженера вызвали в 3 часа ночи",
+      "answers": [
+        {
+          "text": "to page someone",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "on-call",
       "translation": "дежурный инженер",
       "example": "Who is on-call this week?",
-      "sentenceTranslation": "Кто дежурит на этой неделе?"
+      "sentenceTranslation": "Кто дежурит на этой неделе?",
+      "answers": [
+        {
+          "text": "on-call",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "outage",
+      "word": "outage / downtime",
       "translation": "отказ, недоступность сервиса",
       "example": "We had a 20-minute outage last night.",
-      "sentenceTranslation": "Прошлой ночью у нас был 20-минутный отказ сервиса"
+      "sentenceTranslation": "Прошлой ночью у нас был 20-минутный отказ сервиса",
+      "answers": [
+        {
+          "text": "outage",
+          "weight": 1
+        },
+        {
+          "text": "downtime",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "incident call / bridge",
       "translation": "экстренный звонок команды во время инцидента",
       "example": "Can everyone jump on the incident call?",
-      "sentenceTranslation": "Все могут подключиться к инцидент-коллу?"
+      "sentenceTranslation": "Все могут подключиться к инцидент-коллу?",
+      "answers": [
+        {
+          "text": "incident call",
+          "weight": 1
+        },
+        {
+          "text": "bridge",
+          "weight": 0.85
+        }
+      ]
     },
     {
-      "word": "jump on a call",
-      "infinitive": "to jump on a call",
+      "word": "jump on a call / join a call",
+      "infinitive": "to jump on a call / to join a call",
       "translation": "быстро подключиться к звонку",
       "example": "We need everyone to jump on a call right now.",
-      "sentenceTranslation": "Нам нужно, чтобы все прямо сейчас подключились к звонку"
+      "sentenceTranslation": "Нам нужно, чтобы все прямо сейчас подключились к звонку",
+      "answers": [
+        {
+          "text": "to jump on a call",
+          "weight": 1
+        },
+        {
+          "text": "to join a call",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "incident commander",
       "translation": "ведущий инцидент — координирует команду",
       "example": "The incident commander assigns tasks and tracks progress.",
-      "sentenceTranslation": "Ведущий инцидент распределяет задачи и следит за прогрессом"
+      "sentenceTranslation": "Ведущий инцидент распределяет задачи и следит за прогрессом",
+      "answers": [
+        {
+          "text": "incident commander",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "own the incident",
       "infinitive": "to own the incident",
       "translation": "взять ответственность за инцидент",
       "example": "Alex is owning this incident — he's coordinating everything.",
-      "sentenceTranslation": "Алекс ведёт этот инцидент — он координирует всё"
+      "sentenceTranslation": "Алекс ведёт этот инцидент — он координирует всё",
+      "answers": [
+        {
+          "text": "to own the incident",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "status update",
       "translation": "обновление о статусе",
       "example": "Can you give us a quick status update?",
-      "sentenceTranslation": "Можешь дать нам краткое обновление по статусу?"
+      "sentenceTranslation": "Можешь дать нам краткое обновление по статусу?",
+      "answers": [
+        {
+          "text": "status update",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "assess the impact",
       "infinitive": "to assess the impact",
       "translation": "оценить масштаб проблемы",
       "example": "First we need to assess the impact — how many users are affected?",
-      "sentenceTranslation": "Сначала нам нужно оценить масштаб — сколько пользователей пострадало?"
+      "sentenceTranslation": "Сначала нам нужно оценить масштаб — сколько пользователей пострадало?",
+      "answers": [
+        {
+          "text": "to assess the impact",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "affected users",
       "translation": "пострадавшие пользователи",
       "example": "About 20% of users are affected by the outage.",
-      "sentenceTranslation": "Около 20% пользователей пострадали от отказа сервиса"
+      "sentenceTranslation": "Около 20% пользователей пострадали от отказа сервиса",
+      "answers": [
+        {
+          "text": "affected users",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "severity",
       "translation": "серьёзность / уровень инцидента (sev1, sev2)",
       "example": "This is a sev1 — the whole service is down.",
-      "sentenceTranslation": "Это sev1 — весь сервис лежит"
+      "sentenceTranslation": "Это sev1 — весь сервис лежит",
+      "answers": [
+        {
+          "text": "severity",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "narrow down",
-      "infinitive": "to narrow down",
+      "word": "narrow down / narrow it down",
+      "infinitive": "to narrow down / to narrow it down",
       "translation": "сузить круг поиска причины",
       "example": "We're trying to narrow down where exactly it's failing.",
-      "sentenceTranslation": "Мы пытаемся сузить круг поиска — где именно происходит сбой"
+      "sentenceTranslation": "Мы пытаемся сузить круг поиска — где именно происходит сбой",
+      "answers": [
+        {
+          "text": "to narrow down",
+          "weight": 1
+        },
+        {
+          "text": "to narrow it down",
+          "weight": 0.95
+        }
+      ]
     },
     {
       "word": "reproduce",
       "infinitive": "to reproduce",
       "translation": "воспроизвести проблему",
       "example": "Can anyone reproduce this locally?",
-      "sentenceTranslation": "Кто-нибудь может воспроизвести это локально?"
+      "sentenceTranslation": "Кто-нибудь может воспроизвести это локально?",
+      "answers": [
+        {
+          "text": "to reproduce",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "root cause",
       "translation": "корневая причина",
       "example": "The root cause was an unoptimized query under high load.",
-      "sentenceTranslation": "Корневой причиной был неоптимизированный запрос при высокой нагрузке"
+      "sentenceTranslation": "Корневой причиной был неоптимизированный запрос при высокой нагрузке",
+      "answers": [
+        {
+          "text": "root cause",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "roll back",
       "infinitive": "to roll back",
       "translation": "откатить изменения",
       "example": "We decided to roll back to the previous version.",
-      "sentenceTranslation": "Мы решили откатиться до предыдущей версии"
+      "sentenceTranslation": "Мы решили откатиться до предыдущей версии",
+      "answers": [
+        {
+          "text": "to roll back",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "revert",
       "infinitive": "to revert",
       "translation": "отменить изменения в коде или конфиге",
       "example": "I reverted the config change and the service recovered.",
-      "sentenceTranslation": "Я откатил изменение конфига, и сервис восстановился"
+      "sentenceTranslation": "Я откатил изменение конфига, и сервис восстановился",
+      "answers": [
+        {
+          "text": "to revert",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "hotfix",
+      "word": "hotfix / emergency fix",
       "translation": "срочный фикс в продакшен",
       "example": "We pushed a hotfix and error rate dropped immediately.",
-      "sentenceTranslation": "Мы залили хотфикс, и уровень ошибок сразу упал"
+      "sentenceTranslation": "Мы залили хотфикс, и уровень ошибок сразу упал",
+      "answers": [
+        {
+          "text": "hotfix",
+          "weight": 1
+        },
+        {
+          "text": "emergency fix",
+          "weight": 0.8
+        }
+      ]
     },
     {
-      "word": "workaround",
+      "word": "workaround / temporary fix",
       "translation": "временное решение, не финальное",
       "example": "We applied a workaround for now — proper fix comes tomorrow.",
-      "sentenceTranslation": "Пока мы применили временное решение — нормальный фикс будет завтра"
+      "sentenceTranslation": "Пока мы применили временное решение — нормальный фикс будет завтра",
+      "answers": [
+        {
+          "text": "workaround",
+          "weight": 1
+        },
+        {
+          "text": "temporary fix",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "mitigate",
       "infinitive": "to mitigate",
       "translation": "снизить последствия, частично решить",
       "example": "We mitigated the issue by adding more pods.",
-      "sentenceTranslation": "Мы снизили последствия, добавив больше подов"
+      "sentenceTranslation": "Мы снизили последствия, добавив больше подов",
+      "answers": [
+        {
+          "text": "to mitigate",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "recover",
       "infinitive": "to recover",
       "translation": "восстановиться после сбоя",
       "example": "The service recovered within 10 minutes after the rollback.",
-      "sentenceTranslation": "Сервис восстановился в течение 10 минут после отката"
+      "sentenceTranslation": "Сервис восстановился в течение 10 минут после отката",
+      "answers": [
+        {
+          "text": "to recover",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "stabilize",
       "infinitive": "to stabilize",
       "translation": "стабилизироваться",
       "example": "Latency stabilized after we scaled out.",
-      "sentenceTranslation": "Задержка стабилизировалась после масштабирования"
+      "sentenceTranslation": "Задержка стабилизировалась после масштабирования",
+      "answers": [
+        {
+          "text": "to stabilize",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "postmortem / post-incident review",
       "translation": "разбор инцидента после его закрытия",
       "example": "We'll do a postmortem tomorrow to go over what happened.",
-      "sentenceTranslation": "Завтра проведём постмортем, чтобы разобрать, что произошло"
+      "sentenceTranslation": "Завтра проведём постмортем, чтобы разобрать, что произошло",
+      "answers": [
+        {
+          "text": "postmortem",
+          "weight": 1
+        },
+        {
+          "text": "post-incident review",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "timeline",
       "translation": "хронология — что когда произошло",
       "example": "Can you put together a timeline of the incident?",
-      "sentenceTranslation": "Можешь составить хронологию инцидента?"
+      "sentenceTranslation": "Можешь составить хронологию инцидента?",
+      "answers": [
+        {
+          "text": "timeline",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "contributing factor",
       "translation": "сопутствующий фактор — не главная причина",
       "example": "Lack of monitoring was a contributing factor.",
-      "sentenceTranslation": "Отсутствие мониторинга было сопутствующим фактором"
+      "sentenceTranslation": "Отсутствие мониторинга было сопутствующим фактором",
+      "answers": [
+        {
+          "text": "contributing factor",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "action item",
       "translation": "конкретное действие по итогам разбора",
       "example": "The main action item is to add better alerting.",
-      "sentenceTranslation": "Главный action item — добавить более качественный алертинг"
+      "sentenceTranslation": "Главный action item — добавить более качественный алертинг",
+      "answers": [
+        {
+          "text": "action item",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "prevent",
-      "infinitive": "to prevent",
+      "word": "prevent / avoid",
+      "infinitive": "to prevent / to avoid",
       "translation": "предотвратить",
       "example": "What can we do to prevent this from happening again?",
-      "sentenceTranslation": "Что мы можем сделать, чтобы предотвратить повторение?"
+      "sentenceTranslation": "Что мы можем сделать, чтобы предотвратить повторение?",
+      "answers": [
+        {
+          "text": "to prevent",
+          "weight": 1
+        },
+        {
+          "text": "to avoid",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "blameless",
       "translation": "без обвинений — культура разбора без поиска виноватых",
       "example": "Our postmortems are blameless — we focus on systems, not people.",
-      "sentenceTranslation": "Наши постмортемы проходят без обвинений — мы фокусируемся на системах, а не на людях"
+      "sentenceTranslation": "Наши постмортемы проходят без обвинений — мы фокусируемся на системах, а не на людях",
+      "answers": [
+        {
+          "text": "blameless",
+          "weight": 1
+        }
+      ]
     }
   ]
 }

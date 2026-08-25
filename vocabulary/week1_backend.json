@@ -6,15 +6,31 @@
       "infinitive": "to expose",
       "translation": "открывать наружу (endpoint, port)",
       "example": "We expose a REST endpoint at /users.",
-      "sentenceTranslation": "Мы открываем наружу REST-эндпоинт по адресу /users."
+      "sentenceTranslation": "Мы открываем наружу REST-эндпоинт по адресу /users.",
+      "answers": [
+        {
+          "text": "to expose",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "consume",
-      "infinitive": "to consume",
+      "word": "consume / call",
+      "infinitive": "to consume / to call",
       "translation": "потреблять / вызывать (API, service)",
       "example": "The frontend consumes our API.",
       "sentenceTranslation": "Фронтенд использует / вызывает наш API.",
-      "answer": "consumes"
+      "answer": "consumes",
+      "answers": [
+        {
+          "text": "to consume",
+          "weight": 1
+        },
+        {
+          "text": "to call",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "handle",
@@ -22,14 +38,26 @@
       "translation": "обрабатывать (request, error, event)",
       "example": "This middleware handles authentication.",
       "sentenceTranslation": "Этот middleware обрабатывает аутентификацию.",
-      "answer": "handles"
+      "answer": "handles",
+      "answers": [
+        {
+          "text": "to handle",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "parse",
       "infinitive": "to parse",
       "translation": "разобрать / распарсить",
       "example": "We parse the request body before validation.",
-      "sentenceTranslation": "Мы парсим / разбираем тело запроса перед валидацией."
+      "sentenceTranslation": "Мы парсим / разбираем тело запроса перед валидацией.",
+      "answers": [
+        {
+          "text": "to parse",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "serialize / deserialize",
@@ -37,7 +65,17 @@
       "translation": "сериализовать / десериализовать",
       "example": "The response is serialized to JSON.",
       "sentenceTranslation": "Ответ сериализуется в JSON.",
-      "answer": "serialized"
+      "answer": "serialized",
+      "answers": [
+        {
+          "text": "to serialize",
+          "weight": 1
+        },
+        {
+          "text": "to deserialize",
+          "weight": 0.95
+        }
+      ]
     },
     {
       "word": "paginate",
@@ -45,28 +83,64 @@
       "translation": "разбивать на страницы",
       "example": "The endpoint paginates results using limit and offset.",
       "sentenceTranslation": "Эндпоинт разбивает результаты на страницы с помощью limit и offset.",
-      "answer": "paginates"
+      "answer": "paginates",
+      "answers": [
+        {
+          "text": "to paginate",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "throttle / rate-limit",
       "infinitive": "to throttle / to rate-limit",
       "translation": "ограничивать количество запросов",
       "example": "We throttle requests to 100 per minute.",
-      "sentenceTranslation": "Мы ограничиваем количество запросов до 100 в минуту."
+      "sentenceTranslation": "Мы ограничиваем количество запросов до 100 в минуту.",
+      "answers": [
+        {
+          "text": "to throttle",
+          "weight": 1
+        },
+        {
+          "text": "to rate-limit",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "authenticate / authorize",
       "infinitive": "to authenticate / to authorize",
       "translation": "аутентифицировать vs авторизовать",
       "example": "First we authenticate, then authorize.",
-      "sentenceTranslation": "Сначала мы аутентифицируем, затем авторизуем."
+      "sentenceTranslation": "Сначала мы аутентифицируем, затем авторизуем.",
+      "answers": [
+        {
+          "text": "to authenticate",
+          "weight": 1
+        },
+        {
+          "text": "to authorize",
+          "weight": 0.95
+        }
+      ]
     },
     {
-      "word": "validate",
-      "infinitive": "to validate",
+      "word": "validate / check",
+      "infinitive": "to validate / to check",
       "translation": "проверять (данные, схему, параметры)",
       "example": "Always validate the payload before hitting the DB.",
-      "sentenceTranslation": "Всегда валидируй / проверяй payload перед обращением к базе данных."
+      "sentenceTranslation": "Всегда валидируй / проверяй payload перед обращением к базе данных.",
+      "answers": [
+        {
+          "text": "to validate",
+          "weight": 1
+        },
+        {
+          "text": "to check",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "propagate",
@@ -74,124 +148,264 @@
       "translation": "пробрасывать (error, event)",
       "example": "The error propagates up the middleware chain.",
       "sentenceTranslation": "Ошибка пробрасывается вверх по цепочке middleware.",
-      "answer": "propagates"
+      "answer": "propagates",
+      "answers": [
+        {
+          "text": "to propagate",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "intercept",
       "infinitive": "to intercept",
       "translation": "перехватывать (request, response)",
       "example": "We intercept every request to log the trace ID.",
-      "sentenceTranslation": "Мы перехватываем каждый запрос, чтобы записать trace ID в лог."
+      "sentenceTranslation": "Мы перехватываем каждый запрос, чтобы записать trace ID в лог.",
+      "answers": [
+        {
+          "text": "to intercept",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "offload",
       "infinitive": "to offload",
       "translation": "передавать задачу (в очередь, воркер)",
       "example": "We offload email sending to a background queue.",
-      "sentenceTranslation": "Мы передаём задачу отправки писем в фоновую очередь."
+      "sentenceTranslation": "Мы передаём задачу отправки писем в фоновую очередь.",
+      "answers": [
+        {
+          "text": "to offload",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "payload",
+      "word": "payload / request body",
       "translation": "тело запроса / передаваемые данные",
       "example": "The payload includes user ID and preferences.",
-      "sentenceTranslation": "Тело запроса содержит ID пользователя и настройки."
+      "sentenceTranslation": "Тело запроса содержит ID пользователя и настройки.",
+      "answers": [
+        {
+          "text": "payload",
+          "weight": 1
+        },
+        {
+          "text": "request body",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "middleware",
       "translation": "промежуточный обработчик",
       "example": "Auth middleware runs before the route handler.",
-      "sentenceTranslation": "Промежуточный обработчик аутентификации выполняется перед обработчиком маршрута."
+      "sentenceTranslation": "Промежуточный обработчик аутентификации выполняется перед обработчиком маршрута.",
+      "answers": [
+        {
+          "text": "middleware",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "idempotency",
       "translation": "идемпотентность",
       "example": "Use PUT for idempotency — it's safe to retry.",
-      "sentenceTranslation": "Используй PUT для идемпотентности: такой запрос безопасно повторять."
+      "sentenceTranslation": "Используй PUT для идемпотентности: такой запрос безопасно повторять.",
+      "answers": [
+        {
+          "text": "idempotency",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "latency",
       "translation": "задержка (время между запросом и ответом)",
       "example": "P99 latency is under 200ms.",
-      "sentenceTranslation": "Задержка P99 меньше 200 мс."
+      "sentenceTranslation": "Задержка P99 меньше 200 мс.",
+      "answers": [
+        {
+          "text": "latency",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "throughput",
       "translation": "пропускная способность",
       "example": "Higher throughput means the system handles more requests per second.",
-      "sentenceTranslation": "Более высокая пропускная способность означает, что система обрабатывает больше запросов в секунду."
+      "sentenceTranslation": "Более высокая пропускная способность означает, что система обрабатывает больше запросов в секунду.",
+      "answers": [
+        {
+          "text": "throughput",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "contract",
+      "word": "contract / agreement",
       "translation": "API-контракт / соглашение об интерфейсе",
       "example": "We shouldn't break the API contract without versioning.",
-      "sentenceTranslation": "Нельзя ломать API-контракт без версионирования."
+      "sentenceTranslation": "Нельзя ломать API-контракт без версионирования.",
+      "answers": [
+        {
+          "text": "contract",
+          "weight": 1
+        },
+        {
+          "text": "agreement",
+          "weight": 0.8
+        }
+      ]
     },
     {
       "word": "backward compatibility",
       "translation": "обратная совместимость",
       "example": "This change breaks backward compatibility.",
-      "sentenceTranslation": "Это изменение нарушает обратную совместимость."
+      "sentenceTranslation": "Это изменение нарушает обратную совместимость.",
+      "answers": [
+        {
+          "text": "backward compatibility",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "bottleneck",
       "translation": "узкое место",
       "example": "The DB query is the bottleneck here.",
-      "sentenceTranslation": "Запрос к базе данных здесь является узким местом."
+      "sentenceTranslation": "Запрос к базе данных здесь является узким местом.",
+      "answers": [
+        {
+          "text": "bottleneck",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "race condition",
       "translation": "состояние гонки",
       "example": "Two requests hit the same record — classic race condition.",
-      "sentenceTranslation": "Два запроса попали в одну и ту же запись: классическое состояние гонки."
+      "sentenceTranslation": "Два запроса попали в одну и ту же запись: классическое состояние гонки.",
+      "answers": [
+        {
+          "text": "race condition",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "retry logic",
       "translation": "логика повторных попыток",
       "example": "We added retry logic with exponential backoff.",
-      "sentenceTranslation": "Мы добавили логику повторных попыток с экспоненциальной задержкой."
+      "sentenceTranslation": "Мы добавили логику повторных попыток с экспоненциальной задержкой.",
+      "answers": [
+        {
+          "text": "retry logic",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "graceful degradation",
       "translation": "корректная деградация при сбое",
       "example": "If the cache is down, we fall back — graceful degradation.",
-      "sentenceTranslation": "Если кэш недоступен, мы переключаемся на запасной вариант: это корректная деградация."
+      "sentenceTranslation": "Если кэш недоступен, мы переключаемся на запасной вариант: это корректная деградация.",
+      "answers": [
+        {
+          "text": "graceful degradation",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "circuit breaker",
       "translation": "паттерн остановки вызовов к упавшему сервису",
       "example": "The circuit breaker opens after 5 consecutive failures.",
-      "sentenceTranslation": "Защитный механизм размыкает цепочку вызовов после 5 ошибок подряд."
+      "sentenceTranslation": "Защитный механизм размыкает цепочку вызовов после 5 ошибок подряд.",
+      "answers": [
+        {
+          "text": "circuit breaker",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "under the hood",
+      "word": "under the hood / internally",
       "translation": "внутри / как устроено на самом деле",
       "example": "Under the hood, it uses a connection pool.",
-      "sentenceTranslation": "Внутри, под капотом, он использует пул соединений."
+      "sentenceTranslation": "Внутри, под капотом, он использует пул соединений.",
+      "answers": [
+        {
+          "text": "under the hood",
+          "weight": 1
+        },
+        {
+          "text": "internally",
+          "weight": 0.85
+        }
+      ]
     },
     {
       "word": "downstream / upstream",
       "translation": "сервисы ниже/выше по цепочке",
       "example": "The failure in the downstream service caused a timeout.",
-      "sentenceTranslation": "Сбой в зависимом сервисе дальше по цепочке вызвал таймаут."
+      "sentenceTranslation": "Сбой в зависимом сервисе дальше по цепочке вызвал таймаут.",
+      "answers": [
+        {
+          "text": "downstream",
+          "weight": 1
+        },
+        {
+          "text": "upstream",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "happy path",
       "translation": "успешный сценарий без ошибок",
       "example": "The happy path works; edge cases are the issue.",
-      "sentenceTranslation": "Успешный сценарий без ошибок работает; проблема в пограничных случаях."
+      "sentenceTranslation": "Успешный сценарий без ошибок работает; проблема в пограничных случаях.",
+      "answers": [
+        {
+          "text": "happy path",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "edge case",
+      "word": "edge case / corner case",
       "translation": "граничный / нетипичный случай",
       "example": "What if the list is empty? That's an edge case.",
-      "sentenceTranslation": "А что, если список пустой? Это пограничный случай."
+      "sentenceTranslation": "А что, если список пустой? Это пограничный случай.",
+      "answers": [
+        {
+          "text": "edge case",
+          "weight": 1
+        },
+        {
+          "text": "corner case",
+          "weight": 0.9
+        }
+      ]
     },
     {
       "word": "fall back to",
       "infinitive": "to fall back to",
       "translation": "переключиться на запасной вариант",
       "example": "If Redis is down, we fall back to the database.",
-      "sentenceTranslation": "Если Redis недоступен, мы переключаемся на базу данных."
+      "sentenceTranslation": "Если Redis недоступен, мы переключаемся на базу данных.",
+      "answers": [
+        {
+          "text": "to fall back to",
+          "weight": 1
+        }
+      ]
     },
     {
       "word": "tie into",
@@ -199,14 +413,30 @@
       "translation": "интегрироваться с (системой)",
       "example": "This service ties into the notification system.",
       "sentenceTranslation": "Этот сервис интегрируется с системой уведомлений.",
-      "answer": "ties into"
+      "answer": "ties into",
+      "answers": [
+        {
+          "text": "to tie into",
+          "weight": 1
+        }
+      ]
     },
     {
-      "word": "spin up",
-      "infinitive": "to spin up",
+      "word": "spin up / start",
+      "infinitive": "to spin up / to start",
       "translation": "запустить / поднять (сервер, контейнер)",
       "example": "We spin up a new instance during peak load.",
-      "sentenceTranslation": "Мы запускаем / поднимаем новый инстанс во время пиковой нагрузки."
+      "sentenceTranslation": "Мы запускаем / поднимаем новый инстанс во время пиковой нагрузки.",
+      "answers": [
+        {
+          "text": "to spin up",
+          "weight": 1
+        },
+        {
+          "text": "to start",
+          "weight": 0.85
+        }
+      ]
     }
   ]
 }
