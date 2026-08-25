@@ -410,8 +410,6 @@
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
     vocabTabGroup: document.getElementById('vocab-tab-group'),
-    vocabModeBtnSentences: document.getElementById('vocab-mode-btn-sentences'),
-    vocabModeBtnWords: document.getElementById('vocab-mode-btn-words'),
     optionsSection: document.getElementById('options-section'),
     questionMeta: document.getElementById('question-meta'),
     vocabModeLabel: document.getElementById('vocab-mode-label'),
@@ -693,7 +691,6 @@
         wrong: state.wrong,
         vocabulary: {
           topic: refs.vocabTopic.value,
-          exerciseMode: _vocabExerciseMode,
           autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
           order: vocabState.session.map((item) => item && item.id).filter((id) => id != null),
           idx: vocabState.idx,
@@ -1102,9 +1099,6 @@
     }
 
     refs.autoSpeakCorrectVocab.checked = saved.autoSpeakCorrect !== false;
-    if (saved.exerciseMode === 'words' || saved.exerciseMode === 'sentences') {
-      setVocabExerciseMode(saved.exerciseMode);
-    }
 
     vocabState.session = restoreVocabSessionFromOrder(saved.order, refs.vocabTopic.value);
     if (!vocabState.session.length) {
@@ -1114,18 +1108,6 @@
     vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
     vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
     return Boolean(vocabState.session.length);
-  }
-
-  let _vocabExerciseMode = 'sentences';
-
-  function vocabExerciseMode() {
-    return _vocabExerciseMode;
-  }
-
-  function setVocabExerciseMode(mode) {
-    _vocabExerciseMode = mode;
-    refs.vocabModeBtnSentences.classList.toggle('vocab-mode-btn--active', mode === 'sentences');
-    refs.vocabModeBtnWords.classList.toggle('vocab-mode-btn--active', mode === 'words');
   }
 
   function renderVocab() {
@@ -1145,19 +1127,11 @@
     refs.correctCount.textContent = String(vocabState.correct);
     refs.wrongCount.textContent = String(vocabState.wrong);
 
-    if (vocabExerciseMode() === 'words') {
-      refs.vocabModeLabel.textContent = 'Переведите на английский';
-      renderQuestionText(w.translation);
-      setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
-      refs.questionTranslation.classList.remove('vocab-hint');
-      setQuestionTranslation('');
-    } else {
-      refs.vocabModeLabel.textContent = 'Введите пропущенное слово';
-      renderQuestionText(w.gapExample || w.example);
-      setSelectedSentenceForSpeech(w.example || w.gapExample || '');
-      refs.questionTranslation.classList.add('vocab-hint');
-      void showVocabSentenceTranslation(w);
-    }
+    refs.vocabModeLabel.textContent = 'Переведите на английский';
+    renderQuestionText(w.translation);
+    setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
+    refs.questionTranslation.classList.remove('vocab-hint');
+    setQuestionTranslation('');
 
     refs.answerInput.value = '';
     refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
@@ -1179,10 +1153,8 @@
 
     const wordOptions = answerOptionsForVocabItem(w);
     const wordTarget = primaryAnswerText(wordOptions) || w.infinitive || w.word;
-    const target = vocabExerciseMode() === 'words' ? normalize(wordTarget) : normalize(w.answer);
-    const match = vocabExerciseMode() === 'words'
-      ? getAnswerMatch(user, target, wordOptions)
-      : getAnswerMatch(user, target);
+    const target = normalize(wordTarget);
+    const match = getAnswerMatch(user, target, wordOptions);
     if (match.matched) {
       if (!vocabState.wrongCounted) {
         vocabState.correct += 1;
@@ -1201,9 +1173,7 @@
         refs.wrongCount.textContent = String(vocabState.wrong);
       }
       playWrongSound();
-      const correctAnswer = vocabExerciseMode() === 'words'
-        ? (primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word)
-        : w.answer;
+      const correctAnswer = primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word;
       setFeedback('Почти. Правильный ответ: ' + correctAnswer, false);
       refs.answerInput.value = '';
       refs.answerInput.focus();
@@ -1226,9 +1196,7 @@
 
   function queueVocabNextAfterCorrect(w) {
     clearAutoNextTimer();
-    const textToSpeak = vocabExerciseMode() === 'words'
-      ? (primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word)
-      : w.example;
+    const textToSpeak = primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word;
     if (state.autoSpeakCorrect && textToSpeak) {
       const started = speakEnglishText(textToSpeak, {
         onComplete: () => {
@@ -1346,8 +1314,6 @@
     refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
-    refs.vocabModeBtnSentences.disabled = mode !== 'vocabulary';
-    refs.vocabModeBtnWords.disabled = mode !== 'vocabulary';
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsTheory.hidden = mode !== 'theory';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
@@ -1625,28 +1591,6 @@
     saveProgress();
   });
 
-  refs.vocabModeBtnSentences.addEventListener('click', () => {
-    setVocabExerciseMode('sentences');
-    if (currentMode !== 'vocabulary') switchMode('vocabulary');
-    clearAutoNextTimer();
-    vocabState.idx = 0;
-    vocabState.correct = 0;
-    vocabState.wrong = 0;
-    renderVocab();
-    saveProgress();
-  });
-
-  refs.vocabModeBtnWords.addEventListener('click', () => {
-    setVocabExerciseMode('words');
-    if (currentMode !== 'vocabulary') switchMode('vocabulary');
-    clearAutoNextTimer();
-    vocabState.idx = 0;
-    vocabState.correct = 0;
-    vocabState.wrong = 0;
-    renderVocab();
-    saveProgress();
-  });
-
   if (!levelNames.length) {
     refs.questionText.textContent =
       "Не удалось загрузить вопросы. Проверь, что рядом есть файл questions.js.";
@@ -1683,7 +1627,6 @@
     saveProgress();
   });
 
-  setVocabExerciseMode(_vocabExerciseMode);
   ensureTheoryTopicOptions();
   ensureGrammarTopicOptions(levelNames[0]);
   const restored = restoreProgress();
