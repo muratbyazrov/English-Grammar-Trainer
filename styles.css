@@ -99,6 +99,14 @@ body {
   width: 220px;
 }
 
+#listening-topic {
+  width: 190px;
+}
+
+#listening-rate {
+  width: 104px;
+}
+
 .toggle-option {
   display: inline-flex;
   align-items: center;
@@ -257,6 +265,21 @@ button:hover {
   gap: 6px;
 }
 
+.listening-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+#listen-btn {
+  background: var(--accent-2);
+  color: #fff;
+  border-color: var(--accent-2);
+}
+
 .feedback,
 .hint {
   min-height: 20px;
@@ -284,6 +307,38 @@ button:hover {
 
 .hint {
   color: #7c5e00;
+}
+
+.listening-diff {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  color: var(--ink);
+}
+
+.listening-word {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 2px 7px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fbff;
+  font-size: 0.95rem;
+}
+
+.listening-word--ok {
+  border-color: #b7e4c7;
+  background: #eafaf0;
+  color: var(--ok);
+}
+
+.listening-word--miss {
+  border-color: #ffd0d0;
+  background: #fff1f1;
+  color: var(--danger);
 }
 
 /* ── Mode tabs ── */
@@ -405,6 +460,130 @@ button:hover {
 .question-translation.vocab-hint {
   color: var(--accent-2);
   font-size: 1.05rem;
+}
+
+.vocab-list-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.vocab-list-modal {
+  width: min(860px, 96vw);
+  max-height: min(760px, 88vh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
+}
+
+.vocab-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab-list-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.vocab-list-subtitle {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vocab-list-close {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  padding: 0;
+  border-radius: 999px;
+  background: #f8fbff;
+  color: var(--muted);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.vocab-list-close:hover {
+  color: var(--ink);
+  background: #eef5ff;
+}
+
+.vocab-list-body {
+  display: grid;
+  gap: 8px;
+  overflow: auto;
+  padding: 12px 18px 18px;
+}
+
+.vocab-list-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab-list-item:last-child {
+  border-bottom: 0;
+}
+
+.vocab-list-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #f8fbff;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.vocab-list-item-content {
+  min-width: 0;
+}
+
+.vocab-list-word {
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.vocab-list-translation {
+  margin-top: 2px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.vocab-list-example {
+  margin-top: 5px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.vocab-list-empty {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 /* ── Theory ── */
@@ -610,6 +789,24 @@ button:hover {
   .theory-example {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .vocab-list-overlay {
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .vocab-list-modal {
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .vocab-list-header {
+    padding: 14px 14px 10px;
+  }
+
+  .vocab-list-body {
+    padding: 10px 14px 14px;
   }
 }
 

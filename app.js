@@ -209,6 +209,132 @@
       ],
     },
     {
+      id: "worth",
+      title: "Worth",
+      subtitle: "стоит, заслуживает, имеет смысл",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "Worth выражает ценность или смысл действия: стоит ли это усилий, времени, риска или денег.",
+            "После worth часто стоит существительное, verb + ing или заменяющее it, когда конкретное существительное уже понятно из контекста.",
+          ],
+        },
+        {
+          title: "1. Be worth + noun",
+          examples: [
+            ["It's worth the effort.", "Это стоит усилий."],
+            ["It's worth the risk.", "Это стоит риска."],
+            ["It's not worth the time.", "Это не стоит времени."],
+          ],
+        },
+        {
+          title: "2. Be worth + verb-ing",
+          items: [
+            "После worth всегда используем -ing, а не инфинитив.",
+            "Правильно: worth doing.",
+            "Неправильно: worth to do.",
+          ],
+          examples: [
+            ["It's worth trying.", "Стоит попробовать."],
+            ["It's worth investigating.", "Стоит расследовать."],
+            ["It's not worth fixing.", "Не стоит чинить."],
+          ],
+        },
+        {
+          title: "3. Be worth it",
+          items: [
+            "Когда нет конкретного существительного, используем it.",
+          ],
+          examples: [
+            ["It sounds complicated, but it's worth it.", "Звучит сложно, но оно того стоит."],
+            ["Is it worth it?", "Оно того стоит?"],
+          ],
+        },
+        {
+          title: "Полезные расширения",
+          examples: [
+            ["This technical debt is worth months of work to fix.", "worth + число: стоит в денежном или временном смысле."],
+            ["It's a worthwhile refactoring.", "Worthwhile - прилагательное: полезный, стоящий."],
+            ["This is a minor bug - it's not worth fixing right now.", "Not worth it / not worth doing - не стоит."],
+          ],
+        },
+        {
+          title: "В IT-контексте",
+          items: [
+            "It's worth analyzing the execution plan before optimizing.",
+            "Is it worth adding an index on this column?",
+            "The migration is complex, but it's worth it - we get much better performance.",
+            "It's not worth introducing a new dependency for such a small feature.",
+            "This is worth discussing in the next standup.",
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Стоит проанализировать план выполнения перед тем, как добавлять индекс.",
+            "Это сложная миграция, но она того стоит - производительность значительно улучшится.",
+            "Этот баг незначительный - не стоит его чинить прямо сейчас.",
+            "Стоит обсудить проблему с блокировками на следующем стендапе.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "subject-questions",
+      title: "Вопросы к подлежащему",
+      subtitle: "who / what как тот, кто выполняет действие",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "В обычном вопросе мы спрашиваем про действие или обстоятельство: нужен вспомогательный глагол и обратный порядок слов.",
+            "Если вопрос про того, кто или что совершает действие, вспомогательный глагол обычно не нужен. Порядок слов прямой, как в утверждении; в Present Simple часто используется форма 3 лица единственного числа.",
+          ],
+          examples: [
+            ["What did you deploy?", "Обычный вопрос: что ты задеплоил?"],
+            ["What are you fixing?", "Обычный вопрос: что ты чинишь?"],
+            ["Who triggered the alert?", "Вопрос к подлежащему: кто вызвал алерт?"],
+            ["What broke the build?", "Вопрос к подлежащему: что сломало билд?"],
+          ],
+        },
+        {
+          title: "Сравнение по временам",
+          examples: [
+            ["Present Simple: What do you monitor?", "Who monitors this service?"],
+            ["Past Simple: What did you revert?", "Who reverted the config?"],
+            ["Present Continuous: What are you fixing?", "What is causing the issue?"],
+            ["Present Perfect: What have you pushed?", "Who has pushed to main?"],
+            ["To be - Present: What is the root cause?", "Who is on-call tonight?"],
+            ["To be - Past: What was the workaround?", "Who was the incident commander?"],
+          ],
+        },
+        {
+          title: "Present Perfect",
+          items: [
+            "В Present Perfect вспомогательный has остается, потому что он часть самой формы, а не отдельная вопросительная конструкция.",
+          ],
+          examples: [
+            ["Who has pushed to main?", "Кто запушил в main?"],
+            ["What has caused the outage?", "Что вызвало отказ?"],
+          ],
+        },
+        {
+          title: "Составьте два вопроса",
+          items: [
+            "The config change triggered the alert. What / ? Who / ?",
+            "Alex pushed a hotfix to production at 3am. Who / ? What / Alex / push?",
+            "The unoptimized query caused the outage. What / caused? What / the team / find?",
+            "The on-call engineer reverted the config. Who / reverted? What / the on-call engineer / revert?",
+            "Something is blocking the deploy right now. What / blocking? What / you / fix?",
+            "A memory leak caused the issue. What / caused? What / the team / find?",
+            "The traffic spike broke the service last night. What / broke? What / you / notice?",
+            "Alex owns this incident. Who / owns? What / Alex / own?",
+          ],
+        },
+      ],
+    },
+    {
       id: "passive-voice-table",
       title: "Passive Voice: таблица",
       subtitle: "когда важно действие и результат, а не исполнитель",
@@ -341,6 +467,80 @@
       ],
     },
   ];
+  const LISTENING_TOPICS = [
+    {
+      id: "small-words",
+      title: "Small Words",
+      items: [
+        "So, as far as I know, it should be fine by the end of the day.",
+        "I just want to flag that it might take a bit longer than we thought.",
+        "Let me look into it and I'll get back to you in a bit.",
+        "Yeah, I'm still kind of stuck on it, but I think I'm close.",
+        "So I went ahead and pushed it to review. Let me know what you think.",
+        "I mean, it depends on what we find once we dig into it.",
+        "I'll try to wrap it up today, but I can't promise it'll be done by end of day.",
+        "So just a heads-up, I might need a bit of help with this one.",
+        "I think the best thing to do is to loop in the infra team and go from there.",
+        "OK, so I looked into it and it turns out it's a bit more complex than I thought.",
+      ],
+    },
+    {
+      id: "incident-call",
+      title: "Incident Call",
+      items: [
+        "Can you jump on a call? The service is down and we need all hands on.",
+        "I'm not sure if it's a sev one yet. Let me pull up the logs and check.",
+        "As far as I know, the on-call engineer is already looking into it.",
+        "So we rolled it back and it looks like it's starting to stabilize.",
+        "Can you give us a quick update on what's going on right now?",
+        "I think we need to narrow it down a bit more before we push a hotfix.",
+        "It turns out the root cause was a config change we pushed earlier today.",
+        "So we applied a workaround for now. We'll do a proper fix in the morning.",
+        "I want to make sure we do a blameless postmortem and figure out how to prevent this.",
+      ],
+    },
+    {
+      id: "standup",
+      title: "Standup",
+      items: [
+        "Alex picked up the migration ticket on Monday but got stuck on a dependency.",
+        "He flagged it straight away, but we still haven't managed to unblock him.",
+        "Masha is wrapping up the API refactor.",
+        "She pushed it to review yesterday and addressed most of the comments.",
+        "It should be mergeable by end of day.",
+        "Dan raised a concern about the deadline.",
+        "His rough estimate is four to five days, but it depends on the edge cases.",
+        "We decided to take that discussion offline after the standup.",
+      ],
+    },
+    {
+      id: "backend",
+      title: "Backend/API",
+      items: [
+        "Our service exposes a REST API that the frontend team consumes to get data.",
+        "Every request goes through middleware that intercepts it and validates the authentication token.",
+        "We always validate the payload before it hits the database.",
+        "Heavy tasks like sending emails are offloaded to a background queue.",
+        "Last week we discovered a bottleneck.",
+        "A database query was slowing down the whole service under high load.",
+        "We added retry logic with exponential backoff.",
+        "If the cache goes down, the service falls back to the database.",
+      ],
+    },
+    {
+      id: "database",
+      title: "Database",
+      items: [
+        "Moving it to Postgres gives us persistence and makes it much easier to scale horizontally.",
+        "The plan is to introduce a migration to create the new tables.",
+        "We'll create indexes on the columns we query most frequently.",
+        "I want to analyze the execution plan for the heaviest queries before we go live.",
+        "We need to handle transactions carefully.",
+        "We should always acquire locks in the same order to avoid deadlocks.",
+        "If anything goes wrong, we roll back the transaction and the schema stays consistent.",
+      ],
+    },
+  ];
 
   function fixBrokenWordSpacing(value) {
     return String(value || "")
@@ -402,13 +602,25 @@
     tabGrammar: document.getElementById('tab-grammar'),
     tabTheory: document.getElementById('tab-theory'),
     tabVocab: document.getElementById('tab-vocab'),
+    tabListening: document.getElementById('tab-listening'),
     controlsGrammar: document.getElementById('controls-grammar'),
     controlsTheory: document.getElementById('controls-theory'),
     controlsVocab: document.getElementById('controls-vocab'),
+    controlsListening: document.getElementById('controls-listening'),
     theoryTopic: document.getElementById('theory-topic'),
     vocabTopic: document.getElementById('vocab-topic'),
+    vocabShowList: document.getElementById('vocab-show-list'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
+    listeningTopic: document.getElementById('listening-topic'),
+    listeningRate: document.getElementById('listening-rate'),
+    listeningAutoNext: document.getElementById('listening-auto-next'),
+    listeningNewSession: document.getElementById('listening-new-session'),
+    listeningActions: document.getElementById('listening-actions'),
+    listenBtn: document.getElementById('listen-btn'),
+    listeningFirstWord: document.getElementById('listening-first-word'),
+    listeningGaps: document.getElementById('listening-gaps'),
+    listeningShowText: document.getElementById('listening-show-text'),
     vocabTabGroup: document.getElementById('vocab-tab-group'),
     optionsSection: document.getElementById('options-section'),
     questionMeta: document.getElementById('question-meta'),
@@ -418,6 +630,11 @@
     theoryPanel: document.getElementById('theory-panel'),
     theoryTitle: document.getElementById('theory-title'),
     theoryBody: document.getElementById('theory-body'),
+    vocabListOverlay: document.getElementById('vocab-list-overlay'),
+    vocabListTitle: document.getElementById('vocab-list-title'),
+    vocabListSubtitle: document.getElementById('vocab-list-subtitle'),
+    vocabListBody: document.getElementById('vocab-list-body'),
+    vocabListClose: document.getElementById('vocab-list-close'),
   };
 
   const card = document.querySelector(".card");
@@ -497,6 +714,15 @@
   };
 
   const vocabState = { session: [], idx: 0, correct: 0, wrong: 0, checkedCurrent: false, wrongCounted: false };
+  const listeningState = {
+    session: [],
+    idx: 0,
+    correct: 0,
+    wrong: 0,
+    checkedCurrent: false,
+    wrongCounted: false,
+    hintLevel: 0,
+  };
 
   function asNumber(value, fallback) {
     const parsed = Number(value);
@@ -697,6 +923,15 @@
           correct: vocabState.correct,
           wrong: vocabState.wrong,
         },
+        listening: {
+          topic: refs.listeningTopic.value,
+          rate: refs.listeningRate.value,
+          autoNext: refs.listeningAutoNext.checked,
+          order: listeningState.session.map((item) => item && item.id).filter((id) => id != null),
+          idx: listeningState.idx,
+          correct: listeningState.correct,
+          wrong: listeningState.wrong,
+        },
         theory: {
           topic: refs.theoryTopic.value,
         },
@@ -747,8 +982,9 @@
       state.correct = correct;
       state.wrong = wrong;
       restoreVocabProgress(parsed.vocabulary);
+      restoreListeningProgress(parsed.listening);
       restoreTheoryProgress(parsed.theory);
-      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory') {
+      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory' || parsed.mode === 'listening') {
         currentMode = parsed.mode;
       }
       return true;
@@ -801,7 +1037,7 @@
     refs.speakWordBtn.disabled = !normalized;
   }
 
-  function buildEnglishUtterance(text) {
+  function buildEnglishUtterance(text, options = {}) {
     if (!("speechSynthesis" in window) || typeof window.SpeechSynthesisUtterance !== "function") {
       return null;
     }
@@ -818,7 +1054,7 @@
     } else {
       utterance.lang = "en-US";
     }
-    utterance.rate = 0.9;
+    utterance.rate = Number.isFinite(Number(options.rate)) ? Number(options.rate) : 0.9;
     utterance.pitch = 1;
     return utterance;
   }
@@ -830,8 +1066,8 @@
     }
   }
 
-  function speakEnglishText(text, { onComplete } = {}) {
-    const utterance = buildEnglishUtterance(text);
+  function speakEnglishText(text, { onComplete, rate } = {}) {
+    const utterance = buildEnglishUtterance(text, { rate });
     if (!utterance) {
       return false;
     }
@@ -889,7 +1125,9 @@
     const sentence = state.selectedSentenceForSpeech;
     if (!sentence) return;
 
-    const started = speakEnglishText(sentence);
+    const started = speakEnglishText(sentence, {
+      rate: currentMode === 'listening' ? refs.listeningRate.value : undefined,
+    });
     if (!started) {
       setQuestionTranslation("Озвучка недоступна в этом браузере.");
     }
@@ -1058,6 +1296,72 @@
     return topic ? (topic.words || []).slice() : [];
   }
 
+  function currentVocabTopicTitle(topicValue = refs.vocabTopic.value) {
+    return topicValue === 'all' ? 'Все темы' : topicValue;
+  }
+
+  function appendVocabListItem(parent, item, index) {
+    const row = document.createElement('article');
+    row.className = 'vocab-list-item';
+
+    const number = document.createElement('span');
+    number.className = 'vocab-list-number';
+    number.textContent = String(index + 1);
+
+    const content = document.createElement('div');
+    content.className = 'vocab-list-item-content';
+
+    const word = document.createElement('div');
+    word.className = 'vocab-list-word';
+    word.textContent = String((item && (item.word || item.infinitive || item.answer)) || '').trim() || 'Без слова';
+
+    const translation = document.createElement('div');
+    translation.className = 'vocab-list-translation';
+    translation.textContent = String((item && item.translation) || '').trim();
+
+    content.appendChild(word);
+    if (translation.textContent) {
+      content.appendChild(translation);
+    }
+
+    if (item && item.example) {
+      const example = document.createElement('div');
+      example.className = 'vocab-list-example';
+      example.textContent = item.example;
+      content.appendChild(example);
+    }
+
+    row.appendChild(number);
+    row.appendChild(content);
+    parent.appendChild(row);
+  }
+
+  function showVocabList() {
+    ensureVocabTopicOptions();
+    const topicValue = refs.vocabTopic.value;
+    const words = vocabWordsForTopicValue(topicValue);
+
+    refs.vocabListTitle.textContent = 'Список слов';
+    refs.vocabListSubtitle.textContent = `${currentVocabTopicTitle(topicValue)} · ${words.length} слов`;
+    refs.vocabListBody.innerHTML = '';
+
+    if (!words.length) {
+      const empty = document.createElement('p');
+      empty.className = 'vocab-list-empty';
+      empty.textContent = 'В этой теме пока нет слов.';
+      refs.vocabListBody.appendChild(empty);
+    } else {
+      words.forEach((item, index) => appendVocabListItem(refs.vocabListBody, item, index));
+    }
+
+    refs.vocabListOverlay.hidden = false;
+    refs.vocabListClose.focus();
+  }
+
+  function hideVocabList() {
+    refs.vocabListOverlay.hidden = true;
+  }
+
   function restoreVocabSessionFromOrder(order, topicValue) {
     if (!Array.isArray(order) || !order.length) return [];
 
@@ -1128,6 +1432,7 @@
     refs.wrongCount.textContent = String(vocabState.wrong);
 
     refs.vocabModeLabel.textContent = 'Переведите на английский';
+    refs.speakWordBtn.textContent = 'Озвучить предложение';
     renderQuestionText(w.translation);
     setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
     refs.questionTranslation.classList.remove('vocab-hint');
@@ -1211,6 +1516,363 @@
       nextVocabQuestion();
       saveProgress();
     }, AUTO_NEXT_DELAY_MS);
+  }
+
+  function allListeningItemsForTopicValue(topicValue) {
+    const topics = topicValue === 'all'
+      ? LISTENING_TOPICS
+      : LISTENING_TOPICS.filter((topic) => topic.id === topicValue);
+
+    return topics.flatMap((topic) =>
+      (topic.items || []).map((text, index) => ({
+        id: `${topic.id}:${index}`,
+        topicId: topic.id,
+        topicTitle: topic.title,
+        text,
+      }))
+    );
+  }
+
+  function pickListeningSession() {
+    return shuffleItems(allListeningItemsForTopicValue(refs.listeningTopic.value || 'all'));
+  }
+
+  function restoreListeningSessionFromOrder(order, topicValue) {
+    if (!Array.isArray(order) || !order.length) return [];
+
+    const itemsById = new Map(
+      allListeningItemsForTopicValue(topicValue || 'all').map((item) => [String(item.id), item])
+    );
+    const restored = order
+      .map((id) => itemsById.get(String(id)))
+      .filter(Boolean);
+
+    return restored.length === itemsById.size ? restored : [];
+  }
+
+  function ensureListeningTopicOptions() {
+    if (refs.listeningTopic.options.length > 0) return;
+
+    const allOpt = document.createElement('option');
+    allOpt.value = 'all';
+    allOpt.textContent = 'Все темы';
+    refs.listeningTopic.appendChild(allOpt);
+
+    LISTENING_TOPICS.forEach((topic) => {
+      const opt = document.createElement('option');
+      opt.value = topic.id;
+      opt.textContent = topic.title;
+      refs.listeningTopic.appendChild(opt);
+    });
+  }
+
+  function restoreListeningProgress(saved) {
+    ensureListeningTopicOptions();
+    if (!saved || typeof saved !== "object") return false;
+
+    const topicValue = String(saved.topic || "");
+    const hasTopic = Array.from(refs.listeningTopic.options).some((opt) => opt.value === topicValue);
+    if (hasTopic) {
+      refs.listeningTopic.value = topicValue;
+    }
+
+    const rate = String(saved.rate || "0.85");
+    const hasRate = Array.from(refs.listeningRate.options).some((opt) => opt.value === rate);
+    refs.listeningRate.value = hasRate ? rate : "0.85";
+    refs.listeningAutoNext.checked = saved.autoNext === true;
+
+    listeningState.session = restoreListeningSessionFromOrder(saved.order, refs.listeningTopic.value);
+    if (!listeningState.session.length) {
+      listeningState.session = pickListeningSession();
+    }
+    listeningState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, listeningState.session.length - 1)));
+    listeningState.correct = Math.max(0, asNumber(saved.correct, 0));
+    listeningState.wrong = Math.max(0, asNumber(saved.wrong, 0));
+    return Boolean(listeningState.session.length);
+  }
+
+  function currentListeningItem() {
+    return listeningState.session[listeningState.idx] || null;
+  }
+
+  function listeningWords(text) {
+    return String(text || "")
+      .toLowerCase()
+      .replace(/sev one/g, "sev1")
+      .replace(/[\u2018\u2019`]/g, "'")
+      .replace(/[^a-z0-9']+/g, " ")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean);
+  }
+
+  function listeningWordTokens(text) {
+    const normalized = expandListeningContractions(String(text || "").replace(/\bsev one\b/gi, "sev1"));
+    return (normalized.match(/[A-Za-zА-Яа-я0-9']+/g) || [])
+      .map((word) => ({ text: word, norm: normalizeListeningWord(word) }))
+      .filter((word) => word.norm);
+  }
+
+  function expandListeningContractions(text) {
+    return String(text || "")
+      .replace(/\bI'm\b/gi, "I am")
+      .replace(/\byou're\b/gi, "you are")
+      .replace(/\bhe's\b/gi, "he is")
+      .replace(/\bshe's\b/gi, "she is")
+      .replace(/\bit's\b/gi, "it is")
+      .replace(/\bwe're\b/gi, "we are")
+      .replace(/\bthey're\b/gi, "they are")
+      .replace(/\bI'll\b/gi, "I will")
+      .replace(/\byou'll\b/gi, "you will")
+      .replace(/\bhe'll\b/gi, "he will")
+      .replace(/\bshe'll\b/gi, "she will")
+      .replace(/\bit'll\b/gi, "it will")
+      .replace(/\bwe'll\b/gi, "we will")
+      .replace(/\bthey'll\b/gi, "they will")
+      .replace(/\bI've\b/gi, "I have")
+      .replace(/\byou've\b/gi, "you have")
+      .replace(/\bwe've\b/gi, "we have")
+      .replace(/\bthey've\b/gi, "they have")
+      .replace(/\bdon't\b/gi, "do not")
+      .replace(/\bdoesn't\b/gi, "does not")
+      .replace(/\bdidn't\b/gi, "did not")
+      .replace(/\bcan't\b/gi, "can not")
+      .replace(/\bwon't\b/gi, "will not")
+      .replace(/\bhaven't\b/gi, "have not")
+      .replace(/\bhasn't\b/gi, "has not")
+      .replace(/\bhadn't\b/gi, "had not")
+      .replace(/\bisn't\b/gi, "is not")
+      .replace(/\baren't\b/gi, "are not")
+      .replace(/\bwasn't\b/gi, "was not")
+      .replace(/\bweren't\b/gi, "were not")
+      .replace(/\bshouldn't\b/gi, "should not")
+      .replace(/\bcouldn't\b/gi, "could not")
+      .replace(/\bwouldn't\b/gi, "would not");
+  }
+
+  function normalizeListeningWord(word) {
+    const latinLookalikes = {
+      а: "a",
+      е: "e",
+      о: "o",
+      р: "p",
+      с: "c",
+      х: "x",
+      у: "y",
+      к: "k",
+      А: "a",
+      Е: "e",
+      О: "o",
+      Р: "p",
+      С: "c",
+      Х: "x",
+      У: "y",
+      К: "k",
+    };
+
+    return String(word || "")
+      .replace(/[аеорсхукАЕОРСХУК]/g, (char) => latinLookalikes[char] || char)
+      .toLowerCase()
+      .replace(/[\u2018\u2019`]/g, "'")
+      .replace(/[^a-z0-9']+/g, "")
+      .trim();
+  }
+
+  function compareListeningAnswer(userText, targetText) {
+    const userWords = listeningWordTokens(userText);
+    const targetWords = listeningWordTokens(targetText);
+    const rows = targetWords.length + 1;
+    const cols = userWords.length + 1;
+    const dp = Array.from({ length: rows }, () => Array(cols).fill(0));
+
+    for (let i = 0; i < rows; i += 1) dp[i][0] = i;
+    for (let j = 0; j < cols; j += 1) dp[0][j] = j;
+
+    for (let i = 1; i < rows; i += 1) {
+      for (let j = 1; j < cols; j += 1) {
+        const cost = targetWords[i - 1].norm === userWords[j - 1].norm ? 0 : 1;
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + cost
+        );
+      }
+    }
+
+    const targetMarks = [];
+    let i = targetWords.length;
+    let j = userWords.length;
+
+    while (i > 0 || j > 0) {
+      if (
+        i > 0 &&
+        j > 0 &&
+        dp[i][j] === dp[i - 1][j - 1] + (targetWords[i - 1].norm === userWords[j - 1].norm ? 0 : 1)
+      ) {
+        targetMarks.unshift({
+          word: targetWords[i - 1].text,
+          ok: targetWords[i - 1].norm === userWords[j - 1].norm,
+          heard: userWords[j - 1].text,
+        });
+        i -= 1;
+        j -= 1;
+      } else if (i > 0 && dp[i][j] === dp[i - 1][j] + 1) {
+        targetMarks.unshift({ word: targetWords[i - 1].text, ok: false, heard: "" });
+        i -= 1;
+      } else {
+        j -= 1;
+      }
+    }
+
+    const matched = targetMarks.filter((mark) => mark.ok).length;
+    const accuracy = targetWords.length ? matched / targetWords.length : 0;
+    return { matched, total: targetWords.length, accuracy, targetMarks };
+  }
+
+  function renderListeningDiff(result) {
+    const parts = result.targetMarks.map((mark) => {
+      const cls = mark.ok ? "listening-word listening-word--ok" : "listening-word listening-word--miss";
+      return `<span class="${cls}">${mark.word}</span>`;
+    });
+    refs.hint.innerHTML = `<span class="listening-diff">${parts.join(" ")}</span>`;
+  }
+
+  function maskedListeningText(text, revealEvery = 3) {
+    return String(text || "")
+      .split(/\s+/)
+      .map((word, index) => {
+        const clean = word.replace(/^[^A-Za-z0-9']+|[^A-Za-z0-9']+$/g, "");
+        if (!clean) return word;
+        if (index % revealEvery === 0 || clean.length <= 2) return word;
+        return word.replace(/[A-Za-z0-9']/g, "_");
+      })
+      .join(" ");
+  }
+
+  function speakCurrentListeningItem() {
+    const item = currentListeningItem();
+    if (!item) return;
+    const started = speakEnglishText(item.text, { rate: refs.listeningRate.value });
+    if (!started) {
+      setFeedback("Озвучка недоступна в этом браузере.", false);
+    }
+  }
+
+  function renderListening() {
+    hideSessionComplete();
+    stopSpeech();
+    state.sentenceTranslationRequestId += 1;
+
+    const item = currentListeningItem();
+    if (!item) {
+      refs.questionText.textContent = "Фразы не найдены.";
+      setQuestionTranslation("");
+      setSelectedSentenceForSpeech("");
+      return;
+    }
+
+    refs.position.textContent = `${listeningState.idx + 1} / ${listeningState.session.length}`;
+    refs.correctCount.textContent = String(listeningState.correct);
+    refs.wrongCount.textContent = String(listeningState.wrong);
+    refs.vocabModeLabel.textContent = "Слушайте и запишите фразу";
+    refs.speakWordBtn.textContent = "Повторить фразу";
+    refs.questionText.textContent = "Нажмите «Слушать» и напишите, что услышали.";
+    setQuestionTranslation(`${item.topicTitle} · ${Math.round(Number(refs.listeningRate.value) * 100)}% speed`);
+    setSelectedSentenceForSpeech(item.text);
+
+    refs.answerInput.value = "";
+    refs.answerInput.placeholder = "Напишите услышанную фразу";
+    refs.answerInput.focus();
+    refs.hint.textContent = "";
+    setFeedback("", null);
+    listeningState.checkedCurrent = false;
+    listeningState.wrongCounted = false;
+    listeningState.hintLevel = 0;
+
+    window.setTimeout(speakCurrentListeningItem, 120);
+  }
+
+  function checkListeningAnswer() {
+    const item = currentListeningItem();
+    if (!item) return;
+
+    const user = refs.answerInput.value.trim();
+    if (!user) {
+      refs.listenBtn.click();
+      return;
+    }
+
+    const result = compareListeningAnswer(user, item.text);
+    const pct = Math.round(result.accuracy * 100);
+    const passed = result.accuracy >= 0.82;
+    const wasChecked = listeningState.checkedCurrent;
+
+    if (passed) {
+      if (!wasChecked && !listeningState.wrongCounted) {
+        listeningState.correct += 1;
+        refs.correctCount.textContent = String(listeningState.correct);
+      }
+      listeningState.checkedCurrent = true;
+      playCorrectSound();
+      flashCorrect();
+      setFeedback(`Хорошо! Понял ${pct}% слов.`, true);
+      renderListeningDiff(result);
+      if (!wasChecked && refs.listeningAutoNext.checked) {
+        state.autoNextTimer = window.setTimeout(() => {
+          state.autoNextTimer = null;
+          nextListeningQuestion();
+          saveProgress();
+        }, 1200);
+      }
+    } else {
+      if (!wasChecked && !listeningState.wrongCounted) {
+        listeningState.wrong += 1;
+        listeningState.wrongCounted = true;
+        refs.wrongCount.textContent = String(listeningState.wrong);
+      }
+      playWrongSound();
+      setFeedback("Красным подсвечены места, где текст отличается от ответа.", false);
+      renderListeningDiff(result);
+    }
+
+    saveProgress();
+  }
+
+  function nextListeningQuestion() {
+    if (!listeningState.session.length) return;
+    clearAutoNextTimer();
+    listeningState.idx += 1;
+    if (listeningState.idx >= listeningState.session.length) {
+      listeningState.idx = listeningState.session.length - 1;
+      showSessionComplete();
+      saveProgress();
+      return;
+    }
+    renderListening();
+    saveProgress();
+  }
+
+  function previousListeningQuestion() {
+    if (listeningState.idx <= 0) return;
+    clearAutoNextTimer();
+    listeningState.idx -= 1;
+    renderListening();
+    saveProgress();
+  }
+
+  function showListeningHint(level) {
+    const item = currentListeningItem();
+    if (!item) return;
+    listeningState.hintLevel = level;
+
+    if (listeningState.hintLevel === 1) {
+      const firstWord = listeningWords(item.text)[0] || "";
+      refs.hint.textContent = firstWord ? `Первое слово: ${firstWord}` : "";
+    } else if (listeningState.hintLevel === 2) {
+      refs.hint.textContent = maskedListeningText(item.text);
+    } else {
+      refs.hint.textContent = item.text;
+    }
   }
 
   function ensureTheoryTopicOptions() {
@@ -1313,16 +1975,20 @@
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
+    refs.tabListening.classList.toggle('mode-tab--active', mode === 'listening');
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsTheory.hidden = mode !== 'theory';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
+    refs.controlsListening.hidden = mode !== 'listening';
     refs.statsSection.hidden = mode === 'theory';
     refs.cardContent.hidden = mode === 'theory';
     refs.theoryPanel.hidden = mode !== 'theory';
     refs.optionsSection.hidden = mode !== 'grammar';
     refs.questionMeta.hidden = mode !== 'grammar';
-    refs.vocabModeLabel.hidden = mode !== 'vocabulary';
+    refs.vocabModeLabel.hidden = mode !== 'vocabulary' && mode !== 'listening';
+    refs.listeningActions.hidden = mode !== 'listening';
+    refs.speakWordBtn.hidden = mode === 'listening';
 
     if (mode === 'theory') {
       renderTheory();
@@ -1336,6 +2002,16 @@
         vocabState.wrong = 0;
       }
       renderVocab();
+    } else if (mode === 'listening') {
+      ensureListeningTopicOptions();
+      if (!listeningState.session.length) {
+        listeningState.session = pickListeningSession();
+        listeningState.idx = 0;
+        listeningState.correct = 0;
+        listeningState.wrong = 0;
+      }
+      refs.questionTranslation.classList.remove('vocab-hint');
+      renderListening();
     } else {
       refs.questionTranslation.classList.remove('vocab-hint');
       render();
@@ -1360,6 +2036,7 @@
     refs.correctCount.textContent = String(state.correct);
     refs.wrongCount.textContent = String(state.wrong);
     refs.questionId.textContent = String(q.id);
+    refs.speakWordBtn.textContent = 'Озвучить предложение';
     renderQuestionText(q.prompt);
     setQuestionTranslation("");
     setSelectedSentenceForSpeech(fillPromptWithAnswer(q.prompt, q.answer));
@@ -1378,7 +2055,9 @@
   }
 
   function showSessionComplete() {
-    const stats = currentMode === 'vocabulary' ? vocabState : state;
+    const stats = currentMode === 'vocabulary'
+      ? vocabState
+      : (currentMode === 'listening' ? listeningState : state);
     const total = stats.session.length;
     const correct = stats.correct;
     const missed = Math.max(0, total - stats.correct - stats.wrong);
@@ -1432,6 +2111,7 @@
 
   refs.checkBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { checkVocabAnswer(); return; }
+    if (currentMode === 'listening') { checkListeningAnswer(); return; }
     const q = currentQuestion();
     if (!q || state.checkedCurrent) {
       return;
@@ -1479,6 +2159,10 @@
       saveProgress();
       return;
     }
+    if (currentMode === 'listening') {
+      previousListeningQuestion();
+      return;
+    }
     if (state.idx <= 0) return;
     clearAutoNextTimer();
     state.idx -= 1;
@@ -1488,6 +2172,7 @@
 
   refs.nextBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { nextVocabQuestion(); return; }
+    if (currentMode === 'listening') { nextListeningQuestion(); return; }
     clearAutoNextTimer();
     nextQuestion();
     saveProgress();
@@ -1495,6 +2180,11 @@
 
   refs.answerInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
+      if (currentMode === 'listening' && !normalize(refs.answerInput.value)) {
+        event.preventDefault();
+        refs.listenBtn.click();
+        return;
+      }
       if (currentMode === 'vocabulary' && !normalize(refs.answerInput.value)) {
         const shouldSpeak =
           vocabState.idx === state.emptyVocabEnterPromptIdx &&
@@ -1520,7 +2210,9 @@
 
   refs.answerInput.addEventListener("input", () => {
     state.emptyVocabEnterPromptIdx = -1;
-    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+    refs.answerInput.placeholder = currentMode === 'listening'
+      ? "Напишите услышанную фразу"
+      : DEFAULT_ANSWER_PLACEHOLDER;
   });
 
   refs.speakWordBtn.addEventListener("click", () => {
@@ -1549,6 +2241,15 @@
       saveProgress();
       return;
     }
+    if (currentMode === 'listening') {
+      listeningState.session = pickListeningSession();
+      listeningState.idx = 0;
+      listeningState.correct = 0;
+      listeningState.wrong = 0;
+      renderListening();
+      saveProgress();
+      return;
+    }
     refs.newSession.click();
   });
 
@@ -1559,6 +2260,7 @@
   refs.tabGrammar.addEventListener('click', () => switchMode('grammar'));
   refs.tabTheory.addEventListener('click', () => switchMode('theory'));
   refs.tabVocab.addEventListener('click', () => switchMode('vocabulary'));
+  refs.tabListening.addEventListener('click', () => switchMode('listening'));
 
   refs.vocabNewSession.addEventListener('click', () => {
     clearAutoNextTimer();
@@ -1569,6 +2271,26 @@
     vocabState.wrong = 0;
     renderVocab();
     saveProgress();
+  });
+
+  refs.vocabShowList.addEventListener('click', () => {
+    showVocabList();
+  });
+
+  refs.vocabListClose.addEventListener('click', () => {
+    hideVocabList();
+  });
+
+  refs.vocabListOverlay.addEventListener('click', (event) => {
+    if (event.target === refs.vocabListOverlay) {
+      hideVocabList();
+    }
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !refs.vocabListOverlay.hidden) {
+      hideVocabList();
+    }
   });
 
   refs.autoSpeakCorrectVocab.addEventListener('change', () => {
@@ -1583,6 +2305,52 @@
     vocabState.correct = 0;
     vocabState.wrong = 0;
     renderVocab();
+    saveProgress();
+  });
+
+  refs.listenBtn.addEventListener('click', () => {
+    speakCurrentListeningItem();
+  });
+
+  refs.listeningFirstWord.addEventListener('click', () => {
+    showListeningHint(1);
+  });
+
+  refs.listeningGaps.addEventListener('click', () => {
+    showListeningHint(2);
+  });
+
+  refs.listeningShowText.addEventListener('click', () => {
+    showListeningHint(3);
+  });
+
+  refs.listeningNewSession.addEventListener('click', () => {
+    clearAutoNextTimer();
+    ensureListeningTopicOptions();
+    listeningState.session = pickListeningSession();
+    listeningState.idx = 0;
+    listeningState.correct = 0;
+    listeningState.wrong = 0;
+    renderListening();
+    saveProgress();
+  });
+
+  refs.listeningTopic.addEventListener('change', () => {
+    clearAutoNextTimer();
+    listeningState.session = pickListeningSession();
+    listeningState.idx = 0;
+    listeningState.correct = 0;
+    listeningState.wrong = 0;
+    renderListening();
+    saveProgress();
+  });
+
+  refs.listeningRate.addEventListener('change', () => {
+    saveProgress();
+    speakCurrentListeningItem();
+  });
+
+  refs.listeningAutoNext.addEventListener('change', () => {
     saveProgress();
   });
 
@@ -1635,12 +2403,16 @@
     state.session = pickSession();
     ensureVocabTopicOptions();
     vocabState.session = pickVocabSession();
+    ensureListeningTopicOptions();
+    listeningState.session = pickListeningSession();
     saveProgress();
   }
   if (currentMode === 'theory') {
     switchMode('theory');
   } else if (currentMode === 'vocabulary') {
     switchMode('vocabulary');
+  } else if (currentMode === 'listening') {
+    switchMode('listening');
   } else {
     switchMode('grammar');
   }
