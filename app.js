@@ -55,6 +55,260 @@
   };
   const THEORY_TOPICS = [
     {
+      id: "tenses-guide",
+      title: "Времена: быстрый ориентир",
+      subtitle: "сначала время, потом тип действия",
+      sections: [
+        {
+          title: "Главная идея",
+          items: [
+            "В английском время показывает не только когда произошло действие, но и как мы на него смотрим: факт, процесс, результат или длительность.",
+            "Сначала выбери точку времени: present, past или future. Потом выбери тип действия: Simple, Continuous, Perfect или Perfect Continuous.",
+          ],
+        },
+        {
+          title: "Как выбирать",
+          items: [
+            "Факт или регулярность - Simple: We run backups every night.",
+            "Процесс прямо сейчас или в конкретный момент - Continuous: We are running a backup now.",
+            "Результат или опыт к текущему моменту - Perfect: We have run the backup already.",
+            "Длительность до момента - Perfect Continuous: We have been running the backup for an hour.",
+            "Будущее с планом - be going to или Present Continuous: We are going to deploy tonight. We are deploying tonight.",
+            "Будущее как решение, обещание или прогноз - will: I'll check the logs. It will probably fail under load.",
+          ],
+        },
+        {
+          title: "Маркеры времени",
+          examples: [
+            ["usually, often, every day", "Present Simple"],
+            ["now, right now, at the moment", "Present Continuous"],
+            ["yesterday, last week, in 2025, ago", "Past Simple"],
+            ["when, while, at 3am yesterday", "Past Continuous, если важен процесс в тот момент"],
+            ["already, yet, just, ever, never", "Present Perfect"],
+            ["before, after, by the time", "Past Perfect, если одно прошлое действие было раньше другого"],
+            ["tomorrow, next sprint, soon", "Future forms"],
+          ],
+        },
+        {
+          title: "Типичные ошибки",
+          items: [
+            "I am work now - неправильно. Нужно: I am working now.",
+            "We have deployed yesterday - неправильно. С точным прошлым временем нужен Past Simple: We deployed yesterday.",
+            "The service works right now - обычно лучше: The service is working right now.",
+            "We are knowing the root cause - неправильно. Know обычно не используется в Continuous: We know the root cause.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "tenses-present",
+      title: "Present: Simple / to be / Continuous",
+      subtitle: "факты, состояния и действия сейчас",
+      sections: [
+        {
+          title: "Present Simple + to be",
+          items: [
+            "Используем для состояний, описаний и фактов в настоящем.",
+            "Утверждение: I am, he/she/it is, we/you/they are.",
+            "Отрицание: am not, is not, are not.",
+            "Вопрос: Am I? Is he/she/it? Are we/you/they?",
+          ],
+          examples: [
+            ["The service is stable.", "Сервис стабилен."],
+            ["The logs are noisy.", "Логи шумные."],
+            ["Is the root cause clear?", "Root cause понятен?"],
+          ],
+        },
+        {
+          title: "Present Simple + V1",
+          items: [
+            "Используем для привычек, регулярно повторяющихся действий, общеизвестных фактов и расписаний.",
+            "Утверждение: I/we/you/they read; he/she/it reads.",
+            "Отрицание: I/we/you/they don't read; he/she/it doesn't read.",
+            "Вопрос: Do I/we/you/they read? Does he/she/it read?",
+          ],
+          examples: [
+            ["We deploy every Friday.", "Мы деплоим каждую пятницу."],
+            ["The service reads config from the database.", "Сервис читает конфиг из базы."],
+            ["Does this job run every night?", "Эта задача запускается каждую ночь?"],
+          ],
+        },
+        {
+          title: "Present Continuous",
+          items: [
+            "Используем для действия в процессе прямо сейчас, планов с конкретной договоренностью и конкретных намерений.",
+            "Структура: I am + V-ing; he/she/it is + V-ing; we/you/they are + V-ing.",
+            "Вопрос: Am/Is/Are + подлежащее + V-ing?",
+          ],
+          examples: [
+            ["We are investigating the issue now.", "Мы сейчас расследуем проблему."],
+            ["Masha is deploying the hotfix tonight.", "Маша деплоит хотфикс сегодня вечером."],
+            ["Are you reviewing the PR?", "Ты ревьюишь PR?"],
+          ],
+        },
+        {
+          title: "Вопросы к подлежащему",
+          items: [
+            "Если what / who / which само является подлежащим, порядок слов прямой: question word + V(s).",
+          ],
+          examples: [
+            ["Who knows the answer?", "Кто знает ответ?"],
+            ["Which option looks better?", "Какой вариант выглядит лучше?"],
+            ["What looks strange?", "Что выглядит странно?"],
+            ["I don't know what happens next.", "Я не знаю, что происходит дальше."],
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Сервис стабилен, но логи слишком шумные.",
+            "Мы деплоим каждую пятницу.",
+            "Этот воркер читает задачи из очереди.",
+            "Мы сейчас проверяем production logs.",
+            "Что выглядит странно в этом графике?",
+          ],
+        },
+      ],
+    },
+    {
+      id: "tenses-past",
+      title: "Past: Simple / to be / Continuous / Perfect",
+      subtitle: "прошлые факты, состояния, процессы и более ранние действия",
+      sections: [
+        {
+          title: "Past Simple",
+          items: [
+            "Используем, когда действие произошло в прошлом в конкретный момент или период.",
+            "Утверждение: подлежащее + V2 или regular verb + -ed.",
+            "Отрицание: didn't + V1. Вопрос: Did + подлежащее + V1?",
+            "Частые маркеры: yesterday, last week, in 2025, ago.",
+          ],
+          examples: [
+            ["We fixed the bug yesterday.", "Мы исправили баг вчера."],
+            ["The alert fired at 3am.", "Алерт сработал в 3 утра."],
+            ["Did you revert the config?", "Ты откатил конфиг?"],
+          ],
+        },
+        {
+          title: "Past Simple + to be",
+          items: [
+            "Используем для состояний и описаний в прошлом, а не для действий.",
+            "Утверждение: I/he/she/it was; we/you/they were.",
+            "Отрицание: was not / were not. Вопрос: Was / Were + подлежащее?",
+          ],
+          examples: [
+            ["The service was down for ten minutes.", "Сервис был недоступен десять минут."],
+            ["The logs were useful.", "Логи были полезными."],
+            ["Was the workaround safe?", "Временное решение было безопасным?"],
+          ],
+        },
+        {
+          title: "Past Continuous",
+          items: [
+            "Используем для процесса в определенный момент в прошлом.",
+            "Часто показывает фон: действие было в процессе, когда произошло другое действие.",
+            "Структура: was / were + V-ing. Маркеры: at 5 o'clock yesterday, when, while.",
+          ],
+          examples: [
+            ["We were testing the migration when the alert fired.", "Мы тестировали миграцию, когда сработал алерт."],
+            ["She was reading logs while he was checking metrics.", "Она читала логи, пока он проверял метрики."],
+            ["What were you doing when the service crashed?", "Что ты делал, когда сервис упал?"],
+          ],
+        },
+        {
+          title: "Past Perfect",
+          items: [
+            "Используем, чтобы показать, что одно прошлое действие произошло раньше другого прошлого действия.",
+            "Структура: had + V3.",
+            "Часто встречается с before, after, when, already, by the time.",
+            "Обычно используется в паре с Past Simple: одно действие случилось раньше, другое позже.",
+          ],
+          examples: [
+            ["When I arrived, she had already left.", "Когда я пришел, она уже ушла."],
+            ["We had reverted the config before the incident call started.", "Мы откатили конфиг до начала incident call."],
+            ["By the time we checked the logs, the job had already failed.", "К моменту проверки логов задача уже упала."],
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Команда исправила баг вчера.",
+            "Сервис был недоступен десять минут.",
+            "Мы проверяли метрики, когда сработал алерт.",
+            "Они уже откатили конфиг до начала звонка.",
+            "Что ты делал, когда билд упал?",
+          ],
+        },
+      ],
+    },
+    {
+      id: "tenses-future",
+      title: "Future: will / going to / Continuous",
+      subtitle: "решения, планы, прогнозы и процессы в будущем",
+      sections: [
+        {
+          title: "Future Simple",
+          items: [
+            "Используем will для спонтанных решений, предложений что-то сделать, обещаний и прогнозов на основе личного мнения.",
+            "Структура: подлежащее + will + V1.",
+            "Отрицание: will not / won't + V1. Вопрос: Will + подлежащее + V1?",
+          ],
+          examples: [
+            ["I'll check the logs.", "Я проверю логи."],
+            ["We won't deploy without tests.", "Мы не будем деплоить без тестов."],
+            ["Will the service recover automatically?", "Сервис восстановится автоматически?"],
+          ],
+        },
+        {
+          title: "To be going to",
+          items: [
+            "Используем для планов и намерений без конкретной договоренности, а также для прогнозов о будущем, основанных на фактах.",
+            "Структура: am / is / are + going to + V1.",
+            "Отрицание: am / is / are + not + going to + V1.",
+          ],
+          examples: [
+            ["We are going to add an index.", "Мы собираемся добавить индекс."],
+            ["This query is going to timeout under load.", "Этот запрос, похоже, отвалится под нагрузкой."],
+            ["Are you going to rewrite this module?", "Ты собираешься переписать этот модуль?"],
+          ],
+        },
+        {
+          title: "Present Continuous для будущего",
+          items: [
+            "Используем для планов с конкретной договоренностью или назначенным временем.",
+          ],
+          examples: [
+            ["We are deploying tonight.", "Мы деплоим сегодня вечером."],
+            ["Alex is joining the incident review tomorrow.", "Алекс присоединяется к разбору инцидента завтра."],
+          ],
+        },
+        {
+          title: "Future Continuous",
+          items: [
+            "Используем для действия в процессе в определенный момент в будущем или длительного действия в будущем.",
+            "Структура: will be + V-ing.",
+            "Вопрос: Will + подлежащее + be + V-ing?",
+          ],
+          examples: [
+            ["We will be monitoring the service overnight.", "Мы будем мониторить сервис ночью."],
+            ["At 3am, the migration will still be running.", "В 3 утра миграция все еще будет выполняться."],
+            ["Will you be reviewing PRs tomorrow morning?", "Ты будешь ревьюить PR завтра утром?"],
+          ],
+        },
+        {
+          title: "Попробуй перевести",
+          items: [
+            "Я проверю логи и напишу апдейт.",
+            "Мы не будем деплоить без rollback plan.",
+            "Мы собираемся добавить индекс на этот столбец.",
+            "Этот фикс, похоже, сломает старый API.",
+            "Мы деплоим сегодня вечером.",
+            "Ночью мы будем мониторить сервис.",
+          ],
+        },
+      ],
+    },
+    {
       id: "due-to",
       title: "Due to",
       subtitle: "из-за, вследствие чего-то",
@@ -317,6 +571,17 @@
           examples: [
             ["Who has pushed to main?", "Кто запушил в main?"],
             ["What has caused the outage?", "Что вызвало отказ?"],
+          ],
+        },
+        {
+          title: "Внутри сложного предложения",
+          items: [
+            "Когда what / who / which играет роль подлежащего внутри придаточного, порядок слов тоже остается прямым.",
+          ],
+          examples: [
+            ["I don't know what happens next.", "Я не знаю, что произойдет дальше."],
+            ["Tell me what makes you happy.", "Скажи мне, что делает тебя счастливым."],
+            ["I see what looks strange here.", "Я вижу, что здесь выглядит странно."],
           ],
         },
         {
