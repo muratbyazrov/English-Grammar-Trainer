@@ -1,0 +1,618 @@
+{
+  "topic": "Databases и PostgreSQL",
+  "words": [
+    {
+      "word": "schema",
+      "translation": "схема — структура базы данных",
+      "example": "We updated the schema to add a new column for user preferences.",
+      "sentenceTranslation": "Мы обновили схему, чтобы добавить новый столбец для пользовательских настроек.",
+      "answers": [
+        {
+          "text": "schema",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "row / record",
+      "translation": "строка / запись",
+      "example": "We lock the row before updating it to avoid conflicts.",
+      "sentenceTranslation": "Мы блокируем строку перед обновлением, чтобы избежать конфликтов.",
+      "answer": "row",
+      "answers": [
+        {
+          "text": "row",
+          "weight": 1
+        },
+        {
+          "text": "record",
+          "weight": 0.9
+        }
+      ]
+    },
+    {
+      "word": "constraint",
+      "translation": "ограничение — правило целостности данных",
+      "example": "The foreign key constraint prevents orphaned records.",
+      "sentenceTranslation": "Ограничение внешнего ключа предотвращает осиротевшие записи.",
+      "answers": [
+        {
+          "text": "constraint",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "foreign key",
+      "translation": "внешний ключ — ссылка на другую таблицу",
+      "example": "We added a foreign key to link orders to users.",
+      "sentenceTranslation": "Мы добавили внешний ключ, чтобы связать заказы с пользователями.",
+      "answers": [
+        {
+          "text": "foreign key",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "primary key",
+      "translation": "первичный ключ — уникальный идентификатор строки",
+      "example": "We use UUID as the primary key instead of a sequential integer.",
+      "sentenceTranslation": "Мы используем UUID как первичный ключ вместо последовательного целого числа.",
+      "answers": [
+        {
+          "text": "primary key",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "nullable",
+      "translation": "может быть NULL — значение необязательно",
+      "example": "The phone column is nullable — not all users provide it.",
+      "sentenceTranslation": "Столбец phone может быть NULL: не все пользователи его указывают.",
+      "answers": [
+        {
+          "text": "nullable",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "sequence",
+      "translation": "последовательность — генерирует уникальные числа",
+      "example": "We use a sequence to auto-increment the ID column.",
+      "sentenceTranslation": "Мы используем последовательность, чтобы автоматически увеличивать столбец ID.",
+      "answers": [
+        {
+          "text": "sequence",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "index",
+      "translation": "индекс — ускоряет поиск по таблице",
+      "example": "Adding an index on user_id cut query time in half.",
+      "sentenceTranslation": "Добавление индекса по user_id сократило время запроса вдвое.",
+      "answers": [
+        {
+          "text": "index",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "execution plan",
+      "translation": "план выполнения (запроса)",
+      "example": "We analyzed the execution plan and found a sequential scan.",
+      "sentenceTranslation": "Мы проанализировали план выполнения и нашли последовательное сканирование.",
+      "answers": [
+        {
+          "text": "execution plan",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "sequential scan",
+      "translation": "полный перебор (таблицы) — медленно",
+      "example": "The query was doing a sequential scan on 10 million rows.",
+      "sentenceTranslation": "Запрос выполнял последовательное сканирование по 10 миллионам строк.",
+      "answers": [
+        {
+          "text": "sequential scan",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "index scan",
+      "translation": "поиск по индексу — быстро",
+      "example": "After adding the index, Postgres switched to an index scan.",
+      "sentenceTranslation": "После добавления индекса Postgres переключился на сканирование по индексу.",
+      "answers": [
+        {
+          "text": "index scan",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "query",
+      "translation": "запрос (к базе данных)",
+      "example": "This query is too slow — it needs to be optimized.",
+      "sentenceTranslation": "Этот запрос слишком медленный: его нужно оптимизировать.",
+      "answers": [
+        {
+          "text": "query",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "transaction",
+      "translation": "транзакция — группа операций как одно целое",
+      "example": "We wrap both updates in a transaction to keep data consistent.",
+      "sentenceTranslation": "Мы оборачиваем оба обновления в транзакцию, чтобы сохранить данные согласованными.",
+      "answers": [
+        {
+          "text": "transaction",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "lock",
+      "translation": "блокировка (строки или таблицы)",
+      "example": "The lock prevents other transactions from modifying the row.",
+      "sentenceTranslation": "Блокировка не дает другим транзакциям изменять эту строку.",
+      "answers": [
+        {
+          "text": "lock",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "deadlock",
+      "translation": "взаимная блокировка — два процесса ждут друг друга",
+      "example": "We got a deadlock — two transactions were waiting on each other.",
+      "sentenceTranslation": "Мы получили взаимную блокировку: две транзакции ждали друг друга.",
+      "answers": [
+        {
+          "text": "deadlock",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "rollback",
+      "translation": "откат (транзакции при ошибке)",
+      "example": "The transaction failed and Postgres rolled it back automatically.",
+      "sentenceTranslation": "Транзакция завершилась ошибкой, и Postgres автоматически откатил ее.",
+      "answer": "rolled it back",
+      "answers": [
+        {
+          "text": "rollback",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "commit a transaction",
+      "infinitive": "to commit a transaction",
+      "translation": "зафиксировать транзакцию — сохранить изменения",
+      "example": "We commit the transaction only after all updates succeed.",
+      "sentenceTranslation": "Мы фиксируем транзакцию только после того, как все обновления успешно выполнены.",
+      "answer": "commit",
+      "answers": [
+        {
+          "text": "to commit a transaction",
+          "weight": 1
+        },
+        {
+          "text": "to commit the transaction",
+          "weight": 0.95
+        },
+        {
+          "text": "to commit",
+          "weight": 0.9
+        },
+        {
+          "text": "commit",
+          "weight": 0.85
+        }
+      ]
+    },
+    {
+      "word": "isolation level",
+      "translation": "уровень изоляции (транзакций)",
+      "example": "We use read committed isolation level to avoid dirty reads.",
+      "sentenceTranslation": "Мы используем уровень изоляции read committed, чтобы избежать грязных чтений.",
+      "answers": [
+        {
+          "text": "isolation level",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "replication",
+      "translation": "репликация — копирование данных на другой сервер",
+      "example": "We set up replication to improve read performance and reliability.",
+      "sentenceTranslation": "Мы настроили репликацию, чтобы улучшить производительность чтения и надежность.",
+      "answers": [
+        {
+          "text": "replication",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "migration",
+      "translation": "миграция — изменение структуры базы данных",
+      "example": "We wrote a migration to add the new column without downtime.",
+      "sentenceTranslation": "Мы написали миграцию, чтобы добавить новый столбец без простоя.",
+      "answers": [
+        {
+          "text": "migration",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "join",
+      "translation": "объединение (таблиц по условию)",
+      "example": "We're using a left join to include users without orders.",
+      "sentenceTranslation": "Мы используем left join, чтобы включить пользователей без заказов.",
+      "answers": [
+        {
+          "text": "join",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "run / execute a query",
+      "infinitive": "to run a query / to execute a query",
+      "translation": "выполнить запрос",
+      "example": "I ran the query on the replica to avoid hitting the primary.",
+      "sentenceTranslation": "Я выполнил запрос на реплике, чтобы не обращаться к primary-базе.",
+      "answer": "ran the query",
+      "answers": [
+        {
+          "text": "to run a query",
+          "weight": 1
+        },
+        {
+          "text": "to execute a query",
+          "weight": 0.9
+        }
+      ]
+    },
+    {
+      "word": "optimize a query",
+      "infinitive": "to optimize a query",
+      "translation": "оптимизировать запрос",
+      "example": "We optimized the query and response time dropped by 60%.",
+      "sentenceTranslation": "Мы оптимизировали запрос, и время ответа снизилось на 60%.",
+      "answer": "optimized the query",
+      "answers": [
+        {
+          "text": "to optimize a query",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "analyze the execution plan",
+      "infinitive": "to analyze the execution plan",
+      "translation": "проанализировать план выполнения",
+      "example": "Run EXPLAIN ANALYZE to see the execution plan before optimizing.",
+      "sentenceTranslation": "Запусти EXPLAIN ANALYZE, чтобы увидеть план выполнения перед оптимизацией.",
+      "answer": "analyze the execution plan",
+      "answers": [
+        {
+          "text": "to analyze the execution plan",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "lock a row",
+      "infinitive": "to lock a row",
+      "translation": "заблокировать строку",
+      "example": "We lock the row with SELECT FOR UPDATE before modifying it.",
+      "sentenceTranslation": "Мы блокируем строку через SELECT FOR UPDATE перед ее изменением.",
+      "answer": "lock the row",
+      "answers": [
+        {
+          "text": "to lock a row",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "acquire / obtain",
+      "infinitive": "to acquire / to obtain",
+      "translation": "получить / захватить — используется с lock, connection, resource",
+      "example": "We need to acquire a lock before updating the record.",
+      "sentenceTranslation": "Нам нужно захватить блокировку перед обновлением записи.",
+      "answers": [
+        {
+          "text": "to acquire",
+          "weight": 1
+        },
+        {
+          "text": "to obtain",
+          "weight": 0.85
+        }
+      ]
+    },
+    {
+      "word": "avoid a deadlock",
+      "infinitive": "to avoid a deadlock",
+      "translation": "избежать взаимной блокировки",
+      "example": "To avoid deadlocks, always acquire locks in the same order.",
+      "sentenceTranslation": "Чтобы избежать взаимных блокировок, всегда захватывай блокировки в одном и том же порядке.",
+      "answer": "avoid deadlocks",
+      "answers": [
+        {
+          "text": "to avoid a deadlock",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "handle a transaction",
+      "infinitive": "to handle a transaction",
+      "translation": "управлять транзакцией",
+      "example": "We handle transactions at the service level, not in the query.",
+      "sentenceTranslation": "Мы управляем транзакциями на уровне сервиса, а не внутри запроса.",
+      "answer": "handle transactions",
+      "answers": [
+        {
+          "text": "to handle a transaction",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "roll back a transaction",
+      "infinitive": "to roll back a transaction",
+      "translation": "откатить транзакцию",
+      "example": "If any step fails, we roll back the entire transaction.",
+      "sentenceTranslation": "Если любой шаг завершается ошибкой, мы откатываем всю транзакцию.",
+      "answer": "roll back",
+      "answers": [
+        {
+          "text": "to roll back a transaction",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "hit the database",
+      "infinitive": "to hit the database",
+      "translation": "обратиться к базе данных",
+      "example": "Every request hits the database — we need to add caching.",
+      "sentenceTranslation": "Каждый запрос обращается к базе данных: нам нужно добавить кэширование.",
+      "answer": "hits the database",
+      "answers": [
+        {
+          "text": "to hit the database",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "put pressure on the database",
+      "infinitive": "to put pressure on the database",
+      "translation": "создавать нагрузку на базу данных",
+      "example": "These batch jobs put a lot of pressure on the database during peak hours.",
+      "sentenceTranslation": "Эти пакетные задачи создают большую нагрузку на базу данных в часы пик.",
+      "answer": "put a lot of pressure on the database",
+      "answers": [
+        {
+          "text": "to put pressure on the database",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "run out of connections",
+      "infinitive": "to run out of connections",
+      "translation": "исчерпать пул соединений",
+      "example": "We ran out of connections under high load — connection pooling fixed it.",
+      "sentenceTranslation": "При высокой нагрузке у нас закончились соединения, и пул соединений это исправил.",
+      "answer": "ran out of connections",
+      "answers": [
+        {
+          "text": "to run out of connections",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "introduce a migration",
+      "infinitive": "to introduce a migration",
+      "translation": "добавить миграцию",
+      "example": "We introduced a migration to rename the column without breaking the API.",
+      "sentenceTranslation": "Мы добавили миграцию, чтобы переименовать столбец, не ломая API.",
+      "answer": "introduced a migration",
+      "answers": [
+        {
+          "text": "to introduce a migration",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "run without downtime",
+      "infinitive": "to run without downtime",
+      "translation": "выполнить без остановки сервиса",
+      "example": "The migration needs to run without downtime — we have to be careful.",
+      "sentenceTranslation": "Миграция должна выполниться без простоя сервиса, поэтому нужно быть осторожными.",
+      "answers": [
+        {
+          "text": "to run without downtime",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "walk through / go through",
+      "infinitive": "to walk through / to go through",
+      "translation": "пошагово разобрать / провести по шагам",
+      "example": "Can you walk me through the migration plan before we run it on production?",
+      "sentenceTranslation": "Можешь пошагово провести меня по плану миграции перед запуском на проде?",
+      "answer": "walk me through",
+      "answers": [
+        {
+          "text": "to walk through",
+          "weight": 1
+        },
+        {
+          "text": "to go through",
+          "weight": 0.9
+        }
+      ]
+    },
+    {
+      "word": "proposal / suggestion",
+      "translation": "предложение / вариант решения",
+      "example": "The proposal is to add an index first and then backfill the new column gradually.",
+      "sentenceTranslation": "Предложение такое: сначала добавить индекс, а затем постепенно заполнить новый столбец.",
+      "answer": "proposal",
+      "answers": [
+        {
+          "text": "proposal",
+          "weight": 1
+        },
+        {
+          "text": "suggestion",
+          "weight": 0.85
+        }
+      ]
+    },
+    {
+      "word": "reliability",
+      "translation": "надежность",
+      "example": "Replication improves reliability because we can fail over to another database node.",
+      "sentenceTranslation": "Репликация повышает надежность, потому что мы можем переключиться на другой узел базы данных.",
+      "answer": "reliability",
+      "answers": [
+        {
+          "text": "reliability",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "persistence",
+      "translation": "сохранение данных / постоянное хранение",
+      "example": "Postgres handles persistence, so the data survives service restarts.",
+      "sentenceTranslation": "Postgres отвечает за постоянное хранение, поэтому данные сохраняются после перезапусков сервиса.",
+      "answer": "persistence",
+      "answers": [
+        {
+          "text": "persistence",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "gradually",
+      "translation": "постепенно",
+      "example": "We will roll out the schema change gradually to reduce the risk.",
+      "sentenceTranslation": "Мы будем выкатывать изменение схемы постепенно, чтобы снизить риск.",
+      "answer": "gradually",
+      "answers": [
+        {
+          "text": "gradually",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "makes sense / sounds reasonable",
+      "translation": "имеет смысл / звучит логично",
+      "example": "It makes sense to add the constraint after we clean up the invalid rows.",
+      "sentenceTranslation": "Имеет смысл добавить ограничение после того, как мы очистим некорректные строки.",
+      "answer": "makes sense",
+      "answers": [
+        {
+          "text": "makes sense",
+          "weight": 1
+        },
+        {
+          "text": "sounds reasonable",
+          "weight": 0.85
+        }
+      ]
+    },
+    {
+      "word": "go live / launch",
+      "infinitive": "to go live / to launch",
+      "translation": "выйти в прод / запуститься для пользователей",
+      "example": "The migration can go live once the rollback plan is ready.",
+      "sentenceTranslation": "Миграция может выйти в прод, когда план отката будет готов.",
+      "answer": "go live",
+      "answers": [
+        {
+          "text": "to go live",
+          "weight": 1
+        },
+        {
+          "text": "to launch",
+          "weight": 0.9
+        }
+      ]
+    },
+    {
+      "word": "end up with smth",
+      "infinitive": "to end up with something",
+      "translation": "в итоге получить что-то",
+      "example": "If we skip validation, we may end up with inconsistent data.",
+      "sentenceTranslation": "Если мы пропустим валидацию, мы можем в итоге получить несогласованные данные.",
+      "answer": "end up with",
+      "answers": [
+        {
+          "text": "to end up with something",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "a fair point / a valid point",
+      "translation": "справедливое замечание / резонный аргумент",
+      "example": "That's a fair point: adding the index during peak hours could put pressure on the database.",
+      "sentenceTranslation": "Это справедливое замечание: добавление индекса в часы пик может создать нагрузку на базу данных.",
+      "answer": "a fair point",
+      "answers": [
+        {
+          "text": "a fair point",
+          "weight": 1
+        },
+        {
+          "text": "a valid point",
+          "weight": 0.9
+        }
+      ]
+    },
+    {
+      "word": "constraint violation",
+      "translation": "нарушение ограничения",
+      "example": "The insert failed because of a constraint violation on the user_id column.",
+      "sentenceTranslation": "Вставка завершилась ошибкой из-за нарушения ограничения на столбце user_id.",
+      "answer": "constraint violation",
+      "answers": [
+        {
+          "text": "constraint violation",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}
