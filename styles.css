@@ -649,6 +649,72 @@ button:hover {
   color: var(--muted);
 }
 
+.theory-scheme {
+  margin: 12px 0;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  background: #f3efff;
+  overflow: hidden;
+}
+
+.theory-scheme summary {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+  background: #e9e1ff;
+}
+
+.theory-scheme summary:hover {
+  background: #ded4ff;
+}
+
+.theory-scheme-rows {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.theory-scheme-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.theory-scheme-label,
+.theory-scheme-token {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid rgba(31, 41, 51, 0.35);
+  border-radius: 7px;
+  padding: 8px 12px;
+  line-height: 1.2;
+}
+
+.theory-scheme-label {
+  justify-content: center;
+  width: 42px;
+  flex: 0 0 42px;
+  background: #f7d38a;
+  font-weight: 800;
+}
+
+.theory-scheme-token {
+  flex: 1 1 140px;
+  background: #b7dfc5;
+  font-weight: 700;
+}
+
+.theory-scheme-token:nth-child(4n) {
+  background: #ee8f91;
+}
+
+.theory-scheme-token:nth-child(5n) {
+  background: #f4d08a;
+}
+
 /* ── Session complete modal ── */
 .sc-overlay {
   position: fixed;

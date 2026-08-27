@@ -11,7 +11,6 @@
  *                      If omitted, the script tries to find `word` in the example.
  *   answers          — accepted answers for word-translation mode:
  *                      [{ text: "to run a query", weight: 1 }, ...]
- *   gapExample       — (optional) pre-built gap sentence. Auto-generated if omitted.
  *
  * Run: node build.js
  */
@@ -21,44 +20,6 @@ const path = require('path');
 
 const vocabDir = path.join(__dirname, 'vocabulary');
 const outFile  = path.join(__dirname, 'vocabulary.js');
-
-function escapeRegex(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-/**
- * Try to replace the answer/word in the example with ___.
- * Returns the gapped sentence, or the original sentence if nothing matched.
- */
-function buildGapExample(example, word, answer) {
-  if (!example) return '';
-
-  const candidates = [];
-
-  // 1. Explicit answer is the highest priority
-  if (answer && answer !== word) candidates.push(answer);
-
-  // 2. Word itself
-  candidates.push(word);
-
-  // 3. Strip leading "to " (e.g. "to wrap up" → "wrap up")
-  const withoutTo = word.replace(/^to\s+/i, '');
-  if (withoutTo !== word) candidates.push(withoutTo);
-
-  // 4. First variant for "a / b" words (e.g. "serialize / deserialize" → "serialize")
-  const firstVariant = word.split(/\s*[\/,]\s*/)[0].trim();
-  if (firstVariant !== word && firstVariant !== withoutTo) candidates.push(firstVariant);
-
-  for (const candidate of candidates) {
-    const regex = new RegExp(escapeRegex(candidate), 'i');
-    if (regex.test(example)) {
-      return example.replace(regex, '___');
-    }
-  }
-
-  // Nothing matched — return example unchanged (no gap)
-  return example;
-}
 
 function normalizeAnswers(value) {
   if (!Array.isArray(value)) return [];
@@ -119,9 +80,6 @@ for (const file of files) {
 
   const words = rawWords.map(w => {
     const answer     = (w.answer || w.word || '').trim();
-    const gapExample = w.gapExample
-      ? w.gapExample.trim()
-      : buildGapExample(w.example || '', w.word || '', w.answer || '');
 
     const entry = {
       id:                 globalId++,
@@ -129,7 +87,6 @@ for (const file of files) {
       translation:        (w.translation        || '').trim(),
       example:            (w.example            || '').trim(),
       sentenceTranslation:(w.sentenceTranslation|| '').trim(),
-      gapExample,
       answer,
     };
     if (w.infinitive) entry.infinitive = w.infinitive.trim();

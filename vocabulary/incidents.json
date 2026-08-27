@@ -14,14 +14,14 @@
       ]
     },
     {
-      "word": "fire (an alert)",
-      "infinitive": "to fire (an alert)",
-      "translation": "сработать (об алерте)",
-      "example": "The alert fired when error rate went above 5%.",
-      "sentenceTranslation": "Алерт сработал, когда уровень ошибок превысил 5%",
+      "word": "fire an alert",
+      "infinitive": "to fire an alert",
+      "translation": "вызвать / сгенерировать алерт",
+      "example": "The monitoring rule fired an alert when the error rate went above 5%.",
+      "sentenceTranslation": "Правило мониторинга вызвало алерт, когда уровень ошибок превысил 5%",
       "answers": [
         {
-          "text": "to fire (an alert)",
+          "text": "to fire an alert",
           "weight": 1
         }
       ]
@@ -177,7 +177,7 @@
     {
       "word": "narrow down / narrow it down",
       "infinitive": "to narrow down / to narrow it down",
-      "translation": "сузить круг поиска причины",
+      "translation": "сузить (круг поиска причины)",
       "example": "We're trying to narrow down where exactly it's failing.",
       "sentenceTranslation": "Мы пытаемся сузить круг поиска — где именно происходит сбой",
       "answers": [
@@ -194,7 +194,7 @@
     {
       "word": "reproduce",
       "infinitive": "to reproduce",
-      "translation": "воспроизвести проблему",
+      "translation": "воспроизвести (проблему)",
       "example": "Can anyone reproduce this locally?",
       "sentenceTranslation": "Кто-нибудь может воспроизвести это локально?",
       "answers": [
@@ -219,7 +219,7 @@
     {
       "word": "roll back",
       "infinitive": "to roll back",
-      "translation": "откатить изменения",
+      "translation": "откатить (изменения)",
       "example": "We decided to roll back to the previous version.",
       "sentenceTranslation": "Мы решили откатиться до предыдущей версии",
       "answers": [
@@ -232,7 +232,7 @@
     {
       "word": "revert",
       "infinitive": "to revert",
-      "translation": "отменить изменения в коде или конфиге",
+      "translation": "отменить (изменения в коде или конфиге)",
       "example": "I reverted the config change and the service recovered.",
       "sentenceTranslation": "Я откатил изменение конфига, и сервис восстановился",
       "answers": [
@@ -277,7 +277,7 @@
     {
       "word": "mitigate",
       "infinitive": "to mitigate",
-      "translation": "снизить последствия, частично решить",
+      "translation": "снизить (последствия), частично решить (проблему)",
       "example": "We mitigated the issue by adding more pods.",
       "sentenceTranslation": "Мы снизили последствия, добавив больше подов",
       "answers": [
@@ -290,7 +290,7 @@
     {
       "word": "recover",
       "infinitive": "to recover",
-      "translation": "восстановиться после сбоя",
+      "translation": "восстановиться (после сбоя)",
       "example": "The service recovered within 10 minutes after the rollback.",
       "sentenceTranslation": "Сервис восстановился в течение 10 минут после отката",
       "answers": [

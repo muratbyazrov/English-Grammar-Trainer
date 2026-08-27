@@ -94,7 +94,7 @@
     {
       "word": "throttle / rate-limit",
       "infinitive": "to throttle / to rate-limit",
-      "translation": "ограничивать количество запросов",
+      "translation": "ограничивать (количество запросов)",
       "example": "We throttle requests to 100 per minute.",
       "sentenceTranslation": "Мы ограничиваем количество запросов до 100 в минуту.",
       "answers": [
@@ -312,7 +312,7 @@
     },
     {
       "word": "graceful degradation",
-      "translation": "корректная деградация при сбое",
+      "translation": "корректная деградация (при сбое)",
       "example": "If the cache is down, we fall back — graceful degradation.",
       "sentenceTranslation": "Если кэш недоступен, мы переключаемся на запасной вариант: это корректная деградация.",
       "answers": [

@@ -141,7 +141,7 @@
     {
       "word": "bring up / raise",
       "infinitive": "to bring up / to raise",
-      "translation": "поднять тему / упомянуть",
+      "translation": "поднять (тему) / упомянуть",
       "example": "I wanted to bring up a concern about the API performance.",
       "sentenceTranslation": "Хотел поднять вопрос о производительности API",
       "answers": [
@@ -306,7 +306,7 @@
     {
       "word": "follow up",
       "infinitive": "to follow up",
-      "translation": "вернуться к вопросу / проследить",
+      "translation": "вернуться (к вопросу) / проследить",
       "example": "I'll follow up with the DevOps team about the deployment issue.",
       "sentenceTranslation": "Я вернусь к вопросу с командой DevOps по поводу проблемы с деплоем",
       "answers": [

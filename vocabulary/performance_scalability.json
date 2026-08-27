@@ -3,10 +3,9 @@
   "words": [
     {
       "word": "response time",
-      "translation": "время ответа сервера",
+      "translation": "время ответа (сервера)",
       "example": "Average response time increased after the migration.",
       "sentenceTranslation": "Среднее время ответа увеличилось после миграции.",
-      "gapExample": "Average ___ increased after the migration.",
       "answer": "response time",
       "answers": [
         {
@@ -140,7 +139,7 @@
     },
     {
       "word": "autoscaling / auto-scaling",
-      "translation": "автоматическое масштабирование по нагрузке",
+      "translation": "автоматическое масштабирование (по нагрузке)",
       "example": "Autoscaling kicks in when CPU usage goes above 70%.",
       "sentenceTranslation": "Автоматическое масштабирование включается, когда использование CPU превышает 70%.",
       "answers": [
@@ -310,7 +309,7 @@
     {
       "word": "recover",
       "infinitive": "to recover",
-      "translation": "восстановиться после сбоя или деградации",
+      "translation": "восстановиться (после сбоя или деградации)",
       "example": "The service recovered automatically after the circuit breaker reset.",
       "sentenceTranslation": "Сервис автоматически восстановился после сброса circuit breaker.",
       "answer": "recovered",

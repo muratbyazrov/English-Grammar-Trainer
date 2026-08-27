@@ -102,16 +102,29 @@
     },
     {
       id: "tenses-present",
-      title: "Present: Simple / to be / Continuous",
-      subtitle: "факты, состояния и действия сейчас",
+      title: "Present: Simple / to be / Continuous / Perfect",
+      subtitle: "факты, состояния, процессы и результат к сейчас",
       sections: [
         {
           title: "Present Simple + to be",
           items: [
             "Используем для состояний, описаний и фактов в настоящем.",
-            "Утверждение: I am, he/she/it is, we/you/they are.",
-            "Отрицание: am not, is not, are not.",
-            "Вопрос: Am I? Is he/she/it? Are we/you/they?",
+          ],
+          schemes: [
+            {
+              title: "Схема Present Simple + to be",
+              rows: [
+                { label: "+", tokens: ["I", "am"] },
+                { label: "+", tokens: ["He / She / It", "is"] },
+                { label: "+", tokens: ["We / You / They", "are"] },
+                { label: "-", tokens: ["I", "am", "not"] },
+                { label: "-", tokens: ["He / She / It", "is", "not"] },
+                { label: "-", tokens: ["We / You / They", "are", "not"] },
+                { label: "?", tokens: ["Am", "I", "... ?"] },
+                { label: "?", tokens: ["Is", "he / she / it", "... ?"] },
+                { label: "?", tokens: ["Are", "we / you / they", "... ?"] },
+              ],
+            },
           ],
           examples: [
             ["The service is stable.", "Сервис стабилен."],
@@ -123,9 +136,19 @@
           title: "Present Simple + V1",
           items: [
             "Используем для привычек, регулярно повторяющихся действий, общеизвестных фактов и расписаний.",
-            "Утверждение: I/we/you/they read; he/she/it reads.",
-            "Отрицание: I/we/you/they don't read; he/she/it doesn't read.",
-            "Вопрос: Do I/we/you/they read? Does he/she/it read?",
+          ],
+          schemes: [
+            {
+              title: "Схема Present Simple + V1",
+              rows: [
+                { label: "+", tokens: ["I / We / You / They", "V1: read"] },
+                { label: "+", tokens: ["He / She / It", "V(s): reads"] },
+                { label: "-", tokens: ["I / We / You / They", "don't", "V1: read"] },
+                { label: "-", tokens: ["He / She / It", "doesn't", "V1: read"] },
+                { label: "?", tokens: ["Do", "I / we / you / they", "V1: read"] },
+                { label: "?", tokens: ["Does", "he / she / it", "V1: read"] },
+              ],
+            },
           ],
           examples: [
             ["We deploy every Friday.", "Мы деплоим каждую пятницу."],
@@ -136,20 +159,69 @@
         {
           title: "Present Continuous",
           items: [
-            "Используем для действия в процессе прямо сейчас, планов с конкретной договоренностью и конкретных намерений.",
-            "Структура: I am + V-ing; he/she/it is + V-ing; we/you/they are + V-ing.",
-            "Вопрос: Am/Is/Are + подлежащее + V-ing?",
+            "Используем для действия в процессе прямо сейчас или временной ситуации в настоящем.",
+          ],
+          schemes: [
+            {
+              title: "Схема Present Continuous",
+              rows: [
+                { label: "+", tokens: ["I", "am", "V-ing"] },
+                { label: "+", tokens: ["He / She / It", "is", "V-ing"] },
+                { label: "+", tokens: ["We / You / They", "are", "V-ing"] },
+                { label: "-", tokens: ["I", "am", "not", "V-ing"] },
+                { label: "-", tokens: ["He / She / It", "is", "not", "V-ing"] },
+                { label: "-", tokens: ["We / You / They", "are", "not", "V-ing"] },
+                { label: "?", tokens: ["Am", "I", "V-ing"] },
+                { label: "?", tokens: ["Is", "he / she / it", "V-ing"] },
+                { label: "?", tokens: ["Are", "we / you / they", "V-ing"] },
+              ],
+            },
           ],
           examples: [
             ["We are investigating the issue now.", "Мы сейчас расследуем проблему."],
-            ["Masha is deploying the hotfix tonight.", "Маша деплоит хотфикс сегодня вечером."],
+            ["Masha is deploying the hotfix right now.", "Маша прямо сейчас деплоит хотфикс."],
             ["Are you reviewing the PR?", "Ты ревьюишь PR?"],
+          ],
+        },
+        {
+          title: "Present Perfect",
+          items: [
+            "Используем для результата к настоящему моменту, опыта или действия, которое важно сейчас.",
+            "Частые маркеры: already, yet, just, ever, never, recently, so far.",
+            "С точным прошлым временем вроде yesterday или last week обычно нужен Past Simple, а не Present Perfect.",
+          ],
+          schemes: [
+            {
+              title: "Схема Present Perfect",
+              rows: [
+                { label: "+", tokens: ["I / We / You / They", "have", "V3: checked"] },
+                { label: "+", tokens: ["He / She / It", "has", "V3: checked"] },
+                { label: "-", tokens: ["I / We / You / They", "have not / haven't", "V3"] },
+                { label: "-", tokens: ["He / She / It", "has not / hasn't", "V3"] },
+                { label: "?", tokens: ["Have", "I / we / you / they", "V3"] },
+                { label: "?", tokens: ["Has", "he / she / it", "V3"] },
+              ],
+            },
+          ],
+          examples: [
+            ["We have already fixed the bug.", "Мы уже исправили баг."],
+            ["She has just pushed the hotfix.", "Она только что запушила хотфикс."],
+            ["Have you checked the logs yet?", "Ты уже проверил логи?"],
+            ["I have never seen this error before.", "Я никогда раньше не видел эту ошибку."],
           ],
         },
         {
           title: "Вопросы к подлежащему",
           items: [
             "Если what / who / which само является подлежащим, порядок слов прямой: question word + V(s).",
+          ],
+          schemes: [
+            {
+              title: "Схема вопроса к подлежащему",
+              rows: [
+                { label: "?", tokens: ["what / who / which", "V(s)", "... ?"] },
+              ],
+            },
           ],
           examples: [
             ["Who knows the answer?", "Кто знает ответ?"],
@@ -165,6 +237,7 @@
             "Мы деплоим каждую пятницу.",
             "Этот воркер читает задачи из очереди.",
             "Мы сейчас проверяем production logs.",
+            "Мы уже исправили этот баг.",
             "Что выглядит странно в этом графике?",
           ],
         },
@@ -179,9 +252,17 @@
           title: "Past Simple",
           items: [
             "Используем, когда действие произошло в прошлом в конкретный момент или период.",
-            "Утверждение: подлежащее + V2 или regular verb + -ed.",
-            "Отрицание: didn't + V1. Вопрос: Did + подлежащее + V1?",
             "Частые маркеры: yesterday, last week, in 2025, ago.",
+          ],
+          schemes: [
+            {
+              title: "Схема Past Simple",
+              rows: [
+                { label: "+", tokens: ["I / He / She / It / We / You / They", "V2: worked"] },
+                { label: "-", tokens: ["I / He / She / It / We / You / They", "didn't", "V1: work"] },
+                { label: "?", tokens: ["Did", "subject", "V1: work"] },
+              ],
+            },
           ],
           examples: [
             ["We fixed the bug yesterday.", "Мы исправили баг вчера."],
@@ -193,8 +274,19 @@
           title: "Past Simple + to be",
           items: [
             "Используем для состояний и описаний в прошлом, а не для действий.",
-            "Утверждение: I/he/she/it was; we/you/they were.",
-            "Отрицание: was not / were not. Вопрос: Was / Were + подлежащее?",
+          ],
+          schemes: [
+            {
+              title: "Схема Past Simple + to be",
+              rows: [
+                { label: "+", tokens: ["I / He / She / It", "was"] },
+                { label: "+", tokens: ["We / You / They", "were"] },
+                { label: "-", tokens: ["I / He / She / It", "was", "not"] },
+                { label: "-", tokens: ["We / You / They", "were", "not"] },
+                { label: "?", tokens: ["Was", "I / he / she / it", "... ?"] },
+                { label: "?", tokens: ["Were", "we / you / they", "... ?"] },
+              ],
+            },
           ],
           examples: [
             ["The service was down for ten minutes.", "Сервис был недоступен десять минут."],
@@ -207,7 +299,20 @@
           items: [
             "Используем для процесса в определенный момент в прошлом.",
             "Часто показывает фон: действие было в процессе, когда произошло другое действие.",
-            "Структура: was / were + V-ing. Маркеры: at 5 o'clock yesterday, when, while.",
+            "Маркеры: at 5 o'clock yesterday, when, while.",
+          ],
+          schemes: [
+            {
+              title: "Схема Past Continuous",
+              rows: [
+                { label: "+", tokens: ["I / He / She / It", "was", "V-ing"] },
+                { label: "+", tokens: ["We / You / They", "were", "V-ing"] },
+                { label: "-", tokens: ["I / He / She / It", "was", "not", "V-ing"] },
+                { label: "-", tokens: ["We / You / They", "were", "not", "V-ing"] },
+                { label: "?", tokens: ["Was", "I / he / she / it", "V-ing"] },
+                { label: "?", tokens: ["Were", "we / you / they", "V-ing"] },
+              ],
+            },
           ],
           examples: [
             ["We were testing the migration when the alert fired.", "Мы тестировали миграцию, когда сработал алерт."],
@@ -219,9 +324,18 @@
           title: "Past Perfect",
           items: [
             "Используем, чтобы показать, что одно прошлое действие произошло раньше другого прошлого действия.",
-            "Структура: had + V3.",
             "Часто встречается с before, after, when, already, by the time.",
             "Обычно используется в паре с Past Simple: одно действие случилось раньше, другое позже.",
+          ],
+          schemes: [
+            {
+              title: "Схема Past Perfect",
+              rows: [
+                { label: "+", tokens: ["I / He / She / It / We / You / They", "had", "V3"] },
+                { label: "-", tokens: ["I / He / She / It / We / You / They", "had", "not", "V3"] },
+                { label: "?", tokens: ["Had", "subject", "V3"] },
+              ],
+            },
           ],
           examples: [
             ["When I arrived, she had already left.", "Когда я пришел, она уже ушла."],
@@ -250,8 +364,16 @@
           title: "Future Simple",
           items: [
             "Используем will для спонтанных решений, предложений что-то сделать, обещаний и прогнозов на основе личного мнения.",
-            "Структура: подлежащее + will + V1.",
-            "Отрицание: will not / won't + V1. Вопрос: Will + подлежащее + V1?",
+          ],
+          schemes: [
+            {
+              title: "Схема Future Simple",
+              rows: [
+                { label: "+", tokens: ["I / He / She / It / We / You / They", "will", "V1"] },
+                { label: "-", tokens: ["I / He / She / It / We / You / They", "will not / won't", "V1"] },
+                { label: "?", tokens: ["Will", "subject", "V1"] },
+              ],
+            },
           ],
           examples: [
             ["I'll check the logs.", "Я проверю логи."],
@@ -263,8 +385,22 @@
           title: "To be going to",
           items: [
             "Используем для планов и намерений без конкретной договоренности, а также для прогнозов о будущем, основанных на фактах.",
-            "Структура: am / is / are + going to + V1.",
-            "Отрицание: am / is / are + not + going to + V1.",
+          ],
+          schemes: [
+            {
+              title: "Схема to be going to",
+              rows: [
+                { label: "+", tokens: ["I", "am", "going to", "V1"] },
+                { label: "+", tokens: ["He / She / It", "is", "going to", "V1"] },
+                { label: "+", tokens: ["We / You / They", "are", "going to", "V1"] },
+                { label: "-", tokens: ["I", "am", "not", "going to", "V1"] },
+                { label: "-", tokens: ["He / She / It", "is", "not", "going to", "V1"] },
+                { label: "-", tokens: ["We / You / They", "are", "not", "going to", "V1"] },
+                { label: "?", tokens: ["Am", "I", "going to", "V1"] },
+                { label: "?", tokens: ["Is", "he / she / it", "going to", "V1"] },
+                { label: "?", tokens: ["Are", "we / you / they", "going to", "V1"] },
+              ],
+            },
           ],
           examples: [
             ["We are going to add an index.", "Мы собираемся добавить индекс."],
@@ -286,8 +422,16 @@
           title: "Future Continuous",
           items: [
             "Используем для действия в процессе в определенный момент в будущем или длительного действия в будущем.",
-            "Структура: will be + V-ing.",
-            "Вопрос: Will + подлежащее + be + V-ing?",
+          ],
+          schemes: [
+            {
+              title: "Схема Future Continuous",
+              rows: [
+                { label: "+", tokens: ["I / He / She / It / We / You / They", "will be", "V-ing"] },
+                { label: "-", tokens: ["I / He / She / It / We / You / They", "will not be", "V-ing"] },
+                { label: "?", tokens: ["Will", "subject", "be", "V-ing"] },
+              ],
+            },
           ],
           examples: [
             ["We will be monitoring the service overnight.", "Мы будем мониторить сервис ночью."],
@@ -615,11 +759,11 @@
         {
           title: "Времена и структура",
           examples: [
-            ["Present Simple: is / are + V-ed", "The query is executed automatically."],
+            ["Present Simple: am / is / are + V-ed", "The query is executed automatically."],
             ["Past Simple: was / were + V-ed", "The config was reverted after the incident."],
-            ["Present Continuous: is / are + being + V-ed", "The migration is being tested right now."],
+            ["Present Continuous: am / is / are + being + V-ed", "The migration is being tested right now."],
             ["Past Continuous: was / were + being + V-ed", "The service was being monitored when it crashed."],
-            ["Present Perfect: has / have + been + V-ed", "The PR has been reviewed already."],
+            ["Present Perfect: have / has + been + V-ed", "The PR has been reviewed already."],
             ["Past Perfect: had + been + V-ed", "The index had been dropped before we noticed."],
             ["Future Simple: will + be + V-ed", "The schema will be updated next sprint."],
             ["Modal verbs: modal + be + V-ed", "The transaction should be rolled back immediately."],
@@ -1034,8 +1178,15 @@
 
   function getAnswerMatch(userNorm, targetNorm, answerOptions) {
     const comparable = (s) => String(s || "").replace(/[-\s]+/g, " ").trim();
+    const withoutArticles = (s) => comparable(s)
+      .replace(/\b(a|an|the)\b/g, " ")
+      .replace(/[()]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const isVocabAnswer = Array.isArray(answerOptions) && answerOptions.length > 0;
     const comparableUser = comparable(userNorm);
     const comparableTarget = comparable(targetNorm);
+    const articleFreeUser = isVocabAnswer ? withoutArticles(userNorm) : "";
 
     const options = Array.isArray(answerOptions) && answerOptions.length
       ? answerOptions
@@ -1045,7 +1196,9 @@
     if (options.length > 1) {
       const matchedIndex = options.findIndex((option) => {
         const optionNorm = normalize(option.text);
-        return userNorm === optionNorm || comparableUser === comparable(optionNorm);
+        return userNorm === optionNorm
+          || comparableUser === comparable(optionNorm)
+          || (isVocabAnswer && articleFreeUser && articleFreeUser === withoutArticles(optionNorm));
       });
 
       if (matchedIndex !== -1) {
@@ -1062,7 +1215,11 @@
       return { matched: true, isAlternative: false, primaryAnswer, weight: 1 };
     }
 
-    // Скобки в ответе — необязательная часть. "to fire" принимается для "to fire (an alert)".
+    if (isVocabAnswer && articleFreeUser && articleFreeUser === withoutArticles(targetNorm)) {
+      return { matched: true, isAlternative: false, primaryAnswer, weight: 1 };
+    }
+
+    // Скобки в ответе обозначают необязательную часть.
     const withoutParens = normalize(targetNorm.replace(/\s*\(.*$/, ""));
     if (withoutParens && (userNorm === withoutParens || comparableUser === comparable(withoutParens))) {
       return { matched: true, isAlternative: false, primaryAnswer: withoutParens, weight: 1 };
@@ -1478,44 +1635,6 @@
     }
   }
 
-  async function showVocabSentenceTranslation(item) {
-    const sentence = item && item.example ? item.example : "";
-    setSelectedSentenceForSpeech(sentence);
-    if (!sentence) {
-      setQuestionTranslation("");
-      return;
-    }
-
-    const formatVocabTranslation = (translation) => {
-      const sentenceTranslation = String(translation || "").trim();
-      const wordTranslation = String((item && item.translation) || "").trim();
-      if (!sentenceTranslation) return "";
-      return wordTranslation ? `${sentenceTranslation} (${wordTranslation})` : sentenceTranslation;
-    };
-
-    if (item && typeof item.sentenceTranslation === "string" && item.sentenceTranslation.trim()) {
-      setQuestionTranslation(formatVocabTranslation(item.sentenceTranslation));
-      return;
-    }
-
-    const reqId = state.sentenceTranslationRequestId + 1;
-    state.sentenceTranslationRequestId = reqId;
-    setQuestionTranslation("Перевожу предложение...");
-
-    try {
-      const translated = await getSentenceTranslation(sentence);
-      if (reqId !== state.sentenceTranslationRequestId || currentMode !== 'vocabulary') return;
-      if (!translated) {
-        setQuestionTranslation("Не нашел перевод предложения.");
-        return;
-      }
-      setQuestionTranslation(formatVocabTranslation(translated));
-    } catch (_error) {
-      if (reqId !== state.sentenceTranslationRequestId || currentMode !== 'vocabulary') return;
-      setQuestionTranslation("Не удалось получить перевод предложения. Проверь интернет.");
-    }
-  }
-
   function hideSessionComplete() {
     refs.sessionComplete.hidden = true;
   }
@@ -1697,7 +1816,7 @@
     refs.wrongCount.textContent = String(vocabState.wrong);
 
     refs.vocabModeLabel.textContent = 'Переведите на английский';
-    refs.speakWordBtn.textContent = 'Озвучить предложение';
+    refs.speakWordBtn.textContent = 'Озвучить ответ';
     renderQuestionText(w.translation);
     setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
     refs.questionTranslation.classList.remove('vocab-hint');
@@ -2197,6 +2316,43 @@
     parent.appendChild(list);
   }
 
+  function appendTheorySchemes(parent, schemes) {
+    schemes.forEach((scheme) => {
+      const details = document.createElement('details');
+      details.className = 'theory-scheme';
+      details.open = true;
+
+      const summary = document.createElement('summary');
+      summary.textContent = scheme.title || 'Показать схему';
+      details.appendChild(summary);
+
+      const rows = document.createElement('div');
+      rows.className = 'theory-scheme-rows';
+
+      (scheme.rows || []).forEach((row) => {
+        const rowEl = document.createElement('div');
+        rowEl.className = 'theory-scheme-row';
+
+        const label = document.createElement('span');
+        label.className = 'theory-scheme-label';
+        label.textContent = row.label || '';
+        rowEl.appendChild(label);
+
+        (row.tokens || []).forEach((token) => {
+          const tokenEl = document.createElement('span');
+          tokenEl.className = 'theory-scheme-token';
+          tokenEl.textContent = token;
+          rowEl.appendChild(tokenEl);
+        });
+
+        rows.appendChild(rowEl);
+      });
+
+      details.appendChild(rows);
+      parent.appendChild(details);
+    });
+  }
+
   function renderTheory() {
     hideSessionComplete();
     clearAutoNextTimer();
@@ -2229,6 +2385,7 @@
       block.appendChild(heading);
 
       if (section.items) appendTheoryList(block, section.items);
+      if (section.schemes) appendTheorySchemes(block, section.schemes);
       if (section.examples) appendTheoryExamples(block, section.examples);
 
       refs.theoryBody.appendChild(block);

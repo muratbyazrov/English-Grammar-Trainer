@@ -172,7 +172,7 @@
     },
     {
       "word": "to be blocked on",
-      "translation": "быть заблокированным чем-то",
+      "translation": "быть заблокированным (чем-то)",
       "example": "I'm blocked on the design decision from last week.",
       "sentenceTranslation": "Я заблокирован решением по дизайну с прошлой недели.",
       "answer": "blocked on",
@@ -202,7 +202,7 @@
     },
     {
       "word": "dependency",
-      "translation": "зависимость от другой задачи / команды",
+      "translation": "зависимость (от другой задачи / команды)",
       "example": "This ticket has a dependency on the infra team.",
       "sentenceTranslation": "Эта задача зависит от infra-команды.",
       "answers": [
@@ -278,7 +278,7 @@
     },
     {
       "word": "to pair on",
-      "translation": "работать вместе над задачей",
+      "translation": "работать вместе (над задачей)",
       "example": "Can we pair on this? It's getting complex.",
       "sentenceTranslation": "Можем поработать вместе над этим в паре? Задача становится сложной.",
       "answer": "pair on",
@@ -291,7 +291,7 @@
     },
     {
       "word": "to hand off / to pass on",
-      "translation": "передать задачу другому",
+      "translation": "передать (задачу другому)",
       "example": "I'm handing off the ticket to Mike while I'm on leave.",
       "sentenceTranslation": "Я передаю задачу Майку, пока я в отпуске.",
       "answer": "handing off",
@@ -308,7 +308,7 @@
     },
     {
       "word": "to loop in / to bring in",
-      "translation": "включить кого-то в обсуждение",
+      "translation": "включить (кого-то в обсуждение)",
       "example": "Let's loop in the security team before we deploy.",
       "sentenceTranslation": "Давай подключим команду безопасности перед деплоем.",
       "answer": "loop in",
