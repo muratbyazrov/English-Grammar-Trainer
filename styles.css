@@ -107,6 +107,18 @@ body {
   width: 104px;
 }
 
+#shadowing-topic {
+  width: 230px;
+}
+
+#shadowing-rate {
+  width: 104px;
+}
+
+#shadowing-repetitions {
+  width: 112px;
+}
+
 .toggle-option {
   display: inline-flex;
   align-items: center;
@@ -278,6 +290,95 @@ button:hover {
   background: var(--accent-2);
   color: #fff;
   border-color: var(--accent-2);
+}
+
+.shadowing-panel {
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px solid #cfe8e4;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f4fffc, #f8fbff);
+}
+
+.shadowing-prompt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shadowing-mic {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #dff5f1;
+  font-size: 1.45rem;
+}
+
+.shadowing-mic--active {
+  color: #fff;
+  background: var(--accent);
+  animation: shadowing-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes shadowing-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(231, 111, 81, 0.3); }
+  50% { box-shadow: 0 0 0 9px rgba(231, 111, 81, 0); }
+}
+
+.shadowing-repetition {
+  min-height: 1.2em;
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.shadowing-transcript {
+  min-height: 84px;
+  margin: 12px 0;
+  padding: 9px 11px;
+  border: 1px dashed var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.shadowing-heard {
+  min-height: 1.4em;
+}
+
+.shadowing-heard:empty::before {
+  content: "Здесь появится то, что услышало приложение";
+  color: #82909d;
+}
+
+.shadowing-translation {
+  min-height: 1.4em;
+  margin-top: 7px;
+  color: var(--ink);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.shadowing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+#shadowing-start {
+  background: var(--accent-2);
+  color: #fff;
+  border-color: var(--accent-2);
+}
+
+#shadowing-stop {
+  color: var(--danger);
+  border-color: #f3b7b7;
+  background: #fff7f7;
 }
 
 .feedback,

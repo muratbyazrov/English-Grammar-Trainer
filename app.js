@@ -1,6 +1,9 @@
 (function () {
   const STORAGE_KEY = "english-grammar-trainer.progress.v2";
   const AUTO_NEXT_DELAY_MS = 450;
+  const SHADOWING_SUCCESS_PAUSE_MS = 2500;
+  const SHADOWING_SILENCE_MS = 1000;
+  const SHADOWING_MAX_LISTEN_MS = 20000;
   const DEFAULT_ANSWER_PLACEHOLDER = "Например: helps";
   const EMPTY_ENTER_SPEAK_PLACEHOLDER = "Нажмите Enter еще раз, чтобы озвучить";
 
@@ -950,12 +953,158 @@
       ],
     },
   ];
+  const SHADOWING_TOPICS = [
+    {
+      id: "work-discussions",
+      title: "Work discussions",
+      groups: [
+        {
+          title: "walk through",
+          items: [
+            "Walk me through it.",
+            "Let me walk you through it.",
+            "Let me walk you through the proposal.",
+            "Let me walk you through the approach.",
+            "Can you walk me through this once more?",
+            "Let's walk through it together.",
+            "I think we should walk through it first.",
+          ],
+        },
+        {
+          title: "makes sense",
+          items: [
+            "Makes sense.",
+            "That makes sense.",
+            "It makes sense.",
+            "Does it make sense?",
+            "Does that make sense to you?",
+            "It makes sense to consider this.",
+            "I think that makes sense.",
+          ],
+        },
+        {
+          title: "end up with something",
+          items: [
+            "We ended up with a proposal.",
+            "We ended up with a different approach.",
+            "We might end up with issues.",
+            "We could end up with something better.",
+            "In the end, we ended up with this.",
+            "I think we'll end up with a better result.",
+          ],
+        },
+        {
+          title: "a fair point",
+          items: [
+            "That's a fair point.",
+            "That's a fair point, actually.",
+            "That's a fair point, but consider this.",
+            "I hear you — that's a fair point.",
+            "That's a fair point, let's walk through it.",
+            "I think that's a fair point.",
+          ],
+        },
+        {
+          title: "worth",
+          items: [
+            "It's worth it.",
+            "It's worth considering.",
+            "Is it worth it?",
+            "Is it worth considering this approach?",
+            "It's not worth it.",
+            "It's worth a second look.",
+            "I think it's worth it.",
+          ],
+        },
+        {
+          title: "Комбинированные фразы",
+          items: [
+            "Let me walk you through it — does it make sense?",
+            "That's a fair point, but is it worth it?",
+            "We ended up with a proposal — let me walk you through it.",
+            "That's a fair point. It's worth considering.",
+            "Does it make sense to end up with this approach?",
+            "Let's walk through it once more — that's a fair point.",
+            "I think it's worth walking through this once more.",
+            "I think that's a fair point, but does it make sense?",
+            "I think we'll end up with something worth it.",
+          ],
+        },
+      ],
+    },
+  ];
+  const SHADOWING_TRANSLATIONS = {
+    "Walk me through it.": "Объясни мне это пошагово.",
+    "Let me walk you through it.": "Позвольте мне объяснить это пошагово.",
+    "Let me walk you through the proposal.": "Позвольте мне подробно объяснить предложение.",
+    "Let me walk you through the approach.": "Позвольте мне подробно объяснить этот подход.",
+    "Can you walk me through this once more?": "Можешь ещё раз объяснить это пошагово?",
+    "Let's walk through it together.": "Давайте разберём это вместе.",
+    "I think we should walk through it first.": "Думаю, сначала нам стоит это разобрать.",
+    "Makes sense.": "Логично.",
+    "That makes sense.": "Это логично.",
+    "It makes sense.": "В этом есть смысл.",
+    "Does it make sense?": "В этом есть смысл?",
+    "Does that make sense to you?": "Для тебя это имеет смысл?",
+    "It makes sense to consider this.": "Имеет смысл это рассмотреть.",
+    "I think that makes sense.": "Думаю, это логично.",
+    "We ended up with a proposal.": "В итоге у нас получилось предложение.",
+    "We ended up with a different approach.": "В итоге мы выбрали другой подход.",
+    "We might end up with issues.": "В итоге у нас могут возникнуть проблемы.",
+    "We could end up with something better.": "В итоге мы можем получить что-то лучшее.",
+    "In the end, we ended up with this.": "В конце концов мы пришли к этому.",
+    "I think we'll end up with a better result.": "Думаю, в итоге мы получим лучший результат.",
+    "That's a fair point.": "Это справедливое замечание.",
+    "That's a fair point, actually.": "Вообще-то это справедливое замечание.",
+    "That's a fair point, but consider this.": "Это справедливое замечание, но учтите вот что.",
+    "I hear you — that's a fair point.": "Я тебя понимаю — это справедливое замечание.",
+    "That's a fair point, let's walk through it.": "Это справедливое замечание, давайте всё разберём.",
+    "I think that's a fair point.": "Думаю, это справедливое замечание.",
+    "It's worth it.": "Оно того стоит.",
+    "It's worth considering.": "Это стоит рассмотреть.",
+    "Is it worth it?": "Оно того стоит?",
+    "Is it worth considering this approach?": "Стоит ли рассмотреть этот подход?",
+    "It's not worth it.": "Оно того не стоит.",
+    "It's worth a second look.": "На это стоит взглянуть ещё раз.",
+    "I think it's worth it.": "Думаю, оно того стоит.",
+    "Let me walk you through it — does it make sense?": "Позвольте мне объяснить это пошагово — теперь понятно?",
+    "That's a fair point, but is it worth it?": "Это справедливое замечание, но стоит ли оно того?",
+    "We ended up with a proposal — let me walk you through it.": "В итоге у нас получилось предложение — позвольте мне подробно его объяснить.",
+    "That's a fair point. It's worth considering.": "Это справедливое замечание. Его стоит рассмотреть.",
+    "Does it make sense to end up with this approach?": "Есть ли смысл в итоге остановиться на этом подходе?",
+    "Let's walk through it once more — that's a fair point.": "Давайте разберём это ещё раз — это справедливое замечание.",
+    "I think it's worth walking through this once more.": "Думаю, стоит разобрать это ещё раз.",
+    "I think that's a fair point, but does it make sense?": "Думаю, это справедливое замечание, но есть ли в этом смысл?",
+    "I think we'll end up with something worth it.": "Думаю, в итоге мы получим что-то стоящее.",
+  };
 
   function fixBrokenWordSpacing(value) {
     return String(value || "")
-      .replace(/\bandI\b/g, "and I")
+      .replace(/\b([A-Za-z']*[a-z])I('ve)?\b/g, "$1 I$2")
+      .replace(/\b(and|when|that|as|if|Yesterday|night|but|you)I\b/gi, "$1 I")
+      .replace(/\b(should|must|haven't|shouldn't|mustn't)I\b/gi, "$1 I")
+      .replace(/\bcan'the\b/gi, "can't he")
+      .replace(/\bisn'tit\b/gi, "isn't it")
+      .replace(/\bshouldn'twe\b/gi, "shouldn't we")
+      .replace(/\bgot[аa]\b/gi, "got a")
+      .replace(/\bfinda\b/gi, "find a")
+      .replace(/\bwasa\b/gi, "was a")
+      .replace(/\bisa\b/gi, "is a")
       .replace(/\bshea\b/gi, "she a")
-      .replace(/\btimesa month\b/gi, "times a month");
+      .replace(/\btimesa\b/gi, "times a")
+      .replace(/\bfora\b/gi, "for a")
+      .replace(/\bsucha\b/gi, "such a")
+      .replace(/\blikea\b/gi, "like a")
+      .replace(/\bina\b/gi, "in a")
+      .replace(/\bmakinga\b/gi, "making a")
+      .replace(/\btraininga\b/gi, "training a")
+      .replace(/\bHavea\b/g, "Have a")
+      .replace(/\bhavea\b/g, "have a")
+      .replace(/\bgeta\b/gi, "get a")
+      .replace(/\btheInternet\b/g, "the Internet")
+      .replace(/\btodo\b/gi, "to do")
+      .replace(/\bbust\b/gi, "busy")
+      .replace(/\bknowning\b/gi, "knowing");
   }
 
   function sanitizeQuestion(question) {
@@ -991,6 +1140,7 @@
     questionId: document.getElementById("question-id"),
     questionText: document.getElementById("question-text"),
     questionTranslation: document.getElementById("question-translation"),
+    questionTranslationRow: document.getElementById("question-translation-row"),
     speakWordBtn: document.getElementById("speak-word-btn"),
     answerInput: document.getElementById("answer-input"),
     checkBtn: document.getElementById("check-btn"),
@@ -1012,10 +1162,12 @@
     tabTheory: document.getElementById('tab-theory'),
     tabVocab: document.getElementById('tab-vocab'),
     tabListening: document.getElementById('tab-listening'),
+    tabShadowing: document.getElementById('tab-shadowing'),
     controlsGrammar: document.getElementById('controls-grammar'),
     controlsTheory: document.getElementById('controls-theory'),
     controlsVocab: document.getElementById('controls-vocab'),
     controlsListening: document.getElementById('controls-listening'),
+    controlsShadowing: document.getElementById('controls-shadowing'),
     theoryTopic: document.getElementById('theory-topic'),
     vocabTopic: document.getElementById('vocab-topic'),
     vocabShowList: document.getElementById('vocab-show-list'),
@@ -1030,9 +1182,22 @@
     listeningFirstWord: document.getElementById('listening-first-word'),
     listeningGaps: document.getElementById('listening-gaps'),
     listeningShowText: document.getElementById('listening-show-text'),
+    shadowingTopic: document.getElementById('shadowing-topic'),
+    shadowingRate: document.getElementById('shadowing-rate'),
+    shadowingRepetitions: document.getElementById('shadowing-repetitions'),
+    shadowingNewSession: document.getElementById('shadowing-new-session'),
+    shadowingPanel: document.getElementById('shadowing-panel'),
+    shadowingMic: document.getElementById('shadowing-mic'),
+    shadowingStatus: document.getElementById('shadowing-status'),
+    shadowingRepetition: document.getElementById('shadowing-repetition'),
+    shadowingTranscript: document.getElementById('shadowing-heard'),
+    shadowingTranslation: document.getElementById('shadowing-translation'),
+    shadowingStart: document.getElementById('shadowing-start'),
+    shadowingStop: document.getElementById('shadowing-stop'),
     vocabTabGroup: document.getElementById('vocab-tab-group'),
     optionsSection: document.getElementById('options-section'),
     questionMeta: document.getElementById('question-meta'),
+    answerLabel: document.getElementById('answer-label'),
     vocabModeLabel: document.getElementById('vocab-mode-label'),
     statsSection: document.getElementById('stats-section'),
     cardContent: document.getElementById('card-content'),
@@ -1131,6 +1296,21 @@
     checkedCurrent: false,
     wrongCounted: false,
     hintLevel: 0,
+  };
+  const shadowingState = {
+    session: [],
+    idx: 0,
+    correct: 0,
+    wrong: 0,
+    wrongCounted: false,
+    checkedCurrent: false,
+    successfulRepetitions: 0,
+    recognition: null,
+    attemptToken: 0,
+    isListening: false,
+    retryTimer: null,
+    recognitionSilenceTimer: null,
+    recognitionMaxTimer: null,
   };
 
   function asNumber(value, fallback) {
@@ -1354,6 +1534,15 @@
           correct: listeningState.correct,
           wrong: listeningState.wrong,
         },
+        shadowing: {
+          topic: refs.shadowingTopic.value,
+          rate: refs.shadowingRate.value,
+          repetitions: refs.shadowingRepetitions.value,
+          idx: shadowingState.idx,
+          correct: shadowingState.correct,
+          wrong: shadowingState.wrong,
+          successfulRepetitions: shadowingState.successfulRepetitions,
+        },
         theory: {
           topic: refs.theoryTopic.value,
         },
@@ -1405,8 +1594,9 @@
       state.wrong = wrong;
       restoreVocabProgress(parsed.vocabulary);
       restoreListeningProgress(parsed.listening);
+      restoreShadowingProgress(parsed.shadowing);
       restoreTheoryProgress(parsed.theory);
-      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory' || parsed.mode === 'listening') {
+      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory' || parsed.mode === 'listening' || parsed.mode === 'shadowing') {
         currentMode = parsed.mode;
       }
       return true;
@@ -2259,6 +2449,366 @@
     }
   }
 
+  function shadowingItemsForTopic(topicValue) {
+    const topic = SHADOWING_TOPICS.find((candidate) => candidate.id === topicValue) || SHADOWING_TOPICS[0];
+    if (!topic) return [];
+    return topic.groups.flatMap((group, groupIndex) =>
+      group.items.map((text, itemIndex) => ({
+        id: `${topic.id}:${groupIndex}:${itemIndex}`,
+        topicId: topic.id,
+        topicTitle: topic.title,
+        groupTitle: group.title,
+        text,
+      }))
+    );
+  }
+
+  function ensureShadowingTopicOptions() {
+    if (refs.shadowingTopic.options.length > 0) return;
+    SHADOWING_TOPICS.forEach((topic) => {
+      const opt = document.createElement('option');
+      opt.value = topic.id;
+      opt.textContent = topic.title;
+      refs.shadowingTopic.appendChild(opt);
+    });
+  }
+
+  function pickShadowingSession() {
+    return shadowingItemsForTopic(refs.shadowingTopic.value);
+  }
+
+  function restoreShadowingProgress(saved) {
+    ensureShadowingTopicOptions();
+    if (!saved || typeof saved !== 'object') return false;
+    const topicValue = String(saved.topic || '');
+    if (Array.from(refs.shadowingTopic.options).some((opt) => opt.value === topicValue)) {
+      refs.shadowingTopic.value = topicValue;
+    }
+    const rate = String(saved.rate || '0.9');
+    refs.shadowingRate.value = Array.from(refs.shadowingRate.options).some((opt) => opt.value === rate) ? rate : '0.9';
+    const repetitions = String(saved.repetitions || '1');
+    refs.shadowingRepetitions.value = Array.from(refs.shadowingRepetitions.options).some((opt) => opt.value === repetitions) ? repetitions : '1';
+    shadowingState.session = pickShadowingSession();
+    shadowingState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, shadowingState.session.length - 1)));
+    shadowingState.correct = Math.max(0, asNumber(saved.correct, 0));
+    shadowingState.wrong = Math.max(0, asNumber(saved.wrong, 0));
+    shadowingState.successfulRepetitions = Math.max(0, Math.min(asNumber(saved.successfulRepetitions, 0), currentShadowingRepetitions() - 1));
+    return Boolean(shadowingState.session.length);
+  }
+
+  function currentShadowingItem() {
+    return shadowingState.session[shadowingState.idx] || null;
+  }
+
+  function currentShadowingRepetitions() {
+    return Math.max(1, Math.min(3, asNumber(refs.shadowingRepetitions.value, 1)));
+  }
+
+  function stopShadowingAttempt() {
+    shadowingState.attemptToken += 1;
+    const wasListening = shadowingState.isListening;
+    shadowingState.isListening = false;
+    if (shadowingState.retryTimer) {
+      window.clearTimeout(shadowingState.retryTimer);
+      shadowingState.retryTimer = null;
+    }
+    clearShadowingRecognitionTimers();
+    refs.shadowingMic.classList.remove('shadowing-mic--active');
+    if (wasListening && shadowingState.recognition) {
+      try { shadowingState.recognition.abort(); } catch (_) {}
+    }
+  }
+
+  function clearShadowingRecognitionTimers() {
+    if (shadowingState.recognitionSilenceTimer) {
+      window.clearTimeout(shadowingState.recognitionSilenceTimer);
+      shadowingState.recognitionSilenceTimer = null;
+    }
+    if (shadowingState.recognitionMaxTimer) {
+      window.clearTimeout(shadowingState.recognitionMaxTimer);
+      shadowingState.recognitionMaxTimer = null;
+    }
+  }
+
+  function updateShadowingRepetition() {
+    const item = currentShadowingItem();
+    const repetitions = currentShadowingRepetitions();
+    if (!item || repetitions <= 1) {
+      refs.shadowingRepetition.textContent = '';
+      return;
+    }
+    const nextRepetition = Math.min(repetitions, shadowingState.successfulRepetitions + 1);
+    refs.shadowingRepetition.textContent = `Серия: повтор ${nextRepetition} из ${repetitions}`;
+  }
+
+  function hideShadowingTranslation() {
+    refs.questionTranslationRow.hidden = true;
+    setQuestionTranslation('');
+    refs.shadowingTranslation.textContent = '';
+  }
+
+  function showShadowingTranslation(item) {
+    refs.shadowingTranslation.textContent = SHADOWING_TRANSLATIONS[item.text] || 'Перевод не найден.';
+  }
+
+  function renderShadowing() {
+    hideSessionComplete();
+    stopSpeech();
+    stopShadowingAttempt();
+    const item = currentShadowingItem();
+    if (!item) {
+      refs.questionText.textContent = 'Фразы не найдены.';
+      setQuestionTranslation('');
+      return;
+    }
+    refs.position.textContent = `${shadowingState.idx + 1} / ${shadowingState.session.length}`;
+    refs.correctCount.textContent = String(shadowingState.correct);
+    refs.wrongCount.textContent = String(shadowingState.wrong);
+    refs.questionText.textContent = item.text;
+    hideShadowingTranslation();
+    setSelectedSentenceForSpeech(item.text);
+    refs.shadowingStatus.textContent = 'Нажмите кнопку, послушайте фразу и повторите её.';
+    refs.shadowingTranscript.textContent = '';
+    refs.shadowingStart.disabled = false;
+    refs.shadowingStart.textContent = 'Старт';
+    refs.hint.textContent = '';
+    setFeedback('', null);
+    shadowingState.wrongCounted = false;
+    shadowingState.checkedCurrent = false;
+    updateShadowingRepetition();
+  }
+
+  function scheduleShadowingRetry(delay, token) {
+    if (shadowingState.retryTimer) window.clearTimeout(shadowingState.retryTimer);
+    shadowingState.retryTimer = window.setTimeout(() => {
+      shadowingState.retryTimer = null;
+      if (token === shadowingState.attemptToken && currentMode === 'shadowing') {
+        runShadowingAttempt(true);
+      }
+    }, delay);
+  }
+
+  function scheduleShadowingNext(token) {
+    if (shadowingState.retryTimer) window.clearTimeout(shadowingState.retryTimer);
+    shadowingState.retryTimer = window.setTimeout(() => {
+      shadowingState.retryTimer = null;
+      if (token === shadowingState.attemptToken && currentMode === 'shadowing') {
+        nextShadowingQuestion();
+      }
+    }, SHADOWING_SUCCESS_PAUSE_MS);
+  }
+
+  function scheduleCurrentShadowingAttempt() {
+    const expectedIdx = shadowingState.idx;
+    if (shadowingState.retryTimer) window.clearTimeout(shadowingState.retryTimer);
+    shadowingState.retryTimer = window.setTimeout(() => {
+      shadowingState.retryTimer = null;
+      if (currentMode === 'shadowing' && expectedIdx === shadowingState.idx) {
+        runShadowingAttempt();
+      }
+    }, 100);
+  }
+
+  function createSpeechRecognition() {
+    if (shadowingState.recognition) return shadowingState.recognition;
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition) return null;
+    const recognition = new Recognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = true;
+    recognition.continuous = true;
+    recognition.maxAlternatives = 3;
+    shadowingState.recognition = recognition;
+    return recognition;
+  }
+
+  function evaluateShadowingTranscript(transcript, token) {
+    if (token !== shadowingState.attemptToken) return;
+    const item = currentShadowingItem();
+    if (!item) return;
+    const result = compareListeningAnswer(transcript, item.text);
+    const pct = Math.round(result.accuracy * 100);
+    const passed = result.accuracy >= 0.78;
+    const repetitions = currentShadowingRepetitions();
+    refs.shadowingTranscript.textContent = `Приложение услышало: “${transcript}”`;
+
+    if (passed) {
+      shadowingState.successfulRepetitions += 1;
+      playCorrectSound();
+      flashCorrect();
+      showShadowingTranslation(item);
+      if (shadowingState.successfulRepetitions < repetitions) {
+        refs.shadowingStatus.textContent = `Отлично, ${pct}%. Повторите эту фразу ещё раз.`;
+        updateShadowingRepetition();
+        scheduleShadowingRetry(SHADOWING_SUCCESS_PAUSE_MS, token);
+      } else {
+        if (!shadowingState.checkedCurrent) {
+          shadowingState.correct += 1;
+          shadowingState.checkedCurrent = true;
+          refs.correctCount.textContent = String(shadowingState.correct);
+        }
+        refs.shadowingStatus.textContent = `Отлично, произношение распознано на ${pct}%.`;
+        refs.shadowingRepetition.textContent = repetitions > 1 ? `Серия из ${repetitions} повторов завершена` : '';
+        refs.shadowingStart.textContent = 'Старт';
+        refs.shadowingStart.disabled = true;
+        scheduleShadowingNext(token);
+      }
+    } else {
+      if (!shadowingState.wrongCounted) {
+        shadowingState.wrong += 1;
+        shadowingState.wrongCounted = true;
+        refs.wrongCount.textContent = String(shadowingState.wrong);
+      }
+      playWrongSound();
+      refs.shadowingStatus.textContent = `Пока не совсем (${pct}%). Попробуйте ещё раз — фраза сейчас повторится.`;
+      scheduleShadowingRetry(1100, token);
+    }
+    saveProgress();
+  }
+
+  function startShadowingRecognition(token) {
+    const recognition = createSpeechRecognition();
+    if (!recognition) {
+      refs.shadowingStatus.textContent = 'Распознавание речи недоступно в этом браузере. Откройте приложение в Chrome или Edge.';
+      refs.shadowingStart.disabled = false;
+      refs.shadowingStart.textContent = 'Старт';
+      return;
+    }
+    let finalTranscript = '';
+    let latestTranscript = '';
+    recognition.onstart = () => {
+      if (token !== shadowingState.attemptToken) return;
+      shadowingState.isListening = true;
+      refs.shadowingMic.classList.add('shadowing-mic--active');
+      refs.shadowingStatus.textContent = 'Говорите… Я дождусь паузы после фразы.';
+      refs.shadowingTranscript.textContent = '';
+      clearShadowingRecognitionTimers();
+      shadowingState.recognitionMaxTimer = window.setTimeout(() => {
+        if (token !== shadowingState.attemptToken || !shadowingState.isListening) return;
+        try { recognition.stop(); } catch (_) {}
+      }, SHADOWING_MAX_LISTEN_MS);
+    };
+    recognition.onresult = (event) => {
+      if (token !== shadowingState.attemptToken) return;
+      let interim = '';
+      for (let i = event.resultIndex; i < event.results.length; i += 1) {
+        const text = event.results[i][0].transcript.trim();
+        if (event.results[i].isFinal) finalTranscript += `${finalTranscript ? ' ' : ''}${text}`;
+        else interim += `${interim ? ' ' : ''}${text}`;
+      }
+      latestTranscript = [finalTranscript, interim].filter(Boolean).join(' ');
+      refs.shadowingTranscript.textContent = latestTranscript;
+      if (shadowingState.recognitionSilenceTimer) window.clearTimeout(shadowingState.recognitionSilenceTimer);
+      shadowingState.recognitionSilenceTimer = window.setTimeout(() => {
+        if (token !== shadowingState.attemptToken || !shadowingState.isListening) return;
+        try { recognition.stop(); } catch (_) {}
+      }, SHADOWING_SILENCE_MS);
+    };
+    recognition.onerror = (event) => {
+      if (token !== shadowingState.attemptToken) return;
+      shadowingState.isListening = false;
+      clearShadowingRecognitionTimers();
+      refs.shadowingMic.classList.remove('shadowing-mic--active');
+      refs.shadowingStart.disabled = false;
+      refs.shadowingStart.textContent = 'Старт';
+      if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+        refs.shadowingStatus.textContent = 'Нужен доступ к микрофону. Разрешите его в настройках браузера и попробуйте снова.';
+      } else if (event.error === 'no-speech') {
+        refs.shadowingStatus.textContent = 'Не удалось расслышать. Нажмите кнопку и попробуйте ещё раз.';
+      } else {
+        refs.shadowingStatus.textContent = 'Не удалось распознать речь. Попробуйте ещё раз.';
+      }
+    };
+    recognition.onend = () => {
+      if (token !== shadowingState.attemptToken) return;
+      shadowingState.isListening = false;
+      clearShadowingRecognitionTimers();
+      refs.shadowingMic.classList.remove('shadowing-mic--active');
+      refs.shadowingStart.disabled = false;
+      refs.shadowingStart.textContent = 'Старт';
+      const transcript = finalTranscript.trim() || latestTranscript.trim();
+      if (transcript) evaluateShadowingTranscript(transcript, token);
+    };
+    try {
+      shadowingState.isListening = true;
+      recognition.start();
+    } catch (_) {
+      shadowingState.isListening = false;
+      clearShadowingRecognitionTimers();
+      refs.shadowingStart.disabled = false;
+      refs.shadowingStatus.textContent = 'Микрофон уже включается. Секунду…';
+    }
+  }
+
+  function runShadowingAttempt(autoRetry = false) {
+    const item = currentShadowingItem();
+    if (!item) return;
+    if (window.location.protocol === 'file:') {
+      refs.shadowingStatus.textContent = 'Chrome не сохраняет доступ к микрофону для локального файла. Закройте эту вкладку и запустите приложение через start.command.';
+      refs.shadowingStart.disabled = false;
+      refs.shadowingStart.textContent = 'Старт';
+      return;
+    }
+    hideShadowingTranslation();
+    stopShadowingAttempt();
+    stopSpeech();
+    const token = shadowingState.attemptToken;
+    refs.shadowingStart.disabled = true;
+    refs.shadowingStart.textContent = 'Старт';
+    refs.shadowingStatus.textContent = autoRetry ? 'Слушайте ещё раз…' : 'Сначала послушайте фразу…';
+    const started = speakEnglishText(item.text, {
+      rate: refs.shadowingRate.value,
+      onComplete: () => {
+        if (token !== shadowingState.attemptToken) return;
+        refs.shadowingStart.textContent = 'Старт';
+        startShadowingRecognition(token);
+      },
+    });
+    if (!started) {
+      refs.shadowingStart.disabled = false;
+      refs.shadowingStart.textContent = 'Старт';
+      refs.shadowingStatus.textContent = 'Озвучка недоступна в этом браузере.';
+    }
+  }
+
+  function stopShadowingSession() {
+    stopShadowingAttempt();
+    clearAutoNextTimer();
+    stopSpeech();
+    refs.shadowingMic.classList.remove('shadowing-mic--active');
+    refs.shadowingStart.disabled = false;
+    refs.shadowingStart.textContent = 'Старт';
+    refs.shadowingStatus.textContent = 'Остановлено. Нажмите «Старт», когда будете готовы.';
+  }
+
+  function nextShadowingQuestion() {
+    stopShadowingAttempt();
+    clearAutoNextTimer();
+    shadowingState.idx += 1;
+    shadowingState.successfulRepetitions = 0;
+    shadowingState.checkedCurrent = false;
+    if (shadowingState.idx >= shadowingState.session.length) {
+      shadowingState.idx = shadowingState.session.length - 1;
+      showSessionComplete();
+      saveProgress();
+      return;
+    }
+    renderShadowing();
+    scheduleCurrentShadowingAttempt();
+    saveProgress();
+  }
+
+  function previousShadowingQuestion() {
+    if (shadowingState.idx <= 0) return;
+    stopShadowingAttempt();
+    clearAutoNextTimer();
+    shadowingState.idx -= 1;
+    shadowingState.successfulRepetitions = 0;
+    shadowingState.checkedCurrent = false;
+    renderShadowing();
+    saveProgress();
+  }
+
   function ensureTheoryTopicOptions() {
     if (refs.theoryTopic.options.length > 0) return;
 
@@ -2393,16 +2943,19 @@
   }
 
   function switchMode(mode) {
+    if (mode !== 'shadowing') stopShadowingAttempt();
     currentMode = mode;
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
     refs.tabListening.classList.toggle('mode-tab--active', mode === 'listening');
+    refs.tabShadowing.classList.toggle('mode-tab--active', mode === 'shadowing');
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsTheory.hidden = mode !== 'theory';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
     refs.controlsListening.hidden = mode !== 'listening';
+    refs.controlsShadowing.hidden = mode !== 'shadowing';
     refs.statsSection.hidden = mode === 'theory';
     refs.cardContent.hidden = mode === 'theory';
     refs.theoryPanel.hidden = mode !== 'theory';
@@ -2410,7 +2963,12 @@
     refs.questionMeta.hidden = mode !== 'grammar';
     refs.vocabModeLabel.hidden = mode !== 'vocabulary' && mode !== 'listening';
     refs.listeningActions.hidden = mode !== 'listening';
-    refs.speakWordBtn.hidden = mode === 'listening';
+    refs.shadowingPanel.hidden = mode !== 'shadowing';
+    refs.questionTranslationRow.hidden = mode === 'shadowing';
+    refs.speakWordBtn.hidden = mode === 'listening' || mode === 'shadowing';
+    refs.answerLabel.hidden = mode === 'shadowing';
+    refs.answerInput.hidden = mode === 'shadowing';
+    refs.checkBtn.hidden = mode === 'shadowing';
 
     if (mode === 'theory') {
       renderTheory();
@@ -2434,6 +2992,11 @@
       }
       refs.questionTranslation.classList.remove('vocab-hint');
       renderListening();
+    } else if (mode === 'shadowing') {
+      ensureShadowingTopicOptions();
+      if (!shadowingState.session.length) shadowingState.session = pickShadowingSession();
+      refs.questionTranslation.classList.remove('vocab-hint');
+      renderShadowing();
     } else {
       refs.questionTranslation.classList.remove('vocab-hint');
       render();
@@ -2479,7 +3042,7 @@
   function showSessionComplete() {
     const stats = currentMode === 'vocabulary'
       ? vocabState
-      : (currentMode === 'listening' ? listeningState : state);
+      : (currentMode === 'listening' ? listeningState : (currentMode === 'shadowing' ? shadowingState : state));
     const total = stats.session.length;
     const correct = stats.correct;
     const missed = Math.max(0, total - stats.correct - stats.wrong);
@@ -2585,6 +3148,7 @@
       previousListeningQuestion();
       return;
     }
+    if (currentMode === 'shadowing') { previousShadowingQuestion(); return; }
     if (state.idx <= 0) return;
     clearAutoNextTimer();
     state.idx -= 1;
@@ -2595,6 +3159,7 @@
   refs.nextBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { nextVocabQuestion(); return; }
     if (currentMode === 'listening') { nextListeningQuestion(); return; }
+    if (currentMode === 'shadowing') { nextShadowingQuestion(); return; }
     clearAutoNextTimer();
     nextQuestion();
     saveProgress();
@@ -2672,6 +3237,17 @@
       saveProgress();
       return;
     }
+    if (currentMode === 'shadowing') {
+      shadowingState.session = pickShadowingSession();
+      shadowingState.idx = 0;
+      shadowingState.correct = 0;
+      shadowingState.wrong = 0;
+      shadowingState.successfulRepetitions = 0;
+      shadowingState.checkedCurrent = false;
+      renderShadowing();
+      saveProgress();
+      return;
+    }
     refs.newSession.click();
   });
 
@@ -2683,6 +3259,7 @@
   refs.tabTheory.addEventListener('click', () => switchMode('theory'));
   refs.tabVocab.addEventListener('click', () => switchMode('vocabulary'));
   refs.tabListening.addEventListener('click', () => switchMode('listening'));
+  refs.tabShadowing.addEventListener('click', () => switchMode('shadowing'));
 
   refs.vocabNewSession.addEventListener('click', () => {
     clearAutoNextTimer();
@@ -2776,6 +3353,37 @@
     saveProgress();
   });
 
+  refs.shadowingStart.addEventListener('click', () => {
+    if (shadowingState.checkedCurrent) nextShadowingQuestion();
+    else runShadowingAttempt();
+  });
+
+  refs.shadowingStop.addEventListener('click', stopShadowingSession);
+
+  refs.shadowingNewSession.addEventListener('click', () => {
+    stopShadowingAttempt();
+    clearAutoNextTimer();
+    shadowingState.session = pickShadowingSession();
+    shadowingState.idx = 0;
+    shadowingState.correct = 0;
+    shadowingState.wrong = 0;
+    shadowingState.successfulRepetitions = 0;
+    shadowingState.checkedCurrent = false;
+    renderShadowing();
+    saveProgress();
+  });
+
+  refs.shadowingTopic.addEventListener('change', () => refs.shadowingNewSession.click());
+  refs.shadowingRate.addEventListener('change', saveProgress);
+  refs.shadowingRepetitions.addEventListener('change', () => {
+    stopShadowingAttempt();
+    clearAutoNextTimer();
+    shadowingState.successfulRepetitions = 0;
+    shadowingState.checkedCurrent = false;
+    renderShadowing();
+    saveProgress();
+  });
+
   refs.theoryTopic.addEventListener('change', () => {
     renderTheory();
     saveProgress();
@@ -2827,6 +3435,8 @@
     vocabState.session = pickVocabSession();
     ensureListeningTopicOptions();
     listeningState.session = pickListeningSession();
+    ensureShadowingTopicOptions();
+    shadowingState.session = pickShadowingSession();
     saveProgress();
   }
   if (currentMode === 'theory') {
@@ -2835,6 +3445,8 @@
     switchMode('vocabulary');
   } else if (currentMode === 'listening') {
     switchMode('listening');
+  } else if (currentMode === 'shadowing') {
+    switchMode('shadowing');
   } else {
     switchMode('grammar');
   }

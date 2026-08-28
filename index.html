@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=5" />
+    <link rel="stylesheet" href="./styles.css?v=7" />
   </head>
   <body>
     <main class="app">
@@ -18,6 +18,7 @@
           <button id="tab-vocab" class="mode-tab vocab-tab-main" type="button">Словарь</button>
         </div>
         <button id="tab-listening" class="mode-tab" type="button">Аудирование</button>
+        <button id="tab-shadowing" class="mode-tab" type="button">Shadowing</button>
         <div class="theory-tab-group" id="theory-tab-group">
           <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
           <span id="controls-theory" class="theory-topic-control" hidden>
@@ -73,6 +74,30 @@
         <button id="listening-new-session" type="button">Начать заново</button>
       </section>
 
+      <section id="controls-shadowing" class="controls shadowing-controls" hidden>
+        <span class="control-pair">
+          <label for="shadowing-topic">Тема</label>
+          <select id="shadowing-topic"></select>
+        </span>
+        <span class="control-pair">
+          <label for="shadowing-rate">Скорость</label>
+          <select id="shadowing-rate">
+            <option value="0.75">0.75x</option>
+            <option value="0.9" selected>0.9x</option>
+            <option value="1">1x</option>
+          </select>
+        </span>
+        <span class="control-pair">
+          <label for="shadowing-repetitions">Повторов</label>
+          <select id="shadowing-repetitions">
+            <option value="1" selected>1 раз</option>
+            <option value="2">2 раза</option>
+            <option value="3">3 раза</option>
+          </select>
+        </span>
+        <button id="shadowing-new-session" type="button">Начать заново</button>
+      </section>
+
       <section id="stats-section" class="stats">
         <div>Прогресс: <span id="position">1 / 1</span></div>
         <div>Верно: <span id="correct-count">0</span></div>
@@ -84,7 +109,7 @@
           <div id="question-meta" class="question-meta">Вопрос №<span id="question-id">1</span></div>
           <div id="vocab-mode-label" class="vocab-mode-label" hidden>Переведите на английский</div>
           <p id="question-text" class="question-text">Загрузка...</p>
-          <div class="question-translation-row">
+          <div id="question-translation-row" class="question-translation-row">
             <p id="question-translation" class="question-translation"></p>
             <button id="speak-word-btn" type="button" class="speak-word-btn" disabled>
               Озвучить предложение
@@ -100,7 +125,7 @@
             </ul>
           </div>
 
-          <label for="answer-input">Твой ответ</label>
+          <label id="answer-label" for="answer-input">Твой ответ</label>
           <input
             id="answer-input"
             type="text"
@@ -119,6 +144,24 @@
             <button id="listening-first-word" type="button">Первое слово</button>
             <button id="listening-gaps" type="button">Пропуски</button>
             <button id="listening-show-text" type="button">Весь текст</button>
+          </div>
+
+          <div id="shadowing-panel" class="shadowing-panel" hidden>
+            <div class="shadowing-prompt">
+              <span id="shadowing-mic" class="shadowing-mic" aria-hidden="true">🎙</span>
+              <div>
+                <strong id="shadowing-status">Нажмите кнопку, послушайте фразу и повторите её.</strong>
+                <p id="shadowing-repetition" class="shadowing-repetition"></p>
+              </div>
+            </div>
+            <div class="shadowing-transcript">
+              <div id="shadowing-heard" class="shadowing-heard" aria-live="polite"></div>
+              <div id="shadowing-translation" class="shadowing-translation" aria-live="polite"></div>
+            </div>
+            <div class="shadowing-actions">
+              <button id="shadowing-start" type="button">Старт</button>
+              <button id="shadowing-stop" type="button">Стоп</button>
+            </div>
           </div>
 
           <p id="feedback" class="feedback"></p>
@@ -186,6 +229,6 @@
 
     <script src="./questions.js"></script>
     <script src="./vocabulary.js"></script>
-    <script src="./app.js?v=8"></script>
+    <script src="./app.js?v=21"></script>
   </body>
 </html>
