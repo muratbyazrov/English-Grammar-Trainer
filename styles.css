@@ -215,6 +215,15 @@ button:hover {
   margin: 6px 0 10px;
 }
 
+.shadowing-inline-translation {
+  min-height: 1.5em;
+  margin: -5px 0 10px;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 .question-translation-row {
   display: flex;
   align-items: center;
@@ -336,7 +345,7 @@ button:hover {
 }
 
 .shadowing-transcript {
-  min-height: 84px;
+  min-height: 42px;
   margin: 12px 0;
   padding: 9px 11px;
   border: 1px dashed var(--line);
@@ -353,14 +362,6 @@ button:hover {
 .shadowing-heard:empty::before {
   content: "Здесь появится то, что услышало приложение";
   color: #82909d;
-}
-
-.shadowing-translation {
-  min-height: 1.4em;
-  margin-top: 7px;
-  color: var(--ink);
-  font-style: normal;
-  font-weight: 600;
 }
 
 .shadowing-actions {

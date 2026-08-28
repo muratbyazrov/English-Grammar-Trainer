@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=7" />
+    <link rel="stylesheet" href="./styles.css?v=8" />
   </head>
   <body>
     <main class="app">
@@ -109,6 +109,7 @@
           <div id="question-meta" class="question-meta">Вопрос №<span id="question-id">1</span></div>
           <div id="vocab-mode-label" class="vocab-mode-label" hidden>Переведите на английский</div>
           <p id="question-text" class="question-text">Загрузка...</p>
+          <p id="shadowing-inline-translation" class="shadowing-inline-translation" hidden></p>
           <div id="question-translation-row" class="question-translation-row">
             <p id="question-translation" class="question-translation"></p>
             <button id="speak-word-btn" type="button" class="speak-word-btn" disabled>
@@ -156,7 +157,6 @@
             </div>
             <div class="shadowing-transcript">
               <div id="shadowing-heard" class="shadowing-heard" aria-live="polite"></div>
-              <div id="shadowing-translation" class="shadowing-translation" aria-live="polite"></div>
             </div>
             <div class="shadowing-actions">
               <button id="shadowing-start" type="button">Старт</button>
@@ -229,6 +229,6 @@
 
     <script src="./questions.js"></script>
     <script src="./vocabulary.js"></script>
-    <script src="./app.js?v=21"></script>
+    <script src="./app.js?v=23"></script>
   </body>
 </html>

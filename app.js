@@ -1139,6 +1139,7 @@
     wrongCount: document.getElementById("wrong-count"),
     questionId: document.getElementById("question-id"),
     questionText: document.getElementById("question-text"),
+    shadowingInlineTranslation: document.getElementById("shadowing-inline-translation"),
     questionTranslation: document.getElementById("question-translation"),
     questionTranslationRow: document.getElementById("question-translation-row"),
     speakWordBtn: document.getElementById("speak-word-btn"),
@@ -1191,7 +1192,6 @@
     shadowingStatus: document.getElementById('shadowing-status'),
     shadowingRepetition: document.getElementById('shadowing-repetition'),
     shadowingTranscript: document.getElementById('shadowing-heard'),
-    shadowingTranslation: document.getElementById('shadowing-translation'),
     shadowingStart: document.getElementById('shadowing-start'),
     shadowingStop: document.getElementById('shadowing-stop'),
     vocabTabGroup: document.getElementById('vocab-tab-group'),
@@ -2541,14 +2541,8 @@
     refs.shadowingRepetition.textContent = `Серия: повтор ${nextRepetition} из ${repetitions}`;
   }
 
-  function hideShadowingTranslation() {
-    refs.questionTranslationRow.hidden = true;
-    setQuestionTranslation('');
-    refs.shadowingTranslation.textContent = '';
-  }
-
   function showShadowingTranslation(item) {
-    refs.shadowingTranslation.textContent = SHADOWING_TRANSLATIONS[item.text] || 'Перевод не найден.';
+    refs.shadowingInlineTranslation.textContent = SHADOWING_TRANSLATIONS[item.text] || 'Перевод не найден.';
   }
 
   function renderShadowing() {
@@ -2565,7 +2559,7 @@
     refs.correctCount.textContent = String(shadowingState.correct);
     refs.wrongCount.textContent = String(shadowingState.wrong);
     refs.questionText.textContent = item.text;
-    hideShadowingTranslation();
+    showShadowingTranslation(item);
     setSelectedSentenceForSpeech(item.text);
     refs.shadowingStatus.textContent = 'Нажмите кнопку, послушайте фразу и повторите её.';
     refs.shadowingTranscript.textContent = '';
@@ -2636,7 +2630,6 @@
       shadowingState.successfulRepetitions += 1;
       playCorrectSound();
       flashCorrect();
-      showShadowingTranslation(item);
       if (shadowingState.successfulRepetitions < repetitions) {
         refs.shadowingStatus.textContent = `Отлично, ${pct}%. Повторите эту фразу ещё раз.`;
         updateShadowingRepetition();
@@ -2749,7 +2742,6 @@
       refs.shadowingStart.textContent = 'Старт';
       return;
     }
-    hideShadowingTranslation();
     stopShadowingAttempt();
     stopSpeech();
     const token = shadowingState.attemptToken;
@@ -2964,6 +2956,7 @@
     refs.vocabModeLabel.hidden = mode !== 'vocabulary' && mode !== 'listening';
     refs.listeningActions.hidden = mode !== 'listening';
     refs.shadowingPanel.hidden = mode !== 'shadowing';
+    refs.shadowingInlineTranslation.hidden = mode !== 'shadowing';
     refs.questionTranslationRow.hidden = mode === 'shadowing';
     refs.speakWordBtn.hidden = mode === 'listening' || mode === 'shadowing';
     refs.answerLabel.hidden = mode === 'shadowing';
