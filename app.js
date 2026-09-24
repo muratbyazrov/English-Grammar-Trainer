@@ -553,12 +553,13 @@
           ],
         },
         {
-          title: "Правильные формы",
+          title: "Как строить фразу",
           items: [
-            "managed to fix",
-            "didn't manage to reproduce",
-            "did you manage to find",
-            "managed fixing - неправильно",
+            "После manage всегда ставим to + начальную форму глагола.",
+            "✓ managed to fix — удалось исправить.",
+            "✓ didn't manage to reproduce — не удалось воспроизвести.",
+            "✓ Did you manage to find ...? — удалось найти ...?",
+            "✗ managed fixing — неправильно: после manage нужен to, а не глагол с -ing.",
           ],
         },
         {
@@ -748,14 +749,14 @@
     },
     {
       id: "passive-voice-table",
-      title: "Passive Voice: таблица",
+      title: "Passive Voice",
       subtitle: "когда важно действие и результат, а не исполнитель",
       sections: [
         {
           title: "Главная идея",
           items: [
-            "Passive Voice нужен, когда объект получает действие: индекс создается, схема обновляется, запрос выполняется.",
-            "Общая структура: be в нужном времени + V-ed / past participle.",
+            "В Passive Voice важно, что произошло с объектом. Кто это сделал — не главное.",
+            "Общая структура: be в нужном времени + past participle (3-я форма глагола).",
             "Исполнителя можно добавить через by, но в IT-контексте его часто опускают, если он не важен.",
           ],
         },
@@ -2858,6 +2859,100 @@
     parent.appendChild(list);
   }
 
+  const THEORY_AUX_TOKENS = new Set([
+    'am', 'is', 'are', 'was', 'were', 'be', 'been', 'to be',
+    'do', 'does', 'did', 'have', 'has', 'had',
+    'will', 'will be', 'going to'
+  ]);
+
+  const THEORY_SUBJECT_TOKENS = new Set([
+    'i', 'he', 'she', 'it', 'we', 'you', 'they',
+    'subject', 'what', 'who', 'which'
+  ]);
+
+  const THEORY_LABEL_ROLES = { '+': 'pos', '-': 'neg', '−': 'neg', '?': 'ask' };
+
+  function theoryTokenRole(token) {
+    const value = String(token == null ? '' : token).trim().toLowerCase();
+    if (!value) return '';
+    if (/^v\s*[-(1-3]/.test(value)) return 'verb';
+    if (/\bnot\b|n['’]t\b/.test(value)) return 'neg';
+    if (THEORY_AUX_TOKENS.has(value)) return 'aux';
+    const parts = value.split('/').map((part) => part.trim()).filter(Boolean);
+    if (parts.length && parts.every((part) => THEORY_SUBJECT_TOKENS.has(part))) return 'subject';
+    return '';
+  }
+
+  function theoryTokenText(token) {
+    if (token && typeof token === 'object') return token.text || '';
+    return token == null ? '' : String(token);
+  }
+
+  function buildTheorySchemeCells(schemeRows) {
+    const rows = schemeRows.map((row) => ({
+      label: row.label || '',
+      tokens: (row.tokens || []).map((token) => {
+        const text = theoryTokenText(token);
+        const role = (token && typeof token === 'object' && token.role) || theoryTokenRole(text);
+        return { text, role };
+      })
+    }));
+
+    const columns = rows.reduce((max, row) => Math.max(max, row.tokens.length), 0);
+    const cells = [];
+    const open = new Map();
+
+    rows.forEach((row, rowIndex) => {
+      const offset = columns - row.tokens.length;
+      const rowCells = [{
+        column: 1,
+        span: 1,
+        text: row.label,
+        kind: 'label',
+        role: THEORY_LABEL_ROLES[row.label] || ''
+      }];
+
+      row.tokens.forEach((token, index) => {
+        rowCells.push({
+          column: index === 0 ? 2 : 2 + offset + index,
+          span: index === 0 ? offset + 1 : 1,
+          text: token.text,
+          kind: 'token',
+          role: token.role
+        });
+      });
+
+      const filled = new Set();
+
+      rowCells.forEach((cell) => {
+        filled.add(cell.column);
+        const previous = open.get(cell.column);
+        const sameBlock = previous
+          && previous.lastRow === rowIndex - 1
+          && previous.span === cell.span
+          && previous.text === cell.text
+          && previous.role === cell.role
+          && previous.kind === cell.kind;
+
+        if (sameBlock) {
+          previous.rows += 1;
+          previous.lastRow = rowIndex;
+          return;
+        }
+
+        const created = Object.assign({ row: rowIndex, rows: 1, lastRow: rowIndex }, cell);
+        cells.push(created);
+        open.set(cell.column, created);
+      });
+
+      open.forEach((cell, column) => {
+        if (!filled.has(column)) open.delete(column);
+      });
+    });
+
+    return { columns, rowCount: rows.length, cells };
+  }
+
   function appendTheorySchemes(parent, schemes) {
     schemes.forEach((scheme) => {
       const details = document.createElement('details');
@@ -2871,23 +2966,20 @@
       const rows = document.createElement('div');
       rows.className = 'theory-scheme-rows';
 
-      (scheme.rows || []).forEach((row) => {
-        const rowEl = document.createElement('div');
-        rowEl.className = 'theory-scheme-row';
+      const grid = buildTheorySchemeCells(scheme.rows || []);
+      rows.style.gridTemplateColumns = '42px repeat(' + Math.max(grid.columns, 1) + ', minmax(0, 1fr))';
 
-        const label = document.createElement('span');
-        label.className = 'theory-scheme-label';
-        label.textContent = row.label || '';
-        rowEl.appendChild(label);
-
-        (row.tokens || []).forEach((token) => {
-          const tokenEl = document.createElement('span');
-          tokenEl.className = 'theory-scheme-token';
-          tokenEl.textContent = token;
-          rowEl.appendChild(tokenEl);
-        });
-
-        rows.appendChild(rowEl);
+      grid.cells.forEach((cell) => {
+        const cellEl = document.createElement('span');
+        cellEl.className = cell.kind === 'label' ? 'theory-scheme-label' : 'theory-scheme-token';
+        if (cell.role) {
+          cellEl.classList.add((cell.kind === 'label' ? 'theory-scheme-label--' : 'theory-scheme-token--') + cell.role);
+        }
+        if (cell.rows > 1) cellEl.classList.add('theory-scheme-cell--merged');
+        cellEl.style.gridColumn = cell.column + ' / span ' + cell.span;
+        cellEl.style.gridRow = (cell.row + 1) + ' / span ' + cell.rows;
+        cellEl.textContent = cell.text;
+        rows.appendChild(cellEl);
       });
 
       details.appendChild(rows);
