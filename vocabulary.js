@@ -3179,5 +3179,804 @@ window.VOCABULARY_DATA = [
         ]
       }
     ]
+  },
+  {
+    "topic": "Code Review: процесс и коммуникация",
+    "words": [
+      {
+        "id": 199,
+        "word": "pull request / PR",
+        "translation": "запрос на вливание изменений",
+        "example": "I opened a PR for the auth refactor — ready for review.",
+        "sentenceTranslation": "Я открыл PR для рефакторинга авторизации — можно ревьюить.",
+        "answer": "pull request / PR",
+        "answers": [
+          {
+            "text": "pull request",
+            "weight": 1
+          },
+          {
+            "text": "PR",
+            "weight": 0.95
+          }
+        ]
+      },
+      {
+        "id": 200,
+        "word": "to request a review",
+        "translation": "запросить ревью у конкретного человека",
+        "example": "I requested a review from you and Dan.",
+        "sentenceTranslation": "Я запросил ревью у тебя и Дэна.",
+        "answer": "to request a review",
+        "answers": [
+          {
+            "text": "to request a review",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 201,
+        "word": "to assign a reviewer",
+        "translation": "назначить ревьюера",
+        "example": "We usually assign two reviewers for critical changes.",
+        "sentenceTranslation": "Обычно мы назначаем двух ревьюеров для критически важных изменений.",
+        "answer": "to assign a reviewer",
+        "answers": [
+          {
+            "text": "to assign a reviewer",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 202,
+        "word": "to leave a comment",
+        "translation": "оставить комментарий",
+        "example": "I left a few comments on the logic in the middleware section.",
+        "sentenceTranslation": "Я оставил несколько комментариев к логике в разделе с middleware.",
+        "answer": "to leave a comment",
+        "answers": [
+          {
+            "text": "to leave a comment",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 203,
+        "word": "to address a comment",
+        "translation": "обработать комментарий — исправить или ответить",
+        "example": "I addressed all the comments — please take another look.",
+        "sentenceTranslation": "Я обработал все комментарии — пожалуйста, посмотри ещё раз.",
+        "answer": "to address a comment",
+        "answers": [
+          {
+            "text": "to address a comment",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 204,
+        "word": "open comment",
+        "translation": "комментарий, который ещё не закрыт",
+        "example": "There are two open comments — I haven't addressed those yet.",
+        "sentenceTranslation": "Осталось два открытых комментария — я их ещё не обработал.",
+        "answer": "open comment",
+        "answers": [
+          {
+            "text": "open comment",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 205,
+        "word": "to resolve a comment",
+        "translation": "закрыть / отметить комментарий как решённый",
+        "example": "You can resolve the comment once you've made the change.",
+        "sentenceTranslation": "Можно закрыть комментарий после того, как внесёшь изменение.",
+        "answer": "to resolve a comment",
+        "answers": [
+          {
+            "text": "to resolve a comment",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 206,
+        "word": "to request changes",
+        "translation": "запросить изменения — блокирует мерж",
+        "example": "I requested changes — there are a few things to fix first.",
+        "sentenceTranslation": "Я запросил изменения — сначала нужно кое-что исправить.",
+        "answer": "to request changes",
+        "answers": [
+          {
+            "text": "to request changes",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 207,
+        "word": "this looks good / LGTM",
+        "translation": "выглядит хорошо / looks good to me",
+        "example": "LGTM overall — just one small thing below.",
+        "sentenceTranslation": "В целом всё выглядит хорошо — ниже только одно небольшое замечание.",
+        "answer": "this looks good / LGTM",
+        "answers": [
+          {
+            "text": "this looks good",
+            "weight": 1
+          },
+          {
+            "text": "LGTM",
+            "weight": 0.95
+          }
+        ]
+      },
+      {
+        "id": 208,
+        "word": "approved with nits",
+        "translation": "одобрено с мелкими замечаниями — мержить можно",
+        "example": "Approved with nits — feel free to merge, the comments are optional.",
+        "sentenceTranslation": "Одобрено с мелкими замечаниями — можешь мержить, комментарии необязательные.",
+        "answer": "approved with nits",
+        "answers": [
+          {
+            "text": "approved with nits",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 209,
+        "word": "easy to follow",
+        "translation": "легко читается / понятно",
+        "example": "The logic is easy to follow — good job on the naming.",
+        "sentenceTranslation": "Логика легко читается — названия подобраны хорошо.",
+        "answer": "easy to follow",
+        "answers": [
+          {
+            "text": "easy to follow",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 210,
+        "word": "nit / nitpick",
+        "translation": "мелкое замечание, не блокирует мерж",
+        "example": "Nit: the variable name could be more descriptive.",
+        "sentenceTranslation": "Мелкое замечание: название переменной могло бы быть более понятным.",
+        "answer": "nit / nitpick",
+        "answers": [
+          {
+            "text": "nit",
+            "weight": 1
+          },
+          {
+            "text": "nitpick",
+            "weight": 0.95
+          }
+        ]
+      },
+      {
+        "id": 211,
+        "word": "blocker",
+        "translation": "критическое замечание — надо исправить до мержа",
+        "example": "This is a blocker — we can't merge with this logic.",
+        "sentenceTranslation": "Это блокирующее замечание — с такой логикой мы не можем выполнить мерж.",
+        "answer": "blocker",
+        "answers": [
+          {
+            "text": "blocker",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 212,
+        "word": "optional",
+        "translation": "необязательно исправлять — на усмотрение автора",
+        "example": "Optional: you could extract this into a helper function.",
+        "sentenceTranslation": "Необязательно: можно вынести это во вспомогательную функцию.",
+        "answer": "optional",
+        "answers": [
+          {
+            "text": "optional",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 213,
+        "word": "this might cause issues",
+        "translation": "это может вызвать проблемы",
+        "example": "This might cause issues under high load — worth checking.",
+        "sentenceTranslation": "Это может вызвать проблемы при высокой нагрузке — стоит проверить.",
+        "answer": "this might cause issues",
+        "answers": [
+          {
+            "text": "this might cause issues",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 214,
+        "word": "I'm not sure about this",
+        "translation": "я не уверен насчёт этого — мягко выразить сомнение",
+        "example": "I'm not sure about this approach — can you walk me through it?",
+        "sentenceTranslation": "Я не уверен насчёт этого подхода — можешь объяснить его подробнее?",
+        "answer": "I'm not sure about this",
+        "answers": [
+          {
+            "text": "I'm not sure about this",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 215,
+        "word": "this could be simplified",
+        "translation": "это можно упростить",
+        "example": "This logic could be simplified — see my suggestion below.",
+        "sentenceTranslation": "Эту логику можно упростить — смотри моё предложение ниже.",
+        "answer": "this could be simplified",
+        "answers": [
+          {
+            "text": "this could be simplified",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 216,
+        "word": "I think this should be...",
+        "translation": "я думаю, это должно быть...",
+        "example": "I think this should be handled at the service level, not here.",
+        "sentenceTranslation": "Думаю, это нужно обрабатывать на уровне сервиса, а не здесь.",
+        "answer": "I think this should be...",
+        "answers": [
+          {
+            "text": "I think this should be",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 217,
+        "word": "this is a potential edge case",
+        "translation": "это потенциальный граничный случай",
+        "example": "This is a potential edge case — what happens if the list is empty?",
+        "sentenceTranslation": "Это потенциальный граничный случай — что произойдёт, если список пуст?",
+        "answer": "this is a potential edge case",
+        "answers": [
+          {
+            "text": "this is a potential edge case",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 218,
+        "word": "can you explain why...?",
+        "translation": "можешь объяснить почему...?",
+        "example": "Can you explain why you chose this approach over X?",
+        "sentenceTranslation": "Можешь объяснить, почему ты выбрал этот подход вместо X?",
+        "answer": "can you explain why...?",
+        "answers": [
+          {
+            "text": "can you explain why",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 219,
+        "word": "have you considered...?",
+        "translation": "ты рассматривал...? — предложить альтернативу мягко",
+        "example": "Have you considered using a transaction here?",
+        "sentenceTranslation": "Ты рассматривал возможность использовать здесь транзакцию?",
+        "answer": "have you considered...?",
+        "answers": [
+          {
+            "text": "have you considered",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 220,
+        "word": "what if we...?",
+        "translation": "а что если мы...?",
+        "example": "What if we extract this into a separate method?",
+        "sentenceTranslation": "А что, если мы вынесем это в отдельный метод?",
+        "answer": "what if we...?",
+        "answers": [
+          {
+            "text": "what if we",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 221,
+        "word": "alternatively...",
+        "translation": "как вариант...",
+        "example": "Alternatively, we could use a map here instead of a loop.",
+        "sentenceTranslation": "Как вариант, здесь можно использовать map вместо цикла.",
+        "answer": "alternatively...",
+        "answers": [
+          {
+            "text": "alternatively",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 222,
+        "word": "it might be worth...",
+        "translation": "возможно, стоит...",
+        "example": "It might be worth adding a comment here to explain the logic.",
+        "sentenceTranslation": "Возможно, стоит добавить здесь комментарий, поясняющий логику.",
+        "answer": "it might be worth...",
+        "answers": [
+          {
+            "text": "it might be worth",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 223,
+        "word": "suggestion:",
+        "translation": "предложение: — маркировать как необязательное",
+        "example": "Suggestion: rename this variable to make it clearer.",
+        "sentenceTranslation": "Предложение: переименовать эту переменную, чтобы её назначение было понятнее.",
+        "answer": "suggestion:",
+        "answers": [
+          {
+            "text": "suggestion",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 224,
+        "word": "I'd prefer...",
+        "translation": "я бы предпочёл...",
+        "example": "I'd prefer to see error handling here rather than letting it propagate.",
+        "sentenceTranslation": "Я бы предпочёл обрабатывать ошибку здесь, а не позволять ей распространяться дальше.",
+        "answer": "I'd prefer...",
+        "answers": [
+          {
+            "text": "I'd prefer",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 225,
+        "word": "out of scope",
+        "translation": "выходит за рамки этого PR",
+        "example": "That refactoring is out of scope for this PR — let's do it separately.",
+        "sentenceTranslation": "Этот рефакторинг выходит за рамки данного PR — давай сделаем его отдельно.",
+        "answer": "out of scope",
+        "answers": [
+          {
+            "text": "out of scope",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 226,
+        "word": "done / fixed",
+        "translation": "сделано / исправлено",
+        "example": "Done — I renamed the variable as suggested.",
+        "sentenceTranslation": "Готово — я переименовал переменную, как и предлагалось.",
+        "answer": "done / fixed",
+        "answers": [
+          {
+            "text": "done",
+            "weight": 1
+          },
+          {
+            "text": "fixed",
+            "weight": 0.95
+          }
+        ]
+      },
+      {
+        "id": 227,
+        "word": "good point",
+        "translation": "хорошее замечание — согласен",
+        "example": "Good point — I added error handling for that case.",
+        "sentenceTranslation": "Хорошее замечание — я добавил обработку ошибки для этого случая.",
+        "answer": "good point",
+        "answers": [
+          {
+            "text": "good point",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 228,
+        "word": "I went with... because...",
+        "translation": "я выбрал... потому что...",
+        "example": "I went with this approach because it keeps the logic in one place.",
+        "sentenceTranslation": "Я выбрал этот подход, потому что он позволяет держать логику в одном месте.",
+        "answer": "I went with... because...",
+        "answers": [
+          {
+            "text": "I went with",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 229,
+        "word": "I'd like to keep it as is because...",
+        "translation": "я бы оставил как есть, потому что...",
+        "example": "I'd like to keep it as is because changing it would affect the API contract.",
+        "sentenceTranslation": "Я бы оставил всё как есть, потому что изменение повлияет на контракт API.",
+        "answer": "I'd like to keep it as is because...",
+        "answers": [
+          {
+            "text": "I'd like to keep it as is because",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 230,
+        "word": "I'll open a separate ticket for that",
+        "translation": "открою отдельный тикет на это",
+        "example": "That's a good idea — I'll open a separate ticket so we don't block this PR.",
+        "sentenceTranslation": "Хорошая идея — я открою отдельный тикет, чтобы не блокировать этот PR.",
+        "answer": "I'll open a separate ticket for that",
+        "answers": [
+          {
+            "text": "I'll open a separate ticket for that",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 231,
+        "word": "can we take this offline?",
+        "translation": "можем обсудить это отдельно?",
+        "example": "Can we take this offline? It's a bigger discussion than a PR comment.",
+        "sentenceTranslation": "Можем обсудить это отдельно? Эта тема шире, чем комментарий к PR.",
+        "answer": "can we take this offline?",
+        "answers": [
+          {
+            "text": "can we take this offline",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 232,
+        "word": "LGTM",
+        "translation": "LGTM — расшифруй аббревиатуру",
+        "example": "LGTM — approved.",
+        "sentenceTranslation": "Выглядит хорошо — одобрено.",
+        "answer": "LGTM",
+        "answers": [
+          {
+            "text": "looks good to me",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 233,
+        "word": "WDYT",
+        "translation": "WDYT — расшифруй аббревиатуру",
+        "example": "WDYT about extracting this into a helper?",
+        "sentenceTranslation": "Что думаешь насчёт того, чтобы вынести это во вспомогательную функцию?",
+        "answer": "WDYT",
+        "answers": [
+          {
+            "text": "what do you think",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 234,
+        "word": "AFAIK",
+        "translation": "AFAIK — расшифруй аббревиатуру",
+        "example": "AFAIK this endpoint is not used anymore.",
+        "sentenceTranslation": "Насколько мне известно, этот эндпоинт больше не используется.",
+        "answer": "AFAIK",
+        "answers": [
+          {
+            "text": "as far as I know",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 235,
+        "word": "AFAICT",
+        "translation": "AFAICT — расшифруй аббревиатуру",
+        "example": "AFAICT the logic is correct, but let's add a test.",
+        "sentenceTranslation": "Насколько я могу судить, логика верна, но давай добавим тест.",
+        "answer": "AFAICT",
+        "answers": [
+          {
+            "text": "as far as I can tell",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 236,
+        "word": "IMO / IMHO",
+        "translation": "IMO / IMHO — расшифруй одну из аббревиатур",
+        "example": "IMO this is over-engineered for now.",
+        "sentenceTranslation": "По моему мнению, на данный момент это чрезмерно усложнено.",
+        "answer": "IMO / IMHO",
+        "answers": [
+          {
+            "text": "in my opinion",
+            "weight": 1
+          },
+          {
+            "text": "in my humble opinion",
+            "weight": 0.95
+          }
+        ]
+      },
+      {
+        "id": 237,
+        "word": "TBH",
+        "translation": "TBH — расшифруй аббревиатуру",
+        "example": "TBH I'm not sure this is the right approach.",
+        "sentenceTranslation": "Честно говоря, я не уверен, что это правильный подход.",
+        "answer": "TBH",
+        "answers": [
+          {
+            "text": "to be honest",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 238,
+        "word": "NIT",
+        "translation": "NIT — расшифруй аббревиатуру",
+        "example": "NIT: missing space after the comma.",
+        "sentenceTranslation": "Мелкое замечание: после запятой отсутствует пробел.",
+        "answer": "NIT",
+        "answers": [
+          {
+            "text": "nitpick",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 239,
+        "word": "TIL",
+        "translation": "TIL — расшифруй аббревиатуру",
+        "example": "TIL you can do this in one line — nice!",
+        "sentenceTranslation": "Сегодня узнал, что это можно сделать в одну строку — здорово!",
+        "answer": "TIL",
+        "answers": [
+          {
+            "text": "today I learned",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 240,
+        "word": "IDK",
+        "translation": "IDK — расшифруй аббревиатуру",
+        "example": "IDK if this is the best place for this logic.",
+        "sentenceTranslation": "Не знаю, лучшее ли это место для данной логики.",
+        "answer": "IDK",
+        "answers": [
+          {
+            "text": "I don't know",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 241,
+        "word": "FYI",
+        "translation": "FYI — расшифруй аббревиатуру",
+        "example": "FYI this method is deprecated in the new version.",
+        "sentenceTranslation": "К сведению: в новой версии этот метод объявлен устаревшим.",
+        "answer": "FYI",
+        "answers": [
+          {
+            "text": "for your information",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 242,
+        "word": "WIP",
+        "translation": "WIP — расшифруй аббревиатуру",
+        "example": "WIP — not ready for review yet, just sharing for feedback.",
+        "sentenceTranslation": "Работа ещё идёт — к ревью пока не готово, просто делюсь для обратной связи.",
+        "answer": "WIP",
+        "answers": [
+          {
+            "text": "work in progress",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 243,
+        "word": "RFC",
+        "translation": "RFC — расшифруй аббревиатуру",
+        "example": "RFC: thinking about restructuring this module — thoughts?",
+        "sentenceTranslation": "Запрос на обратную связь: думаю о реструктуризации этого модуля — есть мысли?",
+        "answer": "RFC",
+        "answers": [
+          {
+            "text": "request for comments",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 244,
+        "word": "implement / implementation",
+        "translation": "реализовывать / реализация",
+        "example": "We should implement this in a separate module and keep the implementation simple.",
+        "sentenceTranslation": "Нам следует реализовать это в отдельном модуле и сохранить реализацию простой.",
+        "answer": "implement / implementation",
+        "answers": [
+          {
+            "text": "implement",
+            "weight": 1
+          },
+          {
+            "text": "implementation",
+            "weight": 0.95
+          }
+        ]
+      },
+      {
+        "id": 245,
+        "word": "imply",
+        "translation": "подразумевать, означать косвенно",
+        "example": "This change would imply that all clients need to update.",
+        "sentenceTranslation": "Это изменение будет подразумевать, что всем клиентам нужно обновиться.",
+        "answer": "imply",
+        "answers": [
+          {
+            "text": "imply",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 246,
+        "word": "desirable",
+        "translation": "желательный, предпочтительный",
+        "example": "A smaller public API is desirable in this case.",
+        "sentenceTranslation": "В этом случае желателен более компактный публичный API.",
+        "answer": "desirable",
+        "answers": [
+          {
+            "text": "desirable",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 247,
+        "word": "take into account",
+        "translation": "принимать во внимание, учитывать",
+        "example": "We should take backward compatibility into account.",
+        "sentenceTranslation": "Нам следует учитывать обратную совместимость.",
+        "answer": "take into account",
+        "answers": [
+          {
+            "text": "take into account",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 248,
+        "word": "reach",
+        "translation": "достигать, доходить до",
+        "example": "This branch is never reached when the value is null.",
+        "sentenceTranslation": "Эта ветка никогда не достигается, когда значение равно null.",
+        "answer": "reach",
+        "answers": [
+          {
+            "text": "reach",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 249,
+        "word": "distinguish",
+        "translation": "различать, отличать одно от другого",
+        "example": "The method should distinguish between missing and invalid values.",
+        "sentenceTranslation": "Метод должен различать отсутствующие и недопустимые значения.",
+        "answer": "distinguish",
+        "answers": [
+          {
+            "text": "distinguish",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 250,
+        "word": "get rid of",
+        "translation": "избавиться от, убрать",
+        "example": "Can we get rid of this duplicated validation logic?",
+        "sentenceTranslation": "Можем ли мы избавиться от этой дублирующейся логики валидации?",
+        "answer": "get rid of",
+        "answers": [
+          {
+            "text": "get rid of",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 251,
+        "word": "explicit",
+        "translation": "явный, однозначно указанный",
+        "example": "Let's make the dependency explicit in the constructor.",
+        "sentenceTranslation": "Давай явно укажем эту зависимость в конструкторе.",
+        "answer": "explicit",
+        "answers": [
+          {
+            "text": "explicit",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 252,
+        "word": "defer",
+        "translation": "отложить, перенести на потом",
+        "example": "We can defer this optimization until it becomes necessary.",
+        "sentenceTranslation": "Мы можем отложить эту оптимизацию до тех пор, пока она не станет необходимой.",
+        "answer": "defer",
+        "answers": [
+          {
+            "text": "defer",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 253,
+        "word": "extract",
+        "translation": "извлечь, вынести в отдельную часть",
+        "example": "I suggest we extract this logic into a helper function.",
+        "sentenceTranslation": "Предлагаю вынести эту логику во вспомогательную функцию.",
+        "answer": "extract",
+        "answers": [
+          {
+            "text": "extract",
+            "weight": 1
+          }
+        ]
+      }
+    ]
   }
 ];
