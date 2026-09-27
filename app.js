@@ -909,7 +909,7 @@
               rows: [
                 { label: "+", tokens: ["Subject", { text: "could / should / might / may / would", role: "aux" }, "V1"] },
                 { label: "-", tokens: ["Subject", { text: "couldn't / shouldn't / might not / may not / wouldn't", role: "neg" }, "V1"] },
-                { label: "?", tokens: [{ text: "Could / Should / Might / May / Would", role: "aux" }, "subject", "V1", "... ?"] },
+                { label: "?", tokens: [{ text: "Could / Should / Might / May / Would", role: "aux" }, "subject", "V1"] },
               ],
             },
             {
@@ -917,16 +917,9 @@
               rows: [
                 { label: "+", tokens: ["Subject", { text: "modal", role: "aux" }, "be", "V3"] },
                 { label: "-", tokens: ["Subject", { text: "modal + not", role: "neg" }, "be", "V3"] },
-                { label: "?", tokens: [{ text: "Modal", role: "aux" }, "subject", "be", "V3", "... ?"] },
+                { label: "?", tokens: [{ text: "Modal", role: "aux" }, "subject", "be", "V3"] },
               ],
             },
-          ],
-          examples: [
-            ["This could cause issues.", "Это может вызвать проблемы."],
-            ["We should not merge this yet.", "Нам пока не следует это мержить."],
-            ["Would it improve readability?", "Это улучшило бы читаемость?"],
-            ["This could be simplified.", "Это можно было бы упростить."],
-            ["The error should be handled here.", "Ошибку следует обработать здесь."],
           ],
         },
         {
@@ -1164,6 +1157,34 @@
         },
       ],
     },
+    {
+      id: "code-review-phrases",
+      title: "Code Review: фразы",
+      groups: [
+        {
+          title: "Code Review",
+          items: [
+            "I'd like to keep it as is because changing it would affect the API contract.",
+            "I think this should be handled at the service level, not here.",
+            "This might cause issues under high load — worth checking.",
+            "I'm not sure about this approach — can you walk me through it?",
+            "I went with this approach because it keeps the logic in one place.",
+            "That's a good idea — I'll open a separate ticket so we don't block this PR.",
+            "Can we take this offline? It's a bigger discussion than a PR comment.",
+            "This is a potential edge case — what happens if the list is empty?",
+            "This logic could be simplified — see my suggestion below.",
+            "Have you considered using a transaction here?",
+            "What if we extract this into a separate method?",
+            "It might be worth adding a comment here to explain the logic.",
+            "Approved with nits — feel free to merge, the comments are optional.",
+            "You can resolve the comment once you've made the change.",
+            "Can you explain why you chose this approach over X?",
+            "That refactoring is out of scope for this PR — let's do it separately.",
+            "We usually assign two reviewers for critical changes.",
+          ],
+        },
+      ],
+    },
   ];
   const SHADOWING_TRANSLATIONS = {
     "Walk me through it.": "Объясни мне это пошагово.",
@@ -1208,6 +1229,23 @@
     "I think it's worth walking through this once more.": "Думаю, стоит разобрать это ещё раз.",
     "I think that's a fair point, but does it make sense?": "Думаю, это справедливое замечание, но есть ли в этом смысл?",
     "I think we'll end up with something worth it.": "Думаю, в итоге мы получим что-то стоящее.",
+    "I'd like to keep it as is because changing it would affect the API contract.": "Я бы оставил всё как есть, потому что изменение повлияет на контракт API.",
+    "I think this should be handled at the service level, not here.": "Думаю, это нужно обрабатывать на уровне сервиса, а не здесь.",
+    "This might cause issues under high load — worth checking.": "Это может вызвать проблемы при высокой нагрузке — стоит проверить.",
+    "I'm not sure about this approach — can you walk me through it?": "Я не уверен насчёт этого подхода — можешь объяснить его подробнее?",
+    "I went with this approach because it keeps the logic in one place.": "Я выбрал этот подход, потому что он позволяет держать логику в одном месте.",
+    "That's a good idea — I'll open a separate ticket so we don't block this PR.": "Хорошая идея — я открою отдельный тикет, чтобы не блокировать этот PR.",
+    "Can we take this offline? It's a bigger discussion than a PR comment.": "Можем обсудить это отдельно? Эта тема шире, чем комментарий к PR.",
+    "This is a potential edge case — what happens if the list is empty?": "Это потенциальный граничный случай — что произойдёт, если список пуст?",
+    "This logic could be simplified — see my suggestion below.": "Эту логику можно упростить — смотри моё предложение ниже.",
+    "Have you considered using a transaction here?": "Ты рассматривал возможность использовать здесь транзакцию?",
+    "What if we extract this into a separate method?": "А что, если мы вынесем это в отдельный метод?",
+    "It might be worth adding a comment here to explain the logic.": "Возможно, стоит добавить здесь комментарий, поясняющий логику.",
+    "Approved with nits — feel free to merge, the comments are optional.": "Одобрено с мелкими замечаниями — можешь мержить, комментарии необязательные.",
+    "You can resolve the comment once you've made the change.": "Можно закрыть комментарий после того, как внесёшь изменение.",
+    "Can you explain why you chose this approach over X?": "Можешь объяснить, почему ты выбрал этот подход вместо X?",
+    "That refactoring is out of scope for this PR — let's do it separately.": "Этот рефакторинг выходит за рамки данного PR — давай сделаем его отдельно.",
+    "We usually assign two reviewers for critical changes.": "Обычно мы назначаем двух ревьюеров для критически важных изменений.",
   };
 
   function fixBrokenWordSpacing(value) {
@@ -1459,6 +1497,22 @@
       .trim();
   }
 
+  function expandEnglishContractions(text) {
+    return String(text || "")
+      .replace(/\bwon't\b/g, "will not")
+      .replace(/\bshan't\b/g, "shall not")
+      .replace(/\bcan't\b/g, "can not")
+      .replace(/\bcannot\b/g, "can not")
+      .replace(/\blet's\b/g, "let us")
+      .replace(/\b([a-z]+)n't\b/g, "$1 not")
+      .replace(/\b([a-z]+)'ll\b/g, "$1 will")
+      .replace(/\b([a-z]+)'re\b/g, "$1 are")
+      .replace(/\b([a-z]+)'ve\b/g, "$1 have")
+      .replace(/\b([a-z]+)'m\b/g, "$1 am")
+      .replace(/\b([a-z]+)'d\b/g, "$1 would")
+      .replace(/\b([a-z]+)'s\b/g, "$1 is");
+  }
+
   function answerOptionsFromText(target) {
     return String(target || "")
       .split("/")
@@ -1489,7 +1543,7 @@
   }
 
   function getAnswerMatch(userNorm, targetNorm, answerOptions) {
-    const comparable = (s) => String(s || "").replace(/[-\s]+/g, " ").trim();
+    const comparable = (s) => expandEnglishContractions(s).replace(/[-\s]+/g, " ").trim();
     const withoutArticles = (s) => comparable(s)
       .replace(/\b(a|an|the)\b/g, " ")
       .replace(/[()]/g, " ")
@@ -2335,10 +2389,12 @@
       .replace(/\bit'll\b/gi, "it will")
       .replace(/\bwe'll\b/gi, "we will")
       .replace(/\bthey'll\b/gi, "they will")
+      .replace(/\bI'd\b/gi, "I would")
       .replace(/\bI've\b/gi, "I have")
       .replace(/\byou've\b/gi, "you have")
       .replace(/\bwe've\b/gi, "we have")
       .replace(/\bthey've\b/gi, "they have")
+      .replace(/\blet's\b/gi, "let us")
       .replace(/\bdon't\b/gi, "do not")
       .replace(/\bdoesn't\b/gi, "does not")
       .replace(/\bdidn't\b/gi, "did not")

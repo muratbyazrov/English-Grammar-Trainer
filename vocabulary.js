@@ -3203,34 +3203,6 @@ window.VOCABULARY_DATA = [
       },
       {
         "id": 200,
-        "word": "to request a review",
-        "translation": "запросить ревью у конкретного человека",
-        "example": "I requested a review from you and Dan.",
-        "sentenceTranslation": "Я запросил ревью у тебя и Дэна.",
-        "answer": "to request a review",
-        "answers": [
-          {
-            "text": "to request a review",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 201,
-        "word": "to assign a reviewer",
-        "translation": "назначить ревьюера",
-        "example": "We usually assign two reviewers for critical changes.",
-        "sentenceTranslation": "Обычно мы назначаем двух ревьюеров для критически важных изменений.",
-        "answer": "to assign a reviewer",
-        "answers": [
-          {
-            "text": "to assign a reviewer",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 202,
         "word": "to leave a comment",
         "translation": "оставить комментарий",
         "example": "I left a few comments on the logic in the middleware section.",
@@ -3244,7 +3216,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 203,
+        "id": 201,
         "word": "to address a comment",
         "translation": "обработать комментарий — исправить или ответить",
         "example": "I addressed all the comments — please take another look.",
@@ -3258,35 +3230,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 204,
-        "word": "open comment",
-        "translation": "комментарий, который ещё не закрыт",
-        "example": "There are two open comments — I haven't addressed those yet.",
-        "sentenceTranslation": "Осталось два открытых комментария — я их ещё не обработал.",
-        "answer": "open comment",
-        "answers": [
-          {
-            "text": "open comment",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 205,
-        "word": "to resolve a comment",
-        "translation": "закрыть / отметить комментарий как решённый",
-        "example": "You can resolve the comment once you've made the change.",
-        "sentenceTranslation": "Можно закрыть комментарий после того, как внесёшь изменение.",
-        "answer": "to resolve a comment",
-        "answers": [
-          {
-            "text": "to resolve a comment",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 206,
+        "id": 202,
         "word": "to request changes",
         "translation": "запросить изменения — блокирует мерж",
         "example": "I requested changes — there are a few things to fix first.",
@@ -3300,39 +3244,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 207,
-        "word": "this looks good / LGTM",
-        "translation": "выглядит хорошо / looks good to me",
-        "example": "LGTM overall — just one small thing below.",
-        "sentenceTranslation": "В целом всё выглядит хорошо — ниже только одно небольшое замечание.",
-        "answer": "this looks good / LGTM",
-        "answers": [
-          {
-            "text": "this looks good",
-            "weight": 1
-          },
-          {
-            "text": "LGTM",
-            "weight": 0.95
-          }
-        ]
-      },
-      {
-        "id": 208,
-        "word": "approved with nits",
-        "translation": "одобрено с мелкими замечаниями — мержить можно",
-        "example": "Approved with nits — feel free to merge, the comments are optional.",
-        "sentenceTranslation": "Одобрено с мелкими замечаниями — можешь мержить, комментарии необязательные.",
-        "answer": "approved with nits",
-        "answers": [
-          {
-            "text": "approved with nits",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 209,
+        "id": 203,
         "word": "easy to follow",
         "translation": "легко читается / понятно",
         "example": "The logic is easy to follow — good job on the naming.",
@@ -3346,39 +3258,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 210,
-        "word": "nit / nitpick",
-        "translation": "мелкое замечание, не блокирует мерж",
-        "example": "Nit: the variable name could be more descriptive.",
-        "sentenceTranslation": "Мелкое замечание: название переменной могло бы быть более понятным.",
-        "answer": "nit / nitpick",
-        "answers": [
-          {
-            "text": "nit",
-            "weight": 1
-          },
-          {
-            "text": "nitpick",
-            "weight": 0.95
-          }
-        ]
-      },
-      {
-        "id": 211,
-        "word": "blocker",
-        "translation": "критическое замечание — надо исправить до мержа",
-        "example": "This is a blocker — we can't merge with this logic.",
-        "sentenceTranslation": "Это блокирующее замечание — с такой логикой мы не можем выполнить мерж.",
-        "answer": "blocker",
-        "answers": [
-          {
-            "text": "blocker",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 212,
+        "id": 204,
         "word": "optional",
         "translation": "необязательно исправлять — на усмотрение автора",
         "example": "Optional: you could extract this into a helper function.",
@@ -3392,121 +3272,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 213,
-        "word": "this might cause issues",
-        "translation": "это может вызвать проблемы",
-        "example": "This might cause issues under high load — worth checking.",
-        "sentenceTranslation": "Это может вызвать проблемы при высокой нагрузке — стоит проверить.",
-        "answer": "this might cause issues",
-        "answers": [
-          {
-            "text": "this might cause issues",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 214,
-        "word": "I'm not sure about this",
-        "translation": "я не уверен насчёт этого — мягко выразить сомнение",
-        "example": "I'm not sure about this approach — can you walk me through it?",
-        "sentenceTranslation": "Я не уверен насчёт этого подхода — можешь объяснить его подробнее?",
-        "answer": "I'm not sure about this",
-        "answers": [
-          {
-            "text": "I'm not sure about this",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 215,
-        "word": "this could be simplified",
-        "translation": "это можно упростить",
-        "example": "This logic could be simplified — see my suggestion below.",
-        "sentenceTranslation": "Эту логику можно упростить — смотри моё предложение ниже.",
-        "answer": "this could be simplified",
-        "answers": [
-          {
-            "text": "this could be simplified",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 216,
-        "word": "I think this should be...",
-        "translation": "я думаю, это должно быть...",
-        "example": "I think this should be handled at the service level, not here.",
-        "sentenceTranslation": "Думаю, это нужно обрабатывать на уровне сервиса, а не здесь.",
-        "answer": "I think this should be...",
-        "answers": [
-          {
-            "text": "I think this should be",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 217,
-        "word": "this is a potential edge case",
-        "translation": "это потенциальный граничный случай",
-        "example": "This is a potential edge case — what happens if the list is empty?",
-        "sentenceTranslation": "Это потенциальный граничный случай — что произойдёт, если список пуст?",
-        "answer": "this is a potential edge case",
-        "answers": [
-          {
-            "text": "this is a potential edge case",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 218,
-        "word": "can you explain why...?",
-        "translation": "можешь объяснить почему...?",
-        "example": "Can you explain why you chose this approach over X?",
-        "sentenceTranslation": "Можешь объяснить, почему ты выбрал этот подход вместо X?",
-        "answer": "can you explain why...?",
-        "answers": [
-          {
-            "text": "can you explain why",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 219,
-        "word": "have you considered...?",
-        "translation": "ты рассматривал...? — предложить альтернативу мягко",
-        "example": "Have you considered using a transaction here?",
-        "sentenceTranslation": "Ты рассматривал возможность использовать здесь транзакцию?",
-        "answer": "have you considered...?",
-        "answers": [
-          {
-            "text": "have you considered",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 220,
-        "word": "what if we...?",
-        "translation": "а что если мы...?",
-        "example": "What if we extract this into a separate method?",
-        "sentenceTranslation": "А что, если мы вынесем это в отдельный метод?",
-        "answer": "what if we...?",
-        "answers": [
-          {
-            "text": "what if we",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 221,
+        "id": 205,
         "word": "alternatively...",
-        "translation": "как вариант...",
+        "translation": "как вариант",
         "example": "Alternatively, we could use a map here instead of a loop.",
         "sentenceTranslation": "Как вариант, здесь можно использовать map вместо цикла.",
         "answer": "alternatively...",
@@ -3518,23 +3286,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 222,
-        "word": "it might be worth...",
-        "translation": "возможно, стоит...",
-        "example": "It might be worth adding a comment here to explain the logic.",
-        "sentenceTranslation": "Возможно, стоит добавить здесь комментарий, поясняющий логику.",
-        "answer": "it might be worth...",
-        "answers": [
-          {
-            "text": "it might be worth",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 223,
+        "id": 206,
         "word": "suggestion:",
-        "translation": "предложение: — маркировать как необязательное",
+        "translation": "предложение по улучшению — необязательная рекомендация",
         "example": "Suggestion: rename this variable to make it clearer.",
         "sentenceTranslation": "Предложение: переименовать эту переменную, чтобы её назначение было понятнее.",
         "answer": "suggestion:",
@@ -3546,35 +3300,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 224,
-        "word": "I'd prefer...",
-        "translation": "я бы предпочёл...",
-        "example": "I'd prefer to see error handling here rather than letting it propagate.",
-        "sentenceTranslation": "Я бы предпочёл обрабатывать ошибку здесь, а не позволять ей распространяться дальше.",
-        "answer": "I'd prefer...",
-        "answers": [
-          {
-            "text": "I'd prefer",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 225,
-        "word": "out of scope",
-        "translation": "выходит за рамки этого PR",
-        "example": "That refactoring is out of scope for this PR — let's do it separately.",
-        "sentenceTranslation": "Этот рефакторинг выходит за рамки данного PR — давай сделаем его отдельно.",
-        "answer": "out of scope",
-        "answers": [
-          {
-            "text": "out of scope",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 226,
+        "id": 207,
         "word": "done / fixed",
         "translation": "сделано / исправлено",
         "example": "Done — I renamed the variable as suggested.",
@@ -3592,7 +3318,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 227,
+        "id": 208,
         "word": "good point",
         "translation": "хорошее замечание — согласен",
         "example": "Good point — I added error handling for that case.",
@@ -3606,65 +3332,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 228,
-        "word": "I went with... because...",
-        "translation": "я выбрал... потому что...",
-        "example": "I went with this approach because it keeps the logic in one place.",
-        "sentenceTranslation": "Я выбрал этот подход, потому что он позволяет держать логику в одном месте.",
-        "answer": "I went with... because...",
-        "answers": [
-          {
-            "text": "I went with",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 229,
-        "word": "I'd like to keep it as is because...",
-        "translation": "я бы оставил как есть, потому что...",
-        "example": "I'd like to keep it as is because changing it would affect the API contract.",
-        "sentenceTranslation": "Я бы оставил всё как есть, потому что изменение повлияет на контракт API.",
-        "answer": "I'd like to keep it as is because...",
-        "answers": [
-          {
-            "text": "I'd like to keep it as is because",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 230,
-        "word": "I'll open a separate ticket for that",
-        "translation": "открою отдельный тикет на это",
-        "example": "That's a good idea — I'll open a separate ticket so we don't block this PR.",
-        "sentenceTranslation": "Хорошая идея — я открою отдельный тикет, чтобы не блокировать этот PR.",
-        "answer": "I'll open a separate ticket for that",
-        "answers": [
-          {
-            "text": "I'll open a separate ticket for that",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 231,
-        "word": "can we take this offline?",
-        "translation": "можем обсудить это отдельно?",
-        "example": "Can we take this offline? It's a bigger discussion than a PR comment.",
-        "sentenceTranslation": "Можем обсудить это отдельно? Эта тема шире, чем комментарий к PR.",
-        "answer": "can we take this offline?",
-        "answers": [
-          {
-            "text": "can we take this offline",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 232,
+        "id": 209,
         "word": "LGTM",
-        "translation": "LGTM — расшифруй аббревиатуру",
+        "translation": "LGTM — расшифруй аббревиатуру (выглядит хорошо, меня устраивает)",
         "example": "LGTM — approved.",
         "sentenceTranslation": "Выглядит хорошо — одобрено.",
         "answer": "LGTM",
@@ -3676,9 +3346,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 233,
+        "id": 210,
         "word": "WDYT",
-        "translation": "WDYT — расшифруй аббревиатуру",
+        "translation": "WDYT — расшифруй аббревиатуру (что ты думаешь?)",
         "example": "WDYT about extracting this into a helper?",
         "sentenceTranslation": "Что думаешь насчёт того, чтобы вынести это во вспомогательную функцию?",
         "answer": "WDYT",
@@ -3690,9 +3360,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 234,
+        "id": 211,
         "word": "AFAIK",
-        "translation": "AFAIK — расшифруй аббревиатуру",
+        "translation": "AFAIK — расшифруй аббревиатуру (насколько мне известно)",
         "example": "AFAIK this endpoint is not used anymore.",
         "sentenceTranslation": "Насколько мне известно, этот эндпоинт больше не используется.",
         "answer": "AFAIK",
@@ -3704,23 +3374,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 235,
-        "word": "AFAICT",
-        "translation": "AFAICT — расшифруй аббревиатуру",
-        "example": "AFAICT the logic is correct, but let's add a test.",
-        "sentenceTranslation": "Насколько я могу судить, логика верна, но давай добавим тест.",
-        "answer": "AFAICT",
-        "answers": [
-          {
-            "text": "as far as I can tell",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 236,
+        "id": 212,
         "word": "IMO / IMHO",
-        "translation": "IMO / IMHO — расшифруй одну из аббревиатур",
+        "translation": "IMO / IMHO — расшифруй одну из аббревиатур (по моему мнению / по моему скромному мнению)",
         "example": "IMO this is over-engineered for now.",
         "sentenceTranslation": "По моему мнению, на данный момент это чрезмерно усложнено.",
         "answer": "IMO / IMHO",
@@ -3736,9 +3392,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 237,
+        "id": 213,
         "word": "TBH",
-        "translation": "TBH — расшифруй аббревиатуру",
+        "translation": "TBH — расшифруй аббревиатуру (честно говоря)",
         "example": "TBH I'm not sure this is the right approach.",
         "sentenceTranslation": "Честно говоря, я не уверен, что это правильный подход.",
         "answer": "TBH",
@@ -3750,9 +3406,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 238,
+        "id": 214,
         "word": "NIT",
-        "translation": "NIT — расшифруй аббревиатуру",
+        "translation": "NIT — расшифруй аббревиатуру (мелкое замечание)",
         "example": "NIT: missing space after the comma.",
         "sentenceTranslation": "Мелкое замечание: после запятой отсутствует пробел.",
         "answer": "NIT",
@@ -3764,23 +3420,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 239,
-        "word": "TIL",
-        "translation": "TIL — расшифруй аббревиатуру",
-        "example": "TIL you can do this in one line — nice!",
-        "sentenceTranslation": "Сегодня узнал, что это можно сделать в одну строку — здорово!",
-        "answer": "TIL",
-        "answers": [
-          {
-            "text": "today I learned",
-            "weight": 1
-          }
-        ]
-      },
-      {
-        "id": 240,
+        "id": 215,
         "word": "IDK",
-        "translation": "IDK — расшифруй аббревиатуру",
+        "translation": "IDK — расшифруй аббревиатуру (я не знаю)",
         "example": "IDK if this is the best place for this logic.",
         "sentenceTranslation": "Не знаю, лучшее ли это место для данной логики.",
         "answer": "IDK",
@@ -3792,9 +3434,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 241,
+        "id": 216,
         "word": "FYI",
-        "translation": "FYI — расшифруй аббревиатуру",
+        "translation": "FYI — расшифруй аббревиатуру (к сведению)",
         "example": "FYI this method is deprecated in the new version.",
         "sentenceTranslation": "К сведению: в новой версии этот метод объявлен устаревшим.",
         "answer": "FYI",
@@ -3806,9 +3448,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 242,
+        "id": 217,
         "word": "WIP",
-        "translation": "WIP — расшифруй аббревиатуру",
+        "translation": "WIP — расшифруй аббревиатуру (работа в процессе)",
         "example": "WIP — not ready for review yet, just sharing for feedback.",
         "sentenceTranslation": "Работа ещё идёт — к ревью пока не готово, просто делюсь для обратной связи.",
         "answer": "WIP",
@@ -3820,9 +3462,9 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 243,
+        "id": 218,
         "word": "RFC",
-        "translation": "RFC — расшифруй аббревиатуру",
+        "translation": "RFC — расшифруй аббревиатуру (запрос на комментарии)",
         "example": "RFC: thinking about restructuring this module — thoughts?",
         "sentenceTranslation": "Запрос на обратную связь: думаю о реструктуризации этого модуля — есть мысли?",
         "answer": "RFC",
@@ -3834,7 +3476,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 244,
+        "id": 219,
         "word": "implement / implementation",
         "translation": "реализовывать / реализация",
         "example": "We should implement this in a separate module and keep the implementation simple.",
@@ -3852,7 +3494,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 245,
+        "id": 220,
         "word": "imply",
         "translation": "подразумевать, означать косвенно",
         "example": "This change would imply that all clients need to update.",
@@ -3866,7 +3508,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 246,
+        "id": 221,
         "word": "desirable",
         "translation": "желательный, предпочтительный",
         "example": "A smaller public API is desirable in this case.",
@@ -3880,7 +3522,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 247,
+        "id": 222,
         "word": "take into account",
         "translation": "принимать во внимание, учитывать",
         "example": "We should take backward compatibility into account.",
@@ -3894,7 +3536,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 248,
+        "id": 223,
         "word": "reach",
         "translation": "достигать, доходить до",
         "example": "This branch is never reached when the value is null.",
@@ -3908,7 +3550,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 249,
+        "id": 224,
         "word": "distinguish",
         "translation": "различать, отличать одно от другого",
         "example": "The method should distinguish between missing and invalid values.",
@@ -3922,7 +3564,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 250,
+        "id": 225,
         "word": "get rid of",
         "translation": "избавиться от, убрать",
         "example": "Can we get rid of this duplicated validation logic?",
@@ -3936,7 +3578,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 251,
+        "id": 226,
         "word": "explicit",
         "translation": "явный, однозначно указанный",
         "example": "Let's make the dependency explicit in the constructor.",
@@ -3950,7 +3592,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 252,
+        "id": 227,
         "word": "defer",
         "translation": "отложить, перенести на потом",
         "example": "We can defer this optimization until it becomes necessary.",
@@ -3964,7 +3606,7 @@ window.VOCABULARY_DATA = [
         ]
       },
       {
-        "id": 253,
+        "id": 228,
         "word": "extract",
         "translation": "извлечь, вынести в отдельную часть",
         "example": "I suggest we extract this logic into a helper function.",
