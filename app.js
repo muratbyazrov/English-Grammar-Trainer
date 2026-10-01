@@ -957,18 +957,6 @@
           ],
         },
         {
-          title: "Прямо и мягче — сравнение",
-          items: [
-            "Левая фраза звучит как прямое утверждение или команда. Правая передаёт ту же мысль мягче и оставляет пространство для обсуждения.",
-          ],
-          examples: [
-            ["This is wrong.", "This might be a problem."],
-            ["Fix the error handling.", "This should have error handling."],
-            ["Extract this into a method.", "This could be extracted into a method."],
-            ["This breaks the API.", "This could break the API contract."],
-          ],
-        },
-        {
           title: "Would — условность, вежливость и гипотетичность",
           items: [
             "Would часто соответствует русскому «бы». Оно помогает представить личный выбор, гипотетический результат или осторожное предложение.",
