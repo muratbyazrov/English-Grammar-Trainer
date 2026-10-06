@@ -152,6 +152,7 @@
     },
     {
       "word": "implement / implementation",
+      "infinitive": "to implement",
       "translation": "реализовывать / реализация",
       "example": "We should implement this in a separate module and keep the implementation simple.",
       "sentenceTranslation": "Нам следует реализовать это в отдельном модуле и сохранить реализацию простой.",
@@ -162,6 +163,7 @@
     },
     {
       "word": "imply",
+      "infinitive": "to imply",
       "translation": "подразумевать, означать косвенно",
       "example": "This change would imply that all clients need to update.",
       "sentenceTranslation": "Это изменение будет подразумевать, что всем клиентам нужно обновиться.",
@@ -176,6 +178,7 @@
     },
     {
       "word": "take into account",
+      "infinitive": "to take into account",
       "translation": "принимать во внимание, учитывать",
       "example": "We should take backward compatibility into account.",
       "sentenceTranslation": "Нам следует учитывать обратную совместимость.",
@@ -183,6 +186,7 @@
     },
     {
       "word": "reach",
+      "infinitive": "to reach",
       "translation": "достигать, доходить до",
       "example": "This branch is never reached when the value is null.",
       "sentenceTranslation": "Эта ветка никогда не достигается, когда значение равно null.",
@@ -190,6 +194,7 @@
     },
     {
       "word": "distinguish",
+      "infinitive": "to distinguish",
       "translation": "различать, отличать одно от другого",
       "example": "The method should distinguish between missing and invalid values.",
       "sentenceTranslation": "Метод должен различать отсутствующие и недопустимые значения.",
@@ -197,6 +202,7 @@
     },
     {
       "word": "get rid of",
+      "infinitive": "to get rid of",
       "translation": "избавиться от, убрать",
       "example": "Can we get rid of this duplicated validation logic?",
       "sentenceTranslation": "Можем ли мы избавиться от этой дублирующейся логики валидации?",
@@ -211,6 +217,7 @@
     },
     {
       "word": "defer",
+      "infinitive": "to defer",
       "translation": "отложить, перенести на потом",
       "example": "We can defer this optimization until it becomes necessary.",
       "sentenceTranslation": "Мы можем отложить эту оптимизацию до тех пор, пока она не станет необходимой.",
@@ -218,6 +225,7 @@
     },
     {
       "word": "extract",
+      "infinitive": "to extract",
       "translation": "извлечь, вынести в отдельную часть",
       "example": "I suggest we extract this logic into a helper function.",
       "sentenceTranslation": "Предлагаю вынести эту логику во вспомогательную функцию.",

@@ -222,7 +222,7 @@
     },
     {
       "word": "during",
-      "translation": "во время, в процессе",
+      "translation": "во время, в течение",
       "example": "Several errors occurred during the load test.",
       "sentenceTranslation": "Во время нагрузочного теста возникло несколько ошибок.",
       "answer": "during",

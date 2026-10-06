@@ -1512,6 +1512,16 @@
   }
 
   function answerOptionsForVocabItem(item) {
+    const infinitives = answerOptionsFromText((item && (item.infinitive || item.word)) || "")
+      .map((option) => normalize(option.text))
+      .filter((text) => /^to\s+/.test(text))
+      .map((text) => text.replace(/^to\s+/, ""));
+    const withOptionalTo = (option) => ({
+      ...option,
+      optionalTo: (infinitives.length > 0 && /^to\s+/.test(normalize(option.text)))
+        || infinitives.includes(normalize(option.text).replace(/^to\s+/, "")),
+    });
+
     if (item && Array.isArray(item.answers) && item.answers.length) {
       return item.answers
         .map((answer, index) => ({
@@ -1520,10 +1530,12 @@
             ? Number(answer.weight)
             : (index === 0 ? 1 : 0.8),
         }))
-        .filter((answer) => answer.text);
+        .filter((answer) => answer.text)
+        .map(withOptionalTo);
     }
 
-    return answerOptionsFromText((item && (item.infinitive || item.word)) || "");
+    return answerOptionsFromText((item && (item.infinitive || item.word)) || "")
+      .map(withOptionalTo);
   }
 
   function primaryAnswerText(options) {
@@ -1547,11 +1559,14 @@
       : answerOptionsFromText(targetNorm);
     const primaryAnswer = primaryAnswerText(options) || targetNorm;
 
-    if (options.length > 1) {
+    if (options.length > 0) {
       const matchedIndex = options.findIndex((option) => {
         const optionNorm = normalize(option.text);
         return userNorm === optionNorm
           || comparableUser === comparable(optionNorm)
+          || (isVocabAnswer && option.optionalTo
+            && withoutArticles(userNorm.replace(/^to\s+/, ""))
+              === withoutArticles(optionNorm.replace(/^to\s+/, "")))
           || (isVocabAnswer && articleFreeUser && articleFreeUser === withoutArticles(optionNorm));
       });
 
@@ -2029,7 +2044,7 @@
   function pickVocabSession() {
     const topicValue = refs.vocabTopic.value;
     if (topicValue === 'all') {
-      return vocabTopics.flatMap(t => shuffleItems(t.words || []));
+      return shuffleItems(vocabTopics.flatMap(t => t.words || []));
     } else {
       const topic = vocabTopics.find(t => t.topic === topicValue);
       return shuffleItems(topic ? (topic.words || []) : []);
