@@ -3354,9 +3354,9 @@ window.VOCABULARY_DATA = [
       {
         "id": 214,
         "word": "eventual consistency",
-        "translation": "итоговая согласованность — данные синхронизируются со временем",
+        "translation": "согласованность в конечном счёте — данные на разных узлах со временем приходят к одному состоянию",
         "example": "We use eventual consistency — reads might be slightly stale.",
-        "sentenceTranslation": "Мы используем итоговую согласованность — прочитанные данные могут быть немного устаревшими.",
+        "sentenceTranslation": "Мы используем согласованность в конечном счёте — при чтении данные могут быть немного устаревшими.",
         "answer": "eventual consistency",
         "answers": [
           {

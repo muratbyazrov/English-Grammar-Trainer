@@ -53,6 +53,20 @@
       { id: "infinitive-gerund", title: "Infinitive and gerund", from: 2451, to: 2499 },
     ],
   };
+  const GRAMMAR_TOPIC_GROUPS = [
+    { id: 'present', title: 'Present — настоящее время', icon: '☀️', pattern: /^(?:present|to-be-present|have-have-got)/i },
+    { id: 'past', title: 'Past — прошедшее время', icon: '🕰️', pattern: /^(?:past|to-be-past)/i },
+    { id: 'future', title: 'Future — будущее время', icon: '🚀', pattern: /^(?:future|there-will-be-going-to)/i },
+    { id: 'passive', title: 'Passive Voice', icon: '🔄', pattern: /^passive-/i },
+    { id: 'modals', title: 'Модальные глаголы', icon: '🧩', pattern: /^(?:modals|have-to-could-may)/i },
+    { id: 'conditionals', title: 'Условия и придаточные', icon: '🔀', pattern: /conditional|time-clauses/i },
+    { id: 'questions', title: 'Вопросы и короткие ответы', icon: '❓', pattern: /tag-questions|short-answers/i },
+    { id: 'verbs', title: 'Глагольные конструкции', icon: '⚙️', pattern: /verb-pattern|infinitive|gerund/i },
+    { id: 'nouns', title: 'Местоимения, артикли и количество', icon: '🧱', pattern: /pronoun|possessive|quantifier|article/i },
+    { id: 'description', title: 'Описание и сравнение', icon: '📐', pattern: /adjective|adverb|comparative|superlative|so-such|preposition/i },
+    { id: 'structures', title: 'Структуры предложения', icon: '📝', pattern: /imperative|there-be/i },
+    { id: 'other', title: 'Другие темы', icon: '📚', pattern: /.*/ },
+  ];
   const QUESTION_TRANSLATION_OVERRIDES = {
     "A1-A2:232": "Я отправил ей любовную записку.",
   };
@@ -1178,6 +1192,28 @@
       title: "Architecture & System Design",
       groups: [
         {
+          title: "Архитектурные паттерны",
+          items: [
+            "We started with a monolith, but it became hard to scale.",
+            "Each microservice owns its own database and logic.",
+            "We use event-driven architecture to decouple services.",
+            "We use a message queue to decouple the producer from the consumer.",
+          ],
+        },
+        {
+          title: "Надёжность и отказоустойчивость",
+          items: [
+            "We target 99.9% availability — that's about 8 hours of downtime per year.",
+            "The system needs to be fault tolerant — one node going down shouldn't affect users.",
+            "We added redundancy by running three instances in different availability zones.",
+            "The database is a single point of failure — we need replication.",
+            "Failover kicks in automatically when the primary goes down.",
+            "Strong consistency is hard to achieve in a distributed system.",
+            "We use eventual consistency — reads might be slightly stale.",
+            "The CAP theorem says you can only guarantee two out of three properties.",
+          ],
+        },
+        {
           title: "Проектирование системы",
           items: [
             "Scalability was the main reason we moved away from the monolith.",
@@ -1194,6 +1230,7 @@
       ],
     },
   ];
+
   const SHADOWING_TRANSLATIONS = {
     "Walk me through it.": "Объясни мне это пошагово.",
     "Let me walk you through it.": "Позвольте мне объяснить это пошагово.",
@@ -1320,12 +1357,21 @@
   const refs = {
     levelSelect: document.getElementById("level-select"),
     grammarTopic: document.getElementById("grammar-topic"),
+    grammarTopicTrigger: document.getElementById("grammar-topic-trigger"),
+    grammarTopicTriggerIcon: document.getElementById("grammar-topic-trigger-icon"),
+    grammarTopicTriggerText: document.getElementById("grammar-topic-trigger-text"),
+    grammarTopicOverlay: document.getElementById("grammar-topic-overlay"),
+    grammarTopicModalSubtitle: document.getElementById("grammar-topic-modal-subtitle"),
+    grammarTopicGroups: document.getElementById("grammar-topic-groups"),
+    grammarTopicClose: document.getElementById("grammar-topic-close"),
     newSession: document.getElementById("new-session"),
     position: document.getElementById("position"),
     correctCount: document.getElementById("correct-count"),
     wrongCount: document.getElementById("wrong-count"),
     questionId: document.getElementById("question-id"),
     questionText: document.getElementById("question-text"),
+    vocabExample: document.getElementById("vocab-example"),
+    vocabExampleText: document.getElementById("vocab-example-text"),
     shadowingInlineTranslation: document.getElementById("shadowing-inline-translation"),
     questionTranslation: document.getElementById("question-translation"),
     questionTranslationRow: document.getElementById("question-translation-row"),
@@ -1358,6 +1404,13 @@
     controlsShadowing: document.getElementById('controls-shadowing'),
     theoryTopic: document.getElementById('theory-topic'),
     vocabTopic: document.getElementById('vocab-topic'),
+    vocabTopicTrigger: document.getElementById('vocab-topic-trigger'),
+    vocabTopicTriggerIcon: document.getElementById('vocab-topic-trigger-icon'),
+    vocabTopicTriggerText: document.getElementById('vocab-topic-trigger-text'),
+    vocabTopicOverlay: document.getElementById('vocab-topic-overlay'),
+    vocabTopicModalSubtitle: document.getElementById('vocab-topic-modal-subtitle'),
+    vocabTopicGrid: document.getElementById('vocab-topic-grid'),
+    vocabTopicClose: document.getElementById('vocab-topic-close'),
     vocabShowList: document.getElementById('vocab-show-list'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
@@ -1371,6 +1424,13 @@
     listeningGaps: document.getElementById('listening-gaps'),
     listeningShowText: document.getElementById('listening-show-text'),
     shadowingTopic: document.getElementById('shadowing-topic'),
+    shadowingTopicTrigger: document.getElementById('shadowing-topic-trigger'),
+    shadowingTopicTriggerIcon: document.getElementById('shadowing-topic-trigger-icon'),
+    shadowingTopicTriggerText: document.getElementById('shadowing-topic-trigger-text'),
+    shadowingTopicOverlay: document.getElementById('shadowing-topic-overlay'),
+    shadowingTopicModalSubtitle: document.getElementById('shadowing-topic-modal-subtitle'),
+    shadowingTopicGrid: document.getElementById('shadowing-topic-grid'),
+    shadowingTopicClose: document.getElementById('shadowing-topic-close'),
     shadowingRate: document.getElementById('shadowing-rate'),
     shadowingRepetitions: document.getElementById('shadowing-repetitions'),
     shadowingNewSession: document.getElementById('shadowing-new-session'),
@@ -1690,6 +1750,160 @@
     return questions.filter((q) => q.id >= topic.from && q.id <= topic.to);
   }
 
+  function grammarTopicGroupFor(topic) {
+    const searchable = `${topic.id} ${topic.title}`;
+    return GRAMMAR_TOPIC_GROUPS.find((group) => group.pattern.test(searchable))
+      || GRAMMAR_TOPIC_GROUPS[GRAMMAR_TOPIC_GROUPS.length - 1];
+  }
+
+  function groupedGrammarTopics(level = currentLevel()) {
+    const grouped = new Map(GRAMMAR_TOPIC_GROUPS.map((group) => [group.id, { ...group, topics: [] }]));
+    grammarTopicsForLevel(level).forEach((topic) => {
+      const group = grammarTopicGroupFor(topic);
+      grouped.get(group.id).topics.push(topic);
+    });
+    return GRAMMAR_TOPIC_GROUPS
+      .map((group) => grouped.get(group.id))
+      .filter((group) => group.topics.length > 0);
+  }
+
+  function formatGrammarCount(count, forms) {
+    const value = Math.max(0, Number(count) || 0);
+    const lastTwo = value % 100;
+    const last = value % 10;
+    const form = lastTwo >= 11 && lastTwo <= 14
+      ? forms[2]
+      : (last === 1 ? forms[0] : (last >= 2 && last <= 4 ? forms[1] : forms[2]));
+    return `${value} ${form}`;
+  }
+
+  function currentGrammarTopicDetails(level = currentLevel()) {
+    const value = currentGrammarTopic();
+    if (value === ALL_GRAMMAR_TOPICS_VALUE) {
+      return {
+        id: ALL_GRAMMAR_TOPICS_VALUE,
+        title: 'Все темы',
+        count: orderedQuestionsForLevel(level).length,
+        icon: '🧭',
+      };
+    }
+    const topic = grammarTopicsForLevel(level).find((candidate) => candidate.id === value);
+    if (!topic) return null;
+    return { ...topic, icon: grammarTopicGroupFor(topic).icon };
+  }
+
+  function syncGrammarTopicTrigger() {
+    const topic = currentGrammarTopicDetails();
+    if (!topic) return;
+    refs.grammarTopicTriggerIcon.textContent = topic.icon;
+    refs.grammarTopicTriggerText.textContent = topic.title;
+    refs.grammarTopicTrigger.title = topic.title;
+  }
+
+  function appendGrammarTopicCard(parent, topic, icon, selectedValue) {
+    const cardButton = document.createElement('button');
+    const isSelected = topic.id === selectedValue;
+    cardButton.type = 'button';
+    cardButton.className = `vocab-topic-card grammar-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
+    cardButton.dataset.topicValue = topic.id;
+    cardButton.setAttribute('role', 'option');
+    cardButton.setAttribute('aria-selected', String(isSelected));
+
+    const cardIcon = document.createElement('span');
+    cardIcon.className = 'vocab-topic-card-icon grammar-topic-card-icon';
+    cardIcon.setAttribute('aria-hidden', 'true');
+    cardIcon.textContent = icon;
+
+    const copy = document.createElement('span');
+    copy.className = 'vocab-topic-card-copy';
+    const title = document.createElement('strong');
+    title.textContent = topic.title;
+    const count = document.createElement('span');
+    count.textContent = formatGrammarCount(topic.count, ['вопрос', 'вопроса', 'вопросов']);
+    copy.appendChild(title);
+    copy.appendChild(count);
+
+    const check = document.createElement('span');
+    check.className = 'vocab-topic-card-check';
+    check.setAttribute('aria-hidden', 'true');
+    check.textContent = '✓';
+
+    cardButton.appendChild(cardIcon);
+    cardButton.appendChild(copy);
+    cardButton.appendChild(check);
+    cardButton.addEventListener('click', () => {
+      if (refs.grammarTopic.value !== topic.id) {
+        refs.grammarTopic.value = topic.id;
+        refs.grammarTopic.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      hideGrammarTopicPicker();
+    });
+    parent.appendChild(cardButton);
+  }
+
+  function renderGrammarTopicGroups(level = currentLevel()) {
+    const selectedValue = currentGrammarTopic();
+    const allTopic = {
+      id: ALL_GRAMMAR_TOPICS_VALUE,
+      title: 'Все темы',
+      count: orderedQuestionsForLevel(level).length,
+    };
+    refs.grammarTopicGroups.innerHTML = '';
+
+    const allContainer = document.createElement('div');
+    allContainer.className = 'grammar-topic-all';
+    appendGrammarTopicCard(allContainer, allTopic, '🧭', selectedValue);
+    refs.grammarTopicGroups.appendChild(allContainer);
+
+    groupedGrammarTopics(level).forEach((group) => {
+      const section = document.createElement('section');
+      section.className = 'grammar-topic-group';
+      section.setAttribute('role', 'group');
+
+      const header = document.createElement('header');
+      header.className = 'grammar-topic-group-header';
+      const icon = document.createElement('span');
+      icon.className = 'grammar-topic-group-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = group.icon;
+      const headingCopy = document.createElement('div');
+      const title = document.createElement('h3');
+      title.textContent = group.title;
+      const summary = document.createElement('p');
+      const questionCount = group.topics.reduce((total, topic) => total + topic.count, 0);
+      summary.textContent = `${formatGrammarCount(group.topics.length, ['тема', 'темы', 'тем'])} · ${formatGrammarCount(questionCount, ['вопрос', 'вопроса', 'вопросов'])}`;
+      headingCopy.appendChild(title);
+      headingCopy.appendChild(summary);
+      header.appendChild(icon);
+      header.appendChild(headingCopy);
+
+      const cards = document.createElement('div');
+      cards.className = 'grammar-topic-card-grid';
+      group.topics.forEach((topic) => appendGrammarTopicCard(cards, topic, group.icon, selectedValue));
+
+      section.appendChild(header);
+      section.appendChild(cards);
+      refs.grammarTopicGroups.appendChild(section);
+    });
+  }
+
+  function showGrammarTopicPicker() {
+    ensureGrammarTopicOptions(currentLevel());
+    renderGrammarTopicGroups(currentLevel());
+    const topics = grammarTopicsForLevel(currentLevel());
+    refs.grammarTopicModalSubtitle.textContent = `${currentLevel()} · ${formatGrammarCount(topics.length, ['тема', 'темы', 'тем'])} · ${formatGrammarCount(orderedQuestionsForLevel(currentLevel()).length, ['вопрос', 'вопроса', 'вопросов'])}`;
+    refs.grammarTopicOverlay.hidden = false;
+    refs.grammarTopicTrigger.setAttribute('aria-expanded', 'true');
+    const selectedCard = refs.grammarTopicGroups.querySelector('.vocab-topic-card--selected');
+    (selectedCard || refs.grammarTopicClose).focus();
+  }
+
+  function hideGrammarTopicPicker() {
+    refs.grammarTopicOverlay.hidden = true;
+    refs.grammarTopicTrigger.setAttribute('aria-expanded', 'false');
+    refs.grammarTopicTrigger.focus();
+  }
+
   function ensureGrammarTopicOptions(level = currentLevel(), preferredValue = refs.grammarTopic.value) {
     const previous = preferredValue || ALL_GRAMMAR_TOPICS_VALUE;
     refs.grammarTopic.innerHTML = "";
@@ -1708,6 +1922,7 @@
 
     const hasPrevious = Array.from(refs.grammarTopic.options).some((opt) => opt.value === previous);
     refs.grammarTopic.value = hasPrevious ? previous : ALL_GRAMMAR_TOPICS_VALUE;
+    syncGrammarTopicTrigger();
   }
 
   function pickSession() {
@@ -2092,6 +2307,258 @@
     return topicValue === 'all' ? 'Все темы' : topicValue;
   }
 
+  function escapeRegExp(value) {
+    return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function vocabExampleCandidates(item) {
+    const values = [
+      item && item.answer,
+      item && item.word,
+      item && item.infinitive,
+      ...((item && Array.isArray(item.answers)) ? item.answers.map((answer) => answer && answer.text) : []),
+    ];
+
+    return [...new Set(values
+      .flatMap((value) => String(value || '').split('/'))
+      .map((value) => value.trim().replace(/^to\s+/i, ''))
+      .filter((value) => value.length > 1))]
+      .sort((a, b) => b.length - a.length);
+  }
+
+  function vocabExampleTokenPattern(token) {
+    const normalized = String(token || '').toLocaleLowerCase('en-US');
+    const irregular = {
+      leave: '(?:leave|leaves|leaving|left)',
+      take: '(?:take|takes|taking|took|taken)',
+    };
+    if (irregular[normalized]) return irregular[normalized];
+    if (normalized.endsWith('e') && normalized.length > 3) {
+      return `${escapeRegExp(normalized.slice(0, -1))}(?:e|ed|es|ing)?`;
+    }
+    if (normalized.endsWith('s')) {
+      return `${escapeRegExp(normalized)}(?:ed|es|ing)?`;
+    }
+    return `${escapeRegExp(normalized)}(?:s|ed|ing)?`;
+  }
+
+  function normalizeVocabExampleRanges(ranges) {
+    return ranges
+      .sort((a, b) => a.start - b.start || a.end - b.end)
+      .reduce((result, range) => {
+        const previous = result[result.length - 1];
+        if (previous && range.start < previous.end) {
+          previous.end = Math.max(previous.end, range.end);
+        } else {
+          result.push({ start: range.start, end: range.end });
+        }
+        return result;
+      }, []);
+  }
+
+  function vocabExampleTokenRanges(example, candidate) {
+    const ignoredWords = new Set(['the', 'to', 'and', 'for', 'from', 'with', 'this', 'that']);
+    const tokens = [...new Set(String(candidate || '').match(/[A-Za-z0-9']+/g) || [])]
+      .filter((token) => token.length > 1 && !ignoredWords.has(token.toLocaleLowerCase('en-US')))
+      .sort((a, b) => b.length - a.length);
+
+    const ranges = [];
+    tokens.forEach((token) => {
+      const pattern = new RegExp(`\\b${vocabExampleTokenPattern(token)}\\b`, 'gi');
+      for (const match of example.matchAll(pattern)) {
+        ranges.push({ start: match.index, end: match.index + match[0].length });
+      }
+    });
+    return normalizeVocabExampleRanges(ranges);
+  }
+
+  function vocabExampleTargetRanges(item) {
+    const example = String((item && item.example) || '').trim();
+    if (!example) return [];
+
+    for (const candidate of vocabExampleCandidates(item)) {
+      const match = new RegExp(escapeRegExp(candidate), 'i').exec(example);
+      if (match) return [{ start: match.index, end: match.index + match[0].length }];
+    }
+
+    for (const candidate of vocabExampleCandidates(item)) {
+      const ranges = vocabExampleTokenRanges(example, candidate);
+      if (ranges.length) return ranges;
+    }
+    return [];
+  }
+
+  function maskedVocabExample(item) {
+    const example = String((item && item.example) || '').trim();
+    if (!example) return '';
+    const ranges = vocabExampleTargetRanges(item);
+    if (!ranges.length) return example;
+
+    let result = '';
+    let cursor = 0;
+    ranges.forEach((range) => {
+      result += example.slice(cursor, range.start);
+      result += example.slice(range.start, range.end)
+        .split(/\s+/)
+        .map(() => '_____')
+        .join(' ');
+      cursor = range.end;
+    });
+    return result + example.slice(cursor);
+  }
+
+  function renderRevealedVocabExample(item, result) {
+    const example = String((item && item.example) || '').trim();
+    const ranges = vocabExampleTargetRanges(item);
+    refs.vocabExampleText.textContent = '';
+
+    if (!ranges.length) {
+      refs.vocabExampleText.textContent = example;
+      return;
+    }
+
+    let cursor = 0;
+    ranges.forEach((range) => {
+      refs.vocabExampleText.appendChild(document.createTextNode(example.slice(cursor, range.start)));
+      const answer = document.createElement('span');
+      answer.className = `vocab-example-answer vocab-example-answer--${result}`;
+      answer.textContent = example.slice(range.start, range.end);
+      refs.vocabExampleText.appendChild(answer);
+      cursor = range.end;
+    });
+    refs.vocabExampleText.appendChild(document.createTextNode(example.slice(cursor)));
+  }
+
+  function renderVocabExample(item, result = '') {
+    const example = String((item && item.example) || '').trim();
+    const revealAnswer = result === 'correct' || result === 'wrong';
+    refs.vocabExample.hidden = !example;
+    refs.vocabExample.classList.toggle('vocab-example--revealed', Boolean(example && revealAnswer));
+    if (!example) {
+      refs.vocabExampleText.textContent = '';
+    } else if (revealAnswer) {
+      renderRevealedVocabExample(item, result);
+    } else {
+      refs.vocabExampleText.textContent = maskedVocabExample(item);
+    }
+  }
+
+  function vocabTopicIcon(topicValue) {
+    const topic = String(topicValue || '').toLocaleLowerCase('ru-RU');
+    if (topicValue === 'all') return '🧭';
+    if (topic.includes('архитектур')) return '🏗️';
+    if (topic.includes('database') || topic.includes('postgres')) return '🗄️';
+    if (topic.includes('инцидент')) return '🚨';
+    if (topic.includes('производительност') || topic.includes('масштабируемост')) return '⚡';
+    if (topic.includes('бэкенд') || topic.includes('api')) return '🔌';
+    if (topic.includes('стендап') || topic.includes('митинг')) return '💬';
+    if (topic.includes('code review') && topic.includes('процесс')) return '✅';
+    if (topic.includes('code review')) return '🔍';
+    return '📘';
+  }
+
+  function formatVocabWordCount(count) {
+    const value = Math.max(0, Number(count) || 0);
+    const lastTwo = value % 100;
+    const last = value % 10;
+    const label = lastTwo >= 11 && lastTwo <= 14
+      ? 'слов'
+      : (last === 1 ? 'слово' : (last >= 2 && last <= 4 ? 'слова' : 'слов'));
+    return `${value} ${label}`;
+  }
+
+  function syncVocabTopicTrigger() {
+    const topicValue = refs.vocabTopic.value || 'all';
+    refs.vocabTopicTriggerIcon.textContent = vocabTopicIcon(topicValue);
+    refs.vocabTopicTriggerText.textContent = currentVocabTopicTitle(topicValue);
+    refs.vocabTopicTrigger.title = currentVocabTopicTitle(topicValue);
+  }
+
+  function vocabTopicChoices() {
+    const allWords = vocabTopics.flatMap((topic) => topic.words || []);
+    return [
+      {
+        value: 'all',
+        title: 'Все темы',
+        icon: vocabTopicIcon('all'),
+        count: allWords.length,
+      },
+      ...vocabTopics.map((topic) => ({
+        value: topic.topic,
+        title: topic.topic,
+        icon: vocabTopicIcon(topic.topic),
+        count: (topic.words || []).length,
+      })),
+    ];
+  }
+
+  function renderVocabTopicCards() {
+    const selectedValue = refs.vocabTopic.value || 'all';
+    refs.vocabTopicGrid.innerHTML = '';
+
+    vocabTopicChoices().forEach((topic) => {
+      const cardButton = document.createElement('button');
+      const isSelected = topic.value === selectedValue;
+      cardButton.type = 'button';
+      cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
+      cardButton.dataset.topicValue = topic.value;
+      cardButton.setAttribute('role', 'option');
+      cardButton.setAttribute('aria-selected', String(isSelected));
+
+      const icon = document.createElement('span');
+      icon.className = 'vocab-topic-card-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = topic.icon;
+
+      const copy = document.createElement('span');
+      copy.className = 'vocab-topic-card-copy';
+
+      const title = document.createElement('strong');
+      title.textContent = topic.title;
+
+      const count = document.createElement('span');
+      count.textContent = formatVocabWordCount(topic.count);
+
+      const check = document.createElement('span');
+      check.className = 'vocab-topic-card-check';
+      check.setAttribute('aria-hidden', 'true');
+      check.textContent = '✓';
+
+      copy.appendChild(title);
+      copy.appendChild(count);
+      cardButton.appendChild(icon);
+      cardButton.appendChild(copy);
+      cardButton.appendChild(check);
+
+      cardButton.addEventListener('click', () => {
+        if (refs.vocabTopic.value !== topic.value) {
+          refs.vocabTopic.value = topic.value;
+          refs.vocabTopic.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        hideVocabTopicPicker();
+      });
+
+      refs.vocabTopicGrid.appendChild(cardButton);
+    });
+  }
+
+  function showVocabTopicPicker() {
+    ensureVocabTopicOptions();
+    renderVocabTopicCards();
+    const choices = vocabTopicChoices();
+    refs.vocabTopicModalSubtitle.textContent = `${vocabTopics.length} тем · ${formatVocabWordCount(choices[0].count)}`;
+    refs.vocabTopicOverlay.hidden = false;
+    refs.vocabTopicTrigger.setAttribute('aria-expanded', 'true');
+    const selectedCard = refs.vocabTopicGrid.querySelector('.vocab-topic-card--selected');
+    (selectedCard || refs.vocabTopicClose).focus();
+  }
+
+  function hideVocabTopicPicker() {
+    refs.vocabTopicOverlay.hidden = true;
+    refs.vocabTopicTrigger.setAttribute('aria-expanded', 'false');
+    refs.vocabTopicTrigger.focus();
+  }
+
   function appendVocabListItem(parent, item, index) {
     const row = document.createElement('article');
     row.className = 'vocab-list-item';
@@ -2134,7 +2601,7 @@
     const words = vocabWordsForTopicValue(topicValue);
 
     refs.vocabListTitle.textContent = 'Список слов';
-    refs.vocabListSubtitle.textContent = `${currentVocabTopicTitle(topicValue)} · ${words.length} слов`;
+    refs.vocabListSubtitle.textContent = `${currentVocabTopicTitle(topicValue)} · ${formatVocabWordCount(words.length)}`;
     refs.vocabListBody.innerHTML = '';
 
     if (!words.length) {
@@ -2170,18 +2637,19 @@
   }
 
   function ensureVocabTopicOptions() {
-    if (refs.vocabTopic.options.length > 0) return;
-
-    const allOpt = document.createElement('option');
-    allOpt.value = 'all';
-    allOpt.textContent = 'Все темы';
-    refs.vocabTopic.appendChild(allOpt);
-    vocabTopics.forEach(t => {
-      const opt = document.createElement('option');
-      opt.value = t.topic;
-      opt.textContent = t.topic;
-      refs.vocabTopic.appendChild(opt);
-    });
+    if (refs.vocabTopic.options.length === 0) {
+      const allOpt = document.createElement('option');
+      allOpt.value = 'all';
+      allOpt.textContent = 'Все темы';
+      refs.vocabTopic.appendChild(allOpt);
+      vocabTopics.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.topic;
+        opt.textContent = t.topic;
+        refs.vocabTopic.appendChild(opt);
+      });
+    }
+    syncVocabTopicTrigger();
   }
 
   function restoreVocabProgress(saved) {
@@ -2193,6 +2661,7 @@
     if (hasTopic) {
       refs.vocabTopic.value = topicValue;
     }
+    syncVocabTopicTrigger();
 
     refs.autoSpeakCorrectVocab.checked = saved.autoSpeakCorrect !== false;
 
@@ -2215,6 +2684,7 @@
     if (!w) {
       refs.questionText.textContent = 'Слова не найдены.';
       refs.questionTranslation.textContent = '';
+      renderVocabExample(null);
       setSelectedSentenceForSpeech("");
       return;
     }
@@ -2226,6 +2696,7 @@
     refs.vocabModeLabel.textContent = 'Переведите на английский';
     refs.speakWordBtn.textContent = 'Озвучить ответ';
     renderQuestionText(w.translation);
+    renderVocabExample(w);
     setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
     refs.questionTranslation.classList.remove('vocab-hint');
     setQuestionTranslation('');
@@ -2258,6 +2729,7 @@
         refs.correctCount.textContent = String(vocabState.correct);
       }
       vocabState.checkedCurrent = true;
+      renderVocabExample(w, 'correct');
       playCorrectSound();
       flashCorrect();
       setFeedback(match.isAlternative ? `Верно! (а можно еще: ${match.primaryAnswer})` : 'Верно!', true);
@@ -2272,6 +2744,7 @@
       playWrongSound();
       const correctAnswer = primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word;
       setFeedback('Почти. Правильный ответ: ' + correctAnswer, false);
+      renderVocabExample(w, 'wrong');
       refs.answerInput.value = '';
       refs.answerInput.focus();
       saveProgress();
@@ -2683,14 +3156,113 @@
     );
   }
 
-  function ensureShadowingTopicOptions() {
-    if (refs.shadowingTopic.options.length > 0) return;
+  function shadowingTopicIcon(topic) {
+    if (!topic) return '🎙️';
+    if (topic.id === 'architecture-system-design') return '🏗️';
+    if (topic.id === 'code-review-phrases') return '🔍';
+    if (topic.id === 'work-discussions') return '💬';
+    return '🎙️';
+  }
+
+  function formatShadowingPhraseCount(count) {
+    const value = Math.max(0, Number(count) || 0);
+    const lastTwo = value % 100;
+    const last = value % 10;
+    const label = lastTwo >= 11 && lastTwo <= 14
+      ? 'фраз'
+      : (last === 1 ? 'фраза' : (last >= 2 && last <= 4 ? 'фразы' : 'фраз'));
+    return `${value} ${label}`;
+  }
+
+  function syncShadowingTopicTrigger() {
+    const topic = SHADOWING_TOPICS.find((candidate) => candidate.id === refs.shadowingTopic.value) || SHADOWING_TOPICS[0];
+    if (!topic) return;
+    refs.shadowingTopicTriggerIcon.textContent = shadowingTopicIcon(topic);
+    refs.shadowingTopicTriggerText.textContent = topic.title;
+    refs.shadowingTopicTrigger.title = topic.title;
+  }
+
+  function renderShadowingTopicCards() {
+    const selectedValue = refs.shadowingTopic.value;
+    refs.shadowingTopicGrid.innerHTML = '';
+
     SHADOWING_TOPICS.forEach((topic) => {
-      const opt = document.createElement('option');
-      opt.value = topic.id;
-      opt.textContent = topic.title;
-      refs.shadowingTopic.appendChild(opt);
+      const cardButton = document.createElement('button');
+      const isSelected = topic.id === selectedValue;
+      const phraseCount = topic.groups.reduce((total, group) => total + group.items.length, 0);
+      cardButton.type = 'button';
+      cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
+      cardButton.dataset.topicValue = topic.id;
+      cardButton.setAttribute('role', 'option');
+      cardButton.setAttribute('aria-selected', String(isSelected));
+
+      const icon = document.createElement('span');
+      icon.className = 'vocab-topic-card-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = shadowingTopicIcon(topic);
+
+      const copy = document.createElement('span');
+      copy.className = 'vocab-topic-card-copy';
+
+      const title = document.createElement('strong');
+      title.textContent = topic.title;
+
+      const count = document.createElement('span');
+      count.textContent = formatShadowingPhraseCount(phraseCount);
+
+      const check = document.createElement('span');
+      check.className = 'vocab-topic-card-check';
+      check.setAttribute('aria-hidden', 'true');
+      check.textContent = '✓';
+
+      copy.appendChild(title);
+      copy.appendChild(count);
+      cardButton.appendChild(icon);
+      cardButton.appendChild(copy);
+      cardButton.appendChild(check);
+
+      cardButton.addEventListener('click', () => {
+        if (refs.shadowingTopic.value !== topic.id) {
+          refs.shadowingTopic.value = topic.id;
+          refs.shadowingTopic.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        hideShadowingTopicPicker();
+      });
+
+      refs.shadowingTopicGrid.appendChild(cardButton);
     });
+  }
+
+  function showShadowingTopicPicker() {
+    ensureShadowingTopicOptions();
+    renderShadowingTopicCards();
+    const phraseCount = SHADOWING_TOPICS.reduce(
+      (total, topic) => total + topic.groups.reduce((sum, group) => sum + group.items.length, 0),
+      0
+    );
+    refs.shadowingTopicModalSubtitle.textContent = `${SHADOWING_TOPICS.length} темы · ${formatShadowingPhraseCount(phraseCount)}`;
+    refs.shadowingTopicOverlay.hidden = false;
+    refs.shadowingTopicTrigger.setAttribute('aria-expanded', 'true');
+    const selectedCard = refs.shadowingTopicGrid.querySelector('.vocab-topic-card--selected');
+    (selectedCard || refs.shadowingTopicClose).focus();
+  }
+
+  function hideShadowingTopicPicker() {
+    refs.shadowingTopicOverlay.hidden = true;
+    refs.shadowingTopicTrigger.setAttribute('aria-expanded', 'false');
+    refs.shadowingTopicTrigger.focus();
+  }
+
+  function ensureShadowingTopicOptions() {
+    if (refs.shadowingTopic.options.length === 0) {
+      SHADOWING_TOPICS.forEach((topic) => {
+        const opt = document.createElement('option');
+        opt.value = topic.id;
+        opt.textContent = topic.title;
+        refs.shadowingTopic.appendChild(opt);
+      });
+    }
+    syncShadowingTopicTrigger();
   }
 
   function pickShadowingSession() {
@@ -2704,6 +3276,7 @@
     if (Array.from(refs.shadowingTopic.options).some((opt) => opt.value === topicValue)) {
       refs.shadowingTopic.value = topicValue;
     }
+    syncShadowingTopicTrigger();
     const rate = String(saved.rate || '0.9');
     refs.shadowingRate.value = Array.from(refs.shadowingRate.options).some((opt) => opt.value === rate) ? rate : '0.9';
     const repetitions = String(saved.repetitions || '1');
@@ -2762,7 +3335,12 @@
   }
 
   function showShadowingTranslation(item) {
-    refs.shadowingInlineTranslation.textContent = SHADOWING_TRANSLATIONS[item.text] || 'Перевод не найден.';
+    const vocabularyItem = vocabTopics
+      .flatMap((topic) => topic.words || [])
+      .find((word) => word.example === item.text);
+    refs.shadowingInlineTranslation.textContent = SHADOWING_TRANSLATIONS[item.text]
+      || (vocabularyItem && vocabularyItem.sentenceTranslation)
+      || 'Перевод не найден.';
   }
 
   function renderShadowing() {
@@ -3265,6 +3843,7 @@
     refs.optionsSection.hidden = mode !== 'grammar';
     refs.questionMeta.hidden = mode !== 'grammar';
     refs.vocabModeLabel.hidden = mode !== 'vocabulary' && mode !== 'listening';
+    refs.vocabExample.hidden = mode !== 'vocabulary';
     refs.listeningActions.hidden = mode !== 'listening';
     refs.shadowingPanel.hidden = mode !== 'shadowing';
     refs.shadowingInlineTranslation.hidden = mode !== 'shadowing';
@@ -3580,6 +4159,48 @@
     showVocabList();
   });
 
+  refs.vocabTopicTrigger.addEventListener('click', () => {
+    showVocabTopicPicker();
+  });
+
+  refs.grammarTopicTrigger.addEventListener('click', () => {
+    showGrammarTopicPicker();
+  });
+
+  refs.grammarTopicClose.addEventListener('click', () => {
+    hideGrammarTopicPicker();
+  });
+
+  refs.grammarTopicOverlay.addEventListener('click', (event) => {
+    if (event.target === refs.grammarTopicOverlay) {
+      hideGrammarTopicPicker();
+    }
+  });
+
+  refs.vocabTopicClose.addEventListener('click', () => {
+    hideVocabTopicPicker();
+  });
+
+  refs.vocabTopicOverlay.addEventListener('click', (event) => {
+    if (event.target === refs.vocabTopicOverlay) {
+      hideVocabTopicPicker();
+    }
+  });
+
+  refs.shadowingTopicTrigger.addEventListener('click', () => {
+    showShadowingTopicPicker();
+  });
+
+  refs.shadowingTopicClose.addEventListener('click', () => {
+    hideShadowingTopicPicker();
+  });
+
+  refs.shadowingTopicOverlay.addEventListener('click', (event) => {
+    if (event.target === refs.shadowingTopicOverlay) {
+      hideShadowingTopicPicker();
+    }
+  });
+
   refs.vocabListClose.addEventListener('click', () => {
     hideVocabList();
   });
@@ -3591,8 +4212,16 @@
   });
 
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !refs.vocabListOverlay.hidden) {
-      hideVocabList();
+    if (event.key === 'Escape') {
+      if (!refs.grammarTopicOverlay.hidden) {
+        hideGrammarTopicPicker();
+      } else if (!refs.vocabTopicOverlay.hidden) {
+        hideVocabTopicPicker();
+      } else if (!refs.shadowingTopicOverlay.hidden) {
+        hideShadowingTopicPicker();
+      } else if (!refs.vocabListOverlay.hidden) {
+        hideVocabList();
+      }
     }
   });
 
@@ -3603,6 +4232,7 @@
 
   refs.vocabTopic.addEventListener('change', () => {
     clearAutoNextTimer();
+    syncVocabTopicTrigger();
     vocabState.session = pickVocabSession();
     vocabState.idx = 0;
     vocabState.correct = 0;
@@ -3677,7 +4307,10 @@
     saveProgress();
   });
 
-  refs.shadowingTopic.addEventListener('change', () => refs.shadowingNewSession.click());
+  refs.shadowingTopic.addEventListener('change', () => {
+    syncShadowingTopicTrigger();
+    refs.shadowingNewSession.click();
+  });
   refs.shadowingRate.addEventListener('change', saveProgress);
   refs.shadowingRepetitions.addEventListener('change', () => {
     stopShadowingAttempt();
@@ -3721,6 +4354,7 @@
 
   refs.grammarTopic.addEventListener("change", () => {
     clearAutoNextTimer();
+    syncGrammarTopicTrigger();
     state.session = pickSession();
     state.idx = 0;
     state.correct = 0;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=9" />
+    <link rel="stylesheet" href="./styles.css?v=14" />
   </head>
   <body>
     <main class="app">
@@ -30,8 +30,22 @@
       <section id="controls-grammar" class="controls">
         <label for="level-select">Уровень</label>
         <select id="level-select"></select>
-        <label for="grammar-topic">Тема</label>
-        <select id="grammar-topic"></select>
+        <span class="control-pair vocab-topic-control">
+          <label for="grammar-topic-trigger">Тема</label>
+          <select id="grammar-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
+          <button
+            id="grammar-topic-trigger"
+            class="vocab-topic-trigger"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="grammar-topic-overlay"
+            aria-expanded="false"
+          >
+            <span id="grammar-topic-trigger-icon" class="vocab-topic-trigger-icon" aria-hidden="true">🧭</span>
+            <span id="grammar-topic-trigger-text" class="vocab-topic-trigger-text">Все темы</span>
+            <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </span>
         <label class="toggle-option" for="auto-speak-correct">
           <input id="auto-speak-correct" type="checkbox" checked />
           Озвучка
@@ -40,9 +54,21 @@
       </section>
 
       <section id="controls-vocab" class="controls" hidden>
-        <span class="control-pair">
-          <label for="vocab-topic">Тема</label>
-          <select id="vocab-topic"></select>
+        <span class="control-pair vocab-topic-control">
+          <label for="vocab-topic-trigger">Тема</label>
+          <select id="vocab-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
+          <button
+            id="vocab-topic-trigger"
+            class="vocab-topic-trigger"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="vocab-topic-overlay"
+            aria-expanded="false"
+          >
+            <span id="vocab-topic-trigger-icon" class="vocab-topic-trigger-icon" aria-hidden="true">🧭</span>
+            <span id="vocab-topic-trigger-text" class="vocab-topic-trigger-text">Все темы</span>
+            <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
+          </button>
         </span>
 
         <label class="toggle-option" for="auto-speak-correct-vocab">
@@ -75,9 +101,21 @@
       </section>
 
       <section id="controls-shadowing" class="controls shadowing-controls" hidden>
-        <span class="control-pair">
-          <label for="shadowing-topic">Тема</label>
-          <select id="shadowing-topic"></select>
+        <span class="control-pair vocab-topic-control">
+          <label for="shadowing-topic-trigger">Тема</label>
+          <select id="shadowing-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
+          <button
+            id="shadowing-topic-trigger"
+            class="vocab-topic-trigger"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="shadowing-topic-overlay"
+            aria-expanded="false"
+          >
+            <span id="shadowing-topic-trigger-icon" class="vocab-topic-trigger-icon" aria-hidden="true">💬</span>
+            <span id="shadowing-topic-trigger-text" class="vocab-topic-trigger-text">Work discussions</span>
+            <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
+          </button>
         </span>
         <span class="control-pair">
           <label for="shadowing-rate">Скорость</label>
@@ -109,6 +147,10 @@
           <div id="question-meta" class="question-meta">Вопрос №<span id="question-id">1</span></div>
           <div id="vocab-mode-label" class="vocab-mode-label" hidden>Переведите на английский</div>
           <p id="question-text" class="question-text">Загрузка...</p>
+          <p id="vocab-example" class="vocab-example" hidden>
+            <span class="vocab-example-label">Пример:</span>
+            <span id="vocab-example-text" class="vocab-example-text"></span>
+          </p>
           <p id="shadowing-inline-translation" class="shadowing-inline-translation" hidden></p>
           <div id="question-translation-row" class="question-translation-row">
             <p id="question-translation" class="question-translation"></p>
@@ -227,8 +269,68 @@
       </div>
     </div>
 
+    <div id="vocab-topic-overlay" class="vocab-list-overlay vocab-topic-overlay" hidden>
+      <div class="vocab-list-modal vocab-topic-modal" role="dialog" aria-modal="true" aria-labelledby="vocab-topic-modal-title">
+        <header class="vocab-list-header">
+          <div>
+            <h2 id="vocab-topic-modal-title">Выберите тему</h2>
+            <p id="vocab-topic-modal-subtitle" class="vocab-list-subtitle"></p>
+          </div>
+          <button
+            id="vocab-topic-close"
+            type="button"
+            class="vocab-list-close"
+            aria-label="Закрыть выбор темы"
+          >
+            ×
+          </button>
+        </header>
+        <div id="vocab-topic-grid" class="vocab-topic-grid" role="listbox" aria-labelledby="vocab-topic-modal-title"></div>
+      </div>
+    </div>
+
+    <div id="shadowing-topic-overlay" class="vocab-list-overlay vocab-topic-overlay" hidden>
+      <div class="vocab-list-modal vocab-topic-modal" role="dialog" aria-modal="true" aria-labelledby="shadowing-topic-modal-title">
+        <header class="vocab-list-header">
+          <div>
+            <h2 id="shadowing-topic-modal-title">Выберите тему Shadowing</h2>
+            <p id="shadowing-topic-modal-subtitle" class="vocab-list-subtitle"></p>
+          </div>
+          <button
+            id="shadowing-topic-close"
+            type="button"
+            class="vocab-list-close"
+            aria-label="Закрыть выбор темы Shadowing"
+          >
+            ×
+          </button>
+        </header>
+        <div id="shadowing-topic-grid" class="vocab-topic-grid" role="listbox" aria-labelledby="shadowing-topic-modal-title"></div>
+      </div>
+    </div>
+
+    <div id="grammar-topic-overlay" class="vocab-list-overlay vocab-topic-overlay" hidden>
+      <div class="vocab-list-modal vocab-topic-modal grammar-topic-modal" role="dialog" aria-modal="true" aria-labelledby="grammar-topic-modal-title">
+        <header class="vocab-list-header">
+          <div>
+            <h2 id="grammar-topic-modal-title">Выберите тему грамматики</h2>
+            <p id="grammar-topic-modal-subtitle" class="vocab-list-subtitle"></p>
+          </div>
+          <button
+            id="grammar-topic-close"
+            type="button"
+            class="vocab-list-close"
+            aria-label="Закрыть выбор темы грамматики"
+          >
+            ×
+          </button>
+        </header>
+        <div id="grammar-topic-groups" class="grammar-topic-groups" role="listbox" aria-labelledby="grammar-topic-modal-title"></div>
+      </div>
+    </div>
+
     <script src="./questions.js"></script>
     <script src="./vocabulary.js?v=28"></script>
-    <script src="./app.js?v=27"></script>
+    <script src="./app.js?v=35"></script>
   </body>
 </html>
