@@ -1,5 +1,4 @@
 (function () {
-  const STORAGE_KEY = "english-grammar-trainer.progress.v2";
   const AUTO_NEXT_DELAY_MS = 450;
   const SHADOWING_SUCCESS_PAUSE_MS = 2500;
   const SHADOWING_SILENCE_MS = 1000;
@@ -13,1346 +12,6 @@
   const levelNames = Object.keys(allLevels).sort();
   let currentMode = 'grammar';
   const vocabTopics = (window.VOCABULARY_DATA && Array.isArray(window.VOCABULARY_DATA)) ? window.VOCABULARY_DATA : [];
-  const ALL_GRAMMAR_TOPICS_VALUE = "all";
-  const GRAMMAR_TOPICS = {
-    "A1-A2": [
-      { id: "present-simple-positive", title: "Present Simple: утверждения", from: 1, to: 20 },
-      { id: "present-simple-negative", title: "Present Simple: отрицания", from: 21, to: 40 },
-      { id: "present-simple-yes-no", title: "Present Simple: общие вопросы", from: 41, to: 70 },
-      { id: "present-simple-special", title: "Present Simple: специальные вопросы", from: 71, to: 90 },
-      { id: "to-be-present", title: "To be: am/is/are", from: 91, to: 170 },
-      { id: "past-simple-irregular", title: "Past Simple: неправильные глаголы", from: 171, to: 307 },
-      { id: "to-be-past", title: "To be: was/were", from: 308, to: 390 },
-      { id: "future-simple", title: "Future Simple: will/won't", from: 391, to: 420 },
-      { id: "present-continuous", title: "Present Continuous", from: 421, to: 510 },
-      { id: "present-simple-vs-continuous", title: "Present Simple vs Continuous", from: 511, to: 570 },
-      { id: "so-such", title: "So / such", from: 571, to: 607 },
-      { id: "verb-patterns-like-want", title: "Verb patterns: want / would like / like", from: 608, to: 680 },
-      { id: "have-have-got", title: "Have / have got", from: 681, to: 730 },
-      { id: "modals-can-must", title: "Modal verbs: can / must", from: 731, to: 809 },
-      { id: "have-to-could-may", title: "Have to / could / may", from: 810, to: 910 },
-      { id: "passive-present", title: "Passive Voice: Present Simple", from: 911, to: 1011 },
-      { id: "passive-past", title: "Passive Voice: Past Simple", from: 1012, to: 1061 },
-      { id: "passive-future", title: "Passive Voice: Future Simple", from: 1062, to: 1111 },
-      { id: "time-clauses", title: "Time clauses: when / after / before", from: 1112, to: 1162 },
-      { id: "conditionals", title: "Conditionals: if-clauses", from: 1163, to: 1213 },
-      { id: "imperatives-there-be", title: "Imperatives + there is/are", from: 1214, to: 1263 },
-      { id: "there-will-be-going-to", title: "There will be / going to", from: 1264, to: 1414 },
-      { id: "make-do-short-answers", title: "Make / do + short answers", from: 1415, to: 1666 },
-      { id: "pronouns-possessives", title: "Pronouns and possessives", from: 1667, to: 1716 },
-      { id: "quantifiers", title: "Quantifiers: many / much / few / little", from: 1717, to: 1878 },
-      { id: "adjectives-adverbs", title: "Adjectives and adverbs", from: 1879, to: 1928 },
-      { id: "comparatives", title: "Comparatives", from: 1929, to: 1978 },
-      { id: "superlatives", title: "Superlatives", from: 1979, to: 2026 },
-      { id: "object-possessive-pronouns", title: "Object and possessive pronouns", from: 2027, to: 2076 },
-      { id: "articles-time-prepositions", title: "Articles + time prepositions", from: 2077, to: 2176 },
-      { id: "adjective-prepositions", title: "Prepositions after adjectives and verbs", from: 2177, to: 2228 },
-      { id: "tag-questions-present", title: "Tag questions: present", from: 2229, to: 2329 },
-      { id: "tag-questions-past", title: "Tag questions: past", from: 2330, to: 2379 },
-      { id: "tag-questions-have-modals", title: "Tag questions: have got / modals", from: 2380, to: 2450 },
-      { id: "infinitive-gerund", title: "Infinitive and gerund", from: 2451, to: 2499 },
-    ],
-  };
-  const GRAMMAR_TOPIC_GROUPS = [
-    { id: 'present', title: 'Present — настоящее время', icon: '☀️', pattern: /^(?:present|to-be-present|have-have-got)/i },
-    { id: 'past', title: 'Past — прошедшее время', icon: '🕰️', pattern: /^(?:past|to-be-past)/i },
-    { id: 'future', title: 'Future — будущее время', icon: '🚀', pattern: /^(?:future|there-will-be-going-to)/i },
-    { id: 'passive', title: 'Passive Voice', icon: '🔄', pattern: /^passive-/i },
-    { id: 'modals', title: 'Модальные глаголы', icon: '🧩', pattern: /^(?:modals|have-to-could-may)/i },
-    { id: 'conditionals', title: 'Условия и придаточные', icon: '🔀', pattern: /conditional|time-clauses/i },
-    { id: 'questions', title: 'Вопросы и короткие ответы', icon: '❓', pattern: /tag-questions|short-answers/i },
-    { id: 'verbs', title: 'Глагольные конструкции', icon: '⚙️', pattern: /verb-pattern|infinitive|gerund/i },
-    { id: 'nouns', title: 'Местоимения, артикли и количество', icon: '🧱', pattern: /pronoun|possessive|quantifier|article/i },
-    { id: 'description', title: 'Описание и сравнение', icon: '📐', pattern: /adjective|adverb|comparative|superlative|so-such|preposition/i },
-    { id: 'structures', title: 'Структуры предложения', icon: '📝', pattern: /imperative|there-be/i },
-    { id: 'other', title: 'Другие темы', icon: '📚', pattern: /.*/ },
-  ];
-  const QUESTION_TRANSLATION_OVERRIDES = {
-    "A1-A2:232": "Я отправил ей любовную записку.",
-  };
-  const THEORY_TOPICS = [
-    {
-      id: "tenses-guide",
-      title: "Времена: быстрый ориентир",
-      subtitle: "сначала время, потом тип действия",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "В английском время показывает не только когда произошло действие, но и как мы на него смотрим: факт, процесс, результат или длительность.",
-            "Сначала выбери точку времени: present, past или future. Потом выбери тип действия: Simple, Continuous, Perfect или Perfect Continuous.",
-          ],
-        },
-        {
-          title: "Как выбирать",
-          items: [
-            "Факт или регулярность - Simple: We run backups every night.",
-            "Процесс прямо сейчас или в конкретный момент - Continuous: We are running a backup now.",
-            "Результат или опыт к текущему моменту - Perfect: We have run the backup already.",
-            "Длительность до момента - Perfect Continuous: We have been running the backup for an hour.",
-            "Будущее с планом - be going to или Present Continuous: We are going to deploy tonight. We are deploying tonight.",
-            "Будущее как решение, обещание или прогноз - will: I'll check the logs. It will probably fail under load.",
-          ],
-        },
-        {
-          title: "Маркеры времени",
-          examples: [
-            ["usually, often, every day", "Present Simple"],
-            ["now, right now, at the moment", "Present Continuous"],
-            ["yesterday, last week, in 2025, ago", "Past Simple"],
-            ["when, while, at 3am yesterday", "Past Continuous, если важен процесс в тот момент"],
-            ["already, yet, just, ever, never", "Present Perfect"],
-            ["before, after, by the time", "Past Perfect, если одно прошлое действие было раньше другого"],
-            ["tomorrow, next sprint, soon", "Future forms"],
-          ],
-        },
-        {
-          title: "Типичные ошибки",
-          items: [
-            "I am work now - неправильно. Нужно: I am working now.",
-            "We have deployed yesterday - неправильно. С точным прошлым временем нужен Past Simple: We deployed yesterday.",
-            "The service works right now - обычно лучше: The service is working right now.",
-            "We are knowing the root cause - неправильно. Know обычно не используется в Continuous: We know the root cause.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "tenses-present",
-      title: "Present: Simple / to be / Continuous / Perfect",
-      subtitle: "факты, состояния, процессы и результат к сейчас",
-      sections: [
-        {
-          title: "Present Simple + to be",
-          items: [
-            "Используем для состояний, описаний и фактов в настоящем.",
-          ],
-          schemes: [
-            {
-              title: "Схема Present Simple + to be",
-              rows: [
-                { label: "+", tokens: ["I", "am"] },
-                { label: "+", tokens: ["He / She / It", "is"] },
-                { label: "+", tokens: ["We / You / They", "are"] },
-                { label: "-", tokens: ["I", "am", "not"] },
-                { label: "-", tokens: ["He / She / It", "is", "not"] },
-                { label: "-", tokens: ["We / You / They", "are", "not"] },
-                { label: "?", tokens: ["Am", "I", "... ?"] },
-                { label: "?", tokens: ["Is", "he / she / it", "... ?"] },
-                { label: "?", tokens: ["Are", "we / you / they", "... ?"] },
-              ],
-            },
-          ],
-          examples: [
-            ["The service is stable.", "Сервис стабилен."],
-            ["The logs are noisy.", "Логи шумные."],
-            ["Is the root cause clear?", "Root cause понятен?"],
-          ],
-        },
-        {
-          title: "Present Simple + V1",
-          items: [
-            "Используем для привычек, регулярно повторяющихся действий, общеизвестных фактов и расписаний.",
-          ],
-          schemes: [
-            {
-              title: "Схема Present Simple + V1",
-              rows: [
-                { label: "+", tokens: ["I / We / You / They", "V1: read"] },
-                { label: "+", tokens: ["He / She / It", "V(s): reads"] },
-                { label: "-", tokens: ["I / We / You / They", "don't", "V1: read"] },
-                { label: "-", tokens: ["He / She / It", "doesn't", "V1: read"] },
-                { label: "?", tokens: ["Do", "I / we / you / they", "V1: read"] },
-                { label: "?", tokens: ["Does", "he / she / it", "V1: read"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We deploy every Friday.", "Мы деплоим каждую пятницу."],
-            ["The service reads config from the database.", "Сервис читает конфиг из базы."],
-            ["Does this job run every night?", "Эта задача запускается каждую ночь?"],
-          ],
-        },
-        {
-          title: "Present Continuous",
-          items: [
-            "Используем для действия в процессе прямо сейчас или временной ситуации в настоящем.",
-          ],
-          schemes: [
-            {
-              title: "Схема Present Continuous",
-              rows: [
-                { label: "+", tokens: ["I", "am", "V-ing"] },
-                { label: "+", tokens: ["He / She / It", "is", "V-ing"] },
-                { label: "+", tokens: ["We / You / They", "are", "V-ing"] },
-                { label: "-", tokens: ["I", "am", "not", "V-ing"] },
-                { label: "-", tokens: ["He / She / It", "is", "not", "V-ing"] },
-                { label: "-", tokens: ["We / You / They", "are", "not", "V-ing"] },
-                { label: "?", tokens: ["Am", "I", "V-ing"] },
-                { label: "?", tokens: ["Is", "he / she / it", "V-ing"] },
-                { label: "?", tokens: ["Are", "we / you / they", "V-ing"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We are investigating the issue now.", "Мы сейчас расследуем проблему."],
-            ["Masha is deploying the hotfix right now.", "Маша прямо сейчас деплоит хотфикс."],
-            ["Are you reviewing the PR?", "Ты ревьюишь PR?"],
-          ],
-        },
-        {
-          title: "Present Perfect",
-          items: [
-            "Используем для результата к настоящему моменту, опыта или действия, которое важно сейчас.",
-            "Частые маркеры: already, yet, just, ever, never, recently, so far.",
-            "С точным прошлым временем вроде yesterday или last week обычно нужен Past Simple, а не Present Perfect.",
-          ],
-          schemes: [
-            {
-              title: "Схема Present Perfect",
-              rows: [
-                { label: "+", tokens: ["I / We / You / They", "have", "V3: checked"] },
-                { label: "+", tokens: ["He / She / It", "has", "V3: checked"] },
-                { label: "-", tokens: ["I / We / You / They", "have not / haven't", "V3"] },
-                { label: "-", tokens: ["He / She / It", "has not / hasn't", "V3"] },
-                { label: "?", tokens: ["Have", "I / we / you / they", "V3"] },
-                { label: "?", tokens: ["Has", "he / she / it", "V3"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We have already fixed the bug.", "Мы уже исправили баг."],
-            ["She has just pushed the hotfix.", "Она только что запушила хотфикс."],
-            ["Have you checked the logs yet?", "Ты уже проверил логи?"],
-            ["I have never seen this error before.", "Я никогда раньше не видел эту ошибку."],
-          ],
-        },
-        {
-          title: "Вопросы к подлежащему",
-          items: [
-            "Если what / who / which само является подлежащим, порядок слов прямой: question word + V(s).",
-          ],
-          schemes: [
-            {
-              title: "Схема вопроса к подлежащему",
-              rows: [
-                { label: "?", tokens: ["what / who / which", "V(s)", "... ?"] },
-              ],
-            },
-          ],
-          examples: [
-            ["Who knows the answer?", "Кто знает ответ?"],
-            ["Which option looks better?", "Какой вариант выглядит лучше?"],
-            ["What looks strange?", "Что выглядит странно?"],
-            ["I don't know what happens next.", "Я не знаю, что происходит дальше."],
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Сервис стабилен, но логи слишком шумные.",
-            "Мы деплоим каждую пятницу.",
-            "Этот воркер читает задачи из очереди.",
-            "Мы сейчас проверяем production logs.",
-            "Мы уже исправили этот баг.",
-            "Что выглядит странно в этом графике?",
-          ],
-        },
-      ],
-    },
-    {
-      id: "tenses-past",
-      title: "Past: Simple / to be / Continuous / Perfect",
-      subtitle: "прошлые факты, состояния, процессы и более ранние действия",
-      sections: [
-        {
-          title: "Past Simple",
-          items: [
-            "Используем, когда действие произошло в прошлом в конкретный момент или период.",
-            "Частые маркеры: yesterday, last week, in 2025, ago.",
-          ],
-          schemes: [
-            {
-              title: "Схема Past Simple",
-              rows: [
-                { label: "+", tokens: ["I / He / She / It / We / You / They", "V2: worked"] },
-                { label: "-", tokens: ["I / He / She / It / We / You / They", "didn't", "V1: work"] },
-                { label: "?", tokens: ["Did", "subject", "V1: work"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We fixed the bug yesterday.", "Мы исправили баг вчера."],
-            ["The alert fired at 3am.", "Алерт сработал в 3 утра."],
-            ["Did you revert the config?", "Ты откатил конфиг?"],
-          ],
-        },
-        {
-          title: "Past Simple + to be",
-          items: [
-            "Используем для состояний и описаний в прошлом, а не для действий.",
-          ],
-          schemes: [
-            {
-              title: "Схема Past Simple + to be",
-              rows: [
-                { label: "+", tokens: ["I / He / She / It", "was"] },
-                { label: "+", tokens: ["We / You / They", "were"] },
-                { label: "-", tokens: ["I / He / She / It", "was", "not"] },
-                { label: "-", tokens: ["We / You / They", "were", "not"] },
-                { label: "?", tokens: ["Was", "I / he / she / it", "... ?"] },
-                { label: "?", tokens: ["Were", "we / you / they", "... ?"] },
-              ],
-            },
-          ],
-          examples: [
-            ["The service was down for ten minutes.", "Сервис был недоступен десять минут."],
-            ["The logs were useful.", "Логи были полезными."],
-            ["Was the workaround safe?", "Временное решение было безопасным?"],
-          ],
-        },
-        {
-          title: "Past Continuous",
-          items: [
-            "Используем для процесса в определенный момент в прошлом.",
-            "Часто показывает фон: действие было в процессе, когда произошло другое действие.",
-            "Маркеры: at 5 o'clock yesterday, when, while.",
-          ],
-          schemes: [
-            {
-              title: "Схема Past Continuous",
-              rows: [
-                { label: "+", tokens: ["I / He / She / It", "was", "V-ing"] },
-                { label: "+", tokens: ["We / You / They", "were", "V-ing"] },
-                { label: "-", tokens: ["I / He / She / It", "was", "not", "V-ing"] },
-                { label: "-", tokens: ["We / You / They", "were", "not", "V-ing"] },
-                { label: "?", tokens: ["Was", "I / he / she / it", "V-ing"] },
-                { label: "?", tokens: ["Were", "we / you / they", "V-ing"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We were testing the migration when the alert fired.", "Мы тестировали миграцию, когда сработал алерт."],
-            ["She was reading logs while he was checking metrics.", "Она читала логи, пока он проверял метрики."],
-            ["What were you doing when the service crashed?", "Что ты делал, когда сервис упал?"],
-          ],
-        },
-        {
-          title: "Past Perfect",
-          items: [
-            "Используем, чтобы показать, что одно прошлое действие произошло раньше другого прошлого действия.",
-            "Часто встречается с before, after, when, already, by the time.",
-            "Обычно используется в паре с Past Simple: одно действие случилось раньше, другое позже.",
-          ],
-          schemes: [
-            {
-              title: "Схема Past Perfect",
-              rows: [
-                { label: "+", tokens: ["I / He / She / It / We / You / They", "had", "V3"] },
-                { label: "-", tokens: ["I / He / She / It / We / You / They", "had", "not", "V3"] },
-                { label: "?", tokens: ["Had", "subject", "V3"] },
-              ],
-            },
-          ],
-          examples: [
-            ["When I arrived, she had already left.", "Когда я пришел, она уже ушла."],
-            ["We had reverted the config before the incident call started.", "Мы откатили конфиг до начала incident call."],
-            ["By the time we checked the logs, the job had already failed.", "К моменту проверки логов задача уже упала."],
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Команда исправила баг вчера.",
-            "Сервис был недоступен десять минут.",
-            "Мы проверяли метрики, когда сработал алерт.",
-            "Они уже откатили конфиг до начала звонка.",
-            "Что ты делал, когда билд упал?",
-          ],
-        },
-      ],
-    },
-    {
-      id: "tenses-future",
-      title: "Future: will / going to / Continuous",
-      subtitle: "решения, планы, прогнозы и процессы в будущем",
-      sections: [
-        {
-          title: "Future Simple",
-          items: [
-            "Используем will для спонтанных решений, предложений что-то сделать, обещаний и прогнозов на основе личного мнения.",
-          ],
-          schemes: [
-            {
-              title: "Схема Future Simple",
-              rows: [
-                { label: "+", tokens: ["I / He / She / It / We / You / They", "will", "V1"] },
-                { label: "-", tokens: ["I / He / She / It / We / You / They", "will not / won't", "V1"] },
-                { label: "?", tokens: ["Will", "subject", "V1"] },
-              ],
-            },
-          ],
-          examples: [
-            ["I'll check the logs.", "Я проверю логи."],
-            ["We won't deploy without tests.", "Мы не будем деплоить без тестов."],
-            ["Will the service recover automatically?", "Сервис восстановится автоматически?"],
-          ],
-        },
-        {
-          title: "To be going to",
-          items: [
-            "Используем для планов и намерений без конкретной договоренности, а также для прогнозов о будущем, основанных на фактах.",
-          ],
-          schemes: [
-            {
-              title: "Схема to be going to",
-              rows: [
-                { label: "+", tokens: ["I", "am", "going to", "V1"] },
-                { label: "+", tokens: ["He / She / It", "is", "going to", "V1"] },
-                { label: "+", tokens: ["We / You / They", "are", "going to", "V1"] },
-                { label: "-", tokens: ["I", "am", "not", "going to", "V1"] },
-                { label: "-", tokens: ["He / She / It", "is", "not", "going to", "V1"] },
-                { label: "-", tokens: ["We / You / They", "are", "not", "going to", "V1"] },
-                { label: "?", tokens: ["Am", "I", "going to", "V1"] },
-                { label: "?", tokens: ["Is", "he / she / it", "going to", "V1"] },
-                { label: "?", tokens: ["Are", "we / you / they", "going to", "V1"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We are going to add an index.", "Мы собираемся добавить индекс."],
-            ["This query is going to timeout under load.", "Этот запрос, похоже, отвалится под нагрузкой."],
-            ["Are you going to rewrite this module?", "Ты собираешься переписать этот модуль?"],
-          ],
-        },
-        {
-          title: "Present Continuous для будущего",
-          items: [
-            "Используем для планов с конкретной договоренностью или назначенным временем.",
-          ],
-          examples: [
-            ["We are deploying tonight.", "Мы деплоим сегодня вечером."],
-            ["Alex is joining the incident review tomorrow.", "Алекс присоединяется к разбору инцидента завтра."],
-          ],
-        },
-        {
-          title: "Future Continuous",
-          items: [
-            "Используем для действия в процессе в определенный момент в будущем или длительного действия в будущем.",
-          ],
-          schemes: [
-            {
-              title: "Схема Future Continuous",
-              rows: [
-                { label: "+", tokens: ["I / He / She / It / We / You / They", "will be", "V-ing"] },
-                { label: "-", tokens: ["I / He / She / It / We / You / They", "will not be", "V-ing"] },
-                { label: "?", tokens: ["Will", "subject", "be", "V-ing"] },
-              ],
-            },
-          ],
-          examples: [
-            ["We will be monitoring the service overnight.", "Мы будем мониторить сервис ночью."],
-            ["At 3am, the migration will still be running.", "В 3 утра миграция все еще будет выполняться."],
-            ["Will you be reviewing PRs tomorrow morning?", "Ты будешь ревьюить PR завтра утром?"],
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Я проверю логи и напишу апдейт.",
-            "Мы не будем деплоить без rollback plan.",
-            "Мы собираемся добавить индекс на этот столбец.",
-            "Этот фикс, похоже, сломает старый API.",
-            "Мы деплоим сегодня вечером.",
-            "Ночью мы будем мониторить сервис.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "due-to",
-      title: "Due to",
-      subtitle: "из-за, вследствие чего-то",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "Due to объясняет причину. После него обычно стоит существительное или verb + ing, но не полноценное предложение с подлежащим и глаголом.",
-            "Можно ставить в начале предложения или в середине: Due to high load, the service crashed. The service crashed due to high load.",
-          ],
-        },
-        {
-          title: "Структура",
-          examples: [
-            ["due to high load", "из-за высокой нагрузки"],
-            ["due to increasing traffic", "из-за растущего трафика"],
-            ["because the load increased", "когда нужна полная причина-предложение"],
-          ],
-        },
-        {
-          title: "Типичные tech-контексты",
-          items: [
-            "The deploy failed due to failing tests.",
-            "Latency spiked due to a sudden traffic increase.",
-            "The query slowed down due to missing indexes.",
-            "The incident lasted longer due to poor monitoring.",
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Сервис упал из-за неправильной конфигурации.",
-            "CPU usage вырос из-за утечки памяти.",
-            "Миграция заняла много времени из-за недостатка документации.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "whether-if",
-      title: "Whether / if",
-      subtitle: "ли после know, check, ask, wonder, tell, see",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "Whether и if переводятся как «ли», когда мы говорим о проверке, знании или сомнении.",
-            "После whether/if порядок слов как в обычном утверждении, а не как в вопросе.",
-          ],
-        },
-        {
-          title: "Структура",
-          examples: [
-            ["Tell me whether the service is working.", "Скажи, работает ли сервис."],
-            ["I don't know if the PR is ready.", "Я не знаю, готов ли PR."],
-            ["Can you check whether the tests are passing?", "Можешь проверить, проходят ли тесты?"],
-          ],
-        },
-        {
-          title: "Не путай с if = если",
-          items: [
-            "If the build passes, we deploy. Здесь if означает «если».",
-            "I don't know if the build passes. Здесь if означает «ли».",
-            "Подсказка: если можно подставить «является ли это правдой, что», это whether/if = «ли».",
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Я не знаю, смержили ли уже PR.",
-            "Проверь, проходят ли тесты после последнего деплоя.",
-            "Я не уверен, восстановился ли сервис после инцидента.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "manage-to",
-      title: "Manage to",
-      subtitle: "удалось, получилось сделать что-то непростое",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "Manage to подчеркивает, что действие получилось сделать, хотя это было непросто или неочевидно.",
-            "Структура всегда одна: manage to + infinitive.",
-          ],
-        },
-        {
-          title: "Сравнение",
-          examples: [
-            ["We managed to deploy before the deadline.", "Успели задеплоить, хотя было непросто."],
-            ["We were able to deploy before the deadline.", "Нейтральный факт: смогли."],
-            ["We could deploy before the deadline.", "Была такая возможность."],
-          ],
-        },
-        {
-          title: "Как строить фразу",
-          items: [
-            "После manage всегда ставим to + начальную форму глагола.",
-            "✓ managed to fix — удалось исправить.",
-            "✓ didn't manage to reproduce — не удалось воспроизвести.",
-            "✓ Did you manage to find ...? — удалось найти ...?",
-            "✗ managed fixing — неправильно: после manage нужен to, а не глагол с -ing.",
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Нам удалось предотвратить отказ, откатив конфиг.",
-            "Тебе удалось оценить масштаб проблемы до incident call?",
-            "Команде не удалось воспроизвести проблему под нагрузкой.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "aware-of",
-      title: "Aware of",
-      subtitle: "знать о чем-то, быть в курсе, осознавать",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "Aware of звучит чуть формальнее, чем know, и часто используется для рисков, проблем, инцидентов и важных изменений.",
-            "После aware всегда нужен предлог of.",
-          ],
-        },
-        {
-          title: "Структура",
-          examples: [
-            ["Are you aware of the issue?", "Ты в курсе проблемы?"],
-            ["We're aware of the outage.", "Мы в курсе отказа."],
-            ["I wasn't aware of the config change.", "Я не знал об изменении конфига."],
-          ],
-        },
-        {
-          title: "Три частых контекста",
-          items: [
-            "be aware of - быть в курсе прямо сейчас.",
-            "become aware of - узнать, обнаружить.",
-            "make someone aware of - уведомить, поставить в известность.",
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Все в курсе инцидента?",
-            "Мы узнали о проблеме через мониторинг.",
-            "Я хочу поставить команду в известность об этом риске до деплоя.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "worth",
-      title: "Worth",
-      subtitle: "стоит, заслуживает, имеет смысл",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "Worth выражает ценность или смысл действия: стоит ли это усилий, времени, риска или денег.",
-            "После worth часто стоит существительное, verb + ing или заменяющее it, когда конкретное существительное уже понятно из контекста.",
-          ],
-        },
-        {
-          title: "1. Be worth + noun",
-          examples: [
-            ["It's worth the effort.", "Это стоит усилий."],
-            ["It's worth the risk.", "Это стоит риска."],
-            ["It's not worth the time.", "Это не стоит времени."],
-          ],
-        },
-        {
-          title: "2. Be worth + verb-ing",
-          items: [
-            "После worth всегда используем -ing, а не инфинитив.",
-            "Правильно: worth doing.",
-            "Неправильно: worth to do.",
-          ],
-          examples: [
-            ["It's worth trying.", "Стоит попробовать."],
-            ["It's worth investigating.", "Стоит расследовать."],
-            ["It's not worth fixing.", "Не стоит чинить."],
-          ],
-        },
-        {
-          title: "3. Be worth it",
-          items: [
-            "Когда нет конкретного существительного, используем it.",
-          ],
-          examples: [
-            ["It sounds complicated, but it's worth it.", "Звучит сложно, но оно того стоит."],
-            ["Is it worth it?", "Оно того стоит?"],
-          ],
-        },
-        {
-          title: "Полезные расширения",
-          examples: [
-            ["This technical debt is worth months of work to fix.", "worth + число: стоит в денежном или временном смысле."],
-            ["It's a worthwhile refactoring.", "Worthwhile - прилагательное: полезный, стоящий."],
-            ["This is a minor bug - it's not worth fixing right now.", "Not worth it / not worth doing - не стоит."],
-          ],
-        },
-        {
-          title: "В IT-контексте",
-          items: [
-            "It's worth analyzing the execution plan before optimizing.",
-            "Is it worth adding an index on this column?",
-            "The migration is complex, but it's worth it - we get much better performance.",
-            "It's not worth introducing a new dependency for such a small feature.",
-            "This is worth discussing in the next standup.",
-          ],
-        },
-        {
-          title: "Попробуй перевести",
-          items: [
-            "Стоит проанализировать план выполнения перед тем, как добавлять индекс.",
-            "Это сложная миграция, но она того стоит - производительность значительно улучшится.",
-            "Этот баг незначительный - не стоит его чинить прямо сейчас.",
-            "Стоит обсудить проблему с блокировками на следующем стендапе.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "subject-questions",
-      title: "Вопросы к подлежащему",
-      subtitle: "who / what как тот, кто выполняет действие",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "В обычном вопросе мы спрашиваем про действие или обстоятельство: нужен вспомогательный глагол и обратный порядок слов.",
-            "Если вопрос про того, кто или что совершает действие, вспомогательный глагол обычно не нужен. Порядок слов прямой, как в утверждении; в Present Simple часто используется форма 3 лица единственного числа.",
-          ],
-          examples: [
-            ["What did you deploy?", "Обычный вопрос: что ты задеплоил?"],
-            ["What are you fixing?", "Обычный вопрос: что ты чинишь?"],
-            ["Who triggered the alert?", "Вопрос к подлежащему: кто вызвал алерт?"],
-            ["What broke the build?", "Вопрос к подлежащему: что сломало билд?"],
-          ],
-        },
-        {
-          title: "Сравнение по временам",
-          examples: [
-            ["Present Simple: What do you monitor?", "Who monitors this service?"],
-            ["Past Simple: What did you revert?", "Who reverted the config?"],
-            ["Present Continuous: What are you fixing?", "What is causing the issue?"],
-            ["Present Perfect: What have you pushed?", "Who has pushed to main?"],
-            ["To be - Present: What is the root cause?", "Who is on-call tonight?"],
-            ["To be - Past: What was the workaround?", "Who was the incident commander?"],
-          ],
-        },
-        {
-          title: "Present Perfect",
-          items: [
-            "В Present Perfect вспомогательный has остается, потому что он часть самой формы, а не отдельная вопросительная конструкция.",
-          ],
-          examples: [
-            ["Who has pushed to main?", "Кто запушил в main?"],
-            ["What has caused the outage?", "Что вызвало отказ?"],
-          ],
-        },
-        {
-          title: "Внутри сложного предложения",
-          items: [
-            "Когда what / who / which играет роль подлежащего внутри придаточного, порядок слов тоже остается прямым.",
-          ],
-          examples: [
-            ["I don't know what happens next.", "Я не знаю, что произойдет дальше."],
-            ["Tell me what makes you happy.", "Скажи мне, что делает тебя счастливым."],
-            ["I see what looks strange here.", "Я вижу, что здесь выглядит странно."],
-          ],
-        },
-        {
-          title: "Составьте два вопроса",
-          items: [
-            "The config change triggered the alert. What / ? Who / ?",
-            "Alex pushed a hotfix to production at 3am. Who / ? What / Alex / push?",
-            "The unoptimized query caused the outage. What / caused? What / the team / find?",
-            "The on-call engineer reverted the config. Who / reverted? What / the on-call engineer / revert?",
-            "Something is blocking the deploy right now. What / blocking? What / you / fix?",
-            "A memory leak caused the issue. What / caused? What / the team / find?",
-            "The traffic spike broke the service last night. What / broke? What / you / notice?",
-            "Alex owns this incident. Who / owns? What / Alex / own?",
-          ],
-        },
-      ],
-    },
-    {
-      id: "passive-voice-table",
-      title: "Passive Voice",
-      subtitle: "когда важно действие и результат, а не исполнитель",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "В Passive Voice важно, что произошло с объектом. Кто это сделал — не главное.",
-            "Общая структура: be в нужном времени + past participle (3-я форма глагола).",
-            "Исполнителя можно добавить через by, но в IT-контексте его часто опускают, если он не важен.",
-          ],
-        },
-        {
-          title: "Времена и структура",
-          examples: [
-            ["Present Simple: am / is / are + V-ed", "The query is executed automatically."],
-            ["Past Simple: was / were + V-ed", "The config was reverted after the incident."],
-            ["Present Continuous: am / is / are + being + V-ed", "The migration is being tested right now."],
-            ["Past Continuous: was / were + being + V-ed", "The service was being monitored when it crashed."],
-            ["Present Perfect: have / has + been + V-ed", "The PR has been reviewed already."],
-            ["Past Perfect: had + been + V-ed", "The index had been dropped before we noticed."],
-            ["Future Simple: will + be + V-ed", "The schema will be updated next sprint."],
-            ["Modal verbs: modal + be + V-ed", "The transaction should be rolled back immediately."],
-          ],
-        },
-        {
-          title: "Модальные - отдельно, часто используются",
-          examples: [
-            ["should be", "The lock should be released after the transaction."],
-            ["must be", "All queries must be validated before execution."],
-            ["can be", "The migration can be rolled back if something breaks."],
-            ["might be", "The deadlock might be caused by the batch job."],
-            ["needs to be", "The index needs to be created before deploy."],
-          ],
-        },
-        {
-          title: "Упражнение 1 - переделайте в пассив",
-          items: [
-            "Postgres rolled back the transaction automatically.",
-            "The team dropped the index by mistake during the migration.",
-            "Someone has already reviewed the execution plan.",
-            "We are currently testing the migration on staging.",
-            "Alex optimized the query and reduced latency by 40%.",
-            "The system had already committed the transaction before the error occurred.",
-            "We will update the schema next sprint.",
-            "Someone must fix the constraint violation before we deploy.",
-            "The team is running the migration without downtime.",
-            "We should acquire the lock before modifying the row.",
-          ],
-        },
-        {
-          title: "Упражнение 2 - перевод на английский: пассив",
-          items: [
-            "Индекс был создан на столбце user_id, чтобы ускорить запросы.",
-            "Транзакция была откачена из-за нарушения ограничения.",
-            "Схема будет обновлена на следующей неделе без остановки сервиса.",
-            "План выполнения сейчас анализируется - мы ищем последовательный перебор.",
-            "Строка должна быть заблокирована перед изменением, чтобы избежать взаимной блокировки.",
-            "Миграция уже была протестирована на стейджинге до деплоя.",
-            "Все запросы должны быть оптимизированы перед релизом.",
-            "Соединение было получено из пула, но так и не освобождено.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "get-v-ed",
-      title: "Get + V-ed",
-      subtitle: "разговорный аналог пассивного залога с оттенком события или результата",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "Get + past participle означает, что что-то происходит с подлежащим, часто неожиданно или в результате чьих-то действий.",
-            "В IT это звучит естественно в устной речи: на стендапах, incident calls и в чате.",
-          ],
-          examples: [
-            ["The deploy got reverted.", "The deploy was reverted."],
-            ["The PR got merged.", "The PR was merged."],
-          ],
-        },
-        {
-          title: "Чем отличается от to be + past participle",
-          items: [
-            "To be - нейтрально, формально, описательно: The transaction was rolled back.",
-            "Get - разговорно, динамично, часто с оттенком неожиданности или результата: The transaction got rolled back.",
-          ],
-        },
-        {
-          title: "Структура",
-          items: [
-            "get + past participle - всегда правильная форма глагола.",
-            "Правильно: got merged, got reverted, got blocked, got paged.",
-            "Неправильно: got merge, got revert.",
-          ],
-        },
-        {
-          title: "Часто с рефлексивным значением",
-          items: [
-            "Иногда get + V-ed означает, что подлежащее само попало в ситуацию.",
-          ],
-          examples: [
-            ["I got paged at 3am.", "меня подняли в 3 ночи"],
-            ["We got blocked on the infra dependency.", "мы застряли из-за зависимости"],
-            ["The service got overloaded.", "сервис перегрузился"],
-          ],
-        },
-        {
-          title: "В IT-контексте",
-          items: [
-            "The PR finally got merged after three rounds of review.",
-            "The config got reverted and the service recovered.",
-            "We got paged during the night - the database got overloaded.",
-            "The migration got rolled back because of a constraint violation.",
-            "The query got optimized and latency dropped significantly.",
-            "I got blocked on this for two days.",
-            "The index got dropped accidentally during the migration.",
-          ],
-        },
-        {
-          title: "Упражнение - замените пассив на get + V-ed",
-          items: [
-            "The PR was finally merged after three rounds of review.",
-            "The config was reverted and the service recovered immediately.",
-            "The migration was rolled back because of a constraint violation.",
-            "The index was dropped accidentally during the migration.",
-            "The on-call engineer was paged at 3am when the database went down.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "modals-code-review",
-      title: "Модальные глаголы для Code Review",
-      subtitle: "could / should / might / may / would — как предлагать изменения мягко и профессионально",
-      sections: [
-        {
-          title: "Главная идея",
-          items: [
-            "В code review модальные глаголы помогают не только передать смысл, но и выбрать тон: показать возможность, дать рекомендацию, осторожно предупредить о риске или предложить гипотетический вариант.",
-          ],
-          examples: [
-            ["Could", "мягкое необязательное предложение"],
-            ["Should", "рекомендация: это действительно стоит сделать"],
-            ["Might", "осторожное предположение или возможный риск"],
-            ["May", "более формальный вариант возможного риска"],
-            ["Would", "личный выбор, гипотетический результат или мягкий вопрос"],
-          ],
-        },
-        {
-          title: "Одна грамматическая схема для всех",
-          items: [
-            "Could, should, might, may и would строятся одинаково. После модального глагола всегда используется V1 — начальная форма без to, окончания -s и вспомогательных do / does.",
-            "Меняется модальный глагол и оттенок смысла, но каркас предложения остаётся тем же.",
-          ],
-          schemes: [
-            {
-              title: "Утверждение, отрицание и вопрос",
-              rows: [
-                { label: "+", tokens: ["Subject", { text: "could / should / might / may / would", role: "aux" }, "V1"] },
-                { label: "-", tokens: ["Subject", { text: "couldn't / shouldn't / might not / may not / wouldn't", role: "neg" }, "V1"] },
-                { label: "?", tokens: [{ text: "Could / Should / Might / May / Would", role: "aux" }, "subject", "V1"] },
-              ],
-            },
-            {
-              title: "Пассивная конструкция",
-              rows: [
-                { label: "+", tokens: ["Subject", { text: "modal", role: "aux" }, "be", "V3"] },
-                { label: "-", tokens: ["Subject", { text: "modal + not", role: "neg" }, "be", "V3"] },
-                { label: "?", tokens: [{ text: "Modal", role: "aux" }, "subject", "be", "V3"] },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Could — самое мягкое предложение",
-          items: [
-            "Could не говорит, что изменение обязательно. Оно показывает один из возможных вариантов и хорошо подходит для nit-комментариев и необязательных предложений.",
-          ],
-          examples: [
-            ["This could be simplified.", "Это можно было бы упростить."],
-            ["You could extract this into a helper.", "Можно было бы вынести это во вспомогательную функцию."],
-          ],
-        },
-        {
-          title: "Should — рекомендация",
-          items: [
-            "Should сильнее, чем could: автор считает изменение важным, но не формулирует прямой приказ.",
-            "Используйте should для вещей, которые действительно стоит исправить: архитектура, тесты, валидация и обработка ошибок.",
-          ],
-          examples: [
-            ["This should be handled at the service level.", "Это следует обрабатывать на уровне сервиса."],
-            ["We should add a test for this case.", "Нам следует добавить тест для этого случая."],
-          ],
-        },
-        {
-          title: "Might и May — возможный риск",
-          items: [
-            "Might подходит для рисков и наблюдений, в которых вы не уверены. Оно обращает внимание на проблему, не утверждая, что проблема точно возникнет.",
-            "May имеет похожее значение, но обычно звучит немного формальнее. В переписке и code review might часто воспринимается разговорнее и естественнее.",
-          ],
-          examples: [
-            ["This might cause issues under high load.", "Это может вызвать проблемы при высокой нагрузке."],
-            ["This might break backward compatibility.", "Это может нарушить обратную совместимость."],
-            ["This may affect performance.", "Это может повлиять на производительность."],
-            ["This may need a follow-up ticket.", "Возможно, для этого потребуется отдельный тикет."],
-          ],
-        },
-        {
-          title: "Would — условность, вежливость и гипотетичность",
-          items: [
-            "Would часто соответствует русскому «бы». Оно помогает представить личный выбор, гипотетический результат или осторожное предложение.",
-            "В разговоре и переписке I would обычно сокращается до I'd: I'd extract this. I'd prefer a different approach.",
-            "I would описывает личный выбор, This would — гипотетический результат, а Would it ...? превращает предложение в мягкий вопрос.",
-          ],
-          examples: [
-            ["I would extract this into a separate method.", "Я бы вынес это в отдельный метод."],
-            ["I would avoid using a global variable here.", "Я бы избегал использования здесь глобальной переменной."],
-            ["This would make the code easier to follow.", "Это сделало бы код понятнее."],
-            ["This would break backward compatibility.", "Это нарушило бы обратную совместимость."],
-            ["Would it look cleaner if we extracted this?", "Выглядело бы это чище, если бы мы вынесли эту логику?"],
-            ["Would it work if we passed the config as a parameter?", "Сработало бы это, если бы мы передавали конфиг как параметр?"],
-            ["I'd prefer to see this handled differently.", "Я бы предпочёл, чтобы это обрабатывалось иначе."],
-            ["I'd suggest extracting this into a helper.", "Я бы предложил вынести это во вспомогательную функцию."],
-          ],
-        },
-        {
-          title: "Попробуйте перевести",
-          items: [
-            "Я бы вынес эту логику в отдельный метод.",
-            "Это сделало бы код намного легче для чтения.",
-            "Я бы предпочёл видеть обработку ошибок на уровне сервиса.",
-            "Это могло бы сломать обратную совместимость — стоит проверить.",
-            "Я бы рекомендовал добавить комментарий здесь — логика неочевидна.",
-            "Выглядело бы чище, если бы мы разбили это на два метода?",
-            "Я бы сказал, что это выходит за рамки этого PR.",
-            "Это могло бы вызвать проблемы при высокой нагрузке.",
-            "Сработало бы это, если бы мы передавали конфиг как параметр?",
-            "Я бы избегал использования глобальных переменных здесь.",
-          ],
-        },
-      ],
-    },
-  ];
-  const LISTENING_TOPICS = [
-    {
-      id: "small-words",
-      title: "Small Words",
-      items: [
-        "So, as far as I know, it should be fine by the end of the day.",
-        "I just want to flag that it might take a bit longer than we thought.",
-        "Let me look into it and I'll get back to you in a bit.",
-        "Yeah, I'm still kind of stuck on it, but I think I'm close.",
-        "So I went ahead and pushed it to review. Let me know what you think.",
-        "I mean, it depends on what we find once we dig into it.",
-        "I'll try to wrap it up today, but I can't promise it'll be done by end of day.",
-        "So just a heads-up, I might need a bit of help with this one.",
-        "I think the best thing to do is to loop in the infra team and go from there.",
-        "OK, so I looked into it and it turns out it's a bit more complex than I thought.",
-      ],
-    },
-    {
-      id: "incident-call",
-      title: "Incident Call",
-      items: [
-        "Can you jump on a call? The service is down and we need all hands on.",
-        "I'm not sure if it's a sev one yet. Let me pull up the logs and check.",
-        "As far as I know, the on-call engineer is already looking into it.",
-        "So we rolled it back and it looks like it's starting to stabilize.",
-        "Can you give us a quick update on what's going on right now?",
-        "I think we need to narrow it down a bit more before we push a hotfix.",
-        "It turns out the root cause was a config change we pushed earlier today.",
-        "So we applied a workaround for now. We'll do a proper fix in the morning.",
-        "I want to make sure we do a blameless postmortem and figure out how to prevent this.",
-      ],
-    },
-    {
-      id: "standup",
-      title: "Standup",
-      items: [
-        "Alex picked up the migration ticket on Monday but got stuck on a dependency.",
-        "He flagged it straight away, but we still haven't managed to unblock him.",
-        "Masha is wrapping up the API refactor.",
-        "She pushed it to review yesterday and addressed most of the comments.",
-        "It should be mergeable by end of day.",
-        "Dan raised a concern about the deadline.",
-        "His rough estimate is four to five days, but it depends on the edge cases.",
-        "We decided to take that discussion offline after the standup.",
-      ],
-    },
-    {
-      id: "backend",
-      title: "Backend/API",
-      items: [
-        "Our service exposes a REST API that the frontend team consumes to get data.",
-        "Every request goes through middleware that intercepts it and validates the authentication token.",
-        "We always validate the payload before it hits the database.",
-        "Heavy tasks like sending emails are offloaded to a background queue.",
-        "Last week we discovered a bottleneck.",
-        "A database query was slowing down the whole service under high load.",
-        "We added retry logic with exponential backoff.",
-        "If the cache goes down, the service falls back to the database.",
-      ],
-    },
-    {
-      id: "database",
-      title: "Database",
-      items: [
-        "Moving it to Postgres gives us persistence and makes it much easier to scale horizontally.",
-        "The plan is to introduce a migration to create the new tables.",
-        "We'll create indexes on the columns we query most frequently.",
-        "I want to analyze the execution plan for the heaviest queries before we go live.",
-        "We need to handle transactions carefully.",
-        "We should always acquire locks in the same order to avoid deadlocks.",
-        "If anything goes wrong, we roll back the transaction and the schema stays consistent.",
-      ],
-    },
-  ];
-  const SHADOWING_TOPICS = [
-    {
-      id: "work-discussions",
-      title: "Work discussions",
-      groups: [
-        {
-          title: "walk through",
-          items: [
-            "Walk me through it.",
-            "Let me walk you through it.",
-            "Let me walk you through the proposal.",
-            "Let me walk you through the approach.",
-            "Can you walk me through this once more?",
-            "Let's walk through it together.",
-            "I think we should walk through it first.",
-          ],
-        },
-        {
-          title: "makes sense",
-          items: [
-            "Makes sense.",
-            "That makes sense.",
-            "It makes sense.",
-            "Does it make sense?",
-            "Does that make sense to you?",
-            "It makes sense to consider this.",
-            "I think that makes sense.",
-          ],
-        },
-        {
-          title: "end up with something",
-          items: [
-            "We ended up with a proposal.",
-            "We ended up with a different approach.",
-            "We might end up with issues.",
-            "We could end up with something better.",
-            "In the end, we ended up with this.",
-            "I think we'll end up with a better result.",
-          ],
-        },
-        {
-          title: "a fair point",
-          items: [
-            "That's a fair point.",
-            "That's a fair point, actually.",
-            "That's a fair point, but consider this.",
-            "I hear you — that's a fair point.",
-            "That's a fair point, let's walk through it.",
-            "I think that's a fair point.",
-          ],
-        },
-        {
-          title: "worth",
-          items: [
-            "It's worth it.",
-            "It's worth considering.",
-            "Is it worth it?",
-            "Is it worth considering this approach?",
-            "It's not worth it.",
-            "It's worth a second look.",
-            "I think it's worth it.",
-          ],
-        },
-        {
-          title: "Комбинированные фразы",
-          items: [
-            "Let me walk you through it — does it make sense?",
-            "That's a fair point, but is it worth it?",
-            "We ended up with a proposal — let me walk you through it.",
-            "That's a fair point. It's worth considering.",
-            "Does it make sense to end up with this approach?",
-            "Let's walk through it once more — that's a fair point.",
-            "I think it's worth walking through this once more.",
-            "I think that's a fair point, but does it make sense?",
-            "I think we'll end up with something worth it.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "code-review-phrases",
-      title: "Code Review: фразы",
-      groups: [
-        {
-          title: "Code Review",
-          items: [
-            "I'd like to keep it as is because changing it would affect the API contract.",
-            "I think this should be handled at the service level, not here.",
-            "This might cause issues under high load — worth checking.",
-            "I'm not sure about this approach — can you walk me through it?",
-            "I went with this approach because it keeps the logic in one place.",
-            "That's a good idea — I'll open a separate ticket so we don't block this PR.",
-            "Can we take this offline? It's a bigger discussion than a PR comment.",
-            "This is a potential edge case — what happens if the list is empty?",
-            "This logic could be simplified — see my suggestion below.",
-            "Have you considered using a transaction here?",
-            "What if we extract this into a separate method?",
-            "It might be worth adding a comment here to explain the logic.",
-            "Approved with nits — feel free to merge, the comments are optional.",
-            "You can resolve the comment once you've made the change.",
-            "Can you explain why you chose this approach over X?",
-            "That refactoring is out of scope for this PR — let's do it separately.",
-            "We usually assign two reviewers for critical changes.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "architecture-system-design",
-      title: "Architecture & System Design",
-      groups: [
-        {
-          title: "Архитектурные паттерны",
-          items: [
-            "We started with a monolith, but it became hard to scale.",
-            "Each microservice owns its own database and logic.",
-            "We use event-driven architecture to decouple services.",
-            "We use a message queue to decouple the producer from the consumer.",
-          ],
-        },
-        {
-          title: "Надёжность и отказоустойчивость",
-          items: [
-            "We target 99.9% availability — that's about 8 hours of downtime per year.",
-            "The system needs to be fault tolerant — one node going down shouldn't affect users.",
-            "We added redundancy by running three instances in different availability zones.",
-            "The database is a single point of failure — we need replication.",
-            "Failover kicks in automatically when the primary goes down.",
-            "Strong consistency is hard to achieve in a distributed system.",
-            "We use eventual consistency — reads might be slightly stale.",
-            "The CAP theorem says you can only guarantee two out of three properties.",
-          ],
-        },
-        {
-          title: "Проектирование системы",
-          items: [
-            "Scalability was the main reason we moved away from the monolith.",
-            "There's always a trade-off between consistency and availability.",
-            "We went with a different approach — event-driven instead of synchronous calls.",
-            "The current design doesn't handle failover well.",
-            "The design is solid, but the implementation has some gaps.",
-            "Let me walk you through the request flow in this architecture.",
-            "Tight coupling makes it hard to deploy services independently.",
-            "We aim for loose coupling so teams can deploy independently.",
-            "This service has a hard dependency on the auth service.",
-          ],
-        },
-      ],
-    },
-  ];
-
-  const SHADOWING_TRANSLATIONS = {
-    "Walk me through it.": "Объясни мне это пошагово.",
-    "Let me walk you through it.": "Позвольте мне объяснить это пошагово.",
-    "Let me walk you through the proposal.": "Позвольте мне подробно объяснить предложение.",
-    "Let me walk you through the approach.": "Позвольте мне подробно объяснить этот подход.",
-    "Can you walk me through this once more?": "Можешь ещё раз объяснить это пошагово?",
-    "Let's walk through it together.": "Давайте разберём это вместе.",
-    "I think we should walk through it first.": "Думаю, сначала нам стоит это разобрать.",
-    "Makes sense.": "Логично.",
-    "That makes sense.": "Это логично.",
-    "It makes sense.": "В этом есть смысл.",
-    "Does it make sense?": "В этом есть смысл?",
-    "Does that make sense to you?": "Для тебя это имеет смысл?",
-    "It makes sense to consider this.": "Имеет смысл это рассмотреть.",
-    "I think that makes sense.": "Думаю, это логично.",
-    "We ended up with a proposal.": "В итоге у нас получилось предложение.",
-    "We ended up with a different approach.": "В итоге мы выбрали другой подход.",
-    "We might end up with issues.": "В итоге у нас могут возникнуть проблемы.",
-    "We could end up with something better.": "В итоге мы можем получить что-то лучшее.",
-    "In the end, we ended up with this.": "В конце концов мы пришли к этому.",
-    "I think we'll end up with a better result.": "Думаю, в итоге мы получим лучший результат.",
-    "That's a fair point.": "Это справедливое замечание.",
-    "That's a fair point, actually.": "Вообще-то это справедливое замечание.",
-    "That's a fair point, but consider this.": "Это справедливое замечание, но учтите вот что.",
-    "I hear you — that's a fair point.": "Я тебя понимаю — это справедливое замечание.",
-    "That's a fair point, let's walk through it.": "Это справедливое замечание, давайте всё разберём.",
-    "I think that's a fair point.": "Думаю, это справедливое замечание.",
-    "It's worth it.": "Оно того стоит.",
-    "It's worth considering.": "Это стоит рассмотреть.",
-    "Is it worth it?": "Оно того стоит?",
-    "Is it worth considering this approach?": "Стоит ли рассмотреть этот подход?",
-    "It's not worth it.": "Оно того не стоит.",
-    "It's worth a second look.": "На это стоит взглянуть ещё раз.",
-    "I think it's worth it.": "Думаю, оно того стоит.",
-    "Let me walk you through it — does it make sense?": "Позвольте мне объяснить это пошагово — теперь понятно?",
-    "That's a fair point, but is it worth it?": "Это справедливое замечание, но стоит ли оно того?",
-    "We ended up with a proposal — let me walk you through it.": "В итоге у нас получилось предложение — позвольте мне подробно его объяснить.",
-    "That's a fair point. It's worth considering.": "Это справедливое замечание. Его стоит рассмотреть.",
-    "Does it make sense to end up with this approach?": "Есть ли смысл в итоге остановиться на этом подходе?",
-    "Let's walk through it once more — that's a fair point.": "Давайте разберём это ещё раз — это справедливое замечание.",
-    "I think it's worth walking through this once more.": "Думаю, стоит разобрать это ещё раз.",
-    "I think that's a fair point, but does it make sense?": "Думаю, это справедливое замечание, но есть ли в этом смысл?",
-    "I think we'll end up with something worth it.": "Думаю, в итоге мы получим что-то стоящее.",
-    "I'd like to keep it as is because changing it would affect the API contract.": "Я бы оставил всё как есть, потому что изменение повлияет на контракт API.",
-    "I think this should be handled at the service level, not here.": "Думаю, это нужно обрабатывать на уровне сервиса, а не здесь.",
-    "This might cause issues under high load — worth checking.": "Это может вызвать проблемы при высокой нагрузке — стоит проверить.",
-    "I'm not sure about this approach — can you walk me through it?": "Я не уверен насчёт этого подхода — можешь объяснить его подробнее?",
-    "I went with this approach because it keeps the logic in one place.": "Я выбрал этот подход, потому что он позволяет держать логику в одном месте.",
-    "That's a good idea — I'll open a separate ticket so we don't block this PR.": "Хорошая идея — я открою отдельный тикет, чтобы не блокировать этот PR.",
-    "Can we take this offline? It's a bigger discussion than a PR comment.": "Можем обсудить это отдельно? Эта тема шире, чем комментарий к PR.",
-    "This is a potential edge case — what happens if the list is empty?": "Это потенциальный граничный случай — что произойдёт, если список пуст?",
-    "This logic could be simplified — see my suggestion below.": "Эту логику можно упростить — смотри моё предложение ниже.",
-    "Have you considered using a transaction here?": "Ты рассматривал возможность использовать здесь транзакцию?",
-    "What if we extract this into a separate method?": "А что, если мы вынесем это в отдельный метод?",
-    "It might be worth adding a comment here to explain the logic.": "Возможно, стоит добавить здесь комментарий, поясняющий логику.",
-    "Approved with nits — feel free to merge, the comments are optional.": "Одобрено с мелкими замечаниями — можешь мержить, комментарии необязательные.",
-    "You can resolve the comment once you've made the change.": "Можно закрыть комментарий после того, как внесёшь изменение.",
-    "Can you explain why you chose this approach over X?": "Можешь объяснить, почему ты выбрал этот подход вместо X?",
-    "That refactoring is out of scope for this PR — let's do it separately.": "Этот рефакторинг выходит за рамки данного PR — давай сделаем его отдельно.",
-    "We usually assign two reviewers for critical changes.": "Обычно мы назначаем двух ревьюеров для критически важных изменений.",
-    "Scalability was the main reason we moved away from the monolith.": "Масштабируемость была главной причиной, по которой мы отказались от монолита.",
-    "There's always a trade-off between consistency and availability.": "Между согласованностью и доступностью всегда есть компромисс.",
-    "We went with a different approach — event-driven instead of synchronous calls.": "Мы выбрали другой подход — событийно-управляемую архитектуру вместо синхронных вызовов.",
-    "The current design doesn't handle failover well.": "Текущая архитектура плохо справляется с переключением на резервный компонент.",
-    "The design is solid, but the implementation has some gaps.": "Архитектурное решение надёжное, но в реализации есть некоторые пробелы.",
-    "Let me walk you through the request flow in this architecture.": "Позвольте мне пошагово показать, как запрос проходит через эту архитектуру.",
-    "Tight coupling makes it hard to deploy services independently.": "Сильная связанность затрудняет независимое развёртывание сервисов.",
-    "We aim for loose coupling so teams can deploy independently.": "Мы стремимся к слабой связанности, чтобы команды могли выполнять развёртывание независимо.",
-    "This service has a hard dependency on the auth service.": "Этот сервис жёстко зависит от сервиса аутентификации.",
-  };
-
-  function fixBrokenWordSpacing(value) {
-    return String(value || "")
-      .replace(/\b([A-Za-z']*[a-z])I('ve)?\b/g, "$1 I$2")
-      .replace(/\b(and|when|that|as|if|Yesterday|night|but|you)I\b/gi, "$1 I")
-      .replace(/\b(should|must|haven't|shouldn't|mustn't)I\b/gi, "$1 I")
-      .replace(/\bcan'the\b/gi, "can't he")
-      .replace(/\bisn'tit\b/gi, "isn't it")
-      .replace(/\bshouldn'twe\b/gi, "shouldn't we")
-      .replace(/\bgot[аa]\b/gi, "got a")
-      .replace(/\bfinda\b/gi, "find a")
-      .replace(/\bwasa\b/gi, "was a")
-      .replace(/\bisa\b/gi, "is a")
-      .replace(/\bshea\b/gi, "she a")
-      .replace(/\btimesa\b/gi, "times a")
-      .replace(/\bfora\b/gi, "for a")
-      .replace(/\bsucha\b/gi, "such a")
-      .replace(/\blikea\b/gi, "like a")
-      .replace(/\bina\b/gi, "in a")
-      .replace(/\bmakinga\b/gi, "making a")
-      .replace(/\btraininga\b/gi, "training a")
-      .replace(/\bHavea\b/g, "Have a")
-      .replace(/\bhavea\b/g, "have a")
-      .replace(/\bgeta\b/gi, "get a")
-      .replace(/\btheInternet\b/g, "the Internet")
-      .replace(/\btodo\b/gi, "to do")
-      .replace(/\bbust\b/gi, "busy")
-      .replace(/\bknowning\b/gi, "knowing");
-  }
-
-  function sanitizeQuestion(question) {
-    if (!question || typeof question !== "object") return question;
-
-    const options = question.options && typeof question.options === "object"
-      ? Object.fromEntries(
-          Object.entries(question.options).map(([key, value]) => [key, fixBrokenWordSpacing(value)])
-        )
-      : question.options;
-
-    return {
-      ...question,
-      prompt: fixBrokenWordSpacing(question.prompt),
-      answer: fixBrokenWordSpacing(question.answer),
-      options,
-    };
-  }
-
-  Object.keys(allLevels).forEach((level) => {
-    const questions = allLevels[level];
-    if (!Array.isArray(questions)) return;
-    allLevels[level] = questions.map(sanitizeQuestion);
-  });
 
   const refs = {
     levelSelect: document.getElementById("level-select"),
@@ -1458,6 +117,10 @@
     vocabListClose: document.getElementById('vocab-list-close'),
   };
 
+  const { stopSpeech, speakEnglishText, refreshSpeechVoices } = window.Trainer.createSpeech(window);
+  const activity = window.Trainer.createActivity(window);
+  const progress = window.Trainer.createProgressStore(window);
+
   const card = document.querySelector(".card");
 
   function makeAudioCtx() {
@@ -1517,24 +180,32 @@
     card.addEventListener("animationend", () => card.classList.remove("correct-flash"), { once: true });
   }
 
-  const state = {
+  const viewState = {
+    translationCache: new Map(),
+    sentenceTranslationRequestId: 0,
+    selectedSentenceForSpeech: "",
+  };
+
+  const grammarState = {
     session: [],
     idx: 0,
     correct: 0,
     wrong: 0,
     checkedCurrent: false,
     wrongCounted: false,
-    autoNextTimer: null,
-    translationCache: new Map(),
-    sentenceTranslationRequestId: 0,
-    selectedSentenceForSpeech: "",
-    speechVoices: [],
     autoSpeakCorrect: true,
-    speechPlaybackToken: 0,
-    emptyVocabEnterPromptIdx: -1,
   };
 
-  const vocabState = { session: [], idx: 0, correct: 0, wrong: 0, checkedCurrent: false, wrongCounted: false };
+  const vocabState = {
+    session: [],
+    idx: 0,
+    correct: 0,
+    wrong: 0,
+    checkedCurrent: false,
+    wrongCounted: false,
+    autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
+    emptyEnterPromptIdx: -1,
+  };
   const listeningState = {
     session: [],
     idx: 0,
@@ -1555,9 +226,6 @@
     recognition: null,
     attemptToken: 0,
     isListening: false,
-    retryTimer: null,
-    recognitionSilenceTimer: null,
-    recognitionMaxTimer: null,
   };
 
   function asNumber(value, fallback) {
@@ -1705,230 +373,6 @@
     return shuffled;
   }
 
-  function currentLevel() {
-    return refs.levelSelect.value;
-  }
-
-  function questionTranslationOverride(question, level = currentLevel()) {
-    if (!question || typeof question.id !== "number") return "";
-    return QUESTION_TRANSLATION_OVERRIDES[`${level}:${question.id}`] || "";
-  }
-
-  function orderedQuestionsForLevel(level) {
-    const src = allLevels[level];
-    if (!Array.isArray(src)) return [];
-    return src.slice().sort((a, b) => a.id - b.id);
-  }
-
-  function grammarTopicsForLevel(level) {
-    const topics = GRAMMAR_TOPICS[level] || [];
-    const questions = orderedQuestionsForLevel(level);
-    if (!questions.length) return [];
-
-    return topics
-      .map((topic) => {
-        const count = questions.filter((q) => q.id >= topic.from && q.id <= topic.to).length;
-        return { ...topic, count };
-      })
-      .filter((topic) => topic.count > 0);
-  }
-
-  function currentGrammarTopic() {
-    return refs.grammarTopic.value || ALL_GRAMMAR_TOPICS_VALUE;
-  }
-
-  function selectedGrammarTopicForLevel(level = currentLevel()) {
-    const topicId = currentGrammarTopic();
-    if (topicId === ALL_GRAMMAR_TOPICS_VALUE) return null;
-    return grammarTopicsForLevel(level).find((topic) => topic.id === topicId) || null;
-  }
-
-  function questionsForCurrentGrammarTopic(level = currentLevel()) {
-    const questions = orderedQuestionsForLevel(level);
-    const topic = selectedGrammarTopicForLevel(level);
-    if (!topic) return questions;
-    return questions.filter((q) => q.id >= topic.from && q.id <= topic.to);
-  }
-
-  function grammarTopicGroupFor(topic) {
-    const searchable = `${topic.id} ${topic.title}`;
-    return GRAMMAR_TOPIC_GROUPS.find((group) => group.pattern.test(searchable))
-      || GRAMMAR_TOPIC_GROUPS[GRAMMAR_TOPIC_GROUPS.length - 1];
-  }
-
-  function groupedGrammarTopics(level = currentLevel()) {
-    const grouped = new Map(GRAMMAR_TOPIC_GROUPS.map((group) => [group.id, { ...group, topics: [] }]));
-    grammarTopicsForLevel(level).forEach((topic) => {
-      const group = grammarTopicGroupFor(topic);
-      grouped.get(group.id).topics.push(topic);
-    });
-    return GRAMMAR_TOPIC_GROUPS
-      .map((group) => grouped.get(group.id))
-      .filter((group) => group.topics.length > 0);
-  }
-
-  function formatGrammarCount(count, forms) {
-    const value = Math.max(0, Number(count) || 0);
-    const lastTwo = value % 100;
-    const last = value % 10;
-    const form = lastTwo >= 11 && lastTwo <= 14
-      ? forms[2]
-      : (last === 1 ? forms[0] : (last >= 2 && last <= 4 ? forms[1] : forms[2]));
-    return `${value} ${form}`;
-  }
-
-  function currentGrammarTopicDetails(level = currentLevel()) {
-    const value = currentGrammarTopic();
-    if (value === ALL_GRAMMAR_TOPICS_VALUE) {
-      return {
-        id: ALL_GRAMMAR_TOPICS_VALUE,
-        title: 'Все темы',
-        count: orderedQuestionsForLevel(level).length,
-        icon: '🧭',
-      };
-    }
-    const topic = grammarTopicsForLevel(level).find((candidate) => candidate.id === value);
-    if (!topic) return null;
-    return { ...topic, icon: grammarTopicGroupFor(topic).icon };
-  }
-
-  function syncGrammarTopicTrigger() {
-    const topic = currentGrammarTopicDetails();
-    if (!topic) return;
-    refs.grammarTopicTriggerIcon.textContent = topic.icon;
-    refs.grammarTopicTriggerText.textContent = topic.title;
-    refs.grammarTopicTrigger.title = topic.title;
-  }
-
-  function appendGrammarTopicCard(parent, topic, icon, selectedValue) {
-    const cardButton = document.createElement('button');
-    const isSelected = topic.id === selectedValue;
-    cardButton.type = 'button';
-    cardButton.className = `vocab-topic-card grammar-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
-    cardButton.dataset.topicValue = topic.id;
-    cardButton.setAttribute('role', 'option');
-    cardButton.setAttribute('aria-selected', String(isSelected));
-
-    const cardIcon = document.createElement('span');
-    cardIcon.className = 'vocab-topic-card-icon grammar-topic-card-icon';
-    cardIcon.setAttribute('aria-hidden', 'true');
-    cardIcon.textContent = icon;
-
-    const copy = document.createElement('span');
-    copy.className = 'vocab-topic-card-copy';
-    const title = document.createElement('strong');
-    title.textContent = topic.title;
-    const count = document.createElement('span');
-    count.textContent = formatGrammarCount(topic.count, ['вопрос', 'вопроса', 'вопросов']);
-    copy.appendChild(title);
-    copy.appendChild(count);
-
-    const check = document.createElement('span');
-    check.className = 'vocab-topic-card-check';
-    check.setAttribute('aria-hidden', 'true');
-    check.textContent = '✓';
-
-    cardButton.appendChild(cardIcon);
-    cardButton.appendChild(copy);
-    cardButton.appendChild(check);
-    cardButton.addEventListener('click', () => {
-      if (refs.grammarTopic.value !== topic.id) {
-        refs.grammarTopic.value = topic.id;
-        refs.grammarTopic.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-      hideGrammarTopicPicker();
-    });
-    parent.appendChild(cardButton);
-  }
-
-  function renderGrammarTopicGroups(level = currentLevel()) {
-    const selectedValue = currentGrammarTopic();
-    const allTopic = {
-      id: ALL_GRAMMAR_TOPICS_VALUE,
-      title: 'Все темы',
-      count: orderedQuestionsForLevel(level).length,
-    };
-    refs.grammarTopicGroups.innerHTML = '';
-
-    const allContainer = document.createElement('div');
-    allContainer.className = 'grammar-topic-all';
-    appendGrammarTopicCard(allContainer, allTopic, '🧭', selectedValue);
-    refs.grammarTopicGroups.appendChild(allContainer);
-
-    groupedGrammarTopics(level).forEach((group) => {
-      const section = document.createElement('section');
-      section.className = 'grammar-topic-group';
-      section.setAttribute('role', 'group');
-
-      const header = document.createElement('header');
-      header.className = 'grammar-topic-group-header';
-      const icon = document.createElement('span');
-      icon.className = 'grammar-topic-group-icon';
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = group.icon;
-      const headingCopy = document.createElement('div');
-      const title = document.createElement('h3');
-      title.textContent = group.title;
-      const summary = document.createElement('p');
-      const questionCount = group.topics.reduce((total, topic) => total + topic.count, 0);
-      summary.textContent = `${formatGrammarCount(group.topics.length, ['тема', 'темы', 'тем'])} · ${formatGrammarCount(questionCount, ['вопрос', 'вопроса', 'вопросов'])}`;
-      headingCopy.appendChild(title);
-      headingCopy.appendChild(summary);
-      header.appendChild(icon);
-      header.appendChild(headingCopy);
-
-      const cards = document.createElement('div');
-      cards.className = 'grammar-topic-card-grid';
-      group.topics.forEach((topic) => appendGrammarTopicCard(cards, topic, group.icon, selectedValue));
-
-      section.appendChild(header);
-      section.appendChild(cards);
-      refs.grammarTopicGroups.appendChild(section);
-    });
-  }
-
-  function showGrammarTopicPicker() {
-    ensureGrammarTopicOptions(currentLevel());
-    renderGrammarTopicGroups(currentLevel());
-    const topics = grammarTopicsForLevel(currentLevel());
-    refs.grammarTopicModalSubtitle.textContent = `${currentLevel()} · ${formatGrammarCount(topics.length, ['тема', 'темы', 'тем'])} · ${formatGrammarCount(orderedQuestionsForLevel(currentLevel()).length, ['вопрос', 'вопроса', 'вопросов'])}`;
-    refs.grammarTopicOverlay.hidden = false;
-    refs.grammarTopicTrigger.setAttribute('aria-expanded', 'true');
-    const selectedCard = refs.grammarTopicGroups.querySelector('.vocab-topic-card--selected');
-    (selectedCard || refs.grammarTopicClose).focus();
-  }
-
-  function hideGrammarTopicPicker() {
-    refs.grammarTopicOverlay.hidden = true;
-    refs.grammarTopicTrigger.setAttribute('aria-expanded', 'false');
-    refs.grammarTopicTrigger.focus();
-  }
-
-  function ensureGrammarTopicOptions(level = currentLevel(), preferredValue = refs.grammarTopic.value) {
-    const previous = preferredValue || ALL_GRAMMAR_TOPICS_VALUE;
-    refs.grammarTopic.innerHTML = "";
-
-    const allOpt = document.createElement("option");
-    allOpt.value = ALL_GRAMMAR_TOPICS_VALUE;
-    allOpt.textContent = "Все темы";
-    refs.grammarTopic.appendChild(allOpt);
-
-    grammarTopicsForLevel(level).forEach((topic) => {
-      const opt = document.createElement("option");
-      opt.value = topic.id;
-      opt.textContent = `${topic.title} (${topic.count})`;
-      refs.grammarTopic.appendChild(opt);
-    });
-
-    const hasPrevious = Array.from(refs.grammarTopic.options).some((opt) => opt.value === previous);
-    refs.grammarTopic.value = hasPrevious ? previous : ALL_GRAMMAR_TOPICS_VALUE;
-    syncGrammarTopicTrigger();
-  }
-
-  function pickSession() {
-    return questionsForCurrentGrammarTopic();
-  }
-
   function setFeedback(text, ok) {
     refs.feedback.textContent = text;
     refs.feedback.classList.remove("ok", "bad");
@@ -1946,13 +390,13 @@
         mode: currentMode,
         level: currentLevel(),
         grammarTopic: currentGrammarTopic(),
-        autoSpeakCorrect: state.autoSpeakCorrect,
-        idx: state.idx,
-        correct: state.correct,
-        wrong: state.wrong,
+        autoSpeakCorrect: grammarState.autoSpeakCorrect,
+        idx: grammarState.idx,
+        correct: grammarState.correct,
+        wrong: grammarState.wrong,
         vocabulary: {
           topic: refs.vocabTopic.value,
-          autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
+          autoSpeakCorrect: vocabState.autoSpeakCorrect,
           order: vocabState.session.map((item) => item && item.id).filter((id) => id != null),
           idx: vocabState.idx,
           correct: vocabState.correct,
@@ -1980,28 +424,20 @@
           topic: refs.theoryTopic.value,
         },
       };
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      progress.save(payload);
     } catch (_error) {
       // Ignore storage errors (private mode, quota, etc.)
     }
   }
 
-  function clearAutoNextTimer() {
-    if (state.autoNextTimer) {
-      window.clearTimeout(state.autoNextTimer);
-      state.autoNextTimer = null;
-    }
+  function cancelPendingActivity() {
+    activity.cancelAll();
     stopSpeech();
   }
 
   function restoreProgress() {
     try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (!raw) {
-        return false;
-      }
-
-      const parsed = JSON.parse(raw);
+      const parsed = progress.load();
       if (!parsed || typeof parsed !== "object") {
         return false;
       }
@@ -2018,13 +454,13 @@
       const idx = Math.max(0, Math.min(asNumber(parsed.idx, 0), session.length - 1));
       const correct = Math.max(0, asNumber(parsed.correct, 0));
       const wrong = Math.max(0, asNumber(parsed.wrong, 0));
-      state.autoSpeakCorrect = parsed.autoSpeakCorrect !== false;
-      refs.autoSpeakCorrect.checked = state.autoSpeakCorrect;
+      grammarState.autoSpeakCorrect = parsed.autoSpeakCorrect !== false;
+      refs.autoSpeakCorrect.checked = grammarState.autoSpeakCorrect;
 
-      state.session = session;
-      state.idx = idx;
-      state.correct = correct;
-      state.wrong = wrong;
+      grammarState.session = session;
+      grammarState.idx = idx;
+      grammarState.correct = correct;
+      grammarState.wrong = wrong;
       restoreVocabProgress(parsed.vocabulary);
       restoreListeningProgress(parsed.listening);
       restoreShadowingProgress(parsed.shadowing);
@@ -2036,10 +472,6 @@
     } catch (_error) {
       return false;
     }
-  }
-
-  function currentQuestion() {
-    return state.session[state.idx] || null;
   }
 
   function displayPrompt(prompt) {
@@ -2078,96 +510,12 @@
 
   function setSelectedSentenceForSpeech(sentence) {
     const normalized = String(sentence || "").trim();
-    state.selectedSentenceForSpeech = normalized;
+    viewState.selectedSentenceForSpeech = normalized;
     refs.speakWordBtn.disabled = !normalized;
   }
 
-  function buildEnglishUtterance(text, options = {}) {
-    if (!("speechSynthesis" in window) || typeof window.SpeechSynthesisUtterance !== "function") {
-      return null;
-    }
-
-    const normalized = String(text || "").trim();
-    if (!normalized) return null;
-
-    const utterance = new window.SpeechSynthesisUtterance(normalized);
-    const voices = state.speechVoices.length ? state.speechVoices : window.speechSynthesis.getVoices();
-    const preferredVoice = pickPreferredEnglishVoice(voices);
-    if (preferredVoice) {
-      utterance.voice = preferredVoice;
-      utterance.lang = preferredVoice.lang || "en-US";
-    } else {
-      utterance.lang = "en-US";
-    }
-    utterance.rate = Number.isFinite(Number(options.rate)) ? Number(options.rate) : 0.9;
-    utterance.pitch = 1;
-    return utterance;
-  }
-
-  function stopSpeech() {
-    state.speechPlaybackToken += 1;
-    if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
-  }
-
-  function speakEnglishText(text, { onComplete, rate } = {}) {
-    const utterance = buildEnglishUtterance(text, { rate });
-    if (!utterance) {
-      return false;
-    }
-
-    const token = state.speechPlaybackToken + 1;
-    state.speechPlaybackToken = token;
-
-    const finish = () => {
-      if (token !== state.speechPlaybackToken) return;
-      if (typeof onComplete === "function") {
-        onComplete();
-      }
-    };
-
-    utterance.addEventListener("end", finish, { once: true });
-    utterance.addEventListener("error", finish, { once: true });
-
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-    return true;
-  }
-
-  function refreshSpeechVoices() {
-    if (!("speechSynthesis" in window)) {
-      state.speechVoices = [];
-      return;
-    }
-    state.speechVoices = window.speechSynthesis.getVoices() || [];
-  }
-
-  function pickPreferredEnglishVoice(voices) {
-    if (!Array.isArray(voices) || !voices.length) return null;
-
-    const preferredNamePattern = /(Google US English|Samantha|Alex|Daniel|Karen|Moira|Tessa|Serena|Jenny|Aria|Guy|Libby)/i;
-    const lowQualityPattern = /(eSpeak|compact|festival|pico|robot)/i;
-
-    const candidates = voices
-      .filter((voice) => /^en[-_]/i.test(voice.lang || ""))
-      .map((voice) => {
-        let score = 0;
-        if (/^en[-_]US/i.test(voice.lang || "")) score += 50;
-        if (/^en[-_]GB/i.test(voice.lang || "")) score += 40;
-        if (voice.localService) score += 8;
-        if (preferredNamePattern.test(voice.name || "")) score += 25;
-        if (/(Neural|Natural|Enhanced|Premium)/i.test(voice.name || "")) score += 12;
-        if (lowQualityPattern.test(voice.name || "")) score -= 30;
-        return { voice, score };
-      })
-      .sort((a, b) => b.score - a.score);
-
-    return candidates.length ? candidates[0].voice : null;
-  }
-
   function speakSelectedSentence() {
-    const sentence = state.selectedSentenceForSpeech;
+    const sentence = viewState.selectedSentenceForSpeech;
     if (!sentence) return;
 
     const started = speakEnglishText(sentence, {
@@ -2208,7 +556,7 @@
 
   async function getSentenceTranslation(sentence) {
     const cacheKey = `sentence:${sentence}`;
-    const cached = state.translationCache.get(cacheKey);
+    const cached = viewState.translationCache.get(cacheKey);
     if (cached) {
       return cached;
     }
@@ -2216,7 +564,7 @@
     const payload = await fetchTranslationPayload(sentence);
     const translated = extractSentenceTranslation(payload);
     if (translated) {
-      state.translationCache.set(cacheKey, translated);
+      viewState.translationCache.set(cacheKey, translated);
     }
     return translated;
   }
@@ -2240,20 +588,20 @@
       return;
     }
 
-    const reqId = state.sentenceTranslationRequestId + 1;
-    state.sentenceTranslationRequestId = reqId;
+    const reqId = viewState.sentenceTranslationRequestId + 1;
+    viewState.sentenceTranslationRequestId = reqId;
     setQuestionTranslation("Перевожу предложение...");
 
     try {
       const translated = await getSentenceTranslation(resolvedPrompt);
-      if (reqId !== state.sentenceTranslationRequestId) return;
+      if (reqId !== viewState.sentenceTranslationRequestId) return;
       if (!translated) {
         setQuestionTranslation("Не нашел перевод предложения.");
         return;
       }
       setQuestionTranslation(translated);
     } catch (_error) {
-      if (reqId !== state.sentenceTranslationRequestId) return;
+      if (reqId !== viewState.sentenceTranslationRequestId) return;
       setQuestionTranslation("Не удалось получить перевод предложения. Проверь интернет.");
     }
   }
@@ -2262,1569 +610,168 @@
     refs.sessionComplete.hidden = true;
   }
 
-  function queueNextQuestionAfterCorrect(question) {
-    clearAutoNextTimer();
-
-    const resolvedPrompt = fillPromptWithAnswer(question && question.prompt, question && question.answer);
-    if (state.autoSpeakCorrect && resolvedPrompt) {
-      const started = speakEnglishText(resolvedPrompt, {
-        onComplete: () => {
-          nextQuestion();
-          saveProgress();
-        },
-      });
-      if (started) {
-        return;
-      }
-    }
-
-    state.autoNextTimer = window.setTimeout(() => {
-      state.autoNextTimer = null;
-      nextQuestion();
-      saveProgress();
-    }, AUTO_NEXT_DELAY_MS);
-  }
-
-  function pickVocabSession() {
-    const topicValue = refs.vocabTopic.value;
-    if (topicValue === 'all') {
-      return shuffleItems(vocabTopics.flatMap(t => t.words || []));
-    } else {
-      const topic = vocabTopics.find(t => t.topic === topicValue);
-      return shuffleItems(topic ? (topic.words || []) : []);
-    }
-  }
-
-  function vocabWordsForTopicValue(topicValue) {
-    if (topicValue === 'all') {
-      return vocabTopics.flatMap(t => t.words || []);
-    }
-    const topic = vocabTopics.find(t => t.topic === topicValue);
-    return topic ? (topic.words || []).slice() : [];
-  }
-
-  function currentVocabTopicTitle(topicValue = refs.vocabTopic.value) {
-    return topicValue === 'all' ? 'Все темы' : topicValue;
-  }
-
-  function escapeRegExp(value) {
-    return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
-
-  function vocabExampleCandidates(item) {
-    const values = [
-      item && item.answer,
-      item && item.word,
-      item && item.infinitive,
-      ...((item && Array.isArray(item.answers)) ? item.answers.map((answer) => answer && answer.text) : []),
-    ];
-
-    return [...new Set(values
-      .flatMap((value) => String(value || '').split('/'))
-      .map((value) => value.trim().replace(/^to\s+/i, ''))
-      .filter((value) => value.length > 1))]
-      .sort((a, b) => b.length - a.length);
-  }
-
-  function vocabExampleTokenPattern(token) {
-    const normalized = String(token || '').toLocaleLowerCase('en-US');
-    const irregular = {
-      leave: '(?:leave|leaves|leaving|left)',
-      take: '(?:take|takes|taking|took|taken)',
-    };
-    if (irregular[normalized]) return irregular[normalized];
-    if (normalized.endsWith('e') && normalized.length > 3) {
-      return `${escapeRegExp(normalized.slice(0, -1))}(?:e|ed|es|ing)?`;
-    }
-    if (normalized.endsWith('s')) {
-      return `${escapeRegExp(normalized)}(?:ed|es|ing)?`;
-    }
-    return `${escapeRegExp(normalized)}(?:s|ed|ing)?`;
-  }
-
-  function normalizeVocabExampleRanges(ranges) {
-    return ranges
-      .sort((a, b) => a.start - b.start || a.end - b.end)
-      .reduce((result, range) => {
-        const previous = result[result.length - 1];
-        if (previous && range.start < previous.end) {
-          previous.end = Math.max(previous.end, range.end);
-        } else {
-          result.push({ start: range.start, end: range.end });
-        }
-        return result;
-      }, []);
-  }
-
-  function vocabExampleTokenRanges(example, candidate) {
-    const ignoredWords = new Set(['the', 'to', 'and', 'for', 'from', 'with', 'this', 'that']);
-    const tokens = [...new Set(String(candidate || '').match(/[A-Za-z0-9']+/g) || [])]
-      .filter((token) => token.length > 1 && !ignoredWords.has(token.toLocaleLowerCase('en-US')))
-      .sort((a, b) => b.length - a.length);
-
-    const ranges = [];
-    tokens.forEach((token) => {
-      const pattern = new RegExp(`\\b${vocabExampleTokenPattern(token)}\\b`, 'gi');
-      for (const match of example.matchAll(pattern)) {
-        ranges.push({ start: match.index, end: match.index + match[0].length });
-      }
-    });
-    return normalizeVocabExampleRanges(ranges);
-  }
-
-  function vocabExampleTargetRanges(item) {
-    const example = String((item && item.example) || '').trim();
-    if (!example) return [];
-
-    for (const candidate of vocabExampleCandidates(item)) {
-      const match = new RegExp(escapeRegExp(candidate), 'i').exec(example);
-      if (match) return [{ start: match.index, end: match.index + match[0].length }];
-    }
-
-    for (const candidate of vocabExampleCandidates(item)) {
-      const ranges = vocabExampleTokenRanges(example, candidate);
-      if (ranges.length) return ranges;
-    }
-    return [];
-  }
-
-  function maskedVocabExample(item) {
-    const example = String((item && item.example) || '').trim();
-    if (!example) return '';
-    const ranges = vocabExampleTargetRanges(item);
-    if (!ranges.length) return example;
-
-    let result = '';
-    let cursor = 0;
-    ranges.forEach((range) => {
-      result += example.slice(cursor, range.start);
-      result += example.slice(range.start, range.end)
-        .split(/\s+/)
-        .map(() => '_____')
-        .join(' ');
-      cursor = range.end;
-    });
-    return result + example.slice(cursor);
-  }
-
-  function renderRevealedVocabExample(item, result) {
-    const example = String((item && item.example) || '').trim();
-    const ranges = vocabExampleTargetRanges(item);
-    refs.vocabExampleText.textContent = '';
-
-    if (!ranges.length) {
-      refs.vocabExampleText.textContent = example;
-      return;
-    }
-
-    let cursor = 0;
-    ranges.forEach((range) => {
-      refs.vocabExampleText.appendChild(document.createTextNode(example.slice(cursor, range.start)));
-      const answer = document.createElement('span');
-      answer.className = `vocab-example-answer vocab-example-answer--${result}`;
-      answer.textContent = example.slice(range.start, range.end);
-      refs.vocabExampleText.appendChild(answer);
-      cursor = range.end;
-    });
-    refs.vocabExampleText.appendChild(document.createTextNode(example.slice(cursor)));
-  }
-
-  function renderVocabExample(item, result = '') {
-    const example = String((item && item.example) || '').trim();
-    const revealAnswer = result === 'correct' || result === 'wrong';
-    refs.vocabExample.hidden = !example;
-    refs.vocabExample.classList.toggle('vocab-example--revealed', Boolean(example && revealAnswer));
-    if (!example) {
-      refs.vocabExampleText.textContent = '';
-    } else if (revealAnswer) {
-      renderRevealedVocabExample(item, result);
-    } else {
-      refs.vocabExampleText.textContent = maskedVocabExample(item);
-    }
-  }
-
-  function vocabTopicIcon(topicValue) {
-    const topic = String(topicValue || '').toLocaleLowerCase('ru-RU');
-    if (topicValue === 'all') return '🧭';
-    if (topic.includes('архитектур')) return '🏗️';
-    if (topic.includes('database') || topic.includes('postgres')) return '🗄️';
-    if (topic.includes('инцидент')) return '🚨';
-    if (topic.includes('производительност') || topic.includes('масштабируемост')) return '⚡';
-    if (topic.includes('бэкенд') || topic.includes('api')) return '🔌';
-    if (topic.includes('стендап') || topic.includes('митинг')) return '💬';
-    if (topic.includes('code review') && topic.includes('процесс')) return '✅';
-    if (topic.includes('code review')) return '🔍';
-    return '📘';
-  }
-
-  function formatVocabWordCount(count) {
-    const value = Math.max(0, Number(count) || 0);
-    const lastTwo = value % 100;
-    const last = value % 10;
-    const label = lastTwo >= 11 && lastTwo <= 14
-      ? 'слов'
-      : (last === 1 ? 'слово' : (last >= 2 && last <= 4 ? 'слова' : 'слов'));
-    return `${value} ${label}`;
-  }
-
-  function syncVocabTopicTrigger() {
-    const topicValue = refs.vocabTopic.value || 'all';
-    refs.vocabTopicTriggerIcon.textContent = vocabTopicIcon(topicValue);
-    refs.vocabTopicTriggerText.textContent = currentVocabTopicTitle(topicValue);
-    refs.vocabTopicTrigger.title = currentVocabTopicTitle(topicValue);
-  }
-
-  function vocabTopicChoices() {
-    const allWords = vocabTopics.flatMap((topic) => topic.words || []);
-    return [
-      {
-        value: 'all',
-        title: 'Все темы',
-        icon: vocabTopicIcon('all'),
-        count: allWords.length,
-      },
-      ...vocabTopics.map((topic) => ({
-        value: topic.topic,
-        title: topic.topic,
-        icon: vocabTopicIcon(topic.topic),
-        count: (topic.words || []).length,
-      })),
-    ];
-  }
-
-  function renderVocabTopicCards() {
-    const selectedValue = refs.vocabTopic.value || 'all';
-    refs.vocabTopicGrid.innerHTML = '';
-
-    vocabTopicChoices().forEach((topic) => {
-      const cardButton = document.createElement('button');
-      const isSelected = topic.value === selectedValue;
-      cardButton.type = 'button';
-      cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
-      cardButton.dataset.topicValue = topic.value;
-      cardButton.setAttribute('role', 'option');
-      cardButton.setAttribute('aria-selected', String(isSelected));
-
-      const icon = document.createElement('span');
-      icon.className = 'vocab-topic-card-icon';
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = topic.icon;
-
-      const copy = document.createElement('span');
-      copy.className = 'vocab-topic-card-copy';
-
-      const title = document.createElement('strong');
-      title.textContent = topic.title;
-
-      const count = document.createElement('span');
-      count.textContent = formatVocabWordCount(topic.count);
-
-      const check = document.createElement('span');
-      check.className = 'vocab-topic-card-check';
-      check.setAttribute('aria-hidden', 'true');
-      check.textContent = '✓';
-
-      copy.appendChild(title);
-      copy.appendChild(count);
-      cardButton.appendChild(icon);
-      cardButton.appendChild(copy);
-      cardButton.appendChild(check);
-
-      cardButton.addEventListener('click', () => {
-        if (refs.vocabTopic.value !== topic.value) {
-          refs.vocabTopic.value = topic.value;
-          refs.vocabTopic.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        hideVocabTopicPicker();
-      });
-
-      refs.vocabTopicGrid.appendChild(cardButton);
-    });
-  }
-
-  function showVocabTopicPicker() {
-    ensureVocabTopicOptions();
-    renderVocabTopicCards();
-    const choices = vocabTopicChoices();
-    refs.vocabTopicModalSubtitle.textContent = `${vocabTopics.length} тем · ${formatVocabWordCount(choices[0].count)}`;
-    refs.vocabTopicOverlay.hidden = false;
-    refs.vocabTopicTrigger.setAttribute('aria-expanded', 'true');
-    const selectedCard = refs.vocabTopicGrid.querySelector('.vocab-topic-card--selected');
-    (selectedCard || refs.vocabTopicClose).focus();
-  }
-
-  function hideVocabTopicPicker() {
-    refs.vocabTopicOverlay.hidden = true;
-    refs.vocabTopicTrigger.setAttribute('aria-expanded', 'false');
-    refs.vocabTopicTrigger.focus();
-  }
-
-  function appendVocabListItem(parent, item, index) {
-    const row = document.createElement('article');
-    row.className = 'vocab-list-item';
-
-    const number = document.createElement('span');
-    number.className = 'vocab-list-number';
-    number.textContent = String(index + 1);
-
-    const content = document.createElement('div');
-    content.className = 'vocab-list-item-content';
-
-    const word = document.createElement('div');
-    word.className = 'vocab-list-word';
-    word.textContent = String((item && (item.word || item.infinitive || item.answer)) || '').trim() || 'Без слова';
-
-    const translation = document.createElement('div');
-    translation.className = 'vocab-list-translation';
-    translation.textContent = String((item && item.translation) || '').trim();
-
-    content.appendChild(word);
-    if (translation.textContent) {
-      content.appendChild(translation);
-    }
-
-    if (item && item.example) {
-      const example = document.createElement('div');
-      example.className = 'vocab-list-example';
-      example.textContent = item.example;
-      content.appendChild(example);
-    }
-
-    row.appendChild(number);
-    row.appendChild(content);
-    parent.appendChild(row);
-  }
-
-  function showVocabList() {
-    ensureVocabTopicOptions();
-    const topicValue = refs.vocabTopic.value;
-    const words = vocabWordsForTopicValue(topicValue);
-
-    refs.vocabListTitle.textContent = 'Список слов';
-    refs.vocabListSubtitle.textContent = `${currentVocabTopicTitle(topicValue)} · ${formatVocabWordCount(words.length)}`;
-    refs.vocabListBody.innerHTML = '';
-
-    if (!words.length) {
-      const empty = document.createElement('p');
-      empty.className = 'vocab-list-empty';
-      empty.textContent = 'В этой теме пока нет слов.';
-      refs.vocabListBody.appendChild(empty);
-    } else {
-      words.forEach((item, index) => appendVocabListItem(refs.vocabListBody, item, index));
-    }
-
-    refs.vocabListOverlay.hidden = false;
-    refs.vocabListClose.focus();
-  }
-
-  function hideVocabList() {
-    refs.vocabListOverlay.hidden = true;
-  }
-
-  function restoreVocabSessionFromOrder(order, topicValue) {
-    if (!Array.isArray(order) || !order.length) return [];
-
-    const wordsById = new Map(
-      vocabWordsForTopicValue(topicValue)
-        .filter((item) => item && item.id != null)
-        .map((item) => [String(item.id), item])
-    );
-    const restored = order
-      .map((id) => wordsById.get(String(id)))
-      .filter(Boolean);
-
-    return restored.length === wordsById.size ? restored : [];
-  }
-
-  function ensureVocabTopicOptions() {
-    if (refs.vocabTopic.options.length === 0) {
-      const allOpt = document.createElement('option');
-      allOpt.value = 'all';
-      allOpt.textContent = 'Все темы';
-      refs.vocabTopic.appendChild(allOpt);
-      vocabTopics.forEach(t => {
-        const opt = document.createElement('option');
-        opt.value = t.topic;
-        opt.textContent = t.topic;
-        refs.vocabTopic.appendChild(opt);
-      });
-    }
-    syncVocabTopicTrigger();
-  }
-
-  function restoreVocabProgress(saved) {
-    ensureVocabTopicOptions();
-    if (!saved || typeof saved !== "object") return false;
-
-    const topicValue = String(saved.topic || "");
-    const hasTopic = Array.from(refs.vocabTopic.options).some((opt) => opt.value === topicValue);
-    if (hasTopic) {
-      refs.vocabTopic.value = topicValue;
-    }
-    syncVocabTopicTrigger();
-
-    refs.autoSpeakCorrectVocab.checked = saved.autoSpeakCorrect !== false;
-
-    vocabState.session = restoreVocabSessionFromOrder(saved.order, refs.vocabTopic.value);
-    if (!vocabState.session.length) {
-      vocabState.session = pickVocabSession();
-    }
-    vocabState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, vocabState.session.length - 1)));
-    vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
-    vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
-    return Boolean(vocabState.session.length);
-  }
-
-  function renderVocab() {
-    hideSessionComplete();
-    stopSpeech();
-    state.sentenceTranslationRequestId += 1;
-
-    const w = vocabState.session[vocabState.idx];
-    if (!w) {
-      refs.questionText.textContent = 'Слова не найдены.';
-      refs.questionTranslation.textContent = '';
-      renderVocabExample(null);
-      setSelectedSentenceForSpeech("");
-      return;
-    }
-
-    refs.position.textContent = `${vocabState.idx + 1} / ${vocabState.session.length}`;
-    refs.correctCount.textContent = String(vocabState.correct);
-    refs.wrongCount.textContent = String(vocabState.wrong);
-
-    refs.vocabModeLabel.textContent = 'Переведите на английский';
-    refs.speakWordBtn.textContent = 'Озвучить ответ';
-    renderQuestionText(w.translation);
-    renderVocabExample(w);
-    setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);
-    refs.questionTranslation.classList.remove('vocab-hint');
-    setQuestionTranslation('');
-
-    refs.answerInput.value = '';
-    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
-    refs.answerInput.focus();
-    setFeedback('', null);
-    vocabState.checkedCurrent = false;
-    vocabState.wrongCounted = false;
-  }
-
-  function checkVocabAnswer() {
-    const w = vocabState.session[vocabState.idx];
-    if (!w || vocabState.checkedCurrent) return;
-
-    const user = normalize(refs.answerInput.value);
-    if (!user) {
-      setFeedback('Сначала впиши ответ.', false);
-      return;
-    }
-
-    const wordOptions = answerOptionsForVocabItem(w);
-    const wordTarget = primaryAnswerText(wordOptions) || w.infinitive || w.word;
-    const target = normalize(wordTarget);
-    const match = getAnswerMatch(user, target, wordOptions);
-    if (match.matched) {
-      if (!vocabState.wrongCounted) {
-        vocabState.correct += 1;
-        refs.correctCount.textContent = String(vocabState.correct);
-      }
-      vocabState.checkedCurrent = true;
-      renderVocabExample(w, 'correct');
-      playCorrectSound();
-      flashCorrect();
-      setFeedback(match.isAlternative ? `Верно! (а можно еще: ${match.primaryAnswer})` : 'Верно!', true);
-      saveProgress();
-      queueVocabNextAfterCorrect(w);
-    } else {
-      if (!vocabState.wrongCounted) {
-        vocabState.wrong += 1;
-        vocabState.wrongCounted = true;
-        refs.wrongCount.textContent = String(vocabState.wrong);
-      }
-      playWrongSound();
-      const correctAnswer = primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word;
-      setFeedback('Почти. Правильный ответ: ' + correctAnswer, false);
-      renderVocabExample(w, 'wrong');
-      refs.answerInput.value = '';
-      refs.answerInput.focus();
-      saveProgress();
-    }
-  }
-
-  function nextVocabQuestion() {
-    if (!vocabState.session.length) return;
-    vocabState.idx += 1;
-    if (vocabState.idx >= vocabState.session.length) {
-      vocabState.idx = vocabState.session.length - 1;
-      showSessionComplete();
-      saveProgress();
-      return;
-    }
-    renderVocab();
-    saveProgress();
-  }
-
-  function queueVocabNextAfterCorrect(w) {
-    clearAutoNextTimer();
-    const textToSpeak = primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word;
-    if (state.autoSpeakCorrect && textToSpeak) {
-      const started = speakEnglishText(textToSpeak, {
-        onComplete: () => {
-          nextVocabQuestion();
-          saveProgress();
-        },
-      });
-      if (started) return;
-    }
-    state.autoNextTimer = window.setTimeout(() => {
-      state.autoNextTimer = null;
-      nextVocabQuestion();
-      saveProgress();
-    }, AUTO_NEXT_DELAY_MS);
-  }
-
-  function allListeningItemsForTopicValue(topicValue) {
-    const topics = topicValue === 'all'
-      ? LISTENING_TOPICS
-      : LISTENING_TOPICS.filter((topic) => topic.id === topicValue);
-
-    return topics.flatMap((topic) =>
-      (topic.items || []).map((text, index) => ({
-        id: `${topic.id}:${index}`,
-        topicId: topic.id,
-        topicTitle: topic.title,
-        text,
-      }))
-    );
-  }
-
-  function pickListeningSession() {
-    return shuffleItems(allListeningItemsForTopicValue(refs.listeningTopic.value || 'all'));
-  }
-
-  function restoreListeningSessionFromOrder(order, topicValue) {
-    if (!Array.isArray(order) || !order.length) return [];
-
-    const itemsById = new Map(
-      allListeningItemsForTopicValue(topicValue || 'all').map((item) => [String(item.id), item])
-    );
-    const restored = order
-      .map((id) => itemsById.get(String(id)))
-      .filter(Boolean);
-
-    return restored.length === itemsById.size ? restored : [];
-  }
-
-  function ensureListeningTopicOptions() {
-    if (refs.listeningTopic.options.length > 0) return;
-
-    const allOpt = document.createElement('option');
-    allOpt.value = 'all';
-    allOpt.textContent = 'Все темы';
-    refs.listeningTopic.appendChild(allOpt);
-
-    LISTENING_TOPICS.forEach((topic) => {
-      const opt = document.createElement('option');
-      opt.value = topic.id;
-      opt.textContent = topic.title;
-      refs.listeningTopic.appendChild(opt);
-    });
-  }
-
-  function restoreListeningProgress(saved) {
-    ensureListeningTopicOptions();
-    if (!saved || typeof saved !== "object") return false;
-
-    const topicValue = String(saved.topic || "");
-    const hasTopic = Array.from(refs.listeningTopic.options).some((opt) => opt.value === topicValue);
-    if (hasTopic) {
-      refs.listeningTopic.value = topicValue;
-    }
-
-    const rate = String(saved.rate || "0.85");
-    const hasRate = Array.from(refs.listeningRate.options).some((opt) => opt.value === rate);
-    refs.listeningRate.value = hasRate ? rate : "0.85";
-    refs.listeningAutoNext.checked = saved.autoNext === true;
-
-    listeningState.session = restoreListeningSessionFromOrder(saved.order, refs.listeningTopic.value);
-    if (!listeningState.session.length) {
-      listeningState.session = pickListeningSession();
-    }
-    listeningState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, listeningState.session.length - 1)));
-    listeningState.correct = Math.max(0, asNumber(saved.correct, 0));
-    listeningState.wrong = Math.max(0, asNumber(saved.wrong, 0));
-    return Boolean(listeningState.session.length);
-  }
-
-  function currentListeningItem() {
-    return listeningState.session[listeningState.idx] || null;
-  }
-
-  function listeningWords(text) {
-    return String(text || "")
-      .toLowerCase()
-      .replace(/sev one/g, "sev1")
-      .replace(/[\u2018\u2019`]/g, "'")
-      .replace(/[^a-z0-9']+/g, " ")
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean);
-  }
-
-  function listeningWordTokens(text) {
-    const normalized = expandListeningContractions(String(text || "").replace(/\bsev one\b/gi, "sev1"));
-    return (normalized.match(/[A-Za-zА-Яа-я0-9']+/g) || [])
-      .map((word) => ({ text: word, norm: normalizeListeningWord(word) }))
-      .filter((word) => word.norm);
-  }
-
-  function expandListeningContractions(text) {
-    return String(text || "")
-      .replace(/\bI'm\b/gi, "I am")
-      .replace(/\byou're\b/gi, "you are")
-      .replace(/\bhe's\b/gi, "he is")
-      .replace(/\bshe's\b/gi, "she is")
-      .replace(/\bit's\b/gi, "it is")
-      .replace(/\bwe're\b/gi, "we are")
-      .replace(/\bthey're\b/gi, "they are")
-      .replace(/\bI'll\b/gi, "I will")
-      .replace(/\byou'll\b/gi, "you will")
-      .replace(/\bhe'll\b/gi, "he will")
-      .replace(/\bshe'll\b/gi, "she will")
-      .replace(/\bit'll\b/gi, "it will")
-      .replace(/\bwe'll\b/gi, "we will")
-      .replace(/\bthey'll\b/gi, "they will")
-      .replace(/\bI'd\b/gi, "I would")
-      .replace(/\bI've\b/gi, "I have")
-      .replace(/\byou've\b/gi, "you have")
-      .replace(/\bwe've\b/gi, "we have")
-      .replace(/\bthey've\b/gi, "they have")
-      .replace(/\blet's\b/gi, "let us")
-      .replace(/\bdon't\b/gi, "do not")
-      .replace(/\bdoesn't\b/gi, "does not")
-      .replace(/\bdidn't\b/gi, "did not")
-      .replace(/\bcan't\b/gi, "can not")
-      .replace(/\bwon't\b/gi, "will not")
-      .replace(/\bhaven't\b/gi, "have not")
-      .replace(/\bhasn't\b/gi, "has not")
-      .replace(/\bhadn't\b/gi, "had not")
-      .replace(/\bisn't\b/gi, "is not")
-      .replace(/\baren't\b/gi, "are not")
-      .replace(/\bwasn't\b/gi, "was not")
-      .replace(/\bweren't\b/gi, "were not")
-      .replace(/\bshouldn't\b/gi, "should not")
-      .replace(/\bcouldn't\b/gi, "could not")
-      .replace(/\bwouldn't\b/gi, "would not");
-  }
-
-  function normalizeListeningWord(word) {
-    const latinLookalikes = {
-      а: "a",
-      е: "e",
-      о: "o",
-      р: "p",
-      с: "c",
-      х: "x",
-      у: "y",
-      к: "k",
-      А: "a",
-      Е: "e",
-      О: "o",
-      Р: "p",
-      С: "c",
-      Х: "x",
-      У: "y",
-      К: "k",
-    };
-
-    return String(word || "")
-      .replace(/[аеорсхукАЕОРСХУК]/g, (char) => latinLookalikes[char] || char)
-      .toLowerCase()
-      .replace(/[\u2018\u2019`]/g, "'")
-      .replace(/[^a-z0-9']+/g, "")
-      .trim();
-  }
-
-  function compareListeningAnswer(userText, targetText) {
-    const userWords = listeningWordTokens(userText);
-    const targetWords = listeningWordTokens(targetText);
-    const rows = targetWords.length + 1;
-    const cols = userWords.length + 1;
-    const dp = Array.from({ length: rows }, () => Array(cols).fill(0));
-
-    for (let i = 0; i < rows; i += 1) dp[i][0] = i;
-    for (let j = 0; j < cols; j += 1) dp[0][j] = j;
-
-    for (let i = 1; i < rows; i += 1) {
-      for (let j = 1; j < cols; j += 1) {
-        const cost = targetWords[i - 1].norm === userWords[j - 1].norm ? 0 : 1;
-        dp[i][j] = Math.min(
-          dp[i - 1][j] + 1,
-          dp[i][j - 1] + 1,
-          dp[i - 1][j - 1] + cost
-        );
-      }
-    }
-
-    const targetMarks = [];
-    let i = targetWords.length;
-    let j = userWords.length;
-
-    while (i > 0 || j > 0) {
-      if (
-        i > 0 &&
-        j > 0 &&
-        dp[i][j] === dp[i - 1][j - 1] + (targetWords[i - 1].norm === userWords[j - 1].norm ? 0 : 1)
-      ) {
-        targetMarks.unshift({
-          word: targetWords[i - 1].text,
-          ok: targetWords[i - 1].norm === userWords[j - 1].norm,
-          heard: userWords[j - 1].text,
-        });
-        i -= 1;
-        j -= 1;
-      } else if (i > 0 && dp[i][j] === dp[i - 1][j] + 1) {
-        targetMarks.unshift({ word: targetWords[i - 1].text, ok: false, heard: "" });
-        i -= 1;
-      } else {
-        j -= 1;
-      }
-    }
-
-    const matched = targetMarks.filter((mark) => mark.ok).length;
-    const accuracy = targetWords.length ? matched / targetWords.length : 0;
-    return { matched, total: targetWords.length, accuracy, targetMarks };
-  }
-
-  function renderListeningDiff(result) {
-    const parts = result.targetMarks.map((mark) => {
-      const cls = mark.ok ? "listening-word listening-word--ok" : "listening-word listening-word--miss";
-      return `<span class="${cls}">${mark.word}</span>`;
-    });
-    refs.hint.innerHTML = `<span class="listening-diff">${parts.join(" ")}</span>`;
-  }
-
-  function maskedListeningText(text, revealEvery = 3) {
-    return String(text || "")
-      .split(/\s+/)
-      .map((word, index) => {
-        const clean = word.replace(/^[^A-Za-z0-9']+|[^A-Za-z0-9']+$/g, "");
-        if (!clean) return word;
-        if (index % revealEvery === 0 || clean.length <= 2) return word;
-        return word.replace(/[A-Za-z0-9']/g, "_");
-      })
-      .join(" ");
-  }
-
-  function speakCurrentListeningItem() {
-    const item = currentListeningItem();
-    if (!item) return;
-    const started = speakEnglishText(item.text, { rate: refs.listeningRate.value });
-    if (!started) {
-      setFeedback("Озвучка недоступна в этом браузере.", false);
-    }
-  }
-
-  function renderListening() {
-    hideSessionComplete();
-    stopSpeech();
-    state.sentenceTranslationRequestId += 1;
-
-    const item = currentListeningItem();
-    if (!item) {
-      refs.questionText.textContent = "Фразы не найдены.";
-      setQuestionTranslation("");
-      setSelectedSentenceForSpeech("");
-      return;
-    }
-
-    refs.position.textContent = `${listeningState.idx + 1} / ${listeningState.session.length}`;
-    refs.correctCount.textContent = String(listeningState.correct);
-    refs.wrongCount.textContent = String(listeningState.wrong);
-    refs.vocabModeLabel.textContent = "Слушайте и запишите фразу";
-    refs.speakWordBtn.textContent = "Повторить фразу";
-    refs.questionText.textContent = "Нажмите «Слушать» и напишите, что услышали.";
-    setQuestionTranslation(`${item.topicTitle} · ${Math.round(Number(refs.listeningRate.value) * 100)}% speed`);
-    setSelectedSentenceForSpeech(item.text);
-
-    refs.answerInput.value = "";
-    refs.answerInput.placeholder = "Напишите услышанную фразу";
-    refs.answerInput.focus();
-    refs.hint.textContent = "";
-    setFeedback("", null);
-    listeningState.checkedCurrent = false;
-    listeningState.wrongCounted = false;
-    listeningState.hintLevel = 0;
-
-    window.setTimeout(speakCurrentListeningItem, 120);
-  }
-
-  function checkListeningAnswer() {
-    const item = currentListeningItem();
-    if (!item) return;
-
-    const user = refs.answerInput.value.trim();
-    if (!user) {
-      refs.listenBtn.click();
-      return;
-    }
-
-    const result = compareListeningAnswer(user, item.text);
-    const pct = Math.round(result.accuracy * 100);
-    const passed = result.accuracy >= 0.82;
-    const wasChecked = listeningState.checkedCurrent;
-
-    if (passed) {
-      if (!wasChecked && !listeningState.wrongCounted) {
-        listeningState.correct += 1;
-        refs.correctCount.textContent = String(listeningState.correct);
-      }
-      listeningState.checkedCurrent = true;
-      playCorrectSound();
-      flashCorrect();
-      setFeedback(`Хорошо! Понял ${pct}% слов.`, true);
-      renderListeningDiff(result);
-      if (!wasChecked && refs.listeningAutoNext.checked) {
-        state.autoNextTimer = window.setTimeout(() => {
-          state.autoNextTimer = null;
-          nextListeningQuestion();
-          saveProgress();
-        }, 1200);
-      }
-    } else {
-      if (!wasChecked && !listeningState.wrongCounted) {
-        listeningState.wrong += 1;
-        listeningState.wrongCounted = true;
-        refs.wrongCount.textContent = String(listeningState.wrong);
-      }
-      playWrongSound();
-      setFeedback("Красным подсвечены места, где текст отличается от ответа.", false);
-      renderListeningDiff(result);
-    }
-
-    saveProgress();
-  }
-
-  function nextListeningQuestion() {
-    if (!listeningState.session.length) return;
-    clearAutoNextTimer();
-    listeningState.idx += 1;
-    if (listeningState.idx >= listeningState.session.length) {
-      listeningState.idx = listeningState.session.length - 1;
-      showSessionComplete();
-      saveProgress();
-      return;
-    }
-    renderListening();
-    saveProgress();
-  }
-
-  function previousListeningQuestion() {
-    if (listeningState.idx <= 0) return;
-    clearAutoNextTimer();
-    listeningState.idx -= 1;
-    renderListening();
-    saveProgress();
-  }
-
-  function showListeningHint(level) {
-    const item = currentListeningItem();
-    if (!item) return;
-    listeningState.hintLevel = level;
-
-    if (listeningState.hintLevel === 1) {
-      const firstWord = listeningWords(item.text)[0] || "";
-      refs.hint.textContent = firstWord ? `Первое слово: ${firstWord}` : "";
-    } else if (listeningState.hintLevel === 2) {
-      refs.hint.textContent = maskedListeningText(item.text);
-    } else {
-      refs.hint.textContent = item.text;
-    }
-  }
-
-  function shadowingItemsForTopic(topicValue) {
-    const topic = SHADOWING_TOPICS.find((candidate) => candidate.id === topicValue) || SHADOWING_TOPICS[0];
-    if (!topic) return [];
-    return topic.groups.flatMap((group, groupIndex) =>
-      group.items.map((text, itemIndex) => ({
-        id: `${topic.id}:${groupIndex}:${itemIndex}`,
-        topicId: topic.id,
-        topicTitle: topic.title,
-        groupTitle: group.title,
-        text,
-      }))
-    );
-  }
-
-  function shadowingTopicIcon(topic) {
-    if (!topic) return '🎙️';
-    if (topic.id === 'architecture-system-design') return '🏗️';
-    if (topic.id === 'code-review-phrases') return '🔍';
-    if (topic.id === 'work-discussions') return '💬';
-    return '🎙️';
-  }
-
-  function formatShadowingPhraseCount(count) {
-    const value = Math.max(0, Number(count) || 0);
-    const lastTwo = value % 100;
-    const last = value % 10;
-    const label = lastTwo >= 11 && lastTwo <= 14
-      ? 'фраз'
-      : (last === 1 ? 'фраза' : (last >= 2 && last <= 4 ? 'фразы' : 'фраз'));
-    return `${value} ${label}`;
-  }
-
-  function syncShadowingTopicTrigger() {
-    const topic = SHADOWING_TOPICS.find((candidate) => candidate.id === refs.shadowingTopic.value) || SHADOWING_TOPICS[0];
-    if (!topic) return;
-    refs.shadowingTopicTriggerIcon.textContent = shadowingTopicIcon(topic);
-    refs.shadowingTopicTriggerText.textContent = topic.title;
-    refs.shadowingTopicTrigger.title = topic.title;
-  }
-
-  function renderShadowingTopicCards() {
-    const selectedValue = refs.shadowingTopic.value;
-    refs.shadowingTopicGrid.innerHTML = '';
-
-    SHADOWING_TOPICS.forEach((topic) => {
-      const cardButton = document.createElement('button');
-      const isSelected = topic.id === selectedValue;
-      const phraseCount = topic.groups.reduce((total, group) => total + group.items.length, 0);
-      cardButton.type = 'button';
-      cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
-      cardButton.dataset.topicValue = topic.id;
-      cardButton.setAttribute('role', 'option');
-      cardButton.setAttribute('aria-selected', String(isSelected));
-
-      const icon = document.createElement('span');
-      icon.className = 'vocab-topic-card-icon';
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = shadowingTopicIcon(topic);
-
-      const copy = document.createElement('span');
-      copy.className = 'vocab-topic-card-copy';
-
-      const title = document.createElement('strong');
-      title.textContent = topic.title;
-
-      const count = document.createElement('span');
-      count.textContent = formatShadowingPhraseCount(phraseCount);
-
-      const check = document.createElement('span');
-      check.className = 'vocab-topic-card-check';
-      check.setAttribute('aria-hidden', 'true');
-      check.textContent = '✓';
-
-      copy.appendChild(title);
-      copy.appendChild(count);
-      cardButton.appendChild(icon);
-      cardButton.appendChild(copy);
-      cardButton.appendChild(check);
-
-      cardButton.addEventListener('click', () => {
-        if (refs.shadowingTopic.value !== topic.id) {
-          refs.shadowingTopic.value = topic.id;
-          refs.shadowingTopic.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        hideShadowingTopicPicker();
-      });
-
-      refs.shadowingTopicGrid.appendChild(cardButton);
-    });
-  }
-
-  function showShadowingTopicPicker() {
-    ensureShadowingTopicOptions();
-    renderShadowingTopicCards();
-    const phraseCount = SHADOWING_TOPICS.reduce(
-      (total, topic) => total + topic.groups.reduce((sum, group) => sum + group.items.length, 0),
-      0
-    );
-    refs.shadowingTopicModalSubtitle.textContent = `${SHADOWING_TOPICS.length} темы · ${formatShadowingPhraseCount(phraseCount)}`;
-    refs.shadowingTopicOverlay.hidden = false;
-    refs.shadowingTopicTrigger.setAttribute('aria-expanded', 'true');
-    const selectedCard = refs.shadowingTopicGrid.querySelector('.vocab-topic-card--selected');
-    (selectedCard || refs.shadowingTopicClose).focus();
-  }
-
-  function hideShadowingTopicPicker() {
-    refs.shadowingTopicOverlay.hidden = true;
-    refs.shadowingTopicTrigger.setAttribute('aria-expanded', 'false');
-    refs.shadowingTopicTrigger.focus();
-  }
-
-  function ensureShadowingTopicOptions() {
-    if (refs.shadowingTopic.options.length === 0) {
-      SHADOWING_TOPICS.forEach((topic) => {
-        const opt = document.createElement('option');
-        opt.value = topic.id;
-        opt.textContent = topic.title;
-        refs.shadowingTopic.appendChild(opt);
-      });
-    }
-    syncShadowingTopicTrigger();
-  }
-
-  function pickShadowingSession() {
-    return shadowingItemsForTopic(refs.shadowingTopic.value);
-  }
-
-  function restoreShadowingProgress(saved) {
-    ensureShadowingTopicOptions();
-    if (!saved || typeof saved !== 'object') return false;
-    const topicValue = String(saved.topic || '');
-    if (Array.from(refs.shadowingTopic.options).some((opt) => opt.value === topicValue)) {
-      refs.shadowingTopic.value = topicValue;
-    }
-    syncShadowingTopicTrigger();
-    const rate = String(saved.rate || '0.9');
-    refs.shadowingRate.value = Array.from(refs.shadowingRate.options).some((opt) => opt.value === rate) ? rate : '0.9';
-    const repetitions = String(saved.repetitions || '1');
-    refs.shadowingRepetitions.value = Array.from(refs.shadowingRepetitions.options).some((opt) => opt.value === repetitions) ? repetitions : '1';
-    shadowingState.session = pickShadowingSession();
-    shadowingState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, shadowingState.session.length - 1)));
-    shadowingState.correct = Math.max(0, asNumber(saved.correct, 0));
-    shadowingState.wrong = Math.max(0, asNumber(saved.wrong, 0));
-    shadowingState.successfulRepetitions = Math.max(0, Math.min(asNumber(saved.successfulRepetitions, 0), currentShadowingRepetitions() - 1));
-    return Boolean(shadowingState.session.length);
-  }
-
-  function currentShadowingItem() {
-    return shadowingState.session[shadowingState.idx] || null;
-  }
-
-  function currentShadowingRepetitions() {
-    return Math.max(1, Math.min(3, asNumber(refs.shadowingRepetitions.value, 1)));
-  }
-
-  function stopShadowingAttempt() {
-    shadowingState.attemptToken += 1;
-    const wasListening = shadowingState.isListening;
-    shadowingState.isListening = false;
-    if (shadowingState.retryTimer) {
-      window.clearTimeout(shadowingState.retryTimer);
-      shadowingState.retryTimer = null;
-    }
-    clearShadowingRecognitionTimers();
-    refs.shadowingMic.classList.remove('shadowing-mic--active');
-    if (wasListening && shadowingState.recognition) {
-      try { shadowingState.recognition.abort(); } catch (_) {}
-    }
-  }
-
-  function clearShadowingRecognitionTimers() {
-    if (shadowingState.recognitionSilenceTimer) {
-      window.clearTimeout(shadowingState.recognitionSilenceTimer);
-      shadowingState.recognitionSilenceTimer = null;
-    }
-    if (shadowingState.recognitionMaxTimer) {
-      window.clearTimeout(shadowingState.recognitionMaxTimer);
-      shadowingState.recognitionMaxTimer = null;
-    }
-  }
-
-  function updateShadowingRepetition() {
-    const item = currentShadowingItem();
-    const repetitions = currentShadowingRepetitions();
-    if (!item || repetitions <= 1) {
-      refs.shadowingRepetition.textContent = '';
-      return;
-    }
-    const nextRepetition = Math.min(repetitions, shadowingState.successfulRepetitions + 1);
-    refs.shadowingRepetition.textContent = `Серия: повтор ${nextRepetition} из ${repetitions}`;
-  }
-
-  function showShadowingTranslation(item) {
-    const vocabularyItem = vocabTopics
-      .flatMap((topic) => topic.words || [])
-      .find((word) => word.example === item.text);
-    refs.shadowingInlineTranslation.textContent = SHADOWING_TRANSLATIONS[item.text]
-      || (vocabularyItem && vocabularyItem.sentenceTranslation)
-      || 'Перевод не найден.';
-  }
-
-  function renderShadowing() {
-    hideSessionComplete();
-    stopSpeech();
-    stopShadowingAttempt();
-    const item = currentShadowingItem();
-    if (!item) {
-      refs.questionText.textContent = 'Фразы не найдены.';
-      setQuestionTranslation('');
-      return;
-    }
-    refs.position.textContent = `${shadowingState.idx + 1} / ${shadowingState.session.length}`;
-    refs.correctCount.textContent = String(shadowingState.correct);
-    refs.wrongCount.textContent = String(shadowingState.wrong);
-    refs.questionText.textContent = item.text;
-    showShadowingTranslation(item);
-    setSelectedSentenceForSpeech(item.text);
-    refs.shadowingStatus.textContent = 'Нажмите кнопку, послушайте фразу и повторите её.';
-    refs.shadowingTranscript.textContent = '';
-    refs.shadowingStart.disabled = false;
-    refs.shadowingStart.textContent = 'Старт';
-    refs.hint.textContent = '';
-    setFeedback('', null);
-    shadowingState.wrongCounted = false;
-    shadowingState.checkedCurrent = false;
-    updateShadowingRepetition();
-  }
-
-  function scheduleShadowingRetry(delay, token) {
-    if (shadowingState.retryTimer) window.clearTimeout(shadowingState.retryTimer);
-    shadowingState.retryTimer = window.setTimeout(() => {
-      shadowingState.retryTimer = null;
-      if (token === shadowingState.attemptToken && currentMode === 'shadowing') {
-        runShadowingAttempt(true);
-      }
-    }, delay);
-  }
-
-  function scheduleShadowingNext(token) {
-    if (shadowingState.retryTimer) window.clearTimeout(shadowingState.retryTimer);
-    shadowingState.retryTimer = window.setTimeout(() => {
-      shadowingState.retryTimer = null;
-      if (token === shadowingState.attemptToken && currentMode === 'shadowing') {
-        nextShadowingQuestion();
-      }
-    }, SHADOWING_SUCCESS_PAUSE_MS);
-  }
-
-  function scheduleCurrentShadowingAttempt() {
-    const expectedIdx = shadowingState.idx;
-    if (shadowingState.retryTimer) window.clearTimeout(shadowingState.retryTimer);
-    shadowingState.retryTimer = window.setTimeout(() => {
-      shadowingState.retryTimer = null;
-      if (currentMode === 'shadowing' && expectedIdx === shadowingState.idx) {
-        runShadowingAttempt();
-      }
-    }, 100);
-  }
-
-  function createSpeechRecognition() {
-    if (shadowingState.recognition) return shadowingState.recognition;
-    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!Recognition) return null;
-    const recognition = new Recognition();
-    recognition.lang = 'en-US';
-    recognition.interimResults = true;
-    recognition.continuous = true;
-    recognition.maxAlternatives = 3;
-    shadowingState.recognition = recognition;
-    return recognition;
-  }
-
-  function evaluateShadowingTranscript(transcript, token) {
-    if (token !== shadowingState.attemptToken) return;
-    const item = currentShadowingItem();
-    if (!item) return;
-    const result = compareListeningAnswer(transcript, item.text);
-    const pct = Math.round(result.accuracy * 100);
-    const passed = result.accuracy >= 0.78;
-    const repetitions = currentShadowingRepetitions();
-    refs.shadowingTranscript.textContent = `Приложение услышало: “${transcript}”`;
-
-    if (passed) {
-      shadowingState.successfulRepetitions += 1;
-      playCorrectSound();
-      flashCorrect();
-      if (shadowingState.successfulRepetitions < repetitions) {
-        refs.shadowingStatus.textContent = `Отлично, ${pct}%. Повторите эту фразу ещё раз.`;
-        updateShadowingRepetition();
-        scheduleShadowingRetry(SHADOWING_SUCCESS_PAUSE_MS, token);
-      } else {
-        if (!shadowingState.checkedCurrent) {
-          shadowingState.correct += 1;
-          shadowingState.checkedCurrent = true;
-          refs.correctCount.textContent = String(shadowingState.correct);
-        }
-        refs.shadowingStatus.textContent = `Отлично, произношение распознано на ${pct}%.`;
-        refs.shadowingRepetition.textContent = repetitions > 1 ? `Серия из ${repetitions} повторов завершена` : '';
-        refs.shadowingStart.textContent = 'Старт';
-        refs.shadowingStart.disabled = true;
-        scheduleShadowingNext(token);
-      }
-    } else {
-      if (!shadowingState.wrongCounted) {
-        shadowingState.wrong += 1;
-        shadowingState.wrongCounted = true;
-        refs.wrongCount.textContent = String(shadowingState.wrong);
-      }
-      playWrongSound();
-      refs.shadowingStatus.textContent = `Пока не совсем (${pct}%). Попробуйте ещё раз — фраза сейчас повторится.`;
-      scheduleShadowingRetry(1100, token);
-    }
-    saveProgress();
-  }
-
-  function startShadowingRecognition(token) {
-    const recognition = createSpeechRecognition();
-    if (!recognition) {
-      refs.shadowingStatus.textContent = 'Распознавание речи недоступно в этом браузере. Откройте приложение в Chrome или Edge.';
-      refs.shadowingStart.disabled = false;
-      refs.shadowingStart.textContent = 'Старт';
-      return;
-    }
-    let finalTranscript = '';
-    let latestTranscript = '';
-    recognition.onstart = () => {
-      if (token !== shadowingState.attemptToken) return;
-      shadowingState.isListening = true;
-      refs.shadowingMic.classList.add('shadowing-mic--active');
-      refs.shadowingStatus.textContent = 'Говорите… Я дождусь паузы после фразы.';
-      refs.shadowingTranscript.textContent = '';
-      clearShadowingRecognitionTimers();
-      shadowingState.recognitionMaxTimer = window.setTimeout(() => {
-        if (token !== shadowingState.attemptToken || !shadowingState.isListening) return;
-        try { recognition.stop(); } catch (_) {}
-      }, SHADOWING_MAX_LISTEN_MS);
-    };
-    recognition.onresult = (event) => {
-      if (token !== shadowingState.attemptToken) return;
-      let interim = '';
-      for (let i = event.resultIndex; i < event.results.length; i += 1) {
-        const text = event.results[i][0].transcript.trim();
-        if (event.results[i].isFinal) finalTranscript += `${finalTranscript ? ' ' : ''}${text}`;
-        else interim += `${interim ? ' ' : ''}${text}`;
-      }
-      latestTranscript = [finalTranscript, interim].filter(Boolean).join(' ');
-      refs.shadowingTranscript.textContent = latestTranscript;
-      if (shadowingState.recognitionSilenceTimer) window.clearTimeout(shadowingState.recognitionSilenceTimer);
-      shadowingState.recognitionSilenceTimer = window.setTimeout(() => {
-        if (token !== shadowingState.attemptToken || !shadowingState.isListening) return;
-        try { recognition.stop(); } catch (_) {}
-      }, SHADOWING_SILENCE_MS);
-    };
-    recognition.onerror = (event) => {
-      if (token !== shadowingState.attemptToken) return;
-      shadowingState.isListening = false;
-      clearShadowingRecognitionTimers();
-      refs.shadowingMic.classList.remove('shadowing-mic--active');
-      refs.shadowingStart.disabled = false;
-      refs.shadowingStart.textContent = 'Старт';
-      if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-        refs.shadowingStatus.textContent = 'Нужен доступ к микрофону. Разрешите его в настройках браузера и попробуйте снова.';
-      } else if (event.error === 'no-speech') {
-        refs.shadowingStatus.textContent = 'Не удалось расслышать. Нажмите кнопку и попробуйте ещё раз.';
-      } else {
-        refs.shadowingStatus.textContent = 'Не удалось распознать речь. Попробуйте ещё раз.';
-      }
-    };
-    recognition.onend = () => {
-      if (token !== shadowingState.attemptToken) return;
-      shadowingState.isListening = false;
-      clearShadowingRecognitionTimers();
-      refs.shadowingMic.classList.remove('shadowing-mic--active');
-      refs.shadowingStart.disabled = false;
-      refs.shadowingStart.textContent = 'Старт';
-      const transcript = finalTranscript.trim() || latestTranscript.trim();
-      if (transcript) evaluateShadowingTranscript(transcript, token);
-    };
-    try {
-      shadowingState.isListening = true;
-      recognition.start();
-    } catch (_) {
-      shadowingState.isListening = false;
-      clearShadowingRecognitionTimers();
-      refs.shadowingStart.disabled = false;
-      refs.shadowingStatus.textContent = 'Микрофон уже включается. Секунду…';
-    }
-  }
-
-  function runShadowingAttempt(autoRetry = false) {
-    const item = currentShadowingItem();
-    if (!item) return;
-    if (window.location.protocol === 'file:') {
-      refs.shadowingStatus.textContent = 'Chrome не сохраняет доступ к микрофону для локального файла. Закройте эту вкладку и запустите приложение через start.command.';
-      refs.shadowingStart.disabled = false;
-      refs.shadowingStart.textContent = 'Старт';
-      return;
-    }
-    stopShadowingAttempt();
-    stopSpeech();
-    const token = shadowingState.attemptToken;
-    refs.shadowingStart.disabled = true;
-    refs.shadowingStart.textContent = 'Старт';
-    refs.shadowingStatus.textContent = autoRetry ? 'Слушайте ещё раз…' : 'Сначала послушайте фразу…';
-    const started = speakEnglishText(item.text, {
-      rate: refs.shadowingRate.value,
-      onComplete: () => {
-        if (token !== shadowingState.attemptToken) return;
-        refs.shadowingStart.textContent = 'Старт';
-        startShadowingRecognition(token);
-      },
-    });
-    if (!started) {
-      refs.shadowingStart.disabled = false;
-      refs.shadowingStart.textContent = 'Старт';
-      refs.shadowingStatus.textContent = 'Озвучка недоступна в этом браузере.';
-    }
-  }
-
-  function stopShadowingSession() {
-    stopShadowingAttempt();
-    clearAutoNextTimer();
-    stopSpeech();
-    refs.shadowingMic.classList.remove('shadowing-mic--active');
-    refs.shadowingStart.disabled = false;
-    refs.shadowingStart.textContent = 'Старт';
-    refs.shadowingStatus.textContent = 'Остановлено. Нажмите «Старт», когда будете готовы.';
-  }
-
-  function nextShadowingQuestion() {
-    stopShadowingAttempt();
-    clearAutoNextTimer();
-    shadowingState.idx += 1;
-    shadowingState.successfulRepetitions = 0;
-    shadowingState.checkedCurrent = false;
-    if (shadowingState.idx >= shadowingState.session.length) {
-      shadowingState.idx = shadowingState.session.length - 1;
-      showSessionComplete();
-      saveProgress();
-      return;
-    }
-    renderShadowing();
-    scheduleCurrentShadowingAttempt();
-    saveProgress();
-  }
-
-  function previousShadowingQuestion() {
-    if (shadowingState.idx <= 0) return;
-    stopShadowingAttempt();
-    clearAutoNextTimer();
-    shadowingState.idx -= 1;
-    shadowingState.successfulRepetitions = 0;
-    shadowingState.checkedCurrent = false;
-    renderShadowing();
-    saveProgress();
-  }
-
-  function ensureTheoryTopicOptions() {
-    if (refs.theoryTopic.options.length > 0) return;
-
-    THEORY_TOPICS.forEach((topic) => {
-      const opt = document.createElement('option');
-      opt.value = topic.id;
-      opt.textContent = topic.title;
-      refs.theoryTopic.appendChild(opt);
-    });
-  }
-
-  function restoreTheoryProgress(saved) {
-    ensureTheoryTopicOptions();
-    if (!saved || typeof saved !== "object") return false;
-
-    const topicValue = String(saved.topic || "");
-    const hasTopic = Array.from(refs.theoryTopic.options).some((opt) => opt.value === topicValue);
-    if (hasTopic) {
-      refs.theoryTopic.value = topicValue;
-      return true;
-    }
-    return false;
-  }
-
-  function appendTheoryList(parent, items) {
-    const list = document.createElement('ul');
-    list.className = 'theory-list';
-    items.forEach((item) => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      list.appendChild(li);
-    });
-    parent.appendChild(list);
-  }
-
-  function appendTheoryExamples(parent, examples) {
-    const list = document.createElement('div');
-    list.className = 'theory-examples';
-    examples.forEach(([english, russian]) => {
-      const row = document.createElement('div');
-      row.className = 'theory-example';
-
-      const phrase = document.createElement('div');
-      phrase.className = 'theory-example-en';
-      phrase.textContent = english;
-
-      const translation = document.createElement('div');
-      translation.className = 'theory-example-ru';
-      translation.textContent = russian;
-
-      row.appendChild(phrase);
-      row.appendChild(translation);
-      list.appendChild(row);
-    });
-    parent.appendChild(list);
-  }
-
-  const THEORY_AUX_TOKENS = new Set([
-    'am', 'is', 'are', 'was', 'were', 'be', 'been', 'to be',
-    'do', 'does', 'did', 'have', 'has', 'had',
-    'will', 'will be', 'going to'
-  ]);
-
-  const THEORY_SUBJECT_TOKENS = new Set([
-    'i', 'he', 'she', 'it', 'we', 'you', 'they',
-    'subject', 'what', 'who', 'which'
-  ]);
-
-  const THEORY_LABEL_ROLES = { '+': 'pos', '-': 'neg', '−': 'neg', '?': 'ask' };
-
-  function theoryTokenRole(token) {
-    const value = String(token == null ? '' : token).trim().toLowerCase();
-    if (!value) return '';
-    if (/^v\s*[-(1-3]/.test(value)) return 'verb';
-    if (/\bnot\b|n['’]t\b/.test(value)) return 'neg';
-    if (THEORY_AUX_TOKENS.has(value)) return 'aux';
-    const parts = value.split('/').map((part) => part.trim()).filter(Boolean);
-    if (parts.length && parts.every((part) => THEORY_SUBJECT_TOKENS.has(part))) return 'subject';
-    return '';
-  }
-
-  function theoryTokenText(token) {
-    if (token && typeof token === 'object') return token.text || '';
-    return token == null ? '' : String(token);
-  }
-
-  function buildTheorySchemeCells(schemeRows) {
-    const rows = schemeRows.map((row) => ({
-      label: row.label || '',
-      tokens: (row.tokens || []).map((token) => {
-        const text = theoryTokenText(token);
-        const role = (token && typeof token === 'object' && token.role) || theoryTokenRole(text);
-        return { text, role };
-      })
-    }));
-
-    const columns = rows.reduce((max, row) => Math.max(max, row.tokens.length), 0);
-    const cells = [];
-    const open = new Map();
-
-    rows.forEach((row, rowIndex) => {
-      const offset = columns - row.tokens.length;
-      const rowCells = [{
-        column: 1,
-        span: 1,
-        text: row.label,
-        kind: 'label',
-        role: THEORY_LABEL_ROLES[row.label] || ''
-      }];
-
-      row.tokens.forEach((token, index) => {
-        rowCells.push({
-          column: index === 0 ? 2 : 2 + offset + index,
-          span: index === 0 ? offset + 1 : 1,
-          text: token.text,
-          kind: 'token',
-          role: token.role
-        });
-      });
-
-      const filled = new Set();
-
-      rowCells.forEach((cell) => {
-        filled.add(cell.column);
-        const previous = open.get(cell.column);
-        const sameBlock = previous
-          && previous.lastRow === rowIndex - 1
-          && previous.span === cell.span
-          && previous.text === cell.text
-          && previous.role === cell.role
-          && previous.kind === cell.kind;
-
-        if (sameBlock) {
-          previous.rows += 1;
-          previous.lastRow = rowIndex;
-          return;
-        }
-
-        const created = Object.assign({ row: rowIndex, rows: 1, lastRow: rowIndex }, cell);
-        cells.push(created);
-        open.set(cell.column, created);
-      });
-
-      open.forEach((cell, column) => {
-        if (!filled.has(column)) open.delete(column);
-      });
-    });
-
-    return { columns, rowCount: rows.length, cells };
-  }
-
-  function appendTheorySchemes(parent, schemes) {
-    schemes.forEach((scheme) => {
-      const details = document.createElement('details');
-      details.className = 'theory-scheme';
-      details.open = true;
-
-      const summary = document.createElement('summary');
-      summary.textContent = scheme.title || 'Показать схему';
-      details.appendChild(summary);
-
-      const rows = document.createElement('div');
-      rows.className = 'theory-scheme-rows';
-
-      const grid = buildTheorySchemeCells(scheme.rows || []);
-      rows.style.gridTemplateColumns = '42px repeat(' + Math.max(grid.columns, 1) + ', minmax(0, 1fr))';
-
-      grid.cells.forEach((cell) => {
-        const cellEl = document.createElement('span');
-        cellEl.className = cell.kind === 'label' ? 'theory-scheme-label' : 'theory-scheme-token';
-        if (cell.role) {
-          cellEl.classList.add((cell.kind === 'label' ? 'theory-scheme-label--' : 'theory-scheme-token--') + cell.role);
-        }
-        if (cell.rows > 1) cellEl.classList.add('theory-scheme-cell--merged');
-        cellEl.style.gridColumn = cell.column + ' / span ' + cell.span;
-        cellEl.style.gridRow = (cell.row + 1) + ' / span ' + cell.rows;
-        cellEl.textContent = cell.text;
-        rows.appendChild(cellEl);
-      });
-
-      details.appendChild(rows);
-      parent.appendChild(details);
-    });
-  }
-
-  function renderTheory() {
-    hideSessionComplete();
-    clearAutoNextTimer();
-    ensureTheoryTopicOptions();
-
-    const topic = THEORY_TOPICS.find((item) => item.id === refs.theoryTopic.value) || THEORY_TOPICS[0];
-    if (!topic) {
-      refs.theoryTitle.textContent = 'Теория не найдена';
-      refs.theoryBody.textContent = '';
-      return;
-    }
-
-    refs.theoryTopic.value = topic.id;
-    refs.theoryTitle.textContent = topic.title;
-    refs.theoryBody.innerHTML = '';
-
-    if (topic.subtitle) {
-      const subtitle = document.createElement('p');
-      subtitle.className = 'theory-subtitle';
-      subtitle.textContent = topic.subtitle;
-      refs.theoryBody.appendChild(subtitle);
-    }
-
-    topic.sections.forEach((section) => {
-      const block = document.createElement('section');
-      block.className = 'theory-section';
-
-      const heading = document.createElement('h3');
-      heading.textContent = section.title;
-      block.appendChild(heading);
-
-      if (section.items) appendTheoryList(block, section.items);
-      if (section.schemes) appendTheorySchemes(block, section.schemes);
-      if (section.examples) appendTheoryExamples(block, section.examples);
-
-      refs.theoryBody.appendChild(block);
-    });
-  }
+  const {
+    currentLevel,
+    questionTranslationOverride,
+    currentGrammarTopic,
+    questionsForCurrentGrammarTopic,
+    syncGrammarTopicTrigger,
+    showGrammarTopicPicker,
+    hideGrammarTopicPicker,
+    ensureGrammarTopicOptions,
+    pickSession,
+    renderGrammar,
+    nextGrammarQuestion,
+    checkGrammarAnswer
+  } = window.Trainer.createGrammarMode({
+    AUTO_NEXT_DELAY_MS,
+    DEFAULT_ANSWER_PLACEHOLDER,
+    activity,
+    allLevels,
+    cancelPendingActivity,
+    fillPromptWithAnswer,
+    flashCorrect,
+    grammarState,
+    hideSessionComplete,
+    isAnswerMatch,
+    normalize,
+    playCorrectSound,
+    playWrongSound,
+    refs,
+    renderQuestionText,
+    saveProgress,
+    setFeedback,
+    setQuestionTranslation,
+    setSelectedSentenceForSpeech,
+    showQuestionTranslation,
+    showSessionComplete,
+    speakEnglishText,
+    viewState
+  });
+
+  const {
+    checkVocabAnswer,
+    ensureVocabTopicOptions,
+    hideVocabList,
+    hideVocabTopicPicker,
+    nextVocabQuestion,
+    pickVocabSession,
+    renderVocab,
+    restoreVocabProgress,
+    showVocabList,
+    showVocabTopicPicker,
+    syncVocabTopicTrigger
+  } = window.Trainer.createVocabularyMode({
+    AUTO_NEXT_DELAY_MS,
+    DEFAULT_ANSWER_PLACEHOLDER,
+    activity,
+    answerOptionsForVocabItem,
+    asNumber,
+    cancelPendingActivity,
+    flashCorrect,
+    getAnswerMatch,
+    hideSessionComplete,
+    normalize,
+    playCorrectSound,
+    playWrongSound,
+    primaryAnswerText,
+    refs,
+    renderQuestionText,
+    saveProgress,
+    setFeedback,
+    setQuestionTranslation,
+    setSelectedSentenceForSpeech,
+    showSessionComplete,
+    shuffleItems,
+    speakEnglishText,
+    viewState,
+    vocabState,
+    vocabTopics
+  });
+
+  const {
+    checkListeningAnswer,
+    compareListeningAnswer,
+    ensureListeningTopicOptions,
+    nextListeningQuestion,
+    pickListeningSession,
+    previousListeningQuestion,
+    renderListening,
+    restoreListeningProgress,
+    showListeningHint,
+    speakCurrentListeningItem
+  } = window.Trainer.createListeningMode({
+    activity,
+    asNumber,
+    cancelPendingActivity,
+    flashCorrect,
+    hideSessionComplete,
+    listeningState,
+    playCorrectSound,
+    playWrongSound,
+    refs,
+    saveProgress,
+    setFeedback,
+    setQuestionTranslation,
+    setSelectedSentenceForSpeech,
+    showSessionComplete,
+    shuffleItems,
+    speakEnglishText,
+    viewState
+  });
+
+  const {
+    ensureShadowingTopicOptions,
+    hideShadowingTopicPicker,
+    nextShadowingQuestion,
+    pickShadowingSession,
+    previousShadowingQuestion,
+    renderShadowing,
+    restoreShadowingProgress,
+    runShadowingAttempt,
+    showShadowingTopicPicker,
+    stopShadowingAttempt,
+    stopShadowingSession,
+    syncShadowingTopicTrigger
+  } = window.Trainer.createShadowingMode({
+    SHADOWING_MAX_LISTEN_MS,
+    SHADOWING_SILENCE_MS,
+    SHADOWING_SUCCESS_PAUSE_MS,
+    activity,
+    asNumber,
+    cancelPendingActivity,
+    compareListeningAnswer,
+    flashCorrect,
+    hideSessionComplete,
+    playCorrectSound,
+    playWrongSound,
+    refs,
+    saveProgress,
+    setFeedback,
+    setQuestionTranslation,
+    setSelectedSentenceForSpeech,
+    shadowingState,
+    showSessionComplete,
+    speakEnglishText,
+    stopSpeech,
+    vocabTopics,
+    getCurrentMode: () => currentMode
+  });
+
+  const {
+    ensureTheoryTopicOptions,
+    renderTheory,
+    restoreTheoryProgress
+  } = window.Trainer.createTheoryMode({
+    cancelPendingActivity,
+    hideSessionComplete,
+    refs
+  });
 
   function switchMode(mode) {
-    if (mode !== 'shadowing') stopShadowingAttempt();
+    cancelPendingActivity();
+    stopShadowingAttempt();
+    viewState.sentenceTranslationRequestId += 1;
     currentMode = mode;
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
@@ -3857,7 +804,6 @@
       renderTheory();
     } else if (mode === 'vocabulary') {
       ensureVocabTopicOptions();
-      state.autoSpeakCorrect = refs.autoSpeakCorrectVocab.checked;
       if (!vocabState.session.length) {
         vocabState.session = pickVocabSession();
         vocabState.idx = 0;
@@ -3882,50 +828,15 @@
       renderShadowing();
     } else {
       refs.questionTranslation.classList.remove('vocab-hint');
-      render();
+      renderGrammar();
     }
     saveProgress();
-  }
-
-  function render() {
-    hideSessionComplete();
-    stopSpeech();
-    state.sentenceTranslationRequestId += 1;
-
-    const q = currentQuestion();
-    if (!q) {
-      refs.questionText.textContent = "Вопросы не найдены.";
-      setQuestionTranslation("");
-      setSelectedSentenceForSpeech("");
-      return;
-    }
-
-    refs.position.textContent = `${state.idx + 1} / ${state.session.length}`;
-    refs.correctCount.textContent = String(state.correct);
-    refs.wrongCount.textContent = String(state.wrong);
-    refs.questionId.textContent = String(q.id);
-    refs.speakWordBtn.textContent = 'Озвучить предложение';
-    renderQuestionText(q.prompt);
-    setQuestionTranslation("");
-    setSelectedSentenceForSpeech(fillPromptWithAnswer(q.prompt, q.answer));
-    refs.optionA.textContent = `a) ${q.options.a}`;
-    refs.optionB.textContent = `b) ${q.options.b}`;
-    refs.optionC.textContent = `c) ${q.options.c}`;
-
-    refs.answerInput.value = "";
-    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
-    refs.answerInput.focus();
-    refs.hint.textContent = "";
-    setFeedback("", null);
-    state.checkedCurrent = false;
-    state.wrongCounted = false;
-    void showQuestionTranslation(q);
   }
 
   function showSessionComplete() {
     const stats = currentMode === 'vocabulary'
       ? vocabState
-      : (currentMode === 'listening' ? listeningState : (currentMode === 'shadowing' ? shadowingState : state));
+      : (currentMode === 'listening' ? listeningState : (currentMode === 'shadowing' ? shadowingState : grammarState));
     const total = stats.session.length;
     const correct = stats.correct;
     const missed = Math.max(0, total - stats.correct - stats.wrong);
@@ -3951,77 +862,25 @@
     refs.sessionComplete.hidden = false;
   }
 
-  function nextQuestion() {
-    if (!state.session.length) {
-      return;
-    }
-
-    state.idx += 1;
-    if (state.idx >= state.session.length) {
-      state.idx = state.session.length - 1;
-      showSessionComplete();
-      saveProgress();
-      return;
-    }
-
-    render();
-  }
-
   refs.newSession.addEventListener("click", () => {
-    clearAutoNextTimer();
-    state.session = pickSession();
-    state.idx = 0;
-    state.correct = 0;
-    state.wrong = 0;
-    render();
+    cancelPendingActivity();
+    grammarState.session = pickSession();
+    grammarState.idx = 0;
+    grammarState.correct = 0;
+    grammarState.wrong = 0;
+    renderGrammar();
     saveProgress();
   });
 
   refs.checkBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { checkVocabAnswer(); return; }
     if (currentMode === 'listening') { checkListeningAnswer(); return; }
-    const q = currentQuestion();
-    if (!q || state.checkedCurrent) {
-      return;
-    }
-
-    const user = normalize(refs.answerInput.value);
-    const target = normalize(q.answer);
-
-    if (!user) {
-      setFeedback("Сначала впиши ответ.", false);
-      return;
-    }
-
-    if (isAnswerMatch(user, target)) {
-      if (!state.wrongCounted) {
-        state.correct += 1;
-        refs.correctCount.textContent = String(state.correct);
-      }
-      state.checkedCurrent = true;
-      setFeedback("Верно!", true);
-      playCorrectSound();
-      flashCorrect();
-      queueNextQuestionAfterCorrect(q);
-    } else {
-      if (!state.wrongCounted) {
-        state.wrong += 1;
-        state.wrongCounted = true;
-        refs.wrongCount.textContent = String(state.wrong);
-      }
-      setFeedback(`Почти. Правильный ответ: ${q.answer}`, false);
-      playWrongSound();
-      refs.answerInput.value = '';
-      refs.answerInput.focus();
-    }
-
-    saveProgress();
+    if (currentMode === 'grammar') checkGrammarAnswer();
   });
-
 
   refs.prevBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') {
-      clearAutoNextTimer();
+      cancelPendingActivity();
       vocabState.idx = Math.max(0, vocabState.idx - 1);
       renderVocab();
       saveProgress();
@@ -4032,10 +891,10 @@
       return;
     }
     if (currentMode === 'shadowing') { previousShadowingQuestion(); return; }
-    if (state.idx <= 0) return;
-    clearAutoNextTimer();
-    state.idx -= 1;
-    render();
+    if (grammarState.idx <= 0) return;
+    cancelPendingActivity();
+    grammarState.idx -= 1;
+    renderGrammar();
     saveProgress();
   });
 
@@ -4043,8 +902,8 @@
     if (currentMode === 'vocabulary') { nextVocabQuestion(); return; }
     if (currentMode === 'listening') { nextListeningQuestion(); return; }
     if (currentMode === 'shadowing') { nextShadowingQuestion(); return; }
-    clearAutoNextTimer();
-    nextQuestion();
+    cancelPendingActivity();
+    nextGrammarQuestion();
     saveProgress();
   });
 
@@ -4057,7 +916,7 @@
       }
       if (currentMode === 'vocabulary' && !normalize(refs.answerInput.value)) {
         const shouldSpeak =
-          vocabState.idx === state.emptyVocabEnterPromptIdx &&
+          vocabState.idx === vocabState.emptyEnterPromptIdx &&
           refs.answerInput.placeholder === EMPTY_ENTER_SPEAK_PLACEHOLDER;
 
         if (shouldSpeak) {
@@ -4066,12 +925,12 @@
           return;
         }
 
-        state.emptyVocabEnterPromptIdx = vocabState.idx;
+        vocabState.emptyEnterPromptIdx = vocabState.idx;
         refs.answerInput.placeholder = EMPTY_ENTER_SPEAK_PLACEHOLDER;
         event.preventDefault();
         return;
       } else {
-        state.emptyVocabEnterPromptIdx = -1;
+        vocabState.emptyEnterPromptIdx = -1;
         refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
       }
       refs.checkBtn.click();
@@ -4079,7 +938,7 @@
   });
 
   refs.answerInput.addEventListener("input", () => {
-    state.emptyVocabEnterPromptIdx = -1;
+    vocabState.emptyEnterPromptIdx = -1;
     refs.answerInput.placeholder = currentMode === 'listening'
       ? "Напишите услышанную фразу"
       : DEFAULT_ANSWER_PLACEHOLDER;
@@ -4090,7 +949,7 @@
   });
 
   refs.autoSpeakCorrect.addEventListener("change", () => {
-    state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
+    grammarState.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
     saveProgress();
   });
 
@@ -4101,7 +960,7 @@
 
   refs.nextSessionBtn.addEventListener("click", () => {
     hideSessionComplete();
-    clearAutoNextTimer();
+    cancelPendingActivity();
     if (currentMode === 'vocabulary') {
       vocabState.session = pickVocabSession();
       vocabState.idx = 0;
@@ -4145,7 +1004,7 @@
   refs.tabShadowing.addEventListener('click', () => switchMode('shadowing'));
 
   refs.vocabNewSession.addEventListener('click', () => {
-    clearAutoNextTimer();
+    cancelPendingActivity();
     ensureVocabTopicOptions();
     vocabState.session = pickVocabSession();
     vocabState.idx = 0;
@@ -4226,12 +1085,12 @@
   });
 
   refs.autoSpeakCorrectVocab.addEventListener('change', () => {
-    state.autoSpeakCorrect = refs.autoSpeakCorrectVocab.checked;
+    vocabState.autoSpeakCorrect = refs.autoSpeakCorrectVocab.checked;
     saveProgress();
   });
 
   refs.vocabTopic.addEventListener('change', () => {
-    clearAutoNextTimer();
+    cancelPendingActivity();
     syncVocabTopicTrigger();
     vocabState.session = pickVocabSession();
     vocabState.idx = 0;
@@ -4258,7 +1117,7 @@
   });
 
   refs.listeningNewSession.addEventListener('click', () => {
-    clearAutoNextTimer();
+    cancelPendingActivity();
     ensureListeningTopicOptions();
     listeningState.session = pickListeningSession();
     listeningState.idx = 0;
@@ -4269,7 +1128,7 @@
   });
 
   refs.listeningTopic.addEventListener('change', () => {
-    clearAutoNextTimer();
+    cancelPendingActivity();
     listeningState.session = pickListeningSession();
     listeningState.idx = 0;
     listeningState.correct = 0;
@@ -4296,7 +1155,7 @@
 
   refs.shadowingNewSession.addEventListener('click', () => {
     stopShadowingAttempt();
-    clearAutoNextTimer();
+    cancelPendingActivity();
     shadowingState.session = pickShadowingSession();
     shadowingState.idx = 0;
     shadowingState.correct = 0;
@@ -4314,7 +1173,7 @@
   refs.shadowingRate.addEventListener('change', saveProgress);
   refs.shadowingRepetitions.addEventListener('change', () => {
     stopShadowingAttempt();
-    clearAutoNextTimer();
+    cancelPendingActivity();
     shadowingState.successfulRepetitions = 0;
     shadowingState.checkedCurrent = false;
     renderShadowing();
@@ -4342,24 +1201,24 @@
   });
 
   refs.levelSelect.addEventListener("change", () => {
-    clearAutoNextTimer();
+    cancelPendingActivity();
     ensureGrammarTopicOptions(currentLevel());
-    state.session = pickSession();
-    state.idx = 0;
-    state.correct = 0;
-    state.wrong = 0;
-    render();
+    grammarState.session = pickSession();
+    grammarState.idx = 0;
+    grammarState.correct = 0;
+    grammarState.wrong = 0;
+    renderGrammar();
     saveProgress();
   });
 
   refs.grammarTopic.addEventListener("change", () => {
-    clearAutoNextTimer();
+    cancelPendingActivity();
     syncGrammarTopicTrigger();
-    state.session = pickSession();
-    state.idx = 0;
-    state.correct = 0;
-    state.wrong = 0;
-    render();
+    grammarState.session = pickSession();
+    grammarState.idx = 0;
+    grammarState.correct = 0;
+    grammarState.wrong = 0;
+    renderGrammar();
     saveProgress();
   });
 
@@ -4367,8 +1226,8 @@
   ensureGrammarTopicOptions(levelNames[0]);
   const restored = restoreProgress();
   if (!restored) {
-    state.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
-    state.session = pickSession();
+    grammarState.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
+    grammarState.session = pickSession();
     ensureVocabTopicOptions();
     vocabState.session = pickVocabSession();
     ensureListeningTopicOptions();

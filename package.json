@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "build-vocab": "node build.js"
+    "build-vocab": "node build.js",
+    "test": "node --test tests/*.test.js"
   }
 }
