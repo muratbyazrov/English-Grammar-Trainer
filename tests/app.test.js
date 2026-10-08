@@ -50,14 +50,6 @@ test('grammar and vocabulary speech settings stay independent and survive reload
   assert.equal(reload.snapshot().vocabulary.idx, 1);
 });
 
-test('pending listening playback is cancelled on leaving the mode', () => {
-  const app = createApp();
-  app.click('tab-listening');
-  app.click('tab-grammar');
-  app.advance(1000);
-  assert.equal(app.spoken.length, 0);
-});
-
 test('manual vocabulary next cancels pending auto-next', () => {
   const app = createApp();
   app.click('tab-vocab');
@@ -93,8 +85,6 @@ test('all modes, topic pickers and vocabulary list render through UI events', ()
   assert.ok(app.el('vocab-list-body').children.length > 0);
   app.click('tab-theory');
   assert.ok(app.el('theory-body').children.length > 0);
-  app.click('tab-listening'); app.advance(120);
-  assert.equal(app.spoken.length, 1);
 });
 
 test('leaving shadowing aborts recognition and ignores stale results', () => {
@@ -133,16 +123,44 @@ test('auto-next still works when speech synthesis is unavailable', () => {
   assert.equal(app.snapshot().correct, 1);
 });
 
-test('leaving listening cancels its successful-answer auto-next', () => {
-  const app = createApp();
-  app.click('tab-listening'); app.change('listening-auto-next', true); app.advance(120);
-  app.answer(app.spoken.at(-1).text);
-  assert.equal(app.snapshot().listening.correct, 1);
-  app.click('tab-grammar');
-  const question = app.el('question-text').textContent;
-  app.advance(1500);
-  assert.equal(app.snapshot().listening.idx, 0);
-  assert.equal(app.el('question-text').textContent, question);
+test('retired mode progress falls back to grammar and drops obsolete data on save', () => {
+  const saved = createApp().snapshot();
+  saved.mode = 'listening';
+  saved.listening = { topic: 'all', idx: 4, correct: 3, wrong: 1 };
+  saved.idx = 7;
+  saved.correct = 5;
+  saved.wrong = 2;
+  saved.vocabulary.idx = 3;
+  saved.vocabulary.correct = 2;
+  saved.shadowing.idx = 2;
+  saved.shadowing.correct = 1;
+
+  const app = createApp({ saved });
+  const snapshot = app.snapshot();
+  assert.equal(snapshot.mode, 'grammar');
+  assert.equal(snapshot.idx, 7);
+  assert.equal(snapshot.correct, 5);
+  assert.equal(snapshot.wrong, 2);
+  assert.deepEqual(snapshot.vocabulary, saved.vocabulary);
+  assert.deepEqual(snapshot.shadowing, saved.shadowing);
+  assert.equal(Object.hasOwn(snapshot, 'listening'), false);
+
+  const reload = createApp({ saved: snapshot });
+  assert.deepEqual(reload.snapshot(), snapshot);
+});
+
+test('shadowing rejects a different phrase and retries after the pause', () => {
+  const app = createApp({ recognition: true });
+  app.click('tab-shadowing'); app.click('shadowing-start');
+  app.spoken.at(-1).dispatchEvent({ type: 'end' });
+  const recognizer = app.recognizers[0];
+  recognizer.onresult({ resultIndex: 0, results: [{ 0: { transcript: 'a different sentence' }, isFinal: true }] });
+  recognizer.stop();
+  assert.equal(app.snapshot().shadowing.correct, 0);
+  assert.equal(app.snapshot().shadowing.wrong, 1);
+  app.advance(1100);
+  assert.equal(app.spoken.length, 2);
+  assert.equal(app.spoken[1].text, app.spoken[0].text);
 });
 
 test('shadowing successful repetition schedules the next phrase and cancels it on exit', () => {

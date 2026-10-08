@@ -992,80 +992,6 @@
       ],
     },
   ];
-  const LISTENING_TOPICS = [
-    {
-      id: "small-words",
-      title: "Small Words",
-      items: [
-        "So, as far as I know, it should be fine by the end of the day.",
-        "I just want to flag that it might take a bit longer than we thought.",
-        "Let me look into it and I'll get back to you in a bit.",
-        "Yeah, I'm still kind of stuck on it, but I think I'm close.",
-        "So I went ahead and pushed it to review. Let me know what you think.",
-        "I mean, it depends on what we find once we dig into it.",
-        "I'll try to wrap it up today, but I can't promise it'll be done by end of day.",
-        "So just a heads-up, I might need a bit of help with this one.",
-        "I think the best thing to do is to loop in the infra team and go from there.",
-        "OK, so I looked into it and it turns out it's a bit more complex than I thought.",
-      ],
-    },
-    {
-      id: "incident-call",
-      title: "Incident Call",
-      items: [
-        "Can you jump on a call? The service is down and we need all hands on.",
-        "I'm not sure if it's a sev one yet. Let me pull up the logs and check.",
-        "As far as I know, the on-call engineer is already looking into it.",
-        "So we rolled it back and it looks like it's starting to stabilize.",
-        "Can you give us a quick update on what's going on right now?",
-        "I think we need to narrow it down a bit more before we push a hotfix.",
-        "It turns out the root cause was a config change we pushed earlier today.",
-        "So we applied a workaround for now. We'll do a proper fix in the morning.",
-        "I want to make sure we do a blameless postmortem and figure out how to prevent this.",
-      ],
-    },
-    {
-      id: "standup",
-      title: "Standup",
-      items: [
-        "Alex picked up the migration ticket on Monday but got stuck on a dependency.",
-        "He flagged it straight away, but we still haven't managed to unblock him.",
-        "Masha is wrapping up the API refactor.",
-        "She pushed it to review yesterday and addressed most of the comments.",
-        "It should be mergeable by end of day.",
-        "Dan raised a concern about the deadline.",
-        "His rough estimate is four to five days, but it depends on the edge cases.",
-        "We decided to take that discussion offline after the standup.",
-      ],
-    },
-    {
-      id: "backend",
-      title: "Backend/API",
-      items: [
-        "Our service exposes a REST API that the frontend team consumes to get data.",
-        "Every request goes through middleware that intercepts it and validates the authentication token.",
-        "We always validate the payload before it hits the database.",
-        "Heavy tasks like sending emails are offloaded to a background queue.",
-        "Last week we discovered a bottleneck.",
-        "A database query was slowing down the whole service under high load.",
-        "We added retry logic with exponential backoff.",
-        "If the cache goes down, the service falls back to the database.",
-      ],
-    },
-    {
-      id: "database",
-      title: "Database",
-      items: [
-        "Moving it to Postgres gives us persistence and makes it much easier to scale horizontally.",
-        "The plan is to introduce a migration to create the new tables.",
-        "We'll create indexes on the columns we query most frequently.",
-        "I want to analyze the execution plan for the heaviest queries before we go live.",
-        "We need to handle transactions carefully.",
-        "We should always acquire locks in the same order to avoid deadlocks.",
-        "If anything goes wrong, we roll back the transaction and the schema stays consistent.",
-      ],
-    },
-  ];
   const SHADOWING_TOPICS = [
     {
       id: "work-discussions",
@@ -1288,5 +1214,5 @@
     "This service has a hard dependency on the auth service.": "Этот сервис жёстко зависит от сервиса аутентификации.",
   };
 
-  window.TrainerData = { ALL_GRAMMAR_TOPICS_VALUE, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES, THEORY_TOPICS, LISTENING_TOPICS, SHADOWING_TOPICS, SHADOWING_TRANSLATIONS };
+  window.TrainerData = { ALL_GRAMMAR_TOPICS_VALUE, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES, THEORY_TOPICS, SHADOWING_TOPICS, SHADOWING_TRANSLATIONS };
 })();

@@ -350,7 +350,6 @@ window.Trainer.createGrammarMode = function ({
     refs.answerInput.value = "";
     refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
     refs.answerInput.focus();
-    refs.hint.textContent = "";
     setFeedback("", null);
     grammarState.checkedCurrent = false;
     grammarState.wrongCounted = false;

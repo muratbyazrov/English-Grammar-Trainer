@@ -41,7 +41,6 @@
     nextBtn: document.getElementById("next-btn"),
     autoSpeakCorrect: document.getElementById("auto-speak-correct"),
     feedback: document.getElementById("feedback"),
-    hint: document.getElementById("hint"),
     optionA: document.getElementById("option-a"),
     optionB: document.getElementById("option-b"),
     optionC: document.getElementById("option-c"),
@@ -54,12 +53,10 @@
     tabGrammar: document.getElementById('tab-grammar'),
     tabTheory: document.getElementById('tab-theory'),
     tabVocab: document.getElementById('tab-vocab'),
-    tabListening: document.getElementById('tab-listening'),
     tabShadowing: document.getElementById('tab-shadowing'),
     controlsGrammar: document.getElementById('controls-grammar'),
     controlsTheory: document.getElementById('controls-theory'),
     controlsVocab: document.getElementById('controls-vocab'),
-    controlsListening: document.getElementById('controls-listening'),
     controlsShadowing: document.getElementById('controls-shadowing'),
     theoryTopic: document.getElementById('theory-topic'),
     vocabTopic: document.getElementById('vocab-topic'),
@@ -73,15 +70,6 @@
     vocabShowList: document.getElementById('vocab-show-list'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
-    listeningTopic: document.getElementById('listening-topic'),
-    listeningRate: document.getElementById('listening-rate'),
-    listeningAutoNext: document.getElementById('listening-auto-next'),
-    listeningNewSession: document.getElementById('listening-new-session'),
-    listeningActions: document.getElementById('listening-actions'),
-    listenBtn: document.getElementById('listen-btn'),
-    listeningFirstWord: document.getElementById('listening-first-word'),
-    listeningGaps: document.getElementById('listening-gaps'),
-    listeningShowText: document.getElementById('listening-show-text'),
     shadowingTopic: document.getElementById('shadowing-topic'),
     shadowingTopicTrigger: document.getElementById('shadowing-topic-trigger'),
     shadowingTopicTriggerIcon: document.getElementById('shadowing-topic-trigger-icon'),
@@ -206,15 +194,6 @@
     autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
     emptyEnterPromptIdx: -1,
   };
-  const listeningState = {
-    session: [],
-    idx: 0,
-    correct: 0,
-    wrong: 0,
-    checkedCurrent: false,
-    wrongCounted: false,
-    hintLevel: 0,
-  };
   const shadowingState = {
     session: [],
     idx: 0,
@@ -225,7 +204,7 @@
     successfulRepetitions: 0,
     recognition: null,
     attemptToken: 0,
-    isListening: false,
+    recognitionActive: false,
   };
 
   function asNumber(value, fallback) {
@@ -402,15 +381,6 @@
           correct: vocabState.correct,
           wrong: vocabState.wrong,
         },
-        listening: {
-          topic: refs.listeningTopic.value,
-          rate: refs.listeningRate.value,
-          autoNext: refs.listeningAutoNext.checked,
-          order: listeningState.session.map((item) => item && item.id).filter((id) => id != null),
-          idx: listeningState.idx,
-          correct: listeningState.correct,
-          wrong: listeningState.wrong,
-        },
         shadowing: {
           topic: refs.shadowingTopic.value,
           rate: refs.shadowingRate.value,
@@ -462,10 +432,9 @@
       grammarState.correct = correct;
       grammarState.wrong = wrong;
       restoreVocabProgress(parsed.vocabulary);
-      restoreListeningProgress(parsed.listening);
       restoreShadowingProgress(parsed.shadowing);
       restoreTheoryProgress(parsed.theory);
-      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory' || parsed.mode === 'listening' || parsed.mode === 'shadowing') {
+      if (parsed.mode === 'vocabulary' || parsed.mode === 'theory' || parsed.mode === 'shadowing') {
         currentMode = parsed.mode;
       }
       return true;
@@ -518,9 +487,7 @@
     const sentence = viewState.selectedSentenceForSpeech;
     if (!sentence) return;
 
-    const started = speakEnglishText(sentence, {
-      rate: currentMode === 'listening' ? refs.listeningRate.value : undefined,
-    });
+    const started = speakEnglishText(sentence);
     if (!started) {
       setQuestionTranslation("Озвучка недоступна в этом браузере.");
     }
@@ -690,37 +657,6 @@
   });
 
   const {
-    checkListeningAnswer,
-    compareListeningAnswer,
-    ensureListeningTopicOptions,
-    nextListeningQuestion,
-    pickListeningSession,
-    previousListeningQuestion,
-    renderListening,
-    restoreListeningProgress,
-    showListeningHint,
-    speakCurrentListeningItem
-  } = window.Trainer.createListeningMode({
-    activity,
-    asNumber,
-    cancelPendingActivity,
-    flashCorrect,
-    hideSessionComplete,
-    listeningState,
-    playCorrectSound,
-    playWrongSound,
-    refs,
-    saveProgress,
-    setFeedback,
-    setQuestionTranslation,
-    setSelectedSentenceForSpeech,
-    showSessionComplete,
-    shuffleItems,
-    speakEnglishText,
-    viewState
-  });
-
-  const {
     ensureShadowingTopicOptions,
     hideShadowingTopicPicker,
     nextShadowingQuestion,
@@ -740,7 +676,6 @@
     activity,
     asNumber,
     cancelPendingActivity,
-    compareListeningAnswer,
     flashCorrect,
     hideSessionComplete,
     playCorrectSound,
@@ -776,26 +711,23 @@
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
-    refs.tabListening.classList.toggle('mode-tab--active', mode === 'listening');
     refs.tabShadowing.classList.toggle('mode-tab--active', mode === 'shadowing');
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsTheory.hidden = mode !== 'theory';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
-    refs.controlsListening.hidden = mode !== 'listening';
     refs.controlsShadowing.hidden = mode !== 'shadowing';
     refs.statsSection.hidden = mode === 'theory';
     refs.cardContent.hidden = mode === 'theory';
     refs.theoryPanel.hidden = mode !== 'theory';
     refs.optionsSection.hidden = mode !== 'grammar';
     refs.questionMeta.hidden = mode !== 'grammar';
-    refs.vocabModeLabel.hidden = mode !== 'vocabulary' && mode !== 'listening';
+    refs.vocabModeLabel.hidden = mode !== 'vocabulary';
     refs.vocabExample.hidden = mode !== 'vocabulary';
-    refs.listeningActions.hidden = mode !== 'listening';
     refs.shadowingPanel.hidden = mode !== 'shadowing';
     refs.shadowingInlineTranslation.hidden = mode !== 'shadowing';
     refs.questionTranslationRow.hidden = mode === 'shadowing';
-    refs.speakWordBtn.hidden = mode === 'listening' || mode === 'shadowing';
+    refs.speakWordBtn.hidden = mode === 'shadowing';
     refs.answerLabel.hidden = mode === 'shadowing';
     refs.answerInput.hidden = mode === 'shadowing';
     refs.checkBtn.hidden = mode === 'shadowing';
@@ -811,16 +743,6 @@
         vocabState.wrong = 0;
       }
       renderVocab();
-    } else if (mode === 'listening') {
-      ensureListeningTopicOptions();
-      if (!listeningState.session.length) {
-        listeningState.session = pickListeningSession();
-        listeningState.idx = 0;
-        listeningState.correct = 0;
-        listeningState.wrong = 0;
-      }
-      refs.questionTranslation.classList.remove('vocab-hint');
-      renderListening();
     } else if (mode === 'shadowing') {
       ensureShadowingTopicOptions();
       if (!shadowingState.session.length) shadowingState.session = pickShadowingSession();
@@ -836,7 +758,7 @@
   function showSessionComplete() {
     const stats = currentMode === 'vocabulary'
       ? vocabState
-      : (currentMode === 'listening' ? listeningState : (currentMode === 'shadowing' ? shadowingState : grammarState));
+      : (currentMode === 'shadowing' ? shadowingState : grammarState);
     const total = stats.session.length;
     const correct = stats.correct;
     const missed = Math.max(0, total - stats.correct - stats.wrong);
@@ -874,7 +796,6 @@
 
   refs.checkBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { checkVocabAnswer(); return; }
-    if (currentMode === 'listening') { checkListeningAnswer(); return; }
     if (currentMode === 'grammar') checkGrammarAnswer();
   });
 
@@ -884,10 +805,6 @@
       vocabState.idx = Math.max(0, vocabState.idx - 1);
       renderVocab();
       saveProgress();
-      return;
-    }
-    if (currentMode === 'listening') {
-      previousListeningQuestion();
       return;
     }
     if (currentMode === 'shadowing') { previousShadowingQuestion(); return; }
@@ -900,7 +817,6 @@
 
   refs.nextBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { nextVocabQuestion(); return; }
-    if (currentMode === 'listening') { nextListeningQuestion(); return; }
     if (currentMode === 'shadowing') { nextShadowingQuestion(); return; }
     cancelPendingActivity();
     nextGrammarQuestion();
@@ -909,11 +825,6 @@
 
   refs.answerInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-      if (currentMode === 'listening' && !normalize(refs.answerInput.value)) {
-        event.preventDefault();
-        refs.listenBtn.click();
-        return;
-      }
       if (currentMode === 'vocabulary' && !normalize(refs.answerInput.value)) {
         const shouldSpeak =
           vocabState.idx === vocabState.emptyEnterPromptIdx &&
@@ -939,9 +850,7 @@
 
   refs.answerInput.addEventListener("input", () => {
     vocabState.emptyEnterPromptIdx = -1;
-    refs.answerInput.placeholder = currentMode === 'listening'
-      ? "Напишите услышанную фразу"
-      : DEFAULT_ANSWER_PLACEHOLDER;
+    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
   });
 
   refs.speakWordBtn.addEventListener("click", () => {
@@ -970,15 +879,6 @@
       saveProgress();
       return;
     }
-    if (currentMode === 'listening') {
-      listeningState.session = pickListeningSession();
-      listeningState.idx = 0;
-      listeningState.correct = 0;
-      listeningState.wrong = 0;
-      renderListening();
-      saveProgress();
-      return;
-    }
     if (currentMode === 'shadowing') {
       shadowingState.session = pickShadowingSession();
       shadowingState.idx = 0;
@@ -1000,7 +900,6 @@
   refs.tabGrammar.addEventListener('click', () => switchMode('grammar'));
   refs.tabTheory.addEventListener('click', () => switchMode('theory'));
   refs.tabVocab.addEventListener('click', () => switchMode('vocabulary'));
-  refs.tabListening.addEventListener('click', () => switchMode('listening'));
   refs.tabShadowing.addEventListener('click', () => switchMode('shadowing'));
 
   refs.vocabNewSession.addEventListener('click', () => {
@@ -1100,52 +999,6 @@
     saveProgress();
   });
 
-  refs.listenBtn.addEventListener('click', () => {
-    speakCurrentListeningItem();
-  });
-
-  refs.listeningFirstWord.addEventListener('click', () => {
-    showListeningHint(1);
-  });
-
-  refs.listeningGaps.addEventListener('click', () => {
-    showListeningHint(2);
-  });
-
-  refs.listeningShowText.addEventListener('click', () => {
-    showListeningHint(3);
-  });
-
-  refs.listeningNewSession.addEventListener('click', () => {
-    cancelPendingActivity();
-    ensureListeningTopicOptions();
-    listeningState.session = pickListeningSession();
-    listeningState.idx = 0;
-    listeningState.correct = 0;
-    listeningState.wrong = 0;
-    renderListening();
-    saveProgress();
-  });
-
-  refs.listeningTopic.addEventListener('change', () => {
-    cancelPendingActivity();
-    listeningState.session = pickListeningSession();
-    listeningState.idx = 0;
-    listeningState.correct = 0;
-    listeningState.wrong = 0;
-    renderListening();
-    saveProgress();
-  });
-
-  refs.listeningRate.addEventListener('change', () => {
-    saveProgress();
-    speakCurrentListeningItem();
-  });
-
-  refs.listeningAutoNext.addEventListener('change', () => {
-    saveProgress();
-  });
-
   refs.shadowingStart.addEventListener('click', () => {
     if (shadowingState.checkedCurrent) nextShadowingQuestion();
     else runShadowingAttempt();
@@ -1230,8 +1083,6 @@
     grammarState.session = pickSession();
     ensureVocabTopicOptions();
     vocabState.session = pickVocabSession();
-    ensureListeningTopicOptions();
-    listeningState.session = pickListeningSession();
     ensureShadowingTopicOptions();
     shadowingState.session = pickShadowingSession();
     saveProgress();
@@ -1240,8 +1091,6 @@
     switchMode('theory');
   } else if (currentMode === 'vocabulary') {
     switchMode('vocabulary');
-  } else if (currentMode === 'listening') {
-    switchMode('listening');
   } else if (currentMode === 'shadowing') {
     switchMode('shadowing');
   } else {

@@ -6,7 +6,6 @@ window.Trainer.createShadowingMode = function ({
   activity,
   asNumber,
   cancelPendingActivity,
-  compareListeningAnswer,
   flashCorrect,
   hideSessionComplete,
   playCorrectSound,
@@ -182,12 +181,12 @@ window.Trainer.createShadowingMode = function ({
 
   function stopShadowingAttempt() {
     shadowingState.attemptToken += 1;
-    const wasListening = shadowingState.isListening;
-    shadowingState.isListening = false;
+    const wasRecognizing = shadowingState.recognitionActive;
+    shadowingState.recognitionActive = false;
     activity.cancel('shadowing-retry');
     clearShadowingRecognitionTimers();
     refs.shadowingMic.classList.remove('shadowing-mic--active');
-    if (wasListening && shadowingState.recognition) {
+    if (wasRecognizing && shadowingState.recognition) {
       try { shadowingState.recognition.abort(); } catch (_) {}
     }
   }
@@ -237,7 +236,6 @@ window.Trainer.createShadowingMode = function ({
     refs.shadowingTranscript.textContent = '';
     refs.shadowingStart.disabled = false;
     refs.shadowingStart.textContent = 'Старт';
-    refs.hint.textContent = '';
     setFeedback('', null);
     shadowingState.wrongCounted = false;
     shadowingState.checkedCurrent = false;
@@ -282,11 +280,136 @@ window.Trainer.createShadowingMode = function ({
     return recognition;
   }
 
+  function transcriptWordTokens(text) {
+    const normalized = expandTranscriptContractions(String(text || "").replace(/\bsev one\b/gi, "sev1"));
+    return (normalized.match(/[A-Za-zА-Яа-я0-9']+/g) || [])
+      .map((word) => ({ text: word, norm: normalizeTranscriptWord(word) }))
+      .filter((word) => word.norm);
+  }
+
+  function expandTranscriptContractions(text) {
+    return String(text || "")
+      .replace(/\bI'm\b/gi, "I am")
+      .replace(/\byou're\b/gi, "you are")
+      .replace(/\bhe's\b/gi, "he is")
+      .replace(/\bshe's\b/gi, "she is")
+      .replace(/\bit's\b/gi, "it is")
+      .replace(/\bwe're\b/gi, "we are")
+      .replace(/\bthey're\b/gi, "they are")
+      .replace(/\bI'll\b/gi, "I will")
+      .replace(/\byou'll\b/gi, "you will")
+      .replace(/\bhe'll\b/gi, "he will")
+      .replace(/\bshe'll\b/gi, "she will")
+      .replace(/\bit'll\b/gi, "it will")
+      .replace(/\bwe'll\b/gi, "we will")
+      .replace(/\bthey'll\b/gi, "they will")
+      .replace(/\bI'd\b/gi, "I would")
+      .replace(/\bI've\b/gi, "I have")
+      .replace(/\byou've\b/gi, "you have")
+      .replace(/\bwe've\b/gi, "we have")
+      .replace(/\bthey've\b/gi, "they have")
+      .replace(/\blet's\b/gi, "let us")
+      .replace(/\bdon't\b/gi, "do not")
+      .replace(/\bdoesn't\b/gi, "does not")
+      .replace(/\bdidn't\b/gi, "did not")
+      .replace(/\bcan't\b/gi, "can not")
+      .replace(/\bwon't\b/gi, "will not")
+      .replace(/\bhaven't\b/gi, "have not")
+      .replace(/\bhasn't\b/gi, "has not")
+      .replace(/\bhadn't\b/gi, "had not")
+      .replace(/\bisn't\b/gi, "is not")
+      .replace(/\baren't\b/gi, "are not")
+      .replace(/\bwasn't\b/gi, "was not")
+      .replace(/\bweren't\b/gi, "were not")
+      .replace(/\bshouldn't\b/gi, "should not")
+      .replace(/\bcouldn't\b/gi, "could not")
+      .replace(/\bwouldn't\b/gi, "would not");
+  }
+
+  function normalizeTranscriptWord(word) {
+    const latinLookalikes = {
+      а: "a",
+      е: "e",
+      о: "o",
+      р: "p",
+      с: "c",
+      х: "x",
+      у: "y",
+      к: "k",
+      А: "a",
+      Е: "e",
+      О: "o",
+      Р: "p",
+      С: "c",
+      Х: "x",
+      У: "y",
+      К: "k",
+    };
+
+    return String(word || "")
+      .replace(/[аеорсхукАЕОРСХУК]/g, (char) => latinLookalikes[char] || char)
+      .toLowerCase()
+      .replace(/[\u2018\u2019`]/g, "'")
+      .replace(/[^a-z0-9']+/g, "")
+      .trim();
+  }
+
+  function compareTranscript(userText, targetText) {
+    const userWords = transcriptWordTokens(userText);
+    const targetWords = transcriptWordTokens(targetText);
+    const rows = targetWords.length + 1;
+    const cols = userWords.length + 1;
+    const dp = Array.from({ length: rows }, () => Array(cols).fill(0));
+
+    for (let i = 0; i < rows; i += 1) dp[i][0] = i;
+    for (let j = 0; j < cols; j += 1) dp[0][j] = j;
+
+    for (let i = 1; i < rows; i += 1) {
+      for (let j = 1; j < cols; j += 1) {
+        const cost = targetWords[i - 1].norm === userWords[j - 1].norm ? 0 : 1;
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + cost
+        );
+      }
+    }
+
+    const targetMarks = [];
+    let i = targetWords.length;
+    let j = userWords.length;
+
+    while (i > 0 || j > 0) {
+      if (
+        i > 0 &&
+        j > 0 &&
+        dp[i][j] === dp[i - 1][j - 1] + (targetWords[i - 1].norm === userWords[j - 1].norm ? 0 : 1)
+      ) {
+        targetMarks.unshift({
+          word: targetWords[i - 1].text,
+          ok: targetWords[i - 1].norm === userWords[j - 1].norm,
+          heard: userWords[j - 1].text,
+        });
+        i -= 1;
+        j -= 1;
+      } else if (i > 0 && dp[i][j] === dp[i - 1][j] + 1) {
+        targetMarks.unshift({ word: targetWords[i - 1].text, ok: false, heard: "" });
+        i -= 1;
+      } else {
+        j -= 1;
+      }
+    }
+
+    const matched = targetMarks.filter((mark) => mark.ok).length;
+    const accuracy = targetWords.length ? matched / targetWords.length : 0;
+    return { matched, total: targetWords.length, accuracy, targetMarks };
+  }
+
   function evaluateShadowingTranscript(transcript, token) {
     if (token !== shadowingState.attemptToken) return;
     const item = currentShadowingItem();
     if (!item) return;
-    const result = compareListeningAnswer(transcript, item.text);
+    const result = compareTranscript(transcript, item.text);
     const pct = Math.round(result.accuracy * 100);
     const passed = result.accuracy >= 0.78;
     const repetitions = currentShadowingRepetitions();
@@ -337,13 +460,13 @@ window.Trainer.createShadowingMode = function ({
     let latestTranscript = '';
     recognition.onstart = () => {
       if (token !== shadowingState.attemptToken) return;
-      shadowingState.isListening = true;
+      shadowingState.recognitionActive = true;
       refs.shadowingMic.classList.add('shadowing-mic--active');
       refs.shadowingStatus.textContent = 'Говорите… Я дождусь паузы после фразы.';
       refs.shadowingTranscript.textContent = '';
       clearShadowingRecognitionTimers();
       activity.schedule('shadowing-max', () => {
-        if (token !== shadowingState.attemptToken || !shadowingState.isListening) return;
+        if (token !== shadowingState.attemptToken || !shadowingState.recognitionActive) return;
         try { recognition.stop(); } catch (_) {}
       }, SHADOWING_MAX_LISTEN_MS);
     };
@@ -358,13 +481,13 @@ window.Trainer.createShadowingMode = function ({
       latestTranscript = [finalTranscript, interim].filter(Boolean).join(' ');
       refs.shadowingTranscript.textContent = latestTranscript;
       activity.schedule('shadowing-silence', () => {
-        if (token !== shadowingState.attemptToken || !shadowingState.isListening) return;
+        if (token !== shadowingState.attemptToken || !shadowingState.recognitionActive) return;
         try { recognition.stop(); } catch (_) {}
       }, SHADOWING_SILENCE_MS);
     };
     recognition.onerror = (event) => {
       if (token !== shadowingState.attemptToken) return;
-      shadowingState.isListening = false;
+      shadowingState.recognitionActive = false;
       clearShadowingRecognitionTimers();
       refs.shadowingMic.classList.remove('shadowing-mic--active');
       refs.shadowingStart.disabled = false;
@@ -379,7 +502,7 @@ window.Trainer.createShadowingMode = function ({
     };
     recognition.onend = () => {
       if (token !== shadowingState.attemptToken) return;
-      shadowingState.isListening = false;
+      shadowingState.recognitionActive = false;
       clearShadowingRecognitionTimers();
       refs.shadowingMic.classList.remove('shadowing-mic--active');
       refs.shadowingStart.disabled = false;
@@ -388,10 +511,10 @@ window.Trainer.createShadowingMode = function ({
       if (transcript) evaluateShadowingTranscript(transcript, token);
     };
     try {
-      shadowingState.isListening = true;
+      shadowingState.recognitionActive = true;
       recognition.start();
     } catch (_) {
-      shadowingState.isListening = false;
+      shadowingState.recognitionActive = false;
       clearShadowingRecognitionTimers();
       refs.shadowingStart.disabled = false;
       refs.shadowingStatus.textContent = 'Микрофон уже включается. Секунду…';
