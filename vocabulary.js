@@ -3203,5 +3203,340 @@ window.VOCABULARY_DATA = [
         ]
       }
     ]
+  },
+  {
+    "topic": "Архитектура и системный дизайн",
+    "words": [
+      {
+        "id": 204,
+        "word": "monolith",
+        "translation": "монолит — всё в одном приложении",
+        "example": "We started with a monolith, but it became hard to scale.",
+        "sentenceTranslation": "Мы начали с монолита, но его стало трудно масштабировать.",
+        "answer": "monolith",
+        "answers": [
+          {
+            "text": "monolith",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 205,
+        "word": "microservice",
+        "translation": "микросервис — отдельный небольшой сервис",
+        "example": "Each microservice owns its own database and logic.",
+        "sentenceTranslation": "Каждый микросервис владеет собственной базой данных и логикой.",
+        "answer": "microservice",
+        "answers": [
+          {
+            "text": "microservice",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 206,
+        "word": "event-driven architecture",
+        "translation": "событийно-управляемая архитектура",
+        "example": "We use event-driven architecture to decouple services.",
+        "sentenceTranslation": "Мы используем событийно-управляемую архитектуру, чтобы развязать сервисы.",
+        "answer": "event-driven architecture",
+        "answers": [
+          {
+            "text": "event-driven architecture",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 207,
+        "word": "message queue / message broker",
+        "translation": "очередь сообщений / брокер сообщений",
+        "example": "We use a message queue to decouple the producer from the consumer.",
+        "sentenceTranslation": "Мы используем очередь сообщений, чтобы развязать производителя и потребителя.",
+        "answer": "message queue",
+        "answers": [
+          {
+            "text": "message queue",
+            "weight": 1
+          },
+          {
+            "text": "message broker",
+            "weight": 0.9
+          }
+        ]
+      },
+      {
+        "id": 208,
+        "word": "availability",
+        "translation": "доступность — сервис работает, когда нужен",
+        "example": "We target 99.9% availability — that's about 8 hours of downtime per year.",
+        "sentenceTranslation": "Мы стремимся к доступности 99,9% — это около 8 часов простоя в год.",
+        "answer": "availability",
+        "answers": [
+          {
+            "text": "availability",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 209,
+        "word": "fault tolerance",
+        "translation": "отказоустойчивость — система работает при сбоях",
+        "example": "The system needs to be fault tolerant — one node going down shouldn't affect users.",
+        "sentenceTranslation": "Система должна быть отказоустойчивой — отказ одного узла не должен влиять на пользователей.",
+        "answer": "fault tolerant",
+        "answers": [
+          {
+            "text": "fault tolerance",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 210,
+        "word": "redundancy",
+        "translation": "избыточность — дублирование компонентов для надёжности",
+        "example": "We added redundancy by running three instances in different availability zones.",
+        "sentenceTranslation": "Мы добавили избыточность, запустив три инстанса в разных зонах доступности.",
+        "answer": "redundancy",
+        "answers": [
+          {
+            "text": "redundancy",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 211,
+        "word": "single point of failure",
+        "translation": "единственная точка отказа",
+        "example": "The database is a single point of failure — we need replication.",
+        "sentenceTranslation": "База данных — единственная точка отказа, поэтому нам нужна репликация.",
+        "answer": "single point of failure",
+        "answers": [
+          {
+            "text": "single point of failure",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 212,
+        "word": "failover",
+        "translation": "автоматическое переключение на резервный компонент",
+        "example": "Failover kicks in automatically when the primary goes down.",
+        "sentenceTranslation": "Переключение на резервный компонент срабатывает автоматически, когда основной компонент выходит из строя.",
+        "answer": "Failover",
+        "answers": [
+          {
+            "text": "failover",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 213,
+        "word": "consistency",
+        "translation": "согласованность данных — все узлы видят одно и то же",
+        "example": "Strong consistency is hard to achieve in a distributed system.",
+        "sentenceTranslation": "Строгой согласованности трудно достичь в распределённой системе.",
+        "answer": "consistency",
+        "answers": [
+          {
+            "text": "consistency",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 214,
+        "word": "eventual consistency",
+        "translation": "итоговая согласованность — данные синхронизируются со временем",
+        "example": "We use eventual consistency — reads might be slightly stale.",
+        "sentenceTranslation": "Мы используем итоговую согласованность — прочитанные данные могут быть немного устаревшими.",
+        "answer": "eventual consistency",
+        "answers": [
+          {
+            "text": "eventual consistency",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 215,
+        "word": "CAP theorem",
+        "translation": "теорема CAP — consistency, availability, partition tolerance",
+        "example": "The CAP theorem says you can only guarantee two out of three properties.",
+        "sentenceTranslation": "Теорема CAP гласит, что можно гарантировать только два свойства из трёх.",
+        "answer": "CAP theorem",
+        "answers": [
+          {
+            "text": "CAP theorem",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 216,
+        "word": "evolve",
+        "translation": "развиваться, эволюционировать",
+        "example": "The architecture evolved as the product and traffic grew.",
+        "sentenceTranslation": "Архитектура развивалась по мере роста продукта и трафика.",
+        "answer": "evolved",
+        "infinitive": "to evolve",
+        "answers": [
+          {
+            "text": "to evolve",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 217,
+        "word": "heavily",
+        "translation": "сильно, в значительной степени",
+        "example": "This service relies heavily on the database.",
+        "sentenceTranslation": "Этот сервис сильно зависит от базы данных.",
+        "answer": "heavily",
+        "answers": [
+          {
+            "text": "heavily",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 218,
+        "word": "overhead",
+        "translation": "накладные расходы, дополнительные издержки или сложность",
+        "example": "Introducing microservices adds operational overhead.",
+        "sentenceTranslation": "Внедрение микросервисов добавляет операционные накладные расходы.",
+        "answer": "overhead",
+        "answers": [
+          {
+            "text": "overhead",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 219,
+        "word": "downside",
+        "translation": "недостаток, минус",
+        "example": "The main downside of this approach is the additional complexity.",
+        "sentenceTranslation": "Главный недостаток этого подхода — дополнительная сложность.",
+        "answer": "downside",
+        "answers": [
+          {
+            "text": "downside",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 220,
+        "word": "entire",
+        "translation": "весь, целый",
+        "example": "A failure in one component can affect the entire system.",
+        "sentenceTranslation": "Сбой одного компонента может повлиять на всю систему.",
+        "answer": "entire",
+        "answers": [
+          {
+            "text": "entire",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 221,
+        "word": "outweigh",
+        "translation": "перевешивать, быть важнее",
+        "example": "The benefits outweigh the additional complexity.",
+        "sentenceTranslation": "Преимущества перевешивают дополнительную сложность.",
+        "answer": "outweigh",
+        "infinitive": "to outweigh",
+        "answers": [
+          {
+            "text": "to outweigh",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 222,
+        "word": "deal with",
+        "translation": "разбираться с чем-либо, справляться, решать проблему",
+        "example": "Distributed systems need to deal with partial failures.",
+        "sentenceTranslation": "Распределённые системы должны справляться с частичными сбоями.",
+        "answer": "deal with",
+        "infinitive": "to deal with",
+        "answers": [
+          {
+            "text": "to deal with",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 223,
+        "word": "resilience",
+        "translation": "устойчивость к сбоям, способность восстанавливаться",
+        "example": "Redundancy improves the system's resilience during outages.",
+        "sentenceTranslation": "Избыточность повышает устойчивость системы во время сбоев.",
+        "answer": "resilience",
+        "answers": [
+          {
+            "text": "resilience",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 224,
+        "word": "gain",
+        "translation": "получать, приобретать",
+        "example": "We gain flexibility by decoupling the services.",
+        "sentenceTranslation": "Мы получаем гибкость, разделяя сервисы.",
+        "answer": "gain",
+        "infinitive": "to gain",
+        "answers": [
+          {
+            "text": "to gain",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 225,
+        "word": "boundaries",
+        "translation": "границы",
+        "example": "Clear service boundaries reduce coupling between teams.",
+        "sentenceTranslation": "Чёткие границы сервисов уменьшают связанность между командами.",
+        "answer": "boundaries",
+        "answers": [
+          {
+            "text": "boundaries",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 226,
+        "word": "maturity",
+        "translation": "зрелость системы, процесса или команды",
+        "example": "The right architecture depends on the team's operational maturity.",
+        "sentenceTranslation": "Подходящая архитектура зависит от операционной зрелости команды.",
+        "answer": "maturity",
+        "answers": [
+          {
+            "text": "maturity",
+            "weight": 1
+          }
+        ]
+      }
+    ]
   }
 ];

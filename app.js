@@ -1173,6 +1173,26 @@
         },
       ],
     },
+    {
+      id: "architecture-system-design",
+      title: "Architecture & System Design",
+      groups: [
+        {
+          title: "Проектирование системы",
+          items: [
+            "Scalability was the main reason we moved away from the monolith.",
+            "There's always a trade-off between consistency and availability.",
+            "We went with a different approach — event-driven instead of synchronous calls.",
+            "The current design doesn't handle failover well.",
+            "The design is solid, but the implementation has some gaps.",
+            "Let me walk you through the request flow in this architecture.",
+            "Tight coupling makes it hard to deploy services independently.",
+            "We aim for loose coupling so teams can deploy independently.",
+            "This service has a hard dependency on the auth service.",
+          ],
+        },
+      ],
+    },
   ];
   const SHADOWING_TRANSLATIONS = {
     "Walk me through it.": "Объясни мне это пошагово.",
@@ -1234,6 +1254,15 @@
     "Can you explain why you chose this approach over X?": "Можешь объяснить, почему ты выбрал этот подход вместо X?",
     "That refactoring is out of scope for this PR — let's do it separately.": "Этот рефакторинг выходит за рамки данного PR — давай сделаем его отдельно.",
     "We usually assign two reviewers for critical changes.": "Обычно мы назначаем двух ревьюеров для критически важных изменений.",
+    "Scalability was the main reason we moved away from the monolith.": "Масштабируемость была главной причиной, по которой мы отказались от монолита.",
+    "There's always a trade-off between consistency and availability.": "Между согласованностью и доступностью всегда есть компромисс.",
+    "We went with a different approach — event-driven instead of synchronous calls.": "Мы выбрали другой подход — событийно-управляемую архитектуру вместо синхронных вызовов.",
+    "The current design doesn't handle failover well.": "Текущая архитектура плохо справляется с переключением на резервный компонент.",
+    "The design is solid, but the implementation has some gaps.": "Архитектурное решение надёжное, но в реализации есть некоторые пробелы.",
+    "Let me walk you through the request flow in this architecture.": "Позвольте мне пошагово показать, как запрос проходит через эту архитектуру.",
+    "Tight coupling makes it hard to deploy services independently.": "Сильная связанность затрудняет независимое развёртывание сервисов.",
+    "We aim for loose coupling so teams can deploy independently.": "Мы стремимся к слабой связанности, чтобы команды могли выполнять развёртывание независимо.",
+    "This service has a hard dependency on the auth service.": "Этот сервис жёстко зависит от сервиса аутентификации.",
   };
 
   function fixBrokenWordSpacing(value) {
