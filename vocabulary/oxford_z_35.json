@@ -1,0 +1,385 @@
+{
+  "id": "oxford-extra-35",
+  "collection": "Oxford 3000",
+  "topic": "Природа и мир",
+  "subtopic": "Погода и окружающая среда",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:air:n:a1",
+      "word": "air",
+      "translation": "воздух",
+      "answer": "air",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:beach:n:a1",
+      "word": "beach",
+      "translation": "пляж",
+      "answer": "beach",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:climate:n:a2",
+      "word": "climate",
+      "translation": "климат",
+      "answer": "climate",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cloud:n:a2",
+      "word": "cloud",
+      "translation": "облако",
+      "answer": "cloud",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cool:adj:a1",
+      "word": "cool",
+      "translation": "прохладный; классный",
+      "answer": "cool",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:cool:v:b1",
+      "word": "cool",
+      "translation": "охлаждать; остывать",
+      "answer": "cool",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:desert:n:a2",
+      "word": "desert",
+      "translation": "пустыня",
+      "answer": "desert",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:desert:v:b2",
+      "word": "desert",
+      "translation": "покидать; бросать",
+      "answer": "desert",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:disaster:n:a2",
+      "word": "disaster",
+      "translation": "катастрофа",
+      "answer": "disaster",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:earth:n:a2",
+      "word": "earth",
+      "translation": "земля",
+      "answer": "earth",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:earthquake:n:b1",
+      "word": "earthquake",
+      "translation": "землетрясение",
+      "answer": "earthquake",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:energy:n:a2",
+      "word": "energy",
+      "translation": "энергия",
+      "answer": "energy",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:environment:n:a2",
+      "word": "environment",
+      "translation": "окружающая среда",
+      "answer": "environment",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:environmental:adj:b1",
+      "word": "environmental",
+      "translation": "экологический",
+      "answer": "environmental",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:field:n:a2",
+      "word": "field",
+      "translation": "поле",
+      "answer": "field",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fire:n:a1",
+      "word": "fire",
+      "translation": "огонь; пожар",
+      "answer": "fire",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fire:v:b1",
+      "word": "fire",
+      "translation": "стрелять; увольнять",
+      "answer": "fire",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:flood:n-v:b1",
+      "word": "flood",
+      "translation": "наводнение; затоплять",
+      "answer": "flood",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:ground:n:a2",
+      "word": "ground",
+      "translation": "земля",
+      "answer": "ground",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hill:n:a2",
+      "word": "hill",
+      "translation": "холм",
+      "answer": "hill",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hot:adj:a1",
+      "word": "hot",
+      "translation": "горячий",
+      "answer": "hot",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:island:n:a1",
+      "word": "island",
+      "translation": "остров",
+      "answer": "island",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lake:n:a2",
+      "word": "lake",
+      "translation": "озеро",
+      "answer": "lake",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:land:n:a1",
+      "word": "land",
+      "translation": "земля; суша",
+      "answer": "land",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:land:v:a2",
+      "word": "land",
+      "translation": "приземляться",
+      "answer": "land",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:mountain:n:a1",
+      "word": "mountain",
+      "translation": "гора",
+      "answer": "mountain",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ocean:n:a2",
+      "word": "ocean",
+      "translation": "океан",
+      "answer": "ocean",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:planet:n:a2",
+      "word": "planet",
+      "translation": "планета",
+      "answer": "planet",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pollution:n:a2",
+      "word": "pollution",
+      "translation": "загрязнение",
+      "answer": "pollution",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:rain:n-v:a1",
+      "word": "rain",
+      "translation": "дождь; идти о дожде",
+      "answer": "rain",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:recycle:v:a2",
+      "word": "recycle",
+      "translation": "перерабатывать",
+      "answer": "recycle",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:renewable:adj:b1",
+      "word": "renewable",
+      "translation": "возобновляемый",
+      "answer": "renewable",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:river:n:a1",
+      "word": "river",
+      "translation": "река",
+      "answer": "river",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sea:n:a1",
+      "word": "sea",
+      "translation": "море",
+      "answer": "sea",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sky:n:a2",
+      "word": "sky",
+      "translation": "небо",
+      "answer": "sky",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:snow:n-v:a1",
+      "word": "snow",
+      "translation": "снег; идти о снеге",
+      "answer": "snow",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:storm:n-v:a2",
+      "word": "storm",
+      "translation": "буря; шторм; брать штурмом",
+      "answer": "storm",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:sun:n:a1",
+      "word": "sun",
+      "translation": "солнце",
+      "answer": "sun",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sunny:adj:a1",
+      "word": "sunny",
+      "translation": "солнечный",
+      "answer": "sunny",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:temperature:n:a2",
+      "word": "temperature",
+      "translation": "температура",
+      "answer": "temperature",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:valley:n:a2",
+      "word": "valley",
+      "translation": "долина",
+      "answer": "valley",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:warm:adj:a1",
+      "word": "warm",
+      "translation": "теплый",
+      "answer": "warm",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:warm:v:b1",
+      "word": "warm",
+      "translation": "согревать; нагреваться",
+      "answer": "warm",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:weather:n:a1",
+      "word": "weather",
+      "translation": "погода",
+      "answer": "weather",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wind:n:a2",
+      "word": "wind",
+      "translation": "ветер",
+      "answer": "wind",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wind:v:b2",
+      "word": "wind",
+      "translation": "заводить; наматывать",
+      "answer": "wind",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:world:n:a1",
+      "word": "world",
+      "translation": "мир",
+      "answer": "world",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

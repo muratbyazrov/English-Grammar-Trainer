@@ -1,0 +1,155 @@
+{
+  "id": "oxford-city",
+  "collection": "Oxford 3000",
+  "topic": "Город и путешествия",
+  "subtopic": "Места и направления",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:street:noun",
+      "word": "street",
+      "translation": "улица",
+      "answer": "street",
+      "answers": [
+        {
+          "text": "street",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:road:noun",
+      "word": "road",
+      "translation": "дорога (для транспорта)",
+      "answer": "road",
+      "answers": [
+        {
+          "text": "road",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:map:noun",
+      "word": "map",
+      "translation": "карта (местности)",
+      "answer": "map",
+      "answers": [
+        {
+          "text": "map",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:left:adverb",
+      "word": "left",
+      "translation": "налево",
+      "answer": "left",
+      "answers": [
+        {
+          "text": "left",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:right:adverb",
+      "word": "right",
+      "translation": "направо",
+      "answer": "right",
+      "answers": [
+        {
+          "text": "right",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:near:preposition",
+      "word": "near",
+      "translation": "рядом с, недалеко от",
+      "example": "We live near the park.",
+      "sentenceTranslation": "Мы живём рядом с парком.",
+      "answer": "near",
+      "answers": [
+        {
+          "text": "near",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:hotel:noun",
+      "word": "hotel",
+      "translation": "отель, гостиница",
+      "answer": "hotel",
+      "answers": [
+        {
+          "text": "hotel",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bank:noun",
+      "word": "bank",
+      "translation": "банк (финансовое учреждение)",
+      "answer": "bank",
+      "answers": [
+        {
+          "text": "bank",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:shop:noun",
+      "word": "shop",
+      "translation": "магазин",
+      "answer": "shop",
+      "answers": [
+        {
+          "text": "shop",
+          "weight": 1
+        },
+        {
+          "text": "store",
+          "weight": 0.9
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:park:noun",
+      "word": "park",
+      "translation": "парк",
+      "answer": "park",
+      "answers": [
+        {
+          "text": "park",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

@@ -1,0 +1,2185 @@
+{
+  "id": "oxford-extra-18",
+  "collection": "Oxford 3000",
+  "topic": "Идеи и понятия",
+  "subtopic": "Слова A–E",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:ability:n:a2",
+      "word": "ability",
+      "translation": "способность",
+      "answer": "ability",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:academic:n:b2",
+      "word": "academic",
+      "translation": "академический",
+      "answer": "academic",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:accident:n:a2",
+      "word": "accident",
+      "translation": "несчастный случай",
+      "answer": "accident",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:accommodation:n:b1",
+      "word": "accommodation",
+      "translation": "размещение",
+      "answer": "accommodation",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:achievement:n:b1",
+      "word": "achievement",
+      "translation": "достижение",
+      "answer": "achievement",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:act:n:b1",
+      "word": "act",
+      "translation": "действие; поступок",
+      "answer": "act",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:action:n:a1",
+      "word": "action",
+      "translation": "действие",
+      "answer": "action",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:activity:n:a1",
+      "word": "activity",
+      "translation": "деятельность",
+      "answer": "activity",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ad:n:b1",
+      "word": "ad",
+      "translation": "реклама",
+      "answer": "ad",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:addition:n:b1",
+      "word": "addition",
+      "translation": "дополнение",
+      "answer": "addition",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:administration:n:b2",
+      "word": "administration",
+      "translation": "администрация",
+      "answer": "administration",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:advantage:n:a2",
+      "word": "advantage",
+      "translation": "преимущество",
+      "answer": "advantage",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:adventure:n:a2",
+      "word": "adventure",
+      "translation": "приключение",
+      "answer": "adventure",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:advertisement:n:a2",
+      "word": "advertisement",
+      "translation": "реклама",
+      "answer": "advertisement",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:advertising:n:a2",
+      "word": "advertising",
+      "translation": "реклама",
+      "answer": "advertising",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:advice:n:a1",
+      "word": "advice",
+      "translation": "совет",
+      "answer": "advice",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:affair:n:b2",
+      "word": "affair",
+      "translation": "дело",
+      "answer": "affair",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:agency:n:b2",
+      "word": "agency",
+      "translation": "агентство",
+      "answer": "agency",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:agenda:n:b2",
+      "word": "agenda",
+      "translation": "повестка дня",
+      "answer": "agenda",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:agent:n:b1",
+      "word": "agent",
+      "translation": "агент",
+      "answer": "agent",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:agreement:n:b1",
+      "word": "agreement",
+      "translation": "соглашение",
+      "answer": "agreement",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:aircraft:n:b2",
+      "word": "aircraft",
+      "translation": "самолет",
+      "answer": "aircraft",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:airline:n:a2",
+      "word": "airline",
+      "translation": "авиакомпания",
+      "answer": "airline",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:alarm:n:b1",
+      "word": "alarm",
+      "translation": "тревога; сигнализация",
+      "answer": "alarm",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:album:n:b1",
+      "word": "album",
+      "translation": "альбом",
+      "answer": "album",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:alcohol:n:b1",
+      "word": "alcohol",
+      "translation": "алкоголь",
+      "answer": "alcohol",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:alternative:n:a2",
+      "word": "alternative",
+      "translation": "альтернатива",
+      "answer": "alternative",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ambition:n:b1",
+      "word": "ambition",
+      "translation": "амбиции",
+      "answer": "ambition",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:anger:n:b2",
+      "word": "anger",
+      "translation": "гнев",
+      "answer": "anger",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:angle:n:b2",
+      "word": "angle",
+      "translation": "угол",
+      "answer": "angle",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ankle:n:a2",
+      "word": "ankle",
+      "translation": "лодыжка",
+      "answer": "ankle",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:anniversary:n:b2",
+      "word": "anniversary",
+      "translation": "юбилей",
+      "answer": "anniversary",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:announcement:n:b1",
+      "word": "announcement",
+      "translation": "объявление",
+      "answer": "announcement",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:appearance:n:a2",
+      "word": "appearance",
+      "translation": "внешний вид",
+      "answer": "appearance",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:appointment:n:b1",
+      "word": "appointment",
+      "translation": "назначение",
+      "answer": "appointment",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:approval:n:b2",
+      "word": "approval",
+      "translation": "одобрение",
+      "answer": "approval",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:architect:n:a2",
+      "word": "architect",
+      "translation": "архитектор",
+      "answer": "architect",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:architecture:n:a2",
+      "word": "architecture",
+      "translation": "архитектура",
+      "answer": "architecture",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:argument:n:a2",
+      "word": "argument",
+      "translation": "аргумент",
+      "answer": "argument",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:arms:n:b2",
+      "word": "arms",
+      "translation": "оружие",
+      "answer": "arms",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:arrangement:n:a2",
+      "word": "arrangement",
+      "translation": "расположение",
+      "answer": "arrangement",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:article:n:a1",
+      "word": "article",
+      "translation": "статья",
+      "answer": "article",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:aspect:n:b2",
+      "word": "aspect",
+      "translation": "аспект",
+      "answer": "aspect",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:assessment:n:b2",
+      "word": "assessment",
+      "translation": "оценка",
+      "answer": "assessment",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:assignment:n:b1",
+      "word": "assignment",
+      "translation": "задание",
+      "answer": "assignment",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:association:n:b2",
+      "word": "association",
+      "translation": "ассоциация",
+      "answer": "association",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:athlete:n:a2",
+      "word": "athlete",
+      "translation": "спортсмен",
+      "answer": "athlete",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:atmosphere:n:b1",
+      "word": "atmosphere",
+      "translation": "атмосфера",
+      "answer": "atmosphere",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:attitude:n:b1",
+      "word": "attitude",
+      "translation": "отношение",
+      "answer": "attitude",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:attraction:n:b1",
+      "word": "attraction",
+      "translation": "аттракцион",
+      "answer": "attraction",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:audience:n:a2",
+      "word": "audience",
+      "translation": "аудитория",
+      "answer": "audience",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:authority:n:b1",
+      "word": "authority",
+      "translation": "авторитет",
+      "answer": "authority",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:autumn:n:a1",
+      "word": "autumn",
+      "translation": "осень",
+      "answer": "autumn",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:background:n:a2",
+      "word": "background",
+      "translation": "фон",
+      "answer": "background",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bacteria:n:b2",
+      "word": "bacteria",
+      "translation": "бактерии",
+      "answer": "bacteria",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ball:n:a1",
+      "word": "ball",
+      "translation": "мяч",
+      "answer": "ball",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:barrier:n:b2",
+      "word": "barrier",
+      "translation": "барьер",
+      "answer": "barrier",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:baseball:n:a2",
+      "word": "baseball",
+      "translation": "бейсбол",
+      "answer": "baseball",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:basis:n:b1",
+      "word": "basis",
+      "translation": "основа",
+      "answer": "basis",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:battery:n:b1",
+      "word": "battery",
+      "translation": "батарея",
+      "answer": "battery",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:battle:n:b1",
+      "word": "battle",
+      "translation": "битва",
+      "answer": "battle",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:beat:n:b2",
+      "word": "beat",
+      "translation": "ритм; удар",
+      "answer": "beat",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:beauty:n:b1",
+      "word": "beauty",
+      "translation": "красота",
+      "answer": "beauty",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:beginning:n:a1",
+      "word": "beginning",
+      "translation": "начало",
+      "answer": "beginning",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:behaviour:n:a2",
+      "word": "behaviour",
+      "translation": "поведение",
+      "answer": "behaviour",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:being:n:b2",
+      "word": "being",
+      "translation": "будучи",
+      "answer": "being",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:belief:n:b1",
+      "word": "belief",
+      "translation": "вера",
+      "answer": "belief",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bell:n:b1",
+      "word": "bell",
+      "translation": "колокол",
+      "answer": "bell",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:belt:n:a2",
+      "word": "belt",
+      "translation": "ремень",
+      "answer": "belt",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:benefit:n:a2",
+      "word": "benefit",
+      "translation": "польза; преимущество",
+      "answer": "benefit",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:better:n:b1",
+      "word": "better",
+      "translation": "лучше; более хороший",
+      "answer": "better",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bin:n:a2",
+      "word": "bin",
+      "translation": "мусорное ведро",
+      "answer": "bin",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:biology:n:a2",
+      "word": "biology",
+      "translation": "биология",
+      "answer": "biology",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:birthday:n:a1",
+      "word": "birthday",
+      "translation": "день рождения",
+      "answer": "birthday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bit:n:a2",
+      "word": "bit",
+      "translation": "немного",
+      "answer": "bit",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:blog:n:a1",
+      "word": "blog",
+      "translation": "блог",
+      "answer": "blog",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:board:n:a2",
+      "word": "board",
+      "translation": "доска; совет директоров",
+      "answer": "board",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bond:n:b2",
+      "word": "bond",
+      "translation": "облигация",
+      "answer": "bond",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bone:n:a2",
+      "word": "bone",
+      "translation": "кость",
+      "answer": "bone",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:boot:n:a1",
+      "word": "boot",
+      "translation": "ботинок",
+      "answer": "boot",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:border:n:b1",
+      "word": "border",
+      "translation": "граница",
+      "answer": "border",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:branch:n:b1",
+      "word": "branch",
+      "translation": "филиал",
+      "answer": "branch",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:breast:n:b2",
+      "word": "breast",
+      "translation": "грудь",
+      "answer": "breast",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:breathing:n:b1",
+      "word": "breathing",
+      "translation": "дыхание",
+      "answer": "breathing",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bride:n:b1",
+      "word": "bride",
+      "translation": "невеста",
+      "answer": "bride",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bubble:n:b1",
+      "word": "bubble",
+      "translation": "пузырь",
+      "answer": "bubble",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bullet:n:b2",
+      "word": "bullet",
+      "translation": "пуля",
+      "answer": "bullet",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bunch:n:b2",
+      "word": "bunch",
+      "translation": "связка",
+      "answer": "bunch",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:burn:n:b2",
+      "word": "burn",
+      "translation": "ожог",
+      "answer": "burn",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bush:n:b2",
+      "word": "bush",
+      "translation": "куст",
+      "answer": "bush",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:businessman:n:a2",
+      "word": "businessman",
+      "translation": "бизнесмен",
+      "answer": "businessman",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:button:n:a2",
+      "word": "button",
+      "translation": "кнопка",
+      "answer": "button",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cable:n:b2",
+      "word": "cable",
+      "translation": "кабель",
+      "answer": "cable",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:camping:n:a2",
+      "word": "camping",
+      "translation": "кемпинг",
+      "answer": "camping",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:campus:n:b1",
+      "word": "campus",
+      "translation": "кампус",
+      "answer": "campus",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:can:n:a2",
+      "word": "can",
+      "translation": "консервная банка",
+      "answer": "can",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cancer:n:b2",
+      "word": "cancer",
+      "translation": "рак",
+      "answer": "cancer",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:candidate:n:b1",
+      "word": "candidate",
+      "translation": "кандидат",
+      "answer": "candidate",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cap:n:b1",
+      "word": "cap",
+      "translation": "кепка",
+      "answer": "cap",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:capacity:n:b2",
+      "word": "capacity",
+      "translation": "емкость",
+      "answer": "capacity",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:captain:n:b1",
+      "word": "captain",
+      "translation": "капитан",
+      "answer": "captain",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:card:n:a1",
+      "word": "card",
+      "translation": "карта",
+      "answer": "card",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:carrot:n:a1",
+      "word": "carrot",
+      "translation": "морковь",
+      "answer": "carrot",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cartoon:n:a2",
+      "word": "cartoon",
+      "translation": "мультфильм",
+      "answer": "cartoon",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:case:n:a2",
+      "word": "case",
+      "translation": "дело",
+      "answer": "case",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:castle:n:a2",
+      "word": "castle",
+      "translation": "замок",
+      "answer": "castle",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:catch:n:b2",
+      "word": "catch",
+      "translation": "улов; подвох",
+      "answer": "catch",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:category:n:b1",
+      "word": "category",
+      "translation": "категория",
+      "answer": "category",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:celebrity:n:a2",
+      "word": "celebrity",
+      "translation": "знаменитость",
+      "answer": "celebrity",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cell:n:b2",
+      "word": "cell",
+      "translation": "клетка",
+      "answer": "cell",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ceremony:n:b1",
+      "word": "ceremony",
+      "translation": "церемония",
+      "answer": "ceremony",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chain:n:b1",
+      "word": "chain",
+      "translation": "цепь",
+      "answer": "chain",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:challenge:n:b1",
+      "word": "challenge",
+      "translation": "вызов; сложная задача",
+      "answer": "challenge",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:champion:n:b1",
+      "word": "champion",
+      "translation": "чемпион",
+      "answer": "champion",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chance:n:a2",
+      "word": "chance",
+      "translation": "шанс",
+      "answer": "chance",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:channel:n:b1",
+      "word": "channel",
+      "translation": "канал",
+      "answer": "channel",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:character:n:a2",
+      "word": "character",
+      "translation": "персонаж",
+      "answer": "character",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chart:n:a1",
+      "word": "chart",
+      "translation": "диаграмма; таблица",
+      "answer": "chart",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:check:n:a2",
+      "word": "check",
+      "translation": "проверка",
+      "answer": "check",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chef:n:a2",
+      "word": "chef",
+      "translation": "повар",
+      "answer": "chef",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chemistry:n:a2",
+      "word": "chemistry",
+      "translation": "химия",
+      "answer": "chemistry",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chest:n:b1",
+      "word": "chest",
+      "translation": "грудь",
+      "answer": "chest",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:childhood:n:b1",
+      "word": "childhood",
+      "translation": "детство",
+      "answer": "childhood",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chip:n:a2",
+      "word": "chip",
+      "translation": "чип",
+      "answer": "chip",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:choice:n:a2",
+      "word": "choice",
+      "translation": "выбор",
+      "answer": "choice",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cigarette:n:a2",
+      "word": "cigarette",
+      "translation": "сигарета",
+      "answer": "cigarette",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:circumstance:n:b2",
+      "word": "circumstance",
+      "translation": "обстоятельство",
+      "answer": "circumstance",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:clause:n:b1",
+      "word": "clause",
+      "translation": "пункт",
+      "answer": "clause",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:climb:n:b1",
+      "word": "climb",
+      "translation": "подъём",
+      "answer": "climb",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:close:n:b2",
+      "word": "close",
+      "translation": "конец; завершение",
+      "answer": "close",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cloth:n:b1",
+      "word": "cloth",
+      "translation": "ткань",
+      "answer": "cloth",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:clothes:n:a1",
+      "word": "clothes",
+      "translation": "одежда",
+      "answer": "clothes",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:clothing:n:a2",
+      "word": "clothing",
+      "translation": "одежда",
+      "answer": "clothing",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:club:n:a1",
+      "word": "club",
+      "translation": "клуб",
+      "answer": "club",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:clue:n:b1",
+      "word": "clue",
+      "translation": "подсказка",
+      "answer": "clue",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:coach:n:a2",
+      "word": "coach",
+      "translation": "тренер; междугородний автобус",
+      "answer": "coach",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:coal:n:b1",
+      "word": "coal",
+      "translation": "уголь",
+      "answer": "coal",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:coast:n:a2",
+      "word": "coast",
+      "translation": "побережье",
+      "answer": "coast",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:coat:n:a1",
+      "word": "coat",
+      "translation": "пальто",
+      "answer": "coat",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:collection:n:b1",
+      "word": "collection",
+      "translation": "коллекция",
+      "answer": "collection",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:colour:n:a1",
+      "word": "colour",
+      "translation": "цвет",
+      "answer": "colour",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:column:n:a2",
+      "word": "column",
+      "translation": "столбец",
+      "answer": "column",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:combination:n:b2",
+      "word": "combination",
+      "translation": "комбинация",
+      "answer": "combination",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:comedy:n:a2",
+      "word": "comedy",
+      "translation": "комедия",
+      "answer": "comedy",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:comment:n:a2",
+      "word": "comment",
+      "translation": "комментарий",
+      "answer": "comment",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:commitment:n:b2",
+      "word": "commitment",
+      "translation": "обязательство",
+      "answer": "commitment",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:committee:n:b2",
+      "word": "committee",
+      "translation": "комитет",
+      "answer": "committee",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:communication:n:b1",
+      "word": "communication",
+      "translation": "общение",
+      "answer": "communication",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:comparison:n:b1",
+      "word": "comparison",
+      "translation": "сравнение",
+      "answer": "comparison",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:competitor:n:b1",
+      "word": "competitor",
+      "translation": "конкурент",
+      "answer": "competitor",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:complaint:n:b1",
+      "word": "complaint",
+      "translation": "жалоба",
+      "answer": "complaint",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:complex:n:b2",
+      "word": "complex",
+      "translation": "сложный",
+      "answer": "complex",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:component:n:b2",
+      "word": "component",
+      "translation": "компонент",
+      "answer": "component",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:concentration:n:b2",
+      "word": "concentration",
+      "translation": "концентрация",
+      "answer": "concentration",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:concept:n:b2",
+      "word": "concept",
+      "translation": "концепция",
+      "answer": "concept",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:conclusion:n:b1",
+      "word": "conclusion",
+      "translation": "заключение",
+      "answer": "conclusion",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:condition:n:a2",
+      "word": "condition",
+      "translation": "состояние",
+      "answer": "condition",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:conference:n:a2",
+      "word": "conference",
+      "translation": "конференция",
+      "answer": "conference",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:confidence:n:b2",
+      "word": "confidence",
+      "translation": "уверенность",
+      "answer": "confidence",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:connection:n:b1",
+      "word": "connection",
+      "translation": "соединение",
+      "answer": "connection",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:consequence:n:b1",
+      "word": "consequence",
+      "translation": "следствие",
+      "answer": "consequence",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:consideration:n:b2",
+      "word": "consideration",
+      "translation": "рассмотрение",
+      "answer": "consideration",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:construction:n:b2",
+      "word": "construction",
+      "translation": "строительство",
+      "answer": "construction",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:container:n:b1",
+      "word": "container",
+      "translation": "контейнер",
+      "answer": "container",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:content:n:b1",
+      "word": "content",
+      "translation": "содержание",
+      "answer": "content",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:context:n:a2",
+      "word": "context",
+      "translation": "контекст",
+      "answer": "context",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:continent:n:a2",
+      "word": "continent",
+      "translation": "континент",
+      "answer": "continent",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:contribution:n:b2",
+      "word": "contribution",
+      "translation": "вклад",
+      "answer": "contribution",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:conversation:n:a1",
+      "word": "conversation",
+      "translation": "разговор",
+      "answer": "conversation",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cooker:n:a2",
+      "word": "cooker",
+      "translation": "плита",
+      "answer": "cooker",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:corner:n:a2",
+      "word": "corner",
+      "translation": "угол",
+      "answer": "corner",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:costume:n:b1",
+      "word": "costume",
+      "translation": "костюм",
+      "answer": "costume",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cottage:n:b1",
+      "word": "cottage",
+      "translation": "коттедж",
+      "answer": "cottage",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cotton:n:b1",
+      "word": "cotton",
+      "translation": "хлопок",
+      "answer": "cotton",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:council:n:b2",
+      "word": "council",
+      "translation": "совет",
+      "answer": "council",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:countryside:n:b1",
+      "word": "countryside",
+      "translation": "сельская местность",
+      "answer": "countryside",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:county:n:b2",
+      "word": "county",
+      "translation": "графство",
+      "answer": "county",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:couple:n:a2",
+      "word": "couple",
+      "translation": "пара",
+      "answer": "couple",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:courage:n:b2",
+      "word": "courage",
+      "translation": "смелость",
+      "answer": "courage",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cover:n:b1",
+      "word": "cover",
+      "translation": "обложка; покрытие",
+      "answer": "cover",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:creation:n:b2",
+      "word": "creation",
+      "translation": "создание",
+      "answer": "creation",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:creature:n:b2",
+      "word": "creature",
+      "translation": "существо",
+      "answer": "creature",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:crew:n:b2",
+      "word": "crew",
+      "translation": "экипаж",
+      "answer": "crew",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:crisis:n:b2",
+      "word": "crisis",
+      "translation": "кризис",
+      "answer": "crisis",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:criterion:n:b2",
+      "word": "criterion",
+      "translation": "критерий",
+      "answer": "criterion",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:critic:n:b2",
+      "word": "critic",
+      "translation": "критик",
+      "answer": "critic",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:criticism:n:b2",
+      "word": "criticism",
+      "translation": "критика",
+      "answer": "criticism",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:crowd:n:a2",
+      "word": "crowd",
+      "translation": "толпа",
+      "answer": "crowd",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cry:n:b2",
+      "word": "cry",
+      "translation": "крик; плач",
+      "answer": "cry",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:currency:n:b1",
+      "word": "currency",
+      "translation": "валюта",
+      "answer": "currency",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:current:n:b2",
+      "word": "current",
+      "translation": "текущий",
+      "answer": "current",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:custom:n:b1",
+      "word": "custom",
+      "translation": "обычай",
+      "answer": "custom",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cut:n:b1",
+      "word": "cut",
+      "translation": "порез; сокращение",
+      "answer": "cut",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dad:n:a1",
+      "word": "dad",
+      "translation": "папа",
+      "answer": "dad",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dancer:n:a1",
+      "word": "dancer",
+      "translation": "танцор",
+      "answer": "dancer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:danger:n:a2",
+      "word": "danger",
+      "translation": "опасность",
+      "answer": "danger",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dark:n:a2",
+      "word": "dark",
+      "translation": "тёмный",
+      "answer": "dark",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:deal:n:b1",
+      "word": "deal",
+      "translation": "сделка",
+      "answer": "deal",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:death:n:a2",
+      "word": "death",
+      "translation": "смерть",
+      "answer": "death",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:decade:n:b1",
+      "word": "decade",
+      "translation": "десятилетие",
+      "answer": "decade",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:decision:n:a2",
+      "word": "decision",
+      "translation": "решение",
+      "answer": "decision",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:decoration:n:b2",
+      "word": "decoration",
+      "translation": "украшение",
+      "answer": "decoration",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:defence:n:b2",
+      "word": "defence",
+      "translation": "защита",
+      "answer": "defence",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:definition:n:b1",
+      "word": "definition",
+      "translation": "определение",
+      "answer": "definition",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:delivery:n:b2",
+      "word": "delivery",
+      "translation": "доставка",
+      "answer": "delivery",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:department:n:a2",
+      "word": "department",
+      "translation": "отдел",
+      "answer": "department",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:depth:n:b2",
+      "word": "depth",
+      "translation": "глубина",
+      "answer": "depth",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:description:n:a1",
+      "word": "description",
+      "translation": "описание",
+      "answer": "description",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:designer:n:a2",
+      "word": "designer",
+      "translation": "дизайнер",
+      "answer": "designer",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dessert:n:a2",
+      "word": "dessert",
+      "translation": "десерт",
+      "answer": "dessert",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:detail:n:a1",
+      "word": "detail",
+      "translation": "деталь; подробность",
+      "answer": "detail",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:detective:n:a2",
+      "word": "detective",
+      "translation": "детектив",
+      "answer": "detective",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:development:n:b1",
+      "word": "development",
+      "translation": "развитие",
+      "answer": "development",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:diagram:n:b1",
+      "word": "diagram",
+      "translation": "диаграмма",
+      "answer": "diagram",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dialogue:n:a1",
+      "word": "dialogue",
+      "translation": "диалог",
+      "answer": "dialogue",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:diamond:n:b1",
+      "word": "diamond",
+      "translation": "алмаз",
+      "answer": "diamond",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:diary:n:a2",
+      "word": "diary",
+      "translation": "дневник",
+      "answer": "diary",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:difference:n:a1",
+      "word": "difference",
+      "translation": "разница",
+      "answer": "difference",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:difficulty:n:b1",
+      "word": "difficulty",
+      "translation": "трудность",
+      "answer": "difficulty",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:director:n:a2",
+      "word": "director",
+      "translation": "директор",
+      "answer": "director",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dirt:n:b1",
+      "word": "dirt",
+      "translation": "грязь",
+      "answer": "dirt",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:disadvantage:n:b1",
+      "word": "disadvantage",
+      "translation": "недостаток",
+      "answer": "disadvantage",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:discipline:n:b2",
+      "word": "discipline",
+      "translation": "дисциплина",
+      "answer": "discipline",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:discussion:n:a2",
+      "word": "discussion",
+      "translation": "обсуждение",
+      "answer": "discussion",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:distribution:n:b2",
+      "word": "distribution",
+      "translation": "распространение",
+      "answer": "distribution",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:district:n:b2",
+      "word": "district",
+      "translation": "район",
+      "answer": "district",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:divide:n:b2",
+      "word": "divide",
+      "translation": "разделение; раскол",
+      "answer": "divide",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:division:n:b2",
+      "word": "division",
+      "translation": "дивизия",
+      "answer": "division",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:documentary:n:b1",
+      "word": "documentary",
+      "translation": "документальный фильм",
+      "answer": "documentary",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dollar:n:a1",
+      "word": "dollar",
+      "translation": "доллар",
+      "answer": "dollar",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drama:n:a2",
+      "word": "drama",
+      "translation": "драма",
+      "answer": "drama",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drawing:n:a2",
+      "word": "drawing",
+      "translation": "рисунок",
+      "answer": "drawing",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:driving:n:a2",
+      "word": "driving",
+      "translation": "вождение",
+      "answer": "driving",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drop:n:b1",
+      "word": "drop",
+      "translation": "капля; падение",
+      "answer": "drop",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drum:n:b1",
+      "word": "drum",
+      "translation": "барабан",
+      "answer": "drum",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dust:n:b1",
+      "word": "dust",
+      "translation": "пыль",
+      "answer": "dust",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:edge:n:b1",
+      "word": "edge",
+      "translation": "край",
+      "answer": "edge",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:edition:n:b2",
+      "word": "edition",
+      "translation": "издание",
+      "answer": "edition",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:editor:n:b1",
+      "word": "editor",
+      "translation": "редактор",
+      "answer": "editor",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:effect:n:a2",
+      "word": "effect",
+      "translation": "эффект",
+      "answer": "effect",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:effort:n:b1",
+      "word": "effort",
+      "translation": "усилие",
+      "answer": "effort",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:element:n:b1",
+      "word": "element",
+      "translation": "элемент",
+      "answer": "element",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:emergency:n:b1",
+      "word": "emergency",
+      "translation": "чрезвычайная ситуация",
+      "answer": "emergency",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:emotion:n:b1",
+      "word": "emotion",
+      "translation": "эмоция",
+      "answer": "emotion",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:emphasis:n:b2",
+      "word": "emphasis",
+      "translation": "акцент",
+      "answer": "emphasis",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ending:n:a2",
+      "word": "ending",
+      "translation": "окончание",
+      "answer": "ending",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:enemy:n:b1",
+      "word": "enemy",
+      "translation": "враг",
+      "answer": "enemy",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:engine:n:a2",
+      "word": "engine",
+      "translation": "двигатель",
+      "answer": "engine",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:enquiry:n:b2",
+      "word": "enquiry",
+      "translation": "запрос",
+      "answer": "enquiry",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:enthusiasm:n:b2",
+      "word": "enthusiasm",
+      "translation": "энтузиазм",
+      "answer": "enthusiasm",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:entrance:n:b1",
+      "word": "entrance",
+      "translation": "вход",
+      "answer": "entrance",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:entry:n:b1",
+      "word": "entry",
+      "translation": "запись",
+      "answer": "entry",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:equal:n:b2",
+      "word": "equal",
+      "translation": "равный по положению",
+      "answer": "equal",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:equipment:n:a2",
+      "word": "equipment",
+      "translation": "оборудование",
+      "answer": "equipment",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:error:n:a2",
+      "word": "error",
+      "translation": "ошибка",
+      "answer": "error",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:essay:n:a2",
+      "word": "essay",
+      "translation": "эссе",
+      "answer": "essay",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:estate:n:b2",
+      "word": "estate",
+      "translation": "поместье",
+      "answer": "estate",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:euro:n:a1",
+      "word": "euro",
+      "translation": "евро",
+      "answer": "euro",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:event:n:a1",
+      "word": "event",
+      "translation": "событие",
+      "answer": "event",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:example:n:a1",
+      "word": "example",
+      "translation": "пример",
+      "answer": "example",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:excitement:n:b1",
+      "word": "excitement",
+      "translation": "волнение",
+      "answer": "excitement",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:exhibition:n:b1",
+      "word": "exhibition",
+      "translation": "выставка",
+      "answer": "exhibition",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:existence:n:b2",
+      "word": "existence",
+      "translation": "существование",
+      "answer": "existence",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:expectation:n:b2",
+      "word": "expectation",
+      "translation": "ожидание",
+      "answer": "expectation",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:expedition:n:b1",
+      "word": "expedition",
+      "translation": "экспедиция",
+      "answer": "expedition",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:expense:n:b2",
+      "word": "expense",
+      "translation": "расходы",
+      "answer": "expense",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:explanation:n:a2",
+      "word": "explanation",
+      "translation": "объяснение",
+      "answer": "explanation",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:exploration:n:b2",
+      "word": "exploration",
+      "translation": "разведка",
+      "answer": "exploration",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:explosion:n:b1",
+      "word": "explosion",
+      "translation": "взрыв",
+      "answer": "explosion",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:expression:n:a2",
+      "word": "expression",
+      "translation": "выражение",
+      "answer": "expression",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:extent:n:b2",
+      "word": "extent",
+      "translation": "степень",
+      "answer": "extent",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:extreme:n:b2",
+      "word": "extreme",
+      "translation": "крайний",
+      "answer": "extreme",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

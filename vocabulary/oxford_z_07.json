@@ -1,0 +1,113 @@
+{
+  "id": "oxford-extra-07",
+  "collection": "Oxford 3000",
+  "topic": "Грамматика и связки",
+  "subtopic": "Модальные глаголы",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:can:modal-v:a1",
+      "word": "can",
+      "translation": "мочь; уметь",
+      "answer": "can",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:cannot:modal-v:a1",
+      "word": "cannot",
+      "translation": "не мочь; не иметь возможности",
+      "answer": "cannot",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:could:modal-v:a1",
+      "word": "could",
+      "translation": "мог бы; мог",
+      "answer": "could",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:have-to:modal-v:a1",
+      "word": "have to",
+      "translation": "придется",
+      "answer": "have to",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:might:modal-v:a2",
+      "word": "might",
+      "translation": "может быть",
+      "answer": "might",
+      "level": "A2",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:must:modal-v:a1",
+      "word": "must",
+      "translation": "должен; обязательно",
+      "answer": "must",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:need:modal-v:b1",
+      "word": "need",
+      "translation": "необходимость",
+      "answer": "need",
+      "level": "B1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:ought:modal-v:b1",
+      "word": "ought",
+      "translation": "должен",
+      "answer": "ought",
+      "level": "B1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:shall:modal-v:a2",
+      "word": "shall",
+      "translation": "должен",
+      "answer": "shall",
+      "level": "A2",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:should:modal-v:a1",
+      "word": "should",
+      "translation": "следует; должен бы",
+      "answer": "should",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:used-to:modal-v:a2",
+      "word": "used to",
+      "translation": "раньше (об обычном действии)",
+      "answer": "used to",
+      "level": "A2",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:will:modal-v:a1",
+      "word": "will",
+      "translation": "буду; будет (будущее время)",
+      "answer": "will",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:would:modal-v:a1",
+      "word": "would",
+      "translation": "бы; хотел бы",
+      "answer": "would",
+      "level": "A1",
+      "partOfSpeech": "мод. гл."
+    }
+  ]
+}

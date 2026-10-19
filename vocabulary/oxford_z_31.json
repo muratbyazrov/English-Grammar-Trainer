@@ -1,0 +1,561 @@
+{
+  "id": "oxford-extra-31",
+  "collection": "Oxford 3000",
+  "topic": "Описание и оценка",
+  "subtopic": "Признаки K–O",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:keen:adj:b1",
+      "word": "keen",
+      "translation": "увлеченный",
+      "answer": "keen",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:kind:adj:b1",
+      "word": "kind",
+      "translation": "добрый",
+      "answer": "kind",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:large:adj:a1",
+      "word": "large",
+      "translation": "большой",
+      "answer": "large",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:later:adj:a2",
+      "word": "later",
+      "translation": "более поздний",
+      "answer": "later",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:latest:adj:b1",
+      "word": "latest",
+      "translation": "последний",
+      "answer": "latest",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:lazy:adj:a2",
+      "word": "lazy",
+      "translation": "ленивый",
+      "answer": "lazy",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:leading:adj:b1",
+      "word": "leading",
+      "translation": "ведущий",
+      "answer": "leading",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:level:adj:b1",
+      "word": "level",
+      "translation": "ровный; горизонтальный",
+      "answer": "level",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:likely:adj:a2",
+      "word": "likely",
+      "translation": "вероятный; вероятно",
+      "answer": "likely",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:limited:adj:b2",
+      "word": "limited",
+      "translation": "ограниченный",
+      "answer": "limited",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:liquid:n-adj:b1",
+      "word": "liquid",
+      "translation": "жидкость; жидкий",
+      "answer": "liquid",
+      "level": "B1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:lively:adj:b2",
+      "word": "lively",
+      "translation": "живой",
+      "answer": "lively",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:living:adj-n:b1",
+      "word": "living",
+      "translation": "живой; проживание",
+      "answer": "living",
+      "level": "B1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:local:adj:a1",
+      "word": "local",
+      "translation": "местный",
+      "answer": "local",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:located:adj:b1",
+      "word": "located",
+      "translation": "расположен",
+      "answer": "located",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:logical:adj:b2",
+      "word": "logical",
+      "translation": "логичный",
+      "answer": "logical",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:lonely:adj:b1",
+      "word": "lonely",
+      "translation": "одинокий",
+      "answer": "lonely",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:loose:adj:b2",
+      "word": "loose",
+      "translation": "свободный",
+      "answer": "loose",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:lost:adj:a2",
+      "word": "lost",
+      "translation": "потерянный",
+      "answer": "lost",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:lovely:adj:a2",
+      "word": "lovely",
+      "translation": "прекрасный",
+      "answer": "lovely",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:lucky:adj:a2",
+      "word": "lucky",
+      "translation": "удачливый",
+      "answer": "lucky",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:mad:adj:b1",
+      "word": "mad",
+      "translation": "безумный",
+      "answer": "mad",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:magic:n-adj:b1",
+      "word": "magic",
+      "translation": "магия; волшебный",
+      "answer": "magic",
+      "level": "B1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:main:adj:a1",
+      "word": "main",
+      "translation": "главный",
+      "answer": "main",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:major:adj:a2",
+      "word": "major",
+      "translation": "крупный; важный",
+      "answer": "major",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:male:adj-n:a2",
+      "word": "male",
+      "translation": "мужчина; мужской",
+      "answer": "male",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:mass:n-adj:b2",
+      "word": "mass",
+      "translation": "масса; массовый",
+      "answer": "mass",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:massive:adj:b2",
+      "word": "massive",
+      "translation": "массивный",
+      "answer": "massive",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:matching:adj:b2",
+      "word": "matching",
+      "translation": "соответствующий",
+      "answer": "matching",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:material:adj:b2",
+      "word": "material",
+      "translation": "существенный; материальный",
+      "answer": "material",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:maximum:adj-n:b2",
+      "word": "maximum",
+      "translation": "максимум; максимальный",
+      "answer": "maximum",
+      "level": "B2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:medium:adj:b1",
+      "word": "medium",
+      "translation": "средний",
+      "answer": "medium",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:middle:n-adj:a2",
+      "word": "middle",
+      "translation": "середина; средний",
+      "answer": "middle",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:mild:adj:b1",
+      "word": "mild",
+      "translation": "мягкий",
+      "answer": "mild",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:minimum:adj-n:b2",
+      "word": "minimum",
+      "translation": "минимум; минимальный",
+      "answer": "minimum",
+      "level": "B2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:minor:adj:b2",
+      "word": "minor",
+      "translation": "несовершеннолетний",
+      "answer": "minor",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:missing:adj:a2",
+      "word": "missing",
+      "translation": "отсутствует",
+      "answer": "missing",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:mixed:adj:b2",
+      "word": "mixed",
+      "translation": "смешанный",
+      "answer": "mixed",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:modern:adj:a1",
+      "word": "modern",
+      "translation": "современный",
+      "answer": "modern",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:moral:adj-n:b2",
+      "word": "moral",
+      "translation": "моральный",
+      "answer": "moral",
+      "level": "B2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:motor:n-adj:b2",
+      "word": "motor",
+      "translation": "мотор; моторный",
+      "answer": "motor",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:multiple:adj:b2",
+      "word": "multiple",
+      "translation": "множественный",
+      "answer": "multiple",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:mysterious:adj:b2",
+      "word": "mysterious",
+      "translation": "загадочный",
+      "answer": "mysterious",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:narrative:n-adj:b1",
+      "word": "narrative",
+      "translation": "повествование; повествовательный",
+      "answer": "narrative",
+      "level": "B1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:narrow:adj:a2",
+      "word": "narrow",
+      "translation": "узкий",
+      "answer": "narrow",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:native:adj-n:b1",
+      "word": "native",
+      "translation": "уроженец; родной",
+      "answer": "native",
+      "level": "B1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:neat:adj:b2",
+      "word": "neat",
+      "translation": "аккуратный",
+      "answer": "neat",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:necessary:adj:a2",
+      "word": "necessary",
+      "translation": "необходимый",
+      "answer": "necessary",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:negative:adj:a1",
+      "word": "negative",
+      "translation": "отрицательный",
+      "answer": "negative",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:nervous:adj:a2",
+      "word": "nervous",
+      "translation": "нервный",
+      "answer": "nervous",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:new:adj:a1",
+      "word": "new",
+      "translation": "новый",
+      "answer": "new",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:nice:adj:a1",
+      "word": "nice",
+      "translation": "приятный; милый",
+      "answer": "nice",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:noisy:adj:a2",
+      "word": "noisy",
+      "translation": "шумный",
+      "answer": "noisy",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:normal:adj:a2",
+      "word": "normal",
+      "translation": "нормальный",
+      "answer": "normal",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:northern:adj:b1",
+      "word": "northern",
+      "translation": "северный",
+      "answer": "northern",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:nuclear:adj:b1",
+      "word": "nuclear",
+      "translation": "ядерный",
+      "answer": "nuclear",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:numerous:adj:b2",
+      "word": "numerous",
+      "translation": "многочисленные",
+      "answer": "numerous",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:objective:n-adj:b2",
+      "word": "objective",
+      "translation": "цель; объективный",
+      "answer": "objective",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:obvious:adj:b1",
+      "word": "obvious",
+      "translation": "очевидный",
+      "answer": "obvious",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:odd:adj:b1",
+      "word": "odd",
+      "translation": "странный",
+      "answer": "odd",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:offensive:adj:b2",
+      "word": "offensive",
+      "translation": "оскорбительный",
+      "answer": "offensive",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:official:adj:b1",
+      "word": "official",
+      "translation": "официальный",
+      "answer": "official",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:old-fashioned:adj:b1",
+      "word": "old-fashioned",
+      "translation": "старомодный",
+      "answer": "old-fashioned",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:opposed:adj:b2",
+      "word": "opposed",
+      "translation": "против",
+      "answer": "opposed",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:ordinary:adj:a2",
+      "word": "ordinary",
+      "translation": "обычный",
+      "answer": "ordinary",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:organized:adj:b1",
+      "word": "organized",
+      "translation": "организованный",
+      "answer": "organized",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:original:adj:a2",
+      "word": "original",
+      "translation": "оригинальный",
+      "answer": "original",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:outdoor:adj:b1",
+      "word": "outdoor",
+      "translation": "открытый",
+      "answer": "outdoor",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:outer:adj:b2",
+      "word": "outer",
+      "translation": "внешний",
+      "answer": "outer",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    }
+  ]
+}

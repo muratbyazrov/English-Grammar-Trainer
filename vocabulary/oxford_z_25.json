@@ -1,0 +1,489 @@
+{
+  "id": "oxford-extra-25",
+  "collection": "Oxford 3000",
+  "topic": "Наука и измерения",
+  "subtopic": "Наука и числа",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:amount:n:a2",
+      "word": "amount",
+      "translation": "количество; сумма",
+      "answer": "amount",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:amount:v:b2",
+      "word": "amount",
+      "translation": "составлять сумму",
+      "answer": "amount",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:analyse:v:b1",
+      "word": "analyse",
+      "translation": "анализировать",
+      "answer": "analyse",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:analysis:n:b1",
+      "word": "analysis",
+      "translation": "анализ",
+      "answer": "analysis",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:average:adj-n:a2",
+      "word": "average",
+      "translation": "средний; среднее значение",
+      "answer": "average",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:average:v:b1",
+      "word": "average",
+      "translation": "составлять в среднем",
+      "answer": "average",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:cent:n:a1",
+      "word": "cent",
+      "translation": "цент",
+      "answer": "cent",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:century:n:a1",
+      "word": "century",
+      "translation": "век",
+      "answer": "century",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:count:v:a2",
+      "word": "count",
+      "translation": "считать",
+      "answer": "count",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:count:n:b1",
+      "word": "count",
+      "translation": "подсчёт",
+      "answer": "count",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:date:n:a1",
+      "word": "date",
+      "translation": "дата; свидание",
+      "answer": "date",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:date:v:b2",
+      "word": "date",
+      "translation": "встречаться; датировать",
+      "answer": "date",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:day:n:a1",
+      "word": "day",
+      "translation": "день",
+      "answer": "day",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:discover:v:a2",
+      "word": "discover",
+      "translation": "обнаружить",
+      "answer": "discover",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:discovery:n:a2",
+      "word": "discovery",
+      "translation": "открытие",
+      "answer": "discovery",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:double:adj-det-pron-v:a2",
+      "word": "double",
+      "translation": "двойной",
+      "answer": "double",
+      "level": "A2",
+      "partOfSpeech": "прил., опред., мест., гл."
+    },
+    {
+      "id": "oxford:double:adv:b1",
+      "word": "double",
+      "translation": "двойной",
+      "answer": "double",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:evidence:n:a2",
+      "word": "evidence",
+      "translation": "доказательство; свидетельство",
+      "answer": "evidence",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:experiment:n:a2",
+      "word": "experiment",
+      "translation": "эксперимент",
+      "answer": "experiment",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:experiment:v:b1",
+      "word": "experiment",
+      "translation": "экспериментировать",
+      "answer": "experiment",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fact:n:a1",
+      "word": "fact",
+      "translation": "факт",
+      "answer": "fact",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:figure:n:a2",
+      "word": "figure",
+      "translation": "цифра; фигура",
+      "answer": "figure",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:figure:v:b2",
+      "word": "figure",
+      "translation": "полагать; вычислять",
+      "answer": "figure",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:half:n-det-pron:a1",
+      "word": "half",
+      "translation": "половина",
+      "answer": "half",
+      "level": "A1",
+      "partOfSpeech": "сущ., опред., мест."
+    },
+    {
+      "id": "oxford:half:adv:a2",
+      "word": "half",
+      "translation": "половина",
+      "answer": "half",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:height:n:a2",
+      "word": "height",
+      "translation": "высота",
+      "answer": "height",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hour:n:a1",
+      "word": "hour",
+      "translation": "час",
+      "answer": "hour",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:information:n:a1",
+      "word": "information",
+      "translation": "информация",
+      "answer": "information",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lab:n:a2",
+      "word": "lab",
+      "translation": "лаборатория",
+      "answer": "lab",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:laboratory:n:b1",
+      "word": "laboratory",
+      "translation": "лаборатория",
+      "answer": "laboratory",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:length:n:b1",
+      "word": "length",
+      "translation": "длина",
+      "answer": "length",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:measure:v-n:b1",
+      "word": "measure",
+      "translation": "мера; измерять",
+      "answer": "measure",
+      "level": "B1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:measurement:n:b2",
+      "word": "measurement",
+      "translation": "измерение",
+      "answer": "measurement",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:method:n:a2",
+      "word": "method",
+      "translation": "метод",
+      "answer": "method",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:minute:n:a1",
+      "word": "minute",
+      "translation": "минута",
+      "answer": "minute",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:month:n:a1",
+      "word": "month",
+      "translation": "месяц",
+      "answer": "month",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:number:n:a1",
+      "word": "number",
+      "translation": "число; номер",
+      "answer": "number",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:number:v:a2",
+      "word": "number",
+      "translation": "нумеровать",
+      "answer": "number",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:per:prep:a2",
+      "word": "per",
+      "translation": "за",
+      "answer": "per",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:percentage:n:b1",
+      "word": "percentage",
+      "translation": "процент",
+      "answer": "percentage",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:process:n:a2",
+      "word": "process",
+      "translation": "процесс",
+      "answer": "process",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:process:v:b2",
+      "word": "process",
+      "translation": "обрабатывать",
+      "answer": "process",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:quarter:n:a1",
+      "word": "quarter",
+      "translation": "квартал",
+      "answer": "quarter",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:result:n:a1",
+      "word": "result",
+      "translation": "результат",
+      "answer": "result",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:result:v:b1",
+      "word": "result",
+      "translation": "приводить к результату",
+      "answer": "result",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:scientific:adj:b1",
+      "word": "scientific",
+      "translation": "научный",
+      "answer": "scientific",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:second:det-number:a1",
+      "word": "second",
+      "translation": "второй",
+      "answer": "second",
+      "level": "A1",
+      "partOfSpeech": "опред., числ."
+    },
+    {
+      "id": "oxford:second:n:a1:2",
+      "word": "second",
+      "translation": "второй",
+      "answer": "second",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:second:adv:a2",
+      "word": "second",
+      "translation": "второй",
+      "answer": "second",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:size:n:a2",
+      "word": "size",
+      "translation": "размер",
+      "answer": "size",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:speed:n:a2",
+      "word": "speed",
+      "translation": "скорость",
+      "answer": "speed",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:speed:v:b2",
+      "word": "speed",
+      "translation": "мчаться",
+      "answer": "speed",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:sum:n-v:b2",
+      "word": "sum",
+      "translation": "сумма; суммировать",
+      "answer": "sum",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:theory:n:b1",
+      "word": "theory",
+      "translation": "теория",
+      "answer": "theory",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:time:n:a1",
+      "word": "time",
+      "translation": "время",
+      "answer": "time",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:time:v:b2",
+      "word": "time",
+      "translation": "засекать время",
+      "answer": "time",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:total:adj-n:b1",
+      "word": "total",
+      "translation": "общий; итог",
+      "answer": "total",
+      "level": "B1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:week:n:a1",
+      "word": "week",
+      "translation": "неделя",
+      "answer": "week",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:weight:n:a2",
+      "word": "weight",
+      "translation": "вес",
+      "answer": "weight",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:year:n:a1",
+      "word": "year",
+      "translation": "год",
+      "answer": "year",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

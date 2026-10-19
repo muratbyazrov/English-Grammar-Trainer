@@ -1,0 +1,449 @@
+{
+  "id": "oxford-extra-38",
+  "collection": "Oxford 3000",
+  "topic": "Учёба и работа",
+  "subtopic": "Учёба",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:answer:n-v:a1",
+      "word": "answer",
+      "translation": "ответ; отвечать",
+      "answer": "answer",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:book:n:a1",
+      "word": "book",
+      "translation": "книга",
+      "answer": "book",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:book:v:a2",
+      "word": "book",
+      "translation": "бронировать",
+      "answer": "book",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:chapter:n:b1",
+      "word": "chapter",
+      "translation": "глава",
+      "answer": "chapter",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:class:n:a1",
+      "word": "class",
+      "translation": "класс",
+      "answer": "class",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:classroom:n:a1",
+      "word": "classroom",
+      "translation": "класс",
+      "answer": "classroom",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:college:n:a1",
+      "word": "college",
+      "translation": "колледж",
+      "answer": "college",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:course:n:a1",
+      "word": "course",
+      "translation": "курс",
+      "answer": "course",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:degree:n:a2",
+      "word": "degree",
+      "translation": "степень",
+      "answer": "degree",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dictionary:n:a1",
+      "word": "dictionary",
+      "translation": "словарь",
+      "answer": "dictionary",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:education:n:a2",
+      "word": "education",
+      "translation": "образование",
+      "answer": "education",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:educational:adj:b1",
+      "word": "educational",
+      "translation": "образовательный",
+      "answer": "educational",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:exam:n:a1",
+      "word": "exam",
+      "translation": "экзамен",
+      "answer": "exam",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:examination:n:b2",
+      "word": "examination",
+      "translation": "обследование",
+      "answer": "examination",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:grade:n:b1",
+      "word": "grade",
+      "translation": "оценка; класс",
+      "answer": "grade",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:grade:v:b2",
+      "word": "grade",
+      "translation": "оценивать",
+      "answer": "grade",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:homework:n:a1",
+      "word": "homework",
+      "translation": "домашнее задание",
+      "answer": "homework",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:knowledge:n:a2",
+      "word": "knowledge",
+      "translation": "знания",
+      "answer": "knowledge",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:language:n:a1",
+      "word": "language",
+      "translation": "язык",
+      "answer": "language",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:learn:v:a1",
+      "word": "learn",
+      "translation": "учиться",
+      "answer": "learn",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:learning:n:a2",
+      "word": "learning",
+      "translation": "обучение",
+      "answer": "learning",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lecture:n-v:a2",
+      "word": "lecture",
+      "translation": "лекция; читать лекцию",
+      "answer": "lecture",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:lesson:n:a1",
+      "word": "lesson",
+      "translation": "урок",
+      "answer": "lesson",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:library:n:a1",
+      "word": "library",
+      "translation": "библиотека",
+      "answer": "library",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:mark:v-n:a2",
+      "word": "mark",
+      "translation": "отметка; след; отмечать",
+      "answer": "mark",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:page:n:a1",
+      "word": "page",
+      "translation": "страница",
+      "answer": "page",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:paper:n:a1",
+      "word": "paper",
+      "translation": "бумага",
+      "answer": "paper",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pen:n:a1",
+      "word": "pen",
+      "translation": "ручка",
+      "answer": "pen",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pencil:n:a1",
+      "word": "pencil",
+      "translation": "карандаш",
+      "answer": "pencil",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:practice:n:a1",
+      "word": "practice",
+      "translation": "практика",
+      "answer": "practice",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:practise:v:a1",
+      "word": "practise",
+      "translation": "практика",
+      "answer": "practise",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:pupil:n:b2",
+      "word": "pupil",
+      "translation": "ученик",
+      "answer": "pupil",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:qualification:n:b1",
+      "word": "qualification",
+      "translation": "квалификация",
+      "answer": "qualification",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:question:n:a1",
+      "word": "question",
+      "translation": "вопрос",
+      "answer": "question",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:question:v:a2",
+      "word": "question",
+      "translation": "спрашивать; подвергать сомнению",
+      "answer": "question",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:read:v:a1",
+      "word": "read",
+      "translation": "читать",
+      "answer": "read",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:reading:n:a1",
+      "word": "reading",
+      "translation": "чтение",
+      "answer": "reading",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:research:n-v:a2",
+      "word": "research",
+      "translation": "исследование; исследовать",
+      "answer": "research",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:school:n:a1",
+      "word": "school",
+      "translation": "школа",
+      "answer": "school",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sentence:n:a1",
+      "word": "sentence",
+      "translation": "предложение; приговор",
+      "answer": "sentence",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sentence:v:b2",
+      "word": "sentence",
+      "translation": "приговаривать",
+      "answer": "sentence",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:skill:n:a1",
+      "word": "skill",
+      "translation": "умение",
+      "answer": "skill",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:student:n:a1",
+      "word": "student",
+      "translation": "студент",
+      "answer": "student",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:study:n-v:a1",
+      "word": "study",
+      "translation": "учёба; исследование; изучать; учиться",
+      "answer": "study",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:subject:n:a1",
+      "word": "subject",
+      "translation": "предмет",
+      "answer": "subject",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:subject:adj:b2",
+      "word": "subject",
+      "translation": "подлежащий; подверженный",
+      "answer": "subject",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:teach:v:a1",
+      "word": "teach",
+      "translation": "учить",
+      "answer": "teach",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:teacher:n:a1",
+      "word": "teacher",
+      "translation": "учитель",
+      "answer": "teacher",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:test:n-v:a1",
+      "word": "test",
+      "translation": "тест; испытание; проверять; испытывать",
+      "answer": "test",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:text:n:a1",
+      "word": "text",
+      "translation": "текст",
+      "answer": "text",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:training:n:a2",
+      "word": "training",
+      "translation": "обучение",
+      "answer": "training",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:university:n:a1",
+      "word": "university",
+      "translation": "университет",
+      "answer": "university",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:word:n:a1",
+      "word": "word",
+      "translation": "слово",
+      "answer": "word",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:write:v:a1",
+      "word": "write",
+      "translation": "писать",
+      "answer": "write",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:writing:n:a1",
+      "word": "writing",
+      "translation": "письмо",
+      "answer": "writing",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

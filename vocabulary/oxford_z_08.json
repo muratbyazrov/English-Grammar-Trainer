@@ -1,0 +1,433 @@
+{
+  "id": "oxford-extra-08",
+  "collection": "Oxford 3000",
+  "topic": "Грамматика и связки",
+  "subtopic": "Предлоги и направления",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:about:prep-adv:a1",
+      "word": "about",
+      "translation": "о",
+      "answer": "about",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:above:prep-adv:a1",
+      "word": "above",
+      "translation": "выше",
+      "answer": "above",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:according-to:prep:a2",
+      "word": "according to",
+      "translation": "согласно",
+      "answer": "according to",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:across:prep-adv:a1",
+      "word": "across",
+      "translation": "через",
+      "answer": "across",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:against:prep:a2",
+      "word": "against",
+      "translation": "против",
+      "answer": "against",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:along:prep-adv:a2",
+      "word": "along",
+      "translation": "вдоль",
+      "answer": "along",
+      "level": "A2",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:among:prep:a2",
+      "word": "among",
+      "translation": "среди",
+      "answer": "among",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:around:prep-adv:a1",
+      "word": "around",
+      "translation": "вокруг",
+      "answer": "around",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:as:prep:a1",
+      "word": "as",
+      "translation": "как; поскольку",
+      "answer": "as",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:at:prep:a1",
+      "word": "at",
+      "translation": "в; у; на",
+      "answer": "at",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:because-of:prep:a1",
+      "word": "because of",
+      "translation": "из-за",
+      "answer": "because of",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:behind:prep-adv:a1",
+      "word": "behind",
+      "translation": "позади",
+      "answer": "behind",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:below:adv-prep:a1",
+      "word": "below",
+      "translation": "ниже",
+      "answer": "below",
+      "level": "A1",
+      "partOfSpeech": "нареч., предл."
+    },
+    {
+      "id": "oxford:between:prep:a1",
+      "word": "between",
+      "translation": "между",
+      "answer": "between",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:beyond:prep-adv:b2",
+      "word": "beyond",
+      "translation": "за пределами",
+      "answer": "beyond",
+      "level": "B2",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:but:prep:b2",
+      "word": "but",
+      "translation": "но; кроме",
+      "answer": "but",
+      "level": "B2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:by:prep:a1",
+      "word": "by",
+      "translation": "у; возле; с помощью",
+      "answer": "by",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:despite:prep:b1",
+      "word": "despite",
+      "translation": "несмотря на",
+      "answer": "despite",
+      "level": "B1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:down:adv-prep:a1",
+      "word": "down",
+      "translation": "вниз",
+      "answer": "down",
+      "level": "A1",
+      "partOfSpeech": "нареч., предл."
+    },
+    {
+      "id": "oxford:except:prep:a2",
+      "word": "except",
+      "translation": "кроме",
+      "answer": "except",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:following:prep:b2",
+      "word": "following",
+      "translation": "следующий",
+      "answer": "following",
+      "level": "B2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:for:prep:a1",
+      "word": "for",
+      "translation": "для; в течение",
+      "answer": "for",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:from:prep:a1",
+      "word": "from",
+      "translation": "из; от",
+      "answer": "from",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:in:prep-adv:a1",
+      "word": "in",
+      "translation": "в",
+      "answer": "in",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:including:prep:a2",
+      "word": "including",
+      "translation": "в том числе",
+      "answer": "including",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:inside:prep-adv-n-adj:a2",
+      "word": "inside",
+      "translation": "внутри",
+      "answer": "inside",
+      "level": "A2",
+      "partOfSpeech": "предл., нареч., сущ., прил."
+    },
+    {
+      "id": "oxford:instead-of:prep:a2",
+      "word": "instead of",
+      "translation": "вместо",
+      "answer": "instead of",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:into:prep:a1",
+      "word": "into",
+      "translation": "внутрь; в",
+      "answer": "into",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:like:prep:a1",
+      "word": "like",
+      "translation": "нравится",
+      "answer": "like",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:next-to:prep:a1",
+      "word": "next to",
+      "translation": "рядом с",
+      "answer": "next to",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:of:prep:a1",
+      "word": "of",
+      "translation": "из; принадлежность",
+      "answer": "of",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:off:adv-prep:a1",
+      "word": "off",
+      "translation": "выкл.",
+      "answer": "off",
+      "level": "A1",
+      "partOfSpeech": "нареч., предл."
+    },
+    {
+      "id": "oxford:on:prep-adv:a1",
+      "word": "on",
+      "translation": "на",
+      "answer": "on",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:onto:prep:a2",
+      "word": "onto",
+      "translation": "на",
+      "answer": "onto",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:opposite:adj-n-prep-adv:a1",
+      "word": "opposite",
+      "translation": "напротив",
+      "answer": "opposite",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ., предл., нареч."
+    },
+    {
+      "id": "oxford:out:adv-prep:a1",
+      "word": "out",
+      "translation": "из",
+      "answer": "out",
+      "level": "A1",
+      "partOfSpeech": "нареч., предл."
+    },
+    {
+      "id": "oxford:outside:prep-n-adj:a2",
+      "word": "outside",
+      "translation": "снаружи",
+      "answer": "outside",
+      "level": "A2",
+      "partOfSpeech": "предл., сущ., прил."
+    },
+    {
+      "id": "oxford:over:prep-adv:a1",
+      "word": "over",
+      "translation": "закончилось",
+      "answer": "over",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:plus:prep:b1",
+      "word": "plus",
+      "translation": "плюс",
+      "answer": "plus",
+      "level": "B1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:round:adj-adv-prep:a2",
+      "word": "round",
+      "translation": "круглый; вокруг",
+      "answer": "round",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч., предл."
+    },
+    {
+      "id": "oxford:through:prep-adv:a1",
+      "word": "through",
+      "translation": "через; сквозь",
+      "answer": "through",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:throughout:prep-adv:b1",
+      "word": "throughout",
+      "translation": "повсюду",
+      "answer": "throughout",
+      "level": "B1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:till:conj-prep:b1",
+      "word": "till",
+      "translation": "до",
+      "answer": "till",
+      "level": "B1",
+      "partOfSpeech": "союз, предл."
+    },
+    {
+      "id": "oxford:to:prep-infinitive-marker:a1",
+      "word": "to",
+      "translation": "к; в; частица инфинитива",
+      "answer": "to",
+      "level": "A1",
+      "partOfSpeech": "предл., частица"
+    },
+    {
+      "id": "oxford:towards:prep:a2",
+      "word": "towards",
+      "translation": "к",
+      "answer": "towards",
+      "level": "A2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:under:prep-adv:a1",
+      "word": "under",
+      "translation": "под",
+      "answer": "under",
+      "level": "A1",
+      "partOfSpeech": "предл., нареч."
+    },
+    {
+      "id": "oxford:unlike:prep:b1",
+      "word": "unlike",
+      "translation": "в отличие от",
+      "answer": "unlike",
+      "level": "B1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:up:adv-prep:a1",
+      "word": "up",
+      "translation": "вверх",
+      "answer": "up",
+      "level": "A1",
+      "partOfSpeech": "нареч., предл."
+    },
+    {
+      "id": "oxford:upon:prep:b2",
+      "word": "upon",
+      "translation": "на",
+      "answer": "upon",
+      "level": "B2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:via:prep:b2",
+      "word": "via",
+      "translation": "через",
+      "answer": "via",
+      "level": "B2",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:with:prep:a1",
+      "word": "with",
+      "translation": "с",
+      "answer": "with",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:within:prep:b1",
+      "word": "within",
+      "translation": "внутри",
+      "answer": "within",
+      "level": "B1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:without:prep:a1",
+      "word": "without",
+      "translation": "без",
+      "answer": "without",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    }
+  ]
+}

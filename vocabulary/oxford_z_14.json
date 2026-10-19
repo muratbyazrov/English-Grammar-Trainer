@@ -1,0 +1,289 @@
+{
+  "id": "oxford-extra-14",
+  "collection": "Oxford 3000",
+  "topic": "Действия и изменения",
+  "subtopic": "Глаголы U–Z",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:ultimately:adv:b2",
+      "word": "ultimately",
+      "translation": "в конечном итоге",
+      "answer": "ultimately",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:underground:adj-adv:a2",
+      "word": "underground",
+      "translation": "под землей",
+      "answer": "underground",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:understand:v:a1",
+      "word": "understand",
+      "translation": "понять",
+      "answer": "understand",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:unfortunately:adv:a2",
+      "word": "unfortunately",
+      "translation": "к сожалению",
+      "answer": "unfortunately",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:update:v-n:b1",
+      "word": "update",
+      "translation": "обновление; обновлять",
+      "answer": "update",
+      "level": "B1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:upset:adj-v:b1",
+      "word": "upset",
+      "translation": "расстроен",
+      "answer": "upset",
+      "level": "B1",
+      "partOfSpeech": "прил., гл."
+    },
+    {
+      "id": "oxford:upstairs:adv:a1",
+      "word": "upstairs",
+      "translation": "наверху",
+      "answer": "upstairs",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:upwards:adv:b2",
+      "word": "upwards",
+      "translation": "вверх",
+      "answer": "upwards",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:urge:v:b2",
+      "word": "urge",
+      "translation": "призывать",
+      "answer": "urge",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:use:v:a1",
+      "word": "use",
+      "translation": "использовать",
+      "answer": "use",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:vary:v:b2",
+      "word": "vary",
+      "translation": "варьироваться",
+      "answer": "vary",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:very:adv:a1",
+      "word": "very",
+      "translation": "очень",
+      "answer": "very",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:view:v:b1",
+      "word": "view",
+      "translation": "рассматривать",
+      "answer": "view",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:volunteer:n-v:b1",
+      "word": "volunteer",
+      "translation": "доброволец; вызываться добровольцем",
+      "answer": "volunteer",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:wait:v:a1",
+      "word": "wait",
+      "translation": "ждать",
+      "answer": "wait",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:wake:v:a1",
+      "word": "wake",
+      "translation": "просыпаться",
+      "answer": "wake",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:want:v:a1",
+      "word": "want",
+      "translation": "хотеть",
+      "answer": "want",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:warn:v:b1",
+      "word": "warn",
+      "translation": "предупреждать",
+      "answer": "warn",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:waste:n-v-adj:b1",
+      "word": "waste",
+      "translation": "отходы; трата; напрасный; тратить впустую",
+      "answer": "waste",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл., прил."
+    },
+    {
+      "id": "oxford:wave:v:b1",
+      "word": "wave",
+      "translation": "махать",
+      "answer": "wave",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:way:adv:b2",
+      "word": "way",
+      "translation": "путь",
+      "answer": "way",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:wear:v:a1",
+      "word": "wear",
+      "translation": "носить",
+      "answer": "wear",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:weigh:v:b1",
+      "word": "weigh",
+      "translation": "взвешивать",
+      "answer": "weigh",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:why:adv:a1",
+      "word": "why",
+      "translation": "почему",
+      "answer": "why",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:widely:adv:b2",
+      "word": "widely",
+      "translation": "широко",
+      "answer": "widely",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:wish:v-n:a2",
+      "word": "wish",
+      "translation": "желание; желать",
+      "answer": "wish",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:witness:n-v:b2",
+      "word": "witness",
+      "translation": "свидетель; быть свидетелем",
+      "answer": "witness",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:wonder:v-n:b1",
+      "word": "wonder",
+      "translation": "удивление; чудо; интересоваться; удивляться",
+      "answer": "wonder",
+      "level": "B1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:worldwide:adj-adv:b1",
+      "word": "worldwide",
+      "translation": "по всему миру",
+      "answer": "worldwide",
+      "level": "B1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:worry:v:a2",
+      "word": "worry",
+      "translation": "беспокоиться",
+      "answer": "worry",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:worse:adv:b1",
+      "word": "worse",
+      "translation": "хуже",
+      "answer": "worse",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:worst:adv:b1",
+      "word": "worst",
+      "translation": "худший",
+      "answer": "worst",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:wound:n-v:b2",
+      "word": "wound",
+      "translation": "рана; ранить",
+      "answer": "wound",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:wrap:v:b2",
+      "word": "wrap",
+      "translation": "обернуть",
+      "answer": "wrap",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:wrong:adv:b1",
+      "word": "wrong",
+      "translation": "неправильный",
+      "answer": "wrong",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    }
+  ]
+}

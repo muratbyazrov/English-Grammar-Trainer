@@ -1,0 +1,345 @@
+{
+  "id": "oxford-extra-36",
+  "collection": "Oxford 3000",
+  "topic": "Техника и связь",
+  "subtopic": "Технологии и интернет",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:ai:n:b1",
+      "word": "AI",
+      "translation": "искусственный интеллект",
+      "answer": "AI",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:app:n:a2",
+      "word": "app",
+      "translation": "приложение",
+      "answer": "app",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:click:v-n:b1",
+      "word": "click",
+      "translation": "щелчок; щёлкать",
+      "answer": "click",
+      "level": "B1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:code:n:a2",
+      "word": "code",
+      "translation": "код",
+      "answer": "code",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:computer:n:a1",
+      "word": "computer",
+      "translation": "компьютер",
+      "answer": "computer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:data:n:a2",
+      "word": "data",
+      "translation": "данные",
+      "answer": "data",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:digital:adj:a2",
+      "word": "digital",
+      "translation": "цифровой",
+      "answer": "digital",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:document:n:a2",
+      "word": "document",
+      "translation": "документ",
+      "answer": "document",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:document:v:b2",
+      "word": "document",
+      "translation": "документировать",
+      "answer": "document",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:download:v-n:a2",
+      "word": "download",
+      "translation": "загрузка; скачанный файл; скачивать",
+      "answer": "download",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:electric:adj:a2",
+      "word": "electric",
+      "translation": "электрический",
+      "answer": "electric",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:electronic:adj:a2",
+      "word": "electronic",
+      "translation": "электронный",
+      "answer": "electronic",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:email:n-v:a1",
+      "word": "email",
+      "translation": "электронное письмо; писать по электронной почте",
+      "answer": "email",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:file:n:b1",
+      "word": "file",
+      "translation": "файл; папка",
+      "answer": "file",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:file:v:b2",
+      "word": "file",
+      "translation": "подавать документ; систематизировать",
+      "answer": "file",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:internet:n:a1",
+      "word": "internet",
+      "translation": "интернет",
+      "answer": "internet",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:keyboard:n:b1",
+      "word": "keyboard",
+      "translation": "клавиатура",
+      "answer": "keyboard",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:laptop:n:a2",
+      "word": "laptop",
+      "translation": "ноутбук",
+      "answer": "laptop",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:link:n-v:a2",
+      "word": "link",
+      "translation": "ссылка; связь; связывать",
+      "answer": "link",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:media:n:a2",
+      "word": "media",
+      "translation": "СМИ",
+      "answer": "media",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:message:n:a1",
+      "word": "message",
+      "translation": "сообщение",
+      "answer": "message",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:mobile:adj-n:a2",
+      "word": "mobile",
+      "translation": "мобильный; мобильный телефон",
+      "answer": "mobile",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:network:n:a2",
+      "word": "network",
+      "translation": "сеть",
+      "answer": "network",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:online:adj-adv:a1",
+      "word": "online",
+      "translation": "онлайн",
+      "answer": "online",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:phone:n-v:a1",
+      "word": "phone",
+      "translation": "телефон; звонить по телефону",
+      "answer": "phone",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:podcast:n:b1",
+      "word": "podcast",
+      "translation": "подкаст",
+      "answer": "podcast",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:program:n:a2",
+      "word": "program",
+      "translation": "компьютерная программа",
+      "answer": "program",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:program:v:b1",
+      "word": "program",
+      "translation": "программировать",
+      "answer": "program",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:robot:n:b1",
+      "word": "robot",
+      "translation": "робот",
+      "answer": "robot",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:screen:n:a2",
+      "word": "screen",
+      "translation": "экран",
+      "answer": "screen",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:screen:v:b2",
+      "word": "screen",
+      "translation": "показывать на экране; проверять",
+      "answer": "screen",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:search:n-v:a2",
+      "word": "search",
+      "translation": "поиск; искать",
+      "answer": "search",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:smartphone:n:a2",
+      "word": "smartphone",
+      "translation": "смартфон",
+      "answer": "smartphone",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:software:n:b1",
+      "word": "software",
+      "translation": "программное обеспечение",
+      "answer": "software",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:system:n:a2",
+      "word": "system",
+      "translation": "система",
+      "answer": "system",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tablet:n:a2",
+      "word": "tablet",
+      "translation": "планшет",
+      "answer": "tablet",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:technology:n:a2",
+      "word": "technology",
+      "translation": "технология",
+      "answer": "technology",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:telephone:n-v:a1",
+      "word": "telephone",
+      "translation": "телефон; звонить по телефону",
+      "answer": "telephone",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:user:n:a2",
+      "word": "user",
+      "translation": "пользователь",
+      "answer": "user",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:web:n:a2",
+      "word": "web",
+      "translation": "сеть",
+      "answer": "web",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:website:n:a1",
+      "word": "website",
+      "translation": "веб-сайт",
+      "answer": "website",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wi-fi:n:b1",
+      "word": "Wi-Fi™",
+      "translation": "вай-фай",
+      "answer": "Wi-Fi™",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

@@ -290,6 +290,120 @@
           "weight": 1
         }
       ]
+    },
+    {
+      "word": "scalability",
+      "translation": "масштабируемость — способность расти под нагрузкой",
+      "example": "Scalability was the main reason we moved away from the monolith.",
+      "sentenceTranslation": "Масштабируемость была главной причиной, по которой мы отказались от монолита.",
+      "answer": "Scalability",
+      "answers": [
+        {
+          "text": "scalability",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "trade-off",
+      "translation": "компромисс — выигрываешь в одном, теряешь в другом",
+      "example": "There's always a trade-off between consistency and availability.",
+      "sentenceTranslation": "Между согласованностью и доступностью всегда приходится искать компромисс.",
+      "answers": [
+        {
+          "text": "trade-off",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "approach",
+      "translation": "подход — способ решения задачи",
+      "example": "We went with a different approach — event-driven instead of synchronous calls.",
+      "sentenceTranslation": "Мы выбрали другой подход — событийную модель вместо синхронных вызовов.",
+      "answers": [
+        {
+          "text": "approach",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "design",
+      "translation": "архитектурное решение / дизайн системы",
+      "example": "The current design doesn't handle failover well.",
+      "sentenceTranslation": "В текущем архитектурном решении плохо реализовано переключение на резервный компонент.",
+      "answers": [
+        {
+          "text": "design",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "implementation",
+      "translation": "реализация — как это сделано на практике",
+      "example": "The design is solid, but the implementation has some gaps.",
+      "sentenceTranslation": "Архитектурное решение продуманное, но в реализации есть недочёты.",
+      "answers": [
+        {
+          "text": "implementation",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "flow",
+      "translation": "поток — как данные или запросы движутся через систему",
+      "example": "Let me walk you through the request flow in this architecture.",
+      "sentenceTranslation": "Давайте я покажу вам, как запрос проходит через эту архитектуру.",
+      "answers": [
+        {
+          "text": "flow",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "coupling / tight coupling",
+      "translation": "связанность / сильная связанность",
+      "example": "Tight coupling makes it hard to deploy services independently.",
+      "sentenceTranslation": "Сильная связанность затрудняет независимое развёртывание сервисов.",
+      "answer": "Tight coupling",
+      "answers": [
+        {
+          "text": "coupling",
+          "weight": 1
+        },
+        {
+          "text": "tight coupling",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "loose coupling",
+      "translation": "слабая связанность — сервисы независимы друг от друга",
+      "example": "We aim for loose coupling so teams can deploy independently.",
+      "sentenceTranslation": "Мы стремимся к слабой связанности, чтобы команды могли независимо развёртывать свои сервисы.",
+      "answers": [
+        {
+          "text": "loose coupling",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "word": "dependency",
+      "translation": "зависимость между компонентами",
+      "example": "This service has a hard dependency on the auth service.",
+      "sentenceTranslation": "Этот сервис жёстко зависит от сервиса аутентификации.",
+      "answers": [
+        {
+          "text": "dependency",
+          "weight": 1
+        }
+      ]
     }
   ]
 }

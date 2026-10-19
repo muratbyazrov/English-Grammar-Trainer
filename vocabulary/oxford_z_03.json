@@ -1,0 +1,417 @@
+{
+  "id": "oxford-extra-03",
+  "collection": "Oxford 3000",
+  "topic": "Город и путешествия",
+  "subtopic": "Поездки и транспорт",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:abroad:adv:a2",
+      "word": "abroad",
+      "translation": "за границей",
+      "answer": "abroad",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:arrival:n:b1",
+      "word": "arrival",
+      "translation": "прибытие",
+      "answer": "arrival",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:arrive:v:a1",
+      "word": "arrive",
+      "translation": "прибыть",
+      "answer": "arrive",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:bike:n:a1",
+      "word": "bike",
+      "translation": "велосипед",
+      "answer": "bike",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:boat:n:a1",
+      "word": "boat",
+      "translation": "лодка",
+      "answer": "boat",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cycle:n-v:a2",
+      "word": "cycle",
+      "translation": "цикл; ездить на велосипеде",
+      "answer": "cycle",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:delay:v-n:b2",
+      "word": "delay",
+      "translation": "задержка; задерживать",
+      "answer": "delay",
+      "level": "B2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:departure:n:b1",
+      "word": "departure",
+      "translation": "отъезд",
+      "answer": "departure",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:destination:n:b1",
+      "word": "destination",
+      "translation": "пункт назначения",
+      "answer": "destination",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:direction:n:a2",
+      "word": "direction",
+      "translation": "направление",
+      "answer": "direction",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:distance:n:a2",
+      "word": "distance",
+      "translation": "расстояние",
+      "answer": "distance",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drive:v:a1",
+      "word": "drive",
+      "translation": "водить машину; ехать",
+      "answer": "drive",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:drive:n:a2",
+      "word": "drive",
+      "translation": "поездка на машине",
+      "answer": "drive",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:east:n-adj-adv:a1",
+      "word": "east",
+      "translation": "восток",
+      "answer": "east",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил., нареч."
+    },
+    {
+      "id": "oxford:flight:n:a1",
+      "word": "flight",
+      "translation": "полет",
+      "answer": "flight",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:holiday:n:a1",
+      "word": "holiday",
+      "translation": "праздник",
+      "answer": "holiday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:journey:n:a1",
+      "word": "journey",
+      "translation": "путешествие",
+      "answer": "journey",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:leave:v:a1",
+      "word": "leave",
+      "translation": "уходить; оставлять",
+      "answer": "leave",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:leave:n:b2",
+      "word": "leave",
+      "translation": "отпуск; разрешение",
+      "answer": "leave",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:map:v:b2",
+      "word": "map",
+      "translation": "наносить на карту",
+      "answer": "map",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:motorcycle:n:a2",
+      "word": "motorcycle",
+      "translation": "мотоцикл",
+      "answer": "motorcycle",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:north:n-adj-adv:a1",
+      "word": "north",
+      "translation": "север",
+      "answer": "north",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил., нареч."
+    },
+    {
+      "id": "oxford:parking:n:a2",
+      "word": "parking",
+      "translation": "парковка",
+      "answer": "parking",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:passenger:n:a2",
+      "word": "passenger",
+      "translation": "пассажир",
+      "answer": "passenger",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:passport:n:a1",
+      "word": "passport",
+      "translation": "паспорт",
+      "answer": "passport",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:platform:n:a2",
+      "word": "platform",
+      "translation": "платформа",
+      "answer": "platform",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:railway:n:a2",
+      "word": "railway",
+      "translation": "железная дорога",
+      "answer": "railway",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:return:v-n:a1",
+      "word": "return",
+      "translation": "возвращение; возвращаться; возвращать",
+      "answer": "return",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:ride:v:a1",
+      "word": "ride",
+      "translation": "ехать верхом; кататься",
+      "answer": "ride",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:ride:n:a2",
+      "word": "ride",
+      "translation": "поездка; катание",
+      "answer": "ride",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:route:n:a2",
+      "word": "route",
+      "translation": "маршрут",
+      "answer": "route",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ship:n:a2",
+      "word": "ship",
+      "translation": "корабль",
+      "answer": "ship",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ship:v:b2",
+      "word": "ship",
+      "translation": "перевозить; отправлять груз",
+      "answer": "ship",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:south:n-adj-adv:a1",
+      "word": "south",
+      "translation": "юг",
+      "answer": "south",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил., нареч."
+    },
+    {
+      "id": "oxford:straight:adv-adj:a2",
+      "word": "straight",
+      "translation": "прямой",
+      "answer": "straight",
+      "level": "A2",
+      "partOfSpeech": "нареч., прил."
+    },
+    {
+      "id": "oxford:tour:n:a2",
+      "word": "tour",
+      "translation": "тур; экскурсия",
+      "answer": "tour",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tour:v:b1",
+      "word": "tour",
+      "translation": "совершать поездку",
+      "answer": "tour",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:tourist:n:a1",
+      "word": "tourist",
+      "translation": "турист",
+      "answer": "tourist",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:traffic:n:a1",
+      "word": "traffic",
+      "translation": "трафик",
+      "answer": "traffic",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:train:v:a2",
+      "word": "train",
+      "translation": "тренировать; обучать",
+      "answer": "train",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:transport:n:a2",
+      "word": "transport",
+      "translation": "транспорт",
+      "answer": "transport",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:transport:v:b1",
+      "word": "transport",
+      "translation": "перевозить",
+      "answer": "transport",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:trip:n:a1",
+      "word": "trip",
+      "translation": "поездка",
+      "answer": "trip",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:trip:v:b2",
+      "word": "trip",
+      "translation": "спотыкаться",
+      "answer": "trip",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:turn:v-n:a1",
+      "word": "turn",
+      "translation": "поворот; очередь; поворачивать; превращаться",
+      "answer": "turn",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:vacation:n:a1",
+      "word": "vacation",
+      "translation": "отпуск",
+      "answer": "vacation",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:vehicle:n:a2",
+      "word": "vehicle",
+      "translation": "транспортное средство",
+      "answer": "vehicle",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:visit:v-n:a1",
+      "word": "visit",
+      "translation": "визит; посещение; посещать",
+      "answer": "visit",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:visitor:n:a1",
+      "word": "visitor",
+      "translation": "посетитель",
+      "answer": "visitor",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:walk:v-n:a1",
+      "word": "walk",
+      "translation": "прогулка; ходить; гулять",
+      "answer": "walk",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:west:n-adj-adv:a1",
+      "word": "west",
+      "translation": "запад",
+      "answer": "west",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил., нареч."
+    }
+  ]
+}

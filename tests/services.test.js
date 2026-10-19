@@ -64,3 +64,24 @@ test('progress retains v2 schema and handles corrupt or inaccessible storage', (
   assert.equal(blocked.load(), null);
   assert.equal(blocked.save(saved), false);
 });
+
+test('session scoring handles empty results and never rounds errors up to 100%', () => {
+  const scoring = load('progress.js').createSessionScoring();
+  const empty = { session: [], idx: 0, correct: 0, wrong: 0, outcomes: {} };
+  assert.equal(scoring.finish(empty).percent, 0);
+  const almostPerfect = { session: [], idx: 0, correct: 999, wrong: 1, outcomes: {} };
+  assert.equal(scoring.finish(almostPerfect).percent, 99);
+});
+
+test('session scoring ignores invalid saved outcomes and counts skipped tasks once', () => {
+  const scoring = load('progress.js').createSessionScoring();
+  const state = { session: [{ id: 1 }, { id: 2 }], idx: 0, correct: 1, wrong: 0 };
+  scoring.restore(state, { 1: 'correct', 2: 'unknown', 999: 'wrong' });
+  assert.equal(Object.keys(state.outcomes).length, 1);
+  assert.equal(scoring.finish(state).percent, 50);
+  scoring.finish(state);
+  assert.equal(state.wrong, 1);
+  state.idx = 1;
+  scoring.record(state, 'correct');
+  assert.equal(state.correct, 1);
+});

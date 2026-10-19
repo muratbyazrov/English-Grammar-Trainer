@@ -12,6 +12,7 @@ window.Trainer.createShadowingMode = function ({
   playWrongSound,
   refs,
   saveProgress,
+  sessionScoring,
   setFeedback,
   setQuestionTranslation,
   setSelectedSentenceForSpeech,
@@ -167,6 +168,7 @@ window.Trainer.createShadowingMode = function ({
     shadowingState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, shadowingState.session.length - 1)));
     shadowingState.correct = Math.max(0, asNumber(saved.correct, 0));
     shadowingState.wrong = Math.max(0, asNumber(saved.wrong, 0));
+    sessionScoring.restore(shadowingState, saved.outcomes);
     shadowingState.successfulRepetitions = Math.max(0, Math.min(asNumber(saved.successfulRepetitions, 0), currentShadowingRepetitions() - 1));
     return Boolean(shadowingState.session.length);
   }
@@ -237,7 +239,7 @@ window.Trainer.createShadowingMode = function ({
     refs.shadowingStart.disabled = false;
     refs.shadowingStart.textContent = 'Старт';
     setFeedback('', null);
-    shadowingState.wrongCounted = false;
+    shadowingState.wrongCounted = sessionScoring.wasWrong(shadowingState);
     shadowingState.checkedCurrent = false;
     updateShadowingRepetition();
   }
@@ -425,7 +427,7 @@ window.Trainer.createShadowingMode = function ({
         scheduleShadowingRetry(SHADOWING_SUCCESS_PAUSE_MS, token);
       } else {
         if (!shadowingState.checkedCurrent) {
-          shadowingState.correct += 1;
+          sessionScoring.record(shadowingState, 'correct');
           shadowingState.checkedCurrent = true;
           refs.correctCount.textContent = String(shadowingState.correct);
         }
@@ -437,7 +439,7 @@ window.Trainer.createShadowingMode = function ({
       }
     } else {
       if (!shadowingState.wrongCounted) {
-        shadowingState.wrong += 1;
+        sessionScoring.record(shadowingState, 'wrong');
         shadowingState.wrongCounted = true;
         refs.wrongCount.textContent = String(shadowingState.wrong);
       }

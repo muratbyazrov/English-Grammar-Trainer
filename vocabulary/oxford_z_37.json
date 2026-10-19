@@ -1,0 +1,465 @@
+{
+  "id": "oxford-extra-37",
+  "collection": "Oxford 3000",
+  "topic": "Учёба и работа",
+  "subtopic": "Работа и профессии",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:actor:n:a1",
+      "word": "actor",
+      "translation": "актер",
+      "answer": "actor",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:actress:n:a1",
+      "word": "actress",
+      "translation": "актриса",
+      "answer": "actress",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:application:n:b1",
+      "word": "application",
+      "translation": "приложение",
+      "answer": "application",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:apply:v:a2",
+      "word": "apply",
+      "translation": "применять",
+      "answer": "apply",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:artist:n:a1",
+      "word": "artist",
+      "translation": "художник",
+      "answer": "artist",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:boss:n:a2",
+      "word": "boss",
+      "translation": "босс",
+      "answer": "boss",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:business:n:a1",
+      "word": "business",
+      "translation": "бизнес",
+      "answer": "business",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:career:n:a1",
+      "word": "career",
+      "translation": "карьера",
+      "answer": "career",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:client:n:b1",
+      "word": "client",
+      "translation": "клиент",
+      "answer": "client",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:colleague:n:a2",
+      "word": "colleague",
+      "translation": "коллега",
+      "answer": "colleague",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:company:n:a1",
+      "word": "company",
+      "translation": "компания",
+      "answer": "company",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:customer:n:a1",
+      "word": "customer",
+      "translation": "клиент",
+      "answer": "customer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:driver:n:a1",
+      "word": "driver",
+      "translation": "водитель",
+      "answer": "driver",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:duty:n:b1",
+      "word": "duty",
+      "translation": "обязанность",
+      "answer": "duty",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:earn:v:a2",
+      "word": "earn",
+      "translation": "зарабатывать",
+      "answer": "earn",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:employee:n:a2",
+      "word": "employee",
+      "translation": "сотрудник",
+      "answer": "employee",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:employer:n:a2",
+      "word": "employer",
+      "translation": "работодатель",
+      "answer": "employer",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:employment:n:b1",
+      "word": "employment",
+      "translation": "занятость",
+      "answer": "employment",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:engineer:n:a2",
+      "word": "engineer",
+      "translation": "инженер",
+      "answer": "engineer",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:engineering:n:b1",
+      "word": "engineering",
+      "translation": "инженерия",
+      "answer": "engineering",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:experience:n:a2",
+      "word": "experience",
+      "translation": "опыт; переживание",
+      "answer": "experience",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:experience:v:b1",
+      "word": "experience",
+      "translation": "испытывать; переживать",
+      "answer": "experience",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:expert:n-adj:a2",
+      "word": "expert",
+      "translation": "эксперт; опытный",
+      "answer": "expert",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:factory:n:a2",
+      "word": "factory",
+      "translation": "фабрика",
+      "answer": "factory",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:farmer:n:a1",
+      "word": "farmer",
+      "translation": "фермер",
+      "answer": "farmer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hire:v:b1",
+      "word": "hire",
+      "translation": "нанимать; брать напрокат",
+      "answer": "hire",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:hire:n:b2",
+      "word": "hire",
+      "translation": "наём; прокат",
+      "answer": "hire",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:industry:n:a2",
+      "word": "industry",
+      "translation": "промышленность",
+      "answer": "industry",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:interview:n-v:a1",
+      "word": "interview",
+      "translation": "собеседование; интервью; брать интервью",
+      "answer": "interview",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:job:n:a1",
+      "word": "job",
+      "translation": "работа",
+      "answer": "job",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:journalist:n:a2",
+      "word": "journalist",
+      "translation": "журналист",
+      "answer": "journalist",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lawyer:n:a2",
+      "word": "lawyer",
+      "translation": "адвокат",
+      "answer": "lawyer",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:management:n:b1",
+      "word": "management",
+      "translation": "менеджмент",
+      "answer": "management",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:manager:n:a2",
+      "word": "manager",
+      "translation": "менеджер",
+      "answer": "manager",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:meeting:n:a1",
+      "word": "meeting",
+      "translation": "встреча",
+      "answer": "meeting",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:musician:n:a2",
+      "word": "musician",
+      "translation": "музыкант",
+      "answer": "musician",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:office:n:a1",
+      "word": "office",
+      "translation": "офис",
+      "answer": "office",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:officer:n:a2",
+      "word": "officer",
+      "translation": "офицер",
+      "answer": "officer",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pilot:n:a2",
+      "word": "pilot",
+      "translation": "пилот",
+      "answer": "pilot",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:police:n:a1",
+      "word": "police",
+      "translation": "полиция",
+      "answer": "police",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:production:n:b1",
+      "word": "production",
+      "translation": "производство",
+      "answer": "production",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:profession:n:b1",
+      "word": "profession",
+      "translation": "профессия",
+      "answer": "profession",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:professional:adj:a2",
+      "word": "professional",
+      "translation": "профессиональный",
+      "answer": "professional",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:professional:n:b2",
+      "word": "professional",
+      "translation": "профессиональный",
+      "answer": "professional",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:project:n:a1",
+      "word": "project",
+      "translation": "проект",
+      "answer": "project",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:project:v:b2",
+      "word": "project",
+      "translation": "прогнозировать; проецировать",
+      "answer": "project",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:responsibility:n:b1",
+      "word": "responsibility",
+      "translation": "ответственность",
+      "answer": "responsibility",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:salary:n:a2",
+      "word": "salary",
+      "translation": "зарплата",
+      "answer": "salary",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:science:n:a1",
+      "word": "science",
+      "translation": "наука",
+      "answer": "science",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:scientist:n:a1",
+      "word": "scientist",
+      "translation": "учёный",
+      "answer": "scientist",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:service:n:a2",
+      "word": "service",
+      "translation": "услуга",
+      "answer": "service",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:staff:n:b1",
+      "word": "staff",
+      "translation": "персонал",
+      "answer": "staff",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:task:n:a2",
+      "word": "task",
+      "translation": "задача",
+      "answer": "task",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:team:n:a1",
+      "word": "team",
+      "translation": "команда",
+      "answer": "team",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wage:n:b2",
+      "word": "wage",
+      "translation": "заработная плата",
+      "answer": "wage",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:waiter:n:a1",
+      "word": "waiter",
+      "translation": "официант",
+      "answer": "waiter",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:worker:n:a1",
+      "word": "worker",
+      "translation": "рабочий",
+      "answer": "worker",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

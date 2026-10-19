@@ -1,0 +1,177 @@
+{
+  "id": "oxford-extra-09",
+  "collection": "Oxford 3000",
+  "topic": "Грамматика и связки",
+  "subtopic": "Связки и союзы",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:although:conj:a2",
+      "word": "although",
+      "translation": "хотя",
+      "answer": "although",
+      "level": "A2",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:and:conj:a1",
+      "word": "and",
+      "translation": "и",
+      "answer": "and",
+      "level": "A1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:as:adv-conj:a2",
+      "word": "as",
+      "translation": "как; поскольку",
+      "answer": "as",
+      "level": "A2",
+      "partOfSpeech": "нареч., союз"
+    },
+    {
+      "id": "oxford:because:conj:a1",
+      "word": "because",
+      "translation": "потому что",
+      "answer": "because",
+      "level": "A1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:but:conj:a1",
+      "word": "but",
+      "translation": "но; кроме",
+      "answer": "but",
+      "level": "A1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:except:conj:b1",
+      "word": "except",
+      "translation": "кроме",
+      "answer": "except",
+      "level": "B1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:however:conj:b2",
+      "word": "however",
+      "translation": "однако",
+      "answer": "however",
+      "level": "B2",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:if:conj:a1",
+      "word": "if",
+      "translation": "если",
+      "answer": "if",
+      "level": "A1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:nor:conj-adv:b1",
+      "word": "nor",
+      "translation": "ни",
+      "answer": "nor",
+      "level": "B1",
+      "partOfSpeech": "союз, нареч."
+    },
+    {
+      "id": "oxford:once:conj:b1",
+      "word": "once",
+      "translation": "как только",
+      "answer": "once",
+      "level": "B1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:or:conj:a1",
+      "word": "or",
+      "translation": "или",
+      "answer": "or",
+      "level": "A1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:plus:adj-n-conj:b2",
+      "word": "plus",
+      "translation": "плюс",
+      "answer": "plus",
+      "level": "B2",
+      "partOfSpeech": "прил., сущ., союз"
+    },
+    {
+      "id": "oxford:so:adv-conj:a1",
+      "word": "so",
+      "translation": "так",
+      "answer": "so",
+      "level": "A1",
+      "partOfSpeech": "нареч., союз"
+    },
+    {
+      "id": "oxford:than:conj:a1",
+      "word": "than",
+      "translation": "чем",
+      "answer": "than",
+      "level": "A1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:though:conj-adv:b1",
+      "word": "though",
+      "translation": "хотя",
+      "answer": "though",
+      "level": "B1",
+      "partOfSpeech": "союз, нареч."
+    },
+    {
+      "id": "oxford:unless:conj:b1",
+      "word": "unless",
+      "translation": "если только",
+      "answer": "unless",
+      "level": "B1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:whenever:conj:b1",
+      "word": "whenever",
+      "translation": "всякий раз, когда",
+      "answer": "whenever",
+      "level": "B1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:where:adv-conj:a1",
+      "word": "where",
+      "translation": "где; куда",
+      "answer": "where",
+      "level": "A1",
+      "partOfSpeech": "нареч., союз"
+    },
+    {
+      "id": "oxford:whereas:conj:b2",
+      "word": "whereas",
+      "translation": "тогда как",
+      "answer": "whereas",
+      "level": "B2",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:wherever:conj:b2",
+      "word": "wherever",
+      "translation": "где угодно",
+      "answer": "wherever",
+      "level": "B2",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:whether:conj:b1",
+      "word": "whether",
+      "translation": "ли",
+      "answer": "whether",
+      "level": "B1",
+      "partOfSpeech": "союз"
+    }
+  ]
+}

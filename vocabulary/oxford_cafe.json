@@ -1,0 +1,157 @@
+{
+  "id": "oxford-cafe",
+  "collection": "Oxford 3000",
+  "topic": "Еда и напитки",
+  "subtopic": "В кафе",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:menu:noun",
+      "word": "menu",
+      "translation": "меню",
+      "answer": "menu",
+      "answers": [
+        {
+          "text": "menu",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:coffee:noun",
+      "word": "coffee",
+      "translation": "кофе",
+      "answer": "coffee",
+      "answers": [
+        {
+          "text": "coffee",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tea:noun",
+      "word": "tea",
+      "translation": "чай",
+      "answer": "tea",
+      "answers": [
+        {
+          "text": "tea",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:juice:noun",
+      "word": "juice",
+      "translation": "сок",
+      "answer": "juice",
+      "answers": [
+        {
+          "text": "juice",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cup:noun",
+      "word": "cup",
+      "translation": "чашка",
+      "answer": "cup",
+      "answers": [
+        {
+          "text": "cup",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:glass:noun",
+      "word": "glass",
+      "translation": "стакан",
+      "answer": "glass",
+      "answers": [
+        {
+          "text": "glass",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bill:noun",
+      "word": "bill",
+      "translation": "счёт (в кафе)",
+      "answer": "bill",
+      "answers": [
+        {
+          "text": "bill",
+          "weight": 1
+        },
+        {
+          "text": "check",
+          "weight": 0.9
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:order:verb",
+      "word": "order",
+      "translation": "заказывать (еду или напиток)",
+      "example": "I want to order a sandwich.",
+      "sentenceTranslation": "Я хочу заказать сэндвич.",
+      "answer": "order",
+      "answers": [
+        {
+          "text": "order",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:pay:verb",
+      "word": "pay",
+      "translation": "платить",
+      "example": "Can I pay by card?",
+      "sentenceTranslation": "Можно заплатить картой?",
+      "answer": "pay",
+      "answers": [
+        {
+          "text": "pay",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:hungry:adjective",
+      "word": "hungry",
+      "translation": "голодный",
+      "answer": "hungry",
+      "answers": [
+        {
+          "text": "hungry",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "прил."
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "oxford-food",
+  "collection": "Oxford 3000",
+  "topic": "Еда и напитки",
+  "subtopic": "Продукты",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:apple:noun",
+      "word": "apple",
+      "translation": "яблоко",
+      "answer": "apple",
+      "answers": [
+        {
+          "text": "apple",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bread:noun",
+      "word": "bread",
+      "translation": "хлеб",
+      "answer": "bread",
+      "answers": [
+        {
+          "text": "bread",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:milk:noun",
+      "word": "milk",
+      "translation": "молоко",
+      "answer": "milk",
+      "answers": [
+        {
+          "text": "milk",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:water:noun",
+      "word": "water",
+      "translation": "вода",
+      "answer": "water",
+      "answers": [
+        {
+          "text": "water",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:egg:noun",
+      "word": "egg",
+      "translation": "яйцо",
+      "answer": "egg",
+      "answers": [
+        {
+          "text": "egg",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cheese:noun",
+      "word": "cheese",
+      "translation": "сыр",
+      "answer": "cheese",
+      "answers": [
+        {
+          "text": "cheese",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:rice:noun",
+      "word": "rice",
+      "translation": "рис",
+      "answer": "rice",
+      "answers": [
+        {
+          "text": "rice",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:meat:noun",
+      "word": "meat",
+      "translation": "мясо",
+      "answer": "meat",
+      "answers": [
+        {
+          "text": "meat",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:potato:noun",
+      "word": "potato",
+      "translation": "картофель, картофелина",
+      "answer": "potato",
+      "answers": [
+        {
+          "text": "potato",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:vegetable:noun",
+      "word": "vegetable",
+      "translation": "овощ",
+      "answer": "vegetable",
+      "answers": [
+        {
+          "text": "vegetable",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

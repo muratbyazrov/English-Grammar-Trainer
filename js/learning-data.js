@@ -6,36 +6,41 @@
       { id: "present-simple-negative", title: "Present Simple: отрицания", from: 21, to: 40 },
       { id: "present-simple-yes-no", title: "Present Simple: общие вопросы", from: 41, to: 70 },
       { id: "present-simple-special", title: "Present Simple: специальные вопросы", from: 71, to: 90 },
-      { id: "to-be-present", title: "To be: am/is/are", from: 91, to: 170 },
-      { id: "past-simple-irregular", title: "Past Simple: неправильные глаголы", from: 171, to: 307 },
-      { id: "to-be-past", title: "To be: was/were", from: 308, to: 390 },
-      { id: "future-simple", title: "Future Simple: will/won't", from: 391, to: 420 },
+      { id: "to-be-present", title: "To be: am/is/are", from: 91, to: 160 },
+      { id: "past-simple-irregular", title: "Past Simple: неправильные глаголы", from: 161, to: 300 },
+      { id: "to-be-past", title: "To be: was/were", from: 301, to: 380 },
+      { id: "future-simple", title: "Future Simple: will/won't", from: 381, to: 420 },
       { id: "present-continuous", title: "Present Continuous", from: 421, to: 510 },
       { id: "present-simple-vs-continuous", title: "Present Simple vs Continuous", from: 511, to: 570 },
-      { id: "so-such", title: "So / such", from: 571, to: 607 },
-      { id: "verb-patterns-like-want", title: "Verb patterns: want / would like / like", from: 608, to: 680 },
-      { id: "have-have-got", title: "Have / have got", from: 681, to: 730 },
-      { id: "modals-can-must", title: "Modal verbs: can / must", from: 731, to: 809 },
-      { id: "have-to-could-may", title: "Have to / could / may", from: 810, to: 910 },
-      { id: "passive-present", title: "Passive Voice: Present Simple", from: 911, to: 1011 },
-      { id: "passive-past", title: "Passive Voice: Past Simple", from: 1012, to: 1061 },
-      { id: "passive-future", title: "Passive Voice: Future Simple", from: 1062, to: 1111 },
-      { id: "time-clauses", title: "Time clauses: when / after / before", from: 1112, to: 1162 },
-      { id: "conditionals", title: "Conditionals: if-clauses", from: 1163, to: 1213 },
-      { id: "imperatives-there-be", title: "Imperatives + there is/are", from: 1214, to: 1263 },
-      { id: "there-will-be-going-to", title: "There will be / going to", from: 1264, to: 1414 },
-      { id: "make-do-short-answers", title: "Make / do + short answers", from: 1415, to: 1666 },
-      { id: "pronouns-possessives", title: "Pronouns and possessives", from: 1667, to: 1716 },
-      { id: "quantifiers", title: "Quantifiers: many / much / few / little", from: 1717, to: 1878 },
-      { id: "adjectives-adverbs", title: "Adjectives and adverbs", from: 1879, to: 1928 },
-      { id: "comparatives", title: "Comparatives", from: 1929, to: 1978 },
-      { id: "superlatives", title: "Superlatives", from: 1979, to: 2026 },
-      { id: "object-possessive-pronouns", title: "Object and possessive pronouns", from: 2027, to: 2076 },
-      { id: "articles-time-prepositions", title: "Articles + time prepositions", from: 2077, to: 2176 },
-      { id: "adjective-prepositions", title: "Prepositions after adjectives and verbs", from: 2177, to: 2228 },
-      { id: "tag-questions-present", title: "Tag questions: present", from: 2229, to: 2329 },
-      { id: "tag-questions-past", title: "Tag questions: past", from: 2330, to: 2379 },
-      { id: "tag-questions-have-modals", title: "Tag questions: have got / modals", from: 2380, to: 2450 },
+      { id: "so-such", title: "So / such", from: 571, to: 600 },
+      { id: "verb-patterns-like-want", title: "Verb patterns: want / would like / like", from: 601, to: 660 },
+      { id: "demonstrative-pronouns", title: "This / that / these / those", from: 661, to: 670 },
+      { id: "have-have-got", title: "Have / have got", from: 671, to: 730 },
+      { id: "modals-can-must", title: "Modal verbs: can / must", from: 731, to: 790 },
+      { id: "have-to-could-may", title: "Have to / should / could / may / might", from: 791, to: 910 },
+      { id: "passive-present", title: "Passive Voice: Present Simple + повторение Past", from: 911, to: 980 },
+      { id: "passive-past", title: "Passive Voice: Past Simple", from: 981, to: 1040 },
+      { id: "passive-future", title: "Passive Voice: Future Simple", from: 1041, to: 1070 },
+      { id: "time-clauses", title: "Future clauses: if / when", from: 1071, to: 1130 },
+      { id: "conditionals", title: "Conditionals: if-clauses", from: 1131, to: 1200 },
+      { id: "imperatives-there-be", title: "Imperatives + there is/are", from: 1201, to: 1260 },
+      { id: "there-will-be-going-to", title: "There will be / going to", from: 1261, to: 1400 },
+      { id: "make-do-short-answers", title: "Make / do + short answers", from: 1401, to: 1630 },
+      { id: "verb-patterns-want-object", title: "Want + object + infinitive", from: 1631, to: 1660 },
+      { id: "pronouns-possessives", title: "Pronouns and possessives", from: 1661, to: 1710 },
+      { id: "quantifiers", title: "Quantifiers: many / much / few / little", from: 1711, to: 1870 },
+      { id: "adjectives-adverbs", title: "Adjectives and adverbs", from: 1871, to: 1910 },
+      { id: "comparatives", title: "Comparatives", from: 1911, to: 1950 },
+      { id: "superlatives", title: "Superlatives", from: 1951, to: 2010 },
+      { id: "comparative-as-like", title: "Comparisons: as / like", from: 2011, to: 2020 },
+      { id: "object-possessive-pronouns", title: "Object and possessive pronouns", from: 2021, to: 2050 },
+      { id: "adverbs-too-enough", title: "Too / enough", from: 2051, to: 2060 },
+      { id: "articles-time-prepositions", title: "Articles + time and place prepositions", from: 2061, to: 2160 },
+      { id: "adjective-prepositions", title: "Prepositions after adjectives and verbs", from: 2161, to: 2210 },
+      { id: "tag-questions-present", title: "Tag questions: present", from: 2211, to: 2290 },
+      { id: "tag-questions-past", title: "Tag questions: past", from: 2291, to: 2350 },
+      { id: "tag-questions-future", title: "Tag questions: future", from: 2351, to: 2370 },
+      { id: "tag-questions-have-modals", title: "Tag questions: have got / modals", from: 2371, to: 2450 },
       { id: "infinitive-gerund", title: "Infinitive and gerund", from: 2451, to: 2499 },
     ],
   };
@@ -55,6 +60,7 @@
   ];
   const QUESTION_TRANSLATION_OVERRIDES = {
     "A1-A2:232": "Я отправил ей любовную записку.",
+    "A1-A2:933": "Предложение было исправлено. Вы заслуживаете конфету.",
   };
   const THEORY_TOPICS = [
     {
@@ -364,93 +370,137 @@
       subtitle: "решения, планы, прогнозы и процессы в будущем",
       sections: [
         {
-          title: "Future Simple",
+          title: "Как выбрать форму",
+          table: {
+            headers: ["Что хочу сказать", "Форма", "Пример"],
+            rows: [
+              ["Решил сейчас или предлагаю помощь", "will + V1", "The build failed? I'll check the logs."],
+              ["Уже решил, собираюсь сделать", "am / is / are + going to + V1", "We're going to add an index. We've already decided."],
+              ["Уже согласовали или организовали", "Present Continuous", "We're deploying tonight. The team has confirmed the window."],
+              ["В будущий момент действие будет в процессе", "will + be + V-ing", "At midnight, we'll be monitoring the service."],
+            ],
+          },
           items: [
-            "Используем will для спонтанных решений, предложений что-то сделать, обещаний и прогнозов на основе личного мнения.",
+            "Это ориентиры, а не жёсткие границы. В одной ситуации иногда подходят несколько форм: выбор показывает, какой смысл ты хочешь подчеркнуть.",
+            "Tomorrow, tonight и next week указывают на будущее, но сами по себе не определяют форму глагола.",
+          ],
+        },
+        {
+          title: "Future Simple: решение сейчас, обещание или прогноз",
+          items: [
+            "Решение принимаешь во время разговора или сразу предлагаешь помощь: «Билд упал? Я проверю логи». Используй will + V1.",
+            "Will также подходит для обещаний и прогнозов: I think the fix will help. Здесь говорящий выражает своё мнение о будущем.",
+            "Will одинаково для всех подлежащих. После него — V1 без to и без окончания -s: she will check. I'll = I will; won't = will not.",
           ],
           schemes: [
             {
               title: "Схема Future Simple",
               rows: [
-                { label: "+", tokens: ["I / He / She / It / We / You / They", "will", "V1"] },
-                { label: "-", tokens: ["I / He / She / It / We / You / They", "will not / won't", "V1"] },
-                { label: "?", tokens: ["Will", "subject", "V1"] },
+                { label: "+", tokens: ["S", "will", "V1"] },
+                { label: "-", tokens: ["S", "will not / won't", "V1"] },
+                { label: "?", tokens: ["Will", "S", "V1"] },
               ],
             },
           ],
           examples: [
-            ["I'll check the logs.", "Я проверю логи."],
-            ["We won't deploy without tests.", "Мы не будем деплоить без тестов."],
+            ["The build failed? I'll check the logs.", "Билд упал? Я проверю логи. Решение сейчас, предложение помощи."],
+            ["We won't deploy without tests. I promise.", "Мы не будем деплоить без тестов. Обещаю."],
+            ["I think the service will recover automatically.", "Думаю, сервис восстановится автоматически. Прогноз, моё мнение."],
             ["Will the service recover automatically?", "Сервис восстановится автоматически?"],
           ],
         },
         {
-          title: "To be going to",
+          title: "Be going to: намерение или прогноз по признакам",
           items: [
-            "Используем для планов и намерений без конкретной договоренности, а также для прогнозов о будущем, основанных на фактах.",
+            "Решение принято до момента разговора: ты уже собираешься это сделать. Going to подчёркивает намерение; оно может быть и частью согласованного плана.",
+            "Также используем going to для прогноза по признакам, которые видим сейчас: запрос уже почти достиг лимита времени — под большей нагрузкой, скорее всего, будет тайм-аут.",
+            "Форма: am / is / are + going to + V1. Going to здесь означает «собираюсь» или указывает на ожидаемый результат, а не на движение куда-то.",
           ],
           schemes: [
             {
               title: "Схема to be going to",
               rows: [
-                { label: "+", tokens: ["I", "am", "going to", "V1"] },
-                { label: "+", tokens: ["He / She / It", "is", "going to", "V1"] },
-                { label: "+", tokens: ["We / You / They", "are", "going to", "V1"] },
-                { label: "-", tokens: ["I", "am", "not", "going to", "V1"] },
-                { label: "-", tokens: ["He / She / It", "is", "not", "going to", "V1"] },
-                { label: "-", tokens: ["We / You / They", "are", "not", "going to", "V1"] },
-                { label: "?", tokens: ["Am", "I", "going to", "V1"] },
-                { label: "?", tokens: ["Is", "he / she / it", "going to", "V1"] },
-                { label: "?", tokens: ["Are", "we / you / they", "going to", "V1"] },
+                { label: "+", tokens: ["S", "am / is / are", "going to", "V1"] },
+                { label: "-", tokens: ["S", "am / is / are + not", "going to", "V1"] },
+                { label: "?", tokens: ["Am / Is / Are", "S", "going to", "V1"] },
               ],
             },
           ],
           examples: [
-            ["We are going to add an index.", "Мы собираемся добавить индекс."],
-            ["This query is going to timeout under load.", "Этот запрос, похоже, отвалится под нагрузкой."],
+            ["We've already decided: we're going to add an index.", "Мы уже решили: собираемся добавить индекс. Намерение сформировалось раньше."],
+            ["The query is already close to the time limit. It's going to time out under heavier load.", "Запрос уже почти достиг лимита времени. При большей нагрузке он, скорее всего, завершится по тайм-ауту. Прогноз по текущим признакам."],
             ["Are you going to rewrite this module?", "Ты собираешься переписать этот модуль?"],
           ],
         },
         {
           title: "Present Continuous для будущего",
           items: [
-            "Используем для планов с конкретной договоренностью или назначенным временем.",
+            "Используем, когда будущий план уже организован: например, согласованы участники и время или забронирован слот. Подчёркиваем договорённость.",
+            "Форма та же, что для процесса сейчас: am / is / are + V-ing. Будущий смысл понятен из контекста: tomorrow, tonight, next week.",
+            "We're deploying tonight — акцент на организованном плане. We're going to deploy tonight — на намерении. Если план уже согласован, обе формы могут быть уместны.",
+          ],
+          schemes: [
+            {
+              title: "Схема Present Continuous для будущего",
+              rows: [
+                { label: "+", tokens: ["S", "am / is / are", "V-ing"] },
+                { label: "-", tokens: ["S", "am / is / are + not", "V-ing"] },
+                { label: "?", tokens: ["Am / Is / Are", "S", "V-ing"] },
+              ],
+            },
           ],
           examples: [
-            ["We are deploying tonight.", "Мы деплоим сегодня вечером."],
-            ["Alex is joining the incident review tomorrow.", "Алекс присоединяется к разбору инцидента завтра."],
+            ["We're deploying tonight. The team has confirmed the window.", "Мы деплоим сегодня вечером. Команда подтвердила окно деплоя."],
+            ["Alex is joining the incident review tomorrow. He's accepted the invitation.", "Алекс участвует в разборе инцидента завтра. Он принял приглашение."],
+            ["Are you joining the review tomorrow?", "Ты участвуешь в завтрашнем ревью? Уточняем план."],
           ],
         },
         {
-          title: "Future Continuous",
+          title: "Future Continuous: процесс в будущий момент",
           items: [
-            "Используем для действия в процессе в определенный момент в будущем или длительного действия в будущем.",
+            "Представь определённый момент в будущем. В этот момент действие будет в процессе: оно начнётся раньше и ещё будет продолжаться.",
+            "At 3am, the migration will still be running — заглядываем в 3 часа ночи и видим миграцию в процессе. Важен этот взгляд на действие, а не просто его длительность.",
+            "Можно представить процесс и на протяжении будущего периода: We'll be monitoring the service overnight. Форма: will + be + V-ing; be после will не меняется.",
           ],
           schemes: [
             {
               title: "Схема Future Continuous",
               rows: [
-                { label: "+", tokens: ["I / He / She / It / We / You / They", "will be", "V-ing"] },
-                { label: "-", tokens: ["I / He / She / It / We / You / They", "will not be", "V-ing"] },
-                { label: "?", tokens: ["Will", "subject", "be", "V-ing"] },
+                { label: "+", tokens: ["S", "will", "be", "V-ing"] },
+                { label: "-", tokens: ["S", "will not / won't", "be", "V-ing"] },
+                { label: "?", tokens: ["Will", "S", "be", "V-ing"] },
               ],
             },
           ],
           examples: [
-            ["We will be monitoring the service overnight.", "Мы будем мониторить сервис ночью."],
             ["At 3am, the migration will still be running.", "В 3 утра миграция все еще будет выполняться."],
+            ["We will be monitoring the service overnight.", "Ночью мы будем мониторить сервис. Представляем процесс на протяжении ночи."],
             ["Will you be reviewing PRs tomorrow morning?", "Ты будешь ревьюить PR завтра утром?"],
           ],
         },
         {
-          title: "Попробуй перевести",
+          title: "Частые ошибки",
           items: [
-            "Я проверю логи и напишу апдейт.",
-            "Мы не будем деплоить без rollback plan.",
-            "Мы собираемся добавить индекс на этот столбец.",
-            "Этот фикс, похоже, сломает старый API.",
-            "Мы деплоим сегодня вечером.",
-            "Ночью мы будем мониторить сервис.",
+            "После will не ставим to или -s: she will check, а не she will to check / she will checks.",
+            "Не пропускай be: we are going to deploy, а не we going to deploy; we will be monitoring, а не we will monitoring.",
+            "В придаточных времени и условия после when / if / after / until обычно используем настоящее для будущего: We'll deploy when the tests pass. Не when the tests will pass.",
+            "Это правило относится к придаточным времени и условия. В вопросе When will we deploy? слово when означает «когда?», и will нужен.",
+          ],
+          examples: [
+            ["We'll deploy when the tests pass.", "Мы задеплоим, когда тесты пройдут."],
+            ["If the tests pass, we'll deploy tonight.", "Если тесты пройдут, мы задеплоим сегодня вечером."],
+          ],
+        },
+        {
+          title: "Попробуй перевести: выбирай по ситуации",
+          items: [
+            "Коллега только что сообщил об ошибке. Ты предлагаешь помощь: «Я проверю логи и напишу апдейт».",
+            "Ты обещаешь команде: «Мы не будем деплоить без плана отката».",
+            "Вы вчера решили улучшить запрос: «Мы собираемся добавить индекс на этот столбец».",
+            "Ты видишь несовместимые изменения в коде: «Этот фикс, похоже, сломает старый API».",
+            "Команда подтвердила окно деплоя: «Мы деплоим сегодня вечером».",
+            "Миграция стартует в полночь и займёт несколько часов: «В 3 утра мы всё ещё будем переносить данные».",
+            "Объясни условие деплоя: «Мы задеплоим, когда тесты пройдут».",
           ],
         },
       ],
@@ -900,16 +950,16 @@
         {
           title: "Одна грамматическая схема для всех",
           items: [
-            "Could, should, might, may и would строятся одинаково. После модального глагола всегда используется V1 — начальная форма без to, окончания -s и вспомогательных do / does.",
+            "Could, should, might, may и would строятся одинаково. После модального глагола используется инфинитив. Окончание -s и вспомогательные do / does не нужны.",
             "Меняется модальный глагол и оттенок смысла, но каркас предложения остаётся тем же.",
           ],
           schemes: [
             {
               title: "Утверждение, отрицание и вопрос",
               rows: [
-                { label: "+", tokens: ["Subject", { text: "could / should / might / may / would", role: "aux" }, "V1"] },
-                { label: "-", tokens: ["Subject", { text: "couldn't / shouldn't / might not / may not / wouldn't", role: "neg" }, "V1"] },
-                { label: "?", tokens: [{ text: "Could / Should / Might / May / Would", role: "aux" }, "subject", "V1"] },
+                { label: "+", tokens: ["Subject", { text: "could / should / might / may / would", role: "aux" }, { text: "V1 (infinitive)", role: "verb" }] },
+                { label: "-", tokens: ["Subject", { text: "couldn't / shouldn't / might not / may not / wouldn't", role: "neg" }, { text: "V1 (infinitive)", role: "verb" }] },
+                { label: "?", tokens: [{ text: "Could / Should / Might / May / Would", role: "aux" }, "subject", { text: "V1 (infinitive)", role: "verb" }] },
               ],
             },
             {
@@ -992,6 +1042,103 @@
       ],
     },
   ];
+  function theoryBriefCard(title, rule, formula, english, russian) {
+    return { title, rule, formula, examples: [[english, russian]] };
+  }
+
+  const THEORY_BRIEF_TOPICS = {
+    'tenses-guide': {
+      cards: [
+        theoryBriefCard('Simple — факт', 'Факт, привычка или событие. Сначала выбери: настоящее, прошлое или будущее.', '', 'We run backups every night.', 'Мы делаем резервные копии каждую ночь.'),
+        theoryBriefCard('Continuous — процесс', 'Действие в процессе в выбранный момент: сейчас, тогда или в будущем.', 'be + V-ing', 'We are running a backup now.', 'Мы сейчас делаем резервную копию.'),
+        theoryBriefCard('Perfect — результат к моменту', 'Смотрим на то, что уже произошло к настоящему, прошлому или будущему моменту.', 'have / has / had / will have + V3', 'We have already run the backup.', 'Мы уже сделали резервную копию.'),
+        theoryBriefCard('Perfect Continuous — длительность', 'Подчёркиваем, сколько продолжается или продолжалось действие до выбранного момента.', 'have / has / had / will have + been + V-ing', 'We have been running the backup for an hour.', 'Мы делаем резервную копию уже час.'),
+      ],
+    },
+    'tenses-present': {
+      cards: [
+        theoryBriefCard('To be — состояние', 'Описание или состояние сейчас. I → am; he / she / it → is; we / you / they → are.', 'am / is / are + описание', 'The service is stable.', 'Сервис стабилен.'),
+        theoryBriefCard('Present Simple — регулярно', 'Привычки и факты. С he / she / it добавляем -s; после do / does — V1.', 'V1 / V-s · do / does not + V1', 'We deploy every Friday.', 'Мы деплоим каждую пятницу.'),
+        theoryBriefCard('Present Continuous — сейчас', 'Действие в процессе сейчас или временная ситуация.', 'am / is / are + V-ing', 'We are investigating the issue now.', 'Мы сейчас расследуем проблему.'),
+        theoryBriefCard('Present Perfect — уже, к сейчас', 'Результат к настоящему моменту или опыт. С yesterday / last week обычно нужен Past Simple.', 'have / has + V3', 'We have already fixed the bug.', 'Мы уже исправили баг.'),
+      ],
+    },
+    'tenses-past': {
+      cards: [
+        theoryBriefCard('Past Simple — событие', 'Завершённое событие в прошлом. После did / didn’t — V1, а не V2.', 'V2 · did not + V1 · Did … V1?', 'We fixed the bug yesterday.', 'Мы исправили баг вчера.'),
+        theoryBriefCard('To be — состояние в прошлом', 'I / he / she / it → was; we / you / they → were. Для вопроса переставь was / were вперёд.', 'was / were + описание', 'The service was down for ten minutes.', 'Сервис был недоступен десять минут.'),
+        theoryBriefCard('Past Continuous — процесс тогда', 'Действие было в процессе в прошлый момент; часто это фон для другого события.', 'was / were + V-ing', 'We were testing when the alert fired.', 'Мы тестировали, когда сработал алерт.'),
+        theoryBriefCard('Past Perfect — раньше другого', 'Одно прошлое действие произошло раньше другого прошлого действия.', 'had + V3', 'We had reverted the config before the call started.', 'Мы откатили конфиг до начала звонка.'),
+      ],
+    },
+    'tenses-future': {
+      cards: [
+        theoryBriefCard('Will — решение сейчас', 'Решил сейчас, предлагаю помощь, обещаю или выражаю мнение о будущем.', 'will + V1 · won’t + V1 · Will … V1?', 'The build failed? I’ll check the logs.', 'Билд упал? Я проверю логи.'),
+        theoryBriefCard('Going to — уже собираюсь', 'Решение принято раньше. Также подходит для прогноза по признакам, которые видим сейчас.', 'am / is / are + going to + V1', 'We’ve already decided: we’re going to add an index.', 'Мы уже решили: собираемся добавить индекс.'),
+        theoryBriefCard('Present Continuous — согласовали', 'Будущий план уже организован: например, команда подтвердила время.', 'am / is / are + V-ing', 'We’re deploying tonight. The window is confirmed.', 'Мы деплоим сегодня вечером. Окно подтверждено.'),
+        theoryBriefCard('Future Continuous — процесс потом', 'В определённый будущий момент действие будет в процессе.', 'will + be + V-ing', 'At 3am, the migration will still be running.', 'В 3 утра миграция ещё будет выполняться.'),
+      ],
+      note: 'Формы иногда пересекаются — выбирай по смыслу. После when / if в придаточном времени или условия обычно настоящее: We’ll deploy when the tests pass.',
+    },
+    'due-to': {
+      cards: [
+        theoryBriefCard('Due to — из-за', 'После due to — существительное или -ing. Если причина выражена целым предложением, используй because.', 'due to + noun / V-ing', 'The deploy failed due to failing tests.', 'Деплой не удался из-за падающих тестов.'),
+      ],
+    },
+    'whether-if': {
+      cards: [
+        theoryBriefCard('Whether / if — ли', 'После know, check, ask и подобных глаголов: «ли». Внутри — прямой порядок слов, как в утверждении.', 'whether / if + подлежащее + сказуемое', 'Tell me whether the service is working.', 'Скажи, работает ли сервис.'),
+        theoryBriefCard('If — если', 'В условии if означает «если». Отличай условие от вопроса «ли».', 'if + условие', 'If the build passes, we’ll deploy.', 'Если билд пройдёт, мы задеплоим.'),
+      ],
+    },
+    'manage-to': {
+      cards: [
+        theoryBriefCard('Manage to — удалось', 'Получилось сделать что-то непростое. После manage — to + начальная форма, без -ing.', 'manage to + V1', 'We managed to deploy before the deadline.', 'Нам удалось задеплоить до дедлайна.'),
+        theoryBriefCard('Не удалось / удалось ли?', 'В прошлом после didn’t / did возвращаем manage в начальную форму.', 'didn’t manage to + V1 · Did … manage to + V1?', 'Did you manage to reproduce the issue?', 'Тебе удалось воспроизвести проблему?'),
+      ],
+    },
+    'aware-of': {
+      cards: [
+        theoryBriefCard('Be aware of — быть в курсе', 'Для знания о проблеме, риске или изменении: be + aware of.', 'am / is / are + aware of + noun', 'Are you aware of the issue?', 'Ты в курсе проблемы?'),
+        theoryBriefCard('Узнать / уведомить', 'Become aware of — узнать; make someone aware of — поставить кого-то в известность.', 'become aware of · make someone aware of', 'We became aware of the issue through monitoring.', 'Мы узнали о проблеме через мониторинг.'),
+      ],
+    },
+    'worth': {
+      cards: [
+        theoryBriefCard('Worth doing — стоит сделать', 'После worth — -ing, а не to + глагол. В отрицании: not worth doing.', 'be + worth + V-ing', 'It’s worth investigating.', 'Стоит расследовать.'),
+        theoryBriefCard('Worth + noun / it', 'Существительное: стоит усилий, времени или риска. Worth it — «оно того стоит».', 'be + worth + noun / it', 'It’s complicated, but it’s worth it.', 'Это сложно, но оно того стоит.'),
+      ],
+    },
+    'subject-questions': {
+      cards: [
+        theoryBriefCard('Кто / что совершает действие?', 'Who / what заменяет подлежащее. В утвердительном вопросе не добавляем do / does / did.', 'Who / What + глагол', 'What broke the build?', 'Что сломало билд?'),
+        theoryBriefCard('Форма глагола сохраняется', 'В Present Simple обычно -s. В Continuous и Perfect остаются is / was / has: они часть формы.', 'Who knows …? · What is causing …? · Who has …?', 'Who has pushed to main?', 'Кто запушил в main?'),
+      ],
+    },
+    'passive-voice-table': {
+      cards: [
+        theoryBriefCard('Пассив — что сделали с объектом', 'Важно действие над объектом. Be выбираем по времени; основной глагол — V3, включая неправильные формы.', 'be + V3', 'The config was reverted.', 'Конфиг откатили.'),
+        theoryBriefCard('Процесс / результат', 'Being — действие в процессе; been — часть Perfect. Основной глагол остаётся в V3.', 'is being + V3 · has been + V3', 'The PR has already been reviewed.', 'PR уже проверили.'),
+        theoryBriefCard('Будущее / модальные', 'После will или модального глагола используем be, затем V3.', 'will / should / must / can + be + V3', 'The migration can be rolled back.', 'Миграцию можно откатить.'),
+      ],
+    },
+    'get-v-ed': {
+      cards: [
+        theoryBriefCard('Get + V3 — что-то произошло', 'Разговорный пассив с акцентом на событии или результате. Часто оттенок неожиданности.', 'get / got + V3', 'The deploy got reverted.', 'Деплой откатили.'),
+        theoryBriefCard('Проверяй форму после get', 'Нужна третья форма: got merged, got blocked, got paged; не got merge.', 'got + past participle', 'I got paged at 3am.', 'Меня подняли по алерту в 3 ночи.'),
+      ],
+    },
+    'modals-code-review': {
+      cards: [
+        theoryBriefCard('Could — мягкое предложение', 'Один из возможных вариантов, без требования обязательно менять.', 'could + V1 · could be + V3', 'This could be simplified.', 'Это можно было бы упростить.'),
+        theoryBriefCard('Should — рекомендация', 'Считаю, что это стоит исправить или добавить.', 'should + V1', 'We should add a test for this case.', 'Нам стоит добавить тест для этого случая.'),
+        theoryBriefCard('Might / may — возможный риск', 'Предупреждаю о возможности, без уверенности, что проблема возникнет.', 'might / may + V1', 'This might break backward compatibility.', 'Это может нарушить обратную совместимость.'),
+        theoryBriefCard('Would — «бы»', 'Личный выбор, гипотетический результат или осторожное предложение. I’d = I would.', 'would + V1', 'I’d extract this into a helper.', 'Я бы вынес это во вспомогательную функцию.'),
+      ],
+      note: 'После модального глагола — V1 без to и -s. Для вопроса ставим модальный глагол вперёд; do / does не нужны.',
+    },
+  };
+
   const SHADOWING_TOPICS = [
     {
       id: "work-discussions",
@@ -1214,5 +1361,5 @@
     "This service has a hard dependency on the auth service.": "Этот сервис жёстко зависит от сервиса аутентификации.",
   };
 
-  window.TrainerData = { ALL_GRAMMAR_TOPICS_VALUE, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES, THEORY_TOPICS, SHADOWING_TOPICS, SHADOWING_TRANSLATIONS };
+  window.TrainerData = { ALL_GRAMMAR_TOPICS_VALUE, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES, THEORY_TOPICS, THEORY_BRIEF_TOPICS, SHADOWING_TOPICS, SHADOWING_TRANSLATIONS };
 })();

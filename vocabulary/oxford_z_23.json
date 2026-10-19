@@ -1,0 +1,409 @@
+{
+  "id": "oxford-extra-23",
+  "collection": "Oxford 3000",
+  "topic": "Люди и семья",
+  "subtopic": "Семья и отношения",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:adult:n:a1",
+      "word": "adult",
+      "translation": "взрослый",
+      "answer": "adult",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:adult:adj:a2",
+      "word": "adult",
+      "translation": "взрослый",
+      "answer": "adult",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:age:n:a1",
+      "word": "age",
+      "translation": "возраст",
+      "answer": "age",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:age:v:b1",
+      "word": "age",
+      "translation": "стареть",
+      "answer": "age",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:aunt:n:a1",
+      "word": "aunt",
+      "translation": "тетя",
+      "answer": "aunt",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:baby:n:a1",
+      "word": "baby",
+      "translation": "детка",
+      "answer": "baby",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:birth:n:a2",
+      "word": "birth",
+      "translation": "рождение",
+      "answer": "birth",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:born:v:a1",
+      "word": "born",
+      "translation": "родился",
+      "answer": "born",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:boy:n:a1",
+      "word": "boy",
+      "translation": "мальчик",
+      "answer": "boy",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:boyfriend:n:a1",
+      "word": "boyfriend",
+      "translation": "парень",
+      "answer": "boyfriend",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:brother:n:a1",
+      "word": "brother",
+      "translation": "брат",
+      "answer": "brother",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:child:n:a1",
+      "word": "child",
+      "translation": "ребенок",
+      "answer": "child",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cousin:n:a1",
+      "word": "cousin",
+      "translation": "двоюродный брат",
+      "answer": "cousin",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:daughter:n:a1",
+      "word": "daughter",
+      "translation": "дочь",
+      "answer": "daughter",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:elderly:adj:b2",
+      "word": "elderly",
+      "translation": "пожилой",
+      "answer": "elderly",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:family:n-adj:a1",
+      "word": "family",
+      "translation": "семья; семейный",
+      "answer": "family",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:father:n:a1",
+      "word": "father",
+      "translation": "отец",
+      "answer": "father",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:friend:n:a1",
+      "word": "friend",
+      "translation": "друг",
+      "answer": "friend",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:friendship:n:b1",
+      "word": "friendship",
+      "translation": "дружба",
+      "answer": "friendship",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:girl:n:a1",
+      "word": "girl",
+      "translation": "девушка",
+      "answer": "girl",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:girlfriend:n:a1",
+      "word": "girlfriend",
+      "translation": "подруга",
+      "answer": "girlfriend",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:grandfather:n:a1",
+      "word": "grandfather",
+      "translation": "дедушка",
+      "answer": "grandfather",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:grandmother:n:a1",
+      "word": "grandmother",
+      "translation": "бабушка",
+      "answer": "grandmother",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:grandparent:n:a1",
+      "word": "grandparent",
+      "translation": "дедушка и бабушка",
+      "answer": "grandparent",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:husband:n:a1",
+      "word": "husband",
+      "translation": "муж",
+      "answer": "husband",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:love:n-v:a1",
+      "word": "love",
+      "translation": "любовь; любить",
+      "answer": "love",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:man:n:a1",
+      "word": "man",
+      "translation": "мужчина",
+      "answer": "man",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:marriage:n:b1",
+      "word": "marriage",
+      "translation": "брак",
+      "answer": "marriage",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:married:adj:a1",
+      "word": "married",
+      "translation": "женат",
+      "answer": "married",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:mother:n:a1",
+      "word": "mother",
+      "translation": "мать",
+      "answer": "mother",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:neighbour:n:a1",
+      "word": "neighbour",
+      "translation": "сосед",
+      "answer": "neighbour",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:old:adj:a1",
+      "word": "old",
+      "translation": "старый",
+      "answer": "old",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:parent:n:a1",
+      "word": "parent",
+      "translation": "родитель",
+      "answer": "parent",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:partner:n:a1",
+      "word": "partner",
+      "translation": "партнер",
+      "answer": "partner",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:people:n:a1",
+      "word": "people",
+      "translation": "люди",
+      "answer": "people",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:person:n:a1",
+      "word": "person",
+      "translation": "человек",
+      "answer": "person",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pregnant:adj:b2",
+      "word": "pregnant",
+      "translation": "беременная",
+      "answer": "pregnant",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:relationship:n:a2",
+      "word": "relationship",
+      "translation": "отношения",
+      "answer": "relationship",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:relative:adj-n:b1",
+      "word": "relative",
+      "translation": "родственник; относительный",
+      "answer": "relative",
+      "level": "B1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:single:adj-n:a2",
+      "word": "single",
+      "translation": "один; одинокий; одиночный",
+      "answer": "single",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:sister:n:a1",
+      "word": "sister",
+      "translation": "сестра",
+      "answer": "sister",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:son:n:a1",
+      "word": "son",
+      "translation": "сын",
+      "answer": "son",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:teenager:n:a1",
+      "word": "teenager",
+      "translation": "подросток",
+      "answer": "teenager",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:uncle:n:a1",
+      "word": "uncle",
+      "translation": "дядя",
+      "answer": "uncle",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wedding:n:a2",
+      "word": "wedding",
+      "translation": "свадьба",
+      "answer": "wedding",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wife:n:a1",
+      "word": "wife",
+      "translation": "жена",
+      "answer": "wife",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:woman:n:a1",
+      "word": "woman",
+      "translation": "женщина",
+      "answer": "woman",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:young:adj:a1",
+      "word": "young",
+      "translation": "молодой",
+      "answer": "young",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:young:n:b1",
+      "word": "young",
+      "translation": "молодой",
+      "answer": "young",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:youth:n:b1",
+      "word": "youth",
+      "translation": "молодежь",
+      "answer": "youth",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

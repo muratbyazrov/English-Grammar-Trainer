@@ -1,0 +1,465 @@
+{
+  "id": "oxford-extra-28",
+  "collection": "Oxford 3000",
+  "topic": "Общество и культура",
+  "subtopic": "Общество и государство",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:army:n:a2",
+      "word": "army",
+      "translation": "армия",
+      "answer": "army",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:charity:n:a2",
+      "word": "charity",
+      "translation": "благотворительность",
+      "answer": "charity",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:citizen:n:b2",
+      "word": "citizen",
+      "translation": "гражданин",
+      "answer": "citizen",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:community:n:a2",
+      "word": "community",
+      "translation": "сообщество",
+      "answer": "community",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:court:n:b1",
+      "word": "court",
+      "translation": "суд",
+      "answer": "court",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:crime:n:a2",
+      "word": "crime",
+      "translation": "преступление",
+      "answer": "crime",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:criminal:n:a2",
+      "word": "criminal",
+      "translation": "преступник",
+      "answer": "criminal",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:criminal:adj:b1",
+      "word": "criminal",
+      "translation": "преступный",
+      "answer": "criminal",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:cultural:adj:b1",
+      "word": "cultural",
+      "translation": "культурный",
+      "answer": "cultural",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:culture:n:a1",
+      "word": "culture",
+      "translation": "культура",
+      "answer": "culture",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:election:n:b1",
+      "word": "election",
+      "translation": "выборы",
+      "answer": "election",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:freedom:n:b2",
+      "word": "freedom",
+      "translation": "свобода",
+      "answer": "freedom",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:gender:n:b2",
+      "word": "gender",
+      "translation": "гендер; пол",
+      "answer": "gender",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:global:adj:b1",
+      "word": "global",
+      "translation": "глобальный",
+      "answer": "global",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:government:n:a2",
+      "word": "government",
+      "translation": "правительство",
+      "answer": "government",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:historical:adj:b1",
+      "word": "historical",
+      "translation": "исторический",
+      "answer": "historical",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:history:n:a1",
+      "word": "history",
+      "translation": "история",
+      "answer": "history",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:human:adj-n:a2",
+      "word": "human",
+      "translation": "человек; человеческий",
+      "answer": "human",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:international:adj:a2",
+      "word": "international",
+      "translation": "международный",
+      "answer": "international",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:judge:n-v:b1",
+      "word": "judge",
+      "translation": "судья; судить; оценивать",
+      "answer": "judge",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:law:n:a2",
+      "word": "law",
+      "translation": "закон",
+      "answer": "law",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:legal:adj:b1",
+      "word": "legal",
+      "translation": "юридический",
+      "answer": "legal",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:military:adj-n:b2",
+      "word": "military",
+      "translation": "военный; вооружённые силы",
+      "answer": "military",
+      "level": "B2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:minister:n:b2",
+      "word": "minister",
+      "translation": "министр",
+      "answer": "minister",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:nation:n:b1",
+      "word": "nation",
+      "translation": "нация",
+      "answer": "nation",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:national:adj:a2",
+      "word": "national",
+      "translation": "национальный",
+      "answer": "national",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:national:n:b2",
+      "word": "national",
+      "translation": "национальный",
+      "answer": "national",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:organization:n:a2",
+      "word": "organization",
+      "translation": "организация",
+      "answer": "organization",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:parliament:n:b2",
+      "word": "parliament",
+      "translation": "парламент",
+      "answer": "parliament",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:peace:n:a2",
+      "word": "peace",
+      "translation": "мир",
+      "answer": "peace",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:policy:n:b1",
+      "word": "policy",
+      "translation": "политика",
+      "answer": "policy",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:political:adj:b1",
+      "word": "political",
+      "translation": "политический",
+      "answer": "political",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:politician:n:b1",
+      "word": "politician",
+      "translation": "политик",
+      "answer": "politician",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:politics:n:b1",
+      "word": "politics",
+      "translation": "политика",
+      "answer": "politics",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:poor:adj:a1",
+      "word": "poor",
+      "translation": "бедный",
+      "answer": "poor",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:population:n:a2",
+      "word": "population",
+      "translation": "население",
+      "answer": "population",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:poverty:n:b1",
+      "word": "poverty",
+      "translation": "бедность",
+      "answer": "poverty",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:president:n:a2",
+      "word": "president",
+      "translation": "президент",
+      "answer": "president",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:prime:adj:b2",
+      "word": "prime",
+      "translation": "главный; основной",
+      "answer": "prime",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:prison:n:a2",
+      "word": "prison",
+      "translation": "тюрьма",
+      "answer": "prison",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:public:adj-n:a2",
+      "word": "public",
+      "translation": "общественный",
+      "answer": "public",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:race:n-v:a2",
+      "word": "race",
+      "translation": "гонка; раса; соревноваться в скорости",
+      "answer": "race",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:race:n:b1",
+      "word": "race",
+      "translation": "гонка; раса",
+      "answer": "race",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:regulation:n:b2",
+      "word": "regulation",
+      "translation": "регулирование",
+      "answer": "regulation",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:religion:n:b1",
+      "word": "religion",
+      "translation": "религия",
+      "answer": "religion",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:religious:adj:b1",
+      "word": "religious",
+      "translation": "религиозный",
+      "answer": "religious",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rich:adj:a1",
+      "word": "rich",
+      "translation": "богатый",
+      "answer": "rich",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rule:n:a1",
+      "word": "rule",
+      "translation": "правило",
+      "answer": "rule",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:rule:v:b1",
+      "word": "rule",
+      "translation": "править; управлять",
+      "answer": "rule",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:social:adj:a2",
+      "word": "social",
+      "translation": "социальный",
+      "answer": "social",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:society:n:a2",
+      "word": "society",
+      "translation": "общество",
+      "answer": "society",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:state:n:a2",
+      "word": "state",
+      "translation": "состояние; государство",
+      "answer": "state",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:state:adj-v:b1",
+      "word": "state",
+      "translation": "заявлять",
+      "answer": "state",
+      "level": "B1",
+      "partOfSpeech": "прил., гл."
+    },
+    {
+      "id": "oxford:tradition:n:a2",
+      "word": "tradition",
+      "translation": "традиция",
+      "answer": "tradition",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:traditional:adj:a2",
+      "word": "traditional",
+      "translation": "традиционный",
+      "answer": "traditional",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:vote:n-v:b1",
+      "word": "vote",
+      "translation": "голос на выборах; голосовать",
+      "answer": "vote",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:war:n:a2",
+      "word": "war",
+      "translation": "война",
+      "answer": "war",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

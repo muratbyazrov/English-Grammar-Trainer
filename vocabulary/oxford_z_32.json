@@ -1,0 +1,1089 @@
+{
+  "id": "oxford-extra-32",
+  "collection": "Oxford 3000",
+  "topic": "Описание и оценка",
+  "subtopic": "Признаки P–T",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:pale:adj:b1",
+      "word": "pale",
+      "translation": "бледный",
+      "answer": "pale",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:particular:adj:a2",
+      "word": "particular",
+      "translation": "конкретный",
+      "answer": "particular",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:peaceful:adj:b1",
+      "word": "peaceful",
+      "translation": "мирный",
+      "answer": "peaceful",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:perfect:adj:a1",
+      "word": "perfect",
+      "translation": "идеальный",
+      "answer": "perfect",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:permanent:adj:b2",
+      "word": "permanent",
+      "translation": "постоянный",
+      "answer": "permanent",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:personal:adj:a1",
+      "word": "personal",
+      "translation": "личный",
+      "answer": "personal",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:pink:adj-n:a1",
+      "word": "pink",
+      "translation": "розовый",
+      "answer": "pink",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:plain:adj:b2",
+      "word": "plain",
+      "translation": "простой; однотонный",
+      "answer": "plain",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:plastic:n-adj:a2",
+      "word": "plastic",
+      "translation": "пластик; пластиковый",
+      "answer": "plastic",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:pleasant:adj:b1",
+      "word": "pleasant",
+      "translation": "приятный",
+      "answer": "pleasant",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:pleased:adj:a2",
+      "word": "pleased",
+      "translation": "доволен",
+      "answer": "pleased",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:pointed:adj:b2",
+      "word": "pointed",
+      "translation": "заостренный",
+      "answer": "pointed",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:poisonous:adj:b1",
+      "word": "poisonous",
+      "translation": "ядовитый",
+      "answer": "poisonous",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:polite:adj:a2",
+      "word": "polite",
+      "translation": "вежливый",
+      "answer": "polite",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:pop:n-adj:a2",
+      "word": "pop",
+      "translation": "поп",
+      "answer": "pop",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:popular:adj:a1",
+      "word": "popular",
+      "translation": "популярный",
+      "answer": "popular",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:positive:adj:a1",
+      "word": "positive",
+      "translation": "позитивный",
+      "answer": "positive",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:possible:adj:a1",
+      "word": "possible",
+      "translation": "возможный",
+      "answer": "possible",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:potential:adj-n:b2",
+      "word": "potential",
+      "translation": "потенциал; потенциальный",
+      "answer": "potential",
+      "level": "B2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:powerful:adj:b1",
+      "word": "powerful",
+      "translation": "мощный",
+      "answer": "powerful",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:practical:adj:b1",
+      "word": "practical",
+      "translation": "практичный",
+      "answer": "practical",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:prepared:adj:b1",
+      "word": "prepared",
+      "translation": "подготовленный",
+      "answer": "prepared",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:primary:adj:b1",
+      "word": "primary",
+      "translation": "первичный",
+      "answer": "primary",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:private:adj:b1",
+      "word": "private",
+      "translation": "частный",
+      "answer": "private",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:proper:adj:b1",
+      "word": "proper",
+      "translation": "надлежащий",
+      "answer": "proper",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:proud:adj:b1",
+      "word": "proud",
+      "translation": "гордый",
+      "answer": "proud",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:pure:adj:b2",
+      "word": "pure",
+      "translation": "чистый",
+      "answer": "pure",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:purple:adj-n:a1",
+      "word": "purple",
+      "translation": "фиолетовый",
+      "answer": "purple",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:qualified:adj:b1",
+      "word": "qualified",
+      "translation": "квалифицированный",
+      "answer": "qualified",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:quick:adj:a1",
+      "word": "quick",
+      "translation": "быстрый",
+      "answer": "quick",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:quiet:adj:a1",
+      "word": "quiet",
+      "translation": "тихий",
+      "answer": "quiet",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rapid:adj:b2",
+      "word": "rapid",
+      "translation": "быстрый",
+      "answer": "rapid",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rare:adj:b1",
+      "word": "rare",
+      "translation": "редкий",
+      "answer": "rare",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:raw:adj:b2",
+      "word": "raw",
+      "translation": "сырой",
+      "answer": "raw",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:ready:adj:a1",
+      "word": "ready",
+      "translation": "готов",
+      "answer": "ready",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:real:adj:a1",
+      "word": "real",
+      "translation": "настоящий",
+      "answer": "real",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:realistic:adj:b2",
+      "word": "realistic",
+      "translation": "реалистичный",
+      "answer": "realistic",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:reasonable:adj:b2",
+      "word": "reasonable",
+      "translation": "разумный",
+      "answer": "reasonable",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:recent:adj:a2",
+      "word": "recent",
+      "translation": "недавний",
+      "answer": "recent",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:red:adj-n:a1",
+      "word": "red",
+      "translation": "красный",
+      "answer": "red",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:regional:adj:b2",
+      "word": "regional",
+      "translation": "региональный",
+      "answer": "regional",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:regular:adj:a2",
+      "word": "regular",
+      "translation": "регулярный",
+      "answer": "regular",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:related:adj:b1",
+      "word": "related",
+      "translation": "связанный",
+      "answer": "related",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:relaxed:adj:b1",
+      "word": "relaxed",
+      "translation": "расслабленный",
+      "answer": "relaxed",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:relaxing:adj:b1",
+      "word": "relaxing",
+      "translation": "расслабляющий",
+      "answer": "relaxing",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:relevant:adj:b2",
+      "word": "relevant",
+      "translation": "актуальный",
+      "answer": "relevant",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:reliable:adj:b1",
+      "word": "reliable",
+      "translation": "надежный",
+      "answer": "reliable",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:remote:adj:b1",
+      "word": "remote",
+      "translation": "удаленный",
+      "answer": "remote",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:repeated:adj:b1",
+      "word": "repeated",
+      "translation": "повторенный",
+      "answer": "repeated",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:representative:n-adj:b2",
+      "word": "representative",
+      "translation": "представитель; представительный",
+      "answer": "representative",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:resident:n-adj:b2",
+      "word": "resident",
+      "translation": "житель; постоянно проживающий",
+      "answer": "resident",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:responsible:adj:b1",
+      "word": "responsible",
+      "translation": "ответственный",
+      "answer": "responsible",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:retired:adj:b1",
+      "word": "retired",
+      "translation": "вышедший на пенсию",
+      "answer": "retired",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:romantic:adj:b1",
+      "word": "romantic",
+      "translation": "романтический",
+      "answer": "romantic",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rough:adj:b1",
+      "word": "rough",
+      "translation": "грубый",
+      "answer": "rough",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:routine:adj:b2",
+      "word": "routine",
+      "translation": "обычный; повседневный",
+      "answer": "routine",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:royal:adj:b1",
+      "word": "royal",
+      "translation": "королевский",
+      "answer": "royal",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rubber:n-adj:b2",
+      "word": "rubber",
+      "translation": "резина; резиновый",
+      "answer": "rubber",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:rude:adj:a2",
+      "word": "rude",
+      "translation": "грубый",
+      "answer": "rude",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rural:adj:b2",
+      "word": "rural",
+      "translation": "сельский",
+      "answer": "rural",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sad:adj:a1",
+      "word": "sad",
+      "translation": "грустный",
+      "answer": "sad",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:safe:adj:a2",
+      "word": "safe",
+      "translation": "безопасный",
+      "answer": "safe",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:satisfied:adj:b2",
+      "word": "satisfied",
+      "translation": "удовлетворен",
+      "answer": "satisfied",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:scared:adj:a2",
+      "word": "scared",
+      "translation": "напуган",
+      "answer": "scared",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:scary:adj:a2",
+      "word": "scary",
+      "translation": "страшный",
+      "answer": "scary",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:secondary:adj:b1",
+      "word": "secondary",
+      "translation": "вторичный",
+      "answer": "secondary",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:secret:adj-n:a2",
+      "word": "secret",
+      "translation": "секрет; тайный",
+      "answer": "secret",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:senior:adj:b2",
+      "word": "senior",
+      "translation": "старший",
+      "answer": "senior",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sensible:adj:b1",
+      "word": "sensible",
+      "translation": "разумный",
+      "answer": "sensible",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sensitive:adj:b2",
+      "word": "sensitive",
+      "translation": "чувствительный",
+      "answer": "sensitive",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:separate:adj:a2",
+      "word": "separate",
+      "translation": "отдельный",
+      "answer": "separate",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:serious:adj:a2",
+      "word": "serious",
+      "translation": "серьезный",
+      "answer": "serious",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:severe:adj:b2",
+      "word": "severe",
+      "translation": "суровый",
+      "answer": "severe",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sexual:adj:b1",
+      "word": "sexual",
+      "translation": "сексуальный",
+      "answer": "sexual",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:shallow:adj:b2",
+      "word": "shallow",
+      "translation": "мелкий",
+      "answer": "shallow",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sharp:adj:b1",
+      "word": "sharp",
+      "translation": "острый",
+      "answer": "sharp",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:shiny:adj:b1",
+      "word": "shiny",
+      "translation": "блестящий",
+      "answer": "shiny",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:shocked:adj:b2",
+      "word": "shocked",
+      "translation": "шокирован",
+      "answer": "shocked",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:short:adj:a1",
+      "word": "short",
+      "translation": "короткий",
+      "answer": "short",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:shy:adj:b1",
+      "word": "shy",
+      "translation": "застенчивый",
+      "answer": "shy",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:significant:adj:b2",
+      "word": "significant",
+      "translation": "значительный",
+      "answer": "significant",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:silent:adj:b1",
+      "word": "silent",
+      "translation": "тихий",
+      "answer": "silent",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:silly:adj:b1",
+      "word": "silly",
+      "translation": "глупый",
+      "answer": "silly",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:silver:n-adj:a2",
+      "word": "silver",
+      "translation": "серебро; серебряный",
+      "answer": "silver",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:similar:adj:a1",
+      "word": "similar",
+      "translation": "похожий",
+      "answer": "similar",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:simple:adj:a2",
+      "word": "simple",
+      "translation": "простой",
+      "answer": "simple",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sincere:adj:b2",
+      "word": "sincere",
+      "translation": "искренний",
+      "answer": "sincere",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:slight:adj:b2",
+      "word": "slight",
+      "translation": "легкий",
+      "answer": "slight",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:slow:adj:a1",
+      "word": "slow",
+      "translation": "медленный",
+      "answer": "slow",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:small:adj:a1",
+      "word": "small",
+      "translation": "маленький",
+      "answer": "small",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:smart:adj:b1",
+      "word": "smart",
+      "translation": "умный",
+      "answer": "smart",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:smooth:adj:b1",
+      "word": "smooth",
+      "translation": "гладкий",
+      "answer": "smooth",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:soft:adj:a2",
+      "word": "soft",
+      "translation": "мягкий",
+      "answer": "soft",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:solar:adj:b2",
+      "word": "solar",
+      "translation": "солнечный",
+      "answer": "solar",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:solid:adj-n:b1",
+      "word": "solid",
+      "translation": "твердый",
+      "answer": "solid",
+      "level": "B1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:southern:adj:b1",
+      "word": "southern",
+      "translation": "южный",
+      "answer": "southern",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:special:adj:a1",
+      "word": "special",
+      "translation": "особенный",
+      "answer": "special",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:specialist:n-adj:b2",
+      "word": "specialist",
+      "translation": "специалист",
+      "answer": "specialist",
+      "level": "B2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:specific:adj:a2",
+      "word": "specific",
+      "translation": "конкретный",
+      "answer": "specific",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:spicy:adj:b1",
+      "word": "spicy",
+      "translation": "пряный",
+      "answer": "spicy",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:spiritual:adj:b2",
+      "word": "spiritual",
+      "translation": "духовный",
+      "answer": "spiritual",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:spoken:adj:b1",
+      "word": "spoken",
+      "translation": "разговорный",
+      "answer": "spoken",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:stable:adj:b2",
+      "word": "stable",
+      "translation": "стабильный",
+      "answer": "stable",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:standard:n-adj:b1",
+      "word": "standard",
+      "translation": "стандарт; стандартный",
+      "answer": "standard",
+      "level": "B1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:steady:adj:b2",
+      "word": "steady",
+      "translation": "устойчивый",
+      "answer": "steady",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:steep:adj:b2",
+      "word": "steep",
+      "translation": "крутой",
+      "answer": "steep",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sticky:adj:b2",
+      "word": "sticky",
+      "translation": "липкий",
+      "answer": "sticky",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:strange:adj:a2",
+      "word": "strange",
+      "translation": "странный",
+      "answer": "strange",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:strict:adj:b2",
+      "word": "strict",
+      "translation": "строгий",
+      "answer": "strict",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:strong:adj:a1",
+      "word": "strong",
+      "translation": "сильный",
+      "answer": "strong",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:stupid:adj:a2",
+      "word": "stupid",
+      "translation": "глупый",
+      "answer": "stupid",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:successful:adj:a2",
+      "word": "successful",
+      "translation": "успешный",
+      "answer": "successful",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sudden:adj:b1",
+      "word": "sudden",
+      "translation": "внезапный",
+      "answer": "sudden",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:suitable:adj:b1",
+      "word": "suitable",
+      "translation": "подходящий",
+      "answer": "suitable",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sure:adj:a1",
+      "word": "sure",
+      "translation": "уверенный",
+      "answer": "sure",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:surprised:adj:a2",
+      "word": "surprised",
+      "translation": "удивлен",
+      "answer": "surprised",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:surprising:adj:a2",
+      "word": "surprising",
+      "translation": "удивительный",
+      "answer": "surprising",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:surrounding:adj:b2",
+      "word": "surrounding",
+      "translation": "окружающий",
+      "answer": "surrounding",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:talented:adj:b1",
+      "word": "talented",
+      "translation": "талантливый",
+      "answer": "talented",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:tall:adj:a1",
+      "word": "tall",
+      "translation": "высокий",
+      "answer": "tall",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:technical:adj:b1",
+      "word": "technical",
+      "translation": "технический",
+      "answer": "technical",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:teenage:adj:a2",
+      "word": "teenage",
+      "translation": "подростковый",
+      "answer": "teenage",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:temporary:adj:b2",
+      "word": "temporary",
+      "translation": "временный",
+      "answer": "temporary",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:terrible:adj:a1",
+      "word": "terrible",
+      "translation": "ужасный",
+      "answer": "terrible",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:thick:adj:a2",
+      "word": "thick",
+      "translation": "толстый",
+      "answer": "thick",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:thin:adj:a2",
+      "word": "thin",
+      "translation": "тонкий",
+      "answer": "thin",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:tight:adj:b1",
+      "word": "tight",
+      "translation": "тугой",
+      "answer": "tight",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:tiny:adj:b1",
+      "word": "tiny",
+      "translation": "крошечный",
+      "answer": "tiny",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:top:n-adj:a2",
+      "word": "top",
+      "translation": "верх; верхний",
+      "answer": "top",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:tough:adj:b2",
+      "word": "tough",
+      "translation": "жесткий",
+      "answer": "tough",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:toy:n-adj:a2",
+      "word": "toy",
+      "translation": "игрушка; игрушечный",
+      "answer": "toy",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:tropical:adj:b2",
+      "word": "tropical",
+      "translation": "тропический",
+      "answer": "tropical",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:true:adj:a1",
+      "word": "true",
+      "translation": "правдивый; верный",
+      "answer": "true",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:twin:n-adj:a2",
+      "word": "twin",
+      "translation": "близнец; двойной",
+      "answer": "twin",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:typical:adj:a2",
+      "word": "typical",
+      "translation": "типичный",
+      "answer": "typical",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    }
+  ]
+}

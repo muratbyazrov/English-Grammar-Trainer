@@ -16,6 +16,7 @@ window.Trainer.createVocabularyMode = function ({
   refs,
   renderQuestionText,
   saveProgress,
+  sessionScoring,
   setFeedback,
   setQuestionTranslation,
   setSelectedSentenceForSpeech,
@@ -26,26 +27,94 @@ window.Trainer.createVocabularyMode = function ({
   vocabState,
   vocabTopics
 }) {
-  function pickVocabSession() {
-    const topicValue = refs.vocabTopic.value;
-    if (topicValue === 'all') {
-      return shuffleItems(vocabTopics.flatMap(t => t.words || []));
-    } else {
-      const topic = vocabTopics.find(t => t.topic === topicValue);
-      return shuffleItems(topic ? (topic.words || []) : []);
+  const catalog = window.Trainer.createVocabularyCatalog(vocabTopics);
+  const oxfordLevels = ['all', 'A1', 'A2', 'B1', 'B2'];
+  let pickerNode = catalog.root;
+  let pickerLevel = 'all';
+  let pickerLevelMode = 'minimum';
+
+  function oxfordLevelLabel(level) {
+    return level === 'all' ? 'Все' : level;
+  }
+
+  function oxfordSelectionLabel(level, mode) {
+    return mode === 'minimum' ? `${level} и выше` : level;
+  }
+
+  function normalizeOxfordLevel(level, mode = vocabState.oxfordLevelMode) {
+    const oxford = catalog.nodes.get('collection:Oxford 3000');
+    return oxfordLevels.includes(level) && oxford && wordsForNode(oxford, level, mode).length
+      ? level : 'all';
+  }
+
+  function wordsForNode(node, level = vocabState.oxfordLevel, mode = vocabState.oxfordLevelMode) {
+    if (!node) return [];
+    if (node.collection === 'Oxford 3000' && level && level !== 'all') {
+      const minimumLevel = oxfordLevels.indexOf(level);
+      return node.words.filter(word => mode === 'exact'
+        ? word.level === level
+        : oxfordLevels.indexOf(word.level) >= minimumLevel);
     }
+    return node.words.slice();
+  }
+
+  function levelSuffix(node) {
+    return node && node.collection === 'Oxford 3000' && vocabState.oxfordLevel && vocabState.oxfordLevel !== 'all'
+      ? ` · ${oxfordSelectionLabel(vocabState.oxfordLevel, vocabState.oxfordLevelMode)}` : '';
+  }
+
+  function nextVocabTopicNode() {
+    const current = catalog.nodes.get(refs.vocabTopic.value) || catalog.root;
+    let collection = current;
+    while (collection.parent && collection.parent !== catalog.root) collection = collection.parent;
+    if (collection === catalog.root) collection = catalog.root.children[0];
+    if (!collection) return null;
+
+    // Whole themes advance to whole themes; subtopics follow the order in the picker.
+    const candidates = current.parent === collection && current.children.length
+      ? collection.children
+      : collection.children.flatMap(topic => topic.children.length ? topic.children : [topic]);
+    const available = candidates.filter(node => wordsForNode(node).length);
+    if (!available.length) return null;
+    const index = available.indexOf(current);
+    const next = available[(index + 1) % available.length];
+    return next && next !== current ? next : null;
+  }
+
+  function syncNextVocabTopic() {
+    const next = nextVocabTopicNode();
+    [refs.vocabNextTopic, refs.scNextTopic].forEach(button => {
+      button.disabled = !next;
+      button.title = next
+        ? `Далее: ${currentVocabTopicTitle(next.value)}`
+        : 'В этом наборе с выбранным уровнем нет другой темы';
+      button.setAttribute('aria-label', next
+        ? `Следующая тема: ${currentVocabTopicTitle(next.value)}`
+        : 'Следующая тема недоступна');
+    });
+  }
+
+  function nextVocabTopic() {
+    const next = nextVocabTopicNode();
+    if (!next) return;
+    refs.vocabTopic.value = next.value;
+    refs.vocabTopic.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  function pickVocabSession() {
+    const node = catalog.nodes.get(refs.vocabTopic.value);
+    const words = shuffleItems(vocabWordsForTopicValue(refs.vocabTopic.value));
+    return node && node.collection === 'Oxford 3000' ? words.slice(0, 20) : words;
   }
 
   function vocabWordsForTopicValue(topicValue) {
-    if (topicValue === 'all') {
-      return vocabTopics.flatMap(t => t.words || []);
-    }
-    const topic = vocabTopics.find(t => t.topic === topicValue);
-    return topic ? (topic.words || []).slice() : [];
+    const node = catalog.nodes.get(topicValue);
+    return wordsForNode(node);
   }
 
   function currentVocabTopicTitle(topicValue = refs.vocabTopic.value) {
-    return topicValue === 'all' ? 'Все темы' : topicValue;
+    const node = catalog.nodes.get(topicValue);
+    return node && node !== catalog.root ? catalog.path(node).join(' → ') + levelSuffix(node) : 'Все слова';
   }
 
   function escapeRegExp(value) {
@@ -187,6 +256,11 @@ window.Trainer.createVocabularyMode = function ({
   function vocabTopicIcon(topicValue) {
     const topic = String(topicValue || '').toLocaleLowerCase('ru-RU');
     if (topicValue === 'all') return '🧭';
+    if (topic.includes('повседневн') || topic.includes('дом')) return '🏠';
+    if (topic.includes('еда') || topic.includes('продукт') || topic.includes('кафе')) return '🍎';
+    if (topic.includes('город') || topic.includes('транспорт') || topic.includes('путешеств')) return '🧳';
+    if (topic.includes('oxford')) return '📗';
+    if (topic.includes('английский для it')) return '💻';
     if (topic.includes('архитектур')) return '🏗️';
     if (topic.includes('database') || topic.includes('postgres')) return '🗄️';
     if (topic.includes('инцидент')) return '🚨';
@@ -210,88 +284,195 @@ window.Trainer.createVocabularyMode = function ({
 
   function syncVocabTopicTrigger() {
     const topicValue = refs.vocabTopic.value || 'all';
-    refs.vocabTopicTriggerIcon.textContent = vocabTopicIcon(topicValue);
-    refs.vocabTopicTriggerText.textContent = currentVocabTopicTitle(topicValue);
+    const node = catalog.nodes.get(topicValue) || catalog.root;
+    refs.vocabTopicTriggerIcon.textContent = vocabTopicIcon(node.title);
+    refs.vocabTopicTriggerText.textContent = node.title + levelSuffix(node);
     refs.vocabTopicTrigger.title = currentVocabTopicTitle(topicValue);
+    refs.vocabTopicTrigger.setAttribute('aria-label', `Выбрать набор или тему: ${currentVocabTopicTitle(topicValue)}`);
   }
 
-  function vocabTopicChoices() {
-    const allWords = vocabTopics.flatMap((topic) => topic.words || []);
-    return [
-      {
-        value: 'all',
-        title: 'Все темы',
-        icon: vocabTopicIcon('all'),
-        count: allWords.length,
-      },
-      ...vocabTopics.map((topic) => ({
-        value: topic.topic,
-        title: topic.topic,
-        icon: vocabTopicIcon(topic.topic),
-        count: (topic.words || []).length,
-      })),
-    ];
+  function vocabularyChoice(node, label = node.title) {
+    const cardButton = document.createElement('button');
+    const isOxford = node.collection === 'Oxford 3000';
+    const wordCount = wordsForNode(node, pickerLevel, pickerLevelMode).length;
+    const isSelected = node.value === refs.vocabTopic.value && (!isOxford || (pickerLevel === vocabState.oxfordLevel && pickerLevelMode === vocabState.oxfordLevelMode));
+    cardButton.type = 'button';
+    cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
+    cardButton.dataset.topicValue = node.value;
+    cardButton.setAttribute('aria-pressed', String(isSelected));
+    const accessibleTitle = label === node.title ? label : `${label}: ${catalog.path(node).join(', ')}`;
+    cardButton.setAttribute('aria-label', `${accessibleTitle}, ${formatVocabWordCount(wordCount)}, тренировать`);
+
+    const icon = document.createElement('span');
+    icon.className = 'vocab-topic-card-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = vocabTopicIcon(node.title);
+
+    const copy = document.createElement('span');
+    copy.className = 'vocab-topic-card-copy';
+    const title = document.createElement('strong');
+    title.textContent = label;
+    const count = document.createElement('span');
+    count.textContent = `${formatVocabWordCount(wordCount)} · Тренировать`;
+    copy.appendChild(title);
+    copy.appendChild(count);
+
+    const check = document.createElement('span');
+    check.className = 'vocab-topic-card-check';
+    check.setAttribute('aria-hidden', 'true');
+    check.textContent = '✓';
+    cardButton.appendChild(icon);
+    cardButton.appendChild(copy);
+    cardButton.appendChild(check);
+    cardButton.addEventListener('click', () => {
+      const levelChanged = isOxford && (vocabState.oxfordLevel !== pickerLevel || vocabState.oxfordLevelMode !== pickerLevelMode);
+      if (isOxford) {
+        vocabState.oxfordLevel = pickerLevel;
+        vocabState.oxfordLevelMode = pickerLevelMode;
+      }
+      if (refs.vocabTopic.value !== node.value || levelChanged) {
+        refs.vocabTopic.value = node.value;
+        refs.vocabTopic.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      hideVocabTopicPicker();
+    });
+    return cardButton;
+  }
+
+  function renderOxfordLevelFilter() {
+    const filter = document.createElement('div');
+    filter.className = 'vocab-level-filter';
+    filter.setAttribute('role', 'group');
+    filter.setAttribute('aria-label', 'Уровень сложности Oxford');
+    const label = document.createElement('span');
+    label.className = 'vocab-level-label';
+    label.textContent = 'Уровень:';
+    filter.appendChild(label);
+    oxfordLevels.forEach(level => {
+      const button = document.createElement('button');
+      const count = wordsForNode(pickerNode, level, pickerLevelMode).length;
+      button.type = 'button';
+      button.className = `vocab-level-button${level === pickerLevel ? ' vocab-level-button--active' : ''}`;
+      button.dataset.levelValue = level;
+      button.textContent = oxfordLevelLabel(level);
+      button.disabled = count === 0;
+      button.title = count ? formatVocabWordCount(count) : 'Слова выбранного уровня пока не добавлены';
+      button.setAttribute('aria-pressed', String(level === pickerLevel));
+      button.setAttribute('aria-label', `${button.textContent}: ${button.title}`);
+      button.addEventListener('click', () => {
+        pickerLevel = level;
+        renderVocabTopicCards();
+        refs.vocabTopicGrid.querySelector('.vocab-level-button--active').focus();
+      });
+      filter.appendChild(button);
+    });
+    refs.vocabTopicGrid.appendChild(filter);
+
+    if (pickerLevel === 'all') return;
+    const modeFilter = document.createElement('div');
+    modeFilter.className = 'vocab-level-mode';
+    modeFilter.setAttribute('role', 'group');
+    modeFilter.setAttribute('aria-label', 'Диапазон уровней Oxford');
+    for (const [mode, title] of [['exact', 'Только этот'], ['minimum', 'Этот и выше']]) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `vocab-level-mode-button${mode === pickerLevelMode ? ' vocab-level-mode-button--active' : ''}`;
+      button.dataset.levelMode = mode;
+      button.textContent = title;
+      button.setAttribute('aria-pressed', String(mode === pickerLevelMode));
+      button.addEventListener('click', () => {
+        pickerLevelMode = mode;
+        renderVocabTopicCards();
+        refs.vocabTopicGrid.querySelector('.vocab-level-mode-button--active').focus();
+      });
+      modeFilter.appendChild(button);
+    }
+    refs.vocabTopicGrid.appendChild(modeFilter);
   }
 
   function renderVocabTopicCards() {
-    const selectedValue = refs.vocabTopic.value || 'all';
     refs.vocabTopicGrid.innerHTML = '';
+    refs.vocabTopicModalSubtitle.textContent = 'Выберите тему или подтему — тренировка начнётся сразу';
 
-    vocabTopicChoices().forEach((topic) => {
-      const cardButton = document.createElement('button');
-      const isSelected = topic.value === selectedValue;
-      cardButton.type = 'button';
-      cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
-      cardButton.dataset.topicValue = topic.value;
-      cardButton.setAttribute('role', 'option');
-      cardButton.setAttribute('aria-selected', String(isSelected));
-
-      const icon = document.createElement('span');
-      icon.className = 'vocab-topic-card-icon';
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = topic.icon;
-
-      const copy = document.createElement('span');
-      copy.className = 'vocab-topic-card-copy';
-
-      const title = document.createElement('strong');
-      title.textContent = topic.title;
-
-      const count = document.createElement('span');
-      count.textContent = formatVocabWordCount(topic.count);
-
-      const check = document.createElement('span');
-      check.className = 'vocab-topic-card-check';
-      check.setAttribute('aria-hidden', 'true');
-      check.textContent = '✓';
-
-      copy.appendChild(title);
-      copy.appendChild(count);
-      cardButton.appendChild(icon);
-      cardButton.appendChild(copy);
-      cardButton.appendChild(check);
-
-      cardButton.addEventListener('click', () => {
-        if (refs.vocabTopic.value !== topic.value) {
-          refs.vocabTopic.value = topic.value;
-          refs.vocabTopic.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        hideVocabTopicPicker();
+    const collections = document.createElement('div');
+    collections.className = 'vocab-catalog-collections';
+    collections.setAttribute('role', 'group');
+    collections.setAttribute('aria-label', 'Набор слов');
+    catalog.root.children.forEach(collection => {
+      const button = document.createElement('button');
+      const active = collection === pickerNode;
+      button.type = 'button';
+      button.className = `vocab-collection-button${active ? ' vocab-collection-button--active' : ''}`;
+      button.dataset.collectionValue = collection.value;
+      button.textContent = collection.title;
+      button.setAttribute('aria-pressed', String(active));
+      button.addEventListener('click', () => {
+        pickerNode = collection;
+        renderVocabTopicCards();
+        refs.vocabTopicGrid.querySelector('.vocab-collection-button--active').focus();
       });
-
-      refs.vocabTopicGrid.appendChild(cardButton);
+      collections.appendChild(button);
     });
+    refs.vocabTopicGrid.appendChild(collections);
+    if (!pickerNode) return;
+    if (pickerNode.collection === 'Oxford 3000') renderOxfordLevelFilter();
+
+    const overview = document.createElement('div');
+    overview.className = 'vocab-catalog-overview';
+    const note = document.createElement('p');
+    note.className = 'vocab-catalog-note';
+    note.textContent = pickerNode.collection === 'Oxford 3000'
+      ? `Oxford 3000 · ${pickerNode.words.length} карточек · ${pickerLevel === 'all' ? 'все уровни' : oxfordSelectionLabel(pickerLevel, pickerLevelMode)}: ${formatVocabWordCount(wordsForNode(pickerNode, pickerLevel, pickerLevelMode).length)} · до 20 слов за подход`
+      : formatVocabWordCount(pickerNode.words.length);
+    overview.appendChild(note);
+    const trainCollection = vocabularyChoice(pickerNode, 'Тренировать весь набор');
+    trainCollection.className += ' vocab-catalog-train-all';
+    overview.appendChild(trainCollection);
+    refs.vocabTopicGrid.appendChild(overview);
+
+    const topics = document.createElement('div');
+    topics.className = 'vocab-catalog-topics';
+    pickerNode.children.forEach(topic => {
+      if (!wordsForNode(topic, pickerLevel, pickerLevelMode).length) return;
+      if (!topic.children.length) {
+        topics.appendChild(vocabularyChoice(topic));
+        return;
+      }
+      const section = document.createElement('section');
+      section.className = 'vocab-catalog-section';
+      const header = document.createElement('div');
+      header.className = 'vocab-catalog-section-header';
+      const heading = document.createElement('h3');
+      heading.textContent = `${vocabTopicIcon(topic.title)} ${topic.title}`;
+      header.appendChild(heading);
+      const trainTopic = vocabularyChoice(topic, 'Вся тема');
+      trainTopic.className += ' vocab-catalog-train-all';
+      header.appendChild(trainTopic);
+      section.appendChild(header);
+      const subtopics = document.createElement('div');
+      subtopics.className = 'vocab-catalog-subtopics';
+      topic.children.forEach(subtopic => {
+        if (wordsForNode(subtopic, pickerLevel, pickerLevelMode).length) subtopics.appendChild(vocabularyChoice(subtopic));
+      });
+      section.appendChild(subtopics);
+      topics.appendChild(section);
+    });
+    refs.vocabTopicGrid.appendChild(topics);
   }
 
   function showVocabTopicPicker() {
     ensureVocabTopicOptions();
+    pickerLevel = normalizeOxfordLevel(vocabState.oxfordLevel);
+    pickerLevelMode = vocabState.oxfordLevelMode;
+    let selected = catalog.nodes.get(refs.vocabTopic.value) || catalog.root;
+    while (selected.parent && selected.parent !== catalog.root) selected = selected.parent;
+    // Old all-words sessions remain valid; the picker starts with the first collection.
+    pickerNode = selected === catalog.root ? catalog.root.children[0] : selected;
     renderVocabTopicCards();
-    const choices = vocabTopicChoices();
-    refs.vocabTopicModalSubtitle.textContent = `${vocabTopics.length} тем · ${formatVocabWordCount(choices[0].count)}`;
     refs.vocabTopicOverlay.hidden = false;
     refs.vocabTopicTrigger.setAttribute('aria-expanded', 'true');
     const selectedCard = refs.vocabTopicGrid.querySelector('.vocab-topic-card--selected');
-    (selectedCard || refs.vocabTopicClose).focus();
+    (selectedCard || refs.vocabTopicGrid.querySelector('.vocab-collection-button--active') || refs.vocabTopicClose).focus();
   }
 
   function hideVocabTopicPicker() {
@@ -314,6 +495,12 @@ window.Trainer.createVocabularyMode = function ({
     const word = document.createElement('div');
     word.className = 'vocab-list-word';
     word.textContent = String((item && (item.word || item.infinitive || item.answer)) || '').trim() || 'Без слова';
+    if (item.level) {
+      const meta = document.createElement('span');
+      meta.className = 'vocab-word-meta';
+      meta.textContent = ` ${item.level} · ${item.partOfSpeech || ''}`;
+      word.appendChild(meta);
+    }
 
     const translation = document.createElement('div');
     translation.className = 'vocab-list-translation';
@@ -329,6 +516,12 @@ window.Trainer.createVocabularyMode = function ({
       example.className = 'vocab-list-example';
       example.textContent = item.example;
       content.appendChild(example);
+      if (item.sentenceTranslation) {
+        const sentenceTranslation = document.createElement('div');
+        sentenceTranslation.className = 'vocab-list-example-translation';
+        sentenceTranslation.textContent = item.sentenceTranslation;
+        content.appendChild(sentenceTranslation);
+      }
     }
 
     row.appendChild(number);
@@ -374,19 +567,16 @@ window.Trainer.createVocabularyMode = function ({
       .map((id) => wordsById.get(String(id)))
       .filter(Boolean);
 
-    return restored.length === wordsById.size ? restored : [];
+    // A saved session can be a short Oxford round or predate newly added words.
+    return restored.length === order.length && new Set(order.map(String)).size === order.length ? restored : [];
   }
 
   function ensureVocabTopicOptions() {
     if (refs.vocabTopic.options.length === 0) {
-      const allOpt = document.createElement('option');
-      allOpt.value = 'all';
-      allOpt.textContent = 'Все темы';
-      refs.vocabTopic.appendChild(allOpt);
-      vocabTopics.forEach(t => {
+      catalog.nodes.forEach(node => {
         const opt = document.createElement('option');
-        opt.value = t.topic;
-        opt.textContent = t.topic;
+        opt.value = node.value;
+        opt.textContent = currentVocabTopicTitle(node.value);
         refs.vocabTopic.appendChild(opt);
       });
     }
@@ -396,6 +586,8 @@ window.Trainer.createVocabularyMode = function ({
   function restoreVocabProgress(saved) {
     ensureVocabTopicOptions();
     if (!saved || typeof saved !== "object") return false;
+    vocabState.oxfordLevelMode = saved.oxfordLevelMode === 'exact' ? 'exact' : 'minimum';
+    vocabState.oxfordLevel = normalizeOxfordLevel(saved.oxfordLevel, vocabState.oxfordLevelMode);
 
     const topicValue = String(saved.topic || "");
     const hasTopic = Array.from(refs.vocabTopic.options).some((opt) => opt.value === topicValue);
@@ -414,12 +606,14 @@ window.Trainer.createVocabularyMode = function ({
     vocabState.idx = Math.max(0, Math.min(asNumber(saved.idx, 0), Math.max(0, vocabState.session.length - 1)));
     vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
     vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
+    sessionScoring.restore(vocabState, saved.outcomes);
     return Boolean(vocabState.session.length);
   }
 
   function renderVocab() {
     hideSessionComplete();
     cancelPendingActivity();
+    syncNextVocabTopic();
     viewState.sentenceTranslationRequestId += 1;
 
     const w = vocabState.session[vocabState.idx];
@@ -435,7 +629,7 @@ window.Trainer.createVocabularyMode = function ({
     refs.correctCount.textContent = String(vocabState.correct);
     refs.wrongCount.textContent = String(vocabState.wrong);
 
-    refs.vocabModeLabel.textContent = 'Переведите на английский';
+    refs.vocabModeLabel.textContent = `Переведите на английский${w.level ? ` · ${w.level} · ${w.partOfSpeech}` : ''}`;
     refs.speakWordBtn.textContent = 'Озвучить ответ';
     renderQuestionText(w.translation);
     renderVocabExample(w);
@@ -448,7 +642,7 @@ window.Trainer.createVocabularyMode = function ({
     refs.answerInput.focus();
     setFeedback('', null);
     vocabState.checkedCurrent = false;
-    vocabState.wrongCounted = false;
+    vocabState.wrongCounted = sessionScoring.wasWrong(vocabState);
   }
 
   function checkVocabAnswer() {
@@ -467,7 +661,7 @@ window.Trainer.createVocabularyMode = function ({
     const match = getAnswerMatch(user, target, wordOptions);
     if (match.matched) {
       if (!vocabState.wrongCounted) {
-        vocabState.correct += 1;
+        sessionScoring.record(vocabState, 'correct');
         refs.correctCount.textContent = String(vocabState.correct);
       }
       vocabState.checkedCurrent = true;
@@ -479,7 +673,7 @@ window.Trainer.createVocabularyMode = function ({
       queueVocabNextAfterCorrect(w);
     } else {
       if (!vocabState.wrongCounted) {
-        vocabState.wrong += 1;
+        sessionScoring.record(vocabState, 'wrong');
         vocabState.wrongCounted = true;
         refs.wrongCount.textContent = String(vocabState.wrong);
       }
@@ -531,6 +725,7 @@ window.Trainer.createVocabularyMode = function ({
     hideVocabList,
     hideVocabTopicPicker,
     nextVocabQuestion,
+    nextVocabTopic,
     pickVocabSession,
     renderVocab,
     restoreVocabProgress,

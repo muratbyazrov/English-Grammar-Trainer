@@ -1,0 +1,153 @@
+{
+  "id": "oxford-routine",
+  "collection": "Oxford 3000",
+  "topic": "Повседневная жизнь",
+  "subtopic": "Распорядок дня",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:morning:noun",
+      "word": "morning",
+      "translation": "утро",
+      "answer": "morning",
+      "answers": [
+        {
+          "text": "morning",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:evening:noun",
+      "word": "evening",
+      "translation": "вечер",
+      "answer": "evening",
+      "answers": [
+        {
+          "text": "evening",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:night:noun",
+      "word": "night",
+      "translation": "ночь",
+      "answer": "night",
+      "answers": [
+        {
+          "text": "night",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:breakfast:noun",
+      "word": "breakfast",
+      "translation": "завтрак",
+      "answer": "breakfast",
+      "answers": [
+        {
+          "text": "breakfast",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lunch:noun",
+      "word": "lunch",
+      "translation": "обед",
+      "answer": "lunch",
+      "answers": [
+        {
+          "text": "lunch",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dinner:noun",
+      "word": "dinner",
+      "translation": "ужин",
+      "answer": "dinner",
+      "answers": [
+        {
+          "text": "dinner",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sleep:verb",
+      "word": "sleep",
+      "translation": "спать",
+      "answer": "sleep",
+      "answers": [
+        {
+          "text": "sleep",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:wash:verb",
+      "word": "wash",
+      "translation": "мыть",
+      "answer": "wash",
+      "answers": [
+        {
+          "text": "wash",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:work:verb",
+      "word": "work",
+      "translation": "работать",
+      "answer": "work",
+      "answers": [
+        {
+          "text": "work",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:relax:verb",
+      "word": "relax",
+      "translation": "расслабляться, отдыхать",
+      "answer": "relax",
+      "answers": [
+        {
+          "text": "relax",
+          "weight": 1
+        },
+        {
+          "text": "rest",
+          "weight": 0.9
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    }
+  ]
+}

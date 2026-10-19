@@ -16,6 +16,7 @@ window.Trainer.createGrammarMode = function ({
   refs,
   renderQuestionText,
   saveProgress,
+  sessionScoring,
   setFeedback,
   setQuestionTranslation,
   setSelectedSentenceForSpeech,
@@ -260,6 +261,7 @@ window.Trainer.createGrammarMode = function ({
       .replace(/\bshouldn'twe\b/gi, "shouldn't we")
       .replace(/\bgot[аa]\b/gi, "got a")
       .replace(/\bfinda\b/gi, "find a")
+      .replace(/\bdeservea\b/gi, "deserve a")
       .replace(/\bwasa\b/gi, "was a")
       .replace(/\bisa\b/gi, "is a")
       .replace(/\bshea\b/gi, "she a")
@@ -352,7 +354,7 @@ window.Trainer.createGrammarMode = function ({
     refs.answerInput.focus();
     setFeedback("", null);
     grammarState.checkedCurrent = false;
-    grammarState.wrongCounted = false;
+    grammarState.wrongCounted = sessionScoring.wasWrong(grammarState);
     void showQuestionTranslation(q);
   }
 
@@ -378,17 +380,19 @@ window.Trainer.createGrammarMode = function ({
       return;
     }
 
-    const user = normalize(refs.answerInput.value);
-    const target = normalize(q.answer);
+    const rawUser = refs.answerInput.value.trim();
+    const user = normalize(rawUser);
+    const matchesOmittedWord = /^[-–—]$/.test(q.answer.trim()) && /^[-–—]$/.test(rawUser);
+    const answers = [q.answer, ...(q.acceptedAnswers || [])];
 
-    if (!user) {
+    if (!user && !matchesOmittedWord) {
       setFeedback("Сначала впиши ответ.", false);
       return;
     }
 
-    if (isAnswerMatch(user, target)) {
+    if (matchesOmittedWord || answers.some((answer) => isAnswerMatch(user, normalize(answer)))) {
       if (!grammarState.wrongCounted) {
-        grammarState.correct += 1;
+        sessionScoring.record(grammarState, 'correct');
         refs.correctCount.textContent = String(grammarState.correct);
       }
       grammarState.checkedCurrent = true;
@@ -398,7 +402,7 @@ window.Trainer.createGrammarMode = function ({
       queueNextQuestionAfterCorrect(q);
     } else {
       if (!grammarState.wrongCounted) {
-        grammarState.wrong += 1;
+        sessionScoring.record(grammarState, 'wrong');
         grammarState.wrongCounted = true;
         refs.wrongCount.textContent = String(grammarState.wrong);
       }

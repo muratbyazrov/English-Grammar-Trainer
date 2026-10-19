@@ -3,6 +3,8 @@
  * Generates vocabulary.js from all *.json files in the vocabulary/ folder.
  *
  * JSON file format (each word):
+ *   id               — stable ID for new collections, e.g. "oxford:apple:noun"
+ *   level, partOfSpeech — optional learning metadata
  *   word             — dictionary form, e.g. "kick off"
  *   translation      — Russian translation
  *   example          — full example sentence
@@ -72,6 +74,9 @@ for (const file of files) {
 
   const topicName = (data.topic || path.basename(file, '.json')).trim();
   const rawWords  = Array.isArray(data.words) ? data.words : [];
+  if (data.collection && (!data.id || rawWords.some(w => typeof w.id !== 'string' || !w.id.trim()))) {
+    throw new Error(`${file}: collections require a topic ID and stable string IDs for all words`);
+  }
 
   if (rawWords.length === 0) {
     console.warn(`  ⚠ ${file}: no words found, skipping`);
@@ -82,7 +87,7 @@ for (const file of files) {
     const answer     = (w.answer || w.word || '').trim();
 
     const entry = {
-      id:                 globalId++,
+      id:                 w.id || globalId++,
       word:               (w.word               || '').trim(),
       translation:        (w.translation        || '').trim(),
       example:            (w.example            || '').trim(),
@@ -90,23 +95,34 @@ for (const file of files) {
       answer,
     };
     if (w.infinitive) entry.infinitive = w.infinitive.trim();
+    if (w.level) entry.level = w.level;
+    if (w.partOfSpeech) entry.partOfSpeech = w.partOfSpeech;
     const answers = normalizeAnswers(w.answers);
     if (answers.length) entry.answers = answers;
     return entry;
   });
 
-  // Merge into an existing topic with the same name (handles multiple files per topic)
-  if (seenTopics.has(topicName)) {
-    topics[seenTopics.get(topicName)].words.push(...words);
+  // Explicit IDs distinguish subtopics with the same parent title. Legacy names remain valid.
+  const topicKey = data.id || topicName;
+  if (seenTopics.has(topicKey)) {
+    topics[seenTopics.get(topicKey)].words.push(...words);
   } else {
-    seenTopics.set(topicName, topics.length);
-    topics.push({ topic: topicName, words });
+    seenTopics.set(topicKey, topics.length);
+    const topic = { topic: topicName, words };
+    for (const key of ['id', 'collection', 'subtopic', 'source']) {
+      if (data[key]) topic[key] = data[key];
+    }
+    topics.push(topic);
   }
 
   console.log(`  ✓ ${file} → "${topicName}" (${words.length} words)`);
 }
 
 const totalWords = topics.reduce((n, t) => n + t.words.length, 0);
+const ids = topics.flatMap(t => t.words.map(w => String(w.id)));
+if (new Set(ids).size !== ids.length) {
+  throw new Error('Duplicate vocabulary word IDs');
+}
 const output = `window.VOCABULARY_DATA = ${JSON.stringify(topics, null, 2)};\n`;
 
 fs.writeFileSync(outFile, output, 'utf8');

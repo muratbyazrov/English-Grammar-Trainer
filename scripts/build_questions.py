@@ -20,6 +20,7 @@ from pypdf import PdfReader
 
 BOOKS_DIR = Path(__file__).resolve().parents[1] / "books"
 OUT_FILE = Path(__file__).resolve().parents[1] / "questions.js"
+CORRECTIONS_FILE = Path(__file__).with_name("grammar_corrections.json")
 
 QUESTION_RE = re.compile(
     r"(\d+)\.\s*(.*?)\s*a\)\s*(.*?)\s*b\)\s*(.*?)\s*c\)\s*(.*?)(?=(?:\n\s*\d+\.)|\Z)",
@@ -119,7 +120,37 @@ def process_level(level_dir: Path) -> list[dict]:
     exercise_text = read_text(exercises_pdf)
     answer_text = read_text(answers_pdf)
     answers = parse_answers(answer_text)
-    return parse_questions(exercise_text, answers)
+    return apply_corrections(level_dir.name, parse_questions(exercise_text, answers))
+
+
+def apply_corrections(level: str, questions: list[dict]) -> list[dict]:
+    """Preserve reviewed content fixes whenever the PDF data is rebuilt."""
+    corrections = json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+    for correction in corrections.get(level, []):
+        matches = [
+            question for question in questions
+            if question["id"] == correction["id"]
+            and ("matchPrompt" not in correction
+                 or question["prompt"] == correction["matchPrompt"])
+        ]
+        if len(matches) != 1:
+            raise ValueError(f"Correction {level}:{correction['id']} matched {len(matches)} questions")
+        question = matches[0]
+        if "newId" in correction:
+            question["id"] = correction["newId"]
+        if "prompt" in correction:
+            question["prompt"] = correction["prompt"]
+        question["options"].update(correction.get("options", {}))
+        if "correctOption" in correction:
+            question["correctOption"] = correction["correctOption"]
+        question["answer"] = question["options"][question["correctOption"]]
+        if "acceptedAnswers" in correction:
+            question["acceptedAnswers"] = correction["acceptedAnswers"]
+
+    ids = [question["id"] for question in questions]
+    if len(ids) != len(set(ids)):
+        raise ValueError(f"Duplicate question IDs in {level}")
+    return sorted(questions, key=lambda question: question["id"])
 
 
 def main() -> None:

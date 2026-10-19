@@ -1,0 +1,333 @@
+{
+  "id": "oxford-extra-04",
+  "collection": "Oxford 3000",
+  "topic": "Грамматика и связки",
+  "subtopic": "Артикли и определители",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:a-an:indefinite-article:a1",
+      "word": "a / an",
+      "translation": "неопределённый артикль",
+      "answer": "a / an",
+      "level": "A1",
+      "partOfSpeech": "артикль",
+      "answers": [
+        "a",
+        "an"
+      ]
+    },
+    {
+      "id": "oxford:all:det-pron:a1",
+      "word": "all",
+      "translation": "весь; все",
+      "answer": "all",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:an:indefinite-article:a1",
+      "word": "an",
+      "translation": "неопределённый артикль перед гласным звуком",
+      "answer": "an",
+      "level": "A1",
+      "partOfSpeech": "артикль"
+    },
+    {
+      "id": "oxford:another:det-pron:a1",
+      "word": "another",
+      "translation": "другой; ещё один",
+      "answer": "another",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:any:det-pron:a1",
+      "word": "any",
+      "translation": "любой; какой-либо",
+      "answer": "any",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:both:det-pron:a1",
+      "word": "both",
+      "translation": "оба; обе",
+      "answer": "both",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:dozen:n-det:b2",
+      "word": "dozen",
+      "translation": "дюжина",
+      "answer": "dozen",
+      "level": "B2",
+      "partOfSpeech": "сущ., опред."
+    },
+    {
+      "id": "oxford:each:det-pron-adv:a1",
+      "word": "each",
+      "translation": "каждый",
+      "answer": "each",
+      "level": "A1",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:either:det-pron-adv:a2",
+      "word": "either",
+      "translation": "любой из двух; тоже не",
+      "answer": "either",
+      "level": "A2",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:enough:det-pron-adv:a1",
+      "word": "enough",
+      "translation": "достаточно",
+      "answer": "enough",
+      "level": "A1",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:every:det:a1",
+      "word": "every",
+      "translation": "каждый",
+      "answer": "every",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:few:det-adj-pron:a1",
+      "word": "few",
+      "translation": "немногие; мало",
+      "answer": "few",
+      "level": "A1",
+      "partOfSpeech": "опред., прил., мест."
+    },
+    {
+      "id": "oxford:her:pron-det:a1",
+      "word": "her",
+      "translation": "её; ей",
+      "answer": "her",
+      "level": "A1",
+      "partOfSpeech": "мест., опред."
+    },
+    {
+      "id": "oxford:his:det:a1",
+      "word": "his",
+      "translation": "его",
+      "answer": "his",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:its:det:a1",
+      "word": "its",
+      "translation": "его; её (о предмете)",
+      "answer": "its",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:least:det-pron-adv:a2",
+      "word": "least",
+      "translation": "минимум",
+      "answer": "least",
+      "level": "A2",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:less:det-pron-adv:a2",
+      "word": "less",
+      "translation": "меньше",
+      "answer": "less",
+      "level": "A2",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:little:adj-det-pron:a1",
+      "word": "little",
+      "translation": "маленький",
+      "answer": "little",
+      "level": "A1",
+      "partOfSpeech": "прил., опред., мест."
+    },
+    {
+      "id": "oxford:lot:pron-det-adv:a1",
+      "word": "lot",
+      "translation": "много",
+      "answer": "lot",
+      "level": "A1",
+      "partOfSpeech": "мест., опред., нареч."
+    },
+    {
+      "id": "oxford:many:det-pron:a1",
+      "word": "many",
+      "translation": "много",
+      "answer": "many",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:more:det-pron-adv:a1",
+      "word": "more",
+      "translation": "больше; более",
+      "answer": "more",
+      "level": "A1",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:most:det-pron-adv:a1",
+      "word": "most",
+      "translation": "большинство; самый",
+      "answer": "most",
+      "level": "A1",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:much:det-pron-adv:a1",
+      "word": "much",
+      "translation": "много; очень",
+      "answer": "much",
+      "level": "A1",
+      "partOfSpeech": "опред., мест., нареч."
+    },
+    {
+      "id": "oxford:my:det:a1",
+      "word": "my",
+      "translation": "мой",
+      "answer": "my",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:neither:det-pron:a2",
+      "word": "neither",
+      "translation": "ни один из двух",
+      "answer": "neither",
+      "level": "A2",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:no:exclam-det:a1",
+      "word": "no",
+      "translation": "нет; никакой",
+      "answer": "no",
+      "level": "A1",
+      "partOfSpeech": "межд., опред."
+    },
+    {
+      "id": "oxford:one:number-det-pron:a1",
+      "word": "one",
+      "translation": "один",
+      "answer": "one",
+      "level": "A1",
+      "partOfSpeech": "числ., опред., мест."
+    },
+    {
+      "id": "oxford:our:det:a1",
+      "word": "our",
+      "translation": "наш",
+      "answer": "our",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:several:det-pron:a2",
+      "word": "several",
+      "translation": "несколько",
+      "answer": "several",
+      "level": "A2",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:some:det-pron:a1",
+      "word": "some",
+      "translation": "некоторый; немного",
+      "answer": "some",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:such:det-pron:a2",
+      "word": "such",
+      "translation": "такой",
+      "answer": "such",
+      "level": "A2",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:that:det-pron-conj:a1",
+      "word": "that",
+      "translation": "тот; что",
+      "answer": "that",
+      "level": "A1",
+      "partOfSpeech": "опред., мест., союз"
+    },
+    {
+      "id": "oxford:the:definite-article:a1",
+      "word": "the",
+      "translation": "определённый артикль",
+      "answer": "the",
+      "level": "A1",
+      "partOfSpeech": "definite article"
+    },
+    {
+      "id": "oxford:their:det:a1",
+      "word": "their",
+      "translation": "их",
+      "answer": "their",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:this:det-pron:a1",
+      "word": "this",
+      "translation": "этот; это",
+      "answer": "this",
+      "level": "A1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:what:pron-det:a1",
+      "word": "what",
+      "translation": "что; какой",
+      "answer": "what",
+      "level": "A1",
+      "partOfSpeech": "мест., опред."
+    },
+    {
+      "id": "oxford:whatever:det-pron:b1",
+      "word": "whatever",
+      "translation": "что угодно",
+      "answer": "whatever",
+      "level": "B1",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:which:pron-det:a1",
+      "word": "which",
+      "translation": "который; какой",
+      "answer": "which",
+      "level": "A1",
+      "partOfSpeech": "мест., опред."
+    },
+    {
+      "id": "oxford:whose:det-pron:a2",
+      "word": "whose",
+      "translation": "чей",
+      "answer": "whose",
+      "level": "A2",
+      "partOfSpeech": "опред., мест."
+    },
+    {
+      "id": "oxford:your:det:a1",
+      "word": "your",
+      "translation": "твой; ваш",
+      "answer": "your",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "oxford-transport",
+  "collection": "Oxford 3000",
+  "topic": "Город и путешествия",
+  "subtopic": "Транспорт",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:bus:noun",
+      "word": "bus",
+      "translation": "автобус",
+      "answer": "bus",
+      "answers": [
+        {
+          "text": "bus",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:train:noun",
+      "word": "train",
+      "translation": "поезд",
+      "answer": "train",
+      "answers": [
+        {
+          "text": "train",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:car:noun",
+      "word": "car",
+      "translation": "автомобиль, машина",
+      "answer": "car",
+      "answers": [
+        {
+          "text": "car",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:taxi:noun",
+      "word": "taxi",
+      "translation": "такси",
+      "answer": "taxi",
+      "answers": [
+        {
+          "text": "taxi",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bicycle:noun",
+      "word": "bicycle",
+      "translation": "велосипед",
+      "answer": "bicycle",
+      "answers": [
+        {
+          "text": "bicycle",
+          "weight": 1
+        },
+        {
+          "text": "bike",
+          "weight": 0.9
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:plane:noun",
+      "word": "plane",
+      "translation": "самолёт",
+      "answer": "plane",
+      "answers": [
+        {
+          "text": "plane",
+          "weight": 1
+        },
+        {
+          "text": "airplane",
+          "weight": 0.9
+        },
+        {
+          "text": "aeroplane",
+          "weight": 0.9
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ticket:noun",
+      "word": "ticket",
+      "translation": "билет",
+      "answer": "ticket",
+      "answers": [
+        {
+          "text": "ticket",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:station:noun",
+      "word": "station",
+      "translation": "станция, вокзал",
+      "answer": "station",
+      "answers": [
+        {
+          "text": "station",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:airport:noun",
+      "word": "airport",
+      "translation": "аэропорт",
+      "answer": "airport",
+      "answers": [
+        {
+          "text": "airport",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:travel:verb",
+      "word": "travel",
+      "translation": "путешествовать",
+      "answer": "travel",
+      "answers": [
+        {
+          "text": "travel",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "гл."
+    }
+  ]
+}

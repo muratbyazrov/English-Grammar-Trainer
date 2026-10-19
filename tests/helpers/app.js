@@ -51,7 +51,7 @@ class Element {
   }
 }
 
-function createApp({ saved, speech = true, recognition = false } = {}) {
+function createApp({ saved, speech = true, recognition = false, vocabulary } = {}) {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   const elements = new Map();
   for (const match of html.matchAll(/<(\w+)\b([^>]*\bid="([^"]+)"[^>]*)>/g)) {
@@ -100,7 +100,10 @@ function createApp({ saved, speech = true, recognition = false } = {}) {
   }
   const context = vm.createContext({ window, document, Event, console, fetch: async () => ({ ok: true, json: async () => ({ sentences: [{ trans: 'Перевод' }] }) }) });
   const scripts = [...html.matchAll(/<script src="\.\/([^"?]+)(?:\?[^"]*)?"><\/script>/g)].map(match => match[1]);
-  for (const file of scripts) vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, { filename: file });
+  for (const file of scripts) {
+    vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, { filename: file });
+    if (file === 'vocabulary.js' && vocabulary) window.VOCABULARY_DATA = JSON.parse(JSON.stringify(vocabulary));
+  }
   return {
     window, spoken, recognizers, elements,
     el: id => elements.get(id),

@@ -4,27 +4,136 @@ window.Trainer.createTheoryMode = function ({
   hideSessionComplete,
   refs
 }) {
-  const { THEORY_TOPICS } = window.TrainerData;
+  const { THEORY_TOPICS, THEORY_BRIEF_TOPICS } = window.TrainerData;
+  let theoryView = 'short';
+  const futurePresentation = window.Trainer.createFuturePresentation();
+
+  function normalizeTheoryView(view) {
+    return ['short', 'detailed', 'visual'].includes(view) ? view : 'short';
+  }
+
+  function currentTheoryView() {
+    return theoryView;
+  }
+
+  function setTheoryView(view) {
+    theoryView = normalizeTheoryView(view);
+    renderTheory();
+  }
+
+  function syncTheoryViewControls() {
+    refs.theoryViewVisual.hidden = refs.theoryTopic.value !== 'tenses-future';
+    if (refs.theoryViewVisual.hidden && theoryView === 'visual') theoryView = 'short';
+    [['short', refs.theoryViewShort], ['detailed', refs.theoryViewDetailed], ['visual', refs.theoryViewVisual]].forEach(([view, button]) => {
+      button.setAttribute('aria-pressed', theoryView === view ? 'true' : 'false');
+      button.classList.toggle('theory-view-button--active', theoryView === view);
+    });
+  }
+
+  function theoryTopicIcon(topic) {
+    const icons = {
+      'tenses-guide': '🧭',
+      'tenses-present': '☀️',
+      'tenses-past': '🕰️',
+      'tenses-future': '🚀',
+      'due-to': '🔗',
+      'whether-if': '🔀',
+      'manage-to': '🎯',
+      'aware-of': '💡',
+      'worth': '⭐',
+      'subject-questions': '❓',
+      'passive-voice-table': '🔄',
+      'get-v-ed': '⚡',
+      'modals-code-review': '🧩'
+    };
+    return icons[topic.id] || '📚';
+  }
+
+  function syncTheoryTopicTrigger() {
+    const topic = THEORY_TOPICS.find((item) => item.id === refs.theoryTopic.value);
+    if (!topic) return;
+    refs.theoryTopicTriggerIcon.textContent = theoryTopicIcon(topic);
+    refs.theoryTopicTriggerText.textContent = topic.title;
+    refs.theoryTopicTrigger.title = topic.title;
+  }
+
+  function showTheoryTopicPicker() {
+    ensureTheoryTopicOptions();
+    refs.theoryTopicGrid.innerHTML = '';
+    THEORY_TOPICS.forEach((topic) => {
+      const isSelected = topic.id === refs.theoryTopic.value;
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
+      card.dataset.topicValue = topic.id;
+      card.setAttribute('role', 'option');
+      card.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+
+      const icon = document.createElement('span');
+      icon.className = 'vocab-topic-card-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = theoryTopicIcon(topic);
+
+      const copy = document.createElement('span');
+      copy.className = 'vocab-topic-card-copy';
+      const title = document.createElement('strong');
+      title.textContent = topic.title;
+      const description = document.createElement('span');
+      description.textContent = topic.subtitle || topic.sections.map((section) => section.title).join(' · ');
+      copy.appendChild(title);
+      copy.appendChild(description);
+
+      const check = document.createElement('span');
+      check.className = 'vocab-topic-card-check';
+      check.setAttribute('aria-hidden', 'true');
+      check.textContent = '✓';
+      card.appendChild(icon);
+      card.appendChild(copy);
+      card.appendChild(check);
+      card.addEventListener('click', () => {
+        if (refs.theoryTopic.value !== topic.id) {
+          refs.theoryTopic.value = topic.id;
+          refs.theoryTopic.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        hideTheoryTopicPicker();
+      });
+      refs.theoryTopicGrid.appendChild(card);
+    });
+    refs.theoryTopicModalSubtitle.textContent = `${THEORY_TOPICS.length} тем · правила, схемы и примеры`;
+    refs.theoryTopicOverlay.hidden = false;
+    refs.theoryTopicTrigger.setAttribute('aria-expanded', 'true');
+    const selectedCard = refs.theoryTopicGrid.querySelector('.vocab-topic-card--selected');
+    (selectedCard || refs.theoryTopicClose).focus();
+  }
+
+  function hideTheoryTopicPicker() {
+    refs.theoryTopicOverlay.hidden = true;
+    refs.theoryTopicTrigger.setAttribute('aria-expanded', 'false');
+    refs.theoryTopicTrigger.focus();
+  }
 
   function ensureTheoryTopicOptions() {
-    if (refs.theoryTopic.options.length > 0) return;
-
-    THEORY_TOPICS.forEach((topic) => {
-      const opt = document.createElement('option');
-      opt.value = topic.id;
-      opt.textContent = topic.title;
-      refs.theoryTopic.appendChild(opt);
-    });
+    if (refs.theoryTopic.options.length === 0) {
+      THEORY_TOPICS.forEach((topic) => {
+        const opt = document.createElement('option');
+        opt.value = topic.id;
+        opt.textContent = topic.title;
+        refs.theoryTopic.appendChild(opt);
+      });
+    }
+    syncTheoryTopicTrigger();
   }
 
   function restoreTheoryProgress(saved) {
     ensureTheoryTopicOptions();
     if (!saved || typeof saved !== "object") return false;
+    theoryView = normalizeTheoryView(saved.view);
 
     const topicValue = String(saved.topic || "");
     const hasTopic = Array.from(refs.theoryTopic.options).some((opt) => opt.value === topicValue);
     if (hasTopic) {
       refs.theoryTopic.value = topicValue;
+      syncTheoryTopicTrigger();
       return true;
     }
     return false;
@@ -39,6 +148,39 @@ window.Trainer.createTheoryMode = function ({
       list.appendChild(li);
     });
     parent.appendChild(list);
+  }
+
+  function appendTheoryTable(parent, data) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'theory-table-scroll';
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', 'Таблица сравнения форм');
+    const table = document.createElement('table');
+    table.className = 'theory-table';
+    const head = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    data.headers.forEach((text) => {
+      const cell = document.createElement('th');
+      cell.setAttribute('scope', 'col');
+      cell.textContent = text;
+      headerRow.appendChild(cell);
+    });
+    head.appendChild(headerRow);
+    table.appendChild(head);
+    const body = document.createElement('tbody');
+    data.rows.forEach((values) => {
+      const row = document.createElement('tr');
+      values.forEach((text) => {
+        const cell = document.createElement('td');
+        cell.textContent = text;
+        row.appendChild(cell);
+      });
+      body.appendChild(row);
+    });
+    table.appendChild(body);
+    wrapper.appendChild(table);
+    parent.appendChild(wrapper);
   }
 
   function appendTheoryExamples(parent, examples) {
@@ -66,12 +208,12 @@ window.Trainer.createTheoryMode = function ({
   const THEORY_AUX_TOKENS = new Set([
     'am', 'is', 'are', 'was', 'were', 'be', 'been', 'to be',
     'do', 'does', 'did', 'have', 'has', 'had',
-    'will', 'will be', 'going to'
+    'will', 'will be', 'going to', 'am / is / are'
   ]);
 
   const THEORY_SUBJECT_TOKENS = new Set([
     'i', 'he', 'she', 'it', 'we', 'you', 'they',
-    'subject', 'what', 'who', 'which'
+    's', 'subject', 'what', 'who', 'which'
   ]);
 
   const THEORY_LABEL_ROLES = { '+': 'pos', '-': 'neg', '−': 'neg', '?': 'ask' };
@@ -191,10 +333,45 @@ window.Trainer.createTheoryMode = function ({
     });
   }
 
+  function renderBriefTheory(topic) {
+    const brief = THEORY_BRIEF_TOPICS[topic.id];
+    if (!brief) return false;
+    const grid = document.createElement('div');
+    grid.className = 'theory-brief-grid';
+    brief.cards.forEach((card) => {
+      const block = document.createElement('section');
+      block.className = 'theory-brief-card';
+      const heading = document.createElement('h3');
+      heading.textContent = card.title;
+      block.appendChild(heading);
+      const rule = document.createElement('p');
+      rule.className = 'theory-brief-rule';
+      rule.textContent = card.rule;
+      block.appendChild(rule);
+      if (card.formula) {
+        const formula = document.createElement('p');
+        formula.className = 'theory-brief-formula';
+        formula.textContent = card.formula;
+        block.appendChild(formula);
+      }
+      appendTheoryExamples(block, card.examples);
+      grid.appendChild(block);
+    });
+    refs.theoryBody.appendChild(grid);
+    if (brief.note) {
+      const note = document.createElement('p');
+      note.className = 'theory-brief-note';
+      note.textContent = brief.note;
+      refs.theoryBody.appendChild(note);
+    }
+    return true;
+  }
+
   function renderTheory() {
     hideSessionComplete();
     cancelPendingActivity();
     ensureTheoryTopicOptions();
+    syncTheoryViewControls();
 
     const topic = THEORY_TOPICS.find((item) => item.id === refs.theoryTopic.value) || THEORY_TOPICS[0];
     if (!topic) {
@@ -204,8 +381,16 @@ window.Trainer.createTheoryMode = function ({
     }
 
     refs.theoryTopic.value = topic.id;
+    syncTheoryTopicTrigger();
     refs.theoryTitle.textContent = topic.title;
     refs.theoryBody.innerHTML = '';
+    refs.theoryPanel.classList.toggle('theory-panel--visual', theoryView === 'visual');
+
+    if (theoryView === 'visual') {
+      refs.theoryTitle.textContent = 'Будущее время';
+      futurePresentation.render(refs.theoryBody);
+      return;
+    }
 
     if (topic.subtitle) {
       const subtitle = document.createElement('p');
@@ -213,6 +398,8 @@ window.Trainer.createTheoryMode = function ({
       subtitle.textContent = topic.subtitle;
       refs.theoryBody.appendChild(subtitle);
     }
+
+    if (theoryView === 'short' && renderBriefTheory(topic)) return;
 
     topic.sections.forEach((section) => {
       const block = document.createElement('section');
@@ -222,6 +409,7 @@ window.Trainer.createTheoryMode = function ({
       heading.textContent = section.title;
       block.appendChild(heading);
 
+      if (section.table) appendTheoryTable(block, section.table);
       if (section.items) appendTheoryList(block, section.items);
       if (section.schemes) appendTheorySchemes(block, section.schemes);
       if (section.examples) appendTheoryExamples(block, section.examples);
@@ -232,6 +420,10 @@ window.Trainer.createTheoryMode = function ({
 
   return {
     ensureTheoryTopicOptions,
+    showTheoryTopicPicker,
+    hideTheoryTopicPicker,
+    currentTheoryView,
+    setTheoryView,
     renderTheory,
     restoreTheoryProgress
   };

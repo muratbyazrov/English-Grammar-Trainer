@@ -1,0 +1,273 @@
+{
+  "id": "oxford-extra-02",
+  "collection": "Oxford 3000",
+  "topic": "Город и путешествия",
+  "subtopic": "Город и места",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:address:n:a1",
+      "word": "address",
+      "translation": "адрес",
+      "answer": "address",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:address:v:b2",
+      "word": "address",
+      "translation": "обращаться к; рассматривать вопрос",
+      "answer": "address",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:area:n:a1",
+      "word": "area",
+      "translation": "площадь",
+      "answer": "area",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bank:n:b1",
+      "word": "bank",
+      "translation": "банк",
+      "answer": "bank",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bar:n:a1",
+      "word": "bar",
+      "translation": "бар; перекладина",
+      "answer": "bar",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bar:v:b2",
+      "word": "bar",
+      "translation": "преграждать; запрещать",
+      "answer": "bar",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:bridge:n:a2",
+      "word": "bridge",
+      "translation": "мост",
+      "answer": "bridge",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cafe:n:a1",
+      "word": "cafe",
+      "translation": "кафе",
+      "answer": "cafe",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:capital:n-adj:a1",
+      "word": "capital",
+      "translation": "столица; заглавная буква; главный",
+      "answer": "capital",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:centre:n:a1",
+      "word": "centre",
+      "translation": "центр",
+      "answer": "centre",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:centre:v:b1",
+      "word": "centre",
+      "translation": "сосредоточивать",
+      "answer": "centre",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:church:n:a2",
+      "word": "church",
+      "translation": "церковь",
+      "answer": "church",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cinema:n:a1",
+      "word": "cinema",
+      "translation": "кино",
+      "answer": "cinema",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:city:n:a1",
+      "word": "city",
+      "translation": "город",
+      "answer": "city",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:country:n:a1",
+      "word": "country",
+      "translation": "страна",
+      "answer": "country",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:farm:n:a1",
+      "word": "farm",
+      "translation": "ферма",
+      "answer": "farm",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:farm:v:a2",
+      "word": "farm",
+      "translation": "заниматься сельским хозяйством",
+      "answer": "farm",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:location:n:b1",
+      "word": "location",
+      "translation": "местоположение",
+      "answer": "location",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:market:n:a1",
+      "word": "market",
+      "translation": "рынок",
+      "answer": "market",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:market:v:b1",
+      "word": "market",
+      "translation": "продавать; продвигать на рынке",
+      "answer": "market",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:museum:n:a1",
+      "word": "museum",
+      "translation": "музей",
+      "answer": "museum",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:neighbourhood:n:b1",
+      "word": "neighbourhood",
+      "translation": "окрестности",
+      "answer": "neighbourhood",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:path:n:b1",
+      "word": "path",
+      "translation": "путь",
+      "answer": "path",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:place:n:a1",
+      "word": "place",
+      "translation": "место",
+      "answer": "place",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:place:v:b1",
+      "word": "place",
+      "translation": "помещать; размещать",
+      "answer": "place",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:port:n:b1",
+      "word": "port",
+      "translation": "порт",
+      "answer": "port",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:region:n:a2",
+      "word": "region",
+      "translation": "регион",
+      "answer": "region",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:square:adj-n:a2",
+      "word": "square",
+      "translation": "квадрат; квадратный; площадь",
+      "answer": "square",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:store:n:a2",
+      "word": "store",
+      "translation": "магазин; запас",
+      "answer": "store",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:store:v:b1",
+      "word": "store",
+      "translation": "хранить",
+      "answer": "store",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:theatre:n:a1",
+      "word": "theatre",
+      "translation": "театр",
+      "answer": "theatre",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:town:n:a1",
+      "word": "town",
+      "translation": "город",
+      "answer": "town",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:village:n:a1",
+      "word": "village",
+      "translation": "деревня",
+      "answer": "village",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

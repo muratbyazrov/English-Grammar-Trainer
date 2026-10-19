@@ -1,0 +1,393 @@
+{
+  "id": "oxford-extra-15",
+  "collection": "Oxford 3000",
+  "topic": "Деньги и покупки",
+  "subtopic": "Покупки и цены",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:account:n:b1",
+      "word": "account",
+      "translation": "счёт; отчёт",
+      "answer": "account",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:account:v:b2",
+      "word": "account",
+      "translation": "объяснять; составлять долю",
+      "answer": "account",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:afford:v:b1",
+      "word": "afford",
+      "translation": "позволить себе",
+      "answer": "afford",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:bill:v:b2",
+      "word": "bill",
+      "translation": "выставлять счёт",
+      "answer": "bill",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:brand:n-v:b1",
+      "word": "brand",
+      "translation": "бренд; марка; клеймить; давать название",
+      "answer": "brand",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:budget:n:b2",
+      "word": "budget",
+      "translation": "бюджет",
+      "answer": "budget",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:buy:v:a1",
+      "word": "buy",
+      "translation": "купить",
+      "answer": "buy",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:cash:n:a2",
+      "word": "cash",
+      "translation": "наличные",
+      "answer": "cash",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cheap:adj:a1",
+      "word": "cheap",
+      "translation": "дешёвый",
+      "answer": "cheap",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:cheap:adv:b1",
+      "word": "cheap",
+      "translation": "дешёвый",
+      "answer": "cheap",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:coin:n:b1",
+      "word": "coin",
+      "translation": "монета",
+      "answer": "coin",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:consumer:n:b1",
+      "word": "consumer",
+      "translation": "потребитель",
+      "answer": "consumer",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cost:n-v:a1",
+      "word": "cost",
+      "translation": "стоимость; стоить",
+      "answer": "cost",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:credit:n:a2",
+      "word": "credit",
+      "translation": "кредит; заслуга",
+      "answer": "credit",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:credit:v:b2",
+      "word": "credit",
+      "translation": "приписывать заслугу; зачислять",
+      "answer": "credit",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:debt:n:b2",
+      "word": "debt",
+      "translation": "долг",
+      "answer": "debt",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:discount:n:b1",
+      "word": "discount",
+      "translation": "скидка",
+      "answer": "discount",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:discount:v:b2",
+      "word": "discount",
+      "translation": "делать скидку",
+      "answer": "discount",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:economic:adj:b1",
+      "word": "economic",
+      "translation": "экономический",
+      "answer": "economic",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:economy:n:b1",
+      "word": "economy",
+      "translation": "экономика",
+      "answer": "economy",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:expensive:adj:a1",
+      "word": "expensive",
+      "translation": "дорогой",
+      "answer": "expensive",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:finance:n-v:b2",
+      "word": "finance",
+      "translation": "финансы; финансировать",
+      "answer": "finance",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:financial:adj:b1",
+      "word": "financial",
+      "translation": "финансовый",
+      "answer": "financial",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:goods:n:b1",
+      "word": "goods",
+      "translation": "товары",
+      "answer": "goods",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:income:n:b2",
+      "word": "income",
+      "translation": "доход",
+      "answer": "income",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:invest:v:b1",
+      "word": "invest",
+      "translation": "инвестировать",
+      "answer": "invest",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:investment:n:b2",
+      "word": "investment",
+      "translation": "инвестиции",
+      "answer": "investment",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:item:n:a2",
+      "word": "item",
+      "translation": "предмет",
+      "answer": "item",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:loan:n:b2",
+      "word": "loan",
+      "translation": "кредит",
+      "answer": "loan",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:loss:n:b1",
+      "word": "loss",
+      "translation": "потеря",
+      "answer": "loss",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:money:n:a1",
+      "word": "money",
+      "translation": "деньги",
+      "answer": "money",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pay:n:a2",
+      "word": "pay",
+      "translation": "оплата; зарплата",
+      "answer": "pay",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:payment:n:b1",
+      "word": "payment",
+      "translation": "оплата",
+      "answer": "payment",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:price:n:a1",
+      "word": "price",
+      "translation": "цена",
+      "answer": "price",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:price:v:b2",
+      "word": "price",
+      "translation": "назначать цену",
+      "answer": "price",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:product:n:a1",
+      "word": "product",
+      "translation": "продукт",
+      "answer": "product",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:profit:n:b1",
+      "word": "profit",
+      "translation": "прибыль",
+      "answer": "profit",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:purchase:n-v:b2",
+      "word": "purchase",
+      "translation": "покупка; покупать",
+      "answer": "purchase",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:receipt:n:b1",
+      "word": "receipt",
+      "translation": "квитанция",
+      "answer": "receipt",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sale:n:a2",
+      "word": "sale",
+      "translation": "продажа",
+      "answer": "sale",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sell:v:a1",
+      "word": "sell",
+      "translation": "продать",
+      "answer": "sell",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:shopping:n:a1",
+      "word": "shopping",
+      "translation": "шоппинг",
+      "answer": "shopping",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:supermarket:n:a1",
+      "word": "supermarket",
+      "translation": "супермаркет",
+      "answer": "supermarket",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tax:n-v:b1",
+      "word": "tax",
+      "translation": "налог; облагать налогом",
+      "answer": "tax",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:value:n:b1",
+      "word": "value",
+      "translation": "ценность; значение",
+      "answer": "value",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:value:v:b2",
+      "word": "value",
+      "translation": "ценить",
+      "answer": "value",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:worth:adj:b1",
+      "word": "worth",
+      "translation": "стоит",
+      "answer": "worth",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:worth:n:b2",
+      "word": "worth",
+      "translation": "стоит",
+      "answer": "worth",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

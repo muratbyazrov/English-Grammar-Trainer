@@ -50,6 +50,7 @@
     scPct: document.getElementById("sc-pct"),
     scCloseBtn: document.getElementById("session-complete-close"),
     nextSessionBtn: document.getElementById("next-session-btn"),
+    scNextTopic: document.getElementById('sc-next-topic'),
     tabGrammar: document.getElementById('tab-grammar'),
     tabTheory: document.getElementById('tab-theory'),
     tabVocab: document.getElementById('tab-vocab'),
@@ -59,6 +60,13 @@
     controlsVocab: document.getElementById('controls-vocab'),
     controlsShadowing: document.getElementById('controls-shadowing'),
     theoryTopic: document.getElementById('theory-topic'),
+    theoryTopicTrigger: document.getElementById('theory-topic-trigger'),
+    theoryTopicTriggerIcon: document.getElementById('theory-topic-trigger-icon'),
+    theoryTopicTriggerText: document.getElementById('theory-topic-trigger-text'),
+    theoryTopicOverlay: document.getElementById('theory-topic-overlay'),
+    theoryTopicModalSubtitle: document.getElementById('theory-topic-modal-subtitle'),
+    theoryTopicGrid: document.getElementById('theory-topic-grid'),
+    theoryTopicClose: document.getElementById('theory-topic-close'),
     vocabTopic: document.getElementById('vocab-topic'),
     vocabTopicTrigger: document.getElementById('vocab-topic-trigger'),
     vocabTopicTriggerIcon: document.getElementById('vocab-topic-trigger-icon'),
@@ -68,6 +76,8 @@
     vocabTopicGrid: document.getElementById('vocab-topic-grid'),
     vocabTopicClose: document.getElementById('vocab-topic-close'),
     vocabShowList: document.getElementById('vocab-show-list'),
+    vocabTopicNavigation: document.getElementById('vocab-topic-navigation'),
+    vocabNextTopic: document.getElementById('vocab-next-topic'),
     vocabNewSession: document.getElementById('vocab-new-session'),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
     shadowingTopic: document.getElementById('shadowing-topic'),
@@ -97,6 +107,9 @@
     cardContent: document.getElementById('card-content'),
     theoryPanel: document.getElementById('theory-panel'),
     theoryTitle: document.getElementById('theory-title'),
+    theoryViewShort: document.getElementById('theory-view-short'),
+    theoryViewDetailed: document.getElementById('theory-view-detailed'),
+    theoryViewVisual: document.getElementById('theory-view-visual'),
     theoryBody: document.getElementById('theory-body'),
     vocabListOverlay: document.getElementById('vocab-list-overlay'),
     vocabListTitle: document.getElementById('vocab-list-title'),
@@ -108,6 +121,7 @@
   const { stopSpeech, speakEnglishText, refreshSpeechVoices } = window.Trainer.createSpeech(window);
   const activity = window.Trainer.createActivity(window);
   const progress = window.Trainer.createProgressStore(window);
+  const sessionScoring = window.Trainer.createSessionScoring();
 
   const card = document.querySelector(".card");
 
@@ -179,16 +193,20 @@
     idx: 0,
     correct: 0,
     wrong: 0,
+    outcomes: {},
     checkedCurrent: false,
     wrongCounted: false,
     autoSpeakCorrect: true,
   };
 
   const vocabState = {
+    oxfordLevel: 'all',
+    oxfordLevelMode: 'minimum',
     session: [],
     idx: 0,
     correct: 0,
     wrong: 0,
+    outcomes: {},
     checkedCurrent: false,
     wrongCounted: false,
     autoSpeakCorrect: refs.autoSpeakCorrectVocab.checked,
@@ -199,6 +217,7 @@
     idx: 0,
     correct: 0,
     wrong: 0,
+    outcomes: {},
     wrongCounted: false,
     checkedCurrent: false,
     successfulRepetitions: 0,
@@ -373,13 +392,17 @@
         idx: grammarState.idx,
         correct: grammarState.correct,
         wrong: grammarState.wrong,
+        outcomes: grammarState.outcomes,
         vocabulary: {
           topic: refs.vocabTopic.value,
+          oxfordLevel: vocabState.oxfordLevel,
+          oxfordLevelMode: vocabState.oxfordLevelMode,
           autoSpeakCorrect: vocabState.autoSpeakCorrect,
           order: vocabState.session.map((item) => item && item.id).filter((id) => id != null),
           idx: vocabState.idx,
           correct: vocabState.correct,
           wrong: vocabState.wrong,
+          outcomes: vocabState.outcomes,
         },
         shadowing: {
           topic: refs.shadowingTopic.value,
@@ -388,10 +411,12 @@
           idx: shadowingState.idx,
           correct: shadowingState.correct,
           wrong: shadowingState.wrong,
+          outcomes: shadowingState.outcomes,
           successfulRepetitions: shadowingState.successfulRepetitions,
         },
         theory: {
           topic: refs.theoryTopic.value,
+          view: currentTheoryView(),
         },
       };
       progress.save(payload);
@@ -431,6 +456,7 @@
       grammarState.idx = idx;
       grammarState.correct = correct;
       grammarState.wrong = wrong;
+      sessionScoring.restore(grammarState, parsed.outcomes);
       restoreVocabProgress(parsed.vocabulary);
       restoreShadowingProgress(parsed.shadowing);
       restoreTheoryProgress(parsed.theory);
@@ -449,24 +475,27 @@
       const nextChar = source[offset + match.length] || "";
       const needsSpaceBefore = /[A-Za-z0-9'"]/.test(prevChar);
       const needsSpaceAfter = /[A-Za-z0-9'"]/.test(nextChar);
-      return `${needsSpaceBefore ? " " : ""}____${needsSpaceAfter ? " " : ""}`;
+      const sentenceEnd = match.length >= 4 ? "." : "";
+      return `${needsSpaceBefore ? " " : ""}____${sentenceEnd}${needsSpaceAfter ? " " : ""}`;
     });
   }
 
   function fillPromptWithAnswer(prompt, answer) {
     const basePrompt = String(prompt || "").trim();
-    const resolvedAnswer = String(answer || "").trim();
-    if (!basePrompt || !resolvedAnswer) return basePrompt;
+    const answerText = String(answer || "").trim();
+    if (!basePrompt || !answerText) return basePrompt;
+    const resolvedAnswer = /^[-–—]$/.test(answerText) ? "" : answerText;
     if (/\.{3,}/.test(basePrompt)) {
       return basePrompt.replace(/\.{3,}/g, (match, offset, source) => {
         const prevChar = offset > 0 ? source[offset - 1] : "";
         const nextChar = source[offset + match.length] || "";
         const needsSpaceBefore = /[A-Za-z0-9'"]/.test(prevChar);
         const needsSpaceAfter = /[A-Za-z0-9'"]/.test(nextChar);
-        return `${needsSpaceBefore ? " " : ""}${resolvedAnswer}${needsSpaceAfter ? " " : ""}`;
-      });
+        const sentenceEnd = match.length >= 4 && !/[.!?]$/.test(resolvedAnswer) ? "." : "";
+        return `${needsSpaceBefore ? " " : ""}${resolvedAnswer}${sentenceEnd}${needsSpaceAfter ? " " : ""}`;
+      }).replace(/\s+([.,!?;:])/g, "$1").replace(/\s{2,}/g, " ").trim();
     }
-    return basePrompt;
+    return resolvedAnswer;
   }
 
   function renderQuestionText(prompt) {
@@ -607,6 +636,7 @@
     refs,
     renderQuestionText,
     saveProgress,
+    sessionScoring,
     setFeedback,
     setQuestionTranslation,
     setSelectedSentenceForSpeech,
@@ -622,6 +652,7 @@
     hideVocabList,
     hideVocabTopicPicker,
     nextVocabQuestion,
+    nextVocabTopic,
     pickVocabSession,
     renderVocab,
     restoreVocabProgress,
@@ -645,6 +676,7 @@
     refs,
     renderQuestionText,
     saveProgress,
+    sessionScoring,
     setFeedback,
     setQuestionTranslation,
     setSelectedSentenceForSpeech,
@@ -682,6 +714,7 @@
     playWrongSound,
     refs,
     saveProgress,
+    sessionScoring,
     setFeedback,
     setQuestionTranslation,
     setSelectedSentenceForSpeech,
@@ -695,6 +728,10 @@
 
   const {
     ensureTheoryTopicOptions,
+    showTheoryTopicPicker,
+    hideTheoryTopicPicker,
+    currentTheoryView,
+    setTheoryView,
     renderTheory,
     restoreTheoryProgress
   } = window.Trainer.createTheoryMode({
@@ -723,6 +760,7 @@
     refs.optionsSection.hidden = mode !== 'grammar';
     refs.questionMeta.hidden = mode !== 'grammar';
     refs.vocabModeLabel.hidden = mode !== 'vocabulary';
+    refs.vocabTopicNavigation.hidden = mode !== 'vocabulary';
     refs.vocabExample.hidden = mode !== 'vocabulary';
     refs.shadowingPanel.hidden = mode !== 'shadowing';
     refs.shadowingInlineTranslation.hidden = mode !== 'shadowing';
@@ -741,6 +779,7 @@
         vocabState.idx = 0;
         vocabState.correct = 0;
         vocabState.wrong = 0;
+        vocabState.outcomes = {};
       }
       renderVocab();
     } else if (mode === 'shadowing') {
@@ -760,13 +799,7 @@
       ? vocabState
       : (currentMode === 'shadowing' ? shadowingState : grammarState);
     const total = stats.session.length;
-    const correct = stats.correct;
-    const missed = Math.max(0, total - stats.correct - stats.wrong);
-    if (missed > 0) {
-      stats.wrong += missed;
-    }
-    const wrong = stats.wrong;
-    const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((correct / total) * 100))) : 0;
+    const { correct, wrong, percent: pct } = sessionScoring.finish(stats);
 
     // Обновляем стат-бар
     refs.position.textContent = `${total} / ${total}`;
@@ -777,6 +810,7 @@
     refs.scCorrect.textContent = String(correct);
     refs.scWrong.textContent = String(wrong);
     refs.scPct.textContent = pct + "%";
+    refs.scNextTopic.hidden = currentMode !== 'vocabulary';
 
     // Показываем с перезапуском анимации
     hideSessionComplete();
@@ -790,6 +824,7 @@
     grammarState.idx = 0;
     grammarState.correct = 0;
     grammarState.wrong = 0;
+    grammarState.outcomes = {};
     renderGrammar();
     saveProgress();
   });
@@ -867,6 +902,10 @@
     window.speechSynthesis.addEventListener("voiceschanged", refreshSpeechVoices);
   }
 
+  refs.scNextTopic.addEventListener('click', () => {
+    if (currentMode === 'vocabulary') nextVocabTopic();
+  });
+
   refs.nextSessionBtn.addEventListener("click", () => {
     hideSessionComplete();
     cancelPendingActivity();
@@ -875,6 +914,7 @@
       vocabState.idx = 0;
       vocabState.correct = 0;
       vocabState.wrong = 0;
+      vocabState.outcomes = {};
       renderVocab();
       saveProgress();
       return;
@@ -884,6 +924,7 @@
       shadowingState.idx = 0;
       shadowingState.correct = 0;
       shadowingState.wrong = 0;
+      shadowingState.outcomes = {};
       shadowingState.successfulRepetitions = 0;
       shadowingState.checkedCurrent = false;
       renderShadowing();
@@ -909,6 +950,7 @@
     vocabState.idx = 0;
     vocabState.correct = 0;
     vocabState.wrong = 0;
+    vocabState.outcomes = {};
     renderVocab();
     saveProgress();
   });
@@ -919,6 +961,20 @@
 
   refs.vocabTopicTrigger.addEventListener('click', () => {
     showVocabTopicPicker();
+  });
+
+  refs.theoryTopicTrigger.addEventListener('click', () => {
+    showTheoryTopicPicker();
+  });
+
+  refs.theoryTopicClose.addEventListener('click', () => {
+    hideTheoryTopicPicker();
+  });
+
+  refs.theoryTopicOverlay.addEventListener('click', (event) => {
+    if (event.target === refs.theoryTopicOverlay) {
+      hideTheoryTopicPicker();
+    }
   });
 
   refs.grammarTopicTrigger.addEventListener('click', () => {
@@ -977,6 +1033,8 @@
         hideVocabTopicPicker();
       } else if (!refs.shadowingTopicOverlay.hidden) {
         hideShadowingTopicPicker();
+      } else if (!refs.theoryTopicOverlay.hidden) {
+        hideTheoryTopicPicker();
       } else if (!refs.vocabListOverlay.hidden) {
         hideVocabList();
       }
@@ -995,9 +1053,12 @@
     vocabState.idx = 0;
     vocabState.correct = 0;
     vocabState.wrong = 0;
+    vocabState.outcomes = {};
     renderVocab();
     saveProgress();
   });
+
+  refs.vocabNextTopic.addEventListener('click', nextVocabTopic);
 
   refs.shadowingStart.addEventListener('click', () => {
     if (shadowingState.checkedCurrent) nextShadowingQuestion();
@@ -1013,6 +1074,7 @@
     shadowingState.idx = 0;
     shadowingState.correct = 0;
     shadowingState.wrong = 0;
+    shadowingState.outcomes = {};
     shadowingState.successfulRepetitions = 0;
     shadowingState.checkedCurrent = false;
     renderShadowing();
@@ -1038,6 +1100,21 @@
     saveProgress();
   });
 
+  refs.theoryViewShort.addEventListener('click', () => {
+    setTheoryView('short');
+    saveProgress();
+  });
+
+  refs.theoryViewDetailed.addEventListener('click', () => {
+    setTheoryView('detailed');
+    saveProgress();
+  });
+
+  refs.theoryViewVisual.addEventListener('click', () => {
+    setTheoryView('visual');
+    saveProgress();
+  });
+
   if (!levelNames.length) {
     refs.questionText.textContent =
       "Не удалось загрузить вопросы. Проверь, что рядом есть файл questions.js.";
@@ -1060,6 +1137,7 @@
     grammarState.idx = 0;
     grammarState.correct = 0;
     grammarState.wrong = 0;
+    grammarState.outcomes = {};
     renderGrammar();
     saveProgress();
   });
@@ -1071,6 +1149,7 @@
     grammarState.idx = 0;
     grammarState.correct = 0;
     grammarState.wrong = 0;
+    grammarState.outcomes = {};
     renderGrammar();
     saveProgress();
   });

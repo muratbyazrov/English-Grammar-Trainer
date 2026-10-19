@@ -1,0 +1,1081 @@
+{
+  "id": "oxford-extra-11",
+  "collection": "Oxford 3000",
+  "topic": "Действия и изменения",
+  "subtopic": "Глаголы F–J",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:fail:v:a2",
+      "word": "fail",
+      "translation": "потерпеть неудачу",
+      "answer": "fail",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fairly:adv:b1",
+      "word": "fairly",
+      "translation": "довольно",
+      "answer": "fairly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:fall:v:a1",
+      "word": "fall",
+      "translation": "падать",
+      "answer": "fall",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fancy:v-adj:b1",
+      "word": "fancy",
+      "translation": "причудливый",
+      "answer": "fancy",
+      "level": "B1",
+      "partOfSpeech": "гл., прил."
+    },
+    {
+      "id": "oxford:far:adv:a1",
+      "word": "far",
+      "translation": "далёкий; далеко",
+      "answer": "far",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:fast:adj-adv:a1",
+      "word": "fast",
+      "translation": "быстро",
+      "answer": "fast",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:fasten:v:b1",
+      "word": "fasten",
+      "translation": "закрепить",
+      "answer": "fasten",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:favour:v:b2",
+      "word": "favour",
+      "translation": "предпочитать; поддерживать",
+      "answer": "favour",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fear:v:b1",
+      "word": "fear",
+      "translation": "бояться",
+      "answer": "fear",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:feature:v:b1",
+      "word": "feature",
+      "translation": "представлять; включать",
+      "answer": "feature",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:feed:v:a2",
+      "word": "feed",
+      "translation": "кормить",
+      "answer": "feed",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:feel:v:a1",
+      "word": "feel",
+      "translation": "чувствовать",
+      "answer": "feel",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fight:v-n:a2",
+      "word": "fight",
+      "translation": "драка; борьба; драться; бороться",
+      "answer": "fight",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:fill:v:a1",
+      "word": "fill",
+      "translation": "заполнить",
+      "answer": "fill",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:find:v:a1",
+      "word": "find",
+      "translation": "найти",
+      "answer": "find",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:finish:v:a1",
+      "word": "finish",
+      "translation": "заканчивать",
+      "answer": "finish",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:firstly:adv:a2",
+      "word": "firstly",
+      "translation": "во-первых",
+      "answer": "firstly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:fit:v-adj:a2",
+      "word": "fit",
+      "translation": "подходит",
+      "answer": "fit",
+      "level": "A2",
+      "partOfSpeech": "гл., прил."
+    },
+    {
+      "id": "oxford:flash:n-v:b2",
+      "word": "flash",
+      "translation": "вспышка; вспыхивать",
+      "answer": "flash",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:float:v:b2",
+      "word": "float",
+      "translation": "плавать",
+      "answer": "float",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:flow:v-n:b1",
+      "word": "flow",
+      "translation": "поток; течь",
+      "answer": "flow",
+      "level": "B1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:fly:v:a1",
+      "word": "fly",
+      "translation": "летать",
+      "answer": "fly",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:focus:v-n:a2",
+      "word": "focus",
+      "translation": "внимание; фокус; сосредотачиваться",
+      "answer": "focus",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:fold:v:b1",
+      "word": "fold",
+      "translation": "складывать",
+      "answer": "fold",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:follow:v:a1",
+      "word": "follow",
+      "translation": "следовать",
+      "answer": "follow",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:force:n-v:b1",
+      "word": "force",
+      "translation": "сила; заставлять",
+      "answer": "force",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:forever:adv:b1",
+      "word": "forever",
+      "translation": "навсегда",
+      "answer": "forever",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:forget:v:a1",
+      "word": "forget",
+      "translation": "забыть",
+      "answer": "forget",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:forgive:v:b2",
+      "word": "forgive",
+      "translation": "прости",
+      "answer": "forgive",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:form:n-v:a1",
+      "word": "form",
+      "translation": "форма; бланк; образовывать; формировать",
+      "answer": "form",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:fortunately:adv:a2",
+      "word": "fortunately",
+      "translation": "к счастью",
+      "answer": "fortunately",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:forward:adv:a2",
+      "word": "forward",
+      "translation": "вперед",
+      "answer": "forward",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:found:v:b2",
+      "word": "found",
+      "translation": "основывать; учреждать",
+      "answer": "found",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:frame:n-v:b1",
+      "word": "frame",
+      "translation": "рамка; каркас; обрамлять",
+      "answer": "frame",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:free:adv:a2",
+      "word": "free",
+      "translation": "свободный; бесплатный",
+      "answer": "free",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:free:v:b2",
+      "word": "free",
+      "translation": "освобождать",
+      "answer": "free",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:freeze:v:b1",
+      "word": "freeze",
+      "translation": "заморозить",
+      "answer": "freeze",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:frighten:v:b1",
+      "word": "frighten",
+      "translation": "пугать",
+      "answer": "frighten",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fry:v:b1",
+      "word": "fry",
+      "translation": "жарить",
+      "answer": "fry",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fuel:v:b2",
+      "word": "fuel",
+      "translation": "подпитывать",
+      "answer": "fuel",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fully:adv:b2",
+      "word": "fully",
+      "translation": "полностью",
+      "answer": "fully",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:function:v:b2",
+      "word": "function",
+      "translation": "функционировать",
+      "answer": "function",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fund:n-v:b2",
+      "word": "fund",
+      "translation": "фонд; финансировать",
+      "answer": "fund",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:further:adv:b1",
+      "word": "further",
+      "translation": "дальше",
+      "answer": "further",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:furthermore:adv:b2",
+      "word": "furthermore",
+      "translation": "кроме того",
+      "answer": "furthermore",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:gain:v-n:b2",
+      "word": "gain",
+      "translation": "выгода; прирост; получать; приобретать",
+      "answer": "gain",
+      "level": "B2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:gather:v:b1",
+      "word": "gather",
+      "translation": "собрать",
+      "answer": "gather",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:generally:adv:b1",
+      "word": "generally",
+      "translation": "вообще",
+      "answer": "generally",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:generate:v:b2",
+      "word": "generate",
+      "translation": "генерировать",
+      "answer": "generate",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:get:v:a1",
+      "word": "get",
+      "translation": "получать; становиться",
+      "answer": "get",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:give:v:a1",
+      "word": "give",
+      "translation": "дать",
+      "answer": "give",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:go:v:a1",
+      "word": "go",
+      "translation": "идти; ехать",
+      "answer": "go",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:govern:v:b2",
+      "word": "govern",
+      "translation": "управлять",
+      "answer": "govern",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:grab:v:b2",
+      "word": "grab",
+      "translation": "схватить",
+      "answer": "grab",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:gradually:adv:b2",
+      "word": "gradually",
+      "translation": "постепенно",
+      "answer": "gradually",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:graduate:n-v:b1",
+      "word": "graduate",
+      "translation": "выпускник; оканчивать учебное заведение",
+      "answer": "graduate",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:grant:v-n:b2",
+      "word": "grant",
+      "translation": "грант; предоставлять",
+      "answer": "grant",
+      "level": "B2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:greet:v:a2",
+      "word": "greet",
+      "translation": "приветствовать",
+      "answer": "greet",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:grow:v:a1",
+      "word": "grow",
+      "translation": "расти",
+      "answer": "grow",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:guarantee:v-n:b2",
+      "word": "guarantee",
+      "translation": "гарантия; гарантировать",
+      "answer": "guarantee",
+      "level": "B2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:guard:n-v:b1",
+      "word": "guard",
+      "translation": "охранник; охранять",
+      "answer": "guard",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:guess:v-n:a1",
+      "word": "guess",
+      "translation": "догадка; угадывать; предполагать",
+      "answer": "guess",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:guide:n-v:a2",
+      "word": "guide",
+      "translation": "гид; руководство; направлять; руководить",
+      "answer": "guide",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:handle:v-n:b2",
+      "word": "handle",
+      "translation": "ручка; рукоятка; справляться с; обращаться с",
+      "answer": "handle",
+      "level": "B2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:hang:v:b1",
+      "word": "hang",
+      "translation": "повесить",
+      "answer": "hang",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:happen:v:a1",
+      "word": "happen",
+      "translation": "случиться",
+      "answer": "happen",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:happily:adv:a2",
+      "word": "happily",
+      "translation": "счастливо",
+      "answer": "happily",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:hard:adj-adv:a1",
+      "word": "hard",
+      "translation": "тяжело",
+      "answer": "hard",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:hardly:adv:b1",
+      "word": "hardly",
+      "translation": "вряд ли",
+      "answer": "hardly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:harm:n-v:b2",
+      "word": "harm",
+      "translation": "вред; вредить",
+      "answer": "harm",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:hate:v:a1",
+      "word": "hate",
+      "translation": "ненавидеть",
+      "answer": "hate",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:have:v:a1",
+      "word": "have",
+      "translation": "иметь; вспомогательный глагол",
+      "answer": "have",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:have:auxiliary-v:a2",
+      "word": "have",
+      "translation": "иметь; вспомогательный глагол",
+      "answer": "have",
+      "level": "A2",
+      "partOfSpeech": "вспом. гл."
+    },
+    {
+      "id": "oxford:hear:v:a1",
+      "word": "hear",
+      "translation": "слышать",
+      "answer": "hear",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:heavily:adv:b1",
+      "word": "heavily",
+      "translation": "сильно",
+      "answer": "heavily",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:help:v-n:a1",
+      "word": "help",
+      "translation": "помощь; помогать",
+      "answer": "help",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:here:adv:a1",
+      "word": "here",
+      "translation": "здесь",
+      "answer": "here",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:hesitate:v:b2",
+      "word": "hesitate",
+      "translation": "колебаться",
+      "answer": "hesitate",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:hide:v:a2",
+      "word": "hide",
+      "translation": "спрятать",
+      "answer": "hide",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:high:adv:a2",
+      "word": "high",
+      "translation": "высокий",
+      "answer": "high",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:highlight:v-n:b1",
+      "word": "highlight",
+      "translation": "главный момент; выделять",
+      "answer": "highlight",
+      "level": "B1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:highly:adv:b1",
+      "word": "highly",
+      "translation": "весьма",
+      "answer": "highly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:hike:n-v:a2",
+      "word": "hike",
+      "translation": "пеший поход; ходить в поход",
+      "answer": "hike",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:hit:v-n:a2",
+      "word": "hit",
+      "translation": "удар; хит; ударять",
+      "answer": "hit",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:hold:v:a2",
+      "word": "hold",
+      "translation": "держать",
+      "answer": "hold",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:honour:n-v:b2",
+      "word": "honour",
+      "translation": "честь; чтить",
+      "answer": "honour",
+      "level": "B2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:hope:v:a1",
+      "word": "hope",
+      "translation": "надеяться",
+      "answer": "hope",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:host:v:b2",
+      "word": "host",
+      "translation": "принимать гостей; проводить мероприятие",
+      "answer": "host",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:how:adv:a1",
+      "word": "how",
+      "translation": "как",
+      "answer": "how",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:however:adv:a1",
+      "word": "however",
+      "translation": "однако",
+      "answer": "however",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:hunt:v:b1",
+      "word": "hunt",
+      "translation": "охотиться",
+      "answer": "hunt",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:hurry:n-v:b1",
+      "word": "hurry",
+      "translation": "спешка; спешить",
+      "answer": "hurry",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:hurt:v-adj:a2",
+      "word": "hurt",
+      "translation": "причинять боль",
+      "answer": "hurt",
+      "level": "A2",
+      "partOfSpeech": "гл., прил."
+    },
+    {
+      "id": "oxford:identify:v:a2",
+      "word": "identify",
+      "translation": "идентифицировать",
+      "answer": "identify",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:ignore:v:b1",
+      "word": "ignore",
+      "translation": "игнорировать",
+      "answer": "ignore",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:illustrate:v:b2",
+      "word": "illustrate",
+      "translation": "иллюстрировать",
+      "answer": "illustrate",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:imagine:v:a1",
+      "word": "imagine",
+      "translation": "представлять себе",
+      "answer": "imagine",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:impact:n-v:b1",
+      "word": "impact",
+      "translation": "влияние; удар; влиять",
+      "answer": "impact",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:imply:v:b2",
+      "word": "imply",
+      "translation": "подразумевать",
+      "answer": "imply",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:import:n-v:b1",
+      "word": "import",
+      "translation": "импорт; импортировать",
+      "answer": "import",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:impose:v:b2",
+      "word": "impose",
+      "translation": "навязывать",
+      "answer": "impose",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:impress:v:b2",
+      "word": "impress",
+      "translation": "произвести впечатление",
+      "answer": "impress",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:improve:v:a1",
+      "word": "improve",
+      "translation": "улучшить",
+      "answer": "improve",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:include:v:a1",
+      "word": "include",
+      "translation": "включать",
+      "answer": "include",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:increase:v-n:a2",
+      "word": "increase",
+      "translation": "увеличение; увеличивать",
+      "answer": "increase",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:increasingly:adv:b2",
+      "word": "increasingly",
+      "translation": "все больше",
+      "answer": "increasingly",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:incredibly:adv:b1",
+      "word": "incredibly",
+      "translation": "невероятно",
+      "answer": "incredibly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:indeed:adv:b1",
+      "word": "indeed",
+      "translation": "действительно",
+      "answer": "indeed",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:indicate:v:b1",
+      "word": "indicate",
+      "translation": "указать",
+      "answer": "indicate",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:indoors:adv:b1",
+      "word": "indoors",
+      "translation": "в помещении",
+      "answer": "indoors",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:influence:n-v:b1",
+      "word": "influence",
+      "translation": "влияние; влиять",
+      "answer": "influence",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:inform:v:b2",
+      "word": "inform",
+      "translation": "информировать",
+      "answer": "inform",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:initially:adv:b2",
+      "word": "initially",
+      "translation": "изначально",
+      "answer": "initially",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:injure:v:b1",
+      "word": "injure",
+      "translation": "ранить",
+      "answer": "injure",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:insist:v:b2",
+      "word": "insist",
+      "translation": "настаивать",
+      "answer": "insist",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:inspire:v:b2",
+      "word": "inspire",
+      "translation": "вдохновлять",
+      "answer": "inspire",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:install:v:b2",
+      "word": "install",
+      "translation": "установить",
+      "answer": "install",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:instead:adv:a2",
+      "word": "instead",
+      "translation": "вместо этого",
+      "answer": "instead",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:intend:v:b1",
+      "word": "intend",
+      "translation": "намереваться",
+      "answer": "intend",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:interest:n-v:a1",
+      "word": "interest",
+      "translation": "интерес; проценты; интересовать",
+      "answer": "interest",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:interpret:v:b2",
+      "word": "interpret",
+      "translation": "интерпретировать",
+      "answer": "interpret",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:interrupt:v:b2",
+      "word": "interrupt",
+      "translation": "прерывать",
+      "answer": "interrupt",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:introduce:v:a1",
+      "word": "introduce",
+      "translation": "представить",
+      "answer": "introduce",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:invent:v:a2",
+      "word": "invent",
+      "translation": "изобретать",
+      "answer": "invent",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:investigate:v:b1",
+      "word": "investigate",
+      "translation": "исследовать",
+      "answer": "investigate",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:invite:v:a2",
+      "word": "invite",
+      "translation": "пригласить",
+      "answer": "invite",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:involve:v:a2",
+      "word": "involve",
+      "translation": "вовлекать",
+      "answer": "involve",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:iron:n-v:b1",
+      "word": "iron",
+      "translation": "железо; утюг; гладить утюгом",
+      "answer": "iron",
+      "level": "B1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:issue:v:b2",
+      "word": "issue",
+      "translation": "выпускать; выдавать",
+      "answer": "issue",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:join:v:a1",
+      "word": "join",
+      "translation": "присоединиться",
+      "answer": "join",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:joke:n-v:a2",
+      "word": "joke",
+      "translation": "шутка; шутить",
+      "answer": "joke",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:jump:v-n:a2",
+      "word": "jump",
+      "translation": "прыжок; прыгать",
+      "answer": "jump",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:just:adv:a1",
+      "word": "just",
+      "translation": "просто",
+      "answer": "just",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:justify:v:b2",
+      "word": "justify",
+      "translation": "оправдывать",
+      "answer": "justify",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    }
+  ]
+}

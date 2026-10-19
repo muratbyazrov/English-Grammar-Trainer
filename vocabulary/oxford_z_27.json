@@ -1,0 +1,537 @@
+{
+  "id": "oxford-extra-27",
+  "collection": "Oxford 3000",
+  "topic": "Общество и культура",
+  "subtopic": "Искусство и развлечения",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:art:n:a1",
+      "word": "art",
+      "translation": "искусство",
+      "answer": "art",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:artistic:adj:b2",
+      "word": "artistic",
+      "translation": "художественный",
+      "answer": "artistic",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:author:n:a2",
+      "word": "author",
+      "translation": "автор",
+      "answer": "author",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:award:n:a2",
+      "word": "award",
+      "translation": "награда",
+      "answer": "award",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:award:v:b1",
+      "word": "award",
+      "translation": "награждать",
+      "answer": "award",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:band:n:a1",
+      "word": "band",
+      "translation": "группа",
+      "answer": "band",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:basketball:n:a2",
+      "word": "basketball",
+      "translation": "баскетбол",
+      "answer": "basketball",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:camera:n:a1",
+      "word": "camera",
+      "translation": "камера",
+      "answer": "camera",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:celebrate:v:a2",
+      "word": "celebrate",
+      "translation": "праздновать",
+      "answer": "celebrate",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:celebration:n:b1",
+      "word": "celebration",
+      "translation": "праздник",
+      "answer": "celebration",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:competition:n:a2",
+      "word": "competition",
+      "translation": "конкуренция",
+      "answer": "competition",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:concert:n:a1",
+      "word": "concert",
+      "translation": "концерт",
+      "answer": "concert",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dance:n-v:a1",
+      "word": "dance",
+      "translation": "танец; танцевать",
+      "answer": "dance",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:dancing:n:a1",
+      "word": "dancing",
+      "translation": "танцы",
+      "answer": "dancing",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:entertainment:n:b1",
+      "word": "entertainment",
+      "translation": "развлечение",
+      "answer": "entertainment",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:episode:n:b1",
+      "word": "episode",
+      "translation": "эпизод",
+      "answer": "episode",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:festival:n:a1",
+      "word": "festival",
+      "translation": "фестиваль",
+      "answer": "festival",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:film:n:a1",
+      "word": "film",
+      "translation": "фильм; плёнка",
+      "answer": "film",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:film:v:a2",
+      "word": "film",
+      "translation": "снимать фильм",
+      "answer": "film",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:football:n:a1",
+      "word": "football",
+      "translation": "футбол",
+      "answer": "football",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fun:n:a1",
+      "word": "fun",
+      "translation": "веселье",
+      "answer": "fun",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fun:adj:a2",
+      "word": "fun",
+      "translation": "весёлый; забавный",
+      "answer": "fun",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:game:n:a1",
+      "word": "game",
+      "translation": "игра",
+      "answer": "game",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hobby:n:a1",
+      "word": "hobby",
+      "translation": "хобби",
+      "answer": "hobby",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:leisure:n:b1",
+      "word": "leisure",
+      "translation": "досуг",
+      "answer": "leisure",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:literature:n:b1",
+      "word": "literature",
+      "translation": "литература",
+      "answer": "literature",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lose:v:a1",
+      "word": "lose",
+      "translation": "проиграть",
+      "answer": "lose",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:match:n-v:a1",
+      "word": "match",
+      "translation": "матч; соответствие; соответствовать; подбирать пару",
+      "answer": "match",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:movie:n:a1",
+      "word": "movie",
+      "translation": "фильм",
+      "answer": "movie",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:music:n:a1",
+      "word": "music",
+      "translation": "музыка",
+      "answer": "music",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:musical:adj:a2",
+      "word": "musical",
+      "translation": "музыкальный",
+      "answer": "musical",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:musical:n:b1",
+      "word": "musical",
+      "translation": "мюзикл",
+      "answer": "musical",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:novel:n:a2",
+      "word": "novel",
+      "translation": "роман",
+      "answer": "novel",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:paint:v-n:a1",
+      "word": "paint",
+      "translation": "краска; красить; рисовать красками",
+      "answer": "paint",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:painting:n:a1",
+      "word": "painting",
+      "translation": "живопись",
+      "answer": "painting",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:party:n:a1",
+      "word": "party",
+      "translation": "вечеринка",
+      "answer": "party",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:perform:v:a2",
+      "word": "perform",
+      "translation": "выполнять",
+      "answer": "perform",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:performance:n:b1",
+      "word": "performance",
+      "translation": "производительность",
+      "answer": "performance",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:photo:n:a1",
+      "word": "photo",
+      "translation": "фото",
+      "answer": "photo",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:photograph:n:a1",
+      "word": "photograph",
+      "translation": "фотография",
+      "answer": "photograph",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:photograph:v:a2",
+      "word": "photograph",
+      "translation": "фотографировать",
+      "answer": "photograph",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:photography:n:b1",
+      "word": "photography",
+      "translation": "фотография",
+      "answer": "photography",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:picture:n:a1",
+      "word": "picture",
+      "translation": "картина; изображение",
+      "answer": "picture",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:picture:v:b2",
+      "word": "picture",
+      "translation": "представлять себе",
+      "answer": "picture",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:play:v-n:a1",
+      "word": "play",
+      "translation": "игра; пьеса; играть",
+      "answer": "play",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:poem:n:b1",
+      "word": "poem",
+      "translation": "стихотворение",
+      "answer": "poem",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:poetry:n:b1",
+      "word": "poetry",
+      "translation": "поэзия",
+      "answer": "poetry",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:prize:n:a2",
+      "word": "prize",
+      "translation": "приз",
+      "answer": "prize",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:run:v:a1",
+      "word": "run",
+      "translation": "бежать; управлять",
+      "answer": "run",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:run:n:a2",
+      "word": "run",
+      "translation": "бег; пробежка",
+      "answer": "run",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:running:n:a2",
+      "word": "running",
+      "translation": "бег",
+      "answer": "running",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:series:n:a2",
+      "word": "series",
+      "translation": "серия",
+      "answer": "series",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sing:v:a1",
+      "word": "sing",
+      "translation": "петь",
+      "answer": "sing",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:singer:n:a1",
+      "word": "singer",
+      "translation": "певец",
+      "answer": "singer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:soccer:n:a2",
+      "word": "soccer",
+      "translation": "футбол",
+      "answer": "soccer",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:song:n:a1",
+      "word": "song",
+      "translation": "песня",
+      "answer": "song",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sport:n:a1",
+      "word": "sport",
+      "translation": "спорт",
+      "answer": "sport",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:swim:v:a1",
+      "word": "swim",
+      "translation": "плавать",
+      "answer": "swim",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:swim:n:b1",
+      "word": "swim",
+      "translation": "плавание; заплыв",
+      "answer": "swim",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:swimming:n:a1",
+      "word": "swimming",
+      "translation": "плавание",
+      "answer": "swimming",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tennis:n:a1",
+      "word": "tennis",
+      "translation": "теннис",
+      "answer": "tennis",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:video:n:a1",
+      "word": "video",
+      "translation": "видео",
+      "answer": "video",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:win:v:a1",
+      "word": "win",
+      "translation": "побеждать; выигрывать",
+      "answer": "win",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:win:n:b1",
+      "word": "win",
+      "translation": "победа",
+      "answer": "win",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:winner:n:a2",
+      "word": "winner",
+      "translation": "победитель",
+      "answer": "winner",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:writer:n:a1",
+      "word": "writer",
+      "translation": "писатель",
+      "answer": "writer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

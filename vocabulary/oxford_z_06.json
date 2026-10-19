@@ -1,0 +1,377 @@
+{
+  "id": "oxford-extra-06",
+  "collection": "Oxford 3000",
+  "topic": "Грамматика и связки",
+  "subtopic": "Местоимения",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:anybody:pron:a2",
+      "word": "anybody",
+      "translation": "кто-нибудь; любой",
+      "answer": "anybody",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:anyone:pron:a1",
+      "word": "anyone",
+      "translation": "кто-нибудь; любой",
+      "answer": "anyone",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:anything:pron:a1",
+      "word": "anything",
+      "translation": "что-нибудь; всё что угодно",
+      "answer": "anything",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:anywhere:adv-pron:a2",
+      "word": "anywhere",
+      "translation": "где угодно",
+      "answer": "anywhere",
+      "level": "A2",
+      "partOfSpeech": "нареч., мест."
+    },
+    {
+      "id": "oxford:everybody:pron:a1",
+      "word": "everybody",
+      "translation": "все",
+      "answer": "everybody",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:everyone:pron:a1",
+      "word": "everyone",
+      "translation": "все",
+      "answer": "everyone",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:everything:pron:a1",
+      "word": "everything",
+      "translation": "всё",
+      "answer": "everything",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:he:pron:a1",
+      "word": "he",
+      "translation": "он",
+      "answer": "he",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:hers:pron:a2",
+      "word": "hers",
+      "translation": "ее",
+      "answer": "hers",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:herself:pron:a2",
+      "word": "herself",
+      "translation": "сама",
+      "answer": "herself",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:him:pron:a1",
+      "word": "him",
+      "translation": "его; ему",
+      "answer": "him",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:himself:pron:a2",
+      "word": "himself",
+      "translation": "сам",
+      "answer": "himself",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:his:pron:a2",
+      "word": "his",
+      "translation": "его",
+      "answer": "his",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:i:pron:a1",
+      "word": "I",
+      "translation": "я",
+      "answer": "I",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:it:pron:a1",
+      "word": "it",
+      "translation": "оно; это",
+      "answer": "it",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:itself:pron:a2",
+      "word": "itself",
+      "translation": "сам",
+      "answer": "itself",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:me:pron:a1",
+      "word": "me",
+      "translation": "я",
+      "answer": "me",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:mine:pron:a2",
+      "word": "mine",
+      "translation": "мой; моя; моё",
+      "answer": "mine",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:myself:pron:a2",
+      "word": "myself",
+      "translation": "я сам",
+      "answer": "myself",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:no-one:pron:a1",
+      "word": "no one",
+      "translation": "никто",
+      "answer": "no one",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:nobody:pron:a1",
+      "word": "nobody",
+      "translation": "никто",
+      "answer": "nobody",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:none:pron:a2",
+      "word": "none",
+      "translation": "ни один; ничто",
+      "answer": "none",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:nothing:pron:a1",
+      "word": "nothing",
+      "translation": "ничего",
+      "answer": "nothing",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:other:adj-pron:a1",
+      "word": "other",
+      "translation": "другой",
+      "answer": "other",
+      "level": "A1",
+      "partOfSpeech": "прил., мест."
+    },
+    {
+      "id": "oxford:ours:pron:b1",
+      "word": "ours",
+      "translation": "наш; наша; наше",
+      "answer": "ours",
+      "level": "B1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:ourselves:pron:a2",
+      "word": "ourselves",
+      "translation": "мы сами",
+      "answer": "ourselves",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:own:adj-pron:a1",
+      "word": "own",
+      "translation": "собственный",
+      "answer": "own",
+      "level": "A1",
+      "partOfSpeech": "прил., мест."
+    },
+    {
+      "id": "oxford:plenty:pron:b1",
+      "word": "plenty",
+      "translation": "много",
+      "answer": "plenty",
+      "level": "B1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:same:adj-pron-adv:a1",
+      "word": "same",
+      "translation": "тот же; одинаковый",
+      "answer": "same",
+      "level": "A1",
+      "partOfSpeech": "прил., мест., нареч."
+    },
+    {
+      "id": "oxford:she:pron:a1",
+      "word": "she",
+      "translation": "она",
+      "answer": "she",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:somebody:pron:a1",
+      "word": "somebody",
+      "translation": "кто-то",
+      "answer": "somebody",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:someone:pron:a1",
+      "word": "someone",
+      "translation": "кто-то",
+      "answer": "someone",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:something:pron:a1",
+      "word": "something",
+      "translation": "что-то",
+      "answer": "something",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:somewhere:adv-pron:a2",
+      "word": "somewhere",
+      "translation": "где-то",
+      "answer": "somewhere",
+      "level": "A2",
+      "partOfSpeech": "нареч., мест."
+    },
+    {
+      "id": "oxford:theirs:pron:b1",
+      "word": "theirs",
+      "translation": "их",
+      "answer": "theirs",
+      "level": "B1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:them:pron:a1",
+      "word": "them",
+      "translation": "их; им",
+      "answer": "them",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:themselves:pron:a2",
+      "word": "themselves",
+      "translation": "сами",
+      "answer": "themselves",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:they:pron:a1",
+      "word": "they",
+      "translation": "они",
+      "answer": "they",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:us:pron:a1",
+      "word": "us",
+      "translation": "мы",
+      "answer": "us",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:we:pron:a1",
+      "word": "we",
+      "translation": "мы",
+      "answer": "we",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:when:adv-pron-conj:a1",
+      "word": "when",
+      "translation": "когда",
+      "answer": "when",
+      "level": "A1",
+      "partOfSpeech": "нареч., мест., союз"
+    },
+    {
+      "id": "oxford:who:pron:a1",
+      "word": "who",
+      "translation": "кто",
+      "answer": "who",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:whom:pron:b2",
+      "word": "whom",
+      "translation": "кого",
+      "answer": "whom",
+      "level": "B2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:you:pron:a1",
+      "word": "you",
+      "translation": "ты; вы",
+      "answer": "you",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:yours:pron:a2",
+      "word": "yours",
+      "translation": "твой",
+      "answer": "yours",
+      "level": "A2",
+      "partOfSpeech": "мест."
+    },
+    {
+      "id": "oxford:yourself:pron:a1",
+      "word": "yourself",
+      "translation": "себя",
+      "answer": "yourself",
+      "level": "A1",
+      "partOfSpeech": "мест."
+    }
+  ]
+}

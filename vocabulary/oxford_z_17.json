@@ -1,0 +1,433 @@
+{
+  "id": "oxford-extra-17",
+  "collection": "Oxford 3000",
+  "topic": "Еда и напитки",
+  "subtopic": "Еда и продукты",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:banana:n:a1",
+      "word": "banana",
+      "translation": "банан",
+      "answer": "banana",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bean:n:a2",
+      "word": "bean",
+      "translation": "боб",
+      "answer": "bean",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:beef:n:a2",
+      "word": "beef",
+      "translation": "говядина",
+      "answer": "beef",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:beer:n:a1",
+      "word": "beer",
+      "translation": "пиво",
+      "answer": "beer",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:biscuit:n:a2",
+      "word": "biscuit",
+      "translation": "бисквит",
+      "answer": "biscuit",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bottle:n:a1",
+      "word": "bottle",
+      "translation": "бутылка",
+      "answer": "bottle",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bowl:n:a2",
+      "word": "bowl",
+      "translation": "чаша",
+      "answer": "bowl",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:butter:n:a1",
+      "word": "butter",
+      "translation": "сливочное масло",
+      "answer": "butter",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cake:n:a1",
+      "word": "cake",
+      "translation": "торт",
+      "answer": "cake",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chicken:n:a1",
+      "word": "chicken",
+      "translation": "курица",
+      "answer": "chicken",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chocolate:n:a1",
+      "word": "chocolate",
+      "translation": "шоколад",
+      "answer": "chocolate",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cook:v:a1",
+      "word": "cook",
+      "translation": "готовить еду",
+      "answer": "cook",
+      "level": "A1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:cook:n:a2",
+      "word": "cook",
+      "translation": "повар",
+      "answer": "cook",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cooking:n:a1",
+      "word": "cooking",
+      "translation": "приготовление пищи",
+      "answer": "cooking",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cream:n:a1",
+      "word": "cream",
+      "translation": "крем",
+      "answer": "cream",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cream:adj:b1",
+      "word": "cream",
+      "translation": "кремовый",
+      "answer": "cream",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:diet:n:a1",
+      "word": "diet",
+      "translation": "диета",
+      "answer": "diet",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dish:n:a1",
+      "word": "dish",
+      "translation": "блюдо",
+      "answer": "dish",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drink:n-v:a1",
+      "word": "drink",
+      "translation": "напиток; пить",
+      "answer": "drink",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:fish:n:a1",
+      "word": "fish",
+      "translation": "рыба",
+      "answer": "fish",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fish:v:a2",
+      "word": "fish",
+      "translation": "ловить рыбу",
+      "answer": "fish",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:flour:n:b1",
+      "word": "flour",
+      "translation": "мука",
+      "answer": "flour",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:food:n:a1",
+      "word": "food",
+      "translation": "еда",
+      "answer": "food",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fork:n:a2",
+      "word": "fork",
+      "translation": "вилка",
+      "answer": "fork",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fresh:adj:a2",
+      "word": "fresh",
+      "translation": "свежий",
+      "answer": "fresh",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:fruit:n:a1",
+      "word": "fruit",
+      "translation": "фрукты",
+      "answer": "fruit",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ice:n:a1",
+      "word": "ice",
+      "translation": "лед",
+      "answer": "ice",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ingredient:n:b1",
+      "word": "ingredient",
+      "translation": "ингредиент",
+      "answer": "ingredient",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:jam:n:a2",
+      "word": "jam",
+      "translation": "варенье",
+      "answer": "jam",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:knife:n:a2",
+      "word": "knife",
+      "translation": "нож",
+      "answer": "knife",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lemon:n:a2",
+      "word": "lemon",
+      "translation": "лимон",
+      "answer": "lemon",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:meal:n:a1",
+      "word": "meal",
+      "translation": "еда",
+      "answer": "meal",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:nut:n:a2",
+      "word": "nut",
+      "translation": "орех",
+      "answer": "nut",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:oil:n:a2",
+      "word": "oil",
+      "translation": "масло",
+      "answer": "oil",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:onion:n:a1",
+      "word": "onion",
+      "translation": "лук",
+      "answer": "onion",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:orange:n-adj:a1",
+      "word": "orange",
+      "translation": "оранжевый",
+      "answer": "orange",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:pepper:n:a1",
+      "word": "pepper",
+      "translation": "перец",
+      "answer": "pepper",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pizza:n:a1",
+      "word": "pizza",
+      "translation": "пицца",
+      "answer": "pizza",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:plate:n:a2",
+      "word": "plate",
+      "translation": "тарелка",
+      "answer": "plate",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:recipe:n:a2",
+      "word": "recipe",
+      "translation": "рецепт",
+      "answer": "recipe",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:restaurant:n:a1",
+      "word": "restaurant",
+      "translation": "ресторан",
+      "answer": "restaurant",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:salad:n:a1",
+      "word": "salad",
+      "translation": "салат",
+      "answer": "salad",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:salt:n:a1",
+      "word": "salt",
+      "translation": "соль",
+      "answer": "salt",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sandwich:n:a1",
+      "word": "sandwich",
+      "translation": "бутерброд",
+      "answer": "sandwich",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:soup:n:a1",
+      "word": "soup",
+      "translation": "суп",
+      "answer": "soup",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:spoon:n:a2",
+      "word": "spoon",
+      "translation": "ложка",
+      "answer": "spoon",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sugar:n:a1",
+      "word": "sugar",
+      "translation": "сахар",
+      "answer": "sugar",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sweet:adj-n:a2",
+      "word": "sweet",
+      "translation": "сладкий; сладость",
+      "answer": "sweet",
+      "level": "A2",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:taste:n-v:a2",
+      "word": "taste",
+      "translation": "вкус; пробовать на вкус",
+      "answer": "taste",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:thirsty:adj:a1",
+      "word": "thirsty",
+      "translation": "жаждущий",
+      "answer": "thirsty",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:tomato:n:a1",
+      "word": "tomato",
+      "translation": "помидор",
+      "answer": "tomato",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:water:v:b1",
+      "word": "water",
+      "translation": "поливать",
+      "answer": "water",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:wine:n:a1",
+      "word": "wine",
+      "translation": "вино",
+      "answer": "wine",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

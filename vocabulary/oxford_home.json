@@ -1,0 +1,149 @@
+{
+  "id": "oxford-home",
+  "collection": "Oxford 3000",
+  "topic": "Повседневная жизнь",
+  "subtopic": "Дом и вещи",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:house:noun",
+      "word": "house",
+      "translation": "дом (здание)",
+      "answer": "house",
+      "answers": [
+        {
+          "text": "house",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:room:noun",
+      "word": "room",
+      "translation": "комната",
+      "answer": "room",
+      "answers": [
+        {
+          "text": "room",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:kitchen:noun",
+      "word": "kitchen",
+      "translation": "кухня",
+      "answer": "kitchen",
+      "answers": [
+        {
+          "text": "kitchen",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bathroom:noun",
+      "word": "bathroom",
+      "translation": "ванная комната",
+      "answer": "bathroom",
+      "answers": [
+        {
+          "text": "bathroom",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:door:noun",
+      "word": "door",
+      "translation": "дверь",
+      "answer": "door",
+      "answers": [
+        {
+          "text": "door",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:window:noun",
+      "word": "window",
+      "translation": "окно",
+      "answer": "window",
+      "answers": [
+        {
+          "text": "window",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bed:noun",
+      "word": "bed",
+      "translation": "кровать",
+      "answer": "bed",
+      "answers": [
+        {
+          "text": "bed",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chair:noun",
+      "word": "chair",
+      "translation": "стул",
+      "answer": "chair",
+      "answers": [
+        {
+          "text": "chair",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:table:noun",
+      "word": "table",
+      "translation": "стол",
+      "answer": "table",
+      "answers": [
+        {
+          "text": "table",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:key:noun",
+      "word": "key",
+      "translation": "ключ (от двери)",
+      "answer": "key",
+      "answers": [
+        {
+          "text": "key",
+          "weight": 1
+        }
+      ],
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

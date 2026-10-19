@@ -1,0 +1,497 @@
+{
+  "id": "oxford-extra-24",
+  "collection": "Oxford 3000",
+  "topic": "Люди и семья",
+  "subtopic": "Тело и здоровье",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:arm:n:a1",
+      "word": "arm",
+      "translation": "рука",
+      "answer": "arm",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:back:n-adv:a1",
+      "word": "back",
+      "translation": "спина; задняя часть; назад",
+      "answer": "back",
+      "level": "A1",
+      "partOfSpeech": "сущ., нареч."
+    },
+    {
+      "id": "oxford:back:adj:a2",
+      "word": "back",
+      "translation": "задний",
+      "answer": "back",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:back:v:b2",
+      "word": "back",
+      "translation": "поддерживать",
+      "answer": "back",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:blood:n:a2",
+      "word": "blood",
+      "translation": "кровь",
+      "answer": "blood",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:body:n:a1",
+      "word": "body",
+      "translation": "тело",
+      "answer": "body",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:brain:n:a2",
+      "word": "brain",
+      "translation": "мозг",
+      "answer": "brain",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:breath:n:b2",
+      "word": "breath",
+      "translation": "дыхание",
+      "answer": "breath",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:breathe:v:b1",
+      "word": "breathe",
+      "translation": "дышать",
+      "answer": "breathe",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:cold:adj-n:a1",
+      "word": "cold",
+      "translation": "холодный",
+      "answer": "cold",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:cure:v-n:b2",
+      "word": "cure",
+      "translation": "лекарство; излечение; лечить",
+      "answer": "cure",
+      "level": "B2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:dentist:n:a2",
+      "word": "dentist",
+      "translation": "дантист",
+      "answer": "dentist",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:disease:n:a2",
+      "word": "disease",
+      "translation": "болезнь",
+      "answer": "disease",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:doctor:n:a1",
+      "word": "doctor",
+      "translation": "врач",
+      "answer": "doctor",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:drug:n:a2",
+      "word": "drug",
+      "translation": "наркотик",
+      "answer": "drug",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ear:n:a1",
+      "word": "ear",
+      "translation": "ухо",
+      "answer": "ear",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:exercise:n-v:a1",
+      "word": "exercise",
+      "translation": "упражнение; упражняться",
+      "answer": "exercise",
+      "level": "A1",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:eye:n:a1",
+      "word": "eye",
+      "translation": "глаз",
+      "answer": "eye",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:face:n:a1",
+      "word": "face",
+      "translation": "лицо; поверхность",
+      "answer": "face",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:face:v:b1",
+      "word": "face",
+      "translation": "сталкиваться с; быть обращённым к",
+      "answer": "face",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:finger:n:a2",
+      "word": "finger",
+      "translation": "палец",
+      "answer": "finger",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:foot:n:a1",
+      "word": "foot",
+      "translation": "нога",
+      "answer": "foot",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hair:n:a1",
+      "word": "hair",
+      "translation": "волосы",
+      "answer": "hair",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hand:n:a1",
+      "word": "hand",
+      "translation": "кисть руки",
+      "answer": "hand",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hand:v:b1",
+      "word": "hand",
+      "translation": "передавать в руки",
+      "answer": "hand",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:head:n:a1",
+      "word": "head",
+      "translation": "голова; руководитель",
+      "answer": "head",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:head:v:b1",
+      "word": "head",
+      "translation": "возглавлять; направляться",
+      "answer": "head",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:health:n:a1",
+      "word": "health",
+      "translation": "здоровье",
+      "answer": "health",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:healthy:adj:a1",
+      "word": "healthy",
+      "translation": "здоровый",
+      "answer": "healthy",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:heart:n:a2",
+      "word": "heart",
+      "translation": "сердце",
+      "answer": "heart",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:hospital:n:a1",
+      "word": "hospital",
+      "translation": "больница",
+      "answer": "hospital",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ill:adj:a2",
+      "word": "ill",
+      "translation": "болен",
+      "answer": "ill",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:illness:n:a2",
+      "word": "illness",
+      "translation": "болезнь",
+      "answer": "illness",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:injured:adj:b1",
+      "word": "injured",
+      "translation": "раненый",
+      "answer": "injured",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:injury:n:a2",
+      "word": "injury",
+      "translation": "травма",
+      "answer": "injury",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:knee:n:a2",
+      "word": "knee",
+      "translation": "колено",
+      "answer": "knee",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:leg:n:a1",
+      "word": "leg",
+      "translation": "нога",
+      "answer": "leg",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:medical:adj:a2",
+      "word": "medical",
+      "translation": "медицинский",
+      "answer": "medical",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:medicine:n:a2",
+      "word": "medicine",
+      "translation": "медицина",
+      "answer": "medicine",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:mental:adj:b1",
+      "word": "mental",
+      "translation": "умственный",
+      "answer": "mental",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:mouth:n:a1",
+      "word": "mouth",
+      "translation": "рот",
+      "answer": "mouth",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:neck:n:a2",
+      "word": "neck",
+      "translation": "шея",
+      "answer": "neck",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:nose:n:a1",
+      "word": "nose",
+      "translation": "нос",
+      "answer": "nose",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:nurse:n:a1",
+      "word": "nurse",
+      "translation": "медсестра",
+      "answer": "nurse",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pain:n:a2",
+      "word": "pain",
+      "translation": "боль",
+      "answer": "pain",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:painful:adj:b1",
+      "word": "painful",
+      "translation": "болезненный",
+      "answer": "painful",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:patient:n:a2",
+      "word": "patient",
+      "translation": "пациент",
+      "answer": "patient",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:patient:adj:b2",
+      "word": "patient",
+      "translation": "терпеливый",
+      "answer": "patient",
+      "level": "B2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:physical:adj:a2",
+      "word": "physical",
+      "translation": "физический",
+      "answer": "physical",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:shoulder:n:a2",
+      "word": "shoulder",
+      "translation": "плечо",
+      "answer": "shoulder",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sick:adj:a1",
+      "word": "sick",
+      "translation": "больной",
+      "answer": "sick",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:skin:n:a2",
+      "word": "skin",
+      "translation": "кожа",
+      "answer": "skin",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sleep:n:a2",
+      "word": "sleep",
+      "translation": "сон",
+      "answer": "sleep",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:stomach:n:a2",
+      "word": "stomach",
+      "translation": "желудок",
+      "answer": "stomach",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:stress:n-v:a2",
+      "word": "stress",
+      "translation": "стресс; ударение; подчёркивать",
+      "answer": "stress",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:tired:adj:a1",
+      "word": "tired",
+      "translation": "устал",
+      "answer": "tired",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:tongue:n:b1",
+      "word": "tongue",
+      "translation": "язык",
+      "answer": "tongue",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tooth:n:a1",
+      "word": "tooth",
+      "translation": "зуб",
+      "answer": "tooth",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:treatment:n:b1",
+      "word": "treatment",
+      "translation": "лечение",
+      "answer": "treatment",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:vaccine:n:b2",
+      "word": "vaccine",
+      "translation": "вакцина",
+      "answer": "vaccine",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:virus:n:a2",
+      "word": "virus",
+      "translation": "вирус",
+      "answer": "virus",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

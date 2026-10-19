@@ -1,0 +1,281 @@
+{
+  "id": "oxford-extra-26",
+  "collection": "Oxford 3000",
+  "topic": "Наука и измерения",
+  "subtopic": "Числа и количества",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:billion:number:a2",
+      "word": "billion",
+      "translation": "миллиард",
+      "answer": "billion",
+      "level": "A2",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:eight:number:a1",
+      "word": "eight",
+      "translation": "восемь",
+      "answer": "eight",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:eighteen:number:a1",
+      "word": "eighteen",
+      "translation": "восемнадцать",
+      "answer": "eighteen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:eighty:number:a1",
+      "word": "eighty",
+      "translation": "восемьдесят",
+      "answer": "eighty",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:eleven:number:a1",
+      "word": "eleven",
+      "translation": "одиннадцать",
+      "answer": "eleven",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:fifteen:number:a1",
+      "word": "fifteen",
+      "translation": "пятнадцать",
+      "answer": "fifteen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:fifth:number:a1",
+      "word": "fifth",
+      "translation": "пятый",
+      "answer": "fifth",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:fifty:number:a1",
+      "word": "fifty",
+      "translation": "пятьдесят",
+      "answer": "fifty",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:five:number:a1",
+      "word": "five",
+      "translation": "пять",
+      "answer": "five",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:forty:number:a1",
+      "word": "forty",
+      "translation": "сорок",
+      "answer": "forty",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:four:number:a1",
+      "word": "four",
+      "translation": "четыре",
+      "answer": "four",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:fourteen:number:a1",
+      "word": "fourteen",
+      "translation": "четырнадцать",
+      "answer": "fourteen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:fourth:number:a1",
+      "word": "fourth",
+      "translation": "четвертый",
+      "answer": "fourth",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:hundred:number:a1",
+      "word": "hundred",
+      "translation": "сто",
+      "answer": "hundred",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:million:number:a1",
+      "word": "million",
+      "translation": "миллион",
+      "answer": "million",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:nine:number:a1",
+      "word": "nine",
+      "translation": "девять",
+      "answer": "nine",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:nineteen:number:a1",
+      "word": "nineteen",
+      "translation": "девятнадцать",
+      "answer": "nineteen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:ninety:number:a1",
+      "word": "ninety",
+      "translation": "девяносто",
+      "answer": "ninety",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:seven:number:a1",
+      "word": "seven",
+      "translation": "семь",
+      "answer": "seven",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:seventeen:number:a1",
+      "word": "seventeen",
+      "translation": "семнадцать",
+      "answer": "seventeen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:seventy:number:a1",
+      "word": "seventy",
+      "translation": "семьдесят",
+      "answer": "seventy",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:six:number:a1",
+      "word": "six",
+      "translation": "шесть",
+      "answer": "six",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:sixteen:number:a1",
+      "word": "sixteen",
+      "translation": "шестнадцать",
+      "answer": "sixteen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:sixty:number:a1",
+      "word": "sixty",
+      "translation": "шестьдесят",
+      "answer": "sixty",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:ten:number:a1",
+      "word": "ten",
+      "translation": "десять",
+      "answer": "ten",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:third:number:a1",
+      "word": "third",
+      "translation": "третий",
+      "answer": "third",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:thirteen:number:a1",
+      "word": "thirteen",
+      "translation": "тринадцать",
+      "answer": "thirteen",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:thirty:number:a1",
+      "word": "thirty",
+      "translation": "тридцать",
+      "answer": "thirty",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:thousand:number:a1",
+      "word": "thousand",
+      "translation": "тысяча",
+      "answer": "thousand",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:three:number:a1",
+      "word": "three",
+      "translation": "три",
+      "answer": "three",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:twelve:number:a1",
+      "word": "twelve",
+      "translation": "двенадцать",
+      "answer": "twelve",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:twenty:number:a1",
+      "word": "twenty",
+      "translation": "двадцать",
+      "answer": "twenty",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:two:number:a1",
+      "word": "two",
+      "translation": "два",
+      "answer": "two",
+      "level": "A1",
+      "partOfSpeech": "числ."
+    },
+    {
+      "id": "oxford:zero:number:a2",
+      "word": "zero",
+      "translation": "ноль",
+      "answer": "zero",
+      "level": "A2",
+      "partOfSpeech": "числ."
+    }
+  ]
+}

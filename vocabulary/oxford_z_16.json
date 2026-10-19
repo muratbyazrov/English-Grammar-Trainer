@@ -1,0 +1,513 @@
+{
+  "id": "oxford-extra-16",
+  "collection": "Oxford 3000",
+  "topic": "Дом и быт",
+  "subtopic": "Дом и вещи",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:apartment:n:a1",
+      "word": "apartment",
+      "translation": "квартира",
+      "answer": "apartment",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bag:n:a1",
+      "word": "bag",
+      "translation": "сумка",
+      "answer": "bag",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bath:n:a1",
+      "word": "bath",
+      "translation": "ванна",
+      "answer": "bath",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bedroom:n:a1",
+      "word": "bedroom",
+      "translation": "спальня",
+      "answer": "bedroom",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:box:n:a1",
+      "word": "box",
+      "translation": "коробка",
+      "answer": "box",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:broken:adj:a2",
+      "word": "broken",
+      "translation": "сломанный",
+      "answer": "broken",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:building:n:a1",
+      "word": "building",
+      "translation": "здание",
+      "answer": "building",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:carpet:n:a2",
+      "word": "carpet",
+      "translation": "ковер",
+      "answer": "carpet",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:ceiling:n:b1",
+      "word": "ceiling",
+      "translation": "потолок",
+      "answer": "ceiling",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:chair:v:b2",
+      "word": "chair",
+      "translation": "председательствовать",
+      "answer": "chair",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:clean:adj-v:a1",
+      "word": "clean",
+      "translation": "чистый",
+      "answer": "clean",
+      "level": "A1",
+      "partOfSpeech": "прил., гл."
+    },
+    {
+      "id": "oxford:clock:n:a1",
+      "word": "clock",
+      "translation": "часы",
+      "answer": "clock",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cupboard:n:a2",
+      "word": "cupboard",
+      "translation": "шкаф",
+      "answer": "cupboard",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:curtain:n:b1",
+      "word": "curtain",
+      "translation": "занавес",
+      "answer": "curtain",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:desk:n:a1",
+      "word": "desk",
+      "translation": "стол",
+      "answer": "desk",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:device:n:a2",
+      "word": "device",
+      "translation": "устройство",
+      "answer": "device",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:electrical:adj:a2",
+      "word": "electrical",
+      "translation": "электрический",
+      "answer": "electrical",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:electricity:n:a2",
+      "word": "electricity",
+      "translation": "электричество",
+      "answer": "electricity",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fix:v:a2",
+      "word": "fix",
+      "translation": "чинить; исправлять",
+      "answer": "fix",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:fix:n:b2",
+      "word": "fix",
+      "translation": "решение проблемы",
+      "answer": "fix",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:flat:n:a1",
+      "word": "flat",
+      "translation": "квартира",
+      "answer": "flat",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:flat:adj:a2",
+      "word": "flat",
+      "translation": "плоский; ровный",
+      "answer": "flat",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:floor:n:a1",
+      "word": "floor",
+      "translation": "пол",
+      "answer": "floor",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:fridge:n:a2",
+      "word": "fridge",
+      "translation": "холодильник",
+      "answer": "fridge",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:furniture:n:a2",
+      "word": "furniture",
+      "translation": "мебель",
+      "answer": "furniture",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:garage:n:b1",
+      "word": "garage",
+      "translation": "гараж",
+      "answer": "garage",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:garden:n:a1",
+      "word": "garden",
+      "translation": "сад",
+      "answer": "garden",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:heat:n-v:a2",
+      "word": "heat",
+      "translation": "тепло; жара; нагревать",
+      "answer": "heat",
+      "level": "A2",
+      "partOfSpeech": "сущ., гл."
+    },
+    {
+      "id": "oxford:heating:n:b1",
+      "word": "heating",
+      "translation": "отопление",
+      "answer": "heating",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:home:n-adv:a1",
+      "word": "home",
+      "translation": "дом",
+      "answer": "home",
+      "level": "A1",
+      "partOfSpeech": "сущ., нареч."
+    },
+    {
+      "id": "oxford:home:adj:a2",
+      "word": "home",
+      "translation": "домашний",
+      "answer": "home",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:house:v:b2",
+      "word": "house",
+      "translation": "размещать; предоставлять жильё",
+      "answer": "house",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:key:v:b1",
+      "word": "key",
+      "translation": "вводить с клавиатуры",
+      "answer": "key",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:lamp:n:a2",
+      "word": "lamp",
+      "translation": "лампа",
+      "answer": "lamp",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:light:n-adj:a1",
+      "word": "light",
+      "translation": "свет; освещённый; светлый",
+      "answer": "light",
+      "level": "A1",
+      "partOfSpeech": "сущ., прил."
+    },
+    {
+      "id": "oxford:light:adj:a2:2",
+      "word": "light",
+      "translation": "лёгкий (не тяжёлый)",
+      "answer": "light",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:light:v:a2",
+      "word": "light",
+      "translation": "зажигать; освещать",
+      "answer": "light",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:lock:v-n:a2",
+      "word": "lock",
+      "translation": "замок; запирать",
+      "answer": "lock",
+      "level": "A2",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:machine:n:a1",
+      "word": "machine",
+      "translation": "машина",
+      "answer": "machine",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:mirror:n:a2",
+      "word": "mirror",
+      "translation": "зеркало",
+      "answer": "mirror",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:oven:n:a2",
+      "word": "oven",
+      "translation": "духовка",
+      "answer": "oven",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:radio:n:a1",
+      "word": "radio",
+      "translation": "радио",
+      "answer": "radio",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:repair:v:a2",
+      "word": "repair",
+      "translation": "ремонтировать",
+      "answer": "repair",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:repair:n:b1",
+      "word": "repair",
+      "translation": "ремонт",
+      "answer": "repair",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:roof:n:a2",
+      "word": "roof",
+      "translation": "крыша",
+      "answer": "roof",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sheet:n:a2",
+      "word": "sheet",
+      "translation": "лист",
+      "answer": "sheet",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:shelf:n:b1",
+      "word": "shelf",
+      "translation": "полка",
+      "answer": "shelf",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:shower:n:a1",
+      "word": "shower",
+      "translation": "душ",
+      "answer": "shower",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sink:v:b1",
+      "word": "sink",
+      "translation": "тонуть",
+      "answer": "sink",
+      "level": "B1",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:soap:n:a2",
+      "word": "soap",
+      "translation": "мыло",
+      "answer": "soap",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:stair:n:a2",
+      "word": "stair",
+      "translation": "лестница",
+      "answer": "stair",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:step:n:a2",
+      "word": "step",
+      "translation": "шаг",
+      "answer": "step",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:step:v:b2",
+      "word": "step",
+      "translation": "шагать; ступать",
+      "answer": "step",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:television:n:a1",
+      "word": "television",
+      "translation": "телевидение",
+      "answer": "television",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tidy:adj-v:a2",
+      "word": "tidy",
+      "translation": "аккуратный",
+      "answer": "tidy",
+      "level": "A2",
+      "partOfSpeech": "прил., гл."
+    },
+    {
+      "id": "oxford:toilet:n:a1",
+      "word": "toilet",
+      "translation": "туалет",
+      "answer": "toilet",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tool:n:a2",
+      "word": "tool",
+      "translation": "инструмент",
+      "answer": "tool",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:towel:n:a2",
+      "word": "towel",
+      "translation": "полотенце",
+      "answer": "towel",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tv:n:a1",
+      "word": "TV",
+      "translation": "ТВ",
+      "answer": "TV",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wall:n:a1",
+      "word": "wall",
+      "translation": "стена",
+      "answer": "wall",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wash:n:a2",
+      "word": "wash",
+      "translation": "мытьё; стирка",
+      "answer": "wash",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:watch:v-n:a1",
+      "word": "watch",
+      "translation": "наручные часы; смотреть; наблюдать",
+      "answer": "watch",
+      "level": "A1",
+      "partOfSpeech": "гл., сущ."
+    },
+    {
+      "id": "oxford:yard:n:b1",
+      "word": "yard",
+      "translation": "двор",
+      "answer": "yard",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}

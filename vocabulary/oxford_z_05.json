@@ -1,0 +1,161 @@
+{
+  "id": "oxford-extra-05",
+  "collection": "Oxford 3000",
+  "topic": "Грамматика и связки",
+  "subtopic": "Междометия",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:ah:exclam:a2",
+      "word": "ah",
+      "translation": "ах",
+      "answer": "ah",
+      "level": "A2",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:all-right:adj-adv-exclam:a2",
+      "word": "all right",
+      "translation": "все в порядке",
+      "answer": "all right",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч., межд."
+    },
+    {
+      "id": "oxford:attention:n-exclam:a2",
+      "word": "attention",
+      "translation": "внимание",
+      "answer": "attention",
+      "level": "A2",
+      "partOfSpeech": "сущ., межд."
+    },
+    {
+      "id": "oxford:bye:exclam:a1",
+      "word": "bye",
+      "translation": "пока",
+      "answer": "bye",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:dear:exclam:a2",
+      "word": "dear",
+      "translation": "дорогой",
+      "answer": "dear",
+      "level": "A2",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:goodbye:exclam-n:a1",
+      "word": "goodbye",
+      "translation": "до свидания",
+      "answer": "goodbye",
+      "level": "A1",
+      "partOfSpeech": "межд., сущ."
+    },
+    {
+      "id": "oxford:hello:exclam-n:a1",
+      "word": "hello",
+      "translation": "привет",
+      "answer": "hello",
+      "level": "A1",
+      "partOfSpeech": "межд., сущ."
+    },
+    {
+      "id": "oxford:hey:exclam:a1",
+      "word": "hey",
+      "translation": "эй",
+      "answer": "hey",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:hi:exclam:a1",
+      "word": "hi",
+      "translation": "привет",
+      "answer": "hi",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:oh:exclam:a1",
+      "word": "oh",
+      "translation": "ох",
+      "answer": "oh",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:ok:exclam-adj-adv:a1",
+      "word": "OK",
+      "translation": "ОК",
+      "answer": "OK",
+      "level": "A1",
+      "partOfSpeech": "межд., прил., нареч."
+    },
+    {
+      "id": "oxford:please:exclam:a1",
+      "word": "please",
+      "translation": "пожалуйста",
+      "answer": "please",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:sorry:adj-exclam:a1",
+      "word": "sorry",
+      "translation": "извини",
+      "answer": "sorry",
+      "level": "A1",
+      "partOfSpeech": "прил., межд."
+    },
+    {
+      "id": "oxford:thanks:exclam-n:a1",
+      "word": "thanks",
+      "translation": "спасибо",
+      "answer": "thanks",
+      "level": "A1",
+      "partOfSpeech": "межд., сущ."
+    },
+    {
+      "id": "oxford:welcome:exclam-v-adj:a1",
+      "word": "welcome",
+      "translation": "приветствовать",
+      "answer": "welcome",
+      "level": "A1",
+      "partOfSpeech": "межд., гл., прил."
+    },
+    {
+      "id": "oxford:well:adv-adj-exclam:a1",
+      "word": "well",
+      "translation": "ну",
+      "answer": "well",
+      "level": "A1",
+      "partOfSpeech": "нареч., прил., межд."
+    },
+    {
+      "id": "oxford:wow:exclam:a2",
+      "word": "wow",
+      "translation": "вау",
+      "answer": "wow",
+      "level": "A2",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:yeah:exclam:a1",
+      "word": "yeah",
+      "translation": "да",
+      "answer": "yeah",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    },
+    {
+      "id": "oxford:yes:exclam:a1",
+      "word": "yes",
+      "translation": "да",
+      "answer": "yes",
+      "level": "A1",
+      "partOfSpeech": "межд."
+    }
+  ]
+}

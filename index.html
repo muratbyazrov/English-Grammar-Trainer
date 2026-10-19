@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=15" />
+    <link rel="stylesheet" href="./styles.css?v=30" />
   </head>
   <body>
     <main class="app">
@@ -21,7 +21,20 @@
         <div class="theory-tab-group" id="theory-tab-group">
           <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
           <span id="controls-theory" class="theory-topic-control" hidden>
-            <select id="theory-topic" aria-label="Тема теории"></select>
+            <select id="theory-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
+            <button
+              id="theory-topic-trigger"
+              class="vocab-topic-trigger"
+              type="button"
+              aria-label="Выберите тему теории"
+              aria-haspopup="dialog"
+              aria-controls="theory-topic-overlay"
+              aria-expanded="false"
+            >
+              <span id="theory-topic-trigger-icon" class="vocab-topic-trigger-icon" aria-hidden="true">📚</span>
+              <span id="theory-topic-trigger-text" class="vocab-topic-trigger-text">Выберите тему</span>
+              <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
+            </button>
           </span>
         </div>
       </nav>
@@ -159,6 +172,9 @@
             <button id="check-btn" type="button">Проверить</button>
             <button id="next-btn" type="button">Следующий →</button>
           </div>
+          <div id="vocab-topic-navigation" class="vocab-topic-navigation" hidden>
+            <button id="vocab-next-topic" type="button">Следующая тема →</button>
+          </div>
 
           <div id="shadowing-panel" class="shadowing-panel" hidden>
             <div class="shadowing-prompt">
@@ -182,6 +198,11 @@
 
         <article id="theory-panel" class="theory-panel" hidden>
           <h2 id="theory-title"></h2>
+          <div class="theory-view-switch" role="group" aria-label="Режим теории">
+            <button id="theory-view-short" class="theory-view-button" type="button" aria-pressed="true" aria-controls="theory-body">Коротко</button>
+            <button id="theory-view-detailed" class="theory-view-button" type="button" aria-pressed="false" aria-controls="theory-body">Подробно</button>
+            <button id="theory-view-visual" class="theory-view-button" type="button" aria-pressed="false" aria-controls="theory-body" hidden>Наглядно</button>
+          </div>
           <div id="theory-body"></div>
         </article>
       </section>
@@ -213,9 +234,14 @@
             <span class="sc-stat-label">результат</span>
           </div>
         </div>
-        <button id="next-session-btn" type="button" class="sc-next-btn">
-          Начать заново →
-        </button>
+        <div class="sc-actions">
+          <button id="next-session-btn" type="button" class="sc-next-btn">
+            Начать заново →
+          </button>
+          <button id="sc-next-topic" type="button" class="sc-next-btn" hidden>
+            Следующая тема →
+          </button>
+        </div>
       </div>
     </div>
 
@@ -243,7 +269,7 @@
       <div class="vocab-list-modal vocab-topic-modal" role="dialog" aria-modal="true" aria-labelledby="vocab-topic-modal-title">
         <header class="vocab-list-header">
           <div>
-            <h2 id="vocab-topic-modal-title">Выберите тему</h2>
+            <h2 id="vocab-topic-modal-title">Наборы и темы</h2>
             <p id="vocab-topic-modal-subtitle" class="vocab-list-subtitle"></p>
           </div>
           <button
@@ -255,7 +281,7 @@
             ×
           </button>
         </header>
-        <div id="vocab-topic-grid" class="vocab-topic-grid" role="listbox" aria-labelledby="vocab-topic-modal-title"></div>
+        <div id="vocab-topic-grid" class="vocab-topic-grid" role="group" aria-labelledby="vocab-topic-modal-title"></div>
       </div>
     </div>
 
@@ -299,16 +325,38 @@
       </div>
     </div>
 
-    <script src="./questions.js"></script>
-    <script src="./vocabulary.js?v=28"></script>
-    <script src="./js/learning-data.js?v=2"></script>
+    <div id="theory-topic-overlay" class="vocab-list-overlay vocab-topic-overlay" hidden>
+      <div class="vocab-list-modal vocab-topic-modal" role="dialog" aria-modal="true" aria-labelledby="theory-topic-modal-title">
+        <header class="vocab-list-header">
+          <div>
+            <h2 id="theory-topic-modal-title">Выберите тему теории</h2>
+            <p id="theory-topic-modal-subtitle" class="vocab-list-subtitle"></p>
+          </div>
+          <button
+            id="theory-topic-close"
+            type="button"
+            class="vocab-list-close"
+            aria-label="Закрыть выбор темы теории"
+          >
+            ×
+          </button>
+        </header>
+        <div id="theory-topic-grid" class="vocab-topic-grid theory-topic-grid" role="listbox" aria-labelledby="theory-topic-modal-title"></div>
+      </div>
+    </div>
+
+    <script src="./questions.js?v=2"></script>
+    <script src="./vocabulary.js?v=30"></script>
+    <script src="./js/learning-data.js?v=9"></script>
     <script src="./js/activity.js?v=1"></script>
-    <script src="./js/speech.js?v=1"></script>
-    <script src="./js/progress.js?v=1"></script>
-    <script src="./js/grammar-mode.js?v=2"></script>
-    <script src="./js/vocabulary-mode.js?v=1"></script>
-    <script src="./js/shadowing-mode.js?v=2"></script>
-    <script src="./js/theory-mode.js?v=1"></script>
-    <script src="./app.js?v=37"></script>
+    <script src="./js/speech.js?v=3"></script>
+    <script src="./js/progress.js?v=2"></script>
+    <script src="./js/grammar-mode.js?v=4"></script>
+    <script src="./js/vocabulary-catalog.js?v=2"></script>
+    <script src="./js/vocabulary-mode.js?v=7"></script>
+    <script src="./js/shadowing-mode.js?v=3"></script>
+    <script src="./js/future-presentation.js?v=6"></script>
+    <script src="./js/theory-mode.js?v=8"></script>
+    <script src="./app.js?v=47"></script>
   </body>
 </html>

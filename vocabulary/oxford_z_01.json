@@ -1,0 +1,617 @@
+{
+  "id": "oxford-extra-01",
+  "collection": "Oxford 3000",
+  "topic": "Время и порядок",
+  "subtopic": "Время и частота",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:after:prep:a1",
+      "word": "after",
+      "translation": "после",
+      "answer": "after",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:after:conj-adv:a2",
+      "word": "after",
+      "translation": "после",
+      "answer": "after",
+      "level": "A2",
+      "partOfSpeech": "союз, нареч."
+    },
+    {
+      "id": "oxford:afternoon:n:a1",
+      "word": "afternoon",
+      "translation": "вторая половина дня",
+      "answer": "afternoon",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:again:adv:a1",
+      "word": "again",
+      "translation": "снова",
+      "answer": "again",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:already:adv:a2",
+      "word": "already",
+      "translation": "уже",
+      "answer": "already",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:always:adv:a1",
+      "word": "always",
+      "translation": "всегда",
+      "answer": "always",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:april:n:a1",
+      "word": "April",
+      "translation": "апрель",
+      "answer": "April",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:august:n:a1",
+      "word": "August",
+      "translation": "август",
+      "answer": "August",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:before:prep:a1",
+      "word": "before",
+      "translation": "раньше",
+      "answer": "before",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:before:conj-adv:a2",
+      "word": "before",
+      "translation": "раньше",
+      "answer": "before",
+      "level": "A2",
+      "partOfSpeech": "союз, нареч."
+    },
+    {
+      "id": "oxford:daily:adj:a2",
+      "word": "daily",
+      "translation": "ежедневный; ежедневно",
+      "answer": "daily",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:daily:adv:b1",
+      "word": "daily",
+      "translation": "ежедневный; ежедневно",
+      "answer": "daily",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:december:n:a1",
+      "word": "December",
+      "translation": "декабрь",
+      "answer": "December",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:during:prep:a1",
+      "word": "during",
+      "translation": "во время",
+      "answer": "during",
+      "level": "A1",
+      "partOfSpeech": "предл."
+    },
+    {
+      "id": "oxford:early:adj-adv:a1",
+      "word": "early",
+      "translation": "ранний",
+      "answer": "early",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:february:n:a1",
+      "word": "February",
+      "translation": "февраль",
+      "answer": "February",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:finally:adv:a2",
+      "word": "finally",
+      "translation": "наконец",
+      "answer": "finally",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:first:det-number-adv:a1",
+      "word": "first",
+      "translation": "первый; сначала",
+      "answer": "first",
+      "level": "A1",
+      "partOfSpeech": "опред., числ., нареч."
+    },
+    {
+      "id": "oxford:first:n:a2",
+      "word": "first",
+      "translation": "первый; сначала",
+      "answer": "first",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:frequently:adv:b1",
+      "word": "frequently",
+      "translation": "часто",
+      "answer": "frequently",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:friday:n:a1",
+      "word": "Friday",
+      "translation": "пятница",
+      "answer": "Friday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:future:n:a1",
+      "word": "future",
+      "translation": "будущее",
+      "answer": "future",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:future:adj:a2",
+      "word": "future",
+      "translation": "будущий",
+      "answer": "future",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:immediately:adv:a2",
+      "word": "immediately",
+      "translation": "немедленно",
+      "answer": "immediately",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:january:n:a1",
+      "word": "January",
+      "translation": "январь",
+      "answer": "January",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:july:n:a1",
+      "word": "July",
+      "translation": "июль",
+      "answer": "July",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:june:n:a1",
+      "word": "June",
+      "translation": "июнь",
+      "answer": "June",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:last:det:a1",
+      "word": "last",
+      "translation": "последний",
+      "answer": "last",
+      "level": "A1",
+      "partOfSpeech": "опред."
+    },
+    {
+      "id": "oxford:last:adv-n:a2",
+      "word": "last",
+      "translation": "последний; последнее",
+      "answer": "last",
+      "level": "A2",
+      "partOfSpeech": "нареч., сущ."
+    },
+    {
+      "id": "oxford:last:v:a2:2",
+      "word": "last",
+      "translation": "длиться",
+      "answer": "last",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:late:adj-adv:a1",
+      "word": "late",
+      "translation": "поздно",
+      "answer": "late",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:march:n:a1",
+      "word": "March",
+      "translation": "март",
+      "answer": "March",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:may:n:a1",
+      "word": "May",
+      "translation": "май",
+      "answer": "May",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:may:modal-v:a2",
+      "word": "may",
+      "translation": "мочь; возможно",
+      "answer": "may",
+      "level": "A2",
+      "partOfSpeech": "мод. гл."
+    },
+    {
+      "id": "oxford:midnight:n:a1",
+      "word": "midnight",
+      "translation": "полночь",
+      "answer": "midnight",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:moment:n:a1",
+      "word": "moment",
+      "translation": "момент",
+      "answer": "moment",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:monday:n:a1",
+      "word": "Monday",
+      "translation": "понедельник",
+      "answer": "Monday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:never:adv:a1",
+      "word": "never",
+      "translation": "никогда",
+      "answer": "never",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:next:adj-adv:a1",
+      "word": "next",
+      "translation": "следующий",
+      "answer": "next",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:next:n:b1",
+      "word": "next",
+      "translation": "следующий",
+      "answer": "next",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:november:n:a1",
+      "word": "November",
+      "translation": "ноябрь",
+      "answer": "November",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:now:adv:a1",
+      "word": "now",
+      "translation": "сейчас",
+      "answer": "now",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:now:conj:b1",
+      "word": "now",
+      "translation": "сейчас",
+      "answer": "now",
+      "level": "B1",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:october:n:a1",
+      "word": "October",
+      "translation": "октябрь",
+      "answer": "October",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:often:adv:a1",
+      "word": "often",
+      "translation": "часто",
+      "answer": "often",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:past:adj-n-prep:a1",
+      "word": "past",
+      "translation": "прошлое; прошлый; мимо",
+      "answer": "past",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ., предл."
+    },
+    {
+      "id": "oxford:past:adv:a2",
+      "word": "past",
+      "translation": "прошлое",
+      "answer": "past",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:period:n:a1",
+      "word": "period",
+      "translation": "период",
+      "answer": "period",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:present:adj-n:a1",
+      "word": "present",
+      "translation": "настоящий; присутствующий; подарок",
+      "answer": "present",
+      "level": "A1",
+      "partOfSpeech": "прил., сущ."
+    },
+    {
+      "id": "oxford:present:v:a2",
+      "word": "present",
+      "translation": "представлять; вручать",
+      "answer": "present",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:previous:adj:b1",
+      "word": "previous",
+      "translation": "предыдущий",
+      "answer": "previous",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:rarely:adv:b1",
+      "word": "rarely",
+      "translation": "редко",
+      "answer": "rarely",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:recently:adv:a2",
+      "word": "recently",
+      "translation": "недавно",
+      "answer": "recently",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:saturday:n:a1",
+      "word": "Saturday",
+      "translation": "суббота",
+      "answer": "Saturday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:september:n:a1",
+      "word": "September",
+      "translation": "сентябрь",
+      "answer": "September",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:since:prep-conj:a2",
+      "word": "since",
+      "translation": "с; с тех пор как",
+      "answer": "since",
+      "level": "A2",
+      "partOfSpeech": "предл., союз"
+    },
+    {
+      "id": "oxford:since:adv:b1",
+      "word": "since",
+      "translation": "с; с тех пор как",
+      "answer": "since",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:sometimes:adv:a1",
+      "word": "sometimes",
+      "translation": "иногда",
+      "answer": "sometimes",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:soon:adv:a1",
+      "word": "soon",
+      "translation": "скоро",
+      "answer": "soon",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:still:adv:a1",
+      "word": "still",
+      "translation": "все еще",
+      "answer": "still",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:still:adj:b1",
+      "word": "still",
+      "translation": "неподвижный; тихий",
+      "answer": "still",
+      "level": "B1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:sunday:n:a1",
+      "word": "Sunday",
+      "translation": "воскресенье",
+      "answer": "Sunday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:then:adv:a1",
+      "word": "then",
+      "translation": "тогда",
+      "answer": "then",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:thursday:n:a1",
+      "word": "Thursday",
+      "translation": "четверг",
+      "answer": "Thursday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:today:adv-n:a1",
+      "word": "today",
+      "translation": "сегодня",
+      "answer": "today",
+      "level": "A1",
+      "partOfSpeech": "нареч., сущ."
+    },
+    {
+      "id": "oxford:tomorrow:adv-n:a1",
+      "word": "tomorrow",
+      "translation": "завтра",
+      "answer": "tomorrow",
+      "level": "A1",
+      "partOfSpeech": "нареч., сущ."
+    },
+    {
+      "id": "oxford:tuesday:n:a1",
+      "word": "Tuesday",
+      "translation": "вторник",
+      "answer": "Tuesday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:until:conj-prep:a1",
+      "word": "until",
+      "translation": "пока",
+      "answer": "until",
+      "level": "A1",
+      "partOfSpeech": "союз, предл."
+    },
+    {
+      "id": "oxford:usually:adv:a1",
+      "word": "usually",
+      "translation": "обычно",
+      "answer": "usually",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:wednesday:n:a1",
+      "word": "Wednesday",
+      "translation": "среда",
+      "answer": "Wednesday",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:weekend:n:a1",
+      "word": "weekend",
+      "translation": "выходные",
+      "answer": "weekend",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:while:conj:a2",
+      "word": "while",
+      "translation": "пока; в то время как",
+      "answer": "while",
+      "level": "A2",
+      "partOfSpeech": "союз"
+    },
+    {
+      "id": "oxford:while:n:b1",
+      "word": "while",
+      "translation": "пока; в то время как",
+      "answer": "while",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:yesterday:adv-n:a1",
+      "word": "yesterday",
+      "translation": "вчера",
+      "answer": "yesterday",
+      "level": "A1",
+      "partOfSpeech": "нареч., сущ."
+    },
+    {
+      "id": "oxford:yet:adv:a2",
+      "word": "yet",
+      "translation": "еще",
+      "answer": "yet",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:yet:conj:b2",
+      "word": "yet",
+      "translation": "еще",
+      "answer": "yet",
+      "level": "B2",
+      "partOfSpeech": "союз"
+    }
+  ]
+}

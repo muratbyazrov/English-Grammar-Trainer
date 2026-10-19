@@ -1,0 +1,281 @@
+{
+  "id": "oxford-extra-34",
+  "collection": "Oxford 3000",
+  "topic": "Природа и мир",
+  "subtopic": "Животные и растения",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:animal:n:a1",
+      "word": "animal",
+      "translation": "животное",
+      "answer": "animal",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bear:n:a2",
+      "word": "bear",
+      "translation": "медведь",
+      "answer": "bear",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bear:v:b2",
+      "word": "bear",
+      "translation": "терпеть; нести",
+      "answer": "bear",
+      "level": "B2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:bee:n:b1",
+      "word": "bee",
+      "translation": "пчела",
+      "answer": "bee",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:bird:n:a1",
+      "word": "bird",
+      "translation": "птица",
+      "answer": "bird",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cat:n:a1",
+      "word": "cat",
+      "translation": "кот",
+      "answer": "cat",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:cow:n:a1",
+      "word": "cow",
+      "translation": "корова",
+      "answer": "cow",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:crop:n:b2",
+      "word": "crop",
+      "translation": "урожай",
+      "answer": "crop",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:dog:n:a1",
+      "word": "dog",
+      "translation": "собака",
+      "answer": "dog",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:elephant:n:a1",
+      "word": "elephant",
+      "translation": "слон",
+      "answer": "elephant",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:flower:n:a1",
+      "word": "flower",
+      "translation": "цветок",
+      "answer": "flower",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:forest:n:a2",
+      "word": "forest",
+      "translation": "лес",
+      "answer": "forest",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:grass:n:a2",
+      "word": "grass",
+      "translation": "трава",
+      "answer": "grass",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:horse:n:a1",
+      "word": "horse",
+      "translation": "лошадь",
+      "answer": "horse",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:insect:n:a2",
+      "word": "insect",
+      "translation": "насекомое",
+      "answer": "insect",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:leaf:n:b1",
+      "word": "leaf",
+      "translation": "лист",
+      "answer": "leaf",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:lion:n:a1",
+      "word": "lion",
+      "translation": "лев",
+      "answer": "lion",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:monkey:n:a2",
+      "word": "monkey",
+      "translation": "обезьяна",
+      "answer": "monkey",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:mouse:n:a1",
+      "word": "mouse",
+      "translation": "мышь",
+      "answer": "mouse",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:natural:adj:a1",
+      "word": "natural",
+      "translation": "естественный",
+      "answer": "natural",
+      "level": "A1",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:nature:n:a2",
+      "word": "nature",
+      "translation": "природа",
+      "answer": "nature",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pet:n:a2",
+      "word": "pet",
+      "translation": "домашнее животное",
+      "answer": "pet",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:pig:n:a1",
+      "word": "pig",
+      "translation": "свинья",
+      "answer": "pig",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:plant:n:a1",
+      "word": "plant",
+      "translation": "растение; завод",
+      "answer": "plant",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:plant:v:a2",
+      "word": "plant",
+      "translation": "сажать растения",
+      "answer": "plant",
+      "level": "A2",
+      "partOfSpeech": "гл."
+    },
+    {
+      "id": "oxford:root:n:b2",
+      "word": "root",
+      "translation": "корень",
+      "answer": "root",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:seed:n:b1",
+      "word": "seed",
+      "translation": "семя",
+      "answer": "seed",
+      "level": "B1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:sheep:n:a1",
+      "word": "sheep",
+      "translation": "овца",
+      "answer": "sheep",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:snake:n:a1",
+      "word": "snake",
+      "translation": "змея",
+      "answer": "snake",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:spider:n:a2",
+      "word": "spider",
+      "translation": "паук",
+      "answer": "spider",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:tree:n:a1",
+      "word": "tree",
+      "translation": "дерево",
+      "answer": "tree",
+      "level": "A1",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wild:adj:a2",
+      "word": "wild",
+      "translation": "дикий",
+      "answer": "wild",
+      "level": "A2",
+      "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:wildlife:n:b2",
+      "word": "wildlife",
+      "translation": "дикая природа",
+      "answer": "wildlife",
+      "level": "B2",
+      "partOfSpeech": "сущ."
+    },
+    {
+      "id": "oxford:wood:n:a2",
+      "word": "wood",
+      "translation": "дерево",
+      "answer": "wood",
+      "level": "A2",
+      "partOfSpeech": "сущ."
+    }
+  ]
+}
