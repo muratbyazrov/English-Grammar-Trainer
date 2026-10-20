@@ -1,6 +1,16 @@
 window.Trainer = window.Trainer || {};
 
 window.Trainer.createSessionScoring = function () {
+  function start(state, session) {
+    state.session = session;
+    state.idx = 0;
+    state.correct = 0;
+    state.wrong = 0;
+    state.outcomes = {};
+    state.checkedCurrent = false;
+    state.wrongCounted = false;
+  }
+
   function record(state, outcome) {
     const item = state.session[state.idx];
     if (!item || state.outcomes[item.id]) return;
@@ -33,7 +43,7 @@ window.Trainer.createSessionScoring = function () {
     return { correct: state.correct, wrong: state.wrong, percent };
   }
 
-  return { record, restore, wasWrong, finish };
+  return { start, record, restore, wasWrong, finish };
 };
 
 window.Trainer.createProgressStore = function (window) {

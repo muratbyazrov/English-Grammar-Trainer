@@ -73,6 +73,30 @@ test('session scoring handles empty results and never rounds errors up to 100%',
   assert.equal(scoring.finish(almostPerfect).percent, 99);
 });
 
+test('starting an approach clears its results without clearing persistent learning history or preferences', () => {
+  const scoring = load('progress.js').createSessionScoring();
+  const history = new Map([['word', 0]]);
+  const visited = new Set(['word']);
+  const state = {
+    session: [{ id: 'old' }], idx: 4, correct: 3, wrong: 2,
+    outcomes: { old: 'wrong' }, checkedCurrent: true, wrongCounted: true,
+    mistakeProgress: history, visitedWordIds: visited, reviewMistakes: true, autoSpeakCorrect: false,
+  };
+  scoring.start(state, [{ id: 'first' }, { id: 'second' }]);
+  assert.equal(state.idx, 0);
+  assert.equal(state.checkedCurrent, false);
+  assert.equal(state.wrongCounted, false);
+  assert.equal(state.mistakeProgress, history);
+  assert.equal(state.visitedWordIds, visited);
+  assert.equal(state.reviewMistakes, true);
+  assert.equal(state.autoSpeakCorrect, false);
+  scoring.record(state, 'correct');
+  const result = scoring.finish(state);
+  assert.equal(result.correct, 1);
+  assert.equal(result.wrong, 1);
+  assert.equal(result.percent, 50);
+});
+
 test('session scoring ignores invalid saved outcomes and counts skipped tasks once', () => {
   const scoring = load('progress.js').createSessionScoring();
   const state = { session: [{ id: 1 }, { id: 2 }], idx: 0, correct: 1, wrong: 0 };

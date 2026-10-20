@@ -251,6 +251,13 @@ window.Trainer.createGrammarMode = function ({
     return questionsForCurrentGrammarTopic();
   }
 
+  function startGrammarSession() {
+    cancelPendingActivity();
+    sessionScoring.start(grammarState, pickSession());
+    renderGrammar();
+    saveProgress();
+  }
+
   function fixBrokenWordSpacing(value) {
     return String(value || "")
       .replace(/\b([A-Za-z']*[a-z])I('ve)?\b/g, "$1 I$2")
@@ -431,6 +438,7 @@ window.Trainer.createGrammarMode = function ({
     hideGrammarTopicPicker,
     ensureGrammarTopicOptions,
     pickSession,
+    startGrammarSession,
     renderGrammar,
     nextGrammarQuestion,
     checkGrammarAnswer

@@ -620,9 +620,10 @@
     }
   }
 
-  function hideSessionComplete() {
-    refs.sessionComplete.hidden = true;
-  }
+  const {
+    show: renderSessionResults,
+    hide: hideSessionComplete
+  } = window.Trainer.createSessionResults({ refs });
 
   const {
     currentLevel,
@@ -634,6 +635,7 @@
     hideGrammarTopicPicker,
     ensureGrammarTopicOptions,
     pickSession,
+    startGrammarSession,
     renderGrammar,
     nextGrammarQuestion,
     checkGrammarAnswer
@@ -673,6 +675,7 @@
     nextVocabQuestion,
     nextVocabTopic,
     pickVocabSession,
+    startVocabSession,
     recordVocabHint,
     remainingVocabMistakes,
     reviewCurrentVocabMistakes,
@@ -680,7 +683,6 @@
     restoreVocabProgress,
     showVocabList,
     showVocabTopicPicker,
-    syncVocabTopicTrigger,
     vocabSessionKeys
   } = window.Trainer.createVocabularyMode({
     AUTO_NEXT_DELAY_MS,
@@ -716,6 +718,7 @@
     hideShadowingTopicPicker,
     nextShadowingQuestion,
     pickShadowingSession,
+    startShadowingSession,
     previousShadowingQuestion,
     renderShadowing,
     restoreShadowingProgress,
@@ -800,17 +803,11 @@
       renderTheory();
     } else if (mode === 'vocabulary') {
       ensureVocabTopicOptions();
-      if (!vocabState.session.length) {
-        vocabState.session = pickVocabSession();
-        vocabState.idx = 0;
-        vocabState.correct = 0;
-        vocabState.wrong = 0;
-        vocabState.outcomes = {};
-      }
+      if (!vocabState.session.length) sessionScoring.start(vocabState, pickVocabSession());
       renderVocab();
     } else if (mode === 'shadowing') {
       ensureShadowingTopicOptions();
-      if (!shadowingState.session.length) shadowingState.session = pickShadowingSession();
+      if (!shadowingState.session.length) sessionScoring.start(shadowingState, pickShadowingSession());
       refs.questionTranslation.classList.remove('vocab-hint');
       renderShadowing();
     } else {
@@ -824,46 +821,18 @@
     const stats = currentMode === 'vocabulary'
       ? vocabState
       : (currentMode === 'shadowing' ? shadowingState : grammarState);
-    const total = stats.session.length;
     if (currentMode === 'vocabulary') collectUnansweredVocabMistakes();
-    const { correct, wrong, percent: pct } = sessionScoring.finish(stats);
-
-    // Обновляем стат-бар
-    refs.position.textContent = `${total} / ${total}`;
-    refs.correctCount.textContent = String(correct);
-    refs.wrongCount.textContent = String(wrong);
-
-    // Заполняем попап
-    refs.scCorrect.textContent = String(correct);
-    refs.scWrong.textContent = String(wrong);
-    refs.scPct.textContent = pct + "%";
-    refs.scNextTopic.hidden = currentMode !== 'vocabulary';
-    const reviewing = currentMode === 'vocabulary' && vocabState.reviewMistakes;
-    const remaining = currentMode === 'vocabulary' ? remainingVocabMistakes() : 0;
-    refs.scTitle.textContent = reviewing ? 'Повторение завершено!' : 'Тема завершена!';
-    refs.scReviewSummary.hidden = !reviewing;
-    refs.scReviewSummary.textContent = remaining
-      ? `В разделе осталось слов с ошибками: ${remaining}. Для каждого достаточно одного правильного ответа без подсказки.`
-      : 'Все ошибки в этом разделе отработаны.';
-    refs.nextSessionBtn.textContent = currentMode === 'vocabulary' ? 'Тренировать ошибки →' : 'Начать заново →';
-    refs.nextSessionBtn.disabled = currentMode === 'vocabulary' && remaining === 0;
-
-    // Показываем с перезапуском анимации
-    hideSessionComplete();
-    void refs.sessionComplete.offsetWidth;
-    refs.sessionComplete.hidden = false;
+    const result = sessionScoring.finish(stats);
+    renderSessionResults({
+      ...result,
+      mode: currentMode,
+      total: stats.session.length,
+      reviewing: currentMode === 'vocabulary' && vocabState.reviewMistakes,
+      remaining: currentMode === 'vocabulary' ? remainingVocabMistakes() : 0
+    });
   }
 
-  refs.newSession.addEventListener("click", () => {
-    cancelPendingActivity();
-    grammarState.session = pickSession();
-    grammarState.idx = 0;
-    grammarState.correct = 0;
-    grammarState.wrong = 0;
-    grammarState.outcomes = {};
-    renderGrammar();
-    saveProgress();
-  });
+  refs.newSession.addEventListener('click', startGrammarSession);
 
   refs.checkBtn.addEventListener("click", () => {
     if (currentMode === 'vocabulary') { checkVocabAnswer(); return; }
@@ -942,34 +911,10 @@
     if (currentMode === 'vocabulary') nextVocabTopic();
   });
 
-  refs.nextSessionBtn.addEventListener("click", () => {
-    if (currentMode === 'vocabulary') {
-      reviewCurrentVocabMistakes();
-      return;
-    }
-    hideSessionComplete();
-    cancelPendingActivity();
-    if (currentMode === 'shadowing') {
-      shadowingState.session = pickShadowingSession();
-      shadowingState.idx = 0;
-      shadowingState.correct = 0;
-      shadowingState.wrong = 0;
-      shadowingState.outcomes = {};
-      shadowingState.successfulRepetitions = 0;
-      shadowingState.checkedCurrent = false;
-      renderShadowing();
-      saveProgress();
-      return;
-    }
-    refs.newSession.click();
-  });
-
-  refs.scCloseBtn.addEventListener("click", () => {
-    hideSessionComplete();
-  });
-
-  refs.sessionComplete.addEventListener('click', (event) => {
-    if (event.target === refs.sessionComplete) hideSessionComplete();
+  refs.nextSessionBtn.addEventListener('click', () => {
+    if (currentMode === 'vocabulary') reviewCurrentVocabMistakes();
+    else if (currentMode === 'shadowing') startShadowingSession();
+    else startGrammarSession();
   });
 
   refs.tabGrammar.addEventListener('click', () => switchMode('grammar'));
@@ -977,17 +922,7 @@
   refs.tabVocab.addEventListener('click', () => switchMode('vocabulary'));
   refs.tabShadowing.addEventListener('click', () => switchMode('shadowing'));
 
-  refs.vocabNewSession.addEventListener('click', () => {
-    cancelPendingActivity();
-    ensureVocabTopicOptions();
-    vocabState.session = pickVocabSession();
-    vocabState.idx = 0;
-    vocabState.correct = 0;
-    vocabState.wrong = 0;
-    vocabState.outcomes = {};
-    renderVocab();
-    saveProgress();
-  });
+  refs.vocabNewSession.addEventListener('click', startVocabSession);
 
   refs.vocabShowList.addEventListener('click', () => {
     showVocabList();
@@ -1082,19 +1017,6 @@
     saveProgress();
   });
 
-  refs.vocabTopic.addEventListener('change', () => {
-    cancelPendingActivity();
-    vocabState.reviewMistakes = false;
-    syncVocabTopicTrigger();
-    vocabState.session = pickVocabSession();
-    vocabState.idx = 0;
-    vocabState.correct = 0;
-    vocabState.wrong = 0;
-    vocabState.outcomes = {};
-    renderVocab();
-    saveProgress();
-  });
-
   refs.vocabNextTopic.addEventListener('click', nextVocabTopic);
 
   refs.shadowingStart.addEventListener('click', () => {
@@ -1104,19 +1026,7 @@
 
   refs.shadowingStop.addEventListener('click', stopShadowingSession);
 
-  refs.shadowingNewSession.addEventListener('click', () => {
-    stopShadowingAttempt();
-    cancelPendingActivity();
-    shadowingState.session = pickShadowingSession();
-    shadowingState.idx = 0;
-    shadowingState.correct = 0;
-    shadowingState.wrong = 0;
-    shadowingState.outcomes = {};
-    shadowingState.successfulRepetitions = 0;
-    shadowingState.checkedCurrent = false;
-    renderShadowing();
-    saveProgress();
-  });
+  refs.shadowingNewSession.addEventListener('click', startShadowingSession);
 
   refs.shadowingTopic.addEventListener('change', () => {
     syncShadowingTopicTrigger();
@@ -1167,28 +1077,14 @@
     refs.levelSelect.appendChild(opt);
   });
 
-  refs.levelSelect.addEventListener("change", () => {
-    cancelPendingActivity();
+  refs.levelSelect.addEventListener('change', () => {
     ensureGrammarTopicOptions(currentLevel());
-    grammarState.session = pickSession();
-    grammarState.idx = 0;
-    grammarState.correct = 0;
-    grammarState.wrong = 0;
-    grammarState.outcomes = {};
-    renderGrammar();
-    saveProgress();
+    startGrammarSession();
   });
 
-  refs.grammarTopic.addEventListener("change", () => {
-    cancelPendingActivity();
+  refs.grammarTopic.addEventListener('change', () => {
     syncGrammarTopicTrigger();
-    grammarState.session = pickSession();
-    grammarState.idx = 0;
-    grammarState.correct = 0;
-    grammarState.wrong = 0;
-    grammarState.outcomes = {};
-    renderGrammar();
-    saveProgress();
+    startGrammarSession();
   });
 
   ensureTheoryTopicOptions();
@@ -1196,11 +1092,11 @@
   const restored = restoreProgress();
   if (!restored) {
     grammarState.autoSpeakCorrect = refs.autoSpeakCorrect.checked;
-    grammarState.session = pickSession();
+    sessionScoring.start(grammarState, pickSession());
     ensureVocabTopicOptions();
-    vocabState.session = pickVocabSession();
+    sessionScoring.start(vocabState, pickVocabSession());
     ensureShadowingTopicOptions();
-    shadowingState.session = pickShadowingSession();
+    sessionScoring.start(shadowingState, pickShadowingSession());
     saveProgress();
   }
   if (currentMode === 'theory') {

@@ -152,6 +152,15 @@ window.Trainer.createShadowingMode = function ({
     return shadowingItemsForTopic(refs.shadowingTopic.value);
   }
 
+  function startShadowingSession() {
+    stopShadowingAttempt();
+    cancelPendingActivity();
+    sessionScoring.start(shadowingState, pickShadowingSession());
+    shadowingState.successfulRepetitions = 0;
+    renderShadowing();
+    saveProgress();
+  }
+
   function restoreShadowingProgress(saved) {
     ensureShadowingTopicOptions();
     if (!saved || typeof saved !== 'object') return false;
@@ -596,6 +605,7 @@ window.Trainer.createShadowingMode = function ({
     hideShadowingTopicPicker,
     nextShadowingQuestion,
     pickShadowingSession,
+    startShadowingSession,
     previousShadowingQuestion,
     renderShadowing,
     restoreShadowingProgress,

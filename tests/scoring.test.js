@@ -54,6 +54,26 @@ function finish(app) {
 }
 
 for (const mode of ['grammar', 'vocabulary', 'shadowing']) {
+  test(`${mode}: restarting cancels pending activity and begins with fresh results`, () => {
+    const app = setup(mode);
+    respond(app, mode, false);
+    respond(app, mode);
+    const question = app.el('question-text').textContent;
+    app.click(mode === 'grammar' ? 'new-session' : `${mode === 'vocabulary' ? 'vocab' : mode}-new-session`);
+    app.advance(3000);
+    const saved = stats(app, mode);
+    assert.equal(saved.idx, 0);
+    assert.equal(saved.correct, 0);
+    assert.equal(saved.wrong, 0);
+    assert.deepEqual(saved.outcomes, {});
+    assert.equal(app.el('session-complete').hidden, true);
+    if (mode === 'shadowing') {
+      assert.equal(saved.successfulRepetitions, 0);
+      assert.equal(app.el('question-text').textContent, question);
+      assert.equal(app.recognizers[0].active, false);
+    }
+  });
+
   test(`${mode}: errors survive retries, mode switches, reload and revisiting`, () => {
     let app = setup(mode);
     respond(app, mode, false);
