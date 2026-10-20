@@ -79,9 +79,11 @@ function createApp({ saved, speech = true, recognition = false, vocabulary } = {
   const timers = new Map();
   const storage = new Map(saved === undefined ? [] : [[storageKey, JSON.stringify(saved)]]);
   const spoken = [], recognizers = [];
+  const windowEvents = new Element('window');
   const window = {
     location: { protocol: 'http:' },
-    addEventListener() {},
+    addEventListener: windowEvents.addEventListener.bind(windowEvents),
+    dispatchEvent: windowEvents.dispatchEvent.bind(windowEvents),
     setTimeout(fn, delay) { const id = ++sequence; timers.set(id, { fn, at: now + delay }); return id; },
     clearTimeout(id) { timers.delete(id); },
     localStorage: { getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value) },

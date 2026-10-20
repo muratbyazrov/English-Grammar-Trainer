@@ -16,6 +16,32 @@ function answerVocab(app) {
   app.answer(word.answers?.[0]?.text || word.infinitive || word.word.split('/')[0]);
 }
 
+test('results close on Escape, backdrop and close button, while clicks inside preserve the popup and scores', () => {
+  const app = createApp({ vocabulary: [{ topic: 'Тест', words: [{ id: 1, word: 'test', translation: 'тест' }] }] });
+  app.click('tab-vocab');
+  app.change('vocab-topic', 'Тест');
+  app.click('next-btn');
+  const overlay = app.el('session-complete');
+  const saved = app.snapshot();
+  assert.equal(overlay.hidden, false);
+  overlay.dispatchEvent({ type: 'click', target: app.el('sc-correct') });
+  assert.equal(overlay.hidden, false);
+  app.window.dispatchEvent({ type: 'keydown', key: 'Enter' });
+  assert.equal(overlay.hidden, false);
+  app.window.dispatchEvent({ type: 'keydown', key: 'Escape' });
+  assert.equal(overlay.hidden, true);
+  assert.deepEqual(app.snapshot(), saved);
+  app.click('next-btn');
+  assert.equal(overlay.hidden, false);
+  app.click('session-complete');
+  assert.equal(overlay.hidden, true);
+  assert.deepEqual(app.snapshot(), saved);
+  app.click('next-btn');
+  app.click('session-complete-close');
+  assert.equal(overlay.hidden, true);
+  assert.deepEqual(app.snapshot(), saved);
+});
+
 test('switching modes cancels grammar auto-next without replacing vocabulary content', () => {
   const app = createApp();
   app.change('auto-speak-correct', false);

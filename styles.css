@@ -889,10 +889,6 @@ button:hover {
   outline-offset: 3px;
 }
 
-.vocab-catalog-train-all .vocab-topic-progress-track {
-  display: none;
-}
-
 .vocab-catalog-train-all .vocab-topic-reset-button {
   align-self: center;
   width: 28px;
@@ -904,6 +900,19 @@ button:hover {
 .vocab-topic-entry > .vocab-topic-card {
   flex: 1;
   width: 100%;
+}
+
+.vocab-topic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 8px;
+  min-height: 32px;
+}
+
+.vocab-topic-actions .vocab-topic-reset-button {
+  margin-left: auto;
 }
 
 .vocab-catalog-topics > .vocab-topic-entry,
@@ -928,8 +937,45 @@ button:hover {
   line-height: 1.4;
 }
 
+.vocab-topic-card-copy > .vocab-topic-mistake-count {
+  color: #9a5b08;
+}
+
+.vocab-review-button {
+  min-height: 30px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border-color: #e7c892;
+  color: #9a5b08;
+  background: #fff8eb;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.vocab-review-button--selected {
+  border-color: var(--accent-2);
+  background: #dff7f2;
+  color: var(--ink);
+}
+
+.vocab-review-button:focus-visible {
+  outline: 3px solid rgba(42, 157, 143, 0.3);
+  outline-offset: 2px;
+}
+
+.vocab-review-button:disabled {
+  cursor: default;
+  color: var(--muted);
+  border-color: var(--line);
+  background: #f8fbff;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+
 .vocab-topic-progress-track {
-  display: block;
+  display: flex;
   height: 6px;
   overflow: hidden;
   border-radius: 999px;
@@ -938,9 +984,16 @@ button:hover {
 
 .vocab-topic-progress-fill {
   display: block;
+  flex-shrink: 0;
   height: 100%;
-  border-radius: inherit;
-  background: var(--accent-2);
+}
+
+.vocab-topic-progress-fill--correct {
+  background: var(--ok);
+}
+
+.vocab-topic-progress-fill--wrong {
+  background: var(--danger);
 }
 
 .vocab-topic-reset-button {
@@ -1617,6 +1670,14 @@ button:hover {
   margin: 0;
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: var(--ink);
+}
+
+.sc-review-summary {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .sc-stats {

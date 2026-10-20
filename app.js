@@ -51,6 +51,8 @@
     scCloseBtn: document.getElementById("session-complete-close"),
     nextSessionBtn: document.getElementById("next-session-btn"),
     scNextTopic: document.getElementById('sc-next-topic'),
+    scTitle: document.getElementById('sc-title'),
+    scReviewSummary: document.getElementById('sc-review-summary'),
     tabGrammar: document.getElementById('tab-grammar'),
     tabTheory: document.getElementById('tab-theory'),
     tabVocab: document.getElementById('tab-vocab'),
@@ -206,6 +208,8 @@
 
   const vocabState = {
     visitedWordIds: new Set(),
+    mistakeProgress: new Map(),
+    reviewMistakes: false,
     oxfordLevel: 'all',
     oxfordLevelMode: 'minimum',
     session: [],
@@ -405,11 +409,14 @@
           oxfordLevelMode: vocabState.oxfordLevelMode,
           autoSpeakCorrect: vocabState.autoSpeakCorrect,
           order: vocabState.session.map((item) => item && item.id).filter((id) => id != null),
+          reviewOrder: vocabState.reviewMistakes ? vocabSessionKeys() : undefined,
           idx: vocabState.idx,
           correct: vocabState.correct,
           wrong: vocabState.wrong,
           outcomes: vocabState.outcomes,
           visitedWordIds: Array.from(vocabState.visitedWordIds),
+          mistakes: Array.from(vocabState.mistakeProgress),
+          reviewMistakes: vocabState.reviewMistakes,
         },
         shadowing: {
           topic: refs.shadowingTopic.value,
@@ -526,6 +533,7 @@
     const sentence = viewState.selectedSentenceForSpeech;
     if (!sentence) return;
 
+    if (currentMode === 'vocabulary') recordVocabHint();
     const started = speakEnglishText(sentence);
     if (!started) {
       setQuestionTranslation("Озвучка недоступна в этом браузере.");
@@ -658,17 +666,22 @@
 
   const {
     checkVocabAnswer,
+    collectUnansweredVocabMistakes,
     ensureVocabTopicOptions,
     hideVocabList,
     hideVocabTopicPicker,
     nextVocabQuestion,
     nextVocabTopic,
     pickVocabSession,
+    recordVocabHint,
+    remainingVocabMistakes,
+    reviewCurrentVocabMistakes,
     renderVocab,
     restoreVocabProgress,
     showVocabList,
     showVocabTopicPicker,
-    syncVocabTopicTrigger
+    syncVocabTopicTrigger,
+    vocabSessionKeys
   } = window.Trainer.createVocabularyMode({
     AUTO_NEXT_DELAY_MS,
     DEFAULT_ANSWER_PLACEHOLDER,
@@ -755,6 +768,9 @@
     stopShadowingAttempt();
     viewState.sentenceTranslationRequestId += 1;
     currentMode = mode;
+    [refs.answerInput, refs.checkBtn, refs.nextBtn, refs.prevBtn].forEach(element => {
+      element.disabled = false;
+    });
     refs.tabGrammar.classList.toggle('mode-tab--active', mode === 'grammar');
     refs.tabTheory.classList.toggle('mode-tab--active', mode === 'theory');
     refs.tabVocab.classList.toggle('mode-tab--active', mode === 'vocabulary');
@@ -809,6 +825,7 @@
       ? vocabState
       : (currentMode === 'shadowing' ? shadowingState : grammarState);
     const total = stats.session.length;
+    if (currentMode === 'vocabulary') collectUnansweredVocabMistakes();
     const { correct, wrong, percent: pct } = sessionScoring.finish(stats);
 
     // Обновляем стат-бар
@@ -821,6 +838,15 @@
     refs.scWrong.textContent = String(wrong);
     refs.scPct.textContent = pct + "%";
     refs.scNextTopic.hidden = currentMode !== 'vocabulary';
+    const reviewing = currentMode === 'vocabulary' && vocabState.reviewMistakes;
+    const remaining = currentMode === 'vocabulary' ? remainingVocabMistakes() : 0;
+    refs.scTitle.textContent = reviewing ? 'Повторение завершено!' : 'Тема завершена!';
+    refs.scReviewSummary.hidden = !reviewing;
+    refs.scReviewSummary.textContent = remaining
+      ? `В разделе осталось слов с ошибками: ${remaining}. Для каждого достаточно одного правильного ответа без подсказки.`
+      : 'Все ошибки в этом разделе отработаны.';
+    refs.nextSessionBtn.textContent = currentMode === 'vocabulary' ? 'Тренировать ошибки →' : 'Начать заново →';
+    refs.nextSessionBtn.disabled = currentMode === 'vocabulary' && remaining === 0;
 
     // Показываем с перезапуском анимации
     hideSessionComplete();
@@ -917,18 +943,12 @@
   });
 
   refs.nextSessionBtn.addEventListener("click", () => {
-    hideSessionComplete();
-    cancelPendingActivity();
     if (currentMode === 'vocabulary') {
-      vocabState.session = pickVocabSession();
-      vocabState.idx = 0;
-      vocabState.correct = 0;
-      vocabState.wrong = 0;
-      vocabState.outcomes = {};
-      renderVocab();
-      saveProgress();
+      reviewCurrentVocabMistakes();
       return;
     }
+    hideSessionComplete();
+    cancelPendingActivity();
     if (currentMode === 'shadowing') {
       shadowingState.session = pickShadowingSession();
       shadowingState.idx = 0;
@@ -946,6 +966,10 @@
 
   refs.scCloseBtn.addEventListener("click", () => {
     hideSessionComplete();
+  });
+
+  refs.sessionComplete.addEventListener('click', (event) => {
+    if (event.target === refs.sessionComplete) hideSessionComplete();
   });
 
   refs.tabGrammar.addEventListener('click', () => switchMode('grammar'));
@@ -1037,7 +1061,9 @@
 
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-      if (!refs.grammarTopicOverlay.hidden) {
+      if (!refs.sessionComplete.hidden) {
+        hideSessionComplete();
+      } else if (!refs.grammarTopicOverlay.hidden) {
         hideGrammarTopicPicker();
       } else if (!refs.vocabTopicOverlay.hidden) {
         hideVocabTopicPicker();
@@ -1058,6 +1084,7 @@
 
   refs.vocabTopic.addEventListener('change', () => {
     cancelPendingActivity();
+    vocabState.reviewMistakes = false;
     syncVocabTopicTrigger();
     vocabState.session = pickVocabSession();
     vocabState.idx = 0;
