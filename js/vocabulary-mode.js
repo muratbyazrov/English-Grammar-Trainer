@@ -32,6 +32,44 @@ window.Trainer.createVocabularyMode = function ({
   let pickerNode = catalog.root;
   let pickerLevel = 'all';
   let pickerLevelMode = 'minimum';
+  let pendingProgressReset = null;
+  const progressKeys = new Map();
+  vocabTopics.forEach(topic => (topic.words || []).forEach(word => {
+    // Legacy IT IDs are positional. Keep their progress stable when files gain words.
+    progressKeys.set(word, typeof word.id === 'string'
+      ? word.id : `legacy:${JSON.stringify([topic.id || topic.topic, word.word])}`);
+  }));
+
+  function markVocabWordVisited(word) {
+    const key = progressKeys.get(word);
+    if (key) vocabState.visitedWordIds.add(key);
+  }
+
+  function vocabProgressForWords(words) {
+    const total = words.length;
+    const visited = words.filter(word => vocabState.visitedWordIds.has(progressKeys.get(word))).length;
+    // Show 100% only when every word has been visited.
+    const percent = total ? Math.min(visited === total ? 100 : 99, Math.round(visited / total * 100)) : 0;
+    return { visited, total, percent };
+  }
+
+  function dismissProgressReset() {
+    pendingProgressReset = null;
+    refs.vocabProgressReset.hidden = true;
+  }
+
+  refs.vocabProgressResetCancel.addEventListener('click', () => {
+    const trigger = pendingProgressReset && pendingProgressReset.trigger;
+    dismissProgressReset();
+    if (trigger) trigger.focus();
+  });
+  refs.vocabProgressResetConfirm.addEventListener('click', () => {
+    if (!pendingProgressReset) return;
+    pendingProgressReset.words.forEach(word => vocabState.visitedWordIds.delete(progressKeys.get(word)));
+    saveProgress();
+    renderVocabTopicCards();
+    (refs.vocabTopicGrid.querySelector('.vocab-topic-choice--selected') || refs.vocabTopicClose).focus();
+  });
 
   function oxfordLevelLabel(level) {
     return level === 'all' ? 'Все' : level;
@@ -291,17 +329,22 @@ window.Trainer.createVocabularyMode = function ({
     refs.vocabTopicTrigger.setAttribute('aria-label', `Выбрать набор или тему: ${currentVocabTopicTitle(topicValue)}`);
   }
 
-  function vocabularyChoice(node, label = node.title) {
+  function vocabularyChoice(node, label = node.title, compact = false) {
+    const entry = document.createElement('div');
+    entry.className = `vocab-topic-entry${compact ? ' vocab-catalog-train-all' : ''}`;
     const cardButton = document.createElement('button');
     const isOxford = node.collection === 'Oxford 3000';
-    const wordCount = wordsForNode(node, pickerLevel, pickerLevelMode).length;
+    const words = wordsForNode(node, pickerLevel, pickerLevelMode);
+    const wordCount = words.length;
+    const progress = vocabProgressForWords(words);
     const isSelected = node.value === refs.vocabTopic.value && (!isOxford || (pickerLevel === vocabState.oxfordLevel && pickerLevelMode === vocabState.oxfordLevelMode));
     cardButton.type = 'button';
-    cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
+    const choiceClass = compact ? 'vocab-train-action' : 'vocab-topic-card';
+    cardButton.className = `${choiceClass}${isSelected ? ` ${choiceClass}--selected vocab-topic-choice--selected` : ''}`;
     cardButton.dataset.topicValue = node.value;
     cardButton.setAttribute('aria-pressed', String(isSelected));
     const accessibleTitle = label === node.title ? label : `${label}: ${catalog.path(node).join(', ')}`;
-    cardButton.setAttribute('aria-label', `${accessibleTitle}, ${formatVocabWordCount(wordCount)}, тренировать`);
+    cardButton.setAttribute('aria-label', `${accessibleTitle}, ${formatVocabWordCount(wordCount)}, пройдено ${progress.visited} из ${progress.total}, ${progress.percent}%, тренировать`);
 
     const icon = document.createElement('span');
     icon.className = 'vocab-topic-card-icon';
@@ -317,13 +360,33 @@ window.Trainer.createVocabularyMode = function ({
     copy.appendChild(title);
     copy.appendChild(count);
 
+    const progressBlock = document.createElement('span');
+    progressBlock.className = 'vocab-topic-progress';
+    const progressLabel = document.createElement('span');
+    progressLabel.className = 'vocab-topic-progress-label';
+    progressLabel.textContent = `Пройдено ${progress.visited} из ${progress.total} · ${progress.percent}%`;
+    progressBlock.appendChild(progressLabel);
+    const track = document.createElement('span');
+    track.className = 'vocab-topic-progress-track';
+    track.setAttribute('aria-hidden', 'true');
+    const fill = document.createElement('span');
+    fill.className = 'vocab-topic-progress-fill';
+    fill.style.width = `${progress.percent}%`;
+    track.appendChild(fill);
+    progressBlock.appendChild(track);
+
     const check = document.createElement('span');
     check.className = 'vocab-topic-card-check';
     check.setAttribute('aria-hidden', 'true');
     check.textContent = '✓';
-    cardButton.appendChild(icon);
-    cardButton.appendChild(copy);
-    cardButton.appendChild(check);
+    if (compact) {
+      cardButton.textContent = `${label} →`;
+    } else {
+      cardButton.appendChild(icon);
+      cardButton.appendChild(copy);
+      cardButton.appendChild(check);
+      cardButton.appendChild(progressBlock);
+    }
     cardButton.addEventListener('click', () => {
       const levelChanged = isOxford && (vocabState.oxfordLevel !== pickerLevel || vocabState.oxfordLevelMode !== pickerLevelMode);
       if (isOxford) {
@@ -336,7 +399,26 @@ window.Trainer.createVocabularyMode = function ({
       }
       hideVocabTopicPicker();
     });
-    return cardButton;
+    entry.appendChild(cardButton);
+    if (compact) entry.appendChild(progressBlock);
+    if (progress.visited) {
+      const reset = document.createElement('button');
+      reset.type = 'button';
+      reset.className = 'vocab-topic-reset-button';
+      reset.dataset.resetTopicValue = node.value;
+      reset.textContent = compact ? '↺' : 'Сбросить прогресс';
+      reset.title = node.parent === catalog.root ? 'Сбросить прогресс набора' : 'Сбросить прогресс';
+      reset.setAttribute('aria-label', `Сбросить прогресс: ${catalog.path(node).join(', ')}`);
+      reset.addEventListener('click', () => {
+        pendingProgressReset = { words, trigger: reset };
+        const level = isOxford && pickerLevel !== 'all' ? ` · ${oxfordSelectionLabel(pickerLevel, pickerLevelMode)}` : '';
+        refs.vocabProgressResetText.textContent = `Сбросить прогресс «${catalog.path(node).join(' → ')}${level}»? Отметки о прохождении будут удалены. Результаты текущего подхода сохранятся.`;
+        refs.vocabProgressReset.hidden = false;
+        refs.vocabProgressResetConfirm.focus();
+      });
+      entry.appendChild(reset);
+    }
+    return entry;
   }
 
   function renderOxfordLevelFilter() {
@@ -391,8 +473,9 @@ window.Trainer.createVocabularyMode = function ({
   }
 
   function renderVocabTopicCards() {
+    dismissProgressReset();
     refs.vocabTopicGrid.innerHTML = '';
-    refs.vocabTopicModalSubtitle.textContent = 'Выберите тему или подтему — тренировка начнётся сразу';
+    refs.vocabTopicModalSubtitle.textContent = 'Прогресс — слова, которые вы уже прошли, независимо от ошибок. Выберите тему для тренировки.';
 
     const collections = document.createElement('div');
     collections.className = 'vocab-catalog-collections';
@@ -425,8 +508,7 @@ window.Trainer.createVocabularyMode = function ({
       ? `Oxford 3000 · ${pickerNode.words.length} карточек · ${pickerLevel === 'all' ? 'все уровни' : oxfordSelectionLabel(pickerLevel, pickerLevelMode)}: ${formatVocabWordCount(wordsForNode(pickerNode, pickerLevel, pickerLevelMode).length)} · до 20 слов за подход`
       : formatVocabWordCount(pickerNode.words.length);
     overview.appendChild(note);
-    const trainCollection = vocabularyChoice(pickerNode, 'Тренировать весь набор');
-    trainCollection.className += ' vocab-catalog-train-all';
+    const trainCollection = vocabularyChoice(pickerNode, 'Тренировать весь набор', true);
     overview.appendChild(trainCollection);
     refs.vocabTopicGrid.appendChild(overview);
 
@@ -445,8 +527,7 @@ window.Trainer.createVocabularyMode = function ({
       const heading = document.createElement('h3');
       heading.textContent = `${vocabTopicIcon(topic.title)} ${topic.title}`;
       header.appendChild(heading);
-      const trainTopic = vocabularyChoice(topic, 'Вся тема');
-      trainTopic.className += ' vocab-catalog-train-all';
+      const trainTopic = vocabularyChoice(topic, 'Вся тема', true);
       header.appendChild(trainTopic);
       section.appendChild(header);
       const subtopics = document.createElement('div');
@@ -471,11 +552,12 @@ window.Trainer.createVocabularyMode = function ({
     renderVocabTopicCards();
     refs.vocabTopicOverlay.hidden = false;
     refs.vocabTopicTrigger.setAttribute('aria-expanded', 'true');
-    const selectedCard = refs.vocabTopicGrid.querySelector('.vocab-topic-card--selected');
+    const selectedCard = refs.vocabTopicGrid.querySelector('.vocab-topic-choice--selected');
     (selectedCard || refs.vocabTopicGrid.querySelector('.vocab-collection-button--active') || refs.vocabTopicClose).focus();
   }
 
   function hideVocabTopicPicker() {
+    dismissProgressReset();
     refs.vocabTopicOverlay.hidden = true;
     refs.vocabTopicTrigger.setAttribute('aria-expanded', 'false');
     refs.vocabTopicTrigger.focus();
@@ -607,6 +689,15 @@ window.Trainer.createVocabularyMode = function ({
     vocabState.correct = Math.max(0, asNumber(saved.correct, 0));
     vocabState.wrong = Math.max(0, asNumber(saved.wrong, 0));
     sessionScoring.restore(vocabState, saved.outcomes);
+    const validKeys = new Set(progressKeys.values());
+    if (Array.isArray(saved.visitedWordIds)) {
+      vocabState.visitedWordIds = new Set(saved.visitedWordIds.filter(key => typeof key === 'string' && validKeys.has(key)));
+    } else {
+      // Recover the words traversed in the last approach of older installations.
+      vocabState.session.forEach((word, index) => {
+        if (index < vocabState.idx || vocabState.outcomes[word.id]) markVocabWordVisited(word);
+      });
+    }
     return Boolean(vocabState.session.length);
   }
 
@@ -655,6 +746,8 @@ window.Trainer.createVocabularyMode = function ({
       return;
     }
 
+    markVocabWordVisited(w);
+
     const wordOptions = answerOptionsForVocabItem(w);
     const wordTarget = primaryAnswerText(wordOptions) || w.infinitive || w.word;
     const target = normalize(wordTarget);
@@ -690,6 +783,7 @@ window.Trainer.createVocabularyMode = function ({
   function nextVocabQuestion() {
     cancelPendingActivity();
     if (!vocabState.session.length) return;
+    markVocabWordVisited(vocabState.session[vocabState.idx]);
     vocabState.idx += 1;
     if (vocabState.idx >= vocabState.session.length) {
       vocabState.idx = vocabState.session.length - 1;

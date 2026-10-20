@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=30" />
+    <link rel="stylesheet" href="./styles.css?v=33" />
   </head>
   <body>
     <main class="app">
@@ -282,6 +282,14 @@
           </button>
         </header>
         <div id="vocab-topic-grid" class="vocab-topic-grid" role="group" aria-labelledby="vocab-topic-modal-title"></div>
+        <div id="vocab-progress-reset" class="vocab-progress-reset" role="group" aria-labelledby="vocab-progress-reset-text" hidden>
+          <p id="vocab-progress-reset-text"></p>
+          <div class="vocab-progress-reset-actions">
+            <button id="vocab-progress-reset-confirm" type="button">Сбросить</button>
+            <button id="vocab-progress-reset-cancel" type="button">Отмена</button>
+          </div>
+        </div>
+        <p id="vocab-progress-storage-note" class="vocab-progress-storage-note">Прогресс сохраняется в этом браузере. Очистка данных сайта удалит его.</p>
       </div>
     </div>
 
@@ -353,10 +361,10 @@
     <script src="./js/progress.js?v=2"></script>
     <script src="./js/grammar-mode.js?v=4"></script>
     <script src="./js/vocabulary-catalog.js?v=2"></script>
-    <script src="./js/vocabulary-mode.js?v=7"></script>
+    <script src="./js/vocabulary-mode.js?v=10"></script>
     <script src="./js/shadowing-mode.js?v=3"></script>
     <script src="./js/future-presentation.js?v=6"></script>
     <script src="./js/theory-mode.js?v=8"></script>
-    <script src="./app.js?v=47"></script>
+    <script src="./app.js?v=48"></script>
   </body>
 </html>

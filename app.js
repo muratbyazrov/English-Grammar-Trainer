@@ -75,6 +75,11 @@
     vocabTopicModalSubtitle: document.getElementById('vocab-topic-modal-subtitle'),
     vocabTopicGrid: document.getElementById('vocab-topic-grid'),
     vocabTopicClose: document.getElementById('vocab-topic-close'),
+    vocabProgressReset: document.getElementById('vocab-progress-reset'),
+    vocabProgressResetText: document.getElementById('vocab-progress-reset-text'),
+    vocabProgressResetConfirm: document.getElementById('vocab-progress-reset-confirm'),
+    vocabProgressResetCancel: document.getElementById('vocab-progress-reset-cancel'),
+    vocabProgressStorageNote: document.getElementById('vocab-progress-storage-note'),
     vocabShowList: document.getElementById('vocab-show-list'),
     vocabTopicNavigation: document.getElementById('vocab-topic-navigation'),
     vocabNextTopic: document.getElementById('vocab-next-topic'),
@@ -200,6 +205,7 @@
   };
 
   const vocabState = {
+    visitedWordIds: new Set(),
     oxfordLevel: 'all',
     oxfordLevelMode: 'minimum',
     session: [],
@@ -403,6 +409,7 @@
           correct: vocabState.correct,
           wrong: vocabState.wrong,
           outcomes: vocabState.outcomes,
+          visitedWordIds: Array.from(vocabState.visitedWordIds),
         },
         shadowing: {
           topic: refs.shadowingTopic.value,
@@ -419,7 +426,10 @@
           view: currentTheoryView(),
         },
       };
-      progress.save(payload);
+      const saved = progress.save(payload);
+      refs.vocabProgressStorageNote.textContent = saved
+        ? 'Прогресс сохраняется в этом браузере. Очистка данных сайта удалит его.'
+        : 'Не удалось сохранить прогресс. Он доступен только до закрытия страницы.';
     } catch (_error) {
       // Ignore storage errors (private mode, quota, etc.)
     }

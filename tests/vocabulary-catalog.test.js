@@ -171,7 +171,7 @@ test('Oxford minimum level includes every higher level in sessions and word list
     switchCollection(app, 'collection:Oxford 3000');
     selectLevel(app, minimum);
     const wholeCollection = findChoice(app.el('vocab-topic-grid'), 'topicValue', 'collection:Oxford 3000');
-    assert.match(wholeCollection.textContent, new RegExp(`\\b${count}\\b`));
+    assert.match(wholeCollection.attributes['aria-label'], new RegExp(`\\b${count}\\b`));
     choose(app, 'collection:Oxford 3000');
     assert.equal(app.snapshot().vocabulary.order.length, 20);
     const byId = new Map(app.window.VOCABULARY_DATA.flatMap(topic => topic.words).map(word => [word.id, word]));
@@ -193,7 +193,7 @@ test('Oxford exact level can be selected, saved and switched back to range mode'
   selectLevel(app, 'A2');
   selectLevelMode(app, 'exact');
   assert.equal(findChoice(app.el('vocab-topic-grid'), 'levelValue', 'A2').textContent, 'A2');
-  assert.match(findChoice(app.el('vocab-topic-grid'), 'topicValue', 'collection:Oxford 3000').textContent, /872 слова/);
+  assert.match(findChoice(app.el('vocab-topic-grid'), 'topicValue', 'collection:Oxford 3000').attributes['aria-label'], /872 слова/);
   choose(app, 'collection:Oxford 3000');
   assert.equal(app.snapshot().vocabulary.oxfordLevelMode, 'exact');
   assert.equal(app.el('vocab-topic-trigger-text').textContent, 'Oxford 3000 · A2');
@@ -259,7 +259,7 @@ test('level filtering updates counts, hides empty sections and limits training a
   assert.match(findChoice(app.el('vocab-topic-grid'), 'topicValue', 'oxford-cafe').textContent, /10 слов/);
   for (const value of ['collection:Oxford 3000/topic:Еда и напитки', 'collection:Oxford 3000']) {
     const card = findChoice(app.el('vocab-topic-grid'), 'topicValue', value);
-    assert.match(card.textContent, /14 слов/);
+    assert.match(card.attributes['aria-label'], /14 слов/);
   }
   choose(app, 'collection:Oxford 3000/topic:Еда и напитки');
   const expected = [
