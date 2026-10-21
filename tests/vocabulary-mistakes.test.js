@@ -141,6 +141,107 @@ test('Oxford bars split correct and pending mistakes against the filtered total,
   assert.match(choice(app, 'topicValue', 'food').textContent, /Пройдено 10 из 10/);
 });
 
+test('all 33 city words fit in one approach and reach full progress across reload', () => {
+  let app = createApp();
+  app.click('tab-vocab');
+  app.change('auto-speak-correct-vocab', false);
+  app.change('vocab-topic', 'oxford-extra-02');
+  const order = app.snapshot().vocabulary.order;
+  const words = new Map(app.window.VOCABULARY_DATA.flatMap(topic => topic.words).map(word => [word.id, word]));
+  assert.equal(order.length, 33);
+  assert.equal(new Set(order).size, 33);
+  for (const [i, id] of order.entries()) {
+    app.answer(words.get(id).word);
+    app.advance(500);
+    if (i === 19) {
+      assert.equal(app.el('session-complete').hidden, true);
+      app = createApp({ saved: app.snapshot() });
+      assert.deepEqual(app.snapshot().vocabulary.order, order);
+      assert.equal(app.snapshot().vocabulary.idx, 20);
+      assert.equal(app.snapshot().vocabulary.correct, 20);
+    }
+  }
+  assert.equal(app.el('sc-title').textContent, 'Тема завершена!');
+  assert.equal(app.el('sc-correct').textContent, '33');
+  assert.equal(app.el('sc-pct').textContent, '100%');
+  assert.equal(app.el('next-session-btn').disabled, true);
+  app.click('vocab-topic-trigger');
+  assert.match(choice(app, 'topicValue', 'oxford-extra-02').textContent, /Пройдено 33 из 33 · 100%/);
+  assert.deepEqual(progressSegments(app, 'oxford-extra-02'), ['100%', '0%']);
+  assert.doesNotMatch(app.el('vocab-topic-grid').textContent, /до 20 слов/);
+  app.click('vocab-topic-close');
+  app.click('vocab-new-session');
+  assert.deepEqual([...app.snapshot().vocabulary.order].sort(), [...order].sort());
+});
+
+test('a saved short Oxford round resumes unchanged and continues with all remaining words', () => {
+  const topic = {
+    ...vocabulary[1],
+    words: Array.from({ length: 33 }, (_, i) => ({
+      id: `city-${i}`, word: `cityword${i}`, translation: `место ${i}`, level: 'A1',
+    })),
+  };
+  let app = createApp({ vocabulary: [topic] });
+  app.click('tab-vocab');
+  app.change('auto-speak-correct-vocab', false);
+  app.change('vocab-topic', topic.id);
+  assert.equal(app.snapshot().vocabulary.order.length, 33);
+  const legacySave = app.snapshot();
+  legacySave.vocabulary.order = legacySave.vocabulary.order.slice(0, 20);
+  app = createApp({ vocabulary: [topic], saved: legacySave });
+  const firstRound = app.snapshot().vocabulary.order;
+  assert.equal(firstRound.length, 20);
+  for (const [i, id] of firstRound.entries()) {
+    if (i === 0) app.answer('wrong');
+    app.answer(topic.words.find(word => word.id === id).word);
+    app.advance(500);
+  }
+  assert.equal(app.el('sc-title').textContent, 'Подход завершён!');
+  assert.equal(app.el('sc-review-summary').hidden, false);
+  assert.match(app.el('sc-review-summary').textContent, /непройденных слов: 13/);
+  assert.equal(app.el('next-session-btn').textContent, 'Продолжить тему →');
+  assert.equal(app.el('next-session-btn').disabled, false);
+
+  app = createApp({ vocabulary: [topic], saved: app.snapshot() });
+  assert.deepEqual(app.snapshot().vocabulary.order, firstRound);
+  app.click('next-btn');
+  app.click('next-session-btn');
+  const secondRound = app.snapshot().vocabulary.order;
+  assert.equal(secondRound.length, 13);
+  assert.ok(secondRound.every(id => !firstRound.includes(id)));
+  assert.equal(app.snapshot().vocabulary.reviewMistakes, false);
+  for (const id of secondRound) {
+    app.answer(topic.words.find(word => word.id === id).word);
+    app.advance(500);
+  }
+  assert.equal(app.el('sc-title').textContent, 'Тема завершена!');
+  assert.equal(app.el('next-session-btn').textContent, 'Тренировать ошибки →');
+  app.click('vocab-topic-trigger');
+  assert.match(choice(app, 'topicValue', topic.id).textContent, /Пройдено 33 из 33 · 100%/);
+  assert.deepEqual(progressSegments(app, topic.id), [`${32 / 33 * 100}%`, `${1 / 33 * 100}%`]);
+  app.click('vocab-topic-close');
+  app.click('next-session-btn');
+  assert.equal(app.snapshot().vocabulary.reviewMistakes, true);
+  assert.deepEqual(app.snapshot().vocabulary.order, [firstRound[0]]);
+});
+
+test('an almost completed topic picks the last unseen word on restart and when a saved order is stale', () => {
+  const saved = start('food').snapshot();
+  saved.vocabulary.visitedWordIds = vocabulary[1].words.slice(0, 24).map(word => word.id);
+  for (const staleOrder of [false, true]) {
+    const snapshot = JSON.parse(JSON.stringify(saved));
+    if (staleOrder) snapshot.vocabulary.order = ['deleted-word'];
+    const app = createApp({ vocabulary, saved: snapshot });
+    if (!staleOrder) app.click('vocab-new-session');
+    assert.deepEqual(app.snapshot().vocabulary.order, ['food-24']);
+    app.answer('foodword24');
+    app.advance(500);
+    app.click('vocab-topic-trigger');
+    assert.match(choice(app, 'topicValue', 'food').textContent, /Пройдено 25 из 25 · 100%/);
+    assert.deepEqual(progressSegments(app, 'food'), ['100%', '0%']);
+  }
+});
+
 test('Oxford hint stays red through correction, then one clean answer turns it green and survives reload', () => {
   let app = start();
   app.click('speak-word-btn');
@@ -275,14 +376,14 @@ test('Oxford shows distinct-word counts on topics, sections and the whole collec
   assert.equal(mistakes(app).size, 4);
 });
 
-test('review uses only section mistakes, respects the Oxford level and limits each approach to 20', () => {
+test('review uses all section mistakes and respects the Oxford level', () => {
   const saved = start().snapshot();
   saved.vocabulary.mistakes = vocabulary.flatMap(topic => topic.words)
     .filter(word => typeof word.id === 'string').map(word => [word.id, 0]);
   const app = createApp({ vocabulary, saved });
   review(app);
   assert.equal(app.snapshot().vocabulary.reviewMistakes, true);
-  assert.equal(app.snapshot().vocabulary.order.length, 20);
+  assert.equal(app.snapshot().vocabulary.order.length, 26);
   assert.ok(app.snapshot().vocabulary.order.every(id => id.startsWith('food-') || id === 'tea'));
   app.click('vocab-topic-trigger');
   choice(app, 'levelValue', 'A2').click();
@@ -439,7 +540,7 @@ test('IT mistakes migrate from the last saved approach, even if Oxford mistake s
   }
 });
 
-test('IT review is limited to 20 mistakes and ignores the Oxford level filter', () => {
+test('IT review includes all mistakes and ignores the Oxford level filter', () => {
   const topics = [{ topic: 'Большая тема', words: Array.from({ length: 25 }, (_, i) => ({
     id: i + 1, word: `term${i}`, translation: `термин ${i}`,
   })) }];
@@ -452,7 +553,7 @@ test('IT review is limited to 20 mistakes and ignores the Oxford level filter', 
   saved.vocabulary.mistakes = topics[0].words.map(word => [`legacy:${JSON.stringify(['Большая тема', word.word])}`, 0]);
   const reload = createApp({ vocabulary: topics, saved });
   review(reload, 'Большая тема');
-  assert.equal(reload.snapshot().vocabulary.order.length, 20);
+  assert.equal(reload.snapshot().vocabulary.order.length, 25);
   reload.click('vocab-show-list');
   assert.equal(reload.el('vocab-list-body').children.length, 25);
 });
@@ -534,5 +635,5 @@ test('starting review cancels pending auto-next and selecting a regular topic ex
   app.click('vocab-topic-trigger');
   choice(app, 'topicValue', foodGroup).click();
   assert.equal(app.snapshot().vocabulary.reviewMistakes, false);
-  assert.equal(app.snapshot().vocabulary.order.length, 20);
+  assert.deepEqual([...app.snapshot().vocabulary.order].sort(), vocabulary[1].words.map(word => word.id).sort());
 });

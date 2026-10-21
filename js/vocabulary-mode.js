@@ -89,6 +89,14 @@ window.Trainer.createVocabularyMode = function ({
     return mistakeWords(vocabWordsForTopicValue(refs.vocabTopic.value)).length;
   }
 
+  function unvisitedVocabWords(words) {
+    return words.filter(word => !vocabState.visitedWordIds.has(progressKeys.get(word)));
+  }
+
+  function remainingVocabUnvisited() {
+    return unvisitedVocabWords(vocabWordsForTopicValue(refs.vocabTopic.value)).length;
+  }
+
   function collectUnansweredVocabMistakes() {
     vocabState.session.forEach(word => {
       if (!vocabState.outcomes[word.id]) {
@@ -109,11 +117,10 @@ window.Trainer.createVocabularyMode = function ({
   }
 
   function pickVocabSession() {
-    const node = catalog.nodes.get(refs.vocabTopic.value);
     const available = vocabWordsForTopicValue(refs.vocabTopic.value);
-    if (vocabState.reviewMistakes) return shuffleItems(mistakeWords(available)).slice(0, 20);
-    const words = shuffleItems(available);
-    return node && node.collection === 'Oxford 3000' ? words.slice(0, 20) : words;
+    if (vocabState.reviewMistakes) return shuffleItems(mistakeWords(available));
+    const unvisited = unvisitedVocabWords(available);
+    return shuffleItems(unvisited.length ? unvisited : available);
   }
 
   function startVocabSession() {
@@ -373,7 +380,7 @@ window.Trainer.createVocabularyMode = function ({
       .map((id) => wordsById.get(String(id)))
       .filter(Boolean);
 
-    // A saved session can be a short Oxford round or predate newly added words.
+    // Preserve saved rounds, including former short Oxford rounds and older dictionaries.
     return restored.length === order.length && new Set(order.map(String)).size === order.length ? restored : [];
   }
 
@@ -401,6 +408,10 @@ window.Trainer.createVocabularyMode = function ({
     vocabState.autoSpeakCorrect = saved.autoSpeakCorrect !== false;
     refs.autoSpeakCorrectVocab.checked = vocabState.autoSpeakCorrect;
 
+    if (Array.isArray(saved.visitedWordIds)) {
+      vocabState.visitedWordIds = new Set(saved.visitedWordIds.filter(key => validProgressKeys.has(key)));
+    }
+
     const stableReview = vocabState.reviewMistakes && Array.isArray(saved.reviewOrder);
     vocabState.session = restoreVocabSessionFromOrder(stableReview ? saved.reviewOrder : saved.order, refs.vocabTopic.value, stableReview);
     const newReview = vocabState.reviewMistakes && !vocabState.session.length;
@@ -421,9 +432,7 @@ window.Trainer.createVocabularyMode = function ({
         vocabState.mistakeProgress.set(progressKeys.get(word), 0);
       }
     });
-    if (Array.isArray(saved.visitedWordIds)) {
-      vocabState.visitedWordIds = new Set(saved.visitedWordIds.filter(key => validProgressKeys.has(key)));
-    } else {
+    if (!Array.isArray(saved.visitedWordIds)) {
       // Navigation alone is not evidence of an attempted answer.
       vocabState.session.forEach(word => {
         if (vocabState.outcomes[word.id]) {
@@ -573,6 +582,7 @@ window.Trainer.createVocabularyMode = function ({
     startVocabSession,
     recordVocabHint,
     remainingVocabMistakes,
+    remainingVocabUnvisited,
     reviewCurrentVocabMistakes,
     renderVocab,
     restoreVocabProgress,

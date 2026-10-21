@@ -678,6 +678,7 @@
     startVocabSession,
     recordVocabHint,
     remainingVocabMistakes,
+    remainingVocabUnvisited,
     reviewCurrentVocabMistakes,
     renderVocab,
     restoreVocabProgress,
@@ -828,7 +829,8 @@
       mode: currentMode,
       total: stats.session.length,
       reviewing: currentMode === 'vocabulary' && vocabState.reviewMistakes,
-      remaining: currentMode === 'vocabulary' ? remainingVocabMistakes() : 0
+      remaining: currentMode === 'vocabulary' ? remainingVocabMistakes() : 0,
+      unvisited: currentMode === 'vocabulary' ? remainingVocabUnvisited() : 0
     });
   }
 
@@ -912,8 +914,10 @@
   });
 
   refs.nextSessionBtn.addEventListener('click', () => {
-    if (currentMode === 'vocabulary') reviewCurrentVocabMistakes();
-    else if (currentMode === 'shadowing') startShadowingSession();
+    if (currentMode === 'vocabulary') {
+      if (!vocabState.reviewMistakes && remainingVocabUnvisited()) startVocabSession();
+      else reviewCurrentVocabMistakes();
+    } else if (currentMode === 'shadowing') startShadowingSession();
     else startGrammarSession();
   });
 

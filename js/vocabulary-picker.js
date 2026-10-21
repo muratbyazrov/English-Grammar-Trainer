@@ -352,7 +352,7 @@ window.Trainer.createVocabularyPicker = function ({
     const note = document.createElement('p');
     note.className = 'vocab-catalog-note';
     note.textContent = pickerNode.collection === 'Oxford 3000'
-      ? `Oxford 3000 · ${pickerNode.words.length} карточек · ${pickerLevel === 'all' ? 'все уровни' : oxfordSelectionLabel(pickerLevel, pickerLevelMode)}: ${formatVocabWordCount(wordsForNode(pickerNode, pickerLevel, pickerLevelMode).length)} · до 20 слов за подход`
+      ? `Oxford 3000 · ${pickerNode.words.length} карточек · ${pickerLevel === 'all' ? 'все уровни' : oxfordSelectionLabel(pickerLevel, pickerLevelMode)}: ${formatVocabWordCount(wordsForNode(pickerNode, pickerLevel, pickerLevelMode).length)}`
       : formatVocabWordCount(pickerNode.words.length);
     overview.appendChild(note);
     const trainCollection = vocabularyChoice(pickerNode, 'Тренировать весь набор', true);

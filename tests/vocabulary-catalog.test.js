@@ -126,7 +126,9 @@ test('whole themes advance as themes, while IT stays in its own collection', () 
   app.change('vocab-topic', 'collection:Oxford 3000/topic:Еда и напитки');
   app.click('vocab-next-topic');
   assert.equal(app.snapshot().vocabulary.topic, 'collection:Oxford 3000/topic:Город и путешествия');
-  assert.equal(app.snapshot().vocabulary.order.length, 20);
+  const cityWords = app.window.VOCABULARY_DATA.filter(topic => topic.collection === 'Oxford 3000'
+    && topic.topic === 'Город и путешествия').flatMap(topic => topic.words);
+  assert.deepEqual([...app.snapshot().vocabulary.order].sort(), [...cityWords].map(word => word.id).sort());
   app.change('vocab-topic', 'collection:Oxford 3000');
   app.click('vocab-next-topic');
   assert.equal(app.snapshot().vocabulary.topic, 'oxford-cafe');
@@ -173,7 +175,7 @@ test('Oxford minimum level includes every higher level in sessions and word list
     const wholeCollection = findChoice(app.el('vocab-topic-grid'), 'topicValue', 'collection:Oxford 3000');
     assert.match(wholeCollection.attributes['aria-label'], new RegExp(`\\b${count}\\b`));
     choose(app, 'collection:Oxford 3000');
-    assert.equal(app.snapshot().vocabulary.order.length, 20);
+    assert.equal(app.snapshot().vocabulary.order.length, count);
     const byId = new Map(app.window.VOCABULARY_DATA.flatMap(topic => topic.words).map(word => [word.id, word]));
     assert.ok(app.snapshot().vocabulary.order.every(id => allowed.has(byId.get(id).level)));
     app.click('vocab-show-list');
@@ -282,14 +284,18 @@ test('level filtering updates counts, hides empty sections and limits training a
   reload.click('vocab-topic-trigger');
   selectLevel(reload, 'B1');
   choose(reload, 'collection:Oxford 3000/topic:Еда и напитки');
-  assert.equal(reload.snapshot().vocabulary.order.length, 10);
+  const unvisitedCafeIds = vocabulary.find(t => t.id === 'oxford-cafe').words
+    .map(word => word.id).filter(id => id !== current.id).sort();
+  assert.deepEqual([...reload.snapshot().vocabulary.order].sort(), unvisitedCafeIds);
   assert.equal(reload.snapshot().vocabulary.correct, 0);
   assert.equal(reload.snapshot().vocabulary.idx, 0);
   assert.ok(reload.snapshot().vocabulary.order.every(id => vocabulary.find(t => t.id === 'oxford-cafe').words.some(w => w.id === id)));
   reload.click('vocab-topic-trigger');
   selectLevel(reload, 'all');
   choose(reload, 'collection:Oxford 3000/topic:Еда и напитки');
-  assert.equal(reload.snapshot().vocabulary.order.length, 20);
+  const unvisitedThemeIds = vocabulary.filter(topic => ['oxford-food', 'oxford-cafe'].includes(topic.id))
+    .flatMap(topic => topic.words.map(word => word.id)).filter(id => id !== current.id).sort();
+  assert.deepEqual([...reload.snapshot().vocabulary.order].sort(), unvisitedThemeIds);
   assert.equal(reload.el('vocab-topic-trigger-text').textContent, 'Еда и напитки');
 });
 
@@ -376,15 +382,15 @@ test('collection switches show topics without changing the current session; clos
   assert.equal(app.snapshot().vocabulary.topic, 'oxford-city');
 });
 
-test('a whole Oxford collection trains 20 unique words, lists all words and resumes the same round', () => {
+test('a whole Oxford collection trains all unique words, lists all words and resumes the same round', () => {
   const app = createApp();
   app.click('tab-vocab');
   app.click('vocab-topic-trigger');
   switchCollection(app, 'collection:Oxford 3000');
   choose(app, 'collection:Oxford 3000');
   const order = app.snapshot().vocabulary.order;
-  assert.equal(order.length, 20);
-  assert.equal(new Set(order).size, 20);
+  assert.equal(order.length, 3313);
+  assert.equal(new Set(order).size, 3313);
   assert.ok(order.every(id => id.startsWith('oxford:')));
   app.change('auto-speak-correct-vocab', false);
   const words = app.window.VOCABULARY_DATA.flatMap(t => t.words);
@@ -409,9 +415,7 @@ test('theme selection includes both subtopics and excludes other themes', () => 
   switchCollection(app, 'collection:Oxford 3000');
   choose(app, 'collection:Oxford 3000/topic:Еда и напитки');
   const expected = app.window.VOCABULARY_DATA.filter(t => t.collection === 'Oxford 3000' && t.topic === 'Еда и напитки').flatMap(t => t.words.map(w => w.id));
-  assert.equal(app.snapshot().vocabulary.order.length, 20);
-  assert.ok(app.snapshot().vocabulary.order.every(id => expected.includes(id)));
-  assert.ok(expected.length > 20);
+  assert.deepEqual([...app.snapshot().vocabulary.order].sort(), [...expected].sort());
 });
 
 test('adding Oxford words preserves an existing all-words round and legacy topic selection', () => {
