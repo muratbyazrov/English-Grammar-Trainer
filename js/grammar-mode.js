@@ -42,6 +42,48 @@ window.Trainer.createGrammarMode = function ({
     return src.slice().sort((a, b) => a.id - b.id);
   }
 
+  function grammarProgressKey(level, question) {
+    return `${level}:${question.id}`;
+  }
+
+  function rememberGrammarOutcome(question, outcome) {
+    if (!question || !['correct', 'wrong'].includes(outcome)) return;
+    grammarState.questionProgress[grammarProgressKey(currentLevel(), question)] = outcome;
+  }
+
+  function restoreGrammarProgress(saved) {
+    const validKeys = new Set(Object.entries(allLevels).flatMap(([level, questions]) =>
+      Array.isArray(questions) ? questions.map((question) => grammarProgressKey(level, question)) : []
+    ));
+    grammarState.questionProgress = Object.fromEntries(Object.entries(saved || {}).filter(([key, outcome]) =>
+      validKeys.has(key) && (outcome === 'correct' || outcome === 'wrong')
+    ));
+    // Migrate older saves only. New history excludes tasks skipped without an answer,
+    // even though finishing an approach counts those tasks in its result.
+    if (!saved || typeof saved !== 'object' || Array.isArray(saved)) {
+      grammarState.session.forEach((question) => {
+        rememberGrammarOutcome(question, grammarState.outcomes[question.id]);
+      });
+    }
+  }
+
+  function grammarProgressForTopic(topic, level) {
+    const questions = orderedQuestionsForLevel(level).filter((question) =>
+      topic.id === ALL_GRAMMAR_TOPICS_VALUE || (question.id >= topic.from && question.id <= topic.to)
+    );
+    let correct = 0;
+    let wrong = 0;
+    questions.forEach((question) => {
+      const outcome = grammarState.questionProgress[grammarProgressKey(level, question)];
+      if (outcome === 'correct') correct += 1;
+      if (outcome === 'wrong') wrong += 1;
+    });
+    const total = questions.length;
+    const visited = correct + wrong;
+    const percent = total ? Math.min(visited === total ? 100 : 99, Math.round(visited / total * 100)) : 0;
+    return { total, visited, correct, wrong, percent };
+  }
+
   function grammarTopicsForLevel(level) {
     const topics = GRAMMAR_TOPICS[level] || [];
     const questions = orderedQuestionsForLevel(level);
@@ -122,7 +164,7 @@ window.Trainer.createGrammarMode = function ({
     refs.grammarTopicTrigger.title = topic.title;
   }
 
-  function appendGrammarTopicCard(parent, topic, icon, selectedValue) {
+  function appendGrammarTopicCard(parent, topic, icon, selectedValue, level) {
     const cardButton = document.createElement('button');
     const isSelected = topic.id === selectedValue;
     cardButton.type = 'button';
@@ -145,6 +187,27 @@ window.Trainer.createGrammarMode = function ({
     copy.appendChild(title);
     copy.appendChild(count);
 
+    const progress = grammarProgressForTopic(topic, level);
+    const resultDescription = `Верно: ${progress.correct}. Ошибок: ${progress.wrong}. Не пройдено: ${progress.total - progress.visited}.`;
+    cardButton.setAttribute('aria-label', `${topic.title}, ${count.textContent}, пройдено ${progress.visited} из ${progress.total}, ${progress.percent}%. ${resultDescription}`);
+    const progressBlock = document.createElement('span');
+    progressBlock.className = 'vocab-topic-progress';
+    progressBlock.title = resultDescription;
+    const progressLabel = document.createElement('span');
+    progressLabel.className = 'vocab-topic-progress-label';
+    progressLabel.textContent = `Пройдено ${progress.visited} из ${progress.total} · ${progress.percent}%`;
+    progressBlock.appendChild(progressLabel);
+    const track = document.createElement('span');
+    track.className = 'vocab-topic-progress-track';
+    track.setAttribute('aria-hidden', 'true');
+    for (const [outcome, count] of [['correct', progress.correct], ['wrong', progress.wrong]]) {
+      const fill = document.createElement('span');
+      fill.className = `vocab-topic-progress-fill vocab-topic-progress-fill--${outcome}`;
+      fill.style.width = `${progress.total ? count / progress.total * 100 : 0}%`;
+      track.appendChild(fill);
+    }
+    progressBlock.appendChild(track);
+
     const check = document.createElement('span');
     check.className = 'vocab-topic-card-check';
     check.setAttribute('aria-hidden', 'true');
@@ -153,6 +216,7 @@ window.Trainer.createGrammarMode = function ({
     cardButton.appendChild(cardIcon);
     cardButton.appendChild(copy);
     cardButton.appendChild(check);
+    cardButton.appendChild(progressBlock);
     cardButton.addEventListener('click', () => {
       if (refs.grammarTopic.value !== topic.id) {
         refs.grammarTopic.value = topic.id;
@@ -174,7 +238,7 @@ window.Trainer.createGrammarMode = function ({
 
     const allContainer = document.createElement('div');
     allContainer.className = 'grammar-topic-all';
-    appendGrammarTopicCard(allContainer, allTopic, '🧭', selectedValue);
+    appendGrammarTopicCard(allContainer, allTopic, '🧭', selectedValue, level);
     refs.grammarTopicGroups.appendChild(allContainer);
 
     groupedGrammarTopics(level).forEach((group) => {
@@ -201,7 +265,7 @@ window.Trainer.createGrammarMode = function ({
 
       const cards = document.createElement('div');
       cards.className = 'grammar-topic-card-grid';
-      group.topics.forEach((topic) => appendGrammarTopicCard(cards, topic, group.icon, selectedValue));
+      group.topics.forEach((topic) => appendGrammarTopicCard(cards, topic, group.icon, selectedValue, level));
 
       section.appendChild(header);
       section.appendChild(cards);
@@ -419,6 +483,7 @@ window.Trainer.createGrammarMode = function ({
       refs.answerInput.focus();
     }
 
+    rememberGrammarOutcome(q, grammarState.outcomes[q.id]);
     saveProgress();
   }
 
@@ -429,6 +494,7 @@ window.Trainer.createGrammarMode = function ({
   });
 
   return {
+    restoreGrammarProgress,
     currentLevel,
     questionTranslationOverride,
     currentGrammarTopic,

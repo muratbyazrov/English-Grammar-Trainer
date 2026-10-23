@@ -4,9 +4,12 @@ window.Trainer.createShadowingMode = function ({
   SHADOWING_SILENCE_MS,
   SHADOWING_SUCCESS_PAUSE_MS,
   activity,
+  allLevels,
   asNumber,
   cancelPendingActivity,
+  fillPromptWithAnswer,
   flashCorrect,
+  getSentenceTranslation,
   hideSessionComplete,
   playCorrectSound,
   playWrongSound,
@@ -23,11 +26,40 @@ window.Trainer.createShadowingMode = function ({
   vocabTopics,
   getCurrentMode
 }) {
-  const { SHADOWING_TOPICS, SHADOWING_TRANSLATIONS } = window.TrainerData;
+  const { SHADOWING_TOPICS, SHADOWING_TRANSLATIONS, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES } = window.TrainerData;
+  // Reuse grammar ranges, answers and stable question IDs without copying its database.
+  const grammarLevel = 'A1-A2';
+  const ranges = GRAMMAR_TOPICS[grammarLevel] || [];
+  const lastTopicIndex = ranges.findIndex((topic) => topic.id === 'future-simple');
+  const grammarTopics = ranges.slice(0, lastTopicIndex + 1).map((topic) => ({
+    id: `grammar:${grammarLevel}:${topic.id}`,
+    title: topic.title,
+    grammar: true,
+    group: GRAMMAR_TOPIC_GROUPS.find((group) => group.pattern.test(`${topic.id} ${topic.title}`)),
+    items: (allLevels[grammarLevel] || [])
+      .filter((question) => question.id >= topic.from && question.id <= topic.to)
+      .slice().sort((a, b) => a.id - b.id)
+      .map((question) => ({
+        id: `grammar:${grammarLevel}:${question.id}`,
+        topicId: `grammar:${grammarLevel}:${topic.id}`,
+        topicTitle: topic.title,
+        groupTitle: topic.title,
+        text: fillPromptWithAnswer(question.prompt, question.answer),
+        translation: QUESTION_TRANSLATION_OVERRIDES[`${grammarLevel}:${question.id}`] || question.translation || '',
+      })),
+  })).filter((topic) => topic.items.length);
+  const shadowingTopics = [...SHADOWING_TOPICS, ...grammarTopics];
+  let pickerCategory = 'it';
+  let translationRequestId = 0;
+
+  function phraseCountForTopic(topic) {
+    return topic.items ? topic.items.length : topic.groups.reduce((total, group) => total + group.items.length, 0);
+  }
 
   function shadowingItemsForTopic(topicValue) {
-    const topic = SHADOWING_TOPICS.find((candidate) => candidate.id === topicValue) || SHADOWING_TOPICS[0];
+    const topic = shadowingTopics.find((candidate) => candidate.id === topicValue) || shadowingTopics[0];
     if (!topic) return [];
+    if (topic.items) return topic.items.slice();
     return topic.groups.flatMap((group, groupIndex) =>
       group.items.map((text, itemIndex) => ({
         id: `${topic.id}:${groupIndex}:${itemIndex}`,
@@ -41,6 +73,7 @@ window.Trainer.createShadowingMode = function ({
 
   function shadowingTopicIcon(topic) {
     if (!topic) return '🎙️';
+    if (topic.grammar) return topic.group ? topic.group.icon : '📚';
     if (topic.id === 'architecture-system-design') return '🏗️';
     if (topic.id === 'code-review-phrases') return '🔍';
     if (topic.id === 'work-discussions') return '💬';
@@ -58,26 +91,47 @@ window.Trainer.createShadowingMode = function ({
   }
 
   function syncShadowingTopicTrigger() {
-    const topic = SHADOWING_TOPICS.find((candidate) => candidate.id === refs.shadowingTopic.value) || SHADOWING_TOPICS[0];
+    const topic = shadowingTopics.find((candidate) => candidate.id === refs.shadowingTopic.value) || shadowingTopics[0];
     if (!topic) return;
     refs.shadowingTopicTriggerIcon.textContent = shadowingTopicIcon(topic);
     refs.shadowingTopicTriggerText.textContent = topic.title;
-    refs.shadowingTopicTrigger.title = topic.title;
+    refs.shadowingTopicTrigger.title = topic.grammar ? `Из грамматики · ${grammarLevel} → ${topic.title}` : `IT → ${topic.title}`;
   }
 
-  function renderShadowingTopicCards() {
+  function renderShadowingTopicCards(focusFirst = false) {
     const selectedValue = refs.shadowingTopic.value;
     refs.shadowingTopicGrid.innerHTML = '';
 
-    SHADOWING_TOPICS.forEach((topic) => {
+    const collections = document.createElement('div');
+    collections.className = 'vocab-catalog-collections';
+    collections.style.gridColumn = '1 / -1';
+    collections.setAttribute('role', 'group');
+    collections.setAttribute('aria-label', 'Набор фраз Shadowing');
+    for (const [value, title] of [['it', 'IT'], ['grammar', 'Из грамматики']]) {
+      const button = document.createElement('button');
+      const active = pickerCategory === value;
+      button.type = 'button';
+      button.className = `vocab-collection-button${active ? ' vocab-collection-button--active' : ''}`;
+      button.dataset.collectionValue = value;
+      button.textContent = title;
+      button.disabled = value === 'grammar' && !grammarTopics.length;
+      button.setAttribute('aria-pressed', String(active));
+      button.addEventListener('click', () => {
+        pickerCategory = value;
+        renderShadowingTopicCards(true);
+      });
+      collections.appendChild(button);
+    }
+    refs.shadowingTopicGrid.appendChild(collections);
+
+    function appendCard(container, topic) {
       const cardButton = document.createElement('button');
       const isSelected = topic.id === selectedValue;
-      const phraseCount = topic.groups.reduce((total, group) => total + group.items.length, 0);
+      const phraseCount = phraseCountForTopic(topic);
       cardButton.type = 'button';
       cardButton.className = `vocab-topic-card${isSelected ? ' vocab-topic-card--selected' : ''}`;
       cardButton.dataset.topicValue = topic.id;
-      cardButton.setAttribute('role', 'option');
-      cardButton.setAttribute('aria-selected', String(isSelected));
+      cardButton.setAttribute('aria-pressed', String(isSelected));
 
       const icon = document.createElement('span');
       icon.className = 'vocab-topic-card-icon';
@@ -112,18 +166,49 @@ window.Trainer.createShadowingMode = function ({
         hideShadowingTopicPicker();
       });
 
-      refs.shadowingTopicGrid.appendChild(cardButton);
-    });
+      container.appendChild(cardButton);
+    }
+
+    const grammarPhraseCount = grammarTopics.reduce((sum, topic) => sum + topic.items.length, 0);
+    if (pickerCategory === 'grammar') {
+      refs.shadowingTopicModalSubtitle.textContent = `Из грамматики · ${grammarLevel} · до Future Simple включительно · ${formatShadowingPhraseCount(grammarPhraseCount)}`;
+      const content = document.createElement('div');
+      content.className = 'vocab-catalog-topics';
+      content.style.gridColumn = '1 / -1';
+      GRAMMAR_TOPIC_GROUPS.forEach((group) => {
+        const topics = grammarTopics.filter((topic) => topic.group === group);
+        if (!topics.length) return;
+        const section = document.createElement('section');
+        section.className = 'vocab-catalog-section';
+        const header = document.createElement('div');
+        header.className = 'vocab-catalog-section-header';
+        const title = document.createElement('h3');
+        title.textContent = `${group.icon} ${group.title}`;
+        header.appendChild(title);
+        section.appendChild(header);
+        const cards = document.createElement('div');
+        cards.className = 'vocab-catalog-subtopics';
+        topics.forEach((topic) => appendCard(cards, topic));
+        section.appendChild(cards);
+        content.appendChild(section);
+      });
+      refs.shadowingTopicGrid.appendChild(content);
+    } else {
+      const phraseCount = SHADOWING_TOPICS.reduce((sum, topic) => sum + phraseCountForTopic(topic), 0);
+      refs.shadowingTopicModalSubtitle.textContent = `IT · ${formatShadowingPhraseCount(phraseCount)}`;
+      const content = document.createElement('div');
+      content.className = 'vocab-catalog-topics';
+      content.style.gridColumn = '1 / -1';
+      SHADOWING_TOPICS.forEach((topic) => appendCard(content, topic));
+      refs.shadowingTopicGrid.appendChild(content);
+    }
+    if (focusFirst) refs.shadowingTopicGrid.querySelector('.vocab-collection-button--active').focus();
   }
 
   function showShadowingTopicPicker() {
     ensureShadowingTopicOptions();
+    pickerCategory = grammarTopics.some((topic) => topic.id === refs.shadowingTopic.value) ? 'grammar' : 'it';
     renderShadowingTopicCards();
-    const phraseCount = SHADOWING_TOPICS.reduce(
-      (total, topic) => total + topic.groups.reduce((sum, group) => sum + group.items.length, 0),
-      0
-    );
-    refs.shadowingTopicModalSubtitle.textContent = `${SHADOWING_TOPICS.length} темы · ${formatShadowingPhraseCount(phraseCount)}`;
     refs.shadowingTopicOverlay.hidden = false;
     refs.shadowingTopicTrigger.setAttribute('aria-expanded', 'true');
     const selectedCard = refs.shadowingTopicGrid.querySelector('.vocab-topic-card--selected');
@@ -138,10 +223,10 @@ window.Trainer.createShadowingMode = function ({
 
   function ensureShadowingTopicOptions() {
     if (refs.shadowingTopic.options.length === 0) {
-      SHADOWING_TOPICS.forEach((topic) => {
+      shadowingTopics.forEach((topic) => {
         const opt = document.createElement('option');
         opt.value = topic.id;
-        opt.textContent = topic.title;
+        opt.textContent = topic.grammar ? `Из грамматики · ${grammarLevel} → ${topic.title}` : topic.title;
         refs.shadowingTopic.appendChild(opt);
       });
     }
@@ -218,13 +303,25 @@ window.Trainer.createShadowingMode = function ({
     refs.shadowingRepetition.textContent = `Серия: повтор ${nextRepetition} из ${repetitions}`;
   }
 
-  function showShadowingTranslation(item) {
+  async function showShadowingTranslation(item) {
+    const requestId = ++translationRequestId;
     const vocabularyItem = vocabTopics
       .flatMap((topic) => topic.words || [])
       .find((word) => word.example === item.text);
-    refs.shadowingInlineTranslation.textContent = SHADOWING_TRANSLATIONS[item.text]
+    const translation = item.translation || SHADOWING_TRANSLATIONS[item.text]
       || (vocabularyItem && vocabularyItem.sentenceTranslation)
-      || 'Перевод не найден.';
+      || '';
+    refs.shadowingInlineTranslation.textContent = translation || 'Перевод не найден.';
+    if (translation || !item.id.startsWith('grammar:')) return;
+    refs.shadowingInlineTranslation.textContent = 'Перевожу предложение...';
+    try {
+      const translated = await getSentenceTranslation(item.text);
+      if (requestId !== translationRequestId || getCurrentMode() !== 'shadowing') return;
+      refs.shadowingInlineTranslation.textContent = translated || 'Перевод не найден.';
+    } catch (_) {
+      if (requestId !== translationRequestId || getCurrentMode() !== 'shadowing') return;
+      refs.shadowingInlineTranslation.textContent = 'Не удалось получить перевод предложения. Проверь интернет.';
+    }
   }
 
   function renderShadowing() {

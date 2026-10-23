@@ -6,10 +6,8 @@ window.Trainer.createTheoryMode = function ({
 }) {
   const { THEORY_TOPICS, THEORY_BRIEF_TOPICS } = window.TrainerData;
   let theoryView = 'short';
-  const futurePresentation = window.Trainer.createFuturePresentation();
-
   function normalizeTheoryView(view) {
-    return ['short', 'detailed', 'visual'].includes(view) ? view : 'short';
+    return ['short', 'detailed'].includes(view) ? view : 'short';
   }
 
   function currentTheoryView() {
@@ -22,9 +20,7 @@ window.Trainer.createTheoryMode = function ({
   }
 
   function syncTheoryViewControls() {
-    refs.theoryViewVisual.hidden = refs.theoryTopic.value !== 'tenses-future';
-    if (refs.theoryViewVisual.hidden && theoryView === 'visual') theoryView = 'short';
-    [['short', refs.theoryViewShort], ['detailed', refs.theoryViewDetailed], ['visual', refs.theoryViewVisual]].forEach(([view, button]) => {
+    [['short', refs.theoryViewShort], ['detailed', refs.theoryViewDetailed]].forEach(([view, button]) => {
       button.setAttribute('aria-pressed', theoryView === view ? 'true' : 'false');
       button.classList.toggle('theory-view-button--active', theoryView === view);
     });
@@ -55,6 +51,13 @@ window.Trainer.createTheoryMode = function ({
     refs.theoryTopicTriggerIcon.textContent = theoryTopicIcon(topic);
     refs.theoryTopicTriggerText.textContent = topic.title;
     refs.theoryTopicTrigger.title = topic.title;
+  }
+
+  function nextTheoryTopic() {
+    if (!THEORY_TOPICS.length) return;
+    const index = THEORY_TOPICS.findIndex((topic) => topic.id === refs.theoryTopic.value);
+    refs.theoryTopic.value = THEORY_TOPICS[(index + 1) % THEORY_TOPICS.length].id;
+    refs.theoryTopic.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
   function showTheoryTopicPicker() {
@@ -384,13 +387,6 @@ window.Trainer.createTheoryMode = function ({
     syncTheoryTopicTrigger();
     refs.theoryTitle.textContent = topic.title;
     refs.theoryBody.innerHTML = '';
-    refs.theoryPanel.classList.toggle('theory-panel--visual', theoryView === 'visual');
-
-    if (theoryView === 'visual') {
-      refs.theoryTitle.textContent = 'Будущее время';
-      futurePresentation.render(refs.theoryBody);
-      return;
-    }
 
     if (topic.subtitle) {
       const subtitle = document.createElement('p');
@@ -420,6 +416,7 @@ window.Trainer.createTheoryMode = function ({
 
   return {
     ensureTheoryTopicOptions,
+    nextTheoryTopic,
     showTheoryTopicPicker,
     hideTheoryTopicPicker,
     currentTheoryView,

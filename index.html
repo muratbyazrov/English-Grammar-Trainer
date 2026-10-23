@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=36" />
+    <link rel="stylesheet" href="./styles.css?v=47" />
   </head>
   <body>
     <main class="app">
@@ -21,6 +21,7 @@
         <div class="theory-tab-group" id="theory-tab-group">
           <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
           <span id="controls-theory" class="theory-topic-control" hidden>
+            <button id="theory-next-topic" class="theory-next-topic" type="button" aria-label="Следующая тема теории">След. тема →</button>
             <select id="theory-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
             <button
               id="theory-topic-trigger"
@@ -201,7 +202,6 @@
           <div class="theory-view-switch" role="group" aria-label="Режим теории">
             <button id="theory-view-short" class="theory-view-button" type="button" aria-pressed="true" aria-controls="theory-body">Коротко</button>
             <button id="theory-view-detailed" class="theory-view-button" type="button" aria-pressed="false" aria-controls="theory-body">Подробно</button>
-            <button id="theory-view-visual" class="theory-view-button" type="button" aria-pressed="false" aria-controls="theory-body" hidden>Наглядно</button>
           </div>
           <div id="theory-body"></div>
         </article>
@@ -310,7 +310,7 @@
             ×
           </button>
         </header>
-        <div id="shadowing-topic-grid" class="vocab-topic-grid" role="listbox" aria-labelledby="shadowing-topic-modal-title"></div>
+        <div id="shadowing-topic-grid" class="vocab-topic-grid" role="group" aria-labelledby="shadowing-topic-modal-title"></div>
       </div>
     </div>
 
@@ -361,13 +361,12 @@
     <script src="./js/speech.js?v=3"></script>
     <script src="./js/progress.js?v=3"></script>
     <script src="./js/session-results.js?v=2"></script>
-    <script src="./js/grammar-mode.js?v=5"></script>
+    <script src="./js/grammar-mode.js?v=6"></script>
     <script src="./js/vocabulary-catalog.js?v=2"></script>
     <script src="./js/vocabulary-picker.js?v=2"></script>
     <script src="./js/vocabulary-mode.js?v=20"></script>
-    <script src="./js/shadowing-mode.js?v=4"></script>
-    <script src="./js/future-presentation.js?v=6"></script>
-    <script src="./js/theory-mode.js?v=8"></script>
-    <script src="./app.js?v=54"></script>
+    <script src="./js/shadowing-mode.js?v=6"></script>
+    <script src="./js/theory-mode.js?v=11"></script>
+    <script src="./app.js?v=58"></script>
   </body>
 </html>

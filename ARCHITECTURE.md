@@ -14,13 +14,15 @@
 | Сохранённые ошибки, устойчивые ключи слов, восстановление порядка | `js/vocabulary-mode.js` → `restoreVocabProgress`, `vocabSessionKeys` |
 | Дерево наборов, тем и подтем | `js/vocabulary-catalog.js` |
 | Правила грамматики / Shadowing / теория | соответствующий `js/*-mode.js` |
+| Грамматические предложения в Shadowing | `js/shadowing-mode.js`: темы A1-A2 до `future-simple` включительно, диапазоны из `GRAMMAR_TOPICS`, готовые предложения из заданий через `fillPromptWithAnswer` |
+| Полосы прогресса грамматики, результаты вопросов по уровням | `js/grammar-mode.js` → `grammarProgressForTopic`, `restoreGrammarProgress` |
 | Окно результатов: подписи, кнопки, отображение, закрытие | `js/session-results.js` |
 | Начало подхода, оценка первого ответа, пропуски, итоговый процент | `js/progress.js` → `createSessionScoring` |
 | Общие кнопки, переключение режимов, формат снимка сохранения | `app.js` |
 | Озвучка / отмена таймеров | `js/speech.js` / `js/activity.js` |
 | Принятие вариантов ответов, нормализация ввода | `app.js` → `getAnswerMatch`, `normalize` |
 | Исходные словарные слова и переводы | `vocabulary/*.json`, затем `npm run build-vocab` |
-| Теоретические материалы | `js/learning-data.js`, наглядное будущее — `js/future-presentation.js` |
+| Теоретические материалы | `js/learning-data.js` |
 
 ## Подход и результаты
 
@@ -44,6 +46,8 @@
 - Состояния режимов создаются в `app.js` и передаются фабрикам по ссылке.
 - Ключ `localStorage`: `english-grammar-trainer.progress.v2`. Схема снимка находится в `saveProgress`.
   Старые сохранения и восстановление позиций проверяются тестами.
+- `grammarProgress` хранит результаты вопросов по ключу `уровень:id`, независимо от текущего подхода.
+  При восстановлении старых сохранений переносятся известные `outcomes`; счётчики без ID не распределяются по темам.
 - Oxford имеет постоянные строковые ID. Для накопленного прогресса IT используется
   ключ из темы и слова; числовые ID могут сдвигаться после пересборки словаря.
 - `questions.js` и `vocabulary.js` — сгенерированные файлы. Исправлять нужно исходные данные
@@ -53,9 +57,12 @@
 ## Проверки
 
 - Общая проверка: `npm test`.
+- Теория: `node --test tests/theory-presentation.test.js`.
 - Словарь: `node --test tests/vocabulary-catalog.test.js tests/vocabulary-mistakes.test.js`.
 - Подходы и оценки: `node --test tests/scoring.test.js tests/services.test.js`.
+- Полосы прогресса грамматики: `node --test tests/grammar-progress.test.js`.
 - Связи интерфейса и таймеры: `node --test tests/app.test.js`.
+- Темы грамматики в Shadowing, восстановление и переводы: `node --test tests/shadowing-grammar.test.js`.
 
 Тесты загружают настоящий порядок скриптов из `index.html`; DOM, таймеры и речь имитируются.
 Реальную раскладку и взаимодействия с браузером проверять при изменениях интерфейса;

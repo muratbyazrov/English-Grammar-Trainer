@@ -10,55 +10,53 @@ function find(app, className) {
   return descendants(app.el('theory-body')).find(node => node.classList.contains(className));
 }
 
-function openPresentation(options) {
-  const app = createApp(options);
+test('next theory topic follows picker order, wraps and restores the selected topic and view', () => {
+  const app = createApp();
   app.click('tab-theory');
-  app.change('theory-topic', 'tenses-future');
-  app.click('theory-view-visual');
-  return app;
-}
-
-test('future presentation navigates, replays and restores the selected view', () => {
-  const app = openPresentation();
-  assert.equal(app.el('theory-view-visual').hidden, false);
-  assert.equal(find(app, 'future-title').textContent, 'Решение рождается сейчас');
-  const playback = find(app, 'future-playback');
-  assert.equal(playback.children.length, 1);
-  playback.children[0].click();
-  assert.equal(app.spoken.length, 0);
-  for (let i = 0; i < 4; i++) find(app, 'future-next').click();
-  assert.equal(find(app, 'future-title').textContent, 'Решение уже принято');
-  find(app, 'future-nav').children[0].click();
-  assert.equal(find(app, 'future-title').textContent, 'Решение рождается сейчас');
-  assert.equal(app.snapshot().theory.view, 'visual');
+  app.click('theory-view-detailed');
+  const topics = app.window.TrainerData.THEORY_TOPICS;
+  for (const topic of [...topics.slice(1), topics[0]]) {
+    app.click('theory-next-topic');
+    assert.equal(app.el('theory-topic').value, topic.id);
+    assert.equal(app.el('theory-topic-trigger-text').textContent, topic.title);
+    assert.equal(app.el('theory-title').textContent, topic.title);
+    assert.equal(app.snapshot().theory.topic, topic.id);
+    assert.equal(app.snapshot().theory.view, 'detailed');
+  }
+  app.change('theory-topic', topics.at(-1).id);
   const restored = createApp({ saved: app.snapshot() });
-  assert.ok(find(restored, 'future-presentation'));
-  app.change('theory-topic', 'tenses-present');
-  assert.equal(app.el('theory-view-visual').hidden, true);
-  assert.equal(app.snapshot().theory.view, 'short');
-  assert.ok(find(app, 'theory-brief-grid'));
+  restored.click('theory-next-topic');
+  assert.equal(restored.snapshot().theory.topic, topics[0].id);
+  assert.equal(restored.snapshot().theory.view, 'detailed');
 });
 
-test('future quiz allows retries, requires a correct answer, completes and restarts', () => {
-  const app = openPresentation();
-  for (let i = 0; i < 16; i++) find(app, 'future-next').click();
-  let card = find(app, 'future-quiz');
-  let next = card.children[card.children.length - 1];
-  assert.equal(next.hidden, true);
-  find(app, 'future-choices').children[1].click();
-  assert.match(find(app, 'future-quiz-feedback').textContent, /Попробуй ещё раз/);
-  assert.equal(next.hidden, true);
-  for (const correct of [0, 1, 2]) {
-    find(app, 'future-choices').children[correct].click();
-    assert.match(find(app, 'future-quiz-feedback').textContent, /Верно/);
-    card = find(app, 'future-quiz');
-    next = card.children[card.children.length - 1];
-    assert.equal(next.hidden, false);
-    next.click();
+test('theory switches between short and detailed views and restores either choice', () => {
+  const app = createApp();
+  app.click('tab-theory');
+  for (const topic of ['tenses-past', 'tenses-future']) {
+    app.change('theory-topic', topic);
+    for (const view of ['detailed', 'short']) {
+      app.click(`theory-view-${view}`);
+      assert.equal(app.snapshot().theory.view, view);
+      assert.equal(app.el(`theory-view-${view}`).attributes['aria-pressed'], 'true');
+      assert.ok(find(app, view === 'short' ? 'theory-brief-grid' : 'theory-section'));
+      const restored = createApp({ saved: app.snapshot() });
+      assert.equal(restored.snapshot().theory.topic, topic);
+      assert.equal(restored.snapshot().theory.view, view);
+      assert.ok(find(restored, view === 'short' ? 'theory-brief-grid' : 'theory-section'));
+    }
   }
-  assert.match(find(app, 'future-quiz').textContent, /Все три ситуации разобраны/);
-  card = find(app, 'future-quiz');
-  card.children[card.children.length - 1].click();
-  assert.match(find(app, 'future-quiz').textContent, /Ситуация 1 из 3/);
-  assert.equal(find(app, 'future-quiz-host').children.length, 1);
+});
+
+test('legacy visual theory saves restore the topic in short view', () => {
+  for (const topic of ['tenses-past', 'tenses-future', 'tenses-present']) {
+    const app = createApp({ saved: { mode: 'theory', theory: { topic, view: 'visual' } } });
+    assert.equal(app.el('theory-view-visual'), undefined);
+    assert.equal(app.el('theory-topic').value, topic);
+    assert.equal(app.snapshot().theory.view, 'short');
+    assert.equal(app.el('theory-view-short').attributes['aria-pressed'], 'true');
+    assert.ok(find(app, 'theory-brief-grid'));
+    app.click('theory-next-topic');
+    assert.equal(app.snapshot().theory.view, 'short');
+  }
 });

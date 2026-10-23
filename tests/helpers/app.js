@@ -51,7 +51,7 @@ class Element {
   }
 }
 
-function createApp({ saved, speech = true, recognition = false, vocabulary } = {}) {
+function createApp({ saved, speech = true, recognition = false, vocabulary, grammar } = {}) {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   const elements = new Map();
   for (const match of html.matchAll(/<(\w+)\b([^>]*\bid="([^"]+)"[^>]*)>/g)) {
@@ -104,6 +104,7 @@ function createApp({ saved, speech = true, recognition = false, vocabulary } = {
   const scripts = [...html.matchAll(/<script src="\.\/([^"?]+)(?:\?[^"]*)?"><\/script>/g)].map(match => match[1]);
   for (const file of scripts) {
     vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, { filename: file });
+    if (file === 'questions.js' && grammar) window.GRAMMAR_QUESTIONS = JSON.parse(JSON.stringify(grammar));
     if (file === 'vocabulary.js' && vocabulary) window.VOCABULARY_DATA = JSON.parse(JSON.stringify(vocabulary));
   }
   return {

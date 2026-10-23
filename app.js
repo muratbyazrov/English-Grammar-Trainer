@@ -62,6 +62,7 @@
     controlsVocab: document.getElementById('controls-vocab'),
     controlsShadowing: document.getElementById('controls-shadowing'),
     theoryTopic: document.getElementById('theory-topic'),
+    theoryNextTopic: document.getElementById('theory-next-topic'),
     theoryTopicTrigger: document.getElementById('theory-topic-trigger'),
     theoryTopicTriggerIcon: document.getElementById('theory-topic-trigger-icon'),
     theoryTopicTriggerText: document.getElementById('theory-topic-trigger-text'),
@@ -116,7 +117,6 @@
     theoryTitle: document.getElementById('theory-title'),
     theoryViewShort: document.getElementById('theory-view-short'),
     theoryViewDetailed: document.getElementById('theory-view-detailed'),
-    theoryViewVisual: document.getElementById('theory-view-visual'),
     theoryBody: document.getElementById('theory-body'),
     vocabListOverlay: document.getElementById('vocab-list-overlay'),
     vocabListTitle: document.getElementById('vocab-list-title'),
@@ -196,6 +196,7 @@
   };
 
   const grammarState = {
+    questionProgress: {},
     session: [],
     idx: 0,
     correct: 0,
@@ -403,6 +404,7 @@
         correct: grammarState.correct,
         wrong: grammarState.wrong,
         outcomes: grammarState.outcomes,
+        grammarProgress: grammarState.questionProgress,
         vocabulary: {
           topic: refs.vocabTopic.value,
           oxfordLevel: vocabState.oxfordLevel,
@@ -474,6 +476,7 @@
       grammarState.correct = correct;
       grammarState.wrong = wrong;
       sessionScoring.restore(grammarState, parsed.outcomes);
+      restoreGrammarProgress(parsed.grammarProgress);
       restoreVocabProgress(parsed.vocabulary);
       restoreShadowingProgress(parsed.shadowing);
       restoreTheoryProgress(parsed.theory);
@@ -627,6 +630,7 @@
 
   const {
     currentLevel,
+    restoreGrammarProgress,
     questionTranslationOverride,
     currentGrammarTopic,
     questionsForCurrentGrammarTopic,
@@ -733,9 +737,12 @@
     SHADOWING_SILENCE_MS,
     SHADOWING_SUCCESS_PAUSE_MS,
     activity,
+    allLevels,
     asNumber,
     cancelPendingActivity,
+    fillPromptWithAnswer,
     flashCorrect,
+    getSentenceTranslation,
     hideSessionComplete,
     playCorrectSound,
     playWrongSound,
@@ -755,6 +762,7 @@
 
   const {
     ensureTheoryTopicOptions,
+    nextTheoryTopic,
     showTheoryTopicPicker,
     hideTheoryTopicPicker,
     currentTheoryView,
@@ -1046,6 +1054,8 @@
     saveProgress();
   });
 
+  refs.theoryNextTopic.addEventListener('click', nextTheoryTopic);
+
   refs.theoryTopic.addEventListener('change', () => {
     renderTheory();
     saveProgress();
@@ -1058,11 +1068,6 @@
 
   refs.theoryViewDetailed.addEventListener('click', () => {
     setTheoryView('detailed');
-    saveProgress();
-  });
-
-  refs.theoryViewVisual.addEventListener('click', () => {
-    setTheoryView('visual');
     saveProgress();
   });
 
