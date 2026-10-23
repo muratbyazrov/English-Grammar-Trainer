@@ -14,7 +14,7 @@ window.Trainer.createSessionResults = function ({ refs }) {
     refs.scCorrect.textContent = String(correct);
     refs.scWrong.textContent = String(wrong);
     refs.scPct.textContent = percent + '%';
-    refs.scNextTopic.hidden = mode !== 'vocabulary';
+    refs.scNextTopic.hidden = mode !== 'vocabulary' && mode !== 'shadowing';
     refs.scTitle.textContent = reviewing ? 'Повторение завершено!' : (continuing ? 'Подход завершён!' : 'Тема завершена!');
     refs.scReviewSummary.hidden = !reviewing && !continuing;
     refs.scReviewSummary.textContent = continuing

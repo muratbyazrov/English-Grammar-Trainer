@@ -50,7 +50,7 @@ function finish(app) {
   const total = Number(app.el('position').textContent.split('/')[1]);
   for (let i = 0; i < total; i++) app.click('next-btn');
   assert.equal(app.el('session-complete').hidden, false);
-  assert.equal(app.el('sc-next-topic').hidden, app.snapshot().mode !== 'vocabulary');
+  assert.equal(app.el('sc-next-topic').hidden, app.snapshot().mode === 'grammar');
 }
 
 for (const mode of ['grammar', 'vocabulary', 'shadowing']) {

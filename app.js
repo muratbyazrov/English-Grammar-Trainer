@@ -722,6 +722,7 @@
     ensureShadowingTopicOptions,
     hideShadowingTopicPicker,
     nextShadowingQuestion,
+    nextShadowingTopic,
     pickShadowingSession,
     startShadowingSession,
     previousShadowingQuestion,
@@ -731,6 +732,7 @@
     showShadowingTopicPicker,
     stopShadowingAttempt,
     stopShadowingSession,
+    syncNextShadowingTopic,
     syncShadowingTopicTrigger
   } = window.Trainer.createShadowingMode({
     SHADOWING_MAX_LISTEN_MS,
@@ -832,6 +834,7 @@
       : (currentMode === 'shadowing' ? shadowingState : grammarState);
     if (currentMode === 'vocabulary') collectUnansweredVocabMistakes();
     const result = sessionScoring.finish(stats);
+    if (currentMode === 'shadowing') syncNextShadowingTopic();
     renderSessionResults({
       ...result,
       mode: currentMode,
@@ -919,6 +922,7 @@
 
   refs.scNextTopic.addEventListener('click', () => {
     if (currentMode === 'vocabulary') nextVocabTopic();
+    else if (currentMode === 'shadowing') nextShadowingTopic();
   });
 
   refs.nextSessionBtn.addEventListener('click', () => {

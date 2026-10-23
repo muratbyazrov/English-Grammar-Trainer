@@ -30,8 +30,7 @@ window.Trainer.createShadowingMode = function ({
   // Reuse grammar ranges, answers and stable question IDs without copying its database.
   const grammarLevel = 'A1-A2';
   const ranges = GRAMMAR_TOPICS[grammarLevel] || [];
-  const lastTopicIndex = ranges.findIndex((topic) => topic.id === 'future-simple');
-  const grammarTopics = ranges.slice(0, lastTopicIndex + 1).map((topic) => ({
+  const grammarTopics = ranges.map((topic) => ({
     id: `grammar:${grammarLevel}:${topic.id}`,
     title: topic.title,
     grammar: true,
@@ -171,7 +170,7 @@ window.Trainer.createShadowingMode = function ({
 
     const grammarPhraseCount = grammarTopics.reduce((sum, topic) => sum + topic.items.length, 0);
     if (pickerCategory === 'grammar') {
-      refs.shadowingTopicModalSubtitle.textContent = `Из грамматики · ${grammarLevel} · до Future Simple включительно · ${formatShadowingPhraseCount(grammarPhraseCount)}`;
+      refs.shadowingTopicModalSubtitle.textContent = `Из грамматики · ${grammarLevel} · ${formatShadowingPhraseCount(grammarPhraseCount)}`;
       const content = document.createElement('div');
       content.className = 'vocab-catalog-topics';
       content.style.gridColumn = '1 / -1';
@@ -235,6 +234,31 @@ window.Trainer.createShadowingMode = function ({
 
   function pickShadowingSession() {
     return shadowingItemsForTopic(refs.shadowingTopic.value);
+  }
+
+  function nextShadowingTopicForCurrent() {
+    const current = shadowingTopics.find((topic) => topic.id === refs.shadowingTopic.value);
+    // Keep the grammar exercise order and stay within the current collection.
+    const topics = shadowingTopics.filter((topic) => Boolean(topic.grammar) === Boolean(current && current.grammar)
+      && phraseCountForTopic(topic) > 0);
+    if (!topics.length) return null;
+    const index = topics.findIndex((topic) => topic.id === refs.shadowingTopic.value);
+    const next = topics[(index + 1) % topics.length];
+    return next && next !== current ? next : null;
+  }
+
+  function syncNextShadowingTopic() {
+    const next = nextShadowingTopicForCurrent();
+    refs.scNextTopic.disabled = !next;
+    refs.scNextTopic.title = next ? `Далее: ${next.title}` : 'В этом наборе нет другой темы';
+    refs.scNextTopic.setAttribute('aria-label', next ? `Следующая тема: ${next.title}` : 'Следующая тема недоступна');
+  }
+
+  function nextShadowingTopic() {
+    const next = nextShadowingTopicForCurrent();
+    if (!next) return;
+    refs.shadowingTopic.value = next.id;
+    refs.shadowingTopic.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
   function startShadowingSession() {
@@ -701,6 +725,7 @@ window.Trainer.createShadowingMode = function ({
     ensureShadowingTopicOptions,
     hideShadowingTopicPicker,
     nextShadowingQuestion,
+    nextShadowingTopic,
     pickShadowingSession,
     startShadowingSession,
     previousShadowingQuestion,
@@ -710,6 +735,7 @@ window.Trainer.createShadowingMode = function ({
     showShadowingTopicPicker,
     stopShadowingAttempt,
     stopShadowingSession,
+    syncNextShadowingTopic,
     syncShadowingTopicTrigger
   };
 };
