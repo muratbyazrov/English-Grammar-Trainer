@@ -186,10 +186,28 @@ window.Trainer.createTheoryMode = function ({
     parent.appendChild(wrapper);
   }
 
-  function appendTheoryExamples(parent, examples) {
-    const list = document.createElement('div');
-    list.className = 'theory-examples';
+  function appendTheoryExamples(parent, examples, style) {
+    if (style === 'plain') {
+      const heading = document.createElement('h4');
+      heading.className = 'theory-examples-title';
+      heading.textContent = 'Примеры';
+      parent.appendChild(heading);
+    }
+    const list = document.createElement(style === 'plain' ? 'ol' : 'div');
+    list.className = style === 'plain' ? 'theory-examples theory-examples--plain' : 'theory-examples';
     examples.forEach(([english, russian]) => {
+      if (style === 'plain') {
+        const item = document.createElement('li');
+        const phrase = document.createElement('p');
+        phrase.textContent = english;
+        const translation = document.createElement('p');
+        translation.className = 'theory-example-ru';
+        translation.textContent = russian;
+        item.appendChild(phrase);
+        item.appendChild(translation);
+        list.appendChild(item);
+        return;
+      }
       const row = document.createElement('div');
       row.className = 'theory-example';
 
@@ -408,7 +426,7 @@ window.Trainer.createTheoryMode = function ({
       if (section.table) appendTheoryTable(block, section.table);
       if (section.items) appendTheoryList(block, section.items);
       if (section.schemes) appendTheorySchemes(block, section.schemes);
-      if (section.examples) appendTheoryExamples(block, section.examples);
+      if (section.examples) appendTheoryExamples(block, section.examples, topic.examplesStyle);
 
       refs.theoryBody.appendChild(block);
     });
