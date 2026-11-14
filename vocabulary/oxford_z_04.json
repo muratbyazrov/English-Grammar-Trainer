@@ -68,7 +68,7 @@
     {
       "id": "oxford:each:det-pron-adv:a1",
       "word": "each",
-      "translation": "каждый",
+      "translation": "каждый (каждый по отдельности)",
       "answer": "each",
       "level": "A1",
       "partOfSpeech": "опред., мест., нареч."
@@ -92,7 +92,7 @@
     {
       "id": "oxford:every:det:a1",
       "word": "every",
-      "translation": "каждый",
+      "translation": "каждый (все члены группы без исключения)",
       "answer": "every",
       "level": "A1",
       "partOfSpeech": "опред."
@@ -148,7 +148,7 @@
     {
       "id": "oxford:little:adj-det-pron:a1",
       "word": "little",
-      "translation": "маленький",
+      "translation": "маленький; мало (небольшой размер или количество)",
       "answer": "little",
       "level": "A1",
       "partOfSpeech": "прил., опред., мест."
@@ -156,7 +156,7 @@
     {
       "id": "oxford:lot:pron-det-adv:a1",
       "word": "lot",
-      "translation": "много",
+      "translation": "много (большое количество; обычно с артиклем)",
       "answer": "lot",
       "level": "A1",
       "partOfSpeech": "мест., опред., нареч."
@@ -164,7 +164,7 @@
     {
       "id": "oxford:many:det-pron:a1",
       "word": "many",
-      "translation": "много",
+      "translation": "много (большое число исчисляемых предметов)",
       "answer": "many",
       "level": "A1",
       "partOfSpeech": "опред., мест."
@@ -236,7 +236,7 @@
     {
       "id": "oxford:several:det-pron:a2",
       "word": "several",
-      "translation": "несколько",
+      "translation": "несколько (небольшое число, больше двух)",
       "answer": "several",
       "level": "A2",
       "partOfSpeech": "опред., мест."
@@ -276,7 +276,7 @@
     {
       "id": "oxford:their:det:a1",
       "word": "their",
-      "translation": "их",
+      "translation": "их (перед названием предмета)",
       "answer": "their",
       "level": "A1",
       "partOfSpeech": "опред."

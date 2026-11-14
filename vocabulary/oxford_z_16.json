@@ -8,10 +8,20 @@
     {
       "id": "oxford:apartment:n:a1",
       "word": "apartment",
-      "translation": "квартира",
+      "translation": "квартира (жильё; чаще американский вариант)",
       "answer": "apartment",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "apartment",
+          "weight": 1
+        },
+        {
+          "text": "flat",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:bag:n:a1",
@@ -88,7 +98,7 @@
     {
       "id": "oxford:clean:adj-v:a1",
       "word": "clean",
-      "translation": "чистый",
+      "translation": "чистый; чистить (без грязи / удалять грязь)",
       "answer": "clean",
       "level": "A1",
       "partOfSpeech": "прил., гл."
@@ -120,7 +130,7 @@
     {
       "id": "oxford:desk:n:a1",
       "word": "desk",
-      "translation": "стол",
+      "translation": "стол (письменный или рабочий стол)",
       "answer": "desk",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -136,7 +146,7 @@
     {
       "id": "oxford:electrical:adj:a2",
       "word": "electrical",
-      "translation": "электрический",
+      "translation": "электрический (связанный с электричеством)",
       "answer": "electrical",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -168,10 +178,20 @@
     {
       "id": "oxford:flat:n:a1",
       "word": "flat",
-      "translation": "квартира",
+      "translation": "квартира (жильё; чаще британский вариант)",
       "answer": "flat",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "flat",
+          "weight": 1
+        },
+        {
+          "text": "apartment",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:flat:adj:a2",
@@ -368,7 +388,7 @@
     {
       "id": "oxford:sheet:n:a2",
       "word": "sheet",
-      "translation": "лист",
+      "translation": "лист (бумаги, тонкого материала)",
       "answer": "sheet",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -416,7 +436,7 @@
     {
       "id": "oxford:step:n:a2",
       "word": "step",
-      "translation": "шаг",
+      "translation": "шаг (движение ногой или этап)",
       "answer": "step",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -440,7 +460,7 @@
     {
       "id": "oxford:tidy:adj-v:a2",
       "word": "tidy",
-      "translation": "аккуратный",
+      "translation": "аккуратный; прибирать (вещи на своих местах / наводить порядок)",
       "answer": "tidy",
       "level": "A2",
       "partOfSpeech": "прил., гл."
@@ -456,7 +476,7 @@
     {
       "id": "oxford:tool:n:a2",
       "word": "tool",
-      "translation": "инструмент",
+      "translation": "инструмент (орудие для работы)",
       "answer": "tool",
       "level": "A2",
       "partOfSpeech": "сущ."

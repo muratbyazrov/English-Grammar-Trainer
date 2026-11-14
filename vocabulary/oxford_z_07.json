@@ -40,7 +40,7 @@
     {
       "id": "oxford:might:modal-v:a2",
       "word": "might",
-      "translation": "может быть",
+      "translation": "может быть (возможность, модальный глагол)",
       "answer": "might",
       "level": "A2",
       "partOfSpeech": "мод. гл."
@@ -64,7 +64,7 @@
     {
       "id": "oxford:ought:modal-v:b1",
       "word": "ought",
-      "translation": "должен",
+      "translation": "следовало бы (моральный долг; употребляется с частицей инфинитива)",
       "answer": "ought",
       "level": "B1",
       "partOfSpeech": "мод. гл."
@@ -72,7 +72,7 @@
     {
       "id": "oxford:shall:modal-v:a2",
       "word": "shall",
-      "translation": "должен",
+      "translation": "сделать ли нам; мне? (предложение или вопрос о действии, модальный глагол)",
       "answer": "shall",
       "level": "A2",
       "partOfSpeech": "мод. гл."

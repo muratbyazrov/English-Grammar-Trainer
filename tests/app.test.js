@@ -16,6 +16,24 @@ function answerVocab(app) {
   app.answer(word.answers?.[0]?.text || word.infinitive || word.word.split('/')[0]);
 }
 
+test('vocabulary settings close on Escape and backdrop clicks, while inside clicks keep them open', () => {
+  const app = createApp();
+  app.click('tab-vocab');
+  const dialog = app.el('vocab-settings');
+  dialog.getBoundingClientRect = () => ({ left: 100, right: 500, top: 100, bottom: 400 });
+
+  app.click('vocab-settings-open');
+  assert.equal(dialog.open, true);
+  dialog.dispatchEvent({ type: 'click', target: dialog, clientX: 150, clientY: 120 });
+  assert.equal(dialog.open, true);
+  dialog.dispatchEvent({ type: 'click', target: dialog, clientX: 90, clientY: 120 });
+  assert.equal(dialog.open, false);
+
+  app.click('vocab-settings-open');
+  app.window.dispatchEvent({ type: 'keydown', key: 'Escape', preventDefault() {} });
+  assert.equal(dialog.open, false);
+});
+
 test('results close on Escape, backdrop and close button, while clicks inside preserve the popup and scores', () => {
   const app = createApp({ vocabulary: [{ topic: 'Тест', words: [{ id: 1, word: 'test', translation: 'тест' }] }] });
   app.click('tab-vocab');
@@ -56,7 +74,11 @@ test('switching modes cancels grammar auto-next without replacing vocabulary con
 });
 
 test('grammar and vocabulary speech settings stay independent and survive reload', () => {
-  const app = createApp();
+  const vocabulary = [{ topic: 'Тест', words: [
+    { id: 1, word: 'deploy', translation: 'развернуть' },
+    { id: 2, word: 'build', translation: 'собирать' },
+  ] }];
+  const app = createApp({ vocabulary });
   app.click('tab-vocab');
   app.change('auto-speak-correct-vocab', false);
   app.click('tab-grammar');
@@ -65,7 +87,7 @@ test('grammar and vocabulary speech settings stay independent and survive reload
   assert.equal(app.el('auto-speak-correct').checked, true);
   assert.equal(app.snapshot().autoSpeakCorrect, true);
   assert.equal(app.snapshot().vocabulary.autoSpeakCorrect, false);
-  const reload = createApp({ saved: app.snapshot() });
+  const reload = createApp({ vocabulary, saved: app.snapshot() });
   assert.equal(reload.el('auto-speak-correct').checked, true);
   assert.equal(reload.el('auto-speak-correct-vocab').checked, false);
   reload.click('tab-vocab');

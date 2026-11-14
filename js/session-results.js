@@ -6,8 +6,11 @@ window.Trainer.createSessionResults = function ({ refs }) {
     refs.sessionComplete.hidden = true;
   }
 
-  function show({ mode, total, correct, wrong, percent, reviewing = false, remaining = 0, unvisited = 0 }) {
+  function show({ mode, total, correct, wrong, percent, reviewing = false, remaining = 0, mistakeRepetitions = 1, unvisited = 0 }) {
     const continuing = mode === 'vocabulary' && !reviewing && unvisited > 0;
+    const reviewInstruction = mistakeRepetitions === 1
+      ? 'Для каждого достаточно одного правильного ответа без подсказки.'
+      : `Правильных ответов подряд без подсказки для каждого слова: ${mistakeRepetitions}.`;
     refs.position.textContent = `${total} / ${total}`;
     refs.correctCount.textContent = String(correct);
     refs.wrongCount.textContent = String(wrong);
@@ -20,11 +23,13 @@ window.Trainer.createSessionResults = function ({ refs }) {
     refs.scReviewSummary.textContent = continuing
       ? `В выбранной теме осталось непройденных слов: ${unvisited}. Продолжите, чтобы пройти все слова.`
       : remaining
-      ? `В разделе осталось слов с ошибками: ${remaining}. Для каждого достаточно одного правильного ответа без подсказки.`
+      ? `В разделе осталось слов с ошибками: ${remaining}. ${reviewInstruction}`
       : 'Все ошибки в этом разделе отработаны.';
     refs.nextSessionBtn.textContent = mode === 'vocabulary'
       ? (continuing ? 'Продолжить тему →' : 'Тренировать ошибки →') : 'Начать заново →';
-    refs.nextSessionBtn.disabled = mode === 'vocabulary' && !continuing && remaining === 0;
+    const hideNextSession = mode === 'vocabulary' && !continuing && remaining === 0;
+    refs.nextSessionBtn.hidden = hideNextSession;
+    refs.nextSessionBtn.disabled = hideNextSession;
 
     hide();
     void refs.sessionComplete.offsetWidth;

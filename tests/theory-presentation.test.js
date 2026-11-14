@@ -33,7 +33,7 @@ test('next theory topic follows picker order, wraps and restores the selected to
 test('theory switches between short and detailed views and restores either choice', () => {
   const app = createApp();
   app.click('tab-theory');
-  for (const topic of ['tenses-past', 'tenses-future']) {
+  for (const topic of ['tenses-past', 'tenses-future', 'parts-of-speech']) {
     app.change('theory-topic', topic);
     for (const view of ['detailed', 'short']) {
       app.click(`theory-view-${view}`);

@@ -2071,7 +2071,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:table:noun",
         "word": "table",
-        "translation": "стол",
+        "translation": "стол (обеденный или общий стол)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "table",
@@ -2349,7 +2349,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:bicycle:noun",
         "word": "bicycle",
-        "translation": "велосипед",
+        "translation": "велосипед (полное название)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "bicycle",
@@ -2369,7 +2369,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:plane:noun",
         "word": "plane",
-        "translation": "самолёт",
+        "translation": "самолёт (воздушное судно с неподвижными крыльями)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "plane",
@@ -2656,12 +2656,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:frequently:adv:b1",
         "word": "frequently",
-        "translation": "часто",
+        "translation": "часто (с высокой частотой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "frequently",
         "level": "B1",
-        "partOfSpeech": "нареч."
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "frequently",
+            "weight": 1
+          },
+          {
+            "text": "often",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:friday:n:a1",
@@ -2736,7 +2746,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:last:det:a1",
         "word": "last",
-        "translation": "последний",
+        "translation": "последний (последний по порядку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "last",
@@ -2846,7 +2856,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:next:adj-adv:a1",
         "word": "next",
-        "translation": "следующий",
+        "translation": "следующий (ближайший по порядку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "next",
@@ -2856,7 +2866,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:next:n:b1",
         "word": "next",
-        "translation": "следующий",
+        "translation": "следующий (следующий человек или предмет по порядку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "next",
@@ -2906,12 +2916,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:often:adv:a1",
         "word": "often",
-        "translation": "часто",
+        "translation": "часто (много раз, с высокой частотой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "often",
         "level": "A1",
-        "partOfSpeech": "нареч."
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "often",
+            "weight": 1
+          },
+          {
+            "text": "frequently",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:past:adj-n-prep:a1",
@@ -3036,7 +3056,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:sometimes:adv:a1",
         "word": "sometimes",
-        "translation": "иногда",
+        "translation": "иногда (в некоторые моменты)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "sometimes",
@@ -3136,7 +3156,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:until:conj-prep:a1",
         "word": "until",
-        "translation": "пока",
+        "translation": "пока (до определённого момента)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "until",
@@ -3146,7 +3166,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:usually:adv:a1",
         "word": "usually",
-        "translation": "обычно",
+        "translation": "обычно (как правило, по привычке)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "usually",
@@ -3206,7 +3226,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:yet:adv:a2",
         "word": "yet",
-        "translation": "еще",
+        "translation": "еще (до сих пор; в отрицаниях и вопросах)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "yet",
@@ -3216,7 +3236,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:yet:conj:b2",
         "word": "yet",
-        "translation": "еще",
+        "translation": "однако (противопоставление, союз)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "yet",
@@ -3365,7 +3385,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:city:n:a1",
         "word": "city",
-        "translation": "город",
+        "translation": "город (крупный город)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "city",
@@ -3455,7 +3475,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:path:n:b1",
         "word": "path",
-        "translation": "путь",
+        "translation": "путь (тропа или дорожка)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "path",
@@ -3545,7 +3565,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:town:n:a1",
         "word": "town",
-        "translation": "город",
+        "translation": "город (небольшой город)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "town",
@@ -3604,12 +3624,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:bike:n:a1",
         "word": "bike",
-        "translation": "велосипед",
+        "translation": "велосипед (разговорная короткая форма)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "bike",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "bike",
+            "weight": 1
+          },
+          {
+            "text": "bicycle",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:boat:n:a1",
@@ -3724,7 +3754,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:holiday:n:a1",
         "word": "holiday",
-        "translation": "праздник",
+        "translation": "праздник (выходной или отпуск)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "holiday",
@@ -3914,7 +3944,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:straight:adv-adj:a2",
         "word": "straight",
-        "translation": "прямой",
+        "translation": "прямо; прямой (без поворотов или изгибов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "straight",
@@ -4173,7 +4203,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:each:det-pron-adv:a1",
         "word": "each",
-        "translation": "каждый",
+        "translation": "каждый (каждый по отдельности)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "each",
@@ -4203,7 +4233,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:every:det:a1",
         "word": "every",
-        "translation": "каждый",
+        "translation": "каждый (все члены группы без исключения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "every",
@@ -4273,7 +4303,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:little:adj-det-pron:a1",
         "word": "little",
-        "translation": "маленький",
+        "translation": "маленький; мало (небольшой размер или количество)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "little",
@@ -4283,7 +4313,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:lot:pron-det-adv:a1",
         "word": "lot",
-        "translation": "много",
+        "translation": "много (большое количество; обычно с артиклем)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "lot",
@@ -4293,7 +4323,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:many:det-pron:a1",
         "word": "many",
-        "translation": "много",
+        "translation": "много (большое число исчисляемых предметов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "many",
@@ -4383,7 +4413,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:several:det-pron:a2",
         "word": "several",
-        "translation": "несколько",
+        "translation": "несколько (небольшое число, больше двух)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "several",
@@ -4433,7 +4463,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:their:det:a1",
         "word": "their",
-        "translation": "их",
+        "translation": "их (перед названием предмета)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "their",
@@ -4542,7 +4572,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:bye:exclam:a1",
         "word": "bye",
-        "translation": "пока",
+        "translation": "пока (при прощании)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "bye",
@@ -4552,7 +4582,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:dear:exclam:a2",
         "word": "dear",
-        "translation": "дорогой",
+        "translation": "о боже! (возглас удивления или тревоги)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "dear",
@@ -4572,12 +4602,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:hello:exclam-n:a1",
         "word": "hello",
-        "translation": "привет",
+        "translation": "привет (приветствие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "hello",
         "level": "A1",
-        "partOfSpeech": "межд., сущ."
+        "partOfSpeech": "межд., сущ.",
+        "answers": [
+          {
+            "text": "hello",
+            "weight": 1
+          },
+          {
+            "text": "hi",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:hey:exclam:a1",
@@ -4592,12 +4632,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:hi:exclam:a1",
         "word": "hi",
-        "translation": "привет",
+        "translation": "привет (неформальное приветствие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "hi",
         "level": "A1",
-        "partOfSpeech": "межд."
+        "partOfSpeech": "межд.",
+        "answers": [
+          {
+            "text": "hi",
+            "weight": 1
+          },
+          {
+            "text": "hello",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:oh:exclam:a1",
@@ -4652,7 +4702,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:welcome:exclam-v-adj:a1",
         "word": "welcome",
-        "translation": "приветствовать",
+        "translation": "добро пожаловать; приветствовать; желанный (радушный приём)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "welcome",
@@ -4682,22 +4732,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:yeah:exclam:a1",
         "word": "yeah",
-        "translation": "да",
+        "translation": "да (разговорное согласие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "yeah",
         "level": "A1",
-        "partOfSpeech": "межд."
+        "partOfSpeech": "межд.",
+        "answers": [
+          {
+            "text": "yeah",
+            "weight": 1
+          },
+          {
+            "text": "yes",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:yes:exclam:a1",
         "word": "yes",
-        "translation": "да",
+        "translation": "да (согласие, утвердительный ответ)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "yes",
         "level": "A1",
-        "partOfSpeech": "межд."
+        "partOfSpeech": "межд.",
+        "answers": [
+          {
+            "text": "yes",
+            "weight": 1
+          },
+          {
+            "text": "yeah",
+            "weight": 1
+          }
+        ]
       }
     ],
     "id": "oxford-extra-05",
@@ -4711,22 +4781,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:anybody:pron:a2",
         "word": "anybody",
-        "translation": "кто-нибудь; любой",
+        "translation": "кто-нибудь; любой (о любом человеке)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "anybody",
         "level": "A2",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "anybody",
+            "weight": 1
+          },
+          {
+            "text": "anyone",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:anyone:pron:a1",
         "word": "anyone",
-        "translation": "кто-нибудь; любой",
+        "translation": "кто-нибудь; любой (о любом человеке)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "anyone",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "anyone",
+            "weight": 1
+          },
+          {
+            "text": "anybody",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:anything:pron:a1",
@@ -4741,7 +4831,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:anywhere:adv-pron:a2",
         "word": "anywhere",
-        "translation": "где угодно",
+        "translation": "где угодно (в любом месте)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "anywhere",
@@ -4751,27 +4841,47 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:everybody:pron:a1",
         "word": "everybody",
-        "translation": "все",
+        "translation": "все (все люди)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "everybody",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "everybody",
+            "weight": 1
+          },
+          {
+            "text": "everyone",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:everyone:pron:a1",
         "word": "everyone",
-        "translation": "все",
+        "translation": "все (все люди)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "everyone",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "everyone",
+            "weight": 1
+          },
+          {
+            "text": "everybody",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:everything:pron:a1",
         "word": "everything",
-        "translation": "всё",
+        "translation": "всё (все вещи или явления, без исключения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "everything",
@@ -4821,7 +4931,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:himself:pron:a2",
         "word": "himself",
-        "translation": "сам",
+        "translation": "сам (о мужчине, он сам)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "himself",
@@ -4841,7 +4951,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:i:pron:a1",
         "word": "I",
-        "translation": "я",
+        "translation": "я (кто выполняет действие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "I",
@@ -4861,7 +4971,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:itself:pron:a2",
         "word": "itself",
-        "translation": "сам",
+        "translation": "сам (о предмете или животном, оно само)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "itself",
@@ -4871,7 +4981,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:me:pron:a1",
         "word": "me",
-        "translation": "я",
+        "translation": "меня; мне (получатель действия)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "me",
@@ -4901,22 +5011,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:no-one:pron:a1",
         "word": "no one",
-        "translation": "никто",
+        "translation": "никто (ни один человек)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "no one",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "no one",
+            "weight": 1
+          },
+          {
+            "text": "nobody",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:nobody:pron:a1",
         "word": "nobody",
-        "translation": "никто",
+        "translation": "никто (ни один человек)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "nobody",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "nobody",
+            "weight": 1
+          },
+          {
+            "text": "no one",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:none:pron:a2",
@@ -4981,7 +5111,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:plenty:pron:b1",
         "word": "plenty",
-        "translation": "много",
+        "translation": "много (более чем достаточно)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "plenty",
@@ -5011,22 +5141,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:somebody:pron:a1",
         "word": "somebody",
-        "translation": "кто-то",
+        "translation": "кто-то (неопределённый человек)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "somebody",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "somebody",
+            "weight": 1
+          },
+          {
+            "text": "someone",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:someone:pron:a1",
         "word": "someone",
-        "translation": "кто-то",
+        "translation": "кто-то (неопределённый человек)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "someone",
         "level": "A1",
-        "partOfSpeech": "мест."
+        "partOfSpeech": "мест.",
+        "answers": [
+          {
+            "text": "someone",
+            "weight": 1
+          },
+          {
+            "text": "somebody",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:something:pron:a1",
@@ -5051,7 +5201,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:theirs:pron:b1",
         "word": "theirs",
-        "translation": "их",
+        "translation": "их (самостоятельно, без существительного после него)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "theirs",
@@ -5091,7 +5241,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:us:pron:a1",
         "word": "us",
-        "translation": "мы",
+        "translation": "нас; нам (получатель действия)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "us",
@@ -5101,7 +5251,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:we:pron:a1",
         "word": "we",
-        "translation": "мы",
+        "translation": "мы (кто выполняет действие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "we",
@@ -5220,7 +5370,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:might:modal-v:a2",
         "word": "might",
-        "translation": "может быть",
+        "translation": "может быть (возможность, модальный глагол)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "might",
@@ -5250,7 +5400,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ought:modal-v:b1",
         "word": "ought",
-        "translation": "должен",
+        "translation": "следовало бы (моральный долг; употребляется с частицей инфинитива)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ought",
@@ -5260,7 +5410,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:shall:modal-v:a2",
         "word": "shall",
-        "translation": "должен",
+        "translation": "сделать ли нам; мне? (предложение или вопрос о действии, модальный глагол)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "shall",
@@ -5349,7 +5499,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:across:prep-adv:a1",
         "word": "across",
-        "translation": "через",
+        "translation": "через (с одной стороны на другую)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "across",
@@ -5359,7 +5509,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:against:prep:a2",
         "word": "against",
-        "translation": "против",
+        "translation": "против (в противоположность, вопреки)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "against",
@@ -5499,7 +5649,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:down:adv-prep:a1",
         "word": "down",
-        "translation": "вниз",
+        "translation": "вниз (направление к более низкой точке)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "down",
@@ -5519,7 +5669,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:following:prep:b2",
         "word": "following",
-        "translation": "следующий",
+        "translation": "после (вслед за событием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "following",
@@ -5569,7 +5719,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:inside:prep-adv-n-adj:a2",
         "word": "inside",
-        "translation": "внутри",
+        "translation": "внутри; внутренняя часть; внутренний (расположение или часть предмета)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "inside",
@@ -5639,7 +5789,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:on:prep-adv:a1",
         "word": "on",
-        "translation": "на",
+        "translation": "на (положение на поверхности)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "on",
@@ -5649,7 +5799,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:onto:prep:a2",
         "word": "onto",
-        "translation": "на",
+        "translation": "на (движение на поверхность)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "onto",
@@ -5789,7 +5939,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:up:adv-prep:a1",
         "word": "up",
-        "translation": "вверх",
+        "translation": "вверх (к более высокой точке)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "up",
@@ -5799,7 +5949,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:upon:prep:b2",
         "word": "upon",
-        "translation": "на",
+        "translation": "на (на поверхности; формальное или литературное)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "upon",
@@ -5809,7 +5959,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:via:prep:b2",
         "word": "via",
-        "translation": "через",
+        "translation": "через (через промежуточное место или средство)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "via",
@@ -5829,7 +5979,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:within:prep:b1",
         "word": "within",
-        "translation": "внутри",
+        "translation": "внутри (в пределах границ или срока)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "within",
@@ -5858,7 +6008,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:although:conj:a2",
         "word": "although",
-        "translation": "хотя",
+        "translation": "хотя (вводит уступку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "although",
@@ -5998,7 +6148,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:though:conj-adv:b1",
         "word": "though",
-        "translation": "хотя",
+        "translation": "хотя; однако (уступка; как наречие добавляет оговорку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "though",
@@ -6048,7 +6198,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:wherever:conj:b2",
         "word": "wherever",
-        "translation": "где угодно",
+        "translation": "где угодно (в любом месте, где; связывает части предложения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "wherever",
@@ -6085,19 +6235,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:absolutely:adv:b1",
-        "word": "absolutely",
-        "translation": "абсолютно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "absolutely",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:accept:v:a2",
         "word": "accept",
-        "translation": "принять",
+        "translation": "принять (согласиться получить или принять)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "accept",
@@ -6147,7 +6287,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:acknowledge:v:b2",
         "word": "acknowledge",
-        "translation": "признать",
+        "translation": "признать (подтвердить существование или получение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "acknowledge",
@@ -6173,16 +6313,6 @@ window.VOCABULARY_DATA = [
         "answer": "act",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:actually:adv:a2",
-        "word": "actually",
-        "translation": "на самом деле",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "actually",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:adapt:v:b2",
@@ -6217,7 +6347,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:admit:v:b1",
         "word": "admit",
-        "translation": "признать",
+        "translation": "признать (сознаться в ошибке или неприятном факте)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "admit",
@@ -6227,7 +6357,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:adopt:v:b2",
         "word": "adopt",
-        "translation": "принять",
+        "translation": "принять (взять за основу метод, правило или подход)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "adopt",
@@ -6275,26 +6405,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:afterwards:adv:b2",
-        "word": "afterwards",
-        "translation": "потом",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "afterwards",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:ago:adv:a1",
-        "word": "ago",
-        "translation": "назад",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "ago",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:agree:v:a1",
         "word": "agree",
         "translation": "соглашаться",
@@ -6305,19 +6415,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:ahead:adv:b1",
-        "word": "ahead",
-        "translation": "впереди",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "ahead",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:aid:n-v:b2",
         "word": "aid",
-        "translation": "помощь; помогать",
+        "translation": "помощь; помогать (помощь, в том числе гуманитарная)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "aid",
@@ -6345,16 +6445,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:all:adv:a2",
-        "word": "all",
-        "translation": "весь; все",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "all",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:allow:v:a2",
         "word": "allow",
         "translation": "разрешить",
@@ -6365,39 +6455,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:almost:adv:a2",
-        "word": "almost",
-        "translation": "почти",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "almost",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:alone:adj-adv:a2",
-        "word": "alone",
-        "translation": "один; в одиночестве",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "alone",
-        "level": "A2",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
-        "id": "oxford:also:adv:a1",
-        "word": "also",
-        "translation": "также",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "also",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:alter:v:b2",
         "word": "alter",
-        "translation": "изменить",
+        "translation": "изменить (сделать иным)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "alter",
@@ -6407,7 +6467,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:announce:v:b1",
         "word": "announce",
-        "translation": "объявить",
+        "translation": "объявить (сообщить публично)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "announce",
@@ -6425,46 +6485,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:any:adv:a2",
-        "word": "any",
-        "translation": "любой; какой-либо",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "any",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:any-more:adv:a2",
-        "word": "any more",
-        "translation": "больше",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "any more",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:anyway:adv:a2",
-        "word": "anyway",
-        "translation": "в любом случае",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "anyway",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:apart:adv:b1",
-        "word": "apart",
-        "translation": "отдельно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "apart",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:apologize:v:b1",
         "word": "apologize",
         "translation": "извиниться",
@@ -6473,16 +6493,6 @@ window.VOCABULARY_DATA = [
         "answer": "apologize",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:apparently:adv:b2",
-        "word": "apparently",
-        "translation": "видимо",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "apparently",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:appeal:n-v:b2",
@@ -6507,7 +6517,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:appreciate:v:b1",
         "word": "appreciate",
-        "translation": "ценить",
+        "translation": "ценить (быть благодарным, понимать ценность)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "appreciate",
@@ -6533,16 +6543,6 @@ window.VOCABULARY_DATA = [
         "answer": "approve",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:approximately:adv:b1",
-        "word": "approximately",
-        "translation": "примерно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "approximately",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:argue:v:a2",
@@ -6597,7 +6597,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:assess:v:b2",
         "word": "assess",
-        "translation": "оценивать",
+        "translation": "оценивать (судить о состоянии, риске или качестве)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "assess",
@@ -6695,36 +6695,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:away:adv:a1",
-        "word": "away",
-        "translation": "прочь",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "away",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:backwards:adv:b1",
-        "word": "backwards",
-        "translation": "назад",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "backwards",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:badly:adv:a2",
-        "word": "badly",
-        "translation": "плохо",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "badly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:bake:v:b1",
         "word": "bake",
         "translation": "выпекать",
@@ -6763,16 +6733,6 @@ window.VOCABULARY_DATA = [
         "answer": "base",
         "level": "B1",
         "partOfSpeech": "сущ., гл."
-      },
-      {
-        "id": "oxford:basically:adv:b2",
-        "word": "basically",
-        "translation": "в основном",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "basically",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:battle:v:b2",
@@ -6885,16 +6845,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:best:adv-n:a2",
-        "word": "best",
-        "translation": "лучший",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "best",
-        "level": "A2",
-        "partOfSpeech": "нареч., сущ."
-      },
-      {
         "id": "oxford:bet:v-n:b2",
         "word": "bet",
         "translation": "ставка; пари; держать пари",
@@ -6903,26 +6853,6 @@ window.VOCABULARY_DATA = [
         "answer": "bet",
         "level": "B2",
         "partOfSpeech": "гл., сущ."
-      },
-      {
-        "id": "oxford:better:adv:a2",
-        "word": "better",
-        "translation": "лучше; более хороший",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "better",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:between:adv:a2",
-        "word": "between",
-        "translation": "между",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "between",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:bite:v-n:b1",
@@ -7017,7 +6947,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:bother:v:b1",
         "word": "bother",
-        "translation": "беспокоить",
+        "translation": "беспокоить (причинять неудобство, отвлекать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "bother",
@@ -7093,16 +7023,6 @@ window.VOCABULARY_DATA = [
         "answer": "bury",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:by:adv:b1",
-        "word": "by",
-        "translation": "у; возле; с помощью",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "by",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:calculate:v:b2",
@@ -7185,16 +7105,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:carefully:adv:a2",
-        "word": "carefully",
-        "translation": "тщательно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "carefully",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:carry:v:a1",
         "word": "carry",
         "translation": "нести",
@@ -7233,16 +7143,6 @@ window.VOCABULARY_DATA = [
         "answer": "cause",
         "level": "A2",
         "partOfSpeech": "сущ., гл."
-      },
-      {
-        "id": "oxford:certainly:adv:a2",
-        "word": "certainly",
-        "translation": "конечно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "certainly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:chain:v:b2",
@@ -7327,7 +7227,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:choose:v:a1",
         "word": "choose",
-        "translation": "выбирать",
+        "translation": "выбирать (делать выбор из вариантов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "choose",
@@ -7375,16 +7275,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:clearly:adv:a2",
-        "word": "clearly",
-        "translation": "ясно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "clearly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:climb:v:a1",
         "word": "climb",
         "translation": "подниматься; взбираться",
@@ -7403,26 +7293,6 @@ window.VOCABULARY_DATA = [
         "answer": "close",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:close:adv:b1",
-        "word": "close",
-        "translation": "близко",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "close",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:closely:adv:b2",
-        "word": "closely",
-        "translation": "внимательно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "closely",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:coach:v:b1",
@@ -7525,16 +7395,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:commonly:adv:b2",
-        "word": "commonly",
-        "translation": "обычно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "commonly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:communicate:v:a2",
         "word": "communicate",
         "translation": "общаться",
@@ -7577,22 +7437,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:complete:adj-v:a1",
         "word": "complete",
-        "translation": "полный",
+        "translation": "полный; завершать (все части в наличии / доводить до конца)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "complete",
         "level": "A1",
         "partOfSpeech": "прил., гл."
-      },
-      {
-        "id": "oxford:completely:adv:a2",
-        "word": "completely",
-        "translation": "полностью",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "completely",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:concentrate:v:b1",
@@ -7693,16 +7543,6 @@ window.VOCABULARY_DATA = [
         "answer": "consist",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:constantly:adv:b2",
-        "word": "constantly",
-        "translation": "постоянно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "constantly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:construct:v:b2",
@@ -7817,7 +7657,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:convince:v:b1",
         "word": "convince",
-        "translation": "убеждать",
+        "translation": "убеждать (убедить в истинности чего-либо)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "convince",
@@ -7843,16 +7683,6 @@ window.VOCABULARY_DATA = [
         "answer": "correct",
         "level": "A1",
         "partOfSpeech": "прил., гл."
-      },
-      {
-        "id": "oxford:correctly:adv:a2",
-        "word": "correctly",
-        "translation": "правильно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "correctly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:cover:v:a2",
@@ -7915,16 +7745,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:currently:adv:b1",
-        "word": "currently",
-        "translation": "в настоящее время",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "currently",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:curve:n-v:b2",
         "word": "curve",
         "translation": "кривая; изгиб; изгибаться",
@@ -7977,7 +7797,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:decide:v:a1",
         "word": "decide",
-        "translation": "решить",
+        "translation": "решить (принять решение, выбрать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "decide",
@@ -7987,7 +7807,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:declare:v:b2",
         "word": "declare",
-        "translation": "объявить",
+        "translation": "объявить (заявить официально)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "declare",
@@ -8025,26 +7845,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:deep:adv:b1",
-        "word": "deep",
-        "translation": "глубокий",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "deep",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:deeply:adv:b2",
-        "word": "deeply",
-        "translation": "глубоко",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "deeply",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:defeat:v-n:b2",
         "word": "defeat",
         "translation": "поражение; побеждать",
@@ -8057,7 +7857,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:defend:v:b2",
         "word": "defend",
-        "translation": "защищать",
+        "translation": "защищать (отражать нападение или отстаивать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "defend",
@@ -8067,32 +7867,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:define:v:b1",
         "word": "define",
-        "translation": "определить",
+        "translation": "определить (дать определение, обозначить границы)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "define",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:definitely:adv:a2",
-        "word": "definitely",
-        "translation": "определенно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "definitely",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:deliberately:adv:b2",
-        "word": "deliberately",
-        "translation": "намеренно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "deliberately",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:delight:v-n:b2",
@@ -8187,7 +7967,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:desire:n-v:b2",
         "word": "desire",
-        "translation": "желание; желать",
+        "translation": "желание; желать (сильное стремление, формальное)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "desire",
@@ -8217,7 +7997,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:detect:v:b2",
         "word": "detect",
-        "translation": "обнаружить",
+        "translation": "обнаружить (заметить присутствие или сигнал)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "detect",
@@ -8227,7 +8007,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:determine:v:b1",
         "word": "determine",
-        "translation": "определить",
+        "translation": "определить (установить факт или точно выяснить)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "determine",
@@ -8255,16 +8035,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:differently:adv:a2",
-        "word": "differently",
-        "translation": "по-другому",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "differently",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:dig:v:b2",
         "word": "dig",
         "translation": "копать",
@@ -8277,22 +8047,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:direct:v-adv:b1",
         "word": "direct",
-        "translation": "прямой",
+        "translation": "направлять; прямо (руководить / без промежуточных этапов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "direct",
         "level": "B1",
         "partOfSpeech": "гл., нареч."
-      },
-      {
-        "id": "oxford:directly:adv:b1",
-        "word": "directly",
-        "translation": "напрямую",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "directly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:disagree:v:a2",
@@ -8415,26 +8175,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:downstairs:adv:a1",
-        "word": "downstairs",
-        "translation": "внизу",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "downstairs",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:downwards:adv:b2",
-        "word": "downwards",
-        "translation": "вниз",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "downwards",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:draft:n-v:b2",
         "word": "draft",
         "translation": "черновик; проект; составлять черновик",
@@ -8505,16 +8245,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил., гл."
       },
       {
-        "id": "oxford:easily:adv:a2",
-        "word": "easily",
-        "translation": "легко",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "easily",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:eat:v:a1",
         "word": "eat",
         "translation": "есть",
@@ -8545,44 +8275,14 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:effectively:adv:b1",
-        "word": "effectively",
-        "translation": "эффективно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "effectively",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:elect:v:b2",
         "word": "elect",
-        "translation": "выбирать",
+        "translation": "выбирать (избирать голосованием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "elect",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:else:adv:a1",
-        "word": "else",
-        "translation": "еще",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "else",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:elsewhere:adv:b2",
-        "word": "elsewhere",
-        "translation": "в другом месте",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "elsewhere",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:emerge:v:b2",
@@ -8677,7 +8377,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:enhance:v:b2",
         "word": "enhance",
-        "translation": "улучшить",
+        "translation": "улучшить (усилить качество или эффект)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "enhance",
@@ -8697,7 +8397,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ensure:v:b2",
         "word": "ensure",
-        "translation": "обеспечить",
+        "translation": "обеспечить (сделать так, чтобы результат был гарантирован)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ensure",
@@ -8725,16 +8425,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:entirely:adv:b2",
-        "word": "entirely",
-        "translation": "полностью",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "entirely",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:equal:adj-v:b1",
         "word": "equal",
         "translation": "равняться",
@@ -8743,16 +8433,6 @@ window.VOCABULARY_DATA = [
         "answer": "equal",
         "level": "B1",
         "partOfSpeech": "прил., гл."
-      },
-      {
-        "id": "oxford:equally:adv:b1",
-        "word": "equally",
-        "translation": "поровну",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "equally",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:escape:v-n:b1",
@@ -8765,19 +8445,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:especially:adv:a2",
-        "word": "especially",
-        "translation": "особенно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "especially",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:establish:v:b2",
         "word": "establish",
-        "translation": "установить",
+        "translation": "установить (основать, создать или доказать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "establish",
@@ -8797,7 +8467,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:evaluate:v:b2",
         "word": "evaluate",
-        "translation": "оценивать",
+        "translation": "оценивать (определять ценность или эффективность)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "evaluate",
@@ -8805,59 +8475,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:even:adv:a1",
-        "word": "even",
-        "translation": "даже",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "even",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:eventually:adv:b1",
-        "word": "eventually",
-        "translation": "в конце концов",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "eventually",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:ever:adv:a1",
-        "word": "ever",
-        "translation": "когда-либо",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "ever",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:everywhere:adv:a2",
-        "word": "everywhere",
-        "translation": "везде",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "everywhere",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:exactly:adv:a2",
-        "word": "exactly",
-        "translation": "точно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "exactly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:examine:v:b1",
         "word": "examine",
-        "translation": "исследовать",
+        "translation": "исследовать (внимательно осматривать или изучать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "examine",
@@ -8897,7 +8517,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:expand:v:b1",
         "word": "expand",
-        "translation": "расширять",
+        "translation": "расширять (увеличивать объём или масштаб)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "expand",
@@ -8937,7 +8557,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:explore:v:b1",
         "word": "explore",
-        "translation": "исследовать",
+        "translation": "исследовать (изучать новое место или возможности)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "explore",
@@ -8977,32 +8597,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:extend:v:b2",
         "word": "extend",
-        "translation": "расширять",
+        "translation": "расширять (увеличивать длину, срок или зону действия)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "extend",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:extra:n-adv:b1",
-        "word": "extra",
-        "translation": "дополнительный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "extra",
-        "level": "B1",
-        "partOfSpeech": "сущ., нареч."
-      },
-      {
-        "id": "oxford:extremely:adv:a2",
-        "word": "extremely",
-        "translation": "чрезвычайно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "extremely",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       }
     ],
     "id": "oxford-extra-10",
@@ -9024,16 +8624,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:fairly:adv:b1",
-        "word": "fairly",
-        "translation": "довольно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "fairly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:fall:v:a1",
         "word": "fall",
         "translation": "падать",
@@ -9052,26 +8642,6 @@ window.VOCABULARY_DATA = [
         "answer": "fancy",
         "level": "B1",
         "partOfSpeech": "гл., прил."
-      },
-      {
-        "id": "oxford:far:adv:a1",
-        "word": "far",
-        "translation": "далёкий; далеко",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "far",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:fast:adj-adv:a1",
-        "word": "fast",
-        "translation": "быстро",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "fast",
-        "level": "A1",
-        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:fasten:v:b1",
@@ -9156,7 +8726,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:find:v:a1",
         "word": "find",
-        "translation": "найти",
+        "translation": "найти (обнаружить искомое)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "find",
@@ -9172,16 +8742,6 @@ window.VOCABULARY_DATA = [
         "answer": "finish",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:firstly:adv:a2",
-        "word": "firstly",
-        "translation": "во-первых",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "firstly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:fit:v-adj:a2",
@@ -9206,7 +8766,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:float:v:b2",
         "word": "float",
-        "translation": "плавать",
+        "translation": "плавать (держаться на поверхности, не тонуть)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "float",
@@ -9274,16 +8834,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:forever:adv:b1",
-        "word": "forever",
-        "translation": "навсегда",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "forever",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:forget:v:a1",
         "word": "forget",
         "translation": "забыть",
@@ -9314,26 +8864,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:fortunately:adv:a2",
-        "word": "fortunately",
-        "translation": "к счастью",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "fortunately",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:forward:adv:a2",
-        "word": "forward",
-        "translation": "вперед",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "forward",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:found:v:b2",
         "word": "found",
         "translation": "основывать; учреждать",
@@ -9352,16 +8882,6 @@ window.VOCABULARY_DATA = [
         "answer": "frame",
         "level": "B1",
         "partOfSpeech": "сущ., гл."
-      },
-      {
-        "id": "oxford:free:adv:a2",
-        "word": "free",
-        "translation": "свободный; бесплатный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "free",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:free:v:b2",
@@ -9414,16 +8934,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:fully:adv:b2",
-        "word": "fully",
-        "translation": "полностью",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "fully",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:function:v:b2",
         "word": "function",
         "translation": "функционировать",
@@ -9444,26 +8954,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:further:adv:b1",
-        "word": "further",
-        "translation": "дальше",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "further",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:furthermore:adv:b2",
-        "word": "furthermore",
-        "translation": "кроме того",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "furthermore",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:gain:v-n:b2",
         "word": "gain",
         "translation": "выгода; прирост; получать; приобретать",
@@ -9482,16 +8972,6 @@ window.VOCABULARY_DATA = [
         "answer": "gather",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:generally:adv:b1",
-        "word": "generally",
-        "translation": "вообще",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "generally",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:generate:v:b2",
@@ -9536,7 +9016,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:govern:v:b2",
         "word": "govern",
-        "translation": "управлять",
+        "translation": "управлять (руководить страной, определять правила)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "govern",
@@ -9552,16 +9032,6 @@ window.VOCABULARY_DATA = [
         "answer": "grab",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:gradually:adv:b2",
-        "word": "gradually",
-        "translation": "постепенно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "gradually",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:graduate:n-v:b1",
@@ -9586,7 +9056,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:greet:v:a2",
         "word": "greet",
-        "translation": "приветствовать",
+        "translation": "приветствовать (встречать приветствием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "greet",
@@ -9674,36 +9144,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:happily:adv:a2",
-        "word": "happily",
-        "translation": "счастливо",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "happily",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:hard:adj-adv:a1",
-        "word": "hard",
-        "translation": "тяжело",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "hard",
-        "level": "A1",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
-        "id": "oxford:hardly:adv:b1",
-        "word": "hardly",
-        "translation": "вряд ли",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "hardly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:harm:n-v:b2",
         "word": "harm",
         "translation": "вред; вредить",
@@ -9754,34 +9194,14 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:heavily:adv:b1",
-        "word": "heavily",
-        "translation": "сильно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "heavily",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:help:v-n:a1",
         "word": "help",
-        "translation": "помощь; помогать",
+        "translation": "помощь; помогать (помощь в выполнении чего-либо)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "help",
         "level": "A1",
         "partOfSpeech": "гл., сущ."
-      },
-      {
-        "id": "oxford:here:adv:a1",
-        "word": "here",
-        "translation": "здесь",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "here",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:hesitate:v:b2",
@@ -9804,16 +9224,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:high:adv:a2",
-        "word": "high",
-        "translation": "высокий",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "high",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:highlight:v-n:b1",
         "word": "highlight",
         "translation": "главный момент; выделять",
@@ -9822,16 +9232,6 @@ window.VOCABULARY_DATA = [
         "answer": "highlight",
         "level": "B1",
         "partOfSpeech": "гл., сущ."
-      },
-      {
-        "id": "oxford:highly:adv:b1",
-        "word": "highly",
-        "translation": "весьма",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "highly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:hike:n-v:a2",
@@ -9856,7 +9256,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:hold:v:a2",
         "word": "hold",
-        "translation": "держать",
+        "translation": "держать (удерживать в руках или на месте)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "hold",
@@ -9892,26 +9292,6 @@ window.VOCABULARY_DATA = [
         "answer": "host",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:how:adv:a1",
-        "word": "how",
-        "translation": "как",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "how",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:however:adv:a1",
-        "word": "however",
-        "translation": "однако",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "however",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:hunt:v:b1",
@@ -9976,7 +9356,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:imagine:v:a1",
         "word": "imagine",
-        "translation": "представлять себе",
+        "translation": "представлять себе (мысленно допускать, воображать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "imagine",
@@ -10036,7 +9416,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:improve:v:a1",
         "word": "improve",
-        "translation": "улучшить",
+        "translation": "улучшить (сделать лучше)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "improve",
@@ -10064,36 +9444,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:increasingly:adv:b2",
-        "word": "increasingly",
-        "translation": "все больше",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "increasingly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:incredibly:adv:b1",
-        "word": "incredibly",
-        "translation": "невероятно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "incredibly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:indeed:adv:b1",
-        "word": "indeed",
-        "translation": "действительно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "indeed",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:indicate:v:b1",
         "word": "indicate",
         "translation": "указать",
@@ -10102,16 +9452,6 @@ window.VOCABULARY_DATA = [
         "answer": "indicate",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:indoors:adv:b1",
-        "word": "indoors",
-        "translation": "в помещении",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "indoors",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:influence:n-v:b1",
@@ -10132,16 +9472,6 @@ window.VOCABULARY_DATA = [
         "answer": "inform",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:initially:adv:b2",
-        "word": "initially",
-        "translation": "изначально",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "initially",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:injure:v:b1",
@@ -10176,22 +9506,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:install:v:b2",
         "word": "install",
-        "translation": "установить",
+        "translation": "установить (смонтировать оборудование или программу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "install",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:instead:adv:a2",
-        "word": "instead",
-        "translation": "вместо этого",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "instead",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:intend:v:b1",
@@ -10256,7 +9576,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:investigate:v:b1",
         "word": "investigate",
-        "translation": "исследовать",
+        "translation": "исследовать (выяснять причины, проводить расследование)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "investigate",
@@ -10334,16 +9654,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:just:adv:a1",
-        "word": "just",
-        "translation": "просто",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "just",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:justify:v:b2",
         "word": "justify",
         "translation": "оправдывать",
@@ -10365,7 +9675,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:keep:v:a1",
         "word": "keep",
-        "translation": "держать",
+        "translation": "держать (сохранять у себя или в прежнем состоянии)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "keep",
@@ -10443,26 +9753,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:largely:adv:b2",
-        "word": "largely",
-        "translation": "в основном",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "largely",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:later:adv:a1",
-        "word": "later",
-        "translation": "позже",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "later",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:laugh:v-n:a1",
         "word": "laugh",
         "translation": "смех; смеяться",
@@ -10485,7 +9775,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:lay:v:b1",
         "word": "lay",
-        "translation": "лежать",
+        "translation": "класть; укладывать (помещать что-либо горизонтально)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "lay",
@@ -10545,7 +9835,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:lie:v:a1",
         "word": "lie",
-        "translation": "лежать",
+        "translation": "лежать (находиться в горизонтальном положении)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "lie",
@@ -10623,16 +9913,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:little:adv:a2",
-        "word": "little",
-        "translation": "маленький",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "little",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:live:v:a1",
         "word": "live",
         "translation": "жить",
@@ -10641,16 +9921,6 @@ window.VOCABULARY_DATA = [
         "answer": "live",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:live:adj-adv:b1",
-        "word": "live",
-        "translation": "живой; в прямом эфире",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "live",
-        "level": "B1",
-        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:load:n-v:b2",
@@ -10665,32 +9935,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:locate:v:b1",
         "word": "locate",
-        "translation": "найти",
+        "translation": "найти (установить точное местоположение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "locate",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:long:adj-adv:a1",
-        "word": "long",
-        "translation": "длинный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "long",
-        "level": "A1",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
-        "id": "oxford:long-term:adj-adv:b2",
-        "word": "long-term",
-        "translation": "долгосрочный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "long-term",
-        "level": "B2",
-        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:look:v:a1",
@@ -10701,36 +9951,6 @@ window.VOCABULARY_DATA = [
         "answer": "look",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:loud:adj-adv:a2",
-        "word": "loud",
-        "translation": "громкий",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "loud",
-        "level": "A2",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
-        "id": "oxford:loudly:adv:a2",
-        "word": "loudly",
-        "translation": "громко",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "loudly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:low:adj-adv:a2",
-        "word": "low",
-        "translation": "низкий",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "low",
-        "level": "A2",
-        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:lower:v:b2",
@@ -10753,19 +9973,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:mainly:adv:b1",
-        "word": "mainly",
-        "translation": "главным образом",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "mainly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:maintain:v:b2",
         "word": "maintain",
-        "translation": "поддерживать",
+        "translation": "поддерживать (сохранять в рабочем или прежнем состоянии)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "maintain",
@@ -10785,7 +9995,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:manage:v:a2",
         "word": "manage",
-        "translation": "управлять",
+        "translation": "управлять (руководить работой, людьми или ресурсами)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "manage",
@@ -10823,16 +10033,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:maybe:adv:a1",
-        "word": "maybe",
-        "translation": "может быть",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "maybe",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:mean:v:a1",
         "word": "mean",
         "translation": "значить; иметь в виду",
@@ -10841,16 +10041,6 @@ window.VOCABULARY_DATA = [
         "answer": "mean",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:meanwhile:adv:b1",
-        "word": "meanwhile",
-        "translation": "тем временем",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "meanwhile",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:meet:v:a1",
@@ -10935,7 +10125,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:modify:v:b2",
         "word": "modify",
-        "translation": "изменить",
+        "translation": "изменить (частично скорректировать, внести изменения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "modify",
@@ -10951,16 +10141,6 @@ window.VOCABULARY_DATA = [
         "answer": "monitor",
         "level": "B2",
         "partOfSpeech": "сущ., гл."
-      },
-      {
-        "id": "oxford:mostly:adv:a2",
-        "word": "mostly",
-        "translation": "в основном",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "mostly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:mount:v:b2",
@@ -11023,36 +10203,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:naturally:adv:b1",
-        "word": "naturally",
-        "translation": "естественно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "naturally",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:nearly:adv:a2",
-        "word": "nearly",
-        "translation": "почти",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "nearly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:necessarily:adv:b1",
-        "word": "necessarily",
-        "translation": "обязательно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "necessarily",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:need:v:a1",
         "word": "need",
         "translation": "нуждаться",
@@ -11061,46 +10211,6 @@ window.VOCABULARY_DATA = [
         "answer": "need",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:neither:adv:b1",
-        "word": "neither",
-        "translation": "ни один из двух",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "neither",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:nevertheless:adv:b2",
-        "word": "nevertheless",
-        "translation": "тем не менее",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "nevertheless",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:normally:adv:a2",
-        "word": "normally",
-        "translation": "обычно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "normally",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:not:adv:a1",
-        "word": "not",
-        "translation": "не",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "not",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:note:v:b1",
@@ -11121,16 +10231,6 @@ window.VOCABULARY_DATA = [
         "answer": "notice",
         "level": "A2",
         "partOfSpeech": "гл., сущ."
-      },
-      {
-        "id": "oxford:nowhere:adv:a2",
-        "word": "nowhere",
-        "translation": "нигде",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "nowhere",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:obey:v:b2",
@@ -11173,26 +10273,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:obviously:adv:b1",
-        "word": "obviously",
-        "translation": "очевидно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "obviously",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:occasionally:adv:b2",
-        "word": "occasionally",
-        "translation": "иногда",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "occasionally",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:occur:v:b1",
         "word": "occur",
         "translation": "происходить",
@@ -11221,26 +10301,6 @@ window.VOCABULARY_DATA = [
         "answer": "offer",
         "level": "A2",
         "partOfSpeech": "гл., сущ."
-      },
-      {
-        "id": "oxford:once:adv:a1",
-        "word": "once",
-        "translation": "однажды",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "once",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:only:adj-adv:a1",
-        "word": "only",
-        "translation": "только; единственный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "only",
-        "level": "A1",
-        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:open:adj-v:a1",
@@ -11283,36 +10343,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:originally:adv:b1",
-        "word": "originally",
-        "translation": "изначально",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "originally",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:otherwise:adv:b2",
-        "word": "otherwise",
-        "translation": "иначе",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "otherwise",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:outdoors:adv:b1",
-        "word": "outdoors",
-        "translation": "на открытом воздухе",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "outdoors",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:outline:n-v:b2",
         "word": "outline",
         "translation": "контур; краткое изложение; кратко излагать",
@@ -11323,29 +10353,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:outside:adv:a1",
-        "word": "outside",
-        "translation": "снаружи",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "outside",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:overall:adj-adv:b2",
-        "word": "overall",
-        "translation": "в целом",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "overall",
-        "level": "B2",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
         "id": "oxford:owe:v:b2",
         "word": "owe",
-        "translation": "должен",
+        "translation": "быть должным (деньги, услугу или благодарность)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "owe",
@@ -11361,16 +10371,6 @@ window.VOCABULARY_DATA = [
         "answer": "own",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:o-clock:adv:a1",
-        "word": "o’clock",
-        "translation": "час",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "o’clock",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       }
     ],
     "id": "oxford-extra-12",
@@ -11394,7 +10394,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:pack:v:a2",
         "word": "pack",
-        "translation": "упаковывать",
+        "translation": "упаковывать (складывать вещи для перевозки)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "pack",
@@ -11404,7 +10404,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:package:v:b2",
         "word": "package",
-        "translation": "упаковывать",
+        "translation": "упаковывать (помещать товар в упаковку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "package",
@@ -11422,26 +10422,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:particularly:adv:b1",
-        "word": "particularly",
-        "translation": "особенно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "particularly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:partly:adv:b2",
-        "word": "partly",
-        "translation": "частично",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "partly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:pass:v:a2",
         "word": "pass",
         "translation": "проходить; передавать",
@@ -11450,36 +10430,6 @@ window.VOCABULARY_DATA = [
         "answer": "pass",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:per-cent:n-adj-adv:a2",
-        "word": "per cent",
-        "translation": "процент",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "per cent",
-        "level": "A2",
-        "partOfSpeech": "сущ., прил., нареч."
-      },
-      {
-        "id": "oxford:perfectly:adv:b1",
-        "word": "perfectly",
-        "translation": "идеально",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "perfectly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:perhaps:adv:a2",
-        "word": "perhaps",
-        "translation": "возможно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "perhaps",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:permit:v-n:b2",
@@ -11492,19 +10442,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:personally:adv:b1",
-        "word": "personally",
-        "translation": "лично",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "personally",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:persuade:v:b1",
         "word": "persuade",
-        "translation": "убеждать",
+        "translation": "убеждать (склонить к действию)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "persuade",
@@ -11622,16 +10562,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:possibly:adv:b1",
-        "word": "possibly",
-        "translation": "возможно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "possibly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:post:n-v:a1",
         "word": "post",
         "translation": "почта; публикация; должность; отправлять по почте; публиковать",
@@ -11742,16 +10672,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:pretty:adj-adv:a1",
-        "word": "pretty",
-        "translation": "красивая",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "pretty",
-        "level": "A1",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
         "id": "oxford:prevent:v:a2",
         "word": "prevent",
         "translation": "предотвратить",
@@ -11762,16 +10682,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:previously:adv:b1",
-        "word": "previously",
-        "translation": "ранее",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "previously",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:print:v:a2",
         "word": "print",
         "translation": "печатать",
@@ -11780,16 +10690,6 @@ window.VOCABULARY_DATA = [
         "answer": "print",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:probably:adv:a1",
-        "word": "probably",
-        "translation": "вероятно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "probably",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:produce:v:a2",
@@ -11842,16 +10742,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:properly:adv:b1",
-        "word": "properly",
-        "translation": "должным образом",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "properly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:propose:v:b2",
         "word": "propose",
         "translation": "предлагать",
@@ -11864,7 +10754,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:protect:v:a2",
         "word": "protect",
-        "translation": "защищать",
+        "translation": "защищать (оберегать от вреда)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "protect",
@@ -11894,7 +10784,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:provide:v:a2",
         "word": "provide",
-        "translation": "обеспечить",
+        "translation": "обеспечить (снабдить необходимым, предоставить)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "provide",
@@ -11982,26 +10872,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:quickly:adv:a1",
-        "word": "quickly",
-        "translation": "быстро",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "quickly",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:quietly:adv:a2",
-        "word": "quietly",
-        "translation": "тихо",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "quietly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:quit:v:b1",
         "word": "quit",
         "translation": "уйти",
@@ -12010,16 +10880,6 @@ window.VOCABULARY_DATA = [
         "answer": "quit",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:quite:adv:a1",
-        "word": "quite",
-        "translation": "вполне",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "quite",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:quote:v-n:b1",
@@ -12044,7 +10904,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:range:v:b2",
         "word": "range",
-        "translation": "варьироваться",
+        "translation": "варьироваться (находиться в диапазоне от одного значения до другого)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "range",
@@ -12062,34 +10922,14 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:rapidly:adv:b2",
-        "word": "rapidly",
-        "translation": "быстро",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "rapidly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:rate:v:b2",
         "word": "rate",
-        "translation": "оценивать",
+        "translation": "оценивать (присваивать рейтинг, оценку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "rate",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:rather:adv:a2",
-        "word": "rather",
-        "translation": "скорее",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "rather",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:reach:v:a2",
@@ -12122,16 +10962,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:really:adv:a1",
-        "word": "really",
-        "translation": "действительно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "really",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:recall:v:b2",
         "word": "recall",
         "translation": "вспомнить",
@@ -12154,7 +10984,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:recognize:v:a2",
         "word": "recognize",
-        "translation": "признать",
+        "translation": "признать (осознать, признать значимость или статус)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "recognize",
@@ -12262,16 +11092,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:regularly:adv:b1",
-        "word": "regularly",
-        "translation": "регулярно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "regularly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:reject:v:b1",
         "word": "reject",
         "translation": "отклонить",
@@ -12290,16 +11110,6 @@ window.VOCABULARY_DATA = [
         "answer": "relate",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:relatively:adv:b2",
-        "word": "relatively",
-        "translation": "относительно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "relatively",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:release:v-n:b1",
@@ -12324,7 +11134,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:remain:v:b1",
         "word": "remain",
-        "translation": "оставаться",
+        "translation": "оставаться (сохраняться после изменений)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "remain",
@@ -12404,7 +11214,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:reply:v-n:a2",
         "word": "reply",
-        "translation": "ответ; отвечать",
+        "translation": "ответ; отвечать (ответ на сообщение или обращение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "reply",
@@ -12484,7 +11294,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:resolve:v:b2",
         "word": "resolve",
-        "translation": "решить",
+        "translation": "решить (разрешить спор или трудность)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "resolve",
@@ -12524,7 +11334,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:retain:v:b2",
         "word": "retain",
-        "translation": "сохранить",
+        "translation": "сохранить (удержать, не утратить)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "retain",
@@ -12652,16 +11462,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:sadly:adv:a2",
-        "word": "sadly",
-        "translation": "к сожалению",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "sadly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:sail:v:a2",
         "word": "sail",
         "translation": "плыть под парусом",
@@ -12694,7 +11494,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:save:v:a2",
         "word": "save",
-        "translation": "сохранить",
+        "translation": "сохранить (сберечь, записать или спасти)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "save",
@@ -12744,7 +11544,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:scream:v-n:b2",
         "word": "scream",
-        "translation": "крик; кричать",
+        "translation": "крик; кричать (резкий пронзительный звук)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "scream",
@@ -12762,19 +11562,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:secondly:adv:a2",
-        "word": "secondly",
-        "translation": "во-вторых",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "secondly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:secure:v-adj:b2",
         "word": "secure",
-        "translation": "безопасный",
+        "translation": "обеспечить; надёжно защищённый (получить, закрепить / оградить от угроз)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "secure",
@@ -12824,7 +11614,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:send:v:a1",
         "word": "send",
-        "translation": "отправить",
+        "translation": "отправить (передать, послать адресату)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "send",
@@ -12850,16 +11640,6 @@ window.VOCABULARY_DATA = [
         "answer": "separate",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:seriously:adv:b1",
-        "word": "seriously",
-        "translation": "серьезно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "seriously",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:serve:v:a2",
@@ -12974,7 +11754,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:shout:v-n:a2",
         "word": "shout",
-        "translation": "крик; кричать",
+        "translation": "крик; кричать (громкий голос, чтобы было слышно)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "shout",
@@ -13022,36 +11802,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., гл."
       },
       {
-        "id": "oxford:significantly:adv:b2",
-        "word": "significantly",
-        "translation": "значительно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "significantly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:similarly:adv:b1",
-        "word": "similarly",
-        "translation": "аналогично",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "similarly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:simply:adv:b1",
-        "word": "simply",
-        "translation": "просто",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "simply",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:sit:v:a1",
         "word": "sit",
         "translation": "сидеть",
@@ -13092,16 +11842,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:slightly:adv:b1",
-        "word": "slightly",
-        "translation": "слегка",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "slightly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:slip:v:b2",
         "word": "slip",
         "translation": "скользить; поскользнуться",
@@ -13130,16 +11870,6 @@ window.VOCABULARY_DATA = [
         "answer": "slow",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:slowly:adv:a2",
-        "word": "slowly",
-        "translation": "медленно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "slowly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:smell:v-n:a2",
@@ -13174,22 +11904,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:solve:v:a2",
         "word": "solve",
-        "translation": "решить",
+        "translation": "решить (найти ответ на задачу или проблему)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "solve",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:somewhat:adv:b2",
-        "word": "somewhat",
-        "translation": "несколько",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "somewhat",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:sort:v:b1",
@@ -13220,16 +11940,6 @@ window.VOCABULARY_DATA = [
         "answer": "speak",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:specifically:adv:b1",
-        "word": "specifically",
-        "translation": "конкретно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "specifically",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:spell:v:a1",
@@ -13354,7 +12064,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:stay:v:a1",
         "word": "stay",
-        "translation": "оставаться",
+        "translation": "оставаться (не уходить, находиться в месте)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "stay",
@@ -13412,16 +12122,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:strongly:adv:b1",
-        "word": "strongly",
-        "translation": "сильно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "strongly",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:structure:v:b2",
         "word": "structure",
         "translation": "структурировать",
@@ -13454,7 +12154,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:submit:v:b2",
         "word": "submit",
-        "translation": "отправить",
+        "translation": "отправить (подать на рассмотрение или проверку)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "submit",
@@ -13470,26 +12170,6 @@ window.VOCABULARY_DATA = [
         "answer": "succeed",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:successfully:adv:b1",
-        "word": "successfully",
-        "translation": "успешно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "successfully",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:suddenly:adv:a2",
-        "word": "suddenly",
-        "translation": "внезапно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "suddenly",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:suffer:v:b1",
@@ -13560,26 +12240,6 @@ window.VOCABULARY_DATA = [
         "answer": "suppose",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:sure:adv:a2",
-        "word": "sure",
-        "translation": "уверенный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "sure",
-        "level": "A2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:surely:adv:b1",
-        "word": "surely",
-        "translation": "конечно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "surely",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:surprise:n-v:a2",
@@ -13742,36 +12402,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:that:adv:b1",
-        "word": "that",
-        "translation": "тот; что",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "that",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:there:adv:a1",
-        "word": "there",
-        "translation": "там; здесь есть",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "there",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:therefore:adv:b1",
-        "word": "therefore",
-        "translation": "поэтому",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "therefore",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:think:v:a1",
         "word": "think",
         "translation": "думать",
@@ -13780,16 +12410,6 @@ window.VOCABULARY_DATA = [
         "answer": "think",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:this:adv:b1",
-        "word": "this",
-        "translation": "этот; это",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "this",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:threaten:v:b2",
@@ -13810,16 +12430,6 @@ window.VOCABULARY_DATA = [
         "answer": "throw",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:thus:adv:b2",
-        "word": "thus",
-        "translation": "таким образом",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "thus",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:tie:v-n:a2",
@@ -13850,46 +12460,6 @@ window.VOCABULARY_DATA = [
         "answer": "title",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:together:adv:a1",
-        "word": "together",
-        "translation": "вместе",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "together",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:tonight:adv-n:a1",
-        "word": "tonight",
-        "translation": "сегодня вечером",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "tonight",
-        "level": "A1",
-        "partOfSpeech": "нареч., сущ."
-      },
-      {
-        "id": "oxford:too:adv:a1",
-        "word": "too",
-        "translation": "тоже; слишком",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "too",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:totally:adv:b1",
-        "word": "totally",
-        "translation": "полностью",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "totally",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:touch:v:a2",
@@ -13974,22 +12544,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:trouble:v:b2",
         "word": "trouble",
-        "translation": "беспокоить",
+        "translation": "беспокоить (причинять тревогу или затруднения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "trouble",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:truly:adv:b2",
-        "word": "truly",
-        "translation": "действительно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "truly",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:trust:n-v:b2",
@@ -14012,16 +12572,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:twice:adv:a1",
-        "word": "twice",
-        "translation": "дважды",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "twice",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:type:v:b1",
         "word": "type",
         "translation": "печатать на клавиатуре",
@@ -14030,16 +12580,6 @@ window.VOCABULARY_DATA = [
         "answer": "type",
         "level": "B1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:typically:adv:b1",
-        "word": "typically",
-        "translation": "обычно",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "typically",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       }
     ],
     "id": "oxford-extra-13",
@@ -14051,26 +12591,6 @@ window.VOCABULARY_DATA = [
     "topic": "Действия и изменения",
     "words": [
       {
-        "id": "oxford:ultimately:adv:b2",
-        "word": "ultimately",
-        "translation": "в конечном итоге",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "ultimately",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:underground:adj-adv:a2",
-        "word": "underground",
-        "translation": "под землей",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "underground",
-        "level": "A2",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
         "id": "oxford:understand:v:a1",
         "word": "understand",
         "translation": "понять",
@@ -14079,16 +12599,6 @@ window.VOCABULARY_DATA = [
         "answer": "understand",
         "level": "A1",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:unfortunately:adv:a2",
-        "word": "unfortunately",
-        "translation": "к сожалению",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "unfortunately",
-        "level": "A2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:update:v-n:b1",
@@ -14109,26 +12619,6 @@ window.VOCABULARY_DATA = [
         "answer": "upset",
         "level": "B1",
         "partOfSpeech": "прил., гл."
-      },
-      {
-        "id": "oxford:upstairs:adv:a1",
-        "word": "upstairs",
-        "translation": "наверху",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "upstairs",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:upwards:adv:b2",
-        "word": "upwards",
-        "translation": "вверх",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "upwards",
-        "level": "B2",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:urge:v:b2",
@@ -14153,22 +12643,12 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:vary:v:b2",
         "word": "vary",
-        "translation": "варьироваться",
+        "translation": "варьироваться (изменяться, быть разным)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "vary",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:very:adv:a1",
-        "word": "very",
-        "translation": "очень",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "very",
-        "level": "A1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:view:v:b1",
@@ -14251,16 +12731,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:way:adv:b2",
-        "word": "way",
-        "translation": "путь",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "way",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:wear:v:a1",
         "word": "wear",
         "translation": "носить",
@@ -14281,29 +12751,9 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл."
       },
       {
-        "id": "oxford:why:adv:a1",
-        "word": "why",
-        "translation": "почему",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "why",
-        "level": "A1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:widely:adv:b2",
-        "word": "widely",
-        "translation": "широко",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "widely",
-        "level": "B2",
-        "partOfSpeech": "нареч."
-      },
-      {
         "id": "oxford:wish:v-n:a2",
         "word": "wish",
-        "translation": "желание; желать",
+        "translation": "желание; желать (пожелание или желание)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "wish",
@@ -14331,16 +12781,6 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "гл., сущ."
       },
       {
-        "id": "oxford:worldwide:adj-adv:b1",
-        "word": "worldwide",
-        "translation": "по всему миру",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "worldwide",
-        "level": "B1",
-        "partOfSpeech": "прил., нареч."
-      },
-      {
         "id": "oxford:worry:v:a2",
         "word": "worry",
         "translation": "беспокоиться",
@@ -14349,26 +12789,6 @@ window.VOCABULARY_DATA = [
         "answer": "worry",
         "level": "A2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:worse:adv:b1",
-        "word": "worse",
-        "translation": "хуже",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "worse",
-        "level": "B1",
-        "partOfSpeech": "нареч."
-      },
-      {
-        "id": "oxford:worst:adv:b1",
-        "word": "worst",
-        "translation": "худший",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "worst",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       },
       {
         "id": "oxford:wound:n-v:b2",
@@ -14389,16 +12809,6 @@ window.VOCABULARY_DATA = [
         "answer": "wrap",
         "level": "B2",
         "partOfSpeech": "гл."
-      },
-      {
-        "id": "oxford:wrong:adv:b1",
-        "word": "wrong",
-        "translation": "неправильный",
-        "example": "",
-        "sentenceTranslation": "",
-        "answer": "wrong",
-        "level": "B1",
-        "partOfSpeech": "нареч."
       }
     ],
     "id": "oxford-extra-14",
@@ -14612,7 +13022,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:expensive:adj:a1",
         "word": "expensive",
-        "translation": "дорогой",
+        "translation": "дорогой (с высокой ценой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "expensive",
@@ -14682,7 +13092,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:item:n:a2",
         "word": "item",
-        "translation": "предмет",
+        "translation": "предмет (отдельный элемент или вещь)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "item",
@@ -14862,7 +13272,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:value:v:b2",
         "word": "value",
-        "translation": "ценить",
+        "translation": "ценить (придавать значение, высоко ставить)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "value",
@@ -14901,12 +13311,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:apartment:n:a1",
         "word": "apartment",
-        "translation": "квартира",
+        "translation": "квартира (жильё; чаще американский вариант)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "apartment",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "apartment",
+            "weight": 1
+          },
+          {
+            "text": "flat",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:bag:n:a1",
@@ -15001,7 +13421,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:clean:adj-v:a1",
         "word": "clean",
-        "translation": "чистый",
+        "translation": "чистый; чистить (без грязи / удалять грязь)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "clean",
@@ -15041,7 +13461,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:desk:n:a1",
         "word": "desk",
-        "translation": "стол",
+        "translation": "стол (письменный или рабочий стол)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "desk",
@@ -15061,7 +13481,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:electrical:adj:a2",
         "word": "electrical",
-        "translation": "электрический",
+        "translation": "электрический (связанный с электричеством)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "electrical",
@@ -15101,12 +13521,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:flat:n:a1",
         "word": "flat",
-        "translation": "квартира",
+        "translation": "квартира (жильё; чаще британский вариант)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "flat",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "flat",
+            "weight": 1
+          },
+          {
+            "text": "apartment",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:flat:adj:a2",
@@ -15351,7 +13781,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:sheet:n:a2",
         "word": "sheet",
-        "translation": "лист",
+        "translation": "лист (бумаги, тонкого материала)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "sheet",
@@ -15411,7 +13841,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:step:n:a2",
         "word": "step",
-        "translation": "шаг",
+        "translation": "шаг (движение ногой или этап)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "step",
@@ -15441,7 +13871,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:tidy:adj-v:a2",
         "word": "tidy",
-        "translation": "аккуратный",
+        "translation": "аккуратный; прибирать (вещи на своих местах / наводить порядок)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "tidy",
@@ -15461,7 +13891,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:tool:n:a2",
         "word": "tool",
-        "translation": "инструмент",
+        "translation": "инструмент (орудие для работы)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "tool",
@@ -15660,7 +14090,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:cook:n:a2",
         "word": "cook",
-        "translation": "повар",
+        "translation": "повар (человек, готовящий еду)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "cook",
@@ -15760,7 +14190,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:food:n:a1",
         "word": "food",
-        "translation": "еда",
+        "translation": "еда (продукты питания вообще)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "food",
@@ -15850,7 +14280,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:meal:n:a1",
         "word": "meal",
-        "translation": "еда",
+        "translation": "еда (отдельный приём пищи)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "meal",
@@ -16159,12 +14589,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ad:n:b1",
         "word": "ad",
-        "translation": "реклама",
+        "translation": "реклама (сокращённое название объявления)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ad",
         "level": "B1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "ad",
+            "weight": 1
+          },
+          {
+            "text": "advertisement",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:addition:n:b1",
@@ -16209,17 +14649,27 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:advertisement:n:a2",
         "word": "advertisement",
-        "translation": "реклама",
+        "translation": "реклама (отдельное рекламное объявление)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "advertisement",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "advertisement",
+            "weight": 1
+          },
+          {
+            "text": "ad",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:advertising:n:a2",
         "word": "advertising",
-        "translation": "реклама",
+        "translation": "реклама (деятельность по продвижению товаров)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "advertising",
@@ -16229,7 +14679,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:advice:n:a1",
         "word": "advice",
-        "translation": "совет",
+        "translation": "совет (рекомендация, что делать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "advice",
@@ -16239,7 +14689,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:affair:n:b2",
         "word": "affair",
-        "translation": "дело",
+        "translation": "дело (событие, ситуация или личное дело)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "affair",
@@ -16289,7 +14739,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:aircraft:n:b2",
         "word": "aircraft",
-        "translation": "самолет",
+        "translation": "летательный аппарат (самолёт, вертолёт и другие типы воздушных судов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "aircraft",
@@ -16369,7 +14819,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:angle:n:b2",
         "word": "angle",
-        "translation": "угол",
+        "translation": "угол (геометрический или угол обзора)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "angle",
@@ -16469,7 +14919,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:arms:n:b2",
         "word": "arms",
-        "translation": "оружие",
+        "translation": "оружие (вооружение, собирательное множественное число)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "arms",
@@ -16559,7 +15009,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:attitude:n:b1",
         "word": "attitude",
-        "translation": "отношение",
+        "translation": "отношение (личная позиция или настрой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "attitude",
@@ -16739,7 +15189,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:belief:n:b1",
         "word": "belief",
-        "translation": "вера",
+        "translation": "вера (убеждение, что что-либо истинно)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "belief",
@@ -16899,7 +15349,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:breast:n:b2",
         "word": "breast",
-        "translation": "грудь",
+        "translation": "грудь (молочная железа или передняя часть груди)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "breast",
@@ -16909,7 +15359,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:breathing:n:b1",
         "word": "breathing",
-        "translation": "дыхание",
+        "translation": "дыхание (процесс вдохов и выдохов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "breathing",
@@ -17119,7 +15569,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:case:n:a2",
         "word": "case",
-        "translation": "дело",
+        "translation": "дело (конкретный случай, в том числе судебный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "case",
@@ -17269,7 +15719,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:chef:n:a2",
         "word": "chef",
-        "translation": "повар",
+        "translation": "повар (профессиональный, часто шеф-повар)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "chef",
@@ -17289,7 +15739,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:chest:n:b1",
         "word": "chest",
-        "translation": "грудь",
+        "translation": "грудь (грудная клетка)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "chest",
@@ -17319,7 +15769,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:choice:n:a2",
         "word": "choice",
-        "translation": "выбор",
+        "translation": "выбор (принятое решение или возможность выбрать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "choice",
@@ -17389,7 +15839,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:clothes:n:a1",
         "word": "clothes",
-        "translation": "одежда",
+        "translation": "одежда (предметы одежды; множественное число)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "clothes",
@@ -17399,7 +15849,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:clothing:n:a2",
         "word": "clothing",
-        "translation": "одежда",
+        "translation": "одежда (одежда как категория; неисчисляемое)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "clothing",
@@ -17529,7 +15979,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:commitment:n:b2",
         "word": "commitment",
-        "translation": "обязательство",
+        "translation": "обязательство (добровольно взятое обещание или преданность делу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "commitment",
@@ -17589,7 +16039,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:complex:n:b2",
         "word": "complex",
-        "translation": "сложный",
+        "translation": "комплекс (совокупность связанных зданий, объектов или проблем)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "complex",
@@ -17759,7 +16209,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:conversation:n:a1",
         "word": "conversation",
-        "translation": "разговор",
+        "translation": "разговор (обмен репликами между людьми)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "conversation",
@@ -17779,7 +16229,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:corner:n:a2",
         "word": "corner",
-        "translation": "угол",
+        "translation": "угол (место, где сходятся стороны)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "corner",
@@ -17789,7 +16239,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:costume:n:b1",
         "word": "costume",
-        "translation": "костюм",
+        "translation": "костюм (сценический, маскарадный или национальный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "costume",
@@ -17819,7 +16269,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:council:n:b2",
         "word": "council",
-        "translation": "совет",
+        "translation": "совет (совещательный или управляющий орган)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "council",
@@ -17849,7 +16299,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:couple:n:a2",
         "word": "couple",
-        "translation": "пара",
+        "translation": "пара (двое вместе, в том числе партнёры)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "couple",
@@ -18079,7 +16529,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:decision:n:a2",
         "word": "decision",
-        "translation": "решение",
+        "translation": "решение (принятый выбор)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "decision",
@@ -18099,7 +16549,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:defence:n:b2",
         "word": "defence",
-        "translation": "защита",
+        "translation": "защита (отражение нападения или отстаивание)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "defence",
@@ -18279,7 +16729,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:dirt:n:b1",
         "word": "dirt",
-        "translation": "грязь",
+        "translation": "грязь (загрязнение в целом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "dirt",
@@ -18319,7 +16769,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:distribution:n:b2",
         "word": "distribution",
-        "translation": "распространение",
+        "translation": "распространение (распределение и доставка)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "distribution",
@@ -18589,7 +17039,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:entry:n:b1",
         "word": "entry",
-        "translation": "запись",
+        "translation": "запись (отдельный пункт в журнале, списке или базе)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "entry",
@@ -18619,7 +17069,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:error:n:a2",
         "word": "error",
-        "translation": "ошибка",
+        "translation": "ошибка (часто о неверных данных, расчёте или сбое)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "error",
@@ -18709,7 +17159,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:expectation:n:b2",
         "word": "expectation",
-        "translation": "ожидание",
+        "translation": "ожидание (предположение о будущем или надежда)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "expectation",
@@ -18729,7 +17179,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:expense:n:b2",
         "word": "expense",
-        "translation": "расходы",
+        "translation": "расходы (затрата или статья затрат)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "expense",
@@ -18779,7 +17229,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:extent:n:b2",
         "word": "extent",
-        "translation": "степень",
+        "translation": "степень (мера, предел распространения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "extent",
@@ -18838,7 +17288,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:faith:n:b2",
         "word": "faith",
-        "translation": "вера",
+        "translation": "вера (доверие или религиозная вера)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "faith",
@@ -18888,7 +17338,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:fat:n:a2",
         "word": "fat",
-        "translation": "толстый",
+        "translation": "жир (вещество в организме или пище)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "fat",
@@ -19138,7 +17588,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:following:n:b1",
         "word": "following",
-        "translation": "следующий",
+        "translation": "последователи (сторонники или поклонники)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "following",
@@ -19148,7 +17598,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:fortune:n:b2",
         "word": "fortune",
-        "translation": "удача",
+        "translation": "удача (счастливый случай, судьба; также состояние)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "fortune",
@@ -19338,7 +17788,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:goal:n:a2",
         "word": "goal",
-        "translation": "цель",
+        "translation": "цель (результат, которого хотят достичь)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "goal",
@@ -19388,7 +17838,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:group:n:a1",
         "word": "group",
-        "translation": "группа",
+        "translation": "группа (несколько объединённых людей или предметов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "group",
@@ -19438,7 +17888,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:guy:n:a2",
         "word": "guy",
-        "translation": "парень",
+        "translation": "парень (мужчина, разговорное)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "guy",
@@ -19588,7 +18038,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:high:n:b2",
         "word": "high",
-        "translation": "высокий",
+        "translation": "максимум (наивысшая точка или уровень)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "high",
@@ -19688,7 +18138,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:hunt:n:b2",
         "word": "hunt",
-        "translation": "охота",
+        "translation": "охота (отдельный поиск или охотничья вылазка)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "hunt",
@@ -19698,7 +18148,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:hunting:n:b2",
         "word": "hunting",
-        "translation": "охота",
+        "translation": "охота (занятие охотой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "hunting",
@@ -19748,7 +18198,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ideal:n:b2",
         "word": "ideal",
-        "translation": "идеальный",
+        "translation": "идеал (образец совершенства или принцип)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ideal",
@@ -19758,7 +18208,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:identity:n:b1",
         "word": "identity",
-        "translation": "личность",
+        "translation": "личность (то, кем человек является, его идентичность)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "identity",
@@ -19888,7 +18338,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:insight:n:b2",
         "word": "insight",
-        "translation": "понимание",
+        "translation": "понимание (глубокое осознание сути)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "insight",
@@ -19948,7 +18398,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:instrument:n:a2",
         "word": "instrument",
-        "translation": "инструмент",
+        "translation": "инструмент (точный, измерительный или музыкальный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "instrument",
@@ -20088,7 +18538,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:journal:n:b1",
         "word": "journal",
-        "translation": "журнал",
+        "translation": "журнал (научное или профессиональное издание; также дневник)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "journal",
@@ -20227,7 +18677,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:latest:n:b2",
         "word": "latest",
-        "translation": "последний",
+        "translation": "последние новости (самая свежая информация)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "latest",
@@ -20297,7 +18747,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:leather:n:b1",
         "word": "leather",
-        "translation": "кожа",
+        "translation": "кожа (материал из обработанной шкуры)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "leather",
@@ -20307,7 +18757,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:letter:n:a1",
         "word": "letter",
-        "translation": "письмо",
+        "translation": "письмо (письменное послание адресату)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "letter",
@@ -20427,12 +18877,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:lorry:n:a2",
         "word": "lorry",
-        "translation": "грузовик",
+        "translation": "грузовик (грузовой автомобиль; британский вариант)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "lorry",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "lorry",
+            "weight": 1
+          },
+          {
+            "text": "truck",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:low:n:b2",
@@ -20447,7 +18907,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:luck:n:a2",
         "word": "luck",
-        "translation": "удача",
+        "translation": "удача (везение, случайный успех)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "luck",
@@ -20477,7 +18937,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:magazine:n:a1",
         "word": "magazine",
-        "translation": "журнал",
+        "translation": "журнал (периодическое издание для читателей)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "magazine",
@@ -20547,22 +19007,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:mathematics:n:a2",
         "word": "mathematics",
-        "translation": "математика",
+        "translation": "математика (полное название дисциплины)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "mathematics",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "mathematics",
+            "weight": 1
+          },
+          {
+            "text": "maths",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:maths:n:a2",
         "word": "maths",
-        "translation": "математика",
+        "translation": "математика (сокращённое британское название дисциплины)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "maths",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "maths",
+            "weight": 1
+          },
+          {
+            "text": "mathematics",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:meaning:n:a1",
@@ -20707,7 +19187,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:mistake:n:a1",
         "word": "mistake",
-        "translation": "ошибка",
+        "translation": "ошибка (неверное действие или суждение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "mistake",
@@ -20777,7 +19257,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:mud:n:b1",
         "word": "mud",
-        "translation": "грязь",
+        "translation": "грязь (мокрая земля, смешанная с водой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "mud",
@@ -20867,7 +19347,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:net:n:b1",
         "word": "net",
-        "translation": "сеть",
+        "translation": "сеть (из переплетённых нитей)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "net",
@@ -20957,7 +19437,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:obligation:n:b2",
         "word": "obligation",
-        "translation": "обязательство",
+        "translation": "обязательство (долг по закону, договору или морали)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "obligation",
@@ -20987,7 +19467,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:offence:n:b2",
         "word": "offence",
-        "translation": "преступление",
+        "translation": "преступление (нарушение закона; также проступок)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "offence",
@@ -21007,7 +19487,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:opening:n:b2",
         "word": "opening",
-        "translation": "открытие",
+        "translation": "открытие (начало работы или открытый проход)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "opening",
@@ -21047,7 +19527,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:opportunity:n:a2",
         "word": "opportunity",
-        "translation": "возможность",
+        "translation": "возможность (благоприятный шанс действовать)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "opportunity",
@@ -21117,7 +19597,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:outcome:n:b2",
         "word": "outcome",
-        "translation": "результат",
+        "translation": "результат (конечный итог процесса)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "outcome",
@@ -21166,7 +19646,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:painter:n:a2",
         "word": "painter",
-        "translation": "художник",
+        "translation": "художник (работающий с красками)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "painter",
@@ -21176,7 +19656,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:pair:n:a1",
         "word": "pair",
-        "translation": "пара",
+        "translation": "пара (два подходящих друг к другу предмета)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "pair",
@@ -21216,12 +19696,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:pants:n:a2",
         "word": "pants",
-        "translation": "брюки",
+        "translation": "брюки (американский вариант для брюк)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "pants",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "pants",
+            "weight": 1
+          },
+          {
+            "text": "trousers",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:paragraph:n:a1",
@@ -21326,7 +19816,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:personality:n:a2",
         "word": "personality",
-        "translation": "личность",
+        "translation": "личность (характер и особенности человека)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "personality",
@@ -21336,7 +19826,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:perspective:n:b2",
         "word": "perspective",
-        "translation": "перспектива",
+        "translation": "перспектива (точка зрения, взгляд)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "perspective",
@@ -21426,7 +19916,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:pick:n:b2",
         "word": "pick",
-        "translation": "выбор",
+        "translation": "выбор (выбранный вариант, отбор)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "pick",
@@ -21456,7 +19946,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:pitch:n:b2",
         "word": "pitch",
-        "translation": "шаг",
+        "translation": "высота тона; поле (в музыке / площадка для игры)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "pitch",
@@ -21596,7 +20086,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:possibility:n:a2",
         "word": "possibility",
-        "translation": "возможность",
+        "translation": "возможность (то, что может произойти или быть верным)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "possibility",
@@ -21916,7 +20406,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:proposal:n:b2",
         "word": "proposal",
-        "translation": "предложение",
+        "translation": "предложение (план или инициатива на рассмотрение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "proposal",
@@ -21926,7 +20416,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:prospect:n:b2",
         "word": "prospect",
-        "translation": "перспектива",
+        "translation": "перспектива (будущая возможность или ожидаемое развитие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "prospect",
@@ -21936,7 +20426,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:protection:n:b2",
         "word": "protection",
-        "translation": "защита",
+        "translation": "защита (предохранение от вреда)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "protection",
@@ -22006,7 +20496,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:purpose:n:a2",
         "word": "purpose",
-        "translation": "цель",
+        "translation": "цель (то, ради чего что-либо делают)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "purpose",
@@ -22166,7 +20656,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:recording:n:a2",
         "word": "recording",
-        "translation": "запись",
+        "translation": "запись (сохранённый звук или видео)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "recording",
@@ -22196,7 +20686,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:relation:n:b1",
         "word": "relation",
-        "translation": "отношение",
+        "translation": "отношение (связь между людьми или явлениями)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "relation",
@@ -22446,7 +20936,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:row:n:b1",
         "word": "row",
-        "translation": "строка",
+        "translation": "строка (ряд элементов, в том числе в таблице)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "row",
@@ -22486,7 +20976,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:safety:n:b1",
         "word": "safety",
-        "translation": "безопасность",
+        "translation": "безопасность (защищённость от несчастных случаев и вреда)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "safety",
@@ -22676,7 +21166,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:security:n:b1",
         "word": "security",
-        "translation": "безопасность",
+        "translation": "безопасность (защищённость от угроз, преступлений или взлома)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "security",
@@ -22686,7 +21176,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:selection:n:b2",
         "word": "selection",
-        "translation": "выбор",
+        "translation": "выбор (процесс отбора или набор отобранного)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "selection",
@@ -22696,7 +21186,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:self:n:b2",
         "word": "self",
-        "translation": "сам",
+        "translation": "собственная личность (внутреннее я, существительное)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "self",
@@ -22776,7 +21266,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:shade:n:b2",
         "word": "shade",
-        "translation": "тень",
+        "translation": "тень (участок, куда не попадает прямой свет)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "shade",
@@ -22786,7 +21276,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:shadow:n:b2",
         "word": "shadow",
-        "translation": "тень",
+        "translation": "тень (тёмный силуэт, отбрасываемый предметом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "shadow",
@@ -23046,7 +21536,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:solution:n:a2",
         "word": "solution",
-        "translation": "решение",
+        "translation": "решение (способ устранить проблему или ответ на задачу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "solution",
@@ -23136,7 +21626,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:spending:n:b1",
         "word": "spending",
-        "translation": "расходы",
+        "translation": "расходы (расходование средств)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "spending",
@@ -23166,7 +21656,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:spread:n:b2",
         "word": "spread",
-        "translation": "распространение",
+        "translation": "распространение (увеличение области охвата)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "spread",
@@ -23336,7 +21826,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:story:n:a1",
         "word": "story",
-        "translation": "история",
+        "translation": "история (рассказ, повествование)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "story",
@@ -23386,7 +21876,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:string:n:b1",
         "word": "string",
-        "translation": "строка",
+        "translation": "строка (последовательность символов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "string",
@@ -23456,7 +21946,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:suggestion:n:a2",
         "word": "suggestion",
-        "translation": "предложение",
+        "translation": "предложение (совет или предлагаемая идея)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "suggestion",
@@ -23466,7 +21956,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:suit:n:a2",
         "word": "suit",
-        "translation": "костюм",
+        "translation": "костюм (пиджак и брюки или юбка как комплект)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "suit",
@@ -23626,7 +22116,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:talk:n:a2",
         "word": "talk",
-        "translation": "разговор",
+        "translation": "разговор (разговор или беседа; также выступление)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "talk",
@@ -23706,7 +22196,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:theme:n:b1",
         "word": "theme",
-        "translation": "тема",
+        "translation": "тема (главная идея произведения или обсуждения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "theme",
@@ -23846,7 +22336,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:topic:n:a1",
         "word": "topic",
-        "translation": "тема",
+        "translation": "тема (предмет конкретного обсуждения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "topic",
@@ -23966,22 +22456,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:trousers:n:a1",
         "word": "trousers",
-        "translation": "брюки",
+        "translation": "брюки (британский вариант для брюк)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "trousers",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "trousers",
+            "weight": 1
+          },
+          {
+            "text": "pants",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:truck:n:a2",
         "word": "truck",
-        "translation": "грузовик",
+        "translation": "грузовик (грузовой автомобиль; американский вариант)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "truck",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "truck",
+            "weight": 1
+          },
+          {
+            "text": "lorry",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:truth:n:b1",
@@ -24075,7 +22585,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:understanding:n:a2",
         "word": "understanding",
-        "translation": "понимание",
+        "translation": "понимание (знание смысла или устройства)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "understanding",
@@ -24205,7 +22715,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:victory:n:b2",
         "word": "victory",
-        "translation": "победа",
+        "translation": "победа (успех над соперником, победа)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "victory",
@@ -24285,7 +22795,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:wait:n:a2",
         "word": "wait",
-        "translation": "ожидание",
+        "translation": "ожидание (время, проведённое в ожидании)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "wait",
@@ -24325,7 +22835,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:way:n:a1",
         "word": "way",
-        "translation": "путь",
+        "translation": "путь (маршрут или способ)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "way",
@@ -24355,7 +22865,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:weapon:n:b1",
         "word": "weapon",
-        "translation": "оружие",
+        "translation": "оружие (отдельный предмет для нападения или защиты)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "weapon",
@@ -24604,7 +23114,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:boyfriend:n:a1",
         "word": "boyfriend",
-        "translation": "парень",
+        "translation": "парень (романтический партнёр)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "boyfriend",
@@ -25053,7 +23563,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:back:v:b2",
         "word": "back",
-        "translation": "поддерживать",
+        "translation": "поддерживать (оказывать поддержку человеку или идее)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "back",
@@ -25093,7 +23603,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:breath:n:b2",
         "word": "breath",
-        "translation": "дыхание",
+        "translation": "дыхание (отдельный вдох или выдох)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "breath",
@@ -25143,7 +23653,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:disease:n:a2",
         "word": "disease",
-        "translation": "болезнь",
+        "translation": "болезнь (конкретное заболевание)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "disease",
@@ -25233,7 +23743,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:foot:n:a1",
         "word": "foot",
-        "translation": "нога",
+        "translation": "нога (ступня, нижняя часть ноги)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "foot",
@@ -25343,7 +23853,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:illness:n:a2",
         "word": "illness",
-        "translation": "болезнь",
+        "translation": "болезнь (состояние нездоровья или период болезни)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "illness",
@@ -25383,7 +23893,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:leg:n:a1",
         "word": "leg",
-        "translation": "нога",
+        "translation": "нога (конечность от бедра до ступни)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "leg",
@@ -25533,7 +24043,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:skin:n:a2",
         "word": "skin",
-        "translation": "кожа",
+        "translation": "кожа (покров тела)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "skin",
@@ -25583,7 +24093,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:tongue:n:b1",
         "word": "tongue",
-        "translation": "язык",
+        "translation": "язык (орган во рту)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "tongue",
@@ -25772,7 +24282,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:discover:v:a2",
         "word": "discover",
-        "translation": "обнаружить",
+        "translation": "обнаружить (найти неизвестное или узнать впервые)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "discover",
@@ -25782,7 +24292,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:discovery:n:a2",
         "word": "discovery",
-        "translation": "открытие",
+        "translation": "открытие (нахождение ранее неизвестного)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "discovery",
@@ -25902,7 +24412,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:hour:n:a1",
         "word": "hour",
-        "translation": "час",
+        "translation": "час (единица времени, 60 минут)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "hour",
@@ -25922,22 +24432,42 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:lab:n:a2",
         "word": "lab",
-        "translation": "лаборатория",
+        "translation": "лаборатория (сокращённая форма)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "lab",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "lab",
+            "weight": 1
+          },
+          {
+            "text": "laboratory",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:laboratory:n:b1",
         "word": "laboratory",
-        "translation": "лаборатория",
+        "translation": "лаборатория (полная форма)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "laboratory",
         "level": "B1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "laboratory",
+            "weight": 1
+          },
+          {
+            "text": "lab",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:length:n:b1",
@@ -26032,7 +24562,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:percentage:n:b1",
         "word": "percentage",
-        "translation": "процент",
+        "translation": "процент (доля, выраженная в процентах)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "percentage",
@@ -26072,7 +24602,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:result:n:a1",
         "word": "result",
-        "translation": "результат",
+        "translation": "результат (итог действия или вычисления)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "result",
@@ -26650,7 +25180,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:band:n:a1",
         "word": "band",
-        "translation": "группа",
+        "translation": "группа (музыкальный коллектив)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "band",
@@ -26690,7 +25220,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:celebration:n:b1",
         "word": "celebration",
-        "translation": "праздник",
+        "translation": "праздник (торжество, празднование)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "celebration",
@@ -26790,12 +25320,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:football:n:a1",
         "word": "football",
-        "translation": "футбол",
+        "translation": "футбол (европейский футбол; чаще британское название)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "football",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "football",
+            "weight": 1
+          },
+          {
+            "text": "soccer",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:fun:n:a1",
@@ -26985,17 +25525,37 @@ window.VOCABULARY_DATA = [
         "sentenceTranslation": "",
         "answer": "photo",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "photo",
+            "weight": 1
+          },
+          {
+            "text": "photograph",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:photograph:n:a1",
         "word": "photograph",
-        "translation": "фотография",
+        "translation": "фотография (отдельный снимок)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "photograph",
         "level": "A1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "photograph",
+            "weight": 1
+          },
+          {
+            "text": "photo",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:photograph:v:a2",
@@ -27010,7 +25570,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:photography:n:b1",
         "word": "photography",
-        "translation": "фотография",
+        "translation": "фотография (искусство или процесс съёмки)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "photography",
@@ -27030,7 +25590,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:picture:v:b2",
         "word": "picture",
-        "translation": "представлять себе",
+        "translation": "представлять себе (создавать мысленный зрительный образ)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "picture",
@@ -27140,12 +25700,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:soccer:n:a2",
         "word": "soccer",
-        "translation": "футбол",
+        "translation": "футбол (европейский футбол; чаще американское название)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "soccer",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "soccer",
+            "weight": 1
+          },
+          {
+            "text": "football",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:song:n:a1",
@@ -27170,7 +25740,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:swim:v:a1",
         "word": "swim",
-        "translation": "плавать",
+        "translation": "плавать (двигаться в воде)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "swim",
@@ -27230,7 +25800,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:win:n:b1",
         "word": "win",
-        "translation": "победа",
+        "translation": "победа (выигрыш, случай победы)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "win",
@@ -27319,7 +25889,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:crime:n:a2",
         "word": "crime",
-        "translation": "преступление",
+        "translation": "преступление (общественно опасное нарушение закона)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "crime",
@@ -27419,7 +25989,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:historical:adj:b1",
         "word": "historical",
-        "translation": "исторический",
+        "translation": "исторический (относящийся к прошлому)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "historical",
@@ -27429,7 +25999,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:history:n:a1",
         "word": "history",
-        "translation": "история",
+        "translation": "история (прошлое и его изучение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "history",
@@ -27559,7 +26129,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:peace:n:a2",
         "word": "peace",
-        "translation": "мир",
+        "translation": "мир (отсутствие войны, покой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "peace",
@@ -27569,7 +26139,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:policy:n:b1",
         "word": "policy",
-        "translation": "политика",
+        "translation": "политика (принцип или курс организации)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "policy",
@@ -27599,7 +26169,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:politics:n:b1",
         "word": "politics",
-        "translation": "политика",
+        "translation": "политика (деятельность, связанная с властью)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "politics",
@@ -27729,12 +26299,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:rich:adj:a1",
         "word": "rich",
-        "translation": "богатый",
+        "translation": "богатый (обладающий большим состоянием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "rich",
         "level": "A1",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "rich",
+            "weight": 1
+          },
+          {
+            "text": "wealthy",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:rule:n:a1",
@@ -27848,7 +26428,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:able:adj:a2",
         "word": "able",
-        "translation": "способный",
+        "translation": "способный (имеющий возможность или умение; перед инфинитивом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "able",
@@ -27898,7 +26478,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:accurate:adj:b2",
         "word": "accurate",
-        "translation": "точный",
+        "translation": "точный (правильный, без ошибок)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "accurate",
@@ -27928,7 +26508,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:additional:adj:b2",
         "word": "additional",
-        "translation": "дополнительный",
+        "translation": "дополнительный (добавленный к уже имеющемуся)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "additional",
@@ -27994,6 +26574,16 @@ window.VOCABULARY_DATA = [
         "answer": "alive",
         "level": "A2",
         "partOfSpeech": "прил."
+      },
+      {
+        "id": "oxford:alone:adj-adv:a2",
+        "word": "alone",
+        "translation": "один; в одиночестве",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "alone",
+        "level": "A2",
+        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:alternative:adj:b1",
@@ -28098,7 +26688,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:apparent:adj:b2",
         "word": "apparent",
-        "translation": "очевидный",
+        "translation": "очевидный (видимый или кажущийся)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "apparent",
@@ -28108,7 +26698,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:appropriate:adj:b2",
         "word": "appropriate",
-        "translation": "соответствующий",
+        "translation": "соответствующий (подходящий по ситуации)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "appropriate",
@@ -28168,7 +26758,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:associated:adj:b2",
         "word": "associated",
-        "translation": "связанный",
+        "translation": "связанный (соединённый общей ассоциацией или участием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "associated",
@@ -28218,12 +26808,26 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:awful:adj:a2",
         "word": "awful",
-        "translation": "ужасный",
+        "translation": "ужасный (очень плохой или неприятный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "awful",
         "level": "A2",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "awful",
+            "weight": 1
+          },
+          {
+            "text": "horrible",
+            "weight": 1
+          },
+          {
+            "text": "terrible",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:bad:adj:a1",
@@ -28298,12 +26902,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:big:adj:a1",
         "word": "big",
-        "translation": "большой",
+        "translation": "большой (большого физического размера)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "big",
         "level": "A1",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "big",
+            "weight": 1
+          },
+          {
+            "text": "large",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:bitter:adj:b2",
@@ -28418,7 +27032,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:brilliant:adj:a2",
         "word": "brilliant",
-        "translation": "блестящий",
+        "translation": "блестящий (выдающийся, превосходный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "brilliant",
@@ -28428,7 +27042,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:broad:adj:b2",
         "word": "broad",
-        "translation": "широкий",
+        "translation": "широкий (с большим охватом или размахом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "broad",
@@ -28458,7 +27072,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:capable:adj:b2",
         "word": "capable",
-        "translation": "способный",
+        "translation": "способный (имеющий способность; обычно с предлогом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "capable",
@@ -28498,7 +27112,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:certain:adj:a2",
         "word": "certain",
-        "translation": "уверенный",
+        "translation": "уверенный (не сомневающийся в факте)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "certain",
@@ -28558,7 +27172,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:classic:adj-n:b2",
         "word": "classic",
-        "translation": "классический",
+        "translation": "классический (образцовый, признанный временем)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "classic",
@@ -28568,7 +27182,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:classical:adj:a2",
         "word": "classical",
-        "translation": "классический",
+        "translation": "классический (относящийся к классической традиции)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "classical",
@@ -28588,7 +27202,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:clever:adj:a2",
         "word": "clever",
-        "translation": "умный",
+        "translation": "умный (находчивый, умелый в решении задач)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "clever",
@@ -28628,7 +27242,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:comfortable:adj:a2",
         "word": "comfortable",
-        "translation": "удобный",
+        "translation": "удобный (дающий физический комфорт)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "comfortable",
@@ -28648,7 +27262,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:common:adj:a1",
         "word": "common",
-        "translation": "общий",
+        "translation": "общий (распространённый или совместный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "common",
@@ -28668,7 +27282,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:complex:adj:b1",
         "word": "complex",
-        "translation": "сложный",
+        "translation": "сложный (со многими связанными частями)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "complex",
@@ -28678,7 +27292,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:complicated:adj:b2",
         "word": "complicated",
-        "translation": "сложный",
+        "translation": "сложный (запутанный, трудный для понимания)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "complicated",
@@ -28688,7 +27302,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:concerned:adj:b2",
         "word": "concerned",
-        "translation": "заинтересованный",
+        "translation": "обеспокоенный; заинтересованный (испытывающий тревогу / имеющий отношение к делу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "concerned",
@@ -28698,7 +27312,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:confident:adj:b1",
         "word": "confident",
-        "translation": "уверенный",
+        "translation": "уверенный (верящий в свои способности или успех)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "confident",
@@ -28708,7 +27322,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:confused:adj:b1",
         "word": "confused",
-        "translation": "смущенный",
+        "translation": "смущенный (не понимающий, запутавшийся)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "confused",
@@ -28768,7 +27382,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:constant:adj:b2",
         "word": "constant",
-        "translation": "постоянный",
+        "translation": "постоянный (непрерывный или регулярно повторяющийся)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "constant",
@@ -28778,7 +27392,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:contemporary:adj:b2",
         "word": "contemporary",
-        "translation": "современный",
+        "translation": "современный (относящийся к нашему времени или той же эпохе)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "contemporary",
@@ -28798,7 +27412,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:convenient:adj:b1",
         "word": "convenient",
-        "translation": "удобный",
+        "translation": "удобный (подходящий по времени, месту или удобству использования)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "convenient",
@@ -28898,7 +27512,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:cruel:adj:b1",
         "word": "cruel",
-        "translation": "жестокий",
+        "translation": "жестокий (намеренно причиняющий страдания)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "cruel",
@@ -28968,7 +27582,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:dear:adj:a1",
         "word": "dear",
-        "translation": "дорогой",
+        "translation": "дорогой (милый, дорогой сердцу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "dear",
@@ -29108,7 +27722,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:direct:adj:a2",
         "word": "direct",
-        "translation": "прямой",
+        "translation": "прямой (без посредников или обходного пути)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "direct",
@@ -29168,7 +27782,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:domestic:adj:b2",
         "word": "domestic",
-        "translation": "внутренний",
+        "translation": "внутренний (относящийся к своей стране или домашнему хозяйству)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "domestic",
@@ -29238,7 +27852,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:easy:adj:a1",
         "word": "easy",
-        "translation": "лёгкий",
+        "translation": "лёгкий (несложный, не требующий усилий)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "easy",
@@ -29258,7 +27872,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:effective:adj:b1",
         "word": "effective",
-        "translation": "эффективный",
+        "translation": "эффективный (дающий нужный результат)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "effective",
@@ -29268,7 +27882,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:efficient:adj:b2",
         "word": "efficient",
-        "translation": "эффективный",
+        "translation": "эффективный (дающий результат без лишних затрат)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "efficient",
@@ -29278,7 +27892,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:embarrassed:adj:b1",
         "word": "embarrassed",
-        "translation": "смущенный",
+        "translation": "смущенный (испытывающий неловкость или стыд)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "embarrassed",
@@ -29328,12 +27942,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:enormous:adj:a2",
         "word": "enormous",
-        "translation": "огромный",
+        "translation": "огромный (очень большой по размеру)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "enormous",
         "level": "A2",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "enormous",
+            "weight": 1
+          },
+          {
+            "text": "huge",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:enthusiastic:adj:b2",
@@ -29408,7 +28032,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:exact:adj:a2",
         "word": "exact",
-        "translation": "точный",
+        "translation": "точный (совпадающий в точности, без отклонений)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "exact",
@@ -29478,7 +28102,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:external:adj:b2",
         "word": "external",
-        "translation": "внешний",
+        "translation": "внешний (внешний по отношению к системе или организации)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "external",
@@ -29488,7 +28112,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:extra:adj:a1",
         "word": "extra",
-        "translation": "дополнительный",
+        "translation": "дополнительный (сверх обычного количества)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "extra",
@@ -29605,9 +28229,19 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:fast:adj-adv:a1",
+        "word": "fast",
+        "translation": "быстрый; быстро (с высокой скоростью)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "fast",
+        "level": "A1",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:fat:adj:a1",
         "word": "fat",
-        "translation": "толстый",
+        "translation": "толстый (о человеке или животном с лишним жиром)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "fat",
@@ -29717,7 +28351,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:following:adj:a2",
         "word": "following",
-        "translation": "следующий",
+        "translation": "следующий (идущий вслед за упомянутым)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "following",
@@ -29827,7 +28461,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:full:adj:a1",
         "word": "full",
-        "translation": "полный",
+        "translation": "полный (наполненный до предела)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "full",
@@ -29867,7 +28501,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:general:adj:a2",
         "word": "general",
-        "translation": "общий",
+        "translation": "общий (охватывающий целое, без подробностей)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "general",
@@ -30005,6 +28639,16 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:hard:adj-adv:a1",
+        "word": "hard",
+        "translation": "тяжело",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "hard",
+        "level": "A1",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:harmful:adj:b2",
         "word": "harmful",
         "translation": "вредный",
@@ -30027,7 +28671,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:helpful:adj:a2",
         "word": "helpful",
-        "translation": "полезный",
+        "translation": "полезный (помогающий человеку в конкретной ситуации)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "helpful",
@@ -30037,7 +28681,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:high:adj:a1",
         "word": "high",
-        "translation": "высокий",
+        "translation": "высокий (далеко вверх от уровня земли)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "high",
@@ -30047,7 +28691,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:historic:adj:b1",
         "word": "historic",
-        "translation": "исторический",
+        "translation": "исторический (важный для истории)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "historic",
@@ -30087,22 +28731,46 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:horrible:adj:b1",
         "word": "horrible",
-        "translation": "ужасный",
+        "translation": "ужасный (очень плохой или неприятный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "horrible",
         "level": "B1",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "horrible",
+            "weight": 1
+          },
+          {
+            "text": "awful",
+            "weight": 1
+          },
+          {
+            "text": "terrible",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:huge:adj:a2",
         "word": "huge",
-        "translation": "огромный",
+        "translation": "огромный (очень большой по размеру)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "huge",
         "level": "A2",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "huge",
+            "weight": 1
+          },
+          {
+            "text": "enormous",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:humorous:adj:b2",
@@ -30117,7 +28785,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ideal:adj:a2",
         "word": "ideal",
-        "translation": "идеальный",
+        "translation": "идеальный (соответствующий желаемому образцу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ideal",
@@ -30297,7 +28965,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:inner:adj:b2",
         "word": "inner",
-        "translation": "внутренний",
+        "translation": "внутренний (расположенный внутри, ближе к центру)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "inner",
@@ -30317,7 +28985,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:intelligent:adj:a2",
         "word": "intelligent",
-        "translation": "умный",
+        "translation": "умный (с высокими интеллектуальными способностями)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "intelligent",
@@ -30347,7 +29015,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:interested:adj:a1",
         "word": "interested",
-        "translation": "заинтересованный",
+        "translation": "заинтересованный (испытывающий интерес)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "interested",
@@ -30367,7 +29035,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:internal:adj:b2",
         "word": "internal",
-        "translation": "внутренний",
+        "translation": "внутренний (находящийся внутри системы, организма или организации)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "internal",
@@ -30426,12 +29094,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:large:adj:a1",
         "word": "large",
-        "translation": "большой",
+        "translation": "большой (большого физического размера)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "large",
         "level": "A1",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "large",
+            "weight": 1
+          },
+          {
+            "text": "big",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:later:adj:a2",
@@ -30446,7 +29124,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:latest:adj:b1",
         "word": "latest",
-        "translation": "последний",
+        "translation": "последний (самый новый, недавний)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "latest",
@@ -30514,6 +29192,16 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "сущ., прил."
       },
       {
+        "id": "oxford:live:adj-adv:b1",
+        "word": "live",
+        "translation": "живой; в прямом эфире",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "live",
+        "level": "B1",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:lively:adj:b2",
         "word": "lively",
         "translation": "живой",
@@ -30574,6 +29262,26 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:long:adj-adv:a1",
+        "word": "long",
+        "translation": "длинный",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "long",
+        "level": "A1",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
+        "id": "oxford:long-term:adj-adv:b2",
+        "word": "long-term",
+        "translation": "долгосрочный",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "long-term",
+        "level": "B2",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:loose:adj:b2",
         "word": "loose",
         "translation": "свободный",
@@ -30594,6 +29302,16 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:loud:adj-adv:a2",
+        "word": "loud",
+        "translation": "громкий",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "loud",
+        "level": "A2",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:lovely:adj:a2",
         "word": "lovely",
         "translation": "прекрасный",
@@ -30602,6 +29320,16 @@ window.VOCABULARY_DATA = [
         "answer": "lovely",
         "level": "A2",
         "partOfSpeech": "прил."
+      },
+      {
+        "id": "oxford:low:adj-adv:a2",
+        "word": "low",
+        "translation": "низкий",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "low",
+        "level": "A2",
+        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:lucky:adj:a2",
@@ -30686,7 +29414,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:matching:adj:b2",
         "word": "matching",
-        "translation": "соответствующий",
+        "translation": "соответствующий (подходящий по цвету, форме или образцу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "matching",
@@ -30736,7 +29464,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:mild:adj:b1",
         "word": "mild",
-        "translation": "мягкий",
+        "translation": "мягкий (умеренный, несильный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "mild",
@@ -30786,7 +29514,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:modern:adj:a1",
         "word": "modern",
-        "translation": "современный",
+        "translation": "современный (относящийся к нынешнему времени или новым подходам)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "modern",
@@ -30866,7 +29594,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:neat:adj:b2",
         "word": "neat",
-        "translation": "аккуратный",
+        "translation": "аккуратный (опрятный, с аккуратным видом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "neat",
@@ -30986,7 +29714,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:obvious:adj:b1",
         "word": "obvious",
-        "translation": "очевидный",
+        "translation": "очевидный (легко заметный и понятный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "obvious",
@@ -30996,7 +29724,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:odd:adj:b1",
         "word": "odd",
-        "translation": "странный",
+        "translation": "странный (необычный, неожиданный; также нечётный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "odd",
@@ -31034,9 +29762,19 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:only:adj-adv:a1",
+        "word": "only",
+        "translation": "только; единственный",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "only",
+        "level": "A1",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:opposed:adj:b2",
         "word": "opposed",
-        "translation": "против",
+        "translation": "выступающий против (прилагательное о позиции)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "opposed",
@@ -31046,7 +29784,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ordinary:adj:a2",
         "word": "ordinary",
-        "translation": "обычный",
+        "translation": "обычный (ничем не выделяющийся, рядовой)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ordinary",
@@ -31086,12 +29824,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:outer:adj:b2",
         "word": "outer",
-        "translation": "внешний",
+        "translation": "внешний (расположенный дальше от центра)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "outer",
         "level": "B2",
         "partOfSpeech": "прил."
+      },
+      {
+        "id": "oxford:overall:adj-adv:b2",
+        "word": "overall",
+        "translation": "в целом",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "overall",
+        "level": "B2",
+        "partOfSpeech": "прил., нареч."
       }
     ],
     "id": "oxford-extra-31",
@@ -31115,7 +29863,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:particular:adj:a2",
         "word": "particular",
-        "translation": "конкретный",
+        "translation": "конкретный (выделенный среди других, определённый)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "particular",
@@ -31133,9 +29881,19 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:per-cent:n-adj-adv:a2",
+        "word": "per cent",
+        "translation": "процент (из ста, после числового значения)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "per cent",
+        "level": "A2",
+        "partOfSpeech": "сущ., прил., нареч."
+      },
+      {
         "id": "oxford:perfect:adj:a1",
         "word": "perfect",
-        "translation": "идеальный",
+        "translation": "идеальный (без изъянов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "perfect",
@@ -31145,7 +29903,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:permanent:adj:b2",
         "word": "permanent",
-        "translation": "постоянный",
+        "translation": "постоянный (остающийся надолго или навсегда)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "permanent",
@@ -31323,6 +30081,16 @@ window.VOCABULARY_DATA = [
         "partOfSpeech": "прил."
       },
       {
+        "id": "oxford:pretty:adj-adv:a1",
+        "word": "pretty",
+        "translation": "красивая",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "pretty",
+        "level": "A1",
+        "partOfSpeech": "прил., нареч."
+      },
+      {
         "id": "oxford:primary:adj:b1",
         "word": "primary",
         "translation": "первичный",
@@ -31365,7 +30133,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:pure:adj:b2",
         "word": "pure",
-        "translation": "чистый",
+        "translation": "чистый (без примесей)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "pure",
@@ -31395,7 +30163,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:quick:adj:a1",
         "word": "quick",
-        "translation": "быстрый",
+        "translation": "быстрый (занимающий мало времени)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "quick",
@@ -31405,7 +30173,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:quiet:adj:a1",
         "word": "quiet",
-        "translation": "тихий",
+        "translation": "тихий (с небольшим количеством шума)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "quiet",
@@ -31415,7 +30183,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:rapid:adj:b2",
         "word": "rapid",
-        "translation": "быстрый",
+        "translation": "быстрый (происходящий с большой скоростью)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "rapid",
@@ -31475,7 +30243,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:reasonable:adj:b2",
         "word": "reasonable",
-        "translation": "разумный",
+        "translation": "разумный (приемлемый, обоснованный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "reasonable",
@@ -31525,7 +30293,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:related:adj:b1",
         "word": "related",
-        "translation": "связанный",
+        "translation": "связанный (имеющий отношение или связь)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "related",
@@ -31645,7 +30413,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:rough:adj:b1",
         "word": "rough",
-        "translation": "грубый",
+        "translation": "грубый (шероховатый, неровный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "rough",
@@ -31685,7 +30453,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:rude:adj:a2",
         "word": "rude",
-        "translation": "грубый",
+        "translation": "грубый (невежливый, оскорбительный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "rude",
@@ -31715,7 +30483,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:safe:adj:a2",
         "word": "safe",
-        "translation": "безопасный",
+        "translation": "безопасный (не подвергающийся опасности)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "safe",
@@ -31785,7 +30553,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:sensible:adj:b1",
         "word": "sensible",
-        "translation": "разумный",
+        "translation": "разумный (здравомыслящий, практичный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "sensible",
@@ -31865,7 +30633,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:shiny:adj:b1",
         "word": "shiny",
-        "translation": "блестящий",
+        "translation": "блестящий (отражающий свет, глянцевый)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "shiny",
@@ -31915,7 +30683,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:silent:adj:b1",
         "word": "silent",
-        "translation": "тихий",
+        "translation": "тихий (совсем без звука)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "silent",
@@ -31925,7 +30693,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:silly:adj:b1",
         "word": "silly",
-        "translation": "глупый",
+        "translation": "глупый (несерьёзный, нелепый)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "silly",
@@ -31975,7 +30743,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:slight:adj:b2",
         "word": "slight",
-        "translation": "легкий",
+        "translation": "лёгкий; незначительный (небольшой по степени или величине)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "slight",
@@ -31995,7 +30763,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:small:adj:a1",
         "word": "small",
-        "translation": "маленький",
+        "translation": "маленький (небольшой по размеру)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "small",
@@ -32005,7 +30773,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:smart:adj:b1",
         "word": "smart",
-        "translation": "умный",
+        "translation": "умный (сообразительный; также стильный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "smart",
@@ -32025,7 +30793,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:soft:adj:a2",
         "word": "soft",
-        "translation": "мягкий",
+        "translation": "мягкий (не твёрдый, приятный на ощупь)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "soft",
@@ -32035,7 +30803,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:solar:adj:b2",
         "word": "solar",
-        "translation": "солнечный",
+        "translation": "солнечный (относящийся к Солнцу как источнику энергии)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "solar",
@@ -32085,7 +30853,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:specific:adj:a2",
         "word": "specific",
-        "translation": "конкретный",
+        "translation": "конкретный (точно указанный, детальный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "specific",
@@ -32175,7 +30943,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:strange:adj:a2",
         "word": "strange",
-        "translation": "странный",
+        "translation": "странный (незнакомый или вызывающий недоумение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "strange",
@@ -32205,7 +30973,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:stupid:adj:a2",
         "word": "stupid",
-        "translation": "глупый",
+        "translation": "глупый (неразумный, свидетельствующий о недостатке ума)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "stupid",
@@ -32245,7 +31013,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:sure:adj:a1",
         "word": "sure",
-        "translation": "уверенный",
+        "translation": "уверенный (не сомневающийся)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "sure",
@@ -32295,7 +31063,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:tall:adj:a1",
         "word": "tall",
-        "translation": "высокий",
+        "translation": "высокий (о росте человека или вертикальном размере)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "tall",
@@ -32335,17 +31103,31 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:terrible:adj:a1",
         "word": "terrible",
-        "translation": "ужасный",
+        "translation": "ужасный (очень плохой или неприятный)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "terrible",
         "level": "A1",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "terrible",
+            "weight": 1
+          },
+          {
+            "text": "awful",
+            "weight": 1
+          },
+          {
+            "text": "horrible",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:thick:adj:a2",
         "word": "thick",
-        "translation": "толстый",
+        "translation": "толстый (о большой толщине предмета)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "thick",
@@ -32500,6 +31282,16 @@ window.VOCABULARY_DATA = [
         "answer": "unconscious",
         "level": "B2",
         "partOfSpeech": "прил."
+      },
+      {
+        "id": "oxford:underground:adj-adv:a2",
+        "word": "underground",
+        "translation": "под землей",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "underground",
+        "level": "A2",
+        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:unemployed:adj:b1",
@@ -32664,7 +31456,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:useful:adj:a1",
         "word": "useful",
-        "translation": "полезный",
+        "translation": "полезный (пригодный для цели, приносящий пользу)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "useful",
@@ -32674,7 +31466,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:usual:adj:a2",
         "word": "usual",
-        "translation": "обычный",
+        "translation": "обычный (привычный для данного случая)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "usual",
@@ -32704,7 +31496,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:vast:adj:b2",
         "word": "vast",
-        "translation": "огромный",
+        "translation": "огромный (очень большой по площади или охвату)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "vast",
@@ -32724,7 +31516,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:violent:adj:b1",
         "word": "violent",
-        "translation": "жестокий",
+        "translation": "жестокий (связанный с физическим насилием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "violent",
@@ -32774,12 +31566,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:wealthy:adj:b2",
         "word": "wealthy",
-        "translation": "богатый",
+        "translation": "богатый (обладающий большим состоянием)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "wealthy",
         "level": "B2",
-        "partOfSpeech": "прил."
+        "partOfSpeech": "прил.",
+        "answers": [
+          {
+            "text": "wealthy",
+            "weight": 1
+          },
+          {
+            "text": "rich",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:western:adj:b1",
@@ -32824,7 +31626,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:wide:adj:a2",
         "word": "wide",
-        "translation": "широкий",
+        "translation": "широкий (с большим расстоянием между краями)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "wide",
@@ -32880,6 +31682,16 @@ window.VOCABULARY_DATA = [
         "answer": "working",
         "level": "A2",
         "partOfSpeech": "прил."
+      },
+      {
+        "id": "oxford:worldwide:adj-adv:b1",
+        "word": "worldwide",
+        "translation": "по всему миру",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "worldwide",
+        "level": "B1",
+        "partOfSpeech": "прил., нареч."
       },
       {
         "id": "oxford:worried:adj:a2",
@@ -33103,7 +31915,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:leaf:n:b1",
         "word": "leaf",
-        "translation": "лист",
+        "translation": "лист (часть растения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "leaf",
@@ -33253,7 +32065,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:tree:n:a1",
         "word": "tree",
-        "translation": "дерево",
+        "translation": "дерево (живое растение со стволом)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "tree",
@@ -33283,7 +32095,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:wood:n:a2",
         "word": "wood",
-        "translation": "дерево",
+        "translation": "дерево (древесина, материал)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "wood",
@@ -33392,7 +32204,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:earth:n:a2",
         "word": "earth",
-        "translation": "земля",
+        "translation": "земля (планета или почва)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "earth",
@@ -33482,7 +32294,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:ground:n:a2",
         "word": "ground",
-        "translation": "земля",
+        "translation": "земля (поверхность под ногами)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "ground",
@@ -33682,7 +32494,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:sunny:adj:a1",
         "word": "sunny",
-        "translation": "солнечный",
+        "translation": "солнечный (с ярким солнечным светом, о погоде)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "sunny",
@@ -33762,7 +32574,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:world:n:a1",
         "word": "world",
-        "translation": "мир",
+        "translation": "мир (Земля, всё человечество)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "world",
@@ -33791,12 +32603,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:app:n:a2",
         "word": "app",
-        "translation": "приложение",
+        "translation": "приложение (программное обеспечение; сокращённое название)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "app",
         "level": "A2",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "app",
+            "weight": 1
+          },
+          {
+            "text": "application",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:click:v-n:b1",
@@ -33881,7 +32703,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:electric:adj:a2",
         "word": "electric",
-        "translation": "электрический",
+        "translation": "электрический (работающий на электричестве или создающий его)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "electric",
@@ -34001,7 +32823,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:network:n:a2",
         "word": "network",
-        "translation": "сеть",
+        "translation": "сеть (система связанных объектов)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "network",
@@ -34021,12 +32843,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:phone:n-v:a1",
         "word": "phone",
-        "translation": "телефон; звонить по телефону",
+        "translation": "телефон; звонить по телефону (короткая форма названия)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "phone",
         "level": "A1",
-        "partOfSpeech": "сущ., гл."
+        "partOfSpeech": "сущ., гл.",
+        "answers": [
+          {
+            "text": "phone",
+            "weight": 1
+          },
+          {
+            "text": "telephone",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:podcast:n:b1",
@@ -34151,12 +32983,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:telephone:n-v:a1",
         "word": "telephone",
-        "translation": "телефон; звонить по телефону",
+        "translation": "телефон; звонить по телефону (полная форма названия)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "telephone",
         "level": "A1",
-        "partOfSpeech": "сущ., гл."
+        "partOfSpeech": "сущ., гл.",
+        "answers": [
+          {
+            "text": "telephone",
+            "weight": 1
+          },
+          {
+            "text": "phone",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:user:n:a2",
@@ -34171,7 +33013,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:web:n:a2",
         "word": "web",
-        "translation": "сеть",
+        "translation": "сеть (паутина или всемирная система веб-страниц)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "web",
@@ -34230,12 +33072,22 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:application:n:b1",
         "word": "application",
-        "translation": "приложение",
+        "translation": "приложение (программное обеспечение; полное название)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "application",
         "level": "B1",
-        "partOfSpeech": "сущ."
+        "partOfSpeech": "сущ.",
+        "answers": [
+          {
+            "text": "application",
+            "weight": 1
+          },
+          {
+            "text": "app",
+            "weight": 1
+          }
+        ]
       },
       {
         "id": "oxford:apply:v:a2",
@@ -34250,7 +33102,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:artist:n:a1",
         "word": "artist",
-        "translation": "художник",
+        "translation": "художник (человек, создающий произведения искусства)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "artist",
@@ -34290,7 +33142,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:client:n:b1",
         "word": "client",
-        "translation": "клиент",
+        "translation": "клиент (получатель профессиональных услуг)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "client",
@@ -34320,7 +33172,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:customer:n:a1",
         "word": "customer",
-        "translation": "клиент",
+        "translation": "клиент (покупатель товаров или услуг)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "customer",
@@ -34789,7 +33641,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:answer:n-v:a1",
         "word": "answer",
-        "translation": "ответ; отвечать",
+        "translation": "ответ; отвечать (ответ на вопрос, задание или обращение)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "answer",
@@ -34829,7 +33681,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:class:n:a1",
         "word": "class",
-        "translation": "класс",
+        "translation": "класс (учебная группа или занятие)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "class",
@@ -34839,7 +33691,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:classroom:n:a1",
         "word": "classroom",
-        "translation": "класс",
+        "translation": "класс (помещение для занятий)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "classroom",
@@ -34869,7 +33721,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:degree:n:a2",
         "word": "degree",
-        "translation": "степень",
+        "translation": "степень (уровень, мера выраженности; также единица измерения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "degree",
@@ -34939,7 +33791,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:grade:v:b2",
         "word": "grade",
-        "translation": "оценивать",
+        "translation": "оценивать (выставлять учебную отметку или категорию)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "grade",
@@ -34969,7 +33821,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:language:n:a1",
         "word": "language",
-        "translation": "язык",
+        "translation": "язык (система общения)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "language",
@@ -34989,7 +33841,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:learning:n:a2",
         "word": "learning",
-        "translation": "обучение",
+        "translation": "обучение (процесс усвоения знаний)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "learning",
@@ -35079,7 +33931,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:practice:n:a1",
         "word": "practice",
-        "translation": "практика",
+        "translation": "практика (занятие, отработка навыка; существительное)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "practice",
@@ -35089,7 +33941,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:practise:v:a1",
         "word": "practise",
-        "translation": "практика",
+        "translation": "практиковаться (отрабатывать навык; британский глагол)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "practise",
@@ -35229,7 +34081,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:subject:n:a1",
         "word": "subject",
-        "translation": "предмет",
+        "translation": "предмет (тема изучения, разговора или исследования)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "subject",
@@ -35289,7 +34141,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:training:n:a2",
         "word": "training",
-        "translation": "обучение",
+        "translation": "обучение (целенаправленная подготовка, отработка навыков)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "training",
@@ -35329,7 +34181,7 @@ window.VOCABULARY_DATA = [
       {
         "id": "oxford:writing:n:a1",
         "word": "writing",
-        "translation": "письмо",
+        "translation": "письмо (процесс письма или письменный текст)",
         "example": "",
         "sentenceTranslation": "",
         "answer": "writing",
@@ -35340,6 +34192,1763 @@ window.VOCABULARY_DATA = [
     "id": "oxford-extra-38",
     "collection": "Oxford 3000",
     "subtopic": "Учёба",
+    "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf"
+  },
+  {
+    "topic": "Описание и оценка",
+    "words": [
+      {
+        "id": "oxford:absolutely:adv:b1",
+        "word": "absolutely",
+        "translation": "абсолютно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "absolutely",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:actually:adv:a2",
+        "word": "actually",
+        "translation": "на самом деле",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "actually",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:afterwards:adv:b2",
+        "word": "afterwards",
+        "translation": "потом",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "afterwards",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:ago:adv:a1",
+        "word": "ago",
+        "translation": "назад (сколько времени прошло с события)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "ago",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:ahead:adv:b1",
+        "word": "ahead",
+        "translation": "впереди",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "ahead",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:all:adv:a2",
+        "word": "all",
+        "translation": "весь; все",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "all",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:almost:adv:a2",
+        "word": "almost",
+        "translation": "почти (чуть меньше полного значения)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "almost",
+        "level": "A2",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "almost",
+            "weight": 1
+          },
+          {
+            "text": "nearly",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:also:adv:a1",
+        "word": "also",
+        "translation": "также",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "also",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:any:adv:a2",
+        "word": "any",
+        "translation": "любой; какой-либо",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "any",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:any-more:adv:a2",
+        "word": "any more",
+        "translation": "больше",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "any more",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:anyway:adv:a2",
+        "word": "anyway",
+        "translation": "в любом случае",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "anyway",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:apart:adv:b1",
+        "word": "apart",
+        "translation": "отдельно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "apart",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:apparently:adv:b2",
+        "word": "apparently",
+        "translation": "видимо",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "apparently",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:approximately:adv:b1",
+        "word": "approximately",
+        "translation": "примерно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "approximately",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:away:adv:a1",
+        "word": "away",
+        "translation": "прочь",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "away",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:backwards:adv:b1",
+        "word": "backwards",
+        "translation": "назад (в обратном направлении)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "backwards",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:badly:adv:a2",
+        "word": "badly",
+        "translation": "плохо",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "badly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:basically:adv:b2",
+        "word": "basically",
+        "translation": "в основном (по сути, в своей основе)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "basically",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:best:adv-n:a2",
+        "word": "best",
+        "translation": "лучший",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "best",
+        "level": "A2",
+        "partOfSpeech": "нареч., сущ."
+      },
+      {
+        "id": "oxford:better:adv:a2",
+        "word": "better",
+        "translation": "лучше; более хороший",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "better",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:between:adv:a2",
+        "word": "between",
+        "translation": "между",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "between",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:by:adv:b1",
+        "word": "by",
+        "translation": "у; возле; с помощью",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "by",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:carefully:adv:a2",
+        "word": "carefully",
+        "translation": "тщательно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "carefully",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:certainly:adv:a2",
+        "word": "certainly",
+        "translation": "конечно (безусловно, несомненно)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "certainly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:clearly:adv:a2",
+        "word": "clearly",
+        "translation": "ясно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "clearly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:close:adv:b1",
+        "word": "close",
+        "translation": "близко",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "close",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:closely:adv:b2",
+        "word": "closely",
+        "translation": "внимательно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "closely",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:commonly:adv:b2",
+        "word": "commonly",
+        "translation": "обычно (распространено среди многих)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "commonly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:completely:adv:a2",
+        "word": "completely",
+        "translation": "полностью (в полной мере)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "completely",
+        "level": "A2",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "completely",
+            "weight": 1
+          },
+          {
+            "text": "entirely",
+            "weight": 1
+          },
+          {
+            "text": "fully",
+            "weight": 1
+          },
+          {
+            "text": "totally",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:constantly:adv:b2",
+        "word": "constantly",
+        "translation": "постоянно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "constantly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:correctly:adv:a2",
+        "word": "correctly",
+        "translation": "правильно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "correctly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:currently:adv:b1",
+        "word": "currently",
+        "translation": "в настоящее время",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "currently",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:deep:adv:b1",
+        "word": "deep",
+        "translation": "глубокий",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "deep",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:deeply:adv:b2",
+        "word": "deeply",
+        "translation": "глубоко",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "deeply",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:definitely:adv:a2",
+        "word": "definitely",
+        "translation": "определенно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "definitely",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:deliberately:adv:b2",
+        "word": "deliberately",
+        "translation": "намеренно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "deliberately",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:differently:adv:a2",
+        "word": "differently",
+        "translation": "по-другому",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "differently",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:directly:adv:b1",
+        "word": "directly",
+        "translation": "напрямую",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "directly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:downstairs:adv:a1",
+        "word": "downstairs",
+        "translation": "внизу",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "downstairs",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:downwards:adv:b2",
+        "word": "downwards",
+        "translation": "вниз (движение в более низком направлении)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "downwards",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:easily:adv:a2",
+        "word": "easily",
+        "translation": "легко",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "easily",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:effectively:adv:b1",
+        "word": "effectively",
+        "translation": "эффективно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "effectively",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:else:adv:a1",
+        "word": "else",
+        "translation": "еще (дополнительно, помимо названного)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "else",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:elsewhere:adv:b2",
+        "word": "elsewhere",
+        "translation": "в другом месте",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "elsewhere",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:entirely:adv:b2",
+        "word": "entirely",
+        "translation": "полностью (целиком, без исключений)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "entirely",
+        "level": "B2",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "entirely",
+            "weight": 1
+          },
+          {
+            "text": "completely",
+            "weight": 1
+          },
+          {
+            "text": "fully",
+            "weight": 1
+          },
+          {
+            "text": "totally",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:equally:adv:b1",
+        "word": "equally",
+        "translation": "поровну",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "equally",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:especially:adv:a2",
+        "word": "especially",
+        "translation": "особенно (в особенности)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "especially",
+        "level": "A2",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "especially",
+            "weight": 1
+          },
+          {
+            "text": "particularly",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:even:adv:a1",
+        "word": "even",
+        "translation": "даже",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "even",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:eventually:adv:b1",
+        "word": "eventually",
+        "translation": "в конце концов",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "eventually",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:ever:adv:a1",
+        "word": "ever",
+        "translation": "когда-либо",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "ever",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:everywhere:adv:a2",
+        "word": "everywhere",
+        "translation": "везде",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "everywhere",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:exactly:adv:a2",
+        "word": "exactly",
+        "translation": "точно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "exactly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:extra:n-adv:b1",
+        "word": "extra",
+        "translation": "доплата; дополнительно (то, что сверх обычного)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "extra",
+        "level": "B1",
+        "partOfSpeech": "сущ., нареч."
+      },
+      {
+        "id": "oxford:extremely:adv:a2",
+        "word": "extremely",
+        "translation": "чрезвычайно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "extremely",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      }
+    ],
+    "id": "oxford-extra-39",
+    "collection": "Oxford 3000",
+    "subtopic": "Обстоятельства A–E",
+    "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf"
+  },
+  {
+    "topic": "Описание и оценка",
+    "words": [
+      {
+        "id": "oxford:fairly:adv:b1",
+        "word": "fairly",
+        "translation": "довольно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "fairly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:far:adv:a1",
+        "word": "far",
+        "translation": "далёкий; далеко",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "far",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:firstly:adv:a2",
+        "word": "firstly",
+        "translation": "во-первых",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "firstly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:forever:adv:b1",
+        "word": "forever",
+        "translation": "навсегда",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "forever",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:fortunately:adv:a2",
+        "word": "fortunately",
+        "translation": "к счастью",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "fortunately",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:forward:adv:a2",
+        "word": "forward",
+        "translation": "вперед",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "forward",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:free:adv:a2",
+        "word": "free",
+        "translation": "свободный; бесплатный",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "free",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:fully:adv:b2",
+        "word": "fully",
+        "translation": "полностью (в полной мере)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "fully",
+        "level": "B2",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "fully",
+            "weight": 1
+          },
+          {
+            "text": "completely",
+            "weight": 1
+          },
+          {
+            "text": "entirely",
+            "weight": 1
+          },
+          {
+            "text": "totally",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:further:adv:b1",
+        "word": "further",
+        "translation": "дальше",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "further",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:furthermore:adv:b2",
+        "word": "furthermore",
+        "translation": "кроме того",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "furthermore",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:generally:adv:b1",
+        "word": "generally",
+        "translation": "вообще",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "generally",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:gradually:adv:b2",
+        "word": "gradually",
+        "translation": "постепенно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "gradually",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:happily:adv:a2",
+        "word": "happily",
+        "translation": "счастливо",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "happily",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:hardly:adv:b1",
+        "word": "hardly",
+        "translation": "вряд ли",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "hardly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:heavily:adv:b1",
+        "word": "heavily",
+        "translation": "сильно (интенсивно, с большой нагрузкой)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "heavily",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:here:adv:a1",
+        "word": "here",
+        "translation": "здесь",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "here",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:high:adv:a2",
+        "word": "high",
+        "translation": "высоко (далеко вверх от уровня земли)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "high",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:highly:adv:b1",
+        "word": "highly",
+        "translation": "весьма",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "highly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:how:adv:a1",
+        "word": "how",
+        "translation": "как",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "how",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:however:adv:a1",
+        "word": "however",
+        "translation": "однако",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "however",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:increasingly:adv:b2",
+        "word": "increasingly",
+        "translation": "все больше",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "increasingly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:incredibly:adv:b1",
+        "word": "incredibly",
+        "translation": "невероятно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "incredibly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:indeed:adv:b1",
+        "word": "indeed",
+        "translation": "действительно (подтверждает сказанное, «и правда»)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "indeed",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:indoors:adv:b1",
+        "word": "indoors",
+        "translation": "в помещении",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "indoors",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:initially:adv:b2",
+        "word": "initially",
+        "translation": "изначально (в самом начале процесса)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "initially",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:instead:adv:a2",
+        "word": "instead",
+        "translation": "вместо этого",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "instead",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:just:adv:a1",
+        "word": "just",
+        "translation": "просто (только, всего лишь)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "just",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      }
+    ],
+    "id": "oxford-extra-40",
+    "collection": "Oxford 3000",
+    "subtopic": "Обстоятельства F–J",
+    "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf"
+  },
+  {
+    "topic": "Описание и оценка",
+    "words": [
+      {
+        "id": "oxford:largely:adv:b2",
+        "word": "largely",
+        "translation": "в основном (в значительной степени)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "largely",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:later:adv:a1",
+        "word": "later",
+        "translation": "позже",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "later",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:little:adv:a2",
+        "word": "little",
+        "translation": "мало (в небольшой степени, наречие)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "little",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:loudly:adv:a2",
+        "word": "loudly",
+        "translation": "громко",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "loudly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:mainly:adv:b1",
+        "word": "mainly",
+        "translation": "главным образом",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "mainly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:maybe:adv:a1",
+        "word": "maybe",
+        "translation": "может быть (возможно, наречие)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "maybe",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:meanwhile:adv:b1",
+        "word": "meanwhile",
+        "translation": "тем временем",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "meanwhile",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:mostly:adv:a2",
+        "word": "mostly",
+        "translation": "в основном (по большей части)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "mostly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:naturally:adv:b1",
+        "word": "naturally",
+        "translation": "естественно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "naturally",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:nearly:adv:a2",
+        "word": "nearly",
+        "translation": "почти (чуть меньше полного значения)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "nearly",
+        "level": "A2",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "nearly",
+            "weight": 1
+          },
+          {
+            "text": "almost",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:necessarily:adv:b1",
+        "word": "necessarily",
+        "translation": "обязательно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "necessarily",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:neither:adv:b1",
+        "word": "neither",
+        "translation": "ни один из двух",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "neither",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:nevertheless:adv:b2",
+        "word": "nevertheless",
+        "translation": "тем не менее",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "nevertheless",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:normally:adv:a2",
+        "word": "normally",
+        "translation": "обычно (при нормальных условиях)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "normally",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:not:adv:a1",
+        "word": "not",
+        "translation": "не",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "not",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:nowhere:adv:a2",
+        "word": "nowhere",
+        "translation": "нигде",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "nowhere",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:obviously:adv:b1",
+        "word": "obviously",
+        "translation": "очевидно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "obviously",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:occasionally:adv:b2",
+        "word": "occasionally",
+        "translation": "иногда (изредка, от случая к случаю)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "occasionally",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:once:adv:a1",
+        "word": "once",
+        "translation": "однажды",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "once",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:originally:adv:b1",
+        "word": "originally",
+        "translation": "изначально (в исходном виде или по первоначальному замыслу)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "originally",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:otherwise:adv:b2",
+        "word": "otherwise",
+        "translation": "иначе",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "otherwise",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:outdoors:adv:b1",
+        "word": "outdoors",
+        "translation": "на открытом воздухе",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "outdoors",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:outside:adv:a1",
+        "word": "outside",
+        "translation": "снаружи",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "outside",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:o-clock:adv:a1",
+        "word": "o’clock",
+        "translation": "час (при указании точного времени на часах)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "o’clock",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      }
+    ],
+    "id": "oxford-extra-41",
+    "collection": "Oxford 3000",
+    "subtopic": "Обстоятельства K–O",
+    "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf"
+  },
+  {
+    "topic": "Описание и оценка",
+    "words": [
+      {
+        "id": "oxford:particularly:adv:b1",
+        "word": "particularly",
+        "translation": "особенно (в особенности)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "particularly",
+        "level": "B1",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "particularly",
+            "weight": 1
+          },
+          {
+            "text": "especially",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:partly:adv:b2",
+        "word": "partly",
+        "translation": "частично",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "partly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:perfectly:adv:b1",
+        "word": "perfectly",
+        "translation": "идеально",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "perfectly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:perhaps:adv:a2",
+        "word": "perhaps",
+        "translation": "возможно (возможно, предположение)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "perhaps",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:personally:adv:b1",
+        "word": "personally",
+        "translation": "лично",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "personally",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:possibly:adv:b1",
+        "word": "possibly",
+        "translation": "возможно (это возможно, хотя не обязательно)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "possibly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:previously:adv:b1",
+        "word": "previously",
+        "translation": "ранее",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "previously",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:probably:adv:a1",
+        "word": "probably",
+        "translation": "вероятно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "probably",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:properly:adv:b1",
+        "word": "properly",
+        "translation": "должным образом",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "properly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:quickly:adv:a1",
+        "word": "quickly",
+        "translation": "быстро (за короткое время)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "quickly",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:quietly:adv:a2",
+        "word": "quietly",
+        "translation": "тихо",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "quietly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:quite:adv:a1",
+        "word": "quite",
+        "translation": "вполне",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "quite",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:rapidly:adv:b2",
+        "word": "rapidly",
+        "translation": "быстро (с высокой скоростью, интенсивно)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "rapidly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:rather:adv:a2",
+        "word": "rather",
+        "translation": "скорее",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "rather",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:really:adv:a1",
+        "word": "really",
+        "translation": "действительно (на самом деле)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "really",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:regularly:adv:b1",
+        "word": "regularly",
+        "translation": "регулярно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "regularly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:relatively:adv:b2",
+        "word": "relatively",
+        "translation": "относительно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "relatively",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:sadly:adv:a2",
+        "word": "sadly",
+        "translation": "к сожалению (с сожалением или грустью)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "sadly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:secondly:adv:a2",
+        "word": "secondly",
+        "translation": "во-вторых",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "secondly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:seriously:adv:b1",
+        "word": "seriously",
+        "translation": "серьезно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "seriously",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:significantly:adv:b2",
+        "word": "significantly",
+        "translation": "значительно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "significantly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:similarly:adv:b1",
+        "word": "similarly",
+        "translation": "аналогично",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "similarly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:simply:adv:b1",
+        "word": "simply",
+        "translation": "просто (простым способом, без сложности)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "simply",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:slightly:adv:b1",
+        "word": "slightly",
+        "translation": "слегка",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "slightly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:slowly:adv:a2",
+        "word": "slowly",
+        "translation": "медленно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "slowly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:somewhat:adv:b2",
+        "word": "somewhat",
+        "translation": "несколько (в некоторой степени, наречие)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "somewhat",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:specifically:adv:b1",
+        "word": "specifically",
+        "translation": "конкретно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "specifically",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:strongly:adv:b1",
+        "word": "strongly",
+        "translation": "сильно (с большой силой или убеждённостью)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "strongly",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:successfully:adv:b1",
+        "word": "successfully",
+        "translation": "успешно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "successfully",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:suddenly:adv:a2",
+        "word": "suddenly",
+        "translation": "внезапно",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "suddenly",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:sure:adv:a2",
+        "word": "sure",
+        "translation": "конечно (разговорное согласие или подтверждение)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "sure",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:surely:adv:b1",
+        "word": "surely",
+        "translation": "конечно (выражает уверенное ожидание или удивление)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "surely",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:that:adv:b1",
+        "word": "that",
+        "translation": "тот; что",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "that",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:there:adv:a1",
+        "word": "there",
+        "translation": "там; здесь есть",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "there",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:therefore:adv:b1",
+        "word": "therefore",
+        "translation": "поэтому",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "therefore",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:this:adv:b1",
+        "word": "this",
+        "translation": "этот; это",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "this",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:thus:adv:b2",
+        "word": "thus",
+        "translation": "таким образом",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "thus",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:together:adv:a1",
+        "word": "together",
+        "translation": "вместе",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "together",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:tonight:adv-n:a1",
+        "word": "tonight",
+        "translation": "сегодня вечером",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "tonight",
+        "level": "A1",
+        "partOfSpeech": "нареч., сущ."
+      },
+      {
+        "id": "oxford:too:adv:a1",
+        "word": "too",
+        "translation": "тоже; слишком",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "too",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:totally:adv:b1",
+        "word": "totally",
+        "translation": "полностью (целиком, без исключений)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "totally",
+        "level": "B1",
+        "partOfSpeech": "нареч.",
+        "answers": [
+          {
+            "text": "totally",
+            "weight": 1
+          },
+          {
+            "text": "completely",
+            "weight": 1
+          },
+          {
+            "text": "entirely",
+            "weight": 1
+          },
+          {
+            "text": "fully",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "oxford:truly:adv:b2",
+        "word": "truly",
+        "translation": "действительно (истинно, искренне)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "truly",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:twice:adv:a1",
+        "word": "twice",
+        "translation": "дважды",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "twice",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:typically:adv:b1",
+        "word": "typically",
+        "translation": "обычно (характерно для такого случая)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "typically",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      }
+    ],
+    "id": "oxford-extra-42",
+    "collection": "Oxford 3000",
+    "subtopic": "Обстоятельства P–T",
+    "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf"
+  },
+  {
+    "topic": "Описание и оценка",
+    "words": [
+      {
+        "id": "oxford:ultimately:adv:b2",
+        "word": "ultimately",
+        "translation": "в конечном итоге",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "ultimately",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:unfortunately:adv:a2",
+        "word": "unfortunately",
+        "translation": "к сожалению (указывает на неблагоприятное обстоятельство)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "unfortunately",
+        "level": "A2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:upstairs:adv:a1",
+        "word": "upstairs",
+        "translation": "наверху",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "upstairs",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:upwards:adv:b2",
+        "word": "upwards",
+        "translation": "вверх (движение в более высоком направлении)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "upwards",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:very:adv:a1",
+        "word": "very",
+        "translation": "очень",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "very",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:way:adv:b2",
+        "word": "way",
+        "translation": "намного (усиливает сравнение, наречие)",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "way",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:why:adv:a1",
+        "word": "why",
+        "translation": "почему",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "why",
+        "level": "A1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:widely:adv:b2",
+        "word": "widely",
+        "translation": "широко",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "widely",
+        "level": "B2",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:worse:adv:b1",
+        "word": "worse",
+        "translation": "хуже",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "worse",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:worst:adv:b1",
+        "word": "worst",
+        "translation": "худший",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "worst",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      },
+      {
+        "id": "oxford:wrong:adv:b1",
+        "word": "wrong",
+        "translation": "неправильный",
+        "example": "",
+        "sentenceTranslation": "",
+        "answer": "wrong",
+        "level": "B1",
+        "partOfSpeech": "нареч."
+      }
+    ],
+    "id": "oxford-extra-43",
+    "collection": "Oxford 3000",
+    "subtopic": "Обстоятельства U–Z",
     "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf"
   },
   {

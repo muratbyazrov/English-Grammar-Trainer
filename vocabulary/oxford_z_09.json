@@ -8,7 +8,7 @@
     {
       "id": "oxford:although:conj:a2",
       "word": "although",
-      "translation": "хотя",
+      "translation": "хотя (вводит уступку)",
       "answer": "although",
       "level": "A2",
       "partOfSpeech": "союз"
@@ -120,7 +120,7 @@
     {
       "id": "oxford:though:conj-adv:b1",
       "word": "though",
-      "translation": "хотя",
+      "translation": "хотя; однако (уступка; как наречие добавляет оговорку)",
       "answer": "though",
       "level": "B1",
       "partOfSpeech": "союз, нареч."
@@ -160,7 +160,7 @@
     {
       "id": "oxford:wherever:conj:b2",
       "word": "wherever",
-      "translation": "где угодно",
+      "translation": "где угодно (в любом месте, где; связывает части предложения)",
       "answer": "wherever",
       "level": "B2",
       "partOfSpeech": "союз"

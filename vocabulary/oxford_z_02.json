@@ -112,7 +112,7 @@
     {
       "id": "oxford:city:n:a1",
       "word": "city",
-      "translation": "город",
+      "translation": "город (крупный город)",
       "answer": "city",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -184,7 +184,7 @@
     {
       "id": "oxford:path:n:b1",
       "word": "path",
-      "translation": "путь",
+      "translation": "путь (тропа или дорожка)",
       "answer": "path",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -256,7 +256,7 @@
     {
       "id": "oxford:town:n:a1",
       "word": "town",
-      "translation": "город",
+      "translation": "город (небольшой город)",
       "answer": "town",
       "level": "A1",
       "partOfSpeech": "сущ."

@@ -32,7 +32,7 @@
     {
       "id": "oxford:across:prep-adv:a1",
       "word": "across",
-      "translation": "через",
+      "translation": "через (с одной стороны на другую)",
       "answer": "across",
       "level": "A1",
       "partOfSpeech": "предл., нареч."
@@ -40,7 +40,7 @@
     {
       "id": "oxford:against:prep:a2",
       "word": "against",
-      "translation": "против",
+      "translation": "против (в противоположность, вопреки)",
       "answer": "against",
       "level": "A2",
       "partOfSpeech": "предл."
@@ -152,7 +152,7 @@
     {
       "id": "oxford:down:adv-prep:a1",
       "word": "down",
-      "translation": "вниз",
+      "translation": "вниз (направление к более низкой точке)",
       "answer": "down",
       "level": "A1",
       "partOfSpeech": "нареч., предл."
@@ -168,7 +168,7 @@
     {
       "id": "oxford:following:prep:b2",
       "word": "following",
-      "translation": "следующий",
+      "translation": "после (вслед за событием)",
       "answer": "following",
       "level": "B2",
       "partOfSpeech": "предл."
@@ -208,7 +208,7 @@
     {
       "id": "oxford:inside:prep-adv-n-adj:a2",
       "word": "inside",
-      "translation": "внутри",
+      "translation": "внутри; внутренняя часть; внутренний (расположение или часть предмета)",
       "answer": "inside",
       "level": "A2",
       "partOfSpeech": "предл., нареч., сущ., прил."
@@ -264,7 +264,7 @@
     {
       "id": "oxford:on:prep-adv:a1",
       "word": "on",
-      "translation": "на",
+      "translation": "на (положение на поверхности)",
       "answer": "on",
       "level": "A1",
       "partOfSpeech": "предл., нареч."
@@ -272,7 +272,7 @@
     {
       "id": "oxford:onto:prep:a2",
       "word": "onto",
-      "translation": "на",
+      "translation": "на (движение на поверхность)",
       "answer": "onto",
       "level": "A2",
       "partOfSpeech": "предл."
@@ -384,7 +384,7 @@
     {
       "id": "oxford:up:adv-prep:a1",
       "word": "up",
-      "translation": "вверх",
+      "translation": "вверх (к более высокой точке)",
       "answer": "up",
       "level": "A1",
       "partOfSpeech": "нареч., предл."
@@ -392,7 +392,7 @@
     {
       "id": "oxford:upon:prep:b2",
       "word": "upon",
-      "translation": "на",
+      "translation": "на (на поверхности; формальное или литературное)",
       "answer": "upon",
       "level": "B2",
       "partOfSpeech": "предл."
@@ -400,7 +400,7 @@
     {
       "id": "oxford:via:prep:b2",
       "word": "via",
-      "translation": "через",
+      "translation": "через (через промежуточное место или средство)",
       "answer": "via",
       "level": "B2",
       "partOfSpeech": "предл."
@@ -416,7 +416,7 @@
     {
       "id": "oxford:within:prep:b1",
       "word": "within",
-      "translation": "внутри",
+      "translation": "внутри (в пределах границ или срока)",
       "answer": "within",
       "level": "B1",
       "partOfSpeech": "предл."

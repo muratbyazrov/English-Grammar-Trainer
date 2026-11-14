@@ -5,6 +5,73 @@ const { createApp } = require('./helpers/app');
 const foodGroup = 'collection:Oxford 3000/topic:Еда';
 const travelGroup = 'collection:Oxford 3000/topic:Поездки';
 const oxford = 'collection:Oxford 3000';
+
+function oxfordCardSession(cardId) {
+  const source = createApp().window.VOCABULARY_DATA;
+  const topic = source.find(topic => topic.words.some(word => word.id === cardId));
+  assert.ok(topic, `Missing Oxford card: ${cardId}`);
+  const card = topic.words.find(word => word.id === cardId);
+  const app = createApp({ vocabulary: [{ ...topic, words: [card] }] });
+  app.click('tab-vocab');
+  app.change('auto-speak-correct-vocab', false);
+  return app;
+}
+
+test('reviewed Oxford synonyms are accepted and show alternatives for either answer', () => {
+  for (const [id, answers] of [
+    ['oxford:apartment:n:a1', ['apartment', 'flat']],
+    ['oxford:bike:n:a1', ['bike', 'bicycle']],
+    ['oxford:anybody:pron:a2', ['anybody', 'anyone']],
+    ['oxford:lab:n:a2', ['lab', 'laboratory']],
+  ]) {
+    for (const answer of answers) {
+      const app = oxfordCardSession(id);
+      app.answer(answer);
+      assert.equal(app.snapshot().vocabulary.correct, 1, `${id}: ${answer}`);
+      assert.equal(app.snapshot().vocabulary.wrong, 0);
+      assert.equal(app.el('feedback').textContent, 'Верно!');
+      assert.equal(app.el('vocab-alternatives-overlay').hidden, false);
+      for (const other of answers.filter(other => other !== answer)) {
+        assert.ok(app.el('vocab-alternatives-list').textContent.includes(other));
+      }
+      assert.equal(app.el('vocab-alternatives-list').children.length, answers.length - 1);
+      app.advance(10000);
+      assert.equal(app.el('vocab-alternatives-overlay').hidden, false);
+      assert.equal(app.el('session-complete').hidden, true);
+      app.click('vocab-alternatives-continue');
+      assert.equal(app.el('vocab-alternatives-overlay').hidden, true);
+      assert.equal(app.el('session-complete').hidden, false);
+    }
+  }
+});
+
+test('matching Russian glosses do not accept words with a different sense or part of speech', () => {
+  for (const [id, rejected] of [
+    ['oxford:table:noun', 'desk'],
+    ['oxford:high:adv:a2', 'tall'],
+    ['oxford:advice:n:a1', 'council'],
+    ['oxford:little:adv:a2', 'small'],
+    ['oxford:effective:adj:b1', 'efficient'],
+  ]) {
+    const app = oxfordCardSession(id);
+    app.answer(rejected);
+    assert.equal(app.snapshot().vocabulary.correct, 0, `${id}: ${rejected}`);
+    assert.equal(app.snapshot().vocabulary.wrong, 1);
+    assert.match(app.el('feedback').textContent, /Правильный ответ:/);
+  }
+});
+
+test('Oxford prompts explain the selected meaning and correct mismatched parts of speech', () => {
+  for (const [id, prompt] of [
+    ['oxford:table:noun', 'стол (обеденный или общий стол)'],
+    ['oxford:high:adv:a2', 'высоко (далеко вверх от уровня земли)'],
+    ['oxford:high:n:b2', 'максимум (наивысшая точка или уровень)'],
+    ['oxford:complex:n:b2', 'комплекс (совокупность связанных зданий, объектов или проблем)'],
+  ]) {
+    assert.equal(oxfordCardSession(id).el('question-text').textContent, prompt);
+  }
+});
+
 const vocabulary = [
   { topic: 'Работа', words: [{ id: 1, word: 'deploy', translation: 'развернуть' }] },
   {
@@ -93,6 +160,7 @@ for (const collection of ['Oxford 3000', 'Английский для IT']) {
     app.click('next-btn');
     assert.equal(app.el('session-complete').hidden, false);
     assert.equal(app.el('next-session-btn').textContent, 'Тренировать ошибки →');
+    assert.equal(app.el('next-session-btn').hidden, false);
     assert.equal(app.el('next-session-btn').disabled, false);
     app.click('next-session-btn');
     assert.equal(app.el('session-complete').hidden, true);
@@ -101,10 +169,12 @@ for (const collection of ['Oxford 3000', 'Английский для IT']) {
     assert.equal(app.snapshot().vocabulary.correct, 0);
     app.click('next-btn');
     assert.equal(app.el('next-session-btn').textContent, 'Тренировать ошибки →');
+    assert.equal(app.el('next-session-btn').hidden, false);
     app.click('next-session-btn');
     app.answer(topic.words.find(word => word.id === wrongId).word);
     app.advance(500);
     assert.equal(app.el('session-complete').hidden, false);
+    assert.equal(app.el('next-session-btn').hidden, true);
     assert.equal(app.el('next-session-btn').disabled, true);
     assert.equal(mistakes(app).size, 0);
   });
@@ -164,6 +234,7 @@ test('all 33 city words fit in one approach and reach full progress across reloa
   assert.equal(app.el('sc-title').textContent, 'Тема завершена!');
   assert.equal(app.el('sc-correct').textContent, '33');
   assert.equal(app.el('sc-pct').textContent, '100%');
+  assert.equal(app.el('next-session-btn').hidden, true);
   assert.equal(app.el('next-session-btn').disabled, true);
   app.click('vocab-topic-trigger');
   assert.match(choice(app, 'topicValue', 'oxford-extra-02').textContent, /Пройдено 33 из 33 · 100%/);
@@ -200,6 +271,7 @@ test('a saved short Oxford round resumes unchanged and continues with all remain
   assert.equal(app.el('sc-review-summary').hidden, false);
   assert.match(app.el('sc-review-summary').textContent, /непройденных слов: 13/);
   assert.equal(app.el('next-session-btn').textContent, 'Продолжить тему →');
+  assert.equal(app.el('next-session-btn').hidden, false);
   assert.equal(app.el('next-session-btn').disabled, false);
 
   app = createApp({ vocabulary: [topic], saved: app.snapshot() });
@@ -303,6 +375,115 @@ test('skipping an Oxford mistake does not count as a clean answer', () => {
   assert.equal(mistakes(app).get('tea'), 0);
   assert.equal(app.el('sc-pct').textContent, '0%');
   assert.match(app.el('sc-review-summary').textContent, /достаточно одного правильного ответа без подсказки/);
+});
+
+test('vocabulary settings offer 1, 3 and 5 clean answers and apply them to review rounds', () => {
+  const labels = new Map([[1, '1 раз'], [3, '3 раза подряд'], [5, '5 раз подряд']]);
+  const options = [...labels.keys()];
+  for (const [repetitions, label] of labels) {
+    const app = start();
+    const buttons = options.map(count => app.el(`vocab-mistake-repetitions-${count}`));
+    assert.ok(buttons.every(button => button.tag === 'button'));
+    assert.equal(app.el('vocab-mistake-repetitions-2'), undefined);
+    assert.deepEqual(buttons.map(button => button.attributes['aria-pressed']), ['true', 'false', 'false']);
+    app.answer('wrong');
+    app.click('vocab-settings-open');
+    assert.equal(app.el('vocab-settings').open, true);
+    app.click(`vocab-mistake-repetitions-${repetitions}`);
+    assert.deepEqual(buttons.map(button => button.attributes['aria-pressed']), options.map(count => String(count === repetitions)));
+    assert.equal(app.el('vocab-settings').open, true);
+    app.click('vocab-settings-close');
+    assert.equal(app.el('vocab-settings').open, false);
+    assert.equal(app.snapshot().vocabulary.mistakeRepetitions, repetitions);
+
+    app.click('vocab-topic-trigger');
+    assert.ok(app.el('vocab-topic-modal-subtitle').textContent.endsWith(`без подсказок ${label}.`));
+    app.click('vocab-topic-close');
+    review(app);
+    for (let count = 1; count <= repetitions; count++) {
+      app.answer('tea');
+      app.answer('tea');
+      assert.equal(mistakes(app).get('tea'), count < repetitions ? count : undefined);
+      if (count < repetitions) {
+        assert.match(app.el('feedback').textContent, new RegExp(`${count} из ${repetitions}`));
+      }
+      app.advance(500);
+      assert.equal(app.el('next-session-btn').hidden, count === repetitions);
+      if (count < repetitions) {
+        assert.match(app.el('sc-review-summary').textContent, new RegExp(`для каждого слова: ${repetitions}`));
+        app.click('next-session-btn');
+      }
+    }
+  }
+});
+
+test('a saved two-answer threshold moves to three and keeps earned credit', () => {
+  const app = start();
+  app.click('vocab-mistake-repetitions-3');
+  app.answer('wrong');
+  review(app);
+  app.answer('tea');
+  const saved = app.snapshot();
+  saved.vocabulary.mistakeRepetitions = 2;
+
+  const reload = createApp({ vocabulary, saved });
+  assert.equal(reload.snapshot().vocabulary.mistakeRepetitions, 3);
+  assert.equal(reload.el('vocab-mistake-repetitions-3').attributes['aria-pressed'], 'true');
+  assert.equal(mistakes(reload).get('tea'), 1);
+  reload.click('vocab-new-session');
+  reload.answer('tea');
+  assert.equal(mistakes(reload).get('tea'), 2);
+});
+
+test('IT repetition progress survives reload and skips, and resets after an error or a hint', () => {
+  const key = 'legacy:["Работа","deploy"]';
+  let app = start('Работа');
+  app.click('vocab-mistake-repetitions-3');
+  app.answer('wrong');
+  app.click('vocab-new-session');
+  app.answer('deploy');
+  app = createApp({ vocabulary, saved: app.snapshot() });
+  assert.equal(app.el('vocab-mistake-repetitions-3').attributes['aria-pressed'], 'true');
+  assert.equal(app.el('vocab-mistake-repetitions-1').attributes['aria-pressed'], 'false');
+  app.answer('deploy');
+  assert.equal(mistakes(app).get(key), 1);
+
+  review(app, 'Работа');
+  app.click('next-btn');
+  app = createApp({ vocabulary, saved: app.snapshot() });
+  assert.equal(mistakes(app).get(key), 1);
+  app.click('vocab-new-session');
+  app.answer('wrong');
+  app.answer('deploy');
+  assert.equal(mistakes(app).get(key), 0);
+  app.click('vocab-new-session');
+  app.answer('deploy');
+  assert.equal(mistakes(app).get(key), 1);
+  app.click('vocab-new-session');
+  app.click('speak-word-btn');
+  app.answer('deploy');
+  assert.equal(mistakes(app).get(key), 0);
+});
+
+test('lowering the required repetitions applies earned credit without restarting the round', () => {
+  const app = start();
+  app.click('vocab-mistake-repetitions-5');
+  app.answer('wrong');
+  review(app);
+  app.answer('tea');
+  app.click('vocab-settings-open');
+  app.advance(500);
+  const before = app.snapshot().vocabulary;
+  assert.equal(mistakes(app).get('tea'), 1);
+  assert.equal(app.el('next-session-btn').hidden, false);
+  app.click('vocab-mistake-repetitions-1');
+  assert.deepEqual(app.snapshot().vocabulary, { ...before, mistakeRepetitions: 1, mistakes: [] });
+  assert.equal(app.el('vocab-new-session').disabled, true);
+  assert.equal(app.el('next-session-btn').hidden, true);
+  app.click('vocab-mistake-repetitions-5');
+  app.click('vocab-settings-close');
+  assert.equal(app.el('next-session-btn').hidden, true);
+  assert.equal(mistakes(app).size, 0);
 });
 
 test('navigation never marks unattempted words visited in Oxford or IT', () => {
@@ -415,8 +596,9 @@ test('one clean answer removes a mistake and completes its review; reload and re
   app.advance(500);
   assert.equal(app.el('session-complete').hidden, false);
   assert.match(app.el('sc-review-summary').textContent, /Все ошибки.*отработаны/);
+  assert.equal(app.el('next-session-btn').hidden, true);
   assert.equal(app.el('next-session-btn').disabled, true);
-  assert.equal(app.el('next-session-btn').textContent, 'Тренировать ошибки →');
+  assert.equal(app.el('sc-next-topic').hidden, false);
   assert.equal(app.el('vocab-new-session').disabled, true);
   app.click('session-complete-close');
   app.click('vocab-topic-trigger');
@@ -534,6 +716,7 @@ test('IT mistakes migrate from the last saved approach, even if Oxford mistake s
   app.answer('wrong');
   for (const mistakesField of [undefined, []]) {
     const saved = app.snapshot();
+    delete saved.vocabulary.mistakeRepetitions;
     saved.vocabulary.mistakes = mistakesField;
     const reload = createApp({ vocabulary, saved });
     assert.deepEqual([...mistakes(reload)], [['legacy:["Работа","deploy"]', 0]]);
@@ -566,6 +749,7 @@ test('old saves recover known Oxford mistakes; stale IDs and malformed entries a
   const migrated = createApp({ vocabulary, saved: old });
   assert.deepEqual(migrated.snapshot().vocabulary.mistakes, [['tea', 0]]);
   const saved = migrated.snapshot();
+  delete saved.vocabulary.mistakeRepetitions;
   saved.vocabulary.mistakes = [['tea', 1], ['missing', 0], [1, 0], null, {}, ['bus', 99]];
   const reload = createApp({ vocabulary, saved });
   assert.deepEqual(reload.snapshot().vocabulary.mistakes, [['bus', 0]]);

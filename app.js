@@ -14,6 +14,7 @@
   const vocabTopics = (window.VOCABULARY_DATA && Array.isArray(window.VOCABULARY_DATA)) ? window.VOCABULARY_DATA : [];
 
   const refs = {
+    appMain: document.getElementById('trainer-app'),
     levelSelect: document.getElementById("level-select"),
     grammarTopic: document.getElementById("grammar-topic"),
     grammarTopicTrigger: document.getElementById("grammar-topic-trigger"),
@@ -87,6 +88,12 @@
     vocabTopicNavigation: document.getElementById('vocab-topic-navigation'),
     vocabNextTopic: document.getElementById('vocab-next-topic'),
     vocabNewSession: document.getElementById('vocab-new-session'),
+    vocabSettings: document.getElementById('vocab-settings'),
+    vocabSettingsOpen: document.getElementById('vocab-settings-open'),
+    vocabSettingsClose: document.getElementById('vocab-settings-close'),
+    vocabMistakeRepetitions: new Map([1, 3, 5].map(count => [
+      count, document.getElementById(`vocab-mistake-repetitions-${count}`)
+    ])),
     autoSpeakCorrectVocab: document.getElementById('auto-speak-correct-vocab'),
     shadowingTopic: document.getElementById('shadowing-topic'),
     shadowingTopicTrigger: document.getElementById('shadowing-topic-trigger'),
@@ -111,6 +118,10 @@
     questionMeta: document.getElementById('question-meta'),
     answerLabel: document.getElementById('answer-label'),
     vocabModeLabel: document.getElementById('vocab-mode-label'),
+    vocabAlternativesOverlay: document.getElementById('vocab-alternatives-overlay'),
+    vocabAlternativesAnswer: document.getElementById('vocab-alternatives-answer'),
+    vocabAlternativesList: document.getElementById('vocab-alternatives-list'),
+    vocabAlternativesContinue: document.getElementById('vocab-alternatives-continue'),
     statsSection: document.getElementById('stats-section'),
     cardContent: document.getElementById('card-content'),
     theoryPanel: document.getElementById('theory-panel'),
@@ -210,6 +221,7 @@
   const vocabState = {
     visitedWordIds: new Set(),
     mistakeProgress: new Map(),
+    mistakeRepetitions: 1,
     reviewMistakes: false,
     oxfordLevel: 'all',
     oxfordLevelMode: 'minimum',
@@ -418,6 +430,7 @@
           outcomes: vocabState.outcomes,
           visitedWordIds: Array.from(vocabState.visitedWordIds),
           mistakes: Array.from(vocabState.mistakeProgress),
+          mistakeRepetitions: vocabState.mistakeRepetitions,
           reviewMistakes: vocabState.reviewMistakes,
         },
         shadowing: {
@@ -674,6 +687,7 @@
     checkVocabAnswer,
     collectUnansweredVocabMistakes,
     ensureVocabTopicOptions,
+    hideVocabAlternatives,
     hideVocabList,
     hideVocabTopicPicker,
     nextVocabQuestion,
@@ -779,6 +793,7 @@
 
   function switchMode(mode) {
     cancelPendingActivity();
+    hideVocabAlternatives();
     stopShadowingAttempt();
     viewState.sentenceTranslationRequestId += 1;
     currentMode = mode;
@@ -841,6 +856,7 @@
       total: stats.session.length,
       reviewing: currentMode === 'vocabulary' && vocabState.reviewMistakes,
       remaining: currentMode === 'vocabulary' ? remainingVocabMistakes() : 0,
+      mistakeRepetitions: vocabState.mistakeRepetitions,
       unvisited: currentMode === 'vocabulary' ? remainingVocabUnvisited() : 0
     });
   }
@@ -878,6 +894,10 @@
 
   refs.answerInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
+      if (currentMode === 'vocabulary' && (event.repeat || event.isComposing)) {
+        event.preventDefault();
+        return;
+      }
       if (currentMode === 'vocabulary' && !normalize(refs.answerInput.value)) {
         const shouldSpeak =
           vocabState.idx === vocabState.emptyEnterPromptIdx &&
@@ -939,6 +959,15 @@
   refs.tabShadowing.addEventListener('click', () => switchMode('shadowing'));
 
   refs.vocabNewSession.addEventListener('click', startVocabSession);
+  refs.vocabSettingsOpen.addEventListener('click', () => refs.vocabSettings.showModal());
+  refs.vocabSettingsClose.addEventListener('click', () => refs.vocabSettings.close());
+  refs.vocabSettings.addEventListener('click', (event) => {
+    if (event.target !== refs.vocabSettings) return;
+    const { left, right, top, bottom } = refs.vocabSettings.getBoundingClientRect();
+    if (event.clientX < left || event.clientX >= right || event.clientY < top || event.clientY >= bottom) {
+      refs.vocabSettings.close();
+    }
+  });
 
   refs.vocabShowList.addEventListener('click', () => {
     showVocabList();
@@ -1012,7 +1041,10 @@
 
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-      if (!refs.sessionComplete.hidden) {
+      if (refs.vocabSettings.open) {
+        event.preventDefault();
+        refs.vocabSettings.close();
+      } else if (!refs.sessionComplete.hidden) {
         hideSessionComplete();
       } else if (!refs.grammarTopicOverlay.hidden) {
         hideGrammarTopicPicker();

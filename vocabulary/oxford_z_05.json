@@ -32,7 +32,7 @@
     {
       "id": "oxford:bye:exclam:a1",
       "word": "bye",
-      "translation": "пока",
+      "translation": "пока (при прощании)",
       "answer": "bye",
       "level": "A1",
       "partOfSpeech": "межд."
@@ -40,7 +40,7 @@
     {
       "id": "oxford:dear:exclam:a2",
       "word": "dear",
-      "translation": "дорогой",
+      "translation": "о боже! (возглас удивления или тревоги)",
       "answer": "dear",
       "level": "A2",
       "partOfSpeech": "межд."
@@ -56,10 +56,20 @@
     {
       "id": "oxford:hello:exclam-n:a1",
       "word": "hello",
-      "translation": "привет",
+      "translation": "привет (приветствие)",
       "answer": "hello",
       "level": "A1",
-      "partOfSpeech": "межд., сущ."
+      "partOfSpeech": "межд., сущ.",
+      "answers": [
+        {
+          "text": "hello",
+          "weight": 1
+        },
+        {
+          "text": "hi",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:hey:exclam:a1",
@@ -72,10 +82,20 @@
     {
       "id": "oxford:hi:exclam:a1",
       "word": "hi",
-      "translation": "привет",
+      "translation": "привет (неформальное приветствие)",
       "answer": "hi",
       "level": "A1",
-      "partOfSpeech": "межд."
+      "partOfSpeech": "межд.",
+      "answers": [
+        {
+          "text": "hi",
+          "weight": 1
+        },
+        {
+          "text": "hello",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:oh:exclam:a1",
@@ -120,7 +140,7 @@
     {
       "id": "oxford:welcome:exclam-v-adj:a1",
       "word": "welcome",
-      "translation": "приветствовать",
+      "translation": "добро пожаловать; приветствовать; желанный (радушный приём)",
       "answer": "welcome",
       "level": "A1",
       "partOfSpeech": "межд., гл., прил."
@@ -144,18 +164,38 @@
     {
       "id": "oxford:yeah:exclam:a1",
       "word": "yeah",
-      "translation": "да",
+      "translation": "да (разговорное согласие)",
       "answer": "yeah",
       "level": "A1",
-      "partOfSpeech": "межд."
+      "partOfSpeech": "межд.",
+      "answers": [
+        {
+          "text": "yeah",
+          "weight": 1
+        },
+        {
+          "text": "yes",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:yes:exclam:a1",
       "word": "yes",
-      "translation": "да",
+      "translation": "да (согласие, утвердительный ответ)",
       "answer": "yes",
       "level": "A1",
-      "partOfSpeech": "межд."
+      "partOfSpeech": "межд.",
+      "answers": [
+        {
+          "text": "yes",
+          "weight": 1
+        },
+        {
+          "text": "yeah",
+          "weight": 1
+        }
+      ]
     }
   ]
 }

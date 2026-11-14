@@ -48,7 +48,7 @@
     {
       "id": "oxford:crime:n:a2",
       "word": "crime",
-      "translation": "преступление",
+      "translation": "преступление (общественно опасное нарушение закона)",
       "answer": "crime",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -128,7 +128,7 @@
     {
       "id": "oxford:historical:adj:b1",
       "word": "historical",
-      "translation": "исторический",
+      "translation": "исторический (относящийся к прошлому)",
       "answer": "historical",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -136,7 +136,7 @@
     {
       "id": "oxford:history:n:a1",
       "word": "history",
-      "translation": "история",
+      "translation": "история (прошлое и его изучение)",
       "answer": "history",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -240,7 +240,7 @@
     {
       "id": "oxford:peace:n:a2",
       "word": "peace",
-      "translation": "мир",
+      "translation": "мир (отсутствие войны, покой)",
       "answer": "peace",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -248,7 +248,7 @@
     {
       "id": "oxford:policy:n:b1",
       "word": "policy",
-      "translation": "политика",
+      "translation": "политика (принцип или курс организации)",
       "answer": "policy",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -272,7 +272,7 @@
     {
       "id": "oxford:politics:n:b1",
       "word": "politics",
-      "translation": "политика",
+      "translation": "политика (деятельность, связанная с властью)",
       "answer": "politics",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -376,10 +376,20 @@
     {
       "id": "oxford:rich:adj:a1",
       "word": "rich",
-      "translation": "богатый",
+      "translation": "богатый (обладающий большим состоянием)",
       "answer": "rich",
       "level": "A1",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "rich",
+          "weight": 1
+        },
+        {
+          "text": "wealthy",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:rule:n:a1",

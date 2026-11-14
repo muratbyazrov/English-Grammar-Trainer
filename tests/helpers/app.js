@@ -45,6 +45,8 @@ class Element {
   }
   click() { if (!this.disabled) this.dispatchEvent({ type: 'click', target: this }); }
   focus() {}
+  showModal() { this.open = true; }
+  close() { this.open = false; }
   querySelector(selector) {
     return this.children.find(child => child.classList.contains(selector.slice(1)))
       || this.children.map(child => child.querySelector(selector)).find(Boolean) || null;

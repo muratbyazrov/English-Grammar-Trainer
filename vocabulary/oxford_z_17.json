@@ -104,7 +104,7 @@
     {
       "id": "oxford:cook:n:a2",
       "word": "cook",
-      "translation": "повар",
+      "translation": "повар (человек, готовящий еду)",
       "answer": "cook",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -184,7 +184,7 @@
     {
       "id": "oxford:food:n:a1",
       "word": "food",
-      "translation": "еда",
+      "translation": "еда (продукты питания вообще)",
       "answer": "food",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -256,7 +256,7 @@
     {
       "id": "oxford:meal:n:a1",
       "word": "meal",
-      "translation": "еда",
+      "translation": "еда (отдельный приём пищи)",
       "answer": "meal",
       "level": "A1",
       "partOfSpeech": "сущ."

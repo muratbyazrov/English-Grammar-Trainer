@@ -263,7 +263,7 @@ window.Trainer.createVocabularyPicker = function ({
     button.setAttribute('aria-pressed', String(selected));
     button.setAttribute('aria-label', `Повторить ошибки: ${catalog.path(node).join(', ')}, ${formatVocabWordCount(words.length)}`);
     button.textContent = `↻ Ошибки · ${words.length}`;
-    button.title = words.length ? 'Повторить ошибки: один правильный ответ без подсказки' : 'Ошибок пока нет';
+    button.title = words.length ? 'Повторить слова с ошибками' : 'Ошибок пока нет';
     button.addEventListener('click', () => onReviewTopic(node, pickerLevel, pickerLevelMode));
     return button;
   }
@@ -322,7 +322,10 @@ window.Trainer.createVocabularyPicker = function ({
   function renderVocabTopicCards() {
     dismissProgressReset();
     refs.vocabTopicGrid.innerHTML = '';
-    refs.vocabTopicModalSubtitle.textContent = 'Зелёный — выучено, красный — нужно повторить, серый — не пройдено. Один правильный ответ без подсказки переводит слово в зелёную часть.';
+    const count = vocabState.mistakeRepetitions;
+    const repetitions = count === 1 ? '1 раз' : `${count} ${count === 5 ? 'раз' : 'раза'} подряд`;
+    refs.vocabTopicModalSubtitle.textContent = 'Зелёный — выучено, красный — нужно повторить, серый — не пройдено. '
+      + `Чтобы слово перешло в зелёную часть, переведите его правильно без подсказок ${repetitions}.`;
 
     const collections = document.createElement('div');
     collections.className = 'vocab-catalog-collections';

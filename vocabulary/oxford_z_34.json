@@ -128,7 +128,7 @@
     {
       "id": "oxford:leaf:n:b1",
       "word": "leaf",
-      "translation": "лист",
+      "translation": "лист (часть растения)",
       "answer": "leaf",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -248,7 +248,7 @@
     {
       "id": "oxford:tree:n:a1",
       "word": "tree",
-      "translation": "дерево",
+      "translation": "дерево (живое растение со стволом)",
       "answer": "tree",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -272,7 +272,7 @@
     {
       "id": "oxford:wood:n:a2",
       "word": "wood",
-      "translation": "дерево",
+      "translation": "дерево (древесина, материал)",
       "answer": "wood",
       "level": "A2",
       "partOfSpeech": "сущ."

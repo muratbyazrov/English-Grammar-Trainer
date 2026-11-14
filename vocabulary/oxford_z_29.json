@@ -8,7 +8,7 @@
     {
       "id": "oxford:able:adj:a2",
       "word": "able",
-      "translation": "способный",
+      "translation": "способный (имеющий возможность или умение; перед инфинитивом)",
       "answer": "able",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -48,7 +48,7 @@
     {
       "id": "oxford:accurate:adj:b2",
       "word": "accurate",
-      "translation": "точный",
+      "translation": "точный (правильный, без ошибок)",
       "answer": "accurate",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -72,7 +72,7 @@
     {
       "id": "oxford:additional:adj:b2",
       "word": "additional",
-      "translation": "дополнительный",
+      "translation": "дополнительный (добавленный к уже имеющемуся)",
       "answer": "additional",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -124,6 +124,14 @@
       "answer": "alive",
       "level": "A2",
       "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:alone:adj-adv:a2",
+      "word": "alone",
+      "translation": "один; в одиночестве",
+      "answer": "alone",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:alternative:adj:b1",
@@ -208,7 +216,7 @@
     {
       "id": "oxford:apparent:adj:b2",
       "word": "apparent",
-      "translation": "очевидный",
+      "translation": "очевидный (видимый или кажущийся)",
       "answer": "apparent",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -216,7 +224,7 @@
     {
       "id": "oxford:appropriate:adj:b2",
       "word": "appropriate",
-      "translation": "соответствующий",
+      "translation": "соответствующий (подходящий по ситуации)",
       "answer": "appropriate",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -264,7 +272,7 @@
     {
       "id": "oxford:associated:adj:b2",
       "word": "associated",
-      "translation": "связанный",
+      "translation": "связанный (соединённый общей ассоциацией или участием)",
       "answer": "associated",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -304,10 +312,24 @@
     {
       "id": "oxford:awful:adj:a2",
       "word": "awful",
-      "translation": "ужасный",
+      "translation": "ужасный (очень плохой или неприятный)",
       "answer": "awful",
       "level": "A2",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "awful",
+          "weight": 1
+        },
+        {
+          "text": "horrible",
+          "weight": 1
+        },
+        {
+          "text": "terrible",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:bad:adj:a1",
@@ -368,10 +390,20 @@
     {
       "id": "oxford:big:adj:a1",
       "word": "big",
-      "translation": "большой",
+      "translation": "большой (большого физического размера)",
       "answer": "big",
       "level": "A1",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "big",
+          "weight": 1
+        },
+        {
+          "text": "large",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:bitter:adj:b2",
@@ -464,7 +496,7 @@
     {
       "id": "oxford:brilliant:adj:a2",
       "word": "brilliant",
-      "translation": "блестящий",
+      "translation": "блестящий (выдающийся, превосходный)",
       "answer": "brilliant",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -472,7 +504,7 @@
     {
       "id": "oxford:broad:adj:b2",
       "word": "broad",
-      "translation": "широкий",
+      "translation": "широкий (с большим охватом или размахом)",
       "answer": "broad",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -496,7 +528,7 @@
     {
       "id": "oxford:capable:adj:b2",
       "word": "capable",
-      "translation": "способный",
+      "translation": "способный (имеющий способность; обычно с предлогом)",
       "answer": "capable",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -528,7 +560,7 @@
     {
       "id": "oxford:certain:adj:a2",
       "word": "certain",
-      "translation": "уверенный",
+      "translation": "уверенный (не сомневающийся в факте)",
       "answer": "certain",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -576,7 +608,7 @@
     {
       "id": "oxford:classic:adj-n:b2",
       "word": "classic",
-      "translation": "классический",
+      "translation": "классический (образцовый, признанный временем)",
       "answer": "classic",
       "level": "B2",
       "partOfSpeech": "прил., сущ."
@@ -584,7 +616,7 @@
     {
       "id": "oxford:classical:adj:a2",
       "word": "classical",
-      "translation": "классический",
+      "translation": "классический (относящийся к классической традиции)",
       "answer": "classical",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -600,7 +632,7 @@
     {
       "id": "oxford:clever:adj:a2",
       "word": "clever",
-      "translation": "умный",
+      "translation": "умный (находчивый, умелый в решении задач)",
       "answer": "clever",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -632,7 +664,7 @@
     {
       "id": "oxford:comfortable:adj:a2",
       "word": "comfortable",
-      "translation": "удобный",
+      "translation": "удобный (дающий физический комфорт)",
       "answer": "comfortable",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -648,7 +680,7 @@
     {
       "id": "oxford:common:adj:a1",
       "word": "common",
-      "translation": "общий",
+      "translation": "общий (распространённый или совместный)",
       "answer": "common",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -664,7 +696,7 @@
     {
       "id": "oxford:complex:adj:b1",
       "word": "complex",
-      "translation": "сложный",
+      "translation": "сложный (со многими связанными частями)",
       "answer": "complex",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -672,7 +704,7 @@
     {
       "id": "oxford:complicated:adj:b2",
       "word": "complicated",
-      "translation": "сложный",
+      "translation": "сложный (запутанный, трудный для понимания)",
       "answer": "complicated",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -680,7 +712,7 @@
     {
       "id": "oxford:concerned:adj:b2",
       "word": "concerned",
-      "translation": "заинтересованный",
+      "translation": "обеспокоенный; заинтересованный (испытывающий тревогу / имеющий отношение к делу)",
       "answer": "concerned",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -688,7 +720,7 @@
     {
       "id": "oxford:confident:adj:b1",
       "word": "confident",
-      "translation": "уверенный",
+      "translation": "уверенный (верящий в свои способности или успех)",
       "answer": "confident",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -696,7 +728,7 @@
     {
       "id": "oxford:confused:adj:b1",
       "word": "confused",
-      "translation": "смущенный",
+      "translation": "смущенный (не понимающий, запутавшийся)",
       "answer": "confused",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -744,7 +776,7 @@
     {
       "id": "oxford:constant:adj:b2",
       "word": "constant",
-      "translation": "постоянный",
+      "translation": "постоянный (непрерывный или регулярно повторяющийся)",
       "answer": "constant",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -752,7 +784,7 @@
     {
       "id": "oxford:contemporary:adj:b2",
       "word": "contemporary",
-      "translation": "современный",
+      "translation": "современный (относящийся к нашему времени или той же эпохе)",
       "answer": "contemporary",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -768,7 +800,7 @@
     {
       "id": "oxford:convenient:adj:b1",
       "word": "convenient",
-      "translation": "удобный",
+      "translation": "удобный (подходящий по времени, месту или удобству использования)",
       "answer": "convenient",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -848,7 +880,7 @@
     {
       "id": "oxford:cruel:adj:b1",
       "word": "cruel",
-      "translation": "жестокий",
+      "translation": "жестокий (намеренно причиняющий страдания)",
       "answer": "cruel",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -904,7 +936,7 @@
     {
       "id": "oxford:dear:adj:a1",
       "word": "dear",
-      "translation": "дорогой",
+      "translation": "дорогой (милый, дорогой сердцу)",
       "answer": "dear",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -1016,7 +1048,7 @@
     {
       "id": "oxford:direct:adj:a2",
       "word": "direct",
-      "translation": "прямой",
+      "translation": "прямой (без посредников или обходного пути)",
       "answer": "direct",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -1064,7 +1096,7 @@
     {
       "id": "oxford:domestic:adj:b2",
       "word": "domestic",
-      "translation": "внутренний",
+      "translation": "внутренний (относящийся к своей стране или домашнему хозяйству)",
       "answer": "domestic",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -1120,7 +1152,7 @@
     {
       "id": "oxford:easy:adj:a1",
       "word": "easy",
-      "translation": "лёгкий",
+      "translation": "лёгкий (несложный, не требующий усилий)",
       "answer": "easy",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -1136,7 +1168,7 @@
     {
       "id": "oxford:effective:adj:b1",
       "word": "effective",
-      "translation": "эффективный",
+      "translation": "эффективный (дающий нужный результат)",
       "answer": "effective",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -1144,7 +1176,7 @@
     {
       "id": "oxford:efficient:adj:b2",
       "word": "efficient",
-      "translation": "эффективный",
+      "translation": "эффективный (дающий результат без лишних затрат)",
       "answer": "efficient",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -1152,7 +1184,7 @@
     {
       "id": "oxford:embarrassed:adj:b1",
       "word": "embarrassed",
-      "translation": "смущенный",
+      "translation": "смущенный (испытывающий неловкость или стыд)",
       "answer": "embarrassed",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -1192,10 +1224,20 @@
     {
       "id": "oxford:enormous:adj:a2",
       "word": "enormous",
-      "translation": "огромный",
+      "translation": "огромный (очень большой по размеру)",
       "answer": "enormous",
       "level": "A2",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "enormous",
+          "weight": 1
+        },
+        {
+          "text": "huge",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:enthusiastic:adj:b2",
@@ -1256,7 +1298,7 @@
     {
       "id": "oxford:exact:adj:a2",
       "word": "exact",
-      "translation": "точный",
+      "translation": "точный (совпадающий в точности, без отклонений)",
       "answer": "exact",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -1312,7 +1354,7 @@
     {
       "id": "oxford:external:adj:b2",
       "word": "external",
-      "translation": "внешний",
+      "translation": "внешний (внешний по отношению к системе или организации)",
       "answer": "external",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -1320,7 +1362,7 @@
     {
       "id": "oxford:extra:adj:a1",
       "word": "extra",
-      "translation": "дополнительный",
+      "translation": "дополнительный (сверх обычного количества)",
       "answer": "extra",
       "level": "A1",
       "partOfSpeech": "прил."

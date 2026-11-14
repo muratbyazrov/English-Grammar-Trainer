@@ -80,7 +80,7 @@
     {
       "id": "oxford:latest:n:b2",
       "word": "latest",
-      "translation": "последний",
+      "translation": "последние новости (самая свежая информация)",
       "answer": "latest",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -136,7 +136,7 @@
     {
       "id": "oxford:leather:n:b1",
       "word": "leather",
-      "translation": "кожа",
+      "translation": "кожа (материал из обработанной шкуры)",
       "answer": "leather",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -144,7 +144,7 @@
     {
       "id": "oxford:letter:n:a1",
       "word": "letter",
-      "translation": "письмо",
+      "translation": "письмо (письменное послание адресату)",
       "answer": "letter",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -240,10 +240,20 @@
     {
       "id": "oxford:lorry:n:a2",
       "word": "lorry",
-      "translation": "грузовик",
+      "translation": "грузовик (грузовой автомобиль; британский вариант)",
       "answer": "lorry",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "lorry",
+          "weight": 1
+        },
+        {
+          "text": "truck",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:low:n:b2",
@@ -256,7 +266,7 @@
     {
       "id": "oxford:luck:n:a2",
       "word": "luck",
-      "translation": "удача",
+      "translation": "удача (везение, случайный успех)",
       "answer": "luck",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -280,7 +290,7 @@
     {
       "id": "oxford:magazine:n:a1",
       "word": "magazine",
-      "translation": "журнал",
+      "translation": "журнал (периодическое издание для читателей)",
       "answer": "magazine",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -336,18 +346,38 @@
     {
       "id": "oxford:mathematics:n:a2",
       "word": "mathematics",
-      "translation": "математика",
+      "translation": "математика (полное название дисциплины)",
       "answer": "mathematics",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "mathematics",
+          "weight": 1
+        },
+        {
+          "text": "maths",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:maths:n:a2",
       "word": "maths",
-      "translation": "математика",
+      "translation": "математика (сокращённое британское название дисциплины)",
       "answer": "maths",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "maths",
+          "weight": 1
+        },
+        {
+          "text": "mathematics",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:meaning:n:a1",
@@ -464,7 +494,7 @@
     {
       "id": "oxford:mistake:n:a1",
       "word": "mistake",
-      "translation": "ошибка",
+      "translation": "ошибка (неверное действие или суждение)",
       "answer": "mistake",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -520,7 +550,7 @@
     {
       "id": "oxford:mud:n:b1",
       "word": "mud",
-      "translation": "грязь",
+      "translation": "грязь (мокрая земля, смешанная с водой)",
       "answer": "mud",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -592,7 +622,7 @@
     {
       "id": "oxford:net:n:b1",
       "word": "net",
-      "translation": "сеть",
+      "translation": "сеть (из переплетённых нитей)",
       "answer": "net",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -664,7 +694,7 @@
     {
       "id": "oxford:obligation:n:b2",
       "word": "obligation",
-      "translation": "обязательство",
+      "translation": "обязательство (долг по закону, договору или морали)",
       "answer": "obligation",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -688,7 +718,7 @@
     {
       "id": "oxford:offence:n:b2",
       "word": "offence",
-      "translation": "преступление",
+      "translation": "преступление (нарушение закона; также проступок)",
       "answer": "offence",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -704,7 +734,7 @@
     {
       "id": "oxford:opening:n:b2",
       "word": "opening",
-      "translation": "открытие",
+      "translation": "открытие (начало работы или открытый проход)",
       "answer": "opening",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -736,7 +766,7 @@
     {
       "id": "oxford:opportunity:n:a2",
       "word": "opportunity",
-      "translation": "возможность",
+      "translation": "возможность (благоприятный шанс действовать)",
       "answer": "opportunity",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -792,7 +822,7 @@
     {
       "id": "oxford:outcome:n:b2",
       "word": "outcome",
-      "translation": "результат",
+      "translation": "результат (конечный итог процесса)",
       "answer": "outcome",
       "level": "B2",
       "partOfSpeech": "сущ."

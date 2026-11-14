@@ -16,10 +16,20 @@
     {
       "id": "oxford:app:n:a2",
       "word": "app",
-      "translation": "приложение",
+      "translation": "приложение (программное обеспечение; сокращённое название)",
       "answer": "app",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "app",
+          "weight": 1
+        },
+        {
+          "text": "application",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:click:v-n:b1",
@@ -88,7 +98,7 @@
     {
       "id": "oxford:electric:adj:a2",
       "word": "electric",
-      "translation": "электрический",
+      "translation": "электрический (работающий на электричестве или создающий его)",
       "answer": "electric",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -184,7 +194,7 @@
     {
       "id": "oxford:network:n:a2",
       "word": "network",
-      "translation": "сеть",
+      "translation": "сеть (система связанных объектов)",
       "answer": "network",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -200,10 +210,20 @@
     {
       "id": "oxford:phone:n-v:a1",
       "word": "phone",
-      "translation": "телефон; звонить по телефону",
+      "translation": "телефон; звонить по телефону (короткая форма названия)",
       "answer": "phone",
       "level": "A1",
-      "partOfSpeech": "сущ., гл."
+      "partOfSpeech": "сущ., гл.",
+      "answers": [
+        {
+          "text": "phone",
+          "weight": 1
+        },
+        {
+          "text": "telephone",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:podcast:n:b1",
@@ -304,10 +324,20 @@
     {
       "id": "oxford:telephone:n-v:a1",
       "word": "telephone",
-      "translation": "телефон; звонить по телефону",
+      "translation": "телефон; звонить по телефону (полная форма названия)",
       "answer": "telephone",
       "level": "A1",
-      "partOfSpeech": "сущ., гл."
+      "partOfSpeech": "сущ., гл.",
+      "answers": [
+        {
+          "text": "telephone",
+          "weight": 1
+        },
+        {
+          "text": "phone",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:user:n:a2",
@@ -320,7 +350,7 @@
     {
       "id": "oxford:web:n:a2",
       "word": "web",
-      "translation": "сеть",
+      "translation": "сеть (паутина или всемирная система веб-страниц)",
       "answer": "web",
       "level": "A2",
       "partOfSpeech": "сущ."

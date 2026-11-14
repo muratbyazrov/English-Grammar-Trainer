@@ -48,7 +48,7 @@
     {
       "id": "oxford:band:n:a1",
       "word": "band",
-      "translation": "группа",
+      "translation": "группа (музыкальный коллектив)",
       "answer": "band",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -80,7 +80,7 @@
     {
       "id": "oxford:celebration:n:b1",
       "word": "celebration",
-      "translation": "праздник",
+      "translation": "праздник (торжество, празднование)",
       "answer": "celebration",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -160,10 +160,20 @@
     {
       "id": "oxford:football:n:a1",
       "word": "football",
-      "translation": "футбол",
+      "translation": "футбол (европейский футбол; чаще британское название)",
       "answer": "football",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "football",
+          "weight": 1
+        },
+        {
+          "text": "soccer",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:fun:n:a1",
@@ -315,15 +325,35 @@
       "translation": "фото",
       "answer": "photo",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "photo",
+          "weight": 1
+        },
+        {
+          "text": "photograph",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:photograph:n:a1",
       "word": "photograph",
-      "translation": "фотография",
+      "translation": "фотография (отдельный снимок)",
       "answer": "photograph",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "photograph",
+          "weight": 1
+        },
+        {
+          "text": "photo",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:photograph:v:a2",
@@ -336,7 +366,7 @@
     {
       "id": "oxford:photography:n:b1",
       "word": "photography",
-      "translation": "фотография",
+      "translation": "фотография (искусство или процесс съёмки)",
       "answer": "photography",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -352,7 +382,7 @@
     {
       "id": "oxford:picture:v:b2",
       "word": "picture",
-      "translation": "представлять себе",
+      "translation": "представлять себе (создавать мысленный зрительный образ)",
       "answer": "picture",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -440,10 +470,20 @@
     {
       "id": "oxford:soccer:n:a2",
       "word": "soccer",
-      "translation": "футбол",
+      "translation": "футбол (европейский футбол; чаще американское название)",
       "answer": "soccer",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "soccer",
+          "weight": 1
+        },
+        {
+          "text": "football",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:song:n:a1",
@@ -464,7 +504,7 @@
     {
       "id": "oxford:swim:v:a1",
       "word": "swim",
-      "translation": "плавать",
+      "translation": "плавать (двигаться в воде)",
       "answer": "swim",
       "level": "A1",
       "partOfSpeech": "гл."
@@ -512,7 +552,7 @@
     {
       "id": "oxford:win:n:b1",
       "word": "win",
-      "translation": "победа",
+      "translation": "победа (выигрыш, случай победы)",
       "answer": "win",
       "level": "B1",
       "partOfSpeech": "сущ."

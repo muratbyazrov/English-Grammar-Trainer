@@ -8,7 +8,7 @@
     {
       "id": "oxford:answer:n-v:a1",
       "word": "answer",
-      "translation": "ответ; отвечать",
+      "translation": "ответ; отвечать (ответ на вопрос, задание или обращение)",
       "answer": "answer",
       "level": "A1",
       "partOfSpeech": "сущ., гл."
@@ -40,7 +40,7 @@
     {
       "id": "oxford:class:n:a1",
       "word": "class",
-      "translation": "класс",
+      "translation": "класс (учебная группа или занятие)",
       "answer": "class",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -48,7 +48,7 @@
     {
       "id": "oxford:classroom:n:a1",
       "word": "classroom",
-      "translation": "класс",
+      "translation": "класс (помещение для занятий)",
       "answer": "classroom",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -72,7 +72,7 @@
     {
       "id": "oxford:degree:n:a2",
       "word": "degree",
-      "translation": "степень",
+      "translation": "степень (уровень, мера выраженности; также единица измерения)",
       "answer": "degree",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -128,7 +128,7 @@
     {
       "id": "oxford:grade:v:b2",
       "word": "grade",
-      "translation": "оценивать",
+      "translation": "оценивать (выставлять учебную отметку или категорию)",
       "answer": "grade",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -152,7 +152,7 @@
     {
       "id": "oxford:language:n:a1",
       "word": "language",
-      "translation": "язык",
+      "translation": "язык (система общения)",
       "answer": "language",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -168,7 +168,7 @@
     {
       "id": "oxford:learning:n:a2",
       "word": "learning",
-      "translation": "обучение",
+      "translation": "обучение (процесс усвоения знаний)",
       "answer": "learning",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -240,7 +240,7 @@
     {
       "id": "oxford:practice:n:a1",
       "word": "practice",
-      "translation": "практика",
+      "translation": "практика (занятие, отработка навыка; существительное)",
       "answer": "practice",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -248,7 +248,7 @@
     {
       "id": "oxford:practise:v:a1",
       "word": "practise",
-      "translation": "практика",
+      "translation": "практиковаться (отрабатывать навык; британский глагол)",
       "answer": "practise",
       "level": "A1",
       "partOfSpeech": "гл."
@@ -360,7 +360,7 @@
     {
       "id": "oxford:subject:n:a1",
       "word": "subject",
-      "translation": "предмет",
+      "translation": "предмет (тема изучения, разговора или исследования)",
       "answer": "subject",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -408,7 +408,7 @@
     {
       "id": "oxford:training:n:a2",
       "word": "training",
-      "translation": "обучение",
+      "translation": "обучение (целенаправленная подготовка, отработка навыков)",
       "answer": "training",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -440,7 +440,7 @@
     {
       "id": "oxford:writing:n:a1",
       "word": "writing",
-      "translation": "письмо",
+      "translation": "письмо (процесс письма или письменный текст)",
       "answer": "writing",
       "level": "A1",
       "partOfSpeech": "сущ."

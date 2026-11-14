@@ -80,7 +80,7 @@
     {
       "id": "oxford:earth:n:a2",
       "word": "earth",
-      "translation": "земля",
+      "translation": "земля (планета или почва)",
       "answer": "earth",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -152,7 +152,7 @@
     {
       "id": "oxford:ground:n:a2",
       "word": "ground",
-      "translation": "земля",
+      "translation": "земля (поверхность под ногами)",
       "answer": "ground",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -312,7 +312,7 @@
     {
       "id": "oxford:sunny:adj:a1",
       "word": "sunny",
-      "translation": "солнечный",
+      "translation": "солнечный (с ярким солнечным светом, о погоде)",
       "answer": "sunny",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -376,7 +376,7 @@
     {
       "id": "oxford:world:n:a1",
       "word": "world",
-      "translation": "мир",
+      "translation": "мир (Земля, всё человечество)",
       "answer": "world",
       "level": "A1",
       "partOfSpeech": "сущ."

@@ -70,9 +70,17 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:fast:adj-adv:a1",
+      "word": "fast",
+      "translation": "быстрый; быстро (с высокой скоростью)",
+      "answer": "fast",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:fat:adj:a1",
       "word": "fat",
-      "translation": "толстый",
+      "translation": "толстый (о человеке или животном с лишним жиром)",
       "answer": "fat",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -160,7 +168,7 @@
     {
       "id": "oxford:following:adj:a2",
       "word": "following",
-      "translation": "следующий",
+      "translation": "следующий (идущий вслед за упомянутым)",
       "answer": "following",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -248,7 +256,7 @@
     {
       "id": "oxford:full:adj:a1",
       "word": "full",
-      "translation": "полный",
+      "translation": "полный (наполненный до предела)",
       "answer": "full",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -280,7 +288,7 @@
     {
       "id": "oxford:general:adj:a2",
       "word": "general",
-      "translation": "общий",
+      "translation": "общий (охватывающий целое, без подробностей)",
       "answer": "general",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -390,6 +398,14 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:hard:adj-adv:a1",
+      "word": "hard",
+      "translation": "тяжело",
+      "answer": "hard",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:harmful:adj:b2",
       "word": "harmful",
       "translation": "вредный",
@@ -408,7 +424,7 @@
     {
       "id": "oxford:helpful:adj:a2",
       "word": "helpful",
-      "translation": "полезный",
+      "translation": "полезный (помогающий человеку в конкретной ситуации)",
       "answer": "helpful",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -416,7 +432,7 @@
     {
       "id": "oxford:high:adj:a1",
       "word": "high",
-      "translation": "высокий",
+      "translation": "высокий (далеко вверх от уровня земли)",
       "answer": "high",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -424,7 +440,7 @@
     {
       "id": "oxford:historic:adj:b1",
       "word": "historic",
-      "translation": "исторический",
+      "translation": "исторический (важный для истории)",
       "answer": "historic",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -456,18 +472,42 @@
     {
       "id": "oxford:horrible:adj:b1",
       "word": "horrible",
-      "translation": "ужасный",
+      "translation": "ужасный (очень плохой или неприятный)",
       "answer": "horrible",
       "level": "B1",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "horrible",
+          "weight": 1
+        },
+        {
+          "text": "awful",
+          "weight": 1
+        },
+        {
+          "text": "terrible",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:huge:adj:a2",
       "word": "huge",
-      "translation": "огромный",
+      "translation": "огромный (очень большой по размеру)",
       "answer": "huge",
       "level": "A2",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "huge",
+          "weight": 1
+        },
+        {
+          "text": "enormous",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:humorous:adj:b2",
@@ -480,7 +520,7 @@
     {
       "id": "oxford:ideal:adj:a2",
       "word": "ideal",
-      "translation": "идеальный",
+      "translation": "идеальный (соответствующий желаемому образцу)",
       "answer": "ideal",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -624,7 +664,7 @@
     {
       "id": "oxford:inner:adj:b2",
       "word": "inner",
-      "translation": "внутренний",
+      "translation": "внутренний (расположенный внутри, ближе к центру)",
       "answer": "inner",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -640,7 +680,7 @@
     {
       "id": "oxford:intelligent:adj:a2",
       "word": "intelligent",
-      "translation": "умный",
+      "translation": "умный (с высокими интеллектуальными способностями)",
       "answer": "intelligent",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -664,7 +704,7 @@
     {
       "id": "oxford:interested:adj:a1",
       "word": "interested",
-      "translation": "заинтересованный",
+      "translation": "заинтересованный (испытывающий интерес)",
       "answer": "interested",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -680,7 +720,7 @@
     {
       "id": "oxford:internal:adj:b2",
       "word": "internal",
-      "translation": "внутренний",
+      "translation": "внутренний (находящийся внутри системы, организма или организации)",
       "answer": "internal",
       "level": "B2",
       "partOfSpeech": "прил."

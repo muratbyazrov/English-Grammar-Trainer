@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build Oxford cards from the checked-in CEFR list and Russian glossary.
 
-The six original topic files are kept as-is. Run this script, then `node build.js`.
+Stable IDs and examples are preserved. Editorial translations and accepted
+synonyms come from card-overrides.json. Run this script, then `node build.js`.
 """
 
 import csv
@@ -24,8 +25,9 @@ def words(value):
     return set(value.split())
 
 
-# The first six topics were already published; their IDs, translations and examples
-# are intentionally stable. Additional words are grouped by meaning where possible.
+# The first six topics were already published; their IDs and examples stay stable.
+# Translation corrections are applied explicitly through card-overrides.json.
+# Additional words are grouped by meaning where possible.
 TOPICS = [
     ("Еда и напитки", "Еда и продукты", "food drink meal breakfast lunch dinner vegetable fruit meat fish chicken potato tomato banana orange lemon egg bread cheese milk butter rice sugar salt pepper soup salad sandwich pasta pizza cake chocolate coffee tea juice beer wine water bottle cup glass dish plate bowl spoon fork knife kitchen restaurant cook cooking recipe taste hungry thirsty sweet fresh ingredient onion apple bean beef biscuit cereal cream diet flour garlic grape honey ice ice-cream jam nut oil pie pork snack strawberry tea yoghurt yogurt"),
     ("Дом и быт", "Дом и вещи", "home house room bedroom bathroom apartment flat building door window wall floor roof ceiling stairs stair step furniture table chair desk bed sofa couch shelf cupboard drawer carpet curtain mirror lamp light key lock garden yard garage housework tidy clean wash laundry soap towel shower bath toilet sink fridge refrigerator oven stove freezer heat heating electricity electrical television tv radio device tool machine repair fix broken basket box bag clock watch pillow sheet blanket"),
@@ -47,11 +49,14 @@ TOPICS = [
 
 FUNCTION_TOPICS = {
     "article": ("Грамматика и связки", "Артикли и определители"),
+    "indefinite article": ("Грамматика и связки", "Артикли и определители"),
+    "definite article": ("Грамматика и связки", "Артикли и определители"),
     "det.": ("Грамматика и связки", "Артикли и определители"),
     "pron.": ("Грамматика и связки", "Местоимения"),
     "prep.": ("Грамматика и связки", "Предлоги и направления"),
     "conj.": ("Грамматика и связки", "Связки и союзы"),
     "modal": ("Грамматика и связки", "Модальные глаголы"),
+    "modal v.": ("Грамматика и связки", "Модальные глаголы"),
     "number": ("Наука и измерения", "Числа и количества"),
     "ordinal": ("Наука и измерения", "Числа и количества"),
     "exclam.": ("Грамматика и связки", "Междометия"),
@@ -75,8 +80,9 @@ def topic_for(word, pos, semantic):
     key = word.lower()
     if key in semantic:
         return semantic[key]
+    pos_parts = set(parts(pos))
     for marker, topic in FUNCTION_TOPICS.items():
-        if marker in pos:
+        if marker in pos_parts:
             return topic
     letter = word[0].upper() if word and word[0].isascii() else "A"
     if letter <= "E":
@@ -89,11 +95,11 @@ def topic_for(word, pos, semantic):
         band = "P–T"
     else:
         band = "U–Z"
-    if "v." in pos:
+    if pos_parts & {"v.", "auxiliary", "auxiliary v."}:
         return ("Действия и изменения", f"Глаголы {band}")
-    if "adj." in pos:
+    if "adj." in pos_parts:
         return ("Описание и оценка", f"Признаки {band}")
-    if "adv." in pos:
+    if "adv." in pos_parts:
         return ("Описание и оценка", f"Обстоятельства {band}")
     return ("Идеи и понятия", f"Слова {band}")
 
@@ -128,6 +134,11 @@ def translation_for(row, translations, noun_verbs, overrides):
 
 
 def main():
+    # Published topic IDs must not change when a new group is added or reordered.
+    topic_ids = json.loads((HERE / "topic-ids.json").read_text(encoding="utf-8"))
+    topic_id_for = {tuple(names): topic_id for topic_id, names in topic_ids.items()}
+    if len(topic_id_for) != len(topic_ids):
+        raise ValueError("Duplicate topic names in topic-ids.json")
     official = read_tsv(HERE / "sources/official.tsv")
     source_translations = read_tsv(HERE / "sources/translations.tsv")
     translations = defaultdict(list)
@@ -137,6 +148,13 @@ def main():
     overrides = {(row["word"].strip(), row["level"].strip(), (row.get("pos") or "").strip()): row["translation"].strip()
                  for row in read_tsv(HERE / "translation-overrides.tsv")}
     seed = json.loads((HERE / "seed.json").read_text(encoding="utf-8"))
+    card_overrides = json.loads((HERE / "card-overrides.json").read_text(encoding="utf-8"))
+    for card_id, edit in card_overrides.items():
+        if not isinstance(edit, dict) or set(edit) - {"translation", "answers"}:
+            raise ValueError(f"Unsupported editorial override for {card_id}")
+    for topic in seed:
+        for card in topic["words"]:
+            card.update(card_overrides.get(card["id"], {}))
     seed_words = {(word["word"], word["level"]) for topic in seed for word in topic["words"]}
     semantic = {}
     for topic, subtopic, keys in TOPICS:
@@ -166,16 +184,23 @@ def main():
                 "answer": display_word, "level": level, "partOfSpeech": pos_ru}
         if word == "a, an":
             card["answers"] = ["a", "an"]
+        card.update(card_overrides.get(card_id, {}))
         grouped[topic_for(word, pos, semantic)].append(card)
+    unknown_overrides = set(card_overrides) - ids
+    if unknown_overrides:
+        raise ValueError(f"Unknown card override IDs: {sorted(unknown_overrides)}")
+    for topic in seed:
+        filename = topic["id"].replace("-", "_") + ".json"
+        (ROOT / "vocabulary" / filename).write_text(
+            json.dumps(topic, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     old_files = {path.name for path in (ROOT / "vocabulary").glob("oxford_z_*.json")}
     new_files = set()
     for (topic, subtopic), cards in grouped.items():
         cards.sort(key=lambda card: (card["word"].casefold(), card["level"], card["id"]))
-        # Cyrillic titles need a stable ASCII filename; use a deterministic index.
-        index = sorted(grouped).index((topic, subtopic)) + 1
-        filename = f"oxford_z_{index:02d}.json"
+        topic_id = topic_id_for[(topic, subtopic)]
+        filename = f"oxford_z_{topic_id.removeprefix('oxford-extra-')}.json"
         new_files.add(filename)
-        payload = {"id": f"oxford-extra-{index:02d}", "collection": "Oxford 3000",
+        payload = {"id": topic_id, "collection": "Oxford 3000",
                    "topic": topic, "subtopic": subtopic, "source": SOURCE, "words": cards}
         (ROOT / "vocabulary" / filename).write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

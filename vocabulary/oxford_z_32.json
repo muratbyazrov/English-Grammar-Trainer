@@ -16,7 +16,7 @@
     {
       "id": "oxford:particular:adj:a2",
       "word": "particular",
-      "translation": "конкретный",
+      "translation": "конкретный (выделенный среди других, определённый)",
       "answer": "particular",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -30,9 +30,17 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:per-cent:n-adj-adv:a2",
+      "word": "per cent",
+      "translation": "процент (из ста, после числового значения)",
+      "answer": "per cent",
+      "level": "A2",
+      "partOfSpeech": "сущ., прил., нареч."
+    },
+    {
       "id": "oxford:perfect:adj:a1",
       "word": "perfect",
-      "translation": "идеальный",
+      "translation": "идеальный (без изъянов)",
       "answer": "perfect",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -40,7 +48,7 @@
     {
       "id": "oxford:permanent:adj:b2",
       "word": "permanent",
-      "translation": "постоянный",
+      "translation": "постоянный (остающийся надолго или навсегда)",
       "answer": "permanent",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -182,6 +190,14 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:pretty:adj-adv:a1",
+      "word": "pretty",
+      "translation": "красивая",
+      "answer": "pretty",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:primary:adj:b1",
       "word": "primary",
       "translation": "первичный",
@@ -216,7 +232,7 @@
     {
       "id": "oxford:pure:adj:b2",
       "word": "pure",
-      "translation": "чистый",
+      "translation": "чистый (без примесей)",
       "answer": "pure",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -240,7 +256,7 @@
     {
       "id": "oxford:quick:adj:a1",
       "word": "quick",
-      "translation": "быстрый",
+      "translation": "быстрый (занимающий мало времени)",
       "answer": "quick",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -248,7 +264,7 @@
     {
       "id": "oxford:quiet:adj:a1",
       "word": "quiet",
-      "translation": "тихий",
+      "translation": "тихий (с небольшим количеством шума)",
       "answer": "quiet",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -256,7 +272,7 @@
     {
       "id": "oxford:rapid:adj:b2",
       "word": "rapid",
-      "translation": "быстрый",
+      "translation": "быстрый (происходящий с большой скоростью)",
       "answer": "rapid",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -304,7 +320,7 @@
     {
       "id": "oxford:reasonable:adj:b2",
       "word": "reasonable",
-      "translation": "разумный",
+      "translation": "разумный (приемлемый, обоснованный)",
       "answer": "reasonable",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -344,7 +360,7 @@
     {
       "id": "oxford:related:adj:b1",
       "word": "related",
-      "translation": "связанный",
+      "translation": "связанный (имеющий отношение или связь)",
       "answer": "related",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -440,7 +456,7 @@
     {
       "id": "oxford:rough:adj:b1",
       "word": "rough",
-      "translation": "грубый",
+      "translation": "грубый (шероховатый, неровный)",
       "answer": "rough",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -472,7 +488,7 @@
     {
       "id": "oxford:rude:adj:a2",
       "word": "rude",
-      "translation": "грубый",
+      "translation": "грубый (невежливый, оскорбительный)",
       "answer": "rude",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -496,7 +512,7 @@
     {
       "id": "oxford:safe:adj:a2",
       "word": "safe",
-      "translation": "безопасный",
+      "translation": "безопасный (не подвергающийся опасности)",
       "answer": "safe",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -552,7 +568,7 @@
     {
       "id": "oxford:sensible:adj:b1",
       "word": "sensible",
-      "translation": "разумный",
+      "translation": "разумный (здравомыслящий, практичный)",
       "answer": "sensible",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -616,7 +632,7 @@
     {
       "id": "oxford:shiny:adj:b1",
       "word": "shiny",
-      "translation": "блестящий",
+      "translation": "блестящий (отражающий свет, глянцевый)",
       "answer": "shiny",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -656,7 +672,7 @@
     {
       "id": "oxford:silent:adj:b1",
       "word": "silent",
-      "translation": "тихий",
+      "translation": "тихий (совсем без звука)",
       "answer": "silent",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -664,7 +680,7 @@
     {
       "id": "oxford:silly:adj:b1",
       "word": "silly",
-      "translation": "глупый",
+      "translation": "глупый (несерьёзный, нелепый)",
       "answer": "silly",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -704,7 +720,7 @@
     {
       "id": "oxford:slight:adj:b2",
       "word": "slight",
-      "translation": "легкий",
+      "translation": "лёгкий; незначительный (небольшой по степени или величине)",
       "answer": "slight",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -720,7 +736,7 @@
     {
       "id": "oxford:small:adj:a1",
       "word": "small",
-      "translation": "маленький",
+      "translation": "маленький (небольшой по размеру)",
       "answer": "small",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -728,7 +744,7 @@
     {
       "id": "oxford:smart:adj:b1",
       "word": "smart",
-      "translation": "умный",
+      "translation": "умный (сообразительный; также стильный)",
       "answer": "smart",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -744,7 +760,7 @@
     {
       "id": "oxford:soft:adj:a2",
       "word": "soft",
-      "translation": "мягкий",
+      "translation": "мягкий (не твёрдый, приятный на ощупь)",
       "answer": "soft",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -752,7 +768,7 @@
     {
       "id": "oxford:solar:adj:b2",
       "word": "solar",
-      "translation": "солнечный",
+      "translation": "солнечный (относящийся к Солнцу как источнику энергии)",
       "answer": "solar",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -792,7 +808,7 @@
     {
       "id": "oxford:specific:adj:a2",
       "word": "specific",
-      "translation": "конкретный",
+      "translation": "конкретный (точно указанный, детальный)",
       "answer": "specific",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -864,7 +880,7 @@
     {
       "id": "oxford:strange:adj:a2",
       "word": "strange",
-      "translation": "странный",
+      "translation": "странный (незнакомый или вызывающий недоумение)",
       "answer": "strange",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -888,7 +904,7 @@
     {
       "id": "oxford:stupid:adj:a2",
       "word": "stupid",
-      "translation": "глупый",
+      "translation": "глупый (неразумный, свидетельствующий о недостатке ума)",
       "answer": "stupid",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -920,7 +936,7 @@
     {
       "id": "oxford:sure:adj:a1",
       "word": "sure",
-      "translation": "уверенный",
+      "translation": "уверенный (не сомневающийся)",
       "answer": "sure",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -960,7 +976,7 @@
     {
       "id": "oxford:tall:adj:a1",
       "word": "tall",
-      "translation": "высокий",
+      "translation": "высокий (о росте человека или вертикальном размере)",
       "answer": "tall",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -992,15 +1008,29 @@
     {
       "id": "oxford:terrible:adj:a1",
       "word": "terrible",
-      "translation": "ужасный",
+      "translation": "ужасный (очень плохой или неприятный)",
       "answer": "terrible",
       "level": "A1",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "terrible",
+          "weight": 1
+        },
+        {
+          "text": "awful",
+          "weight": 1
+        },
+        {
+          "text": "horrible",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:thick:adj:a2",
       "word": "thick",
-      "translation": "толстый",
+      "translation": "толстый (о большой толщине предмета)",
       "answer": "thick",
       "level": "A2",
       "partOfSpeech": "прил."

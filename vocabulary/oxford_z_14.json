@@ -6,36 +6,12 @@
   "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
   "words": [
     {
-      "id": "oxford:ultimately:adv:b2",
-      "word": "ultimately",
-      "translation": "в конечном итоге",
-      "answer": "ultimately",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:underground:adj-adv:a2",
-      "word": "underground",
-      "translation": "под землей",
-      "answer": "underground",
-      "level": "A2",
-      "partOfSpeech": "прил., нареч."
-    },
-    {
       "id": "oxford:understand:v:a1",
       "word": "understand",
       "translation": "понять",
       "answer": "understand",
       "level": "A1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:unfortunately:adv:a2",
-      "word": "unfortunately",
-      "translation": "к сожалению",
-      "answer": "unfortunately",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:update:v-n:b1",
@@ -52,22 +28,6 @@
       "answer": "upset",
       "level": "B1",
       "partOfSpeech": "прил., гл."
-    },
-    {
-      "id": "oxford:upstairs:adv:a1",
-      "word": "upstairs",
-      "translation": "наверху",
-      "answer": "upstairs",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:upwards:adv:b2",
-      "word": "upwards",
-      "translation": "вверх",
-      "answer": "upwards",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:urge:v:b2",
@@ -88,18 +48,10 @@
     {
       "id": "oxford:vary:v:b2",
       "word": "vary",
-      "translation": "варьироваться",
+      "translation": "варьироваться (изменяться, быть разным)",
       "answer": "vary",
       "level": "B2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:very:adv:a1",
-      "word": "very",
-      "translation": "очень",
-      "answer": "very",
-      "level": "A1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:view:v:b1",
@@ -166,14 +118,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:way:adv:b2",
-      "word": "way",
-      "translation": "путь",
-      "answer": "way",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:wear:v:a1",
       "word": "wear",
       "translation": "носить",
@@ -190,25 +134,9 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:why:adv:a1",
-      "word": "why",
-      "translation": "почему",
-      "answer": "why",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:widely:adv:b2",
-      "word": "widely",
-      "translation": "широко",
-      "answer": "widely",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:wish:v-n:a2",
       "word": "wish",
-      "translation": "желание; желать",
+      "translation": "желание; желать (пожелание или желание)",
       "answer": "wish",
       "level": "A2",
       "partOfSpeech": "гл., сущ."
@@ -230,36 +158,12 @@
       "partOfSpeech": "гл., сущ."
     },
     {
-      "id": "oxford:worldwide:adj-adv:b1",
-      "word": "worldwide",
-      "translation": "по всему миру",
-      "answer": "worldwide",
-      "level": "B1",
-      "partOfSpeech": "прил., нареч."
-    },
-    {
       "id": "oxford:worry:v:a2",
       "word": "worry",
       "translation": "беспокоиться",
       "answer": "worry",
       "level": "A2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:worse:adv:b1",
-      "word": "worse",
-      "translation": "хуже",
-      "answer": "worse",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:worst:adv:b1",
-      "word": "worst",
-      "translation": "худший",
-      "answer": "worst",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:wound:n-v:b2",
@@ -276,14 +180,6 @@
       "answer": "wrap",
       "level": "B2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:wrong:adv:b1",
-      "word": "wrong",
-      "translation": "неправильный",
-      "answer": "wrong",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     }
   ]
 }

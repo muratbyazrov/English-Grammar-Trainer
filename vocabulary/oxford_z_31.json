@@ -24,10 +24,20 @@
     {
       "id": "oxford:large:adj:a1",
       "word": "large",
-      "translation": "большой",
+      "translation": "большой (большого физического размера)",
       "answer": "large",
       "level": "A1",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "large",
+          "weight": 1
+        },
+        {
+          "text": "big",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:later:adj:a2",
@@ -40,7 +50,7 @@
     {
       "id": "oxford:latest:adj:b1",
       "word": "latest",
-      "translation": "последний",
+      "translation": "последний (самый новый, недавний)",
       "answer": "latest",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -94,6 +104,14 @@
       "partOfSpeech": "сущ., прил."
     },
     {
+      "id": "oxford:live:adj-adv:b1",
+      "word": "live",
+      "translation": "живой; в прямом эфире",
+      "answer": "live",
+      "level": "B1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:lively:adj:b2",
       "word": "lively",
       "translation": "живой",
@@ -142,6 +160,22 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:long:adj-adv:a1",
+      "word": "long",
+      "translation": "длинный",
+      "answer": "long",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
+      "id": "oxford:long-term:adj-adv:b2",
+      "word": "long-term",
+      "translation": "долгосрочный",
+      "answer": "long-term",
+      "level": "B2",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:loose:adj:b2",
       "word": "loose",
       "translation": "свободный",
@@ -158,12 +192,28 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:loud:adj-adv:a2",
+      "word": "loud",
+      "translation": "громкий",
+      "answer": "loud",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:lovely:adj:a2",
       "word": "lovely",
       "translation": "прекрасный",
       "answer": "lovely",
       "level": "A2",
       "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:low:adj-adv:a2",
+      "word": "low",
+      "translation": "низкий",
+      "answer": "low",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:lucky:adj:a2",
@@ -232,7 +282,7 @@
     {
       "id": "oxford:matching:adj:b2",
       "word": "matching",
-      "translation": "соответствующий",
+      "translation": "соответствующий (подходящий по цвету, форме или образцу)",
       "answer": "matching",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -272,7 +322,7 @@
     {
       "id": "oxford:mild:adj:b1",
       "word": "mild",
-      "translation": "мягкий",
+      "translation": "мягкий (умеренный, несильный)",
       "answer": "mild",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -312,7 +362,7 @@
     {
       "id": "oxford:modern:adj:a1",
       "word": "modern",
-      "translation": "современный",
+      "translation": "современный (относящийся к нынешнему времени или новым подходам)",
       "answer": "modern",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -376,7 +426,7 @@
     {
       "id": "oxford:neat:adj:b2",
       "word": "neat",
-      "translation": "аккуратный",
+      "translation": "аккуратный (опрятный, с аккуратным видом)",
       "answer": "neat",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -472,7 +522,7 @@
     {
       "id": "oxford:obvious:adj:b1",
       "word": "obvious",
-      "translation": "очевидный",
+      "translation": "очевидный (легко заметный и понятный)",
       "answer": "obvious",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -480,7 +530,7 @@
     {
       "id": "oxford:odd:adj:b1",
       "word": "odd",
-      "translation": "странный",
+      "translation": "странный (необычный, неожиданный; также нечётный)",
       "answer": "odd",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -510,9 +560,17 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:only:adj-adv:a1",
+      "word": "only",
+      "translation": "только; единственный",
+      "answer": "only",
+      "level": "A1",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:opposed:adj:b2",
       "word": "opposed",
-      "translation": "против",
+      "translation": "выступающий против (прилагательное о позиции)",
       "answer": "opposed",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -520,7 +578,7 @@
     {
       "id": "oxford:ordinary:adj:a2",
       "word": "ordinary",
-      "translation": "обычный",
+      "translation": "обычный (ничем не выделяющийся, рядовой)",
       "answer": "ordinary",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -552,10 +610,18 @@
     {
       "id": "oxford:outer:adj:b2",
       "word": "outer",
-      "translation": "внешний",
+      "translation": "внешний (расположенный дальше от центра)",
       "answer": "outer",
       "level": "B2",
       "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:overall:adj-adv:b2",
+      "word": "overall",
+      "translation": "в целом",
+      "answer": "overall",
+      "level": "B2",
+      "partOfSpeech": "прил., нареч."
     }
   ]
 }

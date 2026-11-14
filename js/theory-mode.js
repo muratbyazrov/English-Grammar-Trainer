@@ -32,6 +32,7 @@ window.Trainer.createTheoryMode = function ({
       'tenses-present': '☀️',
       'tenses-past': '🕰️',
       'tenses-future': '🚀',
+      'parts-of-speech': '🏷️',
       'due-to': '🔗',
       'whether-if': '🔀',
       'manage-to': '🎯',

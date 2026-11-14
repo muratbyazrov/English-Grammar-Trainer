@@ -32,7 +32,7 @@
     {
       "id": "oxford:back:v:b2",
       "word": "back",
-      "translation": "поддерживать",
+      "translation": "поддерживать (оказывать поддержку человеку или идее)",
       "answer": "back",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -64,7 +64,7 @@
     {
       "id": "oxford:breath:n:b2",
       "word": "breath",
-      "translation": "дыхание",
+      "translation": "дыхание (отдельный вдох или выдох)",
       "answer": "breath",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -104,7 +104,7 @@
     {
       "id": "oxford:disease:n:a2",
       "word": "disease",
-      "translation": "болезнь",
+      "translation": "болезнь (конкретное заболевание)",
       "answer": "disease",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -176,7 +176,7 @@
     {
       "id": "oxford:foot:n:a1",
       "word": "foot",
-      "translation": "нога",
+      "translation": "нога (ступня, нижняя часть ноги)",
       "answer": "foot",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -264,7 +264,7 @@
     {
       "id": "oxford:illness:n:a2",
       "word": "illness",
-      "translation": "болезнь",
+      "translation": "болезнь (состояние нездоровья или период болезни)",
       "answer": "illness",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -296,7 +296,7 @@
     {
       "id": "oxford:leg:n:a1",
       "word": "leg",
-      "translation": "нога",
+      "translation": "нога (конечность от бедра до ступни)",
       "answer": "leg",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -416,7 +416,7 @@
     {
       "id": "oxford:skin:n:a2",
       "word": "skin",
-      "translation": "кожа",
+      "translation": "кожа (покров тела)",
       "answer": "skin",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -456,7 +456,7 @@
     {
       "id": "oxford:tongue:n:b1",
       "word": "tongue",
-      "translation": "язык",
+      "translation": "язык (орган во рту)",
       "answer": "tongue",
       "level": "B1",
       "partOfSpeech": "сущ."

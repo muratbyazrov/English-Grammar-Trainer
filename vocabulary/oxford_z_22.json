@@ -16,7 +16,7 @@
     {
       "id": "oxford:understanding:n:a2",
       "word": "understanding",
-      "translation": "понимание",
+      "translation": "понимание (знание смысла или устройства)",
       "answer": "understanding",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -120,7 +120,7 @@
     {
       "id": "oxford:victory:n:b2",
       "word": "victory",
-      "translation": "победа",
+      "translation": "победа (успех над соперником, победа)",
       "answer": "victory",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -184,7 +184,7 @@
     {
       "id": "oxford:wait:n:a2",
       "word": "wait",
-      "translation": "ожидание",
+      "translation": "ожидание (время, проведённое в ожидании)",
       "answer": "wait",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -216,7 +216,7 @@
     {
       "id": "oxford:way:n:a1",
       "word": "way",
-      "translation": "путь",
+      "translation": "путь (маршрут или способ)",
       "answer": "way",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -240,7 +240,7 @@
     {
       "id": "oxford:weapon:n:b1",
       "word": "weapon",
-      "translation": "оружие",
+      "translation": "оружие (отдельный предмет для нападения или защиты)",
       "answer": "weapon",
       "level": "B1",
       "partOfSpeech": "сущ."

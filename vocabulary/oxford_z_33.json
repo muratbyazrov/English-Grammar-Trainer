@@ -38,6 +38,14 @@
       "partOfSpeech": "прил."
     },
     {
+      "id": "oxford:underground:adj-adv:a2",
+      "word": "underground",
+      "translation": "под землей",
+      "answer": "underground",
+      "level": "A2",
+      "partOfSpeech": "прил., нареч."
+    },
+    {
       "id": "oxford:unemployed:adj:b1",
       "word": "unemployed",
       "translation": "безработный",
@@ -168,7 +176,7 @@
     {
       "id": "oxford:useful:adj:a1",
       "word": "useful",
-      "translation": "полезный",
+      "translation": "полезный (пригодный для цели, приносящий пользу)",
       "answer": "useful",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -176,7 +184,7 @@
     {
       "id": "oxford:usual:adj:a2",
       "word": "usual",
-      "translation": "обычный",
+      "translation": "обычный (привычный для данного случая)",
       "answer": "usual",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -200,7 +208,7 @@
     {
       "id": "oxford:vast:adj:b2",
       "word": "vast",
-      "translation": "огромный",
+      "translation": "огромный (очень большой по площади или охвату)",
       "answer": "vast",
       "level": "B2",
       "partOfSpeech": "прил."
@@ -216,7 +224,7 @@
     {
       "id": "oxford:violent:adj:b1",
       "word": "violent",
-      "translation": "жестокий",
+      "translation": "жестокий (связанный с физическим насилием)",
       "answer": "violent",
       "level": "B1",
       "partOfSpeech": "прил."
@@ -256,10 +264,20 @@
     {
       "id": "oxford:wealthy:adj:b2",
       "word": "wealthy",
-      "translation": "богатый",
+      "translation": "богатый (обладающий большим состоянием)",
       "answer": "wealthy",
       "level": "B2",
-      "partOfSpeech": "прил."
+      "partOfSpeech": "прил.",
+      "answers": [
+        {
+          "text": "wealthy",
+          "weight": 1
+        },
+        {
+          "text": "rich",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:western:adj:b1",
@@ -296,7 +314,7 @@
     {
       "id": "oxford:wide:adj:a2",
       "word": "wide",
-      "translation": "широкий",
+      "translation": "широкий (с большим расстоянием между краями)",
       "answer": "wide",
       "level": "A2",
       "partOfSpeech": "прил."
@@ -340,6 +358,14 @@
       "answer": "working",
       "level": "A2",
       "partOfSpeech": "прил."
+    },
+    {
+      "id": "oxford:worldwide:adj-adv:b1",
+      "word": "worldwide",
+      "translation": "по всему миру",
+      "answer": "worldwide",
+      "level": "B1",
+      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:worried:adj:a2",

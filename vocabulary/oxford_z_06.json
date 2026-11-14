@@ -8,18 +8,38 @@
     {
       "id": "oxford:anybody:pron:a2",
       "word": "anybody",
-      "translation": "кто-нибудь; любой",
+      "translation": "кто-нибудь; любой (о любом человеке)",
       "answer": "anybody",
       "level": "A2",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "anybody",
+          "weight": 1
+        },
+        {
+          "text": "anyone",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:anyone:pron:a1",
       "word": "anyone",
-      "translation": "кто-нибудь; любой",
+      "translation": "кто-нибудь; любой (о любом человеке)",
       "answer": "anyone",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "anyone",
+          "weight": 1
+        },
+        {
+          "text": "anybody",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:anything:pron:a1",
@@ -32,7 +52,7 @@
     {
       "id": "oxford:anywhere:adv-pron:a2",
       "word": "anywhere",
-      "translation": "где угодно",
+      "translation": "где угодно (в любом месте)",
       "answer": "anywhere",
       "level": "A2",
       "partOfSpeech": "нареч., мест."
@@ -40,23 +60,43 @@
     {
       "id": "oxford:everybody:pron:a1",
       "word": "everybody",
-      "translation": "все",
+      "translation": "все (все люди)",
       "answer": "everybody",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "everybody",
+          "weight": 1
+        },
+        {
+          "text": "everyone",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:everyone:pron:a1",
       "word": "everyone",
-      "translation": "все",
+      "translation": "все (все люди)",
       "answer": "everyone",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "everyone",
+          "weight": 1
+        },
+        {
+          "text": "everybody",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:everything:pron:a1",
       "word": "everything",
-      "translation": "всё",
+      "translation": "всё (все вещи или явления, без исключения)",
       "answer": "everything",
       "level": "A1",
       "partOfSpeech": "мест."
@@ -96,7 +136,7 @@
     {
       "id": "oxford:himself:pron:a2",
       "word": "himself",
-      "translation": "сам",
+      "translation": "сам (о мужчине, он сам)",
       "answer": "himself",
       "level": "A2",
       "partOfSpeech": "мест."
@@ -112,7 +152,7 @@
     {
       "id": "oxford:i:pron:a1",
       "word": "I",
-      "translation": "я",
+      "translation": "я (кто выполняет действие)",
       "answer": "I",
       "level": "A1",
       "partOfSpeech": "мест."
@@ -128,7 +168,7 @@
     {
       "id": "oxford:itself:pron:a2",
       "word": "itself",
-      "translation": "сам",
+      "translation": "сам (о предмете или животном, оно само)",
       "answer": "itself",
       "level": "A2",
       "partOfSpeech": "мест."
@@ -136,7 +176,7 @@
     {
       "id": "oxford:me:pron:a1",
       "word": "me",
-      "translation": "я",
+      "translation": "меня; мне (получатель действия)",
       "answer": "me",
       "level": "A1",
       "partOfSpeech": "мест."
@@ -160,18 +200,38 @@
     {
       "id": "oxford:no-one:pron:a1",
       "word": "no one",
-      "translation": "никто",
+      "translation": "никто (ни один человек)",
       "answer": "no one",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "no one",
+          "weight": 1
+        },
+        {
+          "text": "nobody",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:nobody:pron:a1",
       "word": "nobody",
-      "translation": "никто",
+      "translation": "никто (ни один человек)",
       "answer": "nobody",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "nobody",
+          "weight": 1
+        },
+        {
+          "text": "no one",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:none:pron:a2",
@@ -224,7 +284,7 @@
     {
       "id": "oxford:plenty:pron:b1",
       "word": "plenty",
-      "translation": "много",
+      "translation": "много (более чем достаточно)",
       "answer": "plenty",
       "level": "B1",
       "partOfSpeech": "мест."
@@ -248,18 +308,38 @@
     {
       "id": "oxford:somebody:pron:a1",
       "word": "somebody",
-      "translation": "кто-то",
+      "translation": "кто-то (неопределённый человек)",
       "answer": "somebody",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "somebody",
+          "weight": 1
+        },
+        {
+          "text": "someone",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:someone:pron:a1",
       "word": "someone",
-      "translation": "кто-то",
+      "translation": "кто-то (неопределённый человек)",
       "answer": "someone",
       "level": "A1",
-      "partOfSpeech": "мест."
+      "partOfSpeech": "мест.",
+      "answers": [
+        {
+          "text": "someone",
+          "weight": 1
+        },
+        {
+          "text": "somebody",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:something:pron:a1",
@@ -280,7 +360,7 @@
     {
       "id": "oxford:theirs:pron:b1",
       "word": "theirs",
-      "translation": "их",
+      "translation": "их (самостоятельно, без существительного после него)",
       "answer": "theirs",
       "level": "B1",
       "partOfSpeech": "мест."
@@ -312,7 +392,7 @@
     {
       "id": "oxford:us:pron:a1",
       "word": "us",
-      "translation": "мы",
+      "translation": "нас; нам (получатель действия)",
       "answer": "us",
       "level": "A1",
       "partOfSpeech": "мест."
@@ -320,7 +400,7 @@
     {
       "id": "oxford:we:pron:a1",
       "word": "we",
-      "translation": "мы",
+      "translation": "мы (кто выполняет действие)",
       "answer": "we",
       "level": "A1",
       "partOfSpeech": "мест."

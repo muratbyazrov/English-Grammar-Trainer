@@ -160,10 +160,20 @@
     {
       "id": "oxford:frequently:adv:b1",
       "word": "frequently",
-      "translation": "часто",
+      "translation": "часто (с высокой частотой)",
       "answer": "frequently",
       "level": "B1",
-      "partOfSpeech": "нареч."
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "frequently",
+          "weight": 1
+        },
+        {
+          "text": "often",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:friday:n:a1",
@@ -224,7 +234,7 @@
     {
       "id": "oxford:last:det:a1",
       "word": "last",
-      "translation": "последний",
+      "translation": "последний (последний по порядку)",
       "answer": "last",
       "level": "A1",
       "partOfSpeech": "опред."
@@ -312,7 +322,7 @@
     {
       "id": "oxford:next:adj-adv:a1",
       "word": "next",
-      "translation": "следующий",
+      "translation": "следующий (ближайший по порядку)",
       "answer": "next",
       "level": "A1",
       "partOfSpeech": "прил., нареч."
@@ -320,7 +330,7 @@
     {
       "id": "oxford:next:n:b1",
       "word": "next",
-      "translation": "следующий",
+      "translation": "следующий (следующий человек или предмет по порядку)",
       "answer": "next",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -360,10 +370,20 @@
     {
       "id": "oxford:often:adv:a1",
       "word": "often",
-      "translation": "часто",
+      "translation": "часто (много раз, с высокой частотой)",
       "answer": "often",
       "level": "A1",
-      "partOfSpeech": "нареч."
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "often",
+          "weight": 1
+        },
+        {
+          "text": "frequently",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:past:adj-n-prep:a1",
@@ -464,7 +484,7 @@
     {
       "id": "oxford:sometimes:adv:a1",
       "word": "sometimes",
-      "translation": "иногда",
+      "translation": "иногда (в некоторые моменты)",
       "answer": "sometimes",
       "level": "A1",
       "partOfSpeech": "нареч."
@@ -544,7 +564,7 @@
     {
       "id": "oxford:until:conj-prep:a1",
       "word": "until",
-      "translation": "пока",
+      "translation": "пока (до определённого момента)",
       "answer": "until",
       "level": "A1",
       "partOfSpeech": "союз, предл."
@@ -552,7 +572,7 @@
     {
       "id": "oxford:usually:adv:a1",
       "word": "usually",
-      "translation": "обычно",
+      "translation": "обычно (как правило, по привычке)",
       "answer": "usually",
       "level": "A1",
       "partOfSpeech": "нареч."
@@ -600,7 +620,7 @@
     {
       "id": "oxford:yet:adv:a2",
       "word": "yet",
-      "translation": "еще",
+      "translation": "еще (до сих пор; в отрицаниях и вопросах)",
       "answer": "yet",
       "level": "A2",
       "partOfSpeech": "нареч."
@@ -608,7 +628,7 @@
     {
       "id": "oxford:yet:conj:b2",
       "word": "yet",
-      "translation": "еще",
+      "translation": "однако (противопоставление, союз)",
       "answer": "yet",
       "level": "B2",
       "partOfSpeech": "союз"

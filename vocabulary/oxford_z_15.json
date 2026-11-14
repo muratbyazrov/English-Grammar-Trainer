@@ -168,7 +168,7 @@
     {
       "id": "oxford:expensive:adj:a1",
       "word": "expensive",
-      "translation": "дорогой",
+      "translation": "дорогой (с высокой ценой)",
       "answer": "expensive",
       "level": "A1",
       "partOfSpeech": "прил."
@@ -224,7 +224,7 @@
     {
       "id": "oxford:item:n:a2",
       "word": "item",
-      "translation": "предмет",
+      "translation": "предмет (отдельный элемент или вещь)",
       "answer": "item",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -368,7 +368,7 @@
     {
       "id": "oxford:value:v:b2",
       "word": "value",
-      "translation": "ценить",
+      "translation": "ценить (придавать значение, высоко ставить)",
       "answer": "value",
       "level": "B2",
       "partOfSpeech": "гл."

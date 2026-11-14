@@ -32,10 +32,20 @@
     {
       "id": "oxford:bike:n:a1",
       "word": "bike",
-      "translation": "велосипед",
+      "translation": "велосипед (разговорная короткая форма)",
       "answer": "bike",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "bike",
+          "weight": 1
+        },
+        {
+          "text": "bicycle",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:boat:n:a1",
@@ -128,7 +138,7 @@
     {
       "id": "oxford:holiday:n:a1",
       "word": "holiday",
-      "translation": "праздник",
+      "translation": "праздник (выходной или отпуск)",
       "answer": "holiday",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -280,7 +290,7 @@
     {
       "id": "oxford:straight:adv-adj:a2",
       "word": "straight",
-      "translation": "прямой",
+      "translation": "прямо; прямой (без поворотов или изгибов)",
       "answer": "straight",
       "level": "A2",
       "partOfSpeech": "нареч., прил."

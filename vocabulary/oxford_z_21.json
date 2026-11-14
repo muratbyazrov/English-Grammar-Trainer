@@ -24,7 +24,7 @@
     {
       "id": "oxford:painter:n:a2",
       "word": "painter",
-      "translation": "художник",
+      "translation": "художник (работающий с красками)",
       "answer": "painter",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -32,7 +32,7 @@
     {
       "id": "oxford:pair:n:a1",
       "word": "pair",
-      "translation": "пара",
+      "translation": "пара (два подходящих друг к другу предмета)",
       "answer": "pair",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -64,10 +64,20 @@
     {
       "id": "oxford:pants:n:a2",
       "word": "pants",
-      "translation": "брюки",
+      "translation": "брюки (американский вариант для брюк)",
       "answer": "pants",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "pants",
+          "weight": 1
+        },
+        {
+          "text": "trousers",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:paragraph:n:a1",
@@ -152,7 +162,7 @@
     {
       "id": "oxford:personality:n:a2",
       "word": "personality",
-      "translation": "личность",
+      "translation": "личность (характер и особенности человека)",
       "answer": "personality",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -160,7 +170,7 @@
     {
       "id": "oxford:perspective:n:b2",
       "word": "perspective",
-      "translation": "перспектива",
+      "translation": "перспектива (точка зрения, взгляд)",
       "answer": "perspective",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -232,7 +242,7 @@
     {
       "id": "oxford:pick:n:b2",
       "word": "pick",
-      "translation": "выбор",
+      "translation": "выбор (выбранный вариант, отбор)",
       "answer": "pick",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -256,7 +266,7 @@
     {
       "id": "oxford:pitch:n:b2",
       "word": "pitch",
-      "translation": "шаг",
+      "translation": "высота тона; поле (в музыке / площадка для игры)",
       "answer": "pitch",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -368,7 +378,7 @@
     {
       "id": "oxford:possibility:n:a2",
       "word": "possibility",
-      "translation": "возможность",
+      "translation": "возможность (то, что может произойти или быть верным)",
       "answer": "possibility",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -624,7 +634,7 @@
     {
       "id": "oxford:proposal:n:b2",
       "word": "proposal",
-      "translation": "предложение",
+      "translation": "предложение (план или инициатива на рассмотрение)",
       "answer": "proposal",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -632,7 +642,7 @@
     {
       "id": "oxford:prospect:n:b2",
       "word": "prospect",
-      "translation": "перспектива",
+      "translation": "перспектива (будущая возможность или ожидаемое развитие)",
       "answer": "prospect",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -640,7 +650,7 @@
     {
       "id": "oxford:protection:n:b2",
       "word": "protection",
-      "translation": "защита",
+      "translation": "защита (предохранение от вреда)",
       "answer": "protection",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -696,7 +706,7 @@
     {
       "id": "oxford:purpose:n:a2",
       "word": "purpose",
-      "translation": "цель",
+      "translation": "цель (то, ради чего что-либо делают)",
       "answer": "purpose",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -824,7 +834,7 @@
     {
       "id": "oxford:recording:n:a2",
       "word": "recording",
-      "translation": "запись",
+      "translation": "запись (сохранённый звук или видео)",
       "answer": "recording",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -848,7 +858,7 @@
     {
       "id": "oxford:relation:n:b1",
       "word": "relation",
-      "translation": "отношение",
+      "translation": "отношение (связь между людьми или явлениями)",
       "answer": "relation",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1048,7 +1058,7 @@
     {
       "id": "oxford:row:n:b1",
       "word": "row",
-      "translation": "строка",
+      "translation": "строка (ряд элементов, в том числе в таблице)",
       "answer": "row",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1080,7 +1090,7 @@
     {
       "id": "oxford:safety:n:b1",
       "word": "safety",
-      "translation": "безопасность",
+      "translation": "безопасность (защищённость от несчастных случаев и вреда)",
       "answer": "safety",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1232,7 +1242,7 @@
     {
       "id": "oxford:security:n:b1",
       "word": "security",
-      "translation": "безопасность",
+      "translation": "безопасность (защищённость от угроз, преступлений или взлома)",
       "answer": "security",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1240,7 +1250,7 @@
     {
       "id": "oxford:selection:n:b2",
       "word": "selection",
-      "translation": "выбор",
+      "translation": "выбор (процесс отбора или набор отобранного)",
       "answer": "selection",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1248,7 +1258,7 @@
     {
       "id": "oxford:self:n:b2",
       "word": "self",
-      "translation": "сам",
+      "translation": "собственная личность (внутреннее я, существительное)",
       "answer": "self",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1312,7 +1322,7 @@
     {
       "id": "oxford:shade:n:b2",
       "word": "shade",
-      "translation": "тень",
+      "translation": "тень (участок, куда не попадает прямой свет)",
       "answer": "shade",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1320,7 +1330,7 @@
     {
       "id": "oxford:shadow:n:b2",
       "word": "shadow",
-      "translation": "тень",
+      "translation": "тень (тёмный силуэт, отбрасываемый предметом)",
       "answer": "shadow",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1528,7 +1538,7 @@
     {
       "id": "oxford:solution:n:a2",
       "word": "solution",
-      "translation": "решение",
+      "translation": "решение (способ устранить проблему или ответ на задачу)",
       "answer": "solution",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1600,7 +1610,7 @@
     {
       "id": "oxford:spending:n:b1",
       "word": "spending",
-      "translation": "расходы",
+      "translation": "расходы (расходование средств)",
       "answer": "spending",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1624,7 +1634,7 @@
     {
       "id": "oxford:spread:n:b2",
       "word": "spread",
-      "translation": "распространение",
+      "translation": "распространение (увеличение области охвата)",
       "answer": "spread",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1760,7 +1770,7 @@
     {
       "id": "oxford:story:n:a1",
       "word": "story",
-      "translation": "история",
+      "translation": "история (рассказ, повествование)",
       "answer": "story",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -1800,7 +1810,7 @@
     {
       "id": "oxford:string:n:b1",
       "word": "string",
-      "translation": "строка",
+      "translation": "строка (последовательность символов)",
       "answer": "string",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1856,7 +1866,7 @@
     {
       "id": "oxford:suggestion:n:a2",
       "word": "suggestion",
-      "translation": "предложение",
+      "translation": "предложение (совет или предлагаемая идея)",
       "answer": "suggestion",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1864,7 +1874,7 @@
     {
       "id": "oxford:suit:n:a2",
       "word": "suit",
-      "translation": "костюм",
+      "translation": "костюм (пиджак и брюки или юбка как комплект)",
       "answer": "suit",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1992,7 +2002,7 @@
     {
       "id": "oxford:talk:n:a2",
       "word": "talk",
-      "translation": "разговор",
+      "translation": "разговор (разговор или беседа; также выступление)",
       "answer": "talk",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -2056,7 +2066,7 @@
     {
       "id": "oxford:theme:n:b1",
       "word": "theme",
-      "translation": "тема",
+      "translation": "тема (главная идея произведения или обсуждения)",
       "answer": "theme",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -2168,7 +2178,7 @@
     {
       "id": "oxford:topic:n:a1",
       "word": "topic",
-      "translation": "тема",
+      "translation": "тема (предмет конкретного обсуждения)",
       "answer": "topic",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -2264,18 +2274,38 @@
     {
       "id": "oxford:trousers:n:a1",
       "word": "trousers",
-      "translation": "брюки",
+      "translation": "брюки (британский вариант для брюк)",
       "answer": "trousers",
       "level": "A1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "trousers",
+          "weight": 1
+        },
+        {
+          "text": "pants",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:truck:n:a2",
       "word": "truck",
-      "translation": "грузовик",
+      "translation": "грузовик (грузовой автомобиль; американский вариант)",
       "answer": "truck",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "truck",
+          "weight": 1
+        },
+        {
+          "text": "lorry",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:truth:n:b1",

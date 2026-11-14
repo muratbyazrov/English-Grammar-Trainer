@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=49" />
+    <link rel="stylesheet" href="./styles.css?v=58" />
   </head>
   <body>
-    <main class="app">
+    <main id="trainer-app" class="app">
       <header class="topbar">
         <h1>English Trainer For IT</h1>
       </header>
@@ -84,12 +84,9 @@
           </button>
         </span>
 
-        <label class="toggle-option" for="auto-speak-correct-vocab">
-          <input id="auto-speak-correct-vocab" type="checkbox" checked />
-          Озвучка
-        </label>
         <button id="vocab-show-list" type="button">К списку слов</button>
         <button id="vocab-new-session" type="button">Начать заново</button>
+        <button id="vocab-settings-open" class="vocab-settings-trigger" type="button" aria-label="Настройки словаря" title="Настройки словаря" aria-haspopup="dialog" aria-controls="vocab-settings"><span aria-hidden="true">⚙︎</span></button>
       </section>
 
       <section id="controls-shadowing" class="controls shadowing-controls" hidden>
@@ -246,6 +243,39 @@
       </div>
     </div>
 
+    <div id="vocab-alternatives-overlay" class="vocab-list-overlay vocab-alternatives-overlay" hidden>
+      <section class="vocab-list-modal vocab-alternatives-modal" role="dialog" aria-modal="true" aria-labelledby="vocab-alternatives-title" aria-describedby="vocab-alternatives-answer">
+        <h2 id="vocab-alternatives-title">Можно также…</h2>
+        <p id="vocab-alternatives-answer" class="vocab-alternatives-answer"></p>
+        <ul id="vocab-alternatives-list" class="vocab-alternatives-list"></ul>
+        <button id="vocab-alternatives-continue" type="button">ОК, дальше</button>
+      </section>
+    </div>
+
+    <dialog id="vocab-settings" class="vocab-list-modal vocab-settings-modal" aria-labelledby="vocab-settings-title">
+      <header class="vocab-settings-header">
+        <h2 id="vocab-settings-title">Настройки словаря</h2>
+        <button id="vocab-settings-close" type="button" class="vocab-list-close" aria-label="Закрыть настройки">×</button>
+      </header>
+      <div class="vocab-settings-body">
+        <section class="vocab-settings-review">
+          <h3 id="vocab-mistake-repetitions-title">Сколько раз нужно ответить правильно?</h3>
+          <p id="vocab-mistake-repetitions-help">Чтобы убрать слово из ошибок, переведите его правильно столько раз подряд без подсказок.</p>
+          <div class="vocab-mistake-repetitions" role="group" aria-labelledby="vocab-mistake-repetitions-title" aria-describedby="vocab-mistake-repetitions-help">
+            <button id="vocab-mistake-repetitions-1" type="button">1</button>
+            <button id="vocab-mistake-repetitions-3" type="button">3</button>
+            <button id="vocab-mistake-repetitions-5" type="button">5</button>
+          </div>
+        </section>
+        <label class="vocab-settings-audio" for="auto-speak-correct-vocab">
+          <span id="vocab-settings-audio-title">Озвучка</span>
+          <small id="vocab-settings-audio-help">После правильного ответа</small>
+          <input id="auto-speak-correct-vocab" class="vocab-settings-switch" type="checkbox" role="switch" aria-labelledby="vocab-settings-audio-title" aria-describedby="vocab-settings-audio-help" checked />
+          <span class="vocab-settings-switch-track" aria-hidden="true"></span>
+        </label>
+      </div>
+    </dialog>
+
     <div id="vocab-list-overlay" class="vocab-list-overlay" hidden>
       <div class="vocab-list-modal" role="dialog" aria-modal="true" aria-labelledby="vocab-list-title">
         <header class="vocab-list-header">
@@ -355,18 +385,18 @@
     </div>
 
     <script src="./questions.js?v=2"></script>
-    <script src="./vocabulary.js?v=30"></script>
-    <script src="./js/learning-data.js?v=14"></script>
+    <script src="./vocabulary.js?v=32"></script>
+    <script src="./js/learning-data.js?v=15"></script>
     <script src="./js/activity.js?v=1"></script>
     <script src="./js/speech.js?v=3"></script>
     <script src="./js/progress.js?v=3"></script>
-    <script src="./js/session-results.js?v=3"></script>
+    <script src="./js/session-results.js?v=5"></script>
     <script src="./js/grammar-mode.js?v=6"></script>
     <script src="./js/vocabulary-catalog.js?v=2"></script>
-    <script src="./js/vocabulary-picker.js?v=2"></script>
-    <script src="./js/vocabulary-mode.js?v=20"></script>
+    <script src="./js/vocabulary-picker.js?v=4"></script>
+    <script src="./js/vocabulary-mode.js?v=28"></script>
     <script src="./js/shadowing-mode.js?v=10"></script>
-    <script src="./js/theory-mode.js?v=13"></script>
-    <script src="./app.js?v=59"></script>
+    <script src="./js/theory-mode.js?v=14"></script>
+    <script src="./app.js?v=64"></script>
   </body>
 </html>

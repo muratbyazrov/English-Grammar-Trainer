@@ -539,10 +539,25 @@ button:hover {
 
 /* ── Vocab card elements ── */
 .vocab-mode-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
   font-size: 0.88rem;
   color: var(--muted);
   font-weight: 500;
   margin: 0 0 2px;
+}
+
+.vocab-part-of-speech-tag {
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #eef4f9;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .vocab-topic-navigation {
@@ -609,6 +624,42 @@ button:hover {
   box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
 }
 
+.vocab-alternatives-overlay {
+  align-items: center;
+}
+
+.vocab-list-modal.vocab-alternatives-modal {
+  width: min(440px, 100%);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.vocab-alternatives-modal h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.vocab-alternatives-answer {
+  margin: 8px 0 16px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.vocab-alternatives-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding-left: 24px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.vocab-alternatives-modal button {
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
 .vocab-list-header {
   display: flex;
   align-items: flex-start;
@@ -645,6 +696,206 @@ button:hover {
 .vocab-list-close:hover {
   color: var(--ink);
   background: #eef5ff;
+}
+
+.vocab-settings-trigger {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  margin-inline-start: auto;
+  padding: 0;
+  border-color: #d5e6e0;
+  border-radius: 14px;
+  background: #f3f8f6;
+  color: #14685f;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.vocab-settings-trigger:hover {
+  background: #e7f0ed;
+}
+
+.vocab-list-modal.vocab-settings-modal {
+  --settings-accent: #14685f;
+  width: min(440px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  padding: 0;
+  overflow-y: auto;
+  border-color: #e1ebe8;
+  border-radius: 22px;
+  background: #fcfefd;
+  box-shadow: 0 20px 64px rgba(20, 42, 39, 0.22);
+  color: var(--ink);
+}
+
+.vocab-settings-modal:not([open]) {
+  display: none;
+}
+
+.vocab-settings-modal::backdrop {
+  background: rgba(20, 35, 38, 0.34);
+  backdrop-filter: blur(3px);
+}
+
+.vocab-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px clamp(16px, 5vw, 24px) 8px;
+}
+
+.vocab-settings-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.vocab-settings-header .vocab-list-close {
+  border-color: transparent;
+  background: #eff5f3;
+}
+
+.vocab-settings-header .vocab-list-close:hover {
+  background: #e3eeeb;
+}
+
+.vocab-settings-body {
+  padding: 8px clamp(16px, 5vw, 24px) 14px;
+}
+
+.vocab-settings-review {
+  padding: clamp(12px, 4vw, 16px);
+  border: 1px solid #e4eeeb;
+  border-radius: 16px;
+  background: #f3f8f6;
+}
+
+.vocab-settings-review h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.vocab-settings-review p {
+  margin: 5px 0 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.vocab-mistake-repetitions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #e7f0ed;
+}
+
+.vocab-mistake-repetitions button {
+  min-height: 44px;
+  padding-inline: 4px;
+  border-radius: 9px;
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.vocab-mistake-repetitions button:hover {
+  transform: none;
+  background: #f3f8f6;
+}
+
+.vocab-mistake-repetitions button[aria-pressed="true"] {
+  border-color: #cfe2dc;
+  background: #fff;
+  color: var(--settings-accent);
+  box-shadow: 0 1px 3px rgba(20, 42, 39, 0.12);
+}
+
+.vocab-settings-audio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3px 12px;
+  padding: 13px 4px 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.vocab-settings-audio small {
+  grid-column: 1;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.vocab-settings-switch,
+.vocab-settings-switch-track {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 44px;
+  height: 26px;
+  margin: 0;
+}
+
+.vocab-settings-switch {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vocab-settings-switch-track {
+  display: grid;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  background: #64747a;
+  pointer-events: none;
+}
+
+.vocab-settings-switch-track::before {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.vocab-settings-switch:checked + .vocab-settings-switch-track {
+  background: var(--settings-accent);
+}
+
+.vocab-settings-switch:checked + .vocab-settings-switch-track::before {
+  justify-self: end;
+}
+
+@media (forced-colors: active) {
+  .vocab-mistake-repetitions button[aria-pressed="true"] {
+    border-color: Highlight;
+  }
+
+  .vocab-settings-switch {
+    opacity: 1;
+    width: 24px;
+    height: 24px;
+  }
+
+  .vocab-settings-switch-track {
+    display: none;
+  }
+}
+
+.vocab-settings-trigger:focus-visible,
+.vocab-settings-modal button:focus-visible,
+.vocab-settings-switch:focus-visible + .vocab-settings-switch-track {
+  outline: 2px solid var(--settings-accent, #14685f);
+  outline-offset: 2px;
 }
 
 .vocab-list-body {
@@ -1707,6 +1958,10 @@ button:hover {
   .vocab-list-overlay {
     align-items: stretch;
     padding: 10px;
+  }
+
+  .vocab-alternatives-overlay {
+    align-items: center;
   }
 
   .vocab-list-modal {

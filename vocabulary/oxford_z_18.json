@@ -72,10 +72,20 @@
     {
       "id": "oxford:ad:n:b1",
       "word": "ad",
-      "translation": "реклама",
+      "translation": "реклама (сокращённое название объявления)",
       "answer": "ad",
       "level": "B1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "ad",
+          "weight": 1
+        },
+        {
+          "text": "advertisement",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:addition:n:b1",
@@ -112,15 +122,25 @@
     {
       "id": "oxford:advertisement:n:a2",
       "word": "advertisement",
-      "translation": "реклама",
+      "translation": "реклама (отдельное рекламное объявление)",
       "answer": "advertisement",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "advertisement",
+          "weight": 1
+        },
+        {
+          "text": "ad",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:advertising:n:a2",
       "word": "advertising",
-      "translation": "реклама",
+      "translation": "реклама (деятельность по продвижению товаров)",
       "answer": "advertising",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -128,7 +148,7 @@
     {
       "id": "oxford:advice:n:a1",
       "word": "advice",
-      "translation": "совет",
+      "translation": "совет (рекомендация, что делать)",
       "answer": "advice",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -136,7 +156,7 @@
     {
       "id": "oxford:affair:n:b2",
       "word": "affair",
-      "translation": "дело",
+      "translation": "дело (событие, ситуация или личное дело)",
       "answer": "affair",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -176,7 +196,7 @@
     {
       "id": "oxford:aircraft:n:b2",
       "word": "aircraft",
-      "translation": "самолет",
+      "translation": "летательный аппарат (самолёт, вертолёт и другие типы воздушных судов)",
       "answer": "aircraft",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -240,7 +260,7 @@
     {
       "id": "oxford:angle:n:b2",
       "word": "angle",
-      "translation": "угол",
+      "translation": "угол (геометрический или угол обзора)",
       "answer": "angle",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -320,7 +340,7 @@
     {
       "id": "oxford:arms:n:b2",
       "word": "arms",
-      "translation": "оружие",
+      "translation": "оружие (вооружение, собирательное множественное число)",
       "answer": "arms",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -392,7 +412,7 @@
     {
       "id": "oxford:attitude:n:b1",
       "word": "attitude",
-      "translation": "отношение",
+      "translation": "отношение (личная позиция или настрой)",
       "answer": "attitude",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -536,7 +556,7 @@
     {
       "id": "oxford:belief:n:b1",
       "word": "belief",
-      "translation": "вера",
+      "translation": "вера (убеждение, что что-либо истинно)",
       "answer": "belief",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -664,7 +684,7 @@
     {
       "id": "oxford:breast:n:b2",
       "word": "breast",
-      "translation": "грудь",
+      "translation": "грудь (молочная железа или передняя часть груди)",
       "answer": "breast",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -672,7 +692,7 @@
     {
       "id": "oxford:breathing:n:b1",
       "word": "breathing",
-      "translation": "дыхание",
+      "translation": "дыхание (процесс вдохов и выдохов)",
       "answer": "breathing",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -840,7 +860,7 @@
     {
       "id": "oxford:case:n:a2",
       "word": "case",
-      "translation": "дело",
+      "translation": "дело (конкретный случай, в том числе судебный)",
       "answer": "case",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -960,7 +980,7 @@
     {
       "id": "oxford:chef:n:a2",
       "word": "chef",
-      "translation": "повар",
+      "translation": "повар (профессиональный, часто шеф-повар)",
       "answer": "chef",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -976,7 +996,7 @@
     {
       "id": "oxford:chest:n:b1",
       "word": "chest",
-      "translation": "грудь",
+      "translation": "грудь (грудная клетка)",
       "answer": "chest",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1000,7 +1020,7 @@
     {
       "id": "oxford:choice:n:a2",
       "word": "choice",
-      "translation": "выбор",
+      "translation": "выбор (принятое решение или возможность выбрать)",
       "answer": "choice",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1056,7 +1076,7 @@
     {
       "id": "oxford:clothes:n:a1",
       "word": "clothes",
-      "translation": "одежда",
+      "translation": "одежда (предметы одежды; множественное число)",
       "answer": "clothes",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -1064,7 +1084,7 @@
     {
       "id": "oxford:clothing:n:a2",
       "word": "clothing",
-      "translation": "одежда",
+      "translation": "одежда (одежда как категория; неисчисляемое)",
       "answer": "clothing",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1168,7 +1188,7 @@
     {
       "id": "oxford:commitment:n:b2",
       "word": "commitment",
-      "translation": "обязательство",
+      "translation": "обязательство (добровольно взятое обещание или преданность делу)",
       "answer": "commitment",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1216,7 +1236,7 @@
     {
       "id": "oxford:complex:n:b2",
       "word": "complex",
-      "translation": "сложный",
+      "translation": "комплекс (совокупность связанных зданий, объектов или проблем)",
       "answer": "complex",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1352,7 +1372,7 @@
     {
       "id": "oxford:conversation:n:a1",
       "word": "conversation",
-      "translation": "разговор",
+      "translation": "разговор (обмен репликами между людьми)",
       "answer": "conversation",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -1368,7 +1388,7 @@
     {
       "id": "oxford:corner:n:a2",
       "word": "corner",
-      "translation": "угол",
+      "translation": "угол (место, где сходятся стороны)",
       "answer": "corner",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1376,7 +1396,7 @@
     {
       "id": "oxford:costume:n:b1",
       "word": "costume",
-      "translation": "костюм",
+      "translation": "костюм (сценический, маскарадный или национальный)",
       "answer": "costume",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1400,7 +1420,7 @@
     {
       "id": "oxford:council:n:b2",
       "word": "council",
-      "translation": "совет",
+      "translation": "совет (совещательный или управляющий орган)",
       "answer": "council",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1424,7 +1444,7 @@
     {
       "id": "oxford:couple:n:a2",
       "word": "couple",
-      "translation": "пара",
+      "translation": "пара (двое вместе, в том числе партнёры)",
       "answer": "couple",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1608,7 +1628,7 @@
     {
       "id": "oxford:decision:n:a2",
       "word": "decision",
-      "translation": "решение",
+      "translation": "решение (принятый выбор)",
       "answer": "decision",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1624,7 +1644,7 @@
     {
       "id": "oxford:defence:n:b2",
       "word": "defence",
-      "translation": "защита",
+      "translation": "защита (отражение нападения или отстаивание)",
       "answer": "defence",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -1768,7 +1788,7 @@
     {
       "id": "oxford:dirt:n:b1",
       "word": "dirt",
-      "translation": "грязь",
+      "translation": "грязь (загрязнение в целом)",
       "answer": "dirt",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -1800,7 +1820,7 @@
     {
       "id": "oxford:distribution:n:b2",
       "word": "distribution",
-      "translation": "распространение",
+      "translation": "распространение (распределение и доставка)",
       "answer": "distribution",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -2016,7 +2036,7 @@
     {
       "id": "oxford:entry:n:b1",
       "word": "entry",
-      "translation": "запись",
+      "translation": "запись (отдельный пункт в журнале, списке или базе)",
       "answer": "entry",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -2040,7 +2060,7 @@
     {
       "id": "oxford:error:n:a2",
       "word": "error",
-      "translation": "ошибка",
+      "translation": "ошибка (часто о неверных данных, расчёте или сбое)",
       "answer": "error",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -2112,7 +2132,7 @@
     {
       "id": "oxford:expectation:n:b2",
       "word": "expectation",
-      "translation": "ожидание",
+      "translation": "ожидание (предположение о будущем или надежда)",
       "answer": "expectation",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -2128,7 +2148,7 @@
     {
       "id": "oxford:expense:n:b2",
       "word": "expense",
-      "translation": "расходы",
+      "translation": "расходы (затрата или статья затрат)",
       "answer": "expense",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -2168,7 +2188,7 @@
     {
       "id": "oxford:extent:n:b2",
       "word": "extent",
-      "translation": "степень",
+      "translation": "степень (мера, предел распространения)",
       "answer": "extent",
       "level": "B2",
       "partOfSpeech": "сущ."

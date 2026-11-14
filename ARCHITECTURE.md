@@ -36,6 +36,9 @@
   без ограничения количества. Когда все слова пройдены, новый подход снова использует весь набор.
   Повторение включает все ошибки выбранной темы и уровня.
   Результаты предлагают продолжить тему, пока остаются непройденные слова, затем — ошибки.
+- Если у правильного словарного ответа есть другие допустимые варианты, окно «Можно также…»
+  ждёт кнопки «ОК, дальше» или отдельного нажатия Enter. Таймер и озвучка не переключают слово.
+  При смене режима или подхода окно закрывается; карточки без вариантов сохраняют автопереход.
 - При завершении `app.js` сначала собирает пропущенные слова в ошибки, затем вызывает
   общий `sessionScoring.finish` и передаёт числа в `session-results.js`.
 - Окно результатов отображает данные и закрывается; действия кнопок связывает `app.js`.
@@ -60,7 +63,7 @@
 
 - Общая проверка: `npm test`.
 - Теория: `node --test tests/theory-presentation.test.js`.
-- Словарь: `node --test tests/vocabulary-catalog.test.js tests/vocabulary-mistakes.test.js`.
+- Словарь: `node --test tests/vocabulary-catalog.test.js tests/vocabulary-mistakes.test.js tests/vocabulary-alternatives.test.js`.
 - Подходы и оценки: `node --test tests/scoring.test.js tests/services.test.js`.
 - Полосы прогресса грамматики: `node --test tests/grammar-progress.test.js`.
 - Связи интерфейса и таймеры: `node --test tests/app.test.js`.

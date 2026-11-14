@@ -441,7 +441,7 @@ test('Oxford cards have stable unique IDs, optional examples and complete learni
   const app = createApp();
   const topics = app.window.VOCABULARY_DATA.filter(t => t.collection === 'Oxford 3000');
   const words = topics.flatMap(t => t.words);
-  assert.equal(topics.length, 44);
+  assert.equal(topics.length, 49);
   assert.equal(words.length, 3313);
   assert.deepEqual([...new Set(words.map(w => w.level))].sort(), ['A1', 'A2', 'B1', 'B2']);
   const all = app.window.VOCABULARY_DATA.flatMap(t => t.words);
@@ -463,11 +463,12 @@ test('Oxford cards have stable unique IDs, optional examples and complete learni
   }
 });
 
-test('Oxford import covers every official word-level entry and preserves the first 60 cards', () => {
+test('Oxford import covers every official entry and preserves seed cards with explicit editorial overrides', () => {
   const root = path.resolve(__dirname, '..');
   const official = fs.readFileSync(path.join(root, 'scripts/oxford/sources/official.tsv'), 'utf8')
     .trim().split(/\r?\n/).slice(1).map(line => line.split('\t'));
   const seed = JSON.parse(fs.readFileSync(path.join(root, 'scripts/oxford/seed.json'), 'utf8'));
+  const overrides = JSON.parse(fs.readFileSync(path.join(root, 'scripts/oxford/card-overrides.json'), 'utf8'));
   const imported = createApp().window.VOCABULARY_DATA
     .filter(topic => topic.collection === 'Oxford 3000').flatMap(topic => topic.words);
   const counts = entries => {
@@ -483,8 +484,84 @@ test('Oxford import covers every official word-level entry and preserves the fir
   for (const original of seed.flatMap(topic => topic.words)) {
     const current = imported.find(word => word.id === original.id);
     assert.ok(current, `Missing original card ${original.id}`);
+    const expected = { ...original, ...overrides[original.id] };
     for (const field of ['word', 'translation', 'answer', 'level', 'partOfSpeech', 'example', 'sentenceTranslation']) {
-      assert.equal(current[field] || '', original[field] || '', `${original.id}: ${field}`);
+      assert.equal(current[field] || '', expected[field] || '', `${original.id}: ${field}`);
     }
+  }
+});
+
+test('Oxford part-of-speech groups contain matching cards in every letter band', () => {
+  const topics = createApp().window.VOCABULARY_DATA.filter(topic => topic.collection === 'Oxford 3000');
+  for (const [prefix, allowed] of [
+    ['Глаголы ', ['гл.', 'вспом. гл.']],
+    ['Признаки ', ['прил.']],
+    ['Обстоятельства ', ['нареч.']],
+  ]) {
+    const groups = topics.filter(topic => topic.subtopic.startsWith(prefix));
+    assert.equal(groups.length, 5, prefix);
+    for (const topic of groups) {
+      assert.ok(topic.words.length, topic.subtopic);
+      for (const word of topic.words) {
+        const parts = word.partOfSpeech.split(',').map(part => part.trim());
+        assert.ok(parts.some(part => allowed.includes(part)), `${topic.subtopic}: ${word.id} (${word.partOfSpeech})`);
+      }
+    }
+  }
+  const topicFor = id => topics.find(topic => topic.words.some(word => word.id === id));
+  assert.equal(topicFor('oxford:also:adv:a1').subtopic, 'Обстоятельства A–E');
+  assert.equal(topicFor('oxford:fast:adj-adv:a1').subtopic, 'Признаки F–J');
+  assert.equal(topicFor('oxford:today:adv-n:a1').subtopic, 'Время и частота');
+});
+
+test('Oxford topic registry preserves published topic IDs and adds separate adverb groups', () => {
+  const registry = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../scripts/oxford/topic-ids.json'), 'utf8'));
+  const topics = createApp().window.VOCABULARY_DATA.filter(topic => topic.id?.startsWith('oxford-extra-'));
+  assert.equal(topics.length, Object.keys(registry).length);
+  for (const topic of topics) {
+    assert.deepEqual([topic.topic, topic.subtopic], registry[topic.id]);
+  }
+  assert.deepEqual(registry['oxford-extra-10'], ['Действия и изменения', 'Глаголы A–E']);
+  assert.deepEqual(registry['oxford-extra-29'], ['Описание и оценка', 'Признаки A–E']);
+  assert.deepEqual(registry['oxford-extra-38'], ['Учёба и работа', 'Учёба']);
+  assert.deepEqual(registry['oxford-extra-39'], ['Описание и оценка', 'Обстоятельства A–E']);
+});
+
+test('Oxford saved rounds survive moving cards while new rounds use corrected topics', () => {
+  const topics = JSON.parse(JSON.stringify(createApp().window.VOCABULARY_DATA));
+  const verbs = topics.find(topic => topic.id === 'oxford-extra-10');
+  const adverbs = topics.find(topic => topic.id === 'oxford-extra-39');
+  const verb = verbs.words[0];
+  const also = adverbs.words.find(word => word.id === 'oxford:also:adv:a1');
+  const other = adverbs.words.find(word => word.id !== also.id);
+  const oldVocabulary = [{ ...verbs, words: [verb, also] }, { ...adverbs, words: [other] }];
+  const corrected = [{ ...verbs, words: [verb] }, { ...adverbs, words: [also, other] }];
+  const original = createApp({ vocabulary: oldVocabulary });
+  original.click('tab-vocab');
+  original.change('vocab-topic', verbs.id);
+  for (const reviewMistakes of [false, true]) {
+    const saved = original.snapshot();
+    const order = [verb.id, also.id];
+    Object.assign(saved.vocabulary, {
+      order, reviewOrder: order, reviewMistakes, idx: 1, correct: 1, wrong: 0,
+      outcomes: { [verb.id]: 'correct' }, mistakes: [[also.id, 0]], visitedWordIds: order,
+    });
+    const reload = createApp({ vocabulary: corrected, saved });
+    const restored = reload.snapshot().vocabulary;
+    assert.deepEqual(restored.order, order);
+    assert.equal(restored.idx, 1);
+    assert.equal(restored.correct, 1);
+    assert.equal(restored.wrong, 0);
+    assert.deepEqual(restored.outcomes, saved.vocabulary.outcomes);
+    assert.deepEqual(restored.mistakes, saved.vocabulary.mistakes);
+    assert.deepEqual(restored.visitedWordIds, saved.vocabulary.visitedWordIds);
+    assert.equal(reload.el('question-text').textContent, also.translation);
+    reload.change('vocab-topic', verbs.id);
+    assert.deepEqual(reload.snapshot().vocabulary.order, [verb.id]);
+    reload.change('vocab-topic', adverbs.id);
+    assert.ok(reload.snapshot().vocabulary.order.every(id => [also.id, other.id].includes(id)));
+    reload.click('vocab-show-list');
+    assert.equal(reload.el('vocab-list-body').children.length, 2);
+    assert.ok(reload.el('vocab-list-body').textContent.includes(also.word));
   }
 });

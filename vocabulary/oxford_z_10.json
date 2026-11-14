@@ -14,17 +14,9 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:absolutely:adv:b1",
-      "word": "absolutely",
-      "translation": "абсолютно",
-      "answer": "absolutely",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:accept:v:a2",
       "word": "accept",
-      "translation": "принять",
+      "translation": "принять (согласиться получить или принять)",
       "answer": "accept",
       "level": "A2",
       "partOfSpeech": "гл."
@@ -64,7 +56,7 @@
     {
       "id": "oxford:acknowledge:v:b2",
       "word": "acknowledge",
-      "translation": "признать",
+      "translation": "признать (подтвердить существование или получение)",
       "answer": "acknowledge",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -84,14 +76,6 @@
       "answer": "act",
       "level": "A2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:actually:adv:a2",
-      "word": "actually",
-      "translation": "на самом деле",
-      "answer": "actually",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:adapt:v:b2",
@@ -120,7 +104,7 @@
     {
       "id": "oxford:admit:v:b1",
       "word": "admit",
-      "translation": "признать",
+      "translation": "признать (сознаться в ошибке или неприятном факте)",
       "answer": "admit",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -128,7 +112,7 @@
     {
       "id": "oxford:adopt:v:b2",
       "word": "adopt",
-      "translation": "принять",
+      "translation": "принять (взять за основу метод, правило или подход)",
       "answer": "adopt",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -166,22 +150,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:afterwards:adv:b2",
-      "word": "afterwards",
-      "translation": "потом",
-      "answer": "afterwards",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:ago:adv:a1",
-      "word": "ago",
-      "translation": "назад",
-      "answer": "ago",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:agree:v:a1",
       "word": "agree",
       "translation": "соглашаться",
@@ -190,17 +158,9 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:ahead:adv:b1",
-      "word": "ahead",
-      "translation": "впереди",
-      "answer": "ahead",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:aid:n-v:b2",
       "word": "aid",
-      "translation": "помощь; помогать",
+      "translation": "помощь; помогать (помощь, в том числе гуманитарная)",
       "answer": "aid",
       "level": "B2",
       "partOfSpeech": "сущ., гл."
@@ -222,14 +182,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:all:adv:a2",
-      "word": "all",
-      "translation": "весь; все",
-      "answer": "all",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:allow:v:a2",
       "word": "allow",
       "translation": "разрешить",
@@ -238,33 +190,9 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:almost:adv:a2",
-      "word": "almost",
-      "translation": "почти",
-      "answer": "almost",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:alone:adj-adv:a2",
-      "word": "alone",
-      "translation": "один; в одиночестве",
-      "answer": "alone",
-      "level": "A2",
-      "partOfSpeech": "прил., нареч."
-    },
-    {
-      "id": "oxford:also:adv:a1",
-      "word": "also",
-      "translation": "также",
-      "answer": "also",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:alter:v:b2",
       "word": "alter",
-      "translation": "изменить",
+      "translation": "изменить (сделать иным)",
       "answer": "alter",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -272,7 +200,7 @@
     {
       "id": "oxford:announce:v:b1",
       "word": "announce",
-      "translation": "объявить",
+      "translation": "объявить (сообщить публично)",
       "answer": "announce",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -286,52 +214,12 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:any:adv:a2",
-      "word": "any",
-      "translation": "любой; какой-либо",
-      "answer": "any",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:any-more:adv:a2",
-      "word": "any more",
-      "translation": "больше",
-      "answer": "any more",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:anyway:adv:a2",
-      "word": "anyway",
-      "translation": "в любом случае",
-      "answer": "anyway",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:apart:adv:b1",
-      "word": "apart",
-      "translation": "отдельно",
-      "answer": "apart",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:apologize:v:b1",
       "word": "apologize",
       "translation": "извиниться",
       "answer": "apologize",
       "level": "B1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:apparently:adv:b2",
-      "word": "apparently",
-      "translation": "видимо",
-      "answer": "apparently",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:appeal:n-v:b2",
@@ -352,7 +240,7 @@
     {
       "id": "oxford:appreciate:v:b1",
       "word": "appreciate",
-      "translation": "ценить",
+      "translation": "ценить (быть благодарным, понимать ценность)",
       "answer": "appreciate",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -372,14 +260,6 @@
       "answer": "approve",
       "level": "B2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:approximately:adv:b1",
-      "word": "approximately",
-      "translation": "примерно",
-      "answer": "approximately",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:argue:v:a2",
@@ -424,7 +304,7 @@
     {
       "id": "oxford:assess:v:b2",
       "word": "assess",
-      "translation": "оценивать",
+      "translation": "оценивать (судить о состоянии, риске или качестве)",
       "answer": "assess",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -502,30 +382,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:away:adv:a1",
-      "word": "away",
-      "translation": "прочь",
-      "answer": "away",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:backwards:adv:b1",
-      "word": "backwards",
-      "translation": "назад",
-      "answer": "backwards",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:badly:adv:a2",
-      "word": "badly",
-      "translation": "плохо",
-      "answer": "badly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:bake:v:b1",
       "word": "bake",
       "translation": "выпекать",
@@ -556,14 +412,6 @@
       "answer": "base",
       "level": "B1",
       "partOfSpeech": "сущ., гл."
-    },
-    {
-      "id": "oxford:basically:adv:b2",
-      "word": "basically",
-      "translation": "в основном",
-      "answer": "basically",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:battle:v:b2",
@@ -654,36 +502,12 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:best:adv-n:a2",
-      "word": "best",
-      "translation": "лучший",
-      "answer": "best",
-      "level": "A2",
-      "partOfSpeech": "нареч., сущ."
-    },
-    {
       "id": "oxford:bet:v-n:b2",
       "word": "bet",
       "translation": "ставка; пари; держать пари",
       "answer": "bet",
       "level": "B2",
       "partOfSpeech": "гл., сущ."
-    },
-    {
-      "id": "oxford:better:adv:a2",
-      "word": "better",
-      "translation": "лучше; более хороший",
-      "answer": "better",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:between:adv:a2",
-      "word": "between",
-      "translation": "между",
-      "answer": "between",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:bite:v-n:b1",
@@ -760,7 +584,7 @@
     {
       "id": "oxford:bother:v:b1",
       "word": "bother",
-      "translation": "беспокоить",
+      "translation": "беспокоить (причинять неудобство, отвлекать)",
       "answer": "bother",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -820,14 +644,6 @@
       "answer": "bury",
       "level": "B1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:by:adv:b1",
-      "word": "by",
-      "translation": "у; возле; с помощью",
-      "answer": "by",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:calculate:v:b2",
@@ -894,14 +710,6 @@
       "partOfSpeech": "сущ., гл."
     },
     {
-      "id": "oxford:carefully:adv:a2",
-      "word": "carefully",
-      "translation": "тщательно",
-      "answer": "carefully",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:carry:v:a1",
       "word": "carry",
       "translation": "нести",
@@ -932,14 +740,6 @@
       "answer": "cause",
       "level": "A2",
       "partOfSpeech": "сущ., гл."
-    },
-    {
-      "id": "oxford:certainly:adv:a2",
-      "word": "certainly",
-      "translation": "конечно",
-      "answer": "certainly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:chain:v:b2",
@@ -1008,7 +808,7 @@
     {
       "id": "oxford:choose:v:a1",
       "word": "choose",
-      "translation": "выбирать",
+      "translation": "выбирать (делать выбор из вариантов)",
       "answer": "choose",
       "level": "A1",
       "partOfSpeech": "гл."
@@ -1046,14 +846,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:clearly:adv:a2",
-      "word": "clearly",
-      "translation": "ясно",
-      "answer": "clearly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:climb:v:a1",
       "word": "climb",
       "translation": "подниматься; взбираться",
@@ -1068,22 +860,6 @@
       "answer": "close",
       "level": "A1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:close:adv:b1",
-      "word": "close",
-      "translation": "близко",
-      "answer": "close",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:closely:adv:b2",
-      "word": "closely",
-      "translation": "внимательно",
-      "answer": "closely",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:coach:v:b1",
@@ -1166,14 +942,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:commonly:adv:b2",
-      "word": "commonly",
-      "translation": "обычно",
-      "answer": "commonly",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:communicate:v:a2",
       "word": "communicate",
       "translation": "общаться",
@@ -1208,18 +976,10 @@
     {
       "id": "oxford:complete:adj-v:a1",
       "word": "complete",
-      "translation": "полный",
+      "translation": "полный; завершать (все части в наличии / доводить до конца)",
       "answer": "complete",
       "level": "A1",
       "partOfSpeech": "прил., гл."
-    },
-    {
-      "id": "oxford:completely:adv:a2",
-      "word": "completely",
-      "translation": "полностью",
-      "answer": "completely",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:concentrate:v:b1",
@@ -1300,14 +1060,6 @@
       "answer": "consist",
       "level": "B1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:constantly:adv:b2",
-      "word": "constantly",
-      "translation": "постоянно",
-      "answer": "constantly",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:construct:v:b2",
@@ -1400,7 +1152,7 @@
     {
       "id": "oxford:convince:v:b1",
       "word": "convince",
-      "translation": "убеждать",
+      "translation": "убеждать (убедить в истинности чего-либо)",
       "answer": "convince",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -1420,14 +1172,6 @@
       "answer": "correct",
       "level": "A1",
       "partOfSpeech": "прил., гл."
-    },
-    {
-      "id": "oxford:correctly:adv:a2",
-      "word": "correctly",
-      "translation": "правильно",
-      "answer": "correctly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:cover:v:a2",
@@ -1478,14 +1222,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:currently:adv:b1",
-      "word": "currently",
-      "translation": "в настоящее время",
-      "answer": "currently",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:curve:n-v:b2",
       "word": "curve",
       "translation": "кривая; изгиб; изгибаться",
@@ -1528,7 +1264,7 @@
     {
       "id": "oxford:decide:v:a1",
       "word": "decide",
-      "translation": "решить",
+      "translation": "решить (принять решение, выбрать)",
       "answer": "decide",
       "level": "A1",
       "partOfSpeech": "гл."
@@ -1536,7 +1272,7 @@
     {
       "id": "oxford:declare:v:b2",
       "word": "declare",
-      "translation": "объявить",
+      "translation": "объявить (заявить официально)",
       "answer": "declare",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -1566,22 +1302,6 @@
       "partOfSpeech": "гл., сущ."
     },
     {
-      "id": "oxford:deep:adv:b1",
-      "word": "deep",
-      "translation": "глубокий",
-      "answer": "deep",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:deeply:adv:b2",
-      "word": "deeply",
-      "translation": "глубоко",
-      "answer": "deeply",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:defeat:v-n:b2",
       "word": "defeat",
       "translation": "поражение; побеждать",
@@ -1592,7 +1312,7 @@
     {
       "id": "oxford:defend:v:b2",
       "word": "defend",
-      "translation": "защищать",
+      "translation": "защищать (отражать нападение или отстаивать)",
       "answer": "defend",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -1600,26 +1320,10 @@
     {
       "id": "oxford:define:v:b1",
       "word": "define",
-      "translation": "определить",
+      "translation": "определить (дать определение, обозначить границы)",
       "answer": "define",
       "level": "B1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:definitely:adv:a2",
-      "word": "definitely",
-      "translation": "определенно",
-      "answer": "definitely",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:deliberately:adv:b2",
-      "word": "deliberately",
-      "translation": "намеренно",
-      "answer": "deliberately",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:delight:v-n:b2",
@@ -1696,7 +1400,7 @@
     {
       "id": "oxford:desire:n-v:b2",
       "word": "desire",
-      "translation": "желание; желать",
+      "translation": "желание; желать (сильное стремление, формальное)",
       "answer": "desire",
       "level": "B2",
       "partOfSpeech": "сущ., гл."
@@ -1720,7 +1424,7 @@
     {
       "id": "oxford:detect:v:b2",
       "word": "detect",
-      "translation": "обнаружить",
+      "translation": "обнаружить (заметить присутствие или сигнал)",
       "answer": "detect",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -1728,7 +1432,7 @@
     {
       "id": "oxford:determine:v:b1",
       "word": "determine",
-      "translation": "определить",
+      "translation": "определить (установить факт или точно выяснить)",
       "answer": "determine",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -1750,14 +1454,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:differently:adv:a2",
-      "word": "differently",
-      "translation": "по-другому",
-      "answer": "differently",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:dig:v:b2",
       "word": "dig",
       "translation": "копать",
@@ -1768,18 +1464,10 @@
     {
       "id": "oxford:direct:v-adv:b1",
       "word": "direct",
-      "translation": "прямой",
+      "translation": "направлять; прямо (руководить / без промежуточных этапов)",
       "answer": "direct",
       "level": "B1",
       "partOfSpeech": "гл., нареч."
-    },
-    {
-      "id": "oxford:directly:adv:b1",
-      "word": "directly",
-      "translation": "напрямую",
-      "answer": "directly",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:disagree:v:a2",
@@ -1878,22 +1566,6 @@
       "partOfSpeech": "сущ., гл."
     },
     {
-      "id": "oxford:downstairs:adv:a1",
-      "word": "downstairs",
-      "translation": "внизу",
-      "answer": "downstairs",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:downwards:adv:b2",
-      "word": "downwards",
-      "translation": "вниз",
-      "answer": "downwards",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:draft:n-v:b2",
       "word": "draft",
       "translation": "черновик; проект; составлять черновик",
@@ -1950,14 +1622,6 @@
       "partOfSpeech": "прил., гл."
     },
     {
-      "id": "oxford:easily:adv:a2",
-      "word": "easily",
-      "translation": "легко",
-      "answer": "easily",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:eat:v:a1",
       "word": "eat",
       "translation": "есть",
@@ -1982,36 +1646,12 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:effectively:adv:b1",
-      "word": "effectively",
-      "translation": "эффективно",
-      "answer": "effectively",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:elect:v:b2",
       "word": "elect",
-      "translation": "выбирать",
+      "translation": "выбирать (избирать голосованием)",
       "answer": "elect",
       "level": "B2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:else:adv:a1",
-      "word": "else",
-      "translation": "еще",
-      "answer": "else",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:elsewhere:adv:b2",
-      "word": "elsewhere",
-      "translation": "в другом месте",
-      "answer": "elsewhere",
-      "level": "B2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:emerge:v:b2",
@@ -2088,7 +1728,7 @@
     {
       "id": "oxford:enhance:v:b2",
       "word": "enhance",
-      "translation": "улучшить",
+      "translation": "улучшить (усилить качество или эффект)",
       "answer": "enhance",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -2104,7 +1744,7 @@
     {
       "id": "oxford:ensure:v:b2",
       "word": "ensure",
-      "translation": "обеспечить",
+      "translation": "обеспечить (сделать так, чтобы результат был гарантирован)",
       "answer": "ensure",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -2126,28 +1766,12 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:entirely:adv:b2",
-      "word": "entirely",
-      "translation": "полностью",
-      "answer": "entirely",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:equal:adj-v:b1",
       "word": "equal",
       "translation": "равняться",
       "answer": "equal",
       "level": "B1",
       "partOfSpeech": "прил., гл."
-    },
-    {
-      "id": "oxford:equally:adv:b1",
-      "word": "equally",
-      "translation": "поровну",
-      "answer": "equally",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:escape:v-n:b1",
@@ -2158,17 +1782,9 @@
       "partOfSpeech": "гл., сущ."
     },
     {
-      "id": "oxford:especially:adv:a2",
-      "word": "especially",
-      "translation": "особенно",
-      "answer": "especially",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:establish:v:b2",
       "word": "establish",
-      "translation": "установить",
+      "translation": "установить (основать, создать или доказать)",
       "answer": "establish",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -2184,55 +1800,15 @@
     {
       "id": "oxford:evaluate:v:b2",
       "word": "evaluate",
-      "translation": "оценивать",
+      "translation": "оценивать (определять ценность или эффективность)",
       "answer": "evaluate",
       "level": "B2",
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:even:adv:a1",
-      "word": "even",
-      "translation": "даже",
-      "answer": "even",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:eventually:adv:b1",
-      "word": "eventually",
-      "translation": "в конце концов",
-      "answer": "eventually",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:ever:adv:a1",
-      "word": "ever",
-      "translation": "когда-либо",
-      "answer": "ever",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:everywhere:adv:a2",
-      "word": "everywhere",
-      "translation": "везде",
-      "answer": "everywhere",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:exactly:adv:a2",
-      "word": "exactly",
-      "translation": "точно",
-      "answer": "exactly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:examine:v:b1",
       "word": "examine",
-      "translation": "исследовать",
+      "translation": "исследовать (внимательно осматривать или изучать)",
       "answer": "examine",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -2264,7 +1840,7 @@
     {
       "id": "oxford:expand:v:b1",
       "word": "expand",
-      "translation": "расширять",
+      "translation": "расширять (увеличивать объём или масштаб)",
       "answer": "expand",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -2296,7 +1872,7 @@
     {
       "id": "oxford:explore:v:b1",
       "word": "explore",
-      "translation": "исследовать",
+      "translation": "исследовать (изучать новое место или возможности)",
       "answer": "explore",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -2328,26 +1904,10 @@
     {
       "id": "oxford:extend:v:b2",
       "word": "extend",
-      "translation": "расширять",
+      "translation": "расширять (увеличивать длину, срок или зону действия)",
       "answer": "extend",
       "level": "B2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:extra:n-adv:b1",
-      "word": "extra",
-      "translation": "дополнительный",
-      "answer": "extra",
-      "level": "B1",
-      "partOfSpeech": "сущ., нареч."
-    },
-    {
-      "id": "oxford:extremely:adv:a2",
-      "word": "extremely",
-      "translation": "чрезвычайно",
-      "answer": "extremely",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     }
   ]
 }

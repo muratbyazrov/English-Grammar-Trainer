@@ -8,7 +8,7 @@
     {
       "id": "oxford:keep:v:a1",
       "word": "keep",
-      "translation": "держать",
+      "translation": "держать (сохранять у себя или в прежнем состоянии)",
       "answer": "keep",
       "level": "A1",
       "partOfSpeech": "гл."
@@ -70,22 +70,6 @@
       "partOfSpeech": "сущ., гл."
     },
     {
-      "id": "oxford:largely:adv:b2",
-      "word": "largely",
-      "translation": "в основном",
-      "answer": "largely",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:later:adv:a1",
-      "word": "later",
-      "translation": "позже",
-      "answer": "later",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:laugh:v-n:a1",
       "word": "laugh",
       "translation": "смех; смеяться",
@@ -104,7 +88,7 @@
     {
       "id": "oxford:lay:v:b1",
       "word": "lay",
-      "translation": "лежать",
+      "translation": "класть; укладывать (помещать что-либо горизонтально)",
       "answer": "lay",
       "level": "B1",
       "partOfSpeech": "гл."
@@ -152,7 +136,7 @@
     {
       "id": "oxford:lie:v:a1",
       "word": "lie",
-      "translation": "лежать",
+      "translation": "лежать (находиться в горизонтальном положении)",
       "answer": "lie",
       "level": "A1",
       "partOfSpeech": "гл."
@@ -214,28 +198,12 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:little:adv:a2",
-      "word": "little",
-      "translation": "маленький",
-      "answer": "little",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:live:v:a1",
       "word": "live",
       "translation": "жить",
       "answer": "live",
       "level": "A1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:live:adj-adv:b1",
-      "word": "live",
-      "translation": "живой; в прямом эфире",
-      "answer": "live",
-      "level": "B1",
-      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:load:n-v:b2",
@@ -248,26 +216,10 @@
     {
       "id": "oxford:locate:v:b1",
       "word": "locate",
-      "translation": "найти",
+      "translation": "найти (установить точное местоположение)",
       "answer": "locate",
       "level": "B1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:long:adj-adv:a1",
-      "word": "long",
-      "translation": "длинный",
-      "answer": "long",
-      "level": "A1",
-      "partOfSpeech": "прил., нареч."
-    },
-    {
-      "id": "oxford:long-term:adj-adv:b2",
-      "word": "long-term",
-      "translation": "долгосрочный",
-      "answer": "long-term",
-      "level": "B2",
-      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:look:v:a1",
@@ -276,30 +228,6 @@
       "answer": "look",
       "level": "A1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:loud:adj-adv:a2",
-      "word": "loud",
-      "translation": "громкий",
-      "answer": "loud",
-      "level": "A2",
-      "partOfSpeech": "прил., нареч."
-    },
-    {
-      "id": "oxford:loudly:adv:a2",
-      "word": "loudly",
-      "translation": "громко",
-      "answer": "loudly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:low:adj-adv:a2",
-      "word": "low",
-      "translation": "низкий",
-      "answer": "low",
-      "level": "A2",
-      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:lower:v:b2",
@@ -318,17 +246,9 @@
       "partOfSpeech": "сущ., гл."
     },
     {
-      "id": "oxford:mainly:adv:b1",
-      "word": "mainly",
-      "translation": "главным образом",
-      "answer": "mainly",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:maintain:v:b2",
       "word": "maintain",
-      "translation": "поддерживать",
+      "translation": "поддерживать (сохранять в рабочем или прежнем состоянии)",
       "answer": "maintain",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -344,7 +264,7 @@
     {
       "id": "oxford:manage:v:a2",
       "word": "manage",
-      "translation": "управлять",
+      "translation": "управлять (руководить работой, людьми или ресурсами)",
       "answer": "manage",
       "level": "A2",
       "partOfSpeech": "гл."
@@ -374,28 +294,12 @@
       "partOfSpeech": "сущ., гл."
     },
     {
-      "id": "oxford:maybe:adv:a1",
-      "word": "maybe",
-      "translation": "может быть",
-      "answer": "maybe",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:mean:v:a1",
       "word": "mean",
       "translation": "значить; иметь в виду",
       "answer": "mean",
       "level": "A1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:meanwhile:adv:b1",
-      "word": "meanwhile",
-      "translation": "тем временем",
-      "answer": "meanwhile",
-      "level": "B1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:meet:v:a1",
@@ -464,7 +368,7 @@
     {
       "id": "oxford:modify:v:b2",
       "word": "modify",
-      "translation": "изменить",
+      "translation": "изменить (частично скорректировать, внести изменения)",
       "answer": "modify",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -476,14 +380,6 @@
       "answer": "monitor",
       "level": "B2",
       "partOfSpeech": "сущ., гл."
-    },
-    {
-      "id": "oxford:mostly:adv:a2",
-      "word": "mostly",
-      "translation": "в основном",
-      "answer": "mostly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:mount:v:b2",
@@ -534,68 +430,12 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:naturally:adv:b1",
-      "word": "naturally",
-      "translation": "естественно",
-      "answer": "naturally",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:nearly:adv:a2",
-      "word": "nearly",
-      "translation": "почти",
-      "answer": "nearly",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:necessarily:adv:b1",
-      "word": "necessarily",
-      "translation": "обязательно",
-      "answer": "necessarily",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:need:v:a1",
       "word": "need",
       "translation": "нуждаться",
       "answer": "need",
       "level": "A1",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:neither:adv:b1",
-      "word": "neither",
-      "translation": "ни один из двух",
-      "answer": "neither",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:nevertheless:adv:b2",
-      "word": "nevertheless",
-      "translation": "тем не менее",
-      "answer": "nevertheless",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:normally:adv:a2",
-      "word": "normally",
-      "translation": "обычно",
-      "answer": "normally",
-      "level": "A2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:not:adv:a1",
-      "word": "not",
-      "translation": "не",
-      "answer": "not",
-      "level": "A1",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:note:v:b1",
@@ -612,14 +452,6 @@
       "answer": "notice",
       "level": "A2",
       "partOfSpeech": "гл., сущ."
-    },
-    {
-      "id": "oxford:nowhere:adv:a2",
-      "word": "nowhere",
-      "translation": "нигде",
-      "answer": "nowhere",
-      "level": "A2",
-      "partOfSpeech": "нареч."
     },
     {
       "id": "oxford:obey:v:b2",
@@ -654,22 +486,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:obviously:adv:b1",
-      "word": "obviously",
-      "translation": "очевидно",
-      "answer": "obviously",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:occasionally:adv:b2",
-      "word": "occasionally",
-      "translation": "иногда",
-      "answer": "occasionally",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:occur:v:b1",
       "word": "occur",
       "translation": "происходить",
@@ -692,22 +508,6 @@
       "answer": "offer",
       "level": "A2",
       "partOfSpeech": "гл., сущ."
-    },
-    {
-      "id": "oxford:once:adv:a1",
-      "word": "once",
-      "translation": "однажды",
-      "answer": "once",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:only:adj-adv:a1",
-      "word": "only",
-      "translation": "только; единственный",
-      "answer": "only",
-      "level": "A1",
-      "partOfSpeech": "прил., нареч."
     },
     {
       "id": "oxford:open:adj-v:a1",
@@ -742,30 +542,6 @@
       "partOfSpeech": "гл."
     },
     {
-      "id": "oxford:originally:adv:b1",
-      "word": "originally",
-      "translation": "изначально",
-      "answer": "originally",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:otherwise:adv:b2",
-      "word": "otherwise",
-      "translation": "иначе",
-      "answer": "otherwise",
-      "level": "B2",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:outdoors:adv:b1",
-      "word": "outdoors",
-      "translation": "на открытом воздухе",
-      "answer": "outdoors",
-      "level": "B1",
-      "partOfSpeech": "нареч."
-    },
-    {
       "id": "oxford:outline:n-v:b2",
       "word": "outline",
       "translation": "контур; краткое изложение; кратко излагать",
@@ -774,25 +550,9 @@
       "partOfSpeech": "сущ., гл."
     },
     {
-      "id": "oxford:outside:adv:a1",
-      "word": "outside",
-      "translation": "снаружи",
-      "answer": "outside",
-      "level": "A1",
-      "partOfSpeech": "нареч."
-    },
-    {
-      "id": "oxford:overall:adj-adv:b2",
-      "word": "overall",
-      "translation": "в целом",
-      "answer": "overall",
-      "level": "B2",
-      "partOfSpeech": "прил., нареч."
-    },
-    {
       "id": "oxford:owe:v:b2",
       "word": "owe",
-      "translation": "должен",
+      "translation": "быть должным (деньги, услугу или благодарность)",
       "answer": "owe",
       "level": "B2",
       "partOfSpeech": "гл."
@@ -804,14 +564,6 @@
       "answer": "own",
       "level": "A2",
       "partOfSpeech": "гл."
-    },
-    {
-      "id": "oxford:o-clock:adv:a1",
-      "word": "o’clock",
-      "translation": "час",
-      "answer": "o’clock",
-      "level": "A1",
-      "partOfSpeech": "нареч."
     }
   ]
 }

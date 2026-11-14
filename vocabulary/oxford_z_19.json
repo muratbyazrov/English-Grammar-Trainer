@@ -32,7 +32,7 @@
     {
       "id": "oxford:faith:n:b2",
       "word": "faith",
-      "translation": "вера",
+      "translation": "вера (доверие или религиозная вера)",
       "answer": "faith",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -72,7 +72,7 @@
     {
       "id": "oxford:fat:n:a2",
       "word": "fat",
-      "translation": "толстый",
+      "translation": "жир (вещество в организме или пище)",
       "answer": "fat",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -272,7 +272,7 @@
     {
       "id": "oxford:following:n:b1",
       "word": "following",
-      "translation": "следующий",
+      "translation": "последователи (сторонники или поклонники)",
       "answer": "following",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -280,7 +280,7 @@
     {
       "id": "oxford:fortune:n:b2",
       "word": "fortune",
-      "translation": "удача",
+      "translation": "удача (счастливый случай, судьба; также состояние)",
       "answer": "fortune",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -432,7 +432,7 @@
     {
       "id": "oxford:goal:n:a2",
       "word": "goal",
-      "translation": "цель",
+      "translation": "цель (результат, которого хотят достичь)",
       "answer": "goal",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -472,7 +472,7 @@
     {
       "id": "oxford:group:n:a1",
       "word": "group",
-      "translation": "группа",
+      "translation": "группа (несколько объединённых людей или предметов)",
       "answer": "group",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -512,7 +512,7 @@
     {
       "id": "oxford:guy:n:a2",
       "word": "guy",
-      "translation": "парень",
+      "translation": "парень (мужчина, разговорное)",
       "answer": "guy",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -632,7 +632,7 @@
     {
       "id": "oxford:high:n:b2",
       "word": "high",
-      "translation": "высокий",
+      "translation": "максимум (наивысшая точка или уровень)",
       "answer": "high",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -712,7 +712,7 @@
     {
       "id": "oxford:hunt:n:b2",
       "word": "hunt",
-      "translation": "охота",
+      "translation": "охота (отдельный поиск или охотничья вылазка)",
       "answer": "hunt",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -720,7 +720,7 @@
     {
       "id": "oxford:hunting:n:b2",
       "word": "hunting",
-      "translation": "охота",
+      "translation": "охота (занятие охотой)",
       "answer": "hunting",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -760,7 +760,7 @@
     {
       "id": "oxford:ideal:n:b2",
       "word": "ideal",
-      "translation": "идеальный",
+      "translation": "идеал (образец совершенства или принцип)",
       "answer": "ideal",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -768,7 +768,7 @@
     {
       "id": "oxford:identity:n:b1",
       "word": "identity",
-      "translation": "личность",
+      "translation": "личность (то, кем человек является, его идентичность)",
       "answer": "identity",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -872,7 +872,7 @@
     {
       "id": "oxford:insight:n:b2",
       "word": "insight",
-      "translation": "понимание",
+      "translation": "понимание (глубокое осознание сути)",
       "answer": "insight",
       "level": "B2",
       "partOfSpeech": "сущ."
@@ -920,7 +920,7 @@
     {
       "id": "oxford:instrument:n:a2",
       "word": "instrument",
-      "translation": "инструмент",
+      "translation": "инструмент (точный, измерительный или музыкальный)",
       "answer": "instrument",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -1032,7 +1032,7 @@
     {
       "id": "oxford:journal:n:b1",
       "word": "journal",
-      "translation": "журнал",
+      "translation": "журнал (научное или профессиональное издание; также дневник)",
       "answer": "journal",
       "level": "B1",
       "partOfSpeech": "сущ."

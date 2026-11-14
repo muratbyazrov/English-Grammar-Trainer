@@ -112,7 +112,7 @@
     {
       "id": "oxford:discover:v:a2",
       "word": "discover",
-      "translation": "обнаружить",
+      "translation": "обнаружить (найти неизвестное или узнать впервые)",
       "answer": "discover",
       "level": "A2",
       "partOfSpeech": "гл."
@@ -120,7 +120,7 @@
     {
       "id": "oxford:discovery:n:a2",
       "word": "discovery",
-      "translation": "открытие",
+      "translation": "открытие (нахождение ранее неизвестного)",
       "answer": "discovery",
       "level": "A2",
       "partOfSpeech": "сущ."
@@ -216,7 +216,7 @@
     {
       "id": "oxford:hour:n:a1",
       "word": "hour",
-      "translation": "час",
+      "translation": "час (единица времени, 60 минут)",
       "answer": "hour",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -232,18 +232,38 @@
     {
       "id": "oxford:lab:n:a2",
       "word": "lab",
-      "translation": "лаборатория",
+      "translation": "лаборатория (сокращённая форма)",
       "answer": "lab",
       "level": "A2",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "lab",
+          "weight": 1
+        },
+        {
+          "text": "laboratory",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:laboratory:n:b1",
       "word": "laboratory",
-      "translation": "лаборатория",
+      "translation": "лаборатория (полная форма)",
       "answer": "laboratory",
       "level": "B1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "laboratory",
+          "weight": 1
+        },
+        {
+          "text": "lab",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:length:n:b1",
@@ -320,7 +340,7 @@
     {
       "id": "oxford:percentage:n:b1",
       "word": "percentage",
-      "translation": "процент",
+      "translation": "процент (доля, выраженная в процентах)",
       "answer": "percentage",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -352,7 +372,7 @@
     {
       "id": "oxford:result:n:a1",
       "word": "result",
-      "translation": "результат",
+      "translation": "результат (итог действия или вычисления)",
       "answer": "result",
       "level": "A1",
       "partOfSpeech": "сущ."

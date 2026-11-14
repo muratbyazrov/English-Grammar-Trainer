@@ -24,10 +24,20 @@
     {
       "id": "oxford:application:n:b1",
       "word": "application",
-      "translation": "приложение",
+      "translation": "приложение (программное обеспечение; полное название)",
       "answer": "application",
       "level": "B1",
-      "partOfSpeech": "сущ."
+      "partOfSpeech": "сущ.",
+      "answers": [
+        {
+          "text": "application",
+          "weight": 1
+        },
+        {
+          "text": "app",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "oxford:apply:v:a2",
@@ -40,7 +50,7 @@
     {
       "id": "oxford:artist:n:a1",
       "word": "artist",
-      "translation": "художник",
+      "translation": "художник (человек, создающий произведения искусства)",
       "answer": "artist",
       "level": "A1",
       "partOfSpeech": "сущ."
@@ -72,7 +82,7 @@
     {
       "id": "oxford:client:n:b1",
       "word": "client",
-      "translation": "клиент",
+      "translation": "клиент (получатель профессиональных услуг)",
       "answer": "client",
       "level": "B1",
       "partOfSpeech": "сущ."
@@ -96,7 +106,7 @@
     {
       "id": "oxford:customer:n:a1",
       "word": "customer",
-      "translation": "клиент",
+      "translation": "клиент (покупатель товаров или услуг)",
       "answer": "customer",
       "level": "A1",
       "partOfSpeech": "сущ."

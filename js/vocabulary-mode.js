@@ -34,6 +34,51 @@ window.Trainer.createVocabularyMode = function ({
       ? word.id : `legacy:${JSON.stringify([topic.id || topic.topic, word.word])}`);
   }));
   const validProgressKeys = new Set(progressKeys.values());
+  let alternativesWord = null;
+
+  function hideVocabAlternatives() {
+    refs.vocabAlternativesOverlay.hidden = true;
+    refs.appMain.inert = false;
+    alternativesWord = null;
+  }
+
+  function showVocabAlternatives(word, alternatives) {
+    cancelPendingActivity();
+    alternativesWord = word;
+    refs.vocabAlternativesAnswer.textContent = `Ваш ответ: ${refs.answerInput.value.trim()}`;
+    refs.vocabAlternativesList.textContent = '';
+    alternatives.forEach(text => {
+      const item = document.createElement('li');
+      item.textContent = text;
+      refs.vocabAlternativesList.appendChild(item);
+    });
+    refs.appMain.inert = true;
+    refs.vocabAlternativesOverlay.hidden = false;
+    refs.vocabAlternativesContinue.focus();
+    if (vocabState.autoSpeakCorrect) {
+      speakEnglishText(primaryAnswerText(answerOptionsForVocabItem(word)) || word.infinitive || word.word);
+    }
+  }
+
+  function confirmVocabAlternatives() {
+    if (refs.vocabAlternativesOverlay.hidden) return;
+    const word = alternativesWord;
+    hideVocabAlternatives();
+    if (word === vocabState.session[vocabState.idx] && vocabState.checkedCurrent) {
+      nextVocabQuestion();
+    }
+  }
+
+  refs.vocabAlternativesContinue.addEventListener('click', confirmVocabAlternatives);
+  refs.vocabAlternativesOverlay.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (!event.repeat && !event.isComposing) confirmVocabAlternatives();
+    } else if (event.key === 'Tab') {
+      event.preventDefault();
+      refs.vocabAlternativesContinue.focus();
+    }
+  });
 
   const {
     catalog,
@@ -89,6 +134,18 @@ window.Trainer.createVocabularyMode = function ({
     return mistakeWords(vocabWordsForTopicValue(refs.vocabTopic.value)).length;
   }
 
+  function syncVocabNewSession() {
+    refs.vocabNewSession.disabled = vocabState.reviewMistakes && remainingVocabMistakes() === 0;
+  }
+
+  function syncMistakeRepetitionButtons() {
+    for (const [count, button] of refs.vocabMistakeRepetitions) {
+      const selected = count === vocabState.mistakeRepetitions;
+      button.setAttribute('aria-pressed', String(selected));
+      button.autofocus = selected;
+    }
+  }
+
   function unvisitedVocabWords(words) {
     return words.filter(word => !vocabState.visitedWordIds.has(progressKeys.get(word)));
   }
@@ -98,9 +155,11 @@ window.Trainer.createVocabularyMode = function ({
   }
 
   function collectUnansweredVocabMistakes() {
+    if (vocabState.reviewMistakes) return;
     vocabState.session.forEach(word => {
-      if (!vocabState.outcomes[word.id]) {
-        vocabState.mistakeProgress.set(progressKeys.get(word), 0);
+      const key = progressKeys.get(word);
+      if (!vocabState.outcomes[word.id] && !vocabState.mistakeProgress.has(key)) {
+        vocabState.mistakeProgress.set(key, 0);
       }
     });
   }
@@ -289,6 +348,27 @@ window.Trainer.createVocabularyMode = function ({
     }
   }
 
+  const partOfSpeechLabels = {
+    'сущ.': 'существительное',
+    'гл.': 'глагол',
+    'прил.': 'прилагательное',
+    'нареч.': 'наречие',
+    'предл.': 'предлог',
+    'опред.': 'определитель',
+    'мест.': 'местоимение',
+    'межд.': 'междометие',
+    'числ.': 'числительное',
+    'вспом. гл.': 'вспомогательный глагол',
+    'мод. гл.': 'модальный глагол',
+    'definite article': 'определённый артикль'
+  };
+
+  function vocabPartsOfSpeech(item) {
+    return String(item.partOfSpeech || '').split(',')
+      .map(part => part.trim()).filter(Boolean)
+      .map(part => partOfSpeechLabels[part] || part);
+  }
+
   function appendVocabListItem(parent, item, index) {
     const row = document.createElement('article');
     row.className = 'vocab-list-item';
@@ -306,7 +386,8 @@ window.Trainer.createVocabularyMode = function ({
     if (item.level) {
       const meta = document.createElement('span');
       meta.className = 'vocab-word-meta';
-      meta.textContent = ` ${item.level} · ${item.partOfSpeech || ''}`;
+      const parts = vocabPartsOfSpeech(item);
+      meta.textContent = ` ${item.level}${parts.length ? ` · ${parts.join(', ')}` : ''}`;
       word.appendChild(meta);
     }
 
@@ -371,8 +452,14 @@ window.Trainer.createVocabularyMode = function ({
   function restoreVocabSessionFromOrder(order, topicValue, stableKeys = false) {
     if (!Array.isArray(order) || !order.length) return [];
 
+    const node = catalog.nodes.get(topicValue);
+    // Oxford cards can move between topics after catalog corrections. Finish
+    // saved rounds in their original order; new rounds use the corrected topic.
+    const words = node && node.collection === 'Oxford 3000'
+      ? wordsForNode(catalog.nodes.get('collection:Oxford 3000'))
+      : vocabWordsForTopicValue(topicValue);
     const wordsById = new Map(
-      vocabWordsForTopicValue(topicValue)
+      words
         .filter((item) => item && item.id != null)
         .map((item) => [stableKeys ? progressKeys.get(item) : String(item.id), item])
     );
@@ -396,13 +483,22 @@ window.Trainer.createVocabularyMode = function ({
       refs.vocabTopic.value = topicValue;
     }
     vocabState.reviewMistakes = hasTopic && saved.reviewMistakes === true;
-    vocabState.mistakeProgress = new Map(
-      Array.isArray(saved.mistakes)
-        // A clean answer saved under the former two-approach rule is now enough.
-        ? saved.mistakes.filter(entry => Array.isArray(entry) && validProgressKeys.has(entry[0]) && entry[1] !== 1)
-          .map(([key]) => [key, 0])
-        : []
-    );
+    const hasRepetitionSetting = Object.hasOwn(saved, 'mistakeRepetitions');
+    const repetitions = saved.mistakeRepetitions === 2 ? 3 : saved.mistakeRepetitions;
+    if (refs.vocabMistakeRepetitions.has(repetitions)) {
+      vocabState.mistakeRepetitions = repetitions;
+    }
+    syncMistakeRepetitionButtons();
+    vocabState.mistakeProgress.clear();
+    for (const entry of Array.isArray(saved.mistakes) ? saved.mistakes : []) {
+      if (!Array.isArray(entry) || !validProgressKeys.has(entry[0])) continue;
+      const [key, count] = entry;
+      // A clean answer saved under the former two-approach rule cleared the error.
+      if (!hasRepetitionSetting && count === 1) continue;
+      const validCount = hasRepetitionSetting && Number.isInteger(count)
+        && count > 0 && count < vocabState.mistakeRepetitions;
+      vocabState.mistakeProgress.set(key, validCount ? count : 0);
+    }
     syncVocabTopicTrigger();
 
     vocabState.autoSpeakCorrect = saved.autoSpeakCorrect !== false;
@@ -426,9 +522,10 @@ window.Trainer.createVocabularyMode = function ({
       ? Object.fromEntries(vocabState.session.map((word, index) => [word.id, saved.outcomes?.[saved.order[index]]]))
       : saved.outcomes;
     sessionScoring.restore(vocabState, newReview ? {} : outcomes);
-    // Recover the last approach for old saves, including IT saves from before shared mistake tracking.
+    // Older IT snapshots may have outcomes without corresponding entries in the mistakes list.
     vocabState.session.forEach(word => {
-      if (vocabState.outcomes[word.id] === 'wrong' && (!Array.isArray(saved.mistakes) || typeof word.id === 'number')) {
+      if (vocabState.outcomes[word.id] === 'wrong'
+          && (!Array.isArray(saved.mistakes) || (!hasRepetitionSetting && typeof word.id === 'number'))) {
         vocabState.mistakeProgress.set(progressKeys.get(word), 0);
       }
     });
@@ -444,6 +541,7 @@ window.Trainer.createVocabularyMode = function ({
   }
 
   function renderVocab() {
+    hideVocabAlternatives();
     hideSessionComplete();
     cancelPendingActivity();
     syncNextVocabTopic();
@@ -454,7 +552,7 @@ window.Trainer.createVocabularyMode = function ({
     refs.position.textContent = `${w ? vocabState.idx + 1 : 0} / ${vocabState.session.length}`;
     refs.correctCount.textContent = String(vocabState.correct);
     refs.wrongCount.textContent = String(vocabState.wrong);
-    refs.vocabNewSession.disabled = vocabState.reviewMistakes && remainingVocabMistakes() === 0;
+    syncVocabNewSession();
     refs.vocabNewSession.textContent = 'Начать заново';
     [refs.answerInput, refs.checkBtn, refs.nextBtn, refs.prevBtn].forEach(element => {
       element.disabled = !w;
@@ -471,7 +569,16 @@ window.Trainer.createVocabularyMode = function ({
       return;
     }
 
-    refs.vocabModeLabel.textContent = `${vocabState.reviewMistakes ? 'Повторение ошибок · ' : ''}Переведите на английский${w.level ? ` · ${w.level} · ${w.partOfSpeech}` : ''}`;
+    refs.vocabModeLabel.textContent = '';
+    const label = document.createElement('span');
+    label.textContent = `${vocabState.reviewMistakes ? 'Повторение ошибок · ' : ''}Переведите на английский${w.level ? ` · ${w.level}` : ''}`;
+    refs.vocabModeLabel.appendChild(label);
+    vocabPartsOfSpeech(w).forEach(part => {
+      const tag = document.createElement('span');
+      tag.className = 'vocab-part-of-speech-tag';
+      tag.textContent = part;
+      refs.vocabModeLabel.appendChild(tag);
+    });
     refs.speakWordBtn.textContent = 'Озвучить ответ';
     renderQuestionText(w.translation);
     renderVocabExample(w);
@@ -506,8 +613,14 @@ window.Trainer.createVocabularyMode = function ({
       let mistakeMessage = '';
       const key = progressKeys.get(w);
       if (!vocabState.wrongCounted && !vocabState.outcomes[w.id] && vocabState.mistakeProgress.has(key)) {
-        vocabState.mistakeProgress.delete(key);
-        mistakeMessage = ' Слово выучено и убрано из ошибок.';
+        const count = vocabState.mistakeProgress.get(key) + 1;
+        if (count >= vocabState.mistakeRepetitions) {
+          vocabState.mistakeProgress.delete(key);
+          mistakeMessage = ' Слово выучено и убрано из ошибок.';
+        } else {
+          vocabState.mistakeProgress.set(key, count);
+          mistakeMessage = ` Повторения без подсказки: ${count} из ${vocabState.mistakeRepetitions}.`;
+        }
       }
       if (!vocabState.wrongCounted) {
         sessionScoring.record(vocabState, 'correct');
@@ -517,10 +630,14 @@ window.Trainer.createVocabularyMode = function ({
       renderVocabExample(w, 'correct');
       playCorrectSound();
       flashCorrect();
-      setFeedback((match.isAlternative ? `Верно! (а можно еще: ${match.primaryAnswer})` : 'Верно!') + mistakeMessage, true);
-      refs.vocabNewSession.disabled = vocabState.reviewMistakes && remainingVocabMistakes() === 0;
+      const alternatives = [...new Set(wordOptions
+        .filter(option => !getAnswerMatch(user, normalize(option.text), [option]).matched)
+        .map(option => option.text))];
+      setFeedback('Верно!' + mistakeMessage, true);
+      syncVocabNewSession();
       saveProgress();
-      queueVocabNextAfterCorrect(w);
+      if (alternatives.length) showVocabAlternatives(w, alternatives);
+      else queueVocabNextAfterCorrect(w);
     } else {
       recordVocabMistake(w);
       playWrongSound();
@@ -534,6 +651,7 @@ window.Trainer.createVocabularyMode = function ({
   }
 
   function nextVocabQuestion() {
+    hideVocabAlternatives();
     cancelPendingActivity();
     if (!vocabState.session.length) return;
     vocabState.idx += 1;
@@ -570,10 +688,28 @@ window.Trainer.createVocabularyMode = function ({
     startVocabSession();
   });
 
+  function setMistakeRepetitions(repetitions) {
+    if (vocabState.mistakeRepetitions === repetitions) return;
+    vocabState.mistakeRepetitions = repetitions;
+    for (const [key, count] of vocabState.mistakeProgress) {
+      if (count >= repetitions) vocabState.mistakeProgress.delete(key);
+    }
+    syncMistakeRepetitionButtons();
+    syncVocabNewSession();
+    if (!refs.sessionComplete.hidden) showSessionComplete();
+    saveProgress();
+  }
+
+  for (const [count, button] of refs.vocabMistakeRepetitions) {
+    button.addEventListener('click', () => setMistakeRepetitions(count));
+  }
+  syncMistakeRepetitionButtons();
+
   return {
     checkVocabAnswer,
     collectUnansweredVocabMistakes,
     ensureVocabTopicOptions,
+    hideVocabAlternatives,
     hideVocabList,
     hideVocabTopicPicker,
     nextVocabQuestion,
