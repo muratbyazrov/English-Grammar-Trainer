@@ -1,0 +1,1961 @@
+{
+  "oxford:able:adj:a2": {
+    "translation": "способный (имеющий возможность или умение; перед инфинитивом)"
+  },
+  "oxford:accept:v:a2": {
+    "translation": "принять (согласиться получить или принять)"
+  },
+  "oxford:accurate:adj:b2": {
+    "translation": "точный (правильный, без ошибок)"
+  },
+  "oxford:acknowledge:v:b2": {
+    "translation": "признать (подтвердить существование или получение)"
+  },
+  "oxford:across:prep-adv:a1": {
+    "translation": "через (с одной стороны на другую)"
+  },
+  "oxford:ad:n:b1": {
+    "translation": "реклама (сокращённое название объявления)",
+    "answers": [
+      {
+        "text": "ad",
+        "weight": 1
+      },
+      {
+        "text": "advertisement",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:additional:adj:b2": {
+    "translation": "дополнительный (добавленный к уже имеющемуся)"
+  },
+  "oxford:admit:v:b1": {
+    "translation": "признать (сознаться в ошибке или неприятном факте)"
+  },
+  "oxford:adopt:v:b2": {
+    "translation": "принять (взять за основу метод, правило или подход)"
+  },
+  "oxford:advertisement:n:a2": {
+    "translation": "реклама (отдельное рекламное объявление)",
+    "answers": [
+      {
+        "text": "advertisement",
+        "weight": 1
+      },
+      {
+        "text": "ad",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:advertising:n:a2": {
+    "translation": "реклама (деятельность по продвижению товаров)"
+  },
+  "oxford:advice:n:a1": {
+    "translation": "совет (рекомендация, что делать)"
+  },
+  "oxford:affair:n:b2": {
+    "translation": "дело (событие, ситуация или личное дело)"
+  },
+  "oxford:against:prep:a2": {
+    "translation": "против (в противоположность, вопреки)"
+  },
+  "oxford:ago:adv:a1": {
+    "translation": "назад (сколько времени прошло с события)"
+  },
+  "oxford:aid:n-v:b2": {
+    "translation": "помощь; помогать (помощь, в том числе гуманитарная)"
+  },
+  "oxford:aircraft:n:b2": {
+    "translation": "летательный аппарат (самолёт, вертолёт и другие типы воздушных судов)"
+  },
+  "oxford:almost:adv:a2": {
+    "translation": "почти (чуть меньше полного значения)",
+    "answers": [
+      {
+        "text": "almost",
+        "weight": 1
+      },
+      {
+        "text": "nearly",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:alter:v:b2": {
+    "translation": "изменить (сделать иным)"
+  },
+  "oxford:although:conj:a2": {
+    "translation": "хотя (вводит уступку)"
+  },
+  "oxford:angle:n:b2": {
+    "translation": "угол (геометрический или угол обзора)"
+  },
+  "oxford:announce:v:b1": {
+    "translation": "объявить (сообщить публично)"
+  },
+  "oxford:answer:n-v:a1": {
+    "translation": "ответ; отвечать (ответ на вопрос, задание или обращение)"
+  },
+  "oxford:anybody:pron:a2": {
+    "translation": "кто-нибудь; любой (о любом человеке)",
+    "answers": [
+      {
+        "text": "anybody",
+        "weight": 1
+      },
+      {
+        "text": "anyone",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:anyone:pron:a1": {
+    "translation": "кто-нибудь; любой (о любом человеке)",
+    "answers": [
+      {
+        "text": "anyone",
+        "weight": 1
+      },
+      {
+        "text": "anybody",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:anywhere:adv-pron:a2": {
+    "translation": "где угодно (в любом месте)"
+  },
+  "oxford:apartment:n:a1": {
+    "translation": "квартира (жильё; чаще американский вариант)",
+    "answers": [
+      {
+        "text": "apartment",
+        "weight": 1
+      },
+      {
+        "text": "flat",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:app:n:a2": {
+    "translation": "приложение (программное обеспечение; сокращённое название)",
+    "answers": [
+      {
+        "text": "app",
+        "weight": 1
+      },
+      {
+        "text": "application",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:apparent:adj:b2": {
+    "translation": "очевидный (видимый или кажущийся)"
+  },
+  "oxford:application:n:b1": {
+    "translation": "приложение (программное обеспечение; полное название)",
+    "answers": [
+      {
+        "text": "application",
+        "weight": 1
+      },
+      {
+        "text": "app",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:appreciate:v:b1": {
+    "translation": "ценить (быть благодарным, понимать ценность)"
+  },
+  "oxford:appropriate:adj:b2": {
+    "translation": "соответствующий (подходящий по ситуации)"
+  },
+  "oxford:arms:n:b2": {
+    "translation": "оружие (вооружение, собирательное множественное число)"
+  },
+  "oxford:artist:n:a1": {
+    "translation": "художник (человек, создающий произведения искусства)"
+  },
+  "oxford:assess:v:b2": {
+    "translation": "оценивать (судить о состоянии, риске или качестве)"
+  },
+  "oxford:associated:adj:b2": {
+    "translation": "связанный (соединённый общей ассоциацией или участием)"
+  },
+  "oxford:attitude:n:b1": {
+    "translation": "отношение (личная позиция или настрой)"
+  },
+  "oxford:awful:adj:a2": {
+    "translation": "ужасный (очень плохой или неприятный)",
+    "answers": [
+      {
+        "text": "awful",
+        "weight": 1
+      },
+      {
+        "text": "horrible",
+        "weight": 1
+      },
+      {
+        "text": "terrible",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:back:v:b2": {
+    "translation": "поддерживать (оказывать поддержку человеку или идее)"
+  },
+  "oxford:backwards:adv:b1": {
+    "translation": "назад (в обратном направлении)"
+  },
+  "oxford:band:n:a1": {
+    "translation": "группа (музыкальный коллектив)"
+  },
+  "oxford:basically:adv:b2": {
+    "translation": "в основном (по сути, в своей основе)"
+  },
+  "oxford:belief:n:b1": {
+    "translation": "вера (убеждение, что что-либо истинно)"
+  },
+  "oxford:bicycle:noun": {
+    "translation": "велосипед (полное название)",
+    "answers": [
+      {
+        "text": "bicycle",
+        "weight": 1
+      },
+      {
+        "text": "bike",
+        "weight": 0.9
+      }
+    ]
+  },
+  "oxford:big:adj:a1": {
+    "translation": "большой (большого физического размера)",
+    "answers": [
+      {
+        "text": "big",
+        "weight": 1
+      },
+      {
+        "text": "large",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:bike:n:a1": {
+    "translation": "велосипед (разговорная короткая форма)",
+    "answers": [
+      {
+        "text": "bike",
+        "weight": 1
+      },
+      {
+        "text": "bicycle",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:bother:v:b1": {
+    "translation": "беспокоить (причинять неудобство, отвлекать)"
+  },
+  "oxford:boyfriend:n:a1": {
+    "translation": "парень (романтический партнёр)"
+  },
+  "oxford:breast:n:b2": {
+    "translation": "грудь (молочная железа или передняя часть груди)"
+  },
+  "oxford:breath:n:b2": {
+    "translation": "дыхание (отдельный вдох или выдох)"
+  },
+  "oxford:breathing:n:b1": {
+    "translation": "дыхание (процесс вдохов и выдохов)"
+  },
+  "oxford:brilliant:adj:a2": {
+    "translation": "блестящий (выдающийся, превосходный)"
+  },
+  "oxford:broad:adj:b2": {
+    "translation": "широкий (с большим охватом или размахом)"
+  },
+  "oxford:bye:exclam:a1": {
+    "translation": "пока (при прощании)"
+  },
+  "oxford:capable:adj:b2": {
+    "translation": "способный (имеющий способность; обычно с предлогом)"
+  },
+  "oxford:case:n:a2": {
+    "translation": "дело (конкретный случай, в том числе судебный)"
+  },
+  "oxford:celebration:n:b1": {
+    "translation": "праздник (торжество, празднование)"
+  },
+  "oxford:certain:adj:a2": {
+    "translation": "уверенный (не сомневающийся в факте)"
+  },
+  "oxford:certainly:adv:a2": {
+    "translation": "конечно (безусловно, несомненно)"
+  },
+  "oxford:chef:n:a2": {
+    "translation": "повар (профессиональный, часто шеф-повар)"
+  },
+  "oxford:chest:n:b1": {
+    "translation": "грудь (грудная клетка)"
+  },
+  "oxford:choice:n:a2": {
+    "translation": "выбор (принятое решение или возможность выбрать)"
+  },
+  "oxford:choose:v:a1": {
+    "translation": "выбирать (делать выбор из вариантов)"
+  },
+  "oxford:city:n:a1": {
+    "translation": "город (крупный город)"
+  },
+  "oxford:class:n:a1": {
+    "translation": "класс (учебная группа или занятие)"
+  },
+  "oxford:classic:adj-n:b2": {
+    "translation": "классический (образцовый, признанный временем)"
+  },
+  "oxford:classical:adj:a2": {
+    "translation": "классический (относящийся к классической традиции)"
+  },
+  "oxford:classroom:n:a1": {
+    "translation": "класс (помещение для занятий)"
+  },
+  "oxford:clean:adj-v:a1": {
+    "translation": "чистый; чистить (без грязи / удалять грязь)"
+  },
+  "oxford:clever:adj:a2": {
+    "translation": "умный (находчивый, умелый в решении задач)"
+  },
+  "oxford:client:n:b1": {
+    "translation": "клиент (получатель профессиональных услуг)"
+  },
+  "oxford:clothes:n:a1": {
+    "translation": "одежда (предметы одежды; множественное число)"
+  },
+  "oxford:clothing:n:a2": {
+    "translation": "одежда (одежда как категория; неисчисляемое)"
+  },
+  "oxford:comfortable:adj:a2": {
+    "translation": "удобный (дающий физический комфорт)"
+  },
+  "oxford:commitment:n:b2": {
+    "translation": "обязательство (добровольно взятое обещание или преданность делу)"
+  },
+  "oxford:common:adj:a1": {
+    "translation": "общий (распространённый или совместный)"
+  },
+  "oxford:commonly:adv:b2": {
+    "translation": "обычно (распространено среди многих)"
+  },
+  "oxford:complete:adj-v:a1": {
+    "translation": "полный; завершать (все части в наличии / доводить до конца)"
+  },
+  "oxford:completely:adv:a2": {
+    "translation": "полностью (в полной мере)",
+    "answers": [
+      {
+        "text": "completely",
+        "weight": 1
+      },
+      {
+        "text": "entirely",
+        "weight": 1
+      },
+      {
+        "text": "fully",
+        "weight": 1
+      },
+      {
+        "text": "totally",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:complex:adj:b1": {
+    "translation": "сложный (со многими связанными частями)"
+  },
+  "oxford:complex:n:b2": {
+    "translation": "комплекс (совокупность связанных зданий, объектов или проблем)"
+  },
+  "oxford:complicated:adj:b2": {
+    "translation": "сложный (запутанный, трудный для понимания)"
+  },
+  "oxford:concerned:adj:b2": {
+    "translation": "обеспокоенный; заинтересованный (испытывающий тревогу / имеющий отношение к делу)"
+  },
+  "oxford:confident:adj:b1": {
+    "translation": "уверенный (верящий в свои способности или успех)"
+  },
+  "oxford:confused:adj:b1": {
+    "translation": "смущенный (не понимающий, запутавшийся)"
+  },
+  "oxford:constant:adj:b2": {
+    "translation": "постоянный (непрерывный или регулярно повторяющийся)"
+  },
+  "oxford:contemporary:adj:b2": {
+    "translation": "современный (относящийся к нашему времени или той же эпохе)"
+  },
+  "oxford:convenient:adj:b1": {
+    "translation": "удобный (подходящий по времени, месту или удобству использования)"
+  },
+  "oxford:conversation:n:a1": {
+    "translation": "разговор (обмен репликами между людьми)"
+  },
+  "oxford:convince:v:b1": {
+    "translation": "убеждать (убедить в истинности чего-либо)"
+  },
+  "oxford:cook:n:a2": {
+    "translation": "повар (человек, готовящий еду)"
+  },
+  "oxford:corner:n:a2": {
+    "translation": "угол (место, где сходятся стороны)"
+  },
+  "oxford:costume:n:b1": {
+    "translation": "костюм (сценический, маскарадный или национальный)"
+  },
+  "oxford:council:n:b2": {
+    "translation": "совет (совещательный или управляющий орган)"
+  },
+  "oxford:couple:n:a2": {
+    "translation": "пара (двое вместе, в том числе партнёры)"
+  },
+  "oxford:crime:n:a2": {
+    "translation": "преступление (общественно опасное нарушение закона)"
+  },
+  "oxford:cruel:adj:b1": {
+    "translation": "жестокий (намеренно причиняющий страдания)"
+  },
+  "oxford:customer:n:a1": {
+    "translation": "клиент (покупатель товаров или услуг)"
+  },
+  "oxford:dear:adj:a1": {
+    "translation": "дорогой (милый, дорогой сердцу)"
+  },
+  "oxford:dear:exclam:a2": {
+    "translation": "о боже! (возглас удивления или тревоги)"
+  },
+  "oxford:decide:v:a1": {
+    "translation": "решить (принять решение, выбрать)"
+  },
+  "oxford:decision:n:a2": {
+    "translation": "решение (принятый выбор)"
+  },
+  "oxford:declare:v:b2": {
+    "translation": "объявить (заявить официально)"
+  },
+  "oxford:defence:n:b2": {
+    "translation": "защита (отражение нападения или отстаивание)"
+  },
+  "oxford:defend:v:b2": {
+    "translation": "защищать (отражать нападение или отстаивать)"
+  },
+  "oxford:define:v:b1": {
+    "translation": "определить (дать определение, обозначить границы)"
+  },
+  "oxford:degree:n:a2": {
+    "translation": "степень (уровень, мера выраженности; также единица измерения)"
+  },
+  "oxford:desire:n-v:b2": {
+    "translation": "желание; желать (сильное стремление, формальное)"
+  },
+  "oxford:desk:n:a1": {
+    "translation": "стол (письменный или рабочий стол)"
+  },
+  "oxford:detect:v:b2": {
+    "translation": "обнаружить (заметить присутствие или сигнал)"
+  },
+  "oxford:determine:v:b1": {
+    "translation": "определить (установить факт или точно выяснить)"
+  },
+  "oxford:direct:adj:a2": {
+    "translation": "прямой (без посредников или обходного пути)"
+  },
+  "oxford:direct:v-adv:b1": {
+    "translation": "направлять; прямо (руководить / без промежуточных этапов)"
+  },
+  "oxford:dirt:n:b1": {
+    "translation": "грязь (загрязнение в целом)"
+  },
+  "oxford:discover:v:a2": {
+    "translation": "обнаружить (найти неизвестное или узнать впервые)"
+  },
+  "oxford:discovery:n:a2": {
+    "translation": "открытие (нахождение ранее неизвестного)"
+  },
+  "oxford:disease:n:a2": {
+    "translation": "болезнь (конкретное заболевание)"
+  },
+  "oxford:distribution:n:b2": {
+    "translation": "распространение (распределение и доставка)"
+  },
+  "oxford:domestic:adj:b2": {
+    "translation": "внутренний (относящийся к своей стране или домашнему хозяйству)"
+  },
+  "oxford:down:adv-prep:a1": {
+    "translation": "вниз (направление к более низкой точке)"
+  },
+  "oxford:downwards:adv:b2": {
+    "translation": "вниз (движение в более низком направлении)"
+  },
+  "oxford:each:det-pron-adv:a1": {
+    "translation": "каждый (каждый по отдельности)"
+  },
+  "oxford:earth:n:a2": {
+    "translation": "земля (планета или почва)"
+  },
+  "oxford:easy:adj:a1": {
+    "translation": "лёгкий (несложный, не требующий усилий)"
+  },
+  "oxford:effective:adj:b1": {
+    "translation": "эффективный (дающий нужный результат)"
+  },
+  "oxford:efficient:adj:b2": {
+    "translation": "эффективный (дающий результат без лишних затрат)"
+  },
+  "oxford:elect:v:b2": {
+    "translation": "выбирать (избирать голосованием)"
+  },
+  "oxford:electric:adj:a2": {
+    "translation": "электрический (работающий на электричестве или создающий его)"
+  },
+  "oxford:electrical:adj:a2": {
+    "translation": "электрический (связанный с электричеством)"
+  },
+  "oxford:else:adv:a1": {
+    "translation": "еще (дополнительно, помимо названного)"
+  },
+  "oxford:embarrassed:adj:b1": {
+    "translation": "смущенный (испытывающий неловкость или стыд)"
+  },
+  "oxford:enhance:v:b2": {
+    "translation": "улучшить (усилить качество или эффект)"
+  },
+  "oxford:enormous:adj:a2": {
+    "translation": "огромный (очень большой по размеру)",
+    "answers": [
+      {
+        "text": "enormous",
+        "weight": 1
+      },
+      {
+        "text": "huge",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:ensure:v:b2": {
+    "translation": "обеспечить (сделать так, чтобы результат был гарантирован)"
+  },
+  "oxford:entirely:adv:b2": {
+    "translation": "полностью (целиком, без исключений)",
+    "answers": [
+      {
+        "text": "entirely",
+        "weight": 1
+      },
+      {
+        "text": "completely",
+        "weight": 1
+      },
+      {
+        "text": "fully",
+        "weight": 1
+      },
+      {
+        "text": "totally",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:entry:n:b1": {
+    "translation": "запись (отдельный пункт в журнале, списке или базе)"
+  },
+  "oxford:error:n:a2": {
+    "translation": "ошибка (часто о неверных данных, расчёте или сбое)"
+  },
+  "oxford:especially:adv:a2": {
+    "translation": "особенно (в особенности)",
+    "answers": [
+      {
+        "text": "especially",
+        "weight": 1
+      },
+      {
+        "text": "particularly",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:establish:v:b2": {
+    "translation": "установить (основать, создать или доказать)"
+  },
+  "oxford:evaluate:v:b2": {
+    "translation": "оценивать (определять ценность или эффективность)"
+  },
+  "oxford:every:det:a1": {
+    "translation": "каждый (все члены группы без исключения)"
+  },
+  "oxford:everybody:pron:a1": {
+    "translation": "все (все люди)",
+    "answers": [
+      {
+        "text": "everybody",
+        "weight": 1
+      },
+      {
+        "text": "everyone",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:everyone:pron:a1": {
+    "translation": "все (все люди)",
+    "answers": [
+      {
+        "text": "everyone",
+        "weight": 1
+      },
+      {
+        "text": "everybody",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:everything:pron:a1": {
+    "translation": "всё (все вещи или явления, без исключения)"
+  },
+  "oxford:exact:adj:a2": {
+    "translation": "точный (совпадающий в точности, без отклонений)"
+  },
+  "oxford:examine:v:b1": {
+    "translation": "исследовать (внимательно осматривать или изучать)"
+  },
+  "oxford:expand:v:b1": {
+    "translation": "расширять (увеличивать объём или масштаб)"
+  },
+  "oxford:expectation:n:b2": {
+    "translation": "ожидание (предположение о будущем или надежда)"
+  },
+  "oxford:expense:n:b2": {
+    "translation": "расходы (затрата или статья затрат)"
+  },
+  "oxford:expensive:adj:a1": {
+    "translation": "дорогой (с высокой ценой)"
+  },
+  "oxford:explore:v:b1": {
+    "translation": "исследовать (изучать новое место или возможности)"
+  },
+  "oxford:extend:v:b2": {
+    "translation": "расширять (увеличивать длину, срок или зону действия)"
+  },
+  "oxford:extent:n:b2": {
+    "translation": "степень (мера, предел распространения)"
+  },
+  "oxford:external:adj:b2": {
+    "translation": "внешний (внешний по отношению к системе или организации)"
+  },
+  "oxford:extra:adj:a1": {
+    "translation": "дополнительный (сверх обычного количества)"
+  },
+  "oxford:extra:n-adv:b1": {
+    "translation": "доплата; дополнительно (то, что сверх обычного)"
+  },
+  "oxford:faith:n:b2": {
+    "translation": "вера (доверие или религиозная вера)"
+  },
+  "oxford:fast:adj-adv:a1": {
+    "translation": "быстрый; быстро (с высокой скоростью)"
+  },
+  "oxford:fat:adj:a1": {
+    "translation": "толстый (о человеке или животном с лишним жиром)"
+  },
+  "oxford:fat:n:a2": {
+    "translation": "жир (вещество в организме или пище)"
+  },
+  "oxford:find:v:a1": {
+    "translation": "найти (обнаружить искомое)"
+  },
+  "oxford:flat:n:a1": {
+    "translation": "квартира (жильё; чаще британский вариант)",
+    "answers": [
+      {
+        "text": "flat",
+        "weight": 1
+      },
+      {
+        "text": "apartment",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:float:v:b2": {
+    "translation": "плавать (держаться на поверхности, не тонуть)"
+  },
+  "oxford:following:adj:a2": {
+    "translation": "следующий (идущий вслед за упомянутым)"
+  },
+  "oxford:following:n:b1": {
+    "translation": "последователи (сторонники или поклонники)"
+  },
+  "oxford:following:prep:b2": {
+    "translation": "после (вслед за событием)"
+  },
+  "oxford:food:n:a1": {
+    "translation": "еда (продукты питания вообще)"
+  },
+  "oxford:foot:n:a1": {
+    "translation": "нога (ступня, нижняя часть ноги)"
+  },
+  "oxford:football:n:a1": {
+    "translation": "футбол (европейский футбол; чаще британское название)",
+    "answers": [
+      {
+        "text": "football",
+        "weight": 1
+      },
+      {
+        "text": "soccer",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:fortune:n:b2": {
+    "translation": "удача (счастливый случай, судьба; также состояние)"
+  },
+  "oxford:frequently:adv:b1": {
+    "translation": "часто (с высокой частотой)",
+    "answers": [
+      {
+        "text": "frequently",
+        "weight": 1
+      },
+      {
+        "text": "often",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:full:adj:a1": {
+    "translation": "полный (наполненный до предела)"
+  },
+  "oxford:fully:adv:b2": {
+    "translation": "полностью (в полной мере)",
+    "answers": [
+      {
+        "text": "fully",
+        "weight": 1
+      },
+      {
+        "text": "completely",
+        "weight": 1
+      },
+      {
+        "text": "entirely",
+        "weight": 1
+      },
+      {
+        "text": "totally",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:general:adj:a2": {
+    "translation": "общий (охватывающий целое, без подробностей)"
+  },
+  "oxford:goal:n:a2": {
+    "translation": "цель (результат, которого хотят достичь)"
+  },
+  "oxford:govern:v:b2": {
+    "translation": "управлять (руководить страной, определять правила)"
+  },
+  "oxford:grade:v:b2": {
+    "translation": "оценивать (выставлять учебную отметку или категорию)"
+  },
+  "oxford:greet:v:a2": {
+    "translation": "приветствовать (встречать приветствием)"
+  },
+  "oxford:ground:n:a2": {
+    "translation": "земля (поверхность под ногами)"
+  },
+  "oxford:group:n:a1": {
+    "translation": "группа (несколько объединённых людей или предметов)"
+  },
+  "oxford:guy:n:a2": {
+    "translation": "парень (мужчина, разговорное)"
+  },
+  "oxford:heavily:adv:b1": {
+    "translation": "сильно (интенсивно, с большой нагрузкой)"
+  },
+  "oxford:hello:exclam-n:a1": {
+    "translation": "привет (приветствие)",
+    "answers": [
+      {
+        "text": "hello",
+        "weight": 1
+      },
+      {
+        "text": "hi",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:help:v-n:a1": {
+    "translation": "помощь; помогать (помощь в выполнении чего-либо)"
+  },
+  "oxford:helpful:adj:a2": {
+    "translation": "полезный (помогающий человеку в конкретной ситуации)"
+  },
+  "oxford:hi:exclam:a1": {
+    "translation": "привет (неформальное приветствие)",
+    "answers": [
+      {
+        "text": "hi",
+        "weight": 1
+      },
+      {
+        "text": "hello",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:high:adj:a1": {
+    "translation": "высокий (далеко вверх от уровня земли)"
+  },
+  "oxford:high:adv:a2": {
+    "translation": "высоко (далеко вверх от уровня земли)"
+  },
+  "oxford:high:n:b2": {
+    "translation": "максимум (наивысшая точка или уровень)"
+  },
+  "oxford:himself:pron:a2": {
+    "translation": "сам (о мужчине, он сам)"
+  },
+  "oxford:historic:adj:b1": {
+    "translation": "исторический (важный для истории)"
+  },
+  "oxford:historical:adj:b1": {
+    "translation": "исторический (относящийся к прошлому)"
+  },
+  "oxford:history:n:a1": {
+    "translation": "история (прошлое и его изучение)"
+  },
+  "oxford:hold:v:a2": {
+    "translation": "держать (удерживать в руках или на месте)"
+  },
+  "oxford:holiday:n:a1": {
+    "translation": "праздник (выходной или отпуск)"
+  },
+  "oxford:horrible:adj:b1": {
+    "translation": "ужасный (очень плохой или неприятный)",
+    "answers": [
+      {
+        "text": "horrible",
+        "weight": 1
+      },
+      {
+        "text": "awful",
+        "weight": 1
+      },
+      {
+        "text": "terrible",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:hour:n:a1": {
+    "translation": "час (единица времени, 60 минут)"
+  },
+  "oxford:huge:adj:a2": {
+    "translation": "огромный (очень большой по размеру)",
+    "answers": [
+      {
+        "text": "huge",
+        "weight": 1
+      },
+      {
+        "text": "enormous",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:hunt:n:b2": {
+    "translation": "охота (отдельный поиск или охотничья вылазка)"
+  },
+  "oxford:hunting:n:b2": {
+    "translation": "охота (занятие охотой)"
+  },
+  "oxford:i:pron:a1": {
+    "translation": "я (кто выполняет действие)"
+  },
+  "oxford:ideal:adj:a2": {
+    "translation": "идеальный (соответствующий желаемому образцу)"
+  },
+  "oxford:ideal:n:b2": {
+    "translation": "идеал (образец совершенства или принцип)"
+  },
+  "oxford:identity:n:b1": {
+    "translation": "личность (то, кем человек является, его идентичность)"
+  },
+  "oxford:illness:n:a2": {
+    "translation": "болезнь (состояние нездоровья или период болезни)"
+  },
+  "oxford:imagine:v:a1": {
+    "translation": "представлять себе (мысленно допускать, воображать)"
+  },
+  "oxford:improve:v:a1": {
+    "translation": "улучшить (сделать лучше)"
+  },
+  "oxford:indeed:adv:b1": {
+    "translation": "действительно (подтверждает сказанное, «и правда»)"
+  },
+  "oxford:initially:adv:b2": {
+    "translation": "изначально (в самом начале процесса)"
+  },
+  "oxford:inner:adj:b2": {
+    "translation": "внутренний (расположенный внутри, ближе к центру)"
+  },
+  "oxford:inside:prep-adv-n-adj:a2": {
+    "translation": "внутри; внутренняя часть; внутренний (расположение или часть предмета)"
+  },
+  "oxford:insight:n:b2": {
+    "translation": "понимание (глубокое осознание сути)"
+  },
+  "oxford:install:v:b2": {
+    "translation": "установить (смонтировать оборудование или программу)"
+  },
+  "oxford:instrument:n:a2": {
+    "translation": "инструмент (точный, измерительный или музыкальный)"
+  },
+  "oxford:intelligent:adj:a2": {
+    "translation": "умный (с высокими интеллектуальными способностями)"
+  },
+  "oxford:interested:adj:a1": {
+    "translation": "заинтересованный (испытывающий интерес)"
+  },
+  "oxford:internal:adj:b2": {
+    "translation": "внутренний (находящийся внутри системы, организма или организации)"
+  },
+  "oxford:investigate:v:b1": {
+    "translation": "исследовать (выяснять причины, проводить расследование)"
+  },
+  "oxford:item:n:a2": {
+    "translation": "предмет (отдельный элемент или вещь)"
+  },
+  "oxford:itself:pron:a2": {
+    "translation": "сам (о предмете или животном, оно само)"
+  },
+  "oxford:journal:n:b1": {
+    "translation": "журнал (научное или профессиональное издание; также дневник)"
+  },
+  "oxford:just:adv:a1": {
+    "translation": "просто (только, всего лишь)"
+  },
+  "oxford:keep:v:a1": {
+    "translation": "держать (сохранять у себя или в прежнем состоянии)"
+  },
+  "oxford:lab:n:a2": {
+    "translation": "лаборатория (сокращённая форма)",
+    "answers": [
+      {
+        "text": "lab",
+        "weight": 1
+      },
+      {
+        "text": "laboratory",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:laboratory:n:b1": {
+    "translation": "лаборатория (полная форма)",
+    "answers": [
+      {
+        "text": "laboratory",
+        "weight": 1
+      },
+      {
+        "text": "lab",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:language:n:a1": {
+    "translation": "язык (система общения)"
+  },
+  "oxford:large:adj:a1": {
+    "translation": "большой (большого физического размера)",
+    "answers": [
+      {
+        "text": "large",
+        "weight": 1
+      },
+      {
+        "text": "big",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:largely:adv:b2": {
+    "translation": "в основном (в значительной степени)"
+  },
+  "oxford:last:det:a1": {
+    "translation": "последний (последний по порядку)"
+  },
+  "oxford:latest:adj:b1": {
+    "translation": "последний (самый новый, недавний)"
+  },
+  "oxford:latest:n:b2": {
+    "translation": "последние новости (самая свежая информация)"
+  },
+  "oxford:lay:v:b1": {
+    "translation": "класть; укладывать (помещать что-либо горизонтально)"
+  },
+  "oxford:leaf:n:b1": {
+    "translation": "лист (часть растения)"
+  },
+  "oxford:learning:n:a2": {
+    "translation": "обучение (процесс усвоения знаний)"
+  },
+  "oxford:leather:n:b1": {
+    "translation": "кожа (материал из обработанной шкуры)"
+  },
+  "oxford:leg:n:a1": {
+    "translation": "нога (конечность от бедра до ступни)"
+  },
+  "oxford:letter:n:a1": {
+    "translation": "письмо (письменное послание адресату)"
+  },
+  "oxford:lie:v:a1": {
+    "translation": "лежать (находиться в горизонтальном положении)"
+  },
+  "oxford:little:adj-det-pron:a1": {
+    "translation": "маленький; мало (небольшой размер или количество)"
+  },
+  "oxford:little:adv:a2": {
+    "translation": "мало (в небольшой степени, наречие)"
+  },
+  "oxford:locate:v:b1": {
+    "translation": "найти (установить точное местоположение)"
+  },
+  "oxford:lorry:n:a2": {
+    "translation": "грузовик (грузовой автомобиль; британский вариант)",
+    "answers": [
+      {
+        "text": "lorry",
+        "weight": 1
+      },
+      {
+        "text": "truck",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:lot:pron-det-adv:a1": {
+    "translation": "много (большое количество; обычно с артиклем)"
+  },
+  "oxford:luck:n:a2": {
+    "translation": "удача (везение, случайный успех)"
+  },
+  "oxford:magazine:n:a1": {
+    "translation": "журнал (периодическое издание для читателей)"
+  },
+  "oxford:maintain:v:b2": {
+    "translation": "поддерживать (сохранять в рабочем или прежнем состоянии)"
+  },
+  "oxford:manage:v:a2": {
+    "translation": "управлять (руководить работой, людьми или ресурсами)"
+  },
+  "oxford:many:det-pron:a1": {
+    "translation": "много (большое число исчисляемых предметов)"
+  },
+  "oxford:matching:adj:b2": {
+    "translation": "соответствующий (подходящий по цвету, форме или образцу)"
+  },
+  "oxford:mathematics:n:a2": {
+    "translation": "математика (полное название дисциплины)",
+    "answers": [
+      {
+        "text": "mathematics",
+        "weight": 1
+      },
+      {
+        "text": "maths",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:maths:n:a2": {
+    "translation": "математика (сокращённое британское название дисциплины)",
+    "answers": [
+      {
+        "text": "maths",
+        "weight": 1
+      },
+      {
+        "text": "mathematics",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:maybe:adv:a1": {
+    "translation": "может быть (возможно, наречие)"
+  },
+  "oxford:me:pron:a1": {
+    "translation": "меня; мне (получатель действия)"
+  },
+  "oxford:meal:n:a1": {
+    "translation": "еда (отдельный приём пищи)"
+  },
+  "oxford:might:modal-v:a2": {
+    "translation": "может быть (возможность, модальный глагол)"
+  },
+  "oxford:mild:adj:b1": {
+    "translation": "мягкий (умеренный, несильный)"
+  },
+  "oxford:mistake:n:a1": {
+    "translation": "ошибка (неверное действие или суждение)"
+  },
+  "oxford:modern:adj:a1": {
+    "translation": "современный (относящийся к нынешнему времени или новым подходам)"
+  },
+  "oxford:modify:v:b2": {
+    "translation": "изменить (частично скорректировать, внести изменения)"
+  },
+  "oxford:mostly:adv:a2": {
+    "translation": "в основном (по большей части)"
+  },
+  "oxford:mud:n:b1": {
+    "translation": "грязь (мокрая земля, смешанная с водой)"
+  },
+  "oxford:nearly:adv:a2": {
+    "translation": "почти (чуть меньше полного значения)",
+    "answers": [
+      {
+        "text": "nearly",
+        "weight": 1
+      },
+      {
+        "text": "almost",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:neat:adj:b2": {
+    "translation": "аккуратный (опрятный, с аккуратным видом)"
+  },
+  "oxford:net:n:b1": {
+    "translation": "сеть (из переплетённых нитей)"
+  },
+  "oxford:network:n:a2": {
+    "translation": "сеть (система связанных объектов)"
+  },
+  "oxford:next:adj-adv:a1": {
+    "translation": "следующий (ближайший по порядку)"
+  },
+  "oxford:next:n:b1": {
+    "translation": "следующий (следующий человек или предмет по порядку)"
+  },
+  "oxford:no-one:pron:a1": {
+    "translation": "никто (ни один человек)",
+    "answers": [
+      {
+        "text": "no one",
+        "weight": 1
+      },
+      {
+        "text": "nobody",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:nobody:pron:a1": {
+    "translation": "никто (ни один человек)",
+    "answers": [
+      {
+        "text": "nobody",
+        "weight": 1
+      },
+      {
+        "text": "no one",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:normally:adv:a2": {
+    "translation": "обычно (при нормальных условиях)"
+  },
+  "oxford:o-clock:adv:a1": {
+    "translation": "час (при указании точного времени на часах)"
+  },
+  "oxford:obligation:n:b2": {
+    "translation": "обязательство (долг по закону, договору или морали)"
+  },
+  "oxford:obvious:adj:b1": {
+    "translation": "очевидный (легко заметный и понятный)"
+  },
+  "oxford:occasionally:adv:b2": {
+    "translation": "иногда (изредка, от случая к случаю)"
+  },
+  "oxford:odd:adj:b1": {
+    "translation": "странный (необычный, неожиданный; также нечётный)"
+  },
+  "oxford:offence:n:b2": {
+    "translation": "преступление (нарушение закона; также проступок)"
+  },
+  "oxford:often:adv:a1": {
+    "translation": "часто (много раз, с высокой частотой)",
+    "answers": [
+      {
+        "text": "often",
+        "weight": 1
+      },
+      {
+        "text": "frequently",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:on:prep-adv:a1": {
+    "translation": "на (положение на поверхности)"
+  },
+  "oxford:onto:prep:a2": {
+    "translation": "на (движение на поверхность)"
+  },
+  "oxford:opening:n:b2": {
+    "translation": "открытие (начало работы или открытый проход)"
+  },
+  "oxford:opportunity:n:a2": {
+    "translation": "возможность (благоприятный шанс действовать)"
+  },
+  "oxford:opposed:adj:b2": {
+    "translation": "выступающий против (прилагательное о позиции)"
+  },
+  "oxford:ordinary:adj:a2": {
+    "translation": "обычный (ничем не выделяющийся, рядовой)"
+  },
+  "oxford:originally:adv:b1": {
+    "translation": "изначально (в исходном виде или по первоначальному замыслу)"
+  },
+  "oxford:ought:modal-v:b1": {
+    "translation": "следовало бы (моральный долг; употребляется с частицей инфинитива)"
+  },
+  "oxford:outcome:n:b2": {
+    "translation": "результат (конечный итог процесса)"
+  },
+  "oxford:outer:adj:b2": {
+    "translation": "внешний (расположенный дальше от центра)"
+  },
+  "oxford:owe:v:b2": {
+    "translation": "быть должным (деньги, услугу или благодарность)"
+  },
+  "oxford:pack:v:a2": {
+    "translation": "упаковывать (складывать вещи для перевозки)"
+  },
+  "oxford:package:v:b2": {
+    "translation": "упаковывать (помещать товар в упаковку)"
+  },
+  "oxford:painter:n:a2": {
+    "translation": "художник (работающий с красками)"
+  },
+  "oxford:pair:n:a1": {
+    "translation": "пара (два подходящих друг к другу предмета)"
+  },
+  "oxford:pants:n:a2": {
+    "translation": "брюки (американский вариант для брюк)",
+    "answers": [
+      {
+        "text": "pants",
+        "weight": 1
+      },
+      {
+        "text": "trousers",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:particular:adj:a2": {
+    "translation": "конкретный (выделенный среди других, определённый)"
+  },
+  "oxford:particularly:adv:b1": {
+    "translation": "особенно (в особенности)",
+    "answers": [
+      {
+        "text": "particularly",
+        "weight": 1
+      },
+      {
+        "text": "especially",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:path:n:b1": {
+    "translation": "путь (тропа или дорожка)"
+  },
+  "oxford:peace:n:a2": {
+    "translation": "мир (отсутствие войны, покой)"
+  },
+  "oxford:per-cent:n-adj-adv:a2": {
+    "translation": "процент (из ста, после числового значения)"
+  },
+  "oxford:percentage:n:b1": {
+    "translation": "процент (доля, выраженная в процентах)"
+  },
+  "oxford:perfect:adj:a1": {
+    "translation": "идеальный (без изъянов)"
+  },
+  "oxford:perhaps:adv:a2": {
+    "translation": "возможно (возможно, предположение)"
+  },
+  "oxford:permanent:adj:b2": {
+    "translation": "постоянный (остающийся надолго или навсегда)"
+  },
+  "oxford:personality:n:a2": {
+    "translation": "личность (характер и особенности человека)"
+  },
+  "oxford:perspective:n:b2": {
+    "translation": "перспектива (точка зрения, взгляд)"
+  },
+  "oxford:persuade:v:b1": {
+    "translation": "убеждать (склонить к действию)"
+  },
+  "oxford:phone:n-v:a1": {
+    "translation": "телефон; звонить по телефону (короткая форма названия)",
+    "answers": [
+      {
+        "text": "phone",
+        "weight": 1
+      },
+      {
+        "text": "telephone",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:photo:n:a1": {
+    "answers": [
+      {
+        "text": "photo",
+        "weight": 1
+      },
+      {
+        "text": "photograph",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:photograph:n:a1": {
+    "translation": "фотография (отдельный снимок)",
+    "answers": [
+      {
+        "text": "photograph",
+        "weight": 1
+      },
+      {
+        "text": "photo",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:photography:n:b1": {
+    "translation": "фотография (искусство или процесс съёмки)"
+  },
+  "oxford:pick:n:b2": {
+    "translation": "выбор (выбранный вариант, отбор)"
+  },
+  "oxford:picture:v:b2": {
+    "translation": "представлять себе (создавать мысленный зрительный образ)"
+  },
+  "oxford:pitch:n:b2": {
+    "translation": "высота тона; поле (в музыке / площадка для игры)"
+  },
+  "oxford:plane:noun": {
+    "translation": "самолёт (воздушное судно с неподвижными крыльями)"
+  },
+  "oxford:plenty:pron:b1": {
+    "translation": "много (более чем достаточно)"
+  },
+  "oxford:policy:n:b1": {
+    "translation": "политика (принцип или курс организации)"
+  },
+  "oxford:politics:n:b1": {
+    "translation": "политика (деятельность, связанная с властью)"
+  },
+  "oxford:possibility:n:a2": {
+    "translation": "возможность (то, что может произойти или быть верным)"
+  },
+  "oxford:possibly:adv:b1": {
+    "translation": "возможно (это возможно, хотя не обязательно)"
+  },
+  "oxford:practice:n:a1": {
+    "translation": "практика (занятие, отработка навыка; существительное)"
+  },
+  "oxford:practise:v:a1": {
+    "translation": "практиковаться (отрабатывать навык; британский глагол)"
+  },
+  "oxford:proposal:n:b2": {
+    "translation": "предложение (план или инициатива на рассмотрение)"
+  },
+  "oxford:prospect:n:b2": {
+    "translation": "перспектива (будущая возможность или ожидаемое развитие)"
+  },
+  "oxford:protect:v:a2": {
+    "translation": "защищать (оберегать от вреда)"
+  },
+  "oxford:protection:n:b2": {
+    "translation": "защита (предохранение от вреда)"
+  },
+  "oxford:provide:v:a2": {
+    "translation": "обеспечить (снабдить необходимым, предоставить)"
+  },
+  "oxford:pure:adj:b2": {
+    "translation": "чистый (без примесей)"
+  },
+  "oxford:purpose:n:a2": {
+    "translation": "цель (то, ради чего что-либо делают)"
+  },
+  "oxford:quick:adj:a1": {
+    "translation": "быстрый (занимающий мало времени)"
+  },
+  "oxford:quickly:adv:a1": {
+    "translation": "быстро (за короткое время)"
+  },
+  "oxford:quiet:adj:a1": {
+    "translation": "тихий (с небольшим количеством шума)"
+  },
+  "oxford:range:v:b2": {
+    "translation": "варьироваться (находиться в диапазоне от одного значения до другого)"
+  },
+  "oxford:rapid:adj:b2": {
+    "translation": "быстрый (происходящий с большой скоростью)"
+  },
+  "oxford:rapidly:adv:b2": {
+    "translation": "быстро (с высокой скоростью, интенсивно)"
+  },
+  "oxford:rate:v:b2": {
+    "translation": "оценивать (присваивать рейтинг, оценку)"
+  },
+  "oxford:really:adv:a1": {
+    "translation": "действительно (на самом деле)"
+  },
+  "oxford:reasonable:adj:b2": {
+    "translation": "разумный (приемлемый, обоснованный)"
+  },
+  "oxford:recognize:v:a2": {
+    "translation": "признать (осознать, признать значимость или статус)"
+  },
+  "oxford:recording:n:a2": {
+    "translation": "запись (сохранённый звук или видео)"
+  },
+  "oxford:related:adj:b1": {
+    "translation": "связанный (имеющий отношение или связь)"
+  },
+  "oxford:relation:n:b1": {
+    "translation": "отношение (связь между людьми или явлениями)"
+  },
+  "oxford:remain:v:b1": {
+    "translation": "оставаться (сохраняться после изменений)"
+  },
+  "oxford:reply:v-n:a2": {
+    "translation": "ответ; отвечать (ответ на сообщение или обращение)"
+  },
+  "oxford:resolve:v:b2": {
+    "translation": "решить (разрешить спор или трудность)"
+  },
+  "oxford:result:n:a1": {
+    "translation": "результат (итог действия или вычисления)"
+  },
+  "oxford:retain:v:b2": {
+    "translation": "сохранить (удержать, не утратить)"
+  },
+  "oxford:rich:adj:a1": {
+    "translation": "богатый (обладающий большим состоянием)",
+    "answers": [
+      {
+        "text": "rich",
+        "weight": 1
+      },
+      {
+        "text": "wealthy",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:rough:adj:b1": {
+    "translation": "грубый (шероховатый, неровный)"
+  },
+  "oxford:row:n:b1": {
+    "translation": "строка (ряд элементов, в том числе в таблице)"
+  },
+  "oxford:rude:adj:a2": {
+    "translation": "грубый (невежливый, оскорбительный)"
+  },
+  "oxford:sadly:adv:a2": {
+    "translation": "к сожалению (с сожалением или грустью)"
+  },
+  "oxford:safe:adj:a2": {
+    "translation": "безопасный (не подвергающийся опасности)"
+  },
+  "oxford:safety:n:b1": {
+    "translation": "безопасность (защищённость от несчастных случаев и вреда)"
+  },
+  "oxford:save:v:a2": {
+    "translation": "сохранить (сберечь, записать или спасти)"
+  },
+  "oxford:scream:v-n:b2": {
+    "translation": "крик; кричать (резкий пронзительный звук)"
+  },
+  "oxford:secure:v-adj:b2": {
+    "translation": "обеспечить; надёжно защищённый (получить, закрепить / оградить от угроз)"
+  },
+  "oxford:security:n:b1": {
+    "translation": "безопасность (защищённость от угроз, преступлений или взлома)"
+  },
+  "oxford:selection:n:b2": {
+    "translation": "выбор (процесс отбора или набор отобранного)"
+  },
+  "oxford:self:n:b2": {
+    "translation": "собственная личность (внутреннее я, существительное)"
+  },
+  "oxford:send:v:a1": {
+    "translation": "отправить (передать, послать адресату)"
+  },
+  "oxford:sensible:adj:b1": {
+    "translation": "разумный (здравомыслящий, практичный)"
+  },
+  "oxford:several:det-pron:a2": {
+    "translation": "несколько (небольшое число, больше двух)"
+  },
+  "oxford:shade:n:b2": {
+    "translation": "тень (участок, куда не попадает прямой свет)"
+  },
+  "oxford:shadow:n:b2": {
+    "translation": "тень (тёмный силуэт, отбрасываемый предметом)"
+  },
+  "oxford:shall:modal-v:a2": {
+    "translation": "сделать ли нам; мне? (предложение или вопрос о действии, модальный глагол)"
+  },
+  "oxford:sheet:n:a2": {
+    "translation": "лист (бумаги, тонкого материала)"
+  },
+  "oxford:shiny:adj:b1": {
+    "translation": "блестящий (отражающий свет, глянцевый)"
+  },
+  "oxford:shout:v-n:a2": {
+    "translation": "крик; кричать (громкий голос, чтобы было слышно)"
+  },
+  "oxford:silent:adj:b1": {
+    "translation": "тихий (совсем без звука)"
+  },
+  "oxford:silly:adj:b1": {
+    "translation": "глупый (несерьёзный, нелепый)"
+  },
+  "oxford:simply:adv:b1": {
+    "translation": "просто (простым способом, без сложности)"
+  },
+  "oxford:skin:n:a2": {
+    "translation": "кожа (покров тела)"
+  },
+  "oxford:slight:adj:b2": {
+    "translation": "лёгкий; незначительный (небольшой по степени или величине)"
+  },
+  "oxford:small:adj:a1": {
+    "translation": "маленький (небольшой по размеру)"
+  },
+  "oxford:smart:adj:b1": {
+    "translation": "умный (сообразительный; также стильный)"
+  },
+  "oxford:soccer:n:a2": {
+    "translation": "футбол (европейский футбол; чаще американское название)",
+    "answers": [
+      {
+        "text": "soccer",
+        "weight": 1
+      },
+      {
+        "text": "football",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:soft:adj:a2": {
+    "translation": "мягкий (не твёрдый, приятный на ощупь)"
+  },
+  "oxford:solar:adj:b2": {
+    "translation": "солнечный (относящийся к Солнцу как источнику энергии)"
+  },
+  "oxford:solution:n:a2": {
+    "translation": "решение (способ устранить проблему или ответ на задачу)"
+  },
+  "oxford:solve:v:a2": {
+    "translation": "решить (найти ответ на задачу или проблему)"
+  },
+  "oxford:somebody:pron:a1": {
+    "translation": "кто-то (неопределённый человек)",
+    "answers": [
+      {
+        "text": "somebody",
+        "weight": 1
+      },
+      {
+        "text": "someone",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:someone:pron:a1": {
+    "translation": "кто-то (неопределённый человек)",
+    "answers": [
+      {
+        "text": "someone",
+        "weight": 1
+      },
+      {
+        "text": "somebody",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:sometimes:adv:a1": {
+    "translation": "иногда (в некоторые моменты)"
+  },
+  "oxford:somewhat:adv:b2": {
+    "translation": "несколько (в некоторой степени, наречие)"
+  },
+  "oxford:specific:adj:a2": {
+    "translation": "конкретный (точно указанный, детальный)"
+  },
+  "oxford:spending:n:b1": {
+    "translation": "расходы (расходование средств)"
+  },
+  "oxford:spread:n:b2": {
+    "translation": "распространение (увеличение области охвата)"
+  },
+  "oxford:stay:v:a1": {
+    "translation": "оставаться (не уходить, находиться в месте)"
+  },
+  "oxford:step:n:a2": {
+    "translation": "шаг (движение ногой или этап)"
+  },
+  "oxford:story:n:a1": {
+    "translation": "история (рассказ, повествование)"
+  },
+  "oxford:straight:adv-adj:a2": {
+    "translation": "прямо; прямой (без поворотов или изгибов)"
+  },
+  "oxford:strange:adj:a2": {
+    "translation": "странный (незнакомый или вызывающий недоумение)"
+  },
+  "oxford:string:n:b1": {
+    "translation": "строка (последовательность символов)"
+  },
+  "oxford:strongly:adv:b1": {
+    "translation": "сильно (с большой силой или убеждённостью)"
+  },
+  "oxford:stupid:adj:a2": {
+    "translation": "глупый (неразумный, свидетельствующий о недостатке ума)"
+  },
+  "oxford:subject:n:a1": {
+    "translation": "предмет (тема изучения, разговора или исследования)"
+  },
+  "oxford:submit:v:b2": {
+    "translation": "отправить (подать на рассмотрение или проверку)"
+  },
+  "oxford:suggestion:n:a2": {
+    "translation": "предложение (совет или предлагаемая идея)"
+  },
+  "oxford:suit:n:a2": {
+    "translation": "костюм (пиджак и брюки или юбка как комплект)"
+  },
+  "oxford:sunny:adj:a1": {
+    "translation": "солнечный (с ярким солнечным светом, о погоде)"
+  },
+  "oxford:sure:adj:a1": {
+    "translation": "уверенный (не сомневающийся)"
+  },
+  "oxford:sure:adv:a2": {
+    "translation": "конечно (разговорное согласие или подтверждение)"
+  },
+  "oxford:surely:adv:b1": {
+    "translation": "конечно (выражает уверенное ожидание или удивление)"
+  },
+  "oxford:swim:v:a1": {
+    "translation": "плавать (двигаться в воде)"
+  },
+  "oxford:table:noun": {
+    "translation": "стол (обеденный или общий стол)"
+  },
+  "oxford:talk:n:a2": {
+    "translation": "разговор (разговор или беседа; также выступление)"
+  },
+  "oxford:tall:adj:a1": {
+    "translation": "высокий (о росте человека или вертикальном размере)"
+  },
+  "oxford:telephone:n-v:a1": {
+    "translation": "телефон; звонить по телефону (полная форма названия)",
+    "answers": [
+      {
+        "text": "telephone",
+        "weight": 1
+      },
+      {
+        "text": "phone",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:terrible:adj:a1": {
+    "translation": "ужасный (очень плохой или неприятный)",
+    "answers": [
+      {
+        "text": "terrible",
+        "weight": 1
+      },
+      {
+        "text": "awful",
+        "weight": 1
+      },
+      {
+        "text": "horrible",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:their:det:a1": {
+    "translation": "их (перед названием предмета)"
+  },
+  "oxford:theirs:pron:b1": {
+    "translation": "их (самостоятельно, без существительного после него)"
+  },
+  "oxford:theme:n:b1": {
+    "translation": "тема (главная идея произведения или обсуждения)"
+  },
+  "oxford:thick:adj:a2": {
+    "translation": "толстый (о большой толщине предмета)"
+  },
+  "oxford:though:conj-adv:b1": {
+    "translation": "хотя; однако (уступка; как наречие добавляет оговорку)"
+  },
+  "oxford:tidy:adj-v:a2": {
+    "translation": "аккуратный; прибирать (вещи на своих местах / наводить порядок)"
+  },
+  "oxford:tongue:n:b1": {
+    "translation": "язык (орган во рту)"
+  },
+  "oxford:tool:n:a2": {
+    "translation": "инструмент (орудие для работы)"
+  },
+  "oxford:topic:n:a1": {
+    "translation": "тема (предмет конкретного обсуждения)"
+  },
+  "oxford:totally:adv:b1": {
+    "translation": "полностью (целиком, без исключений)",
+    "answers": [
+      {
+        "text": "totally",
+        "weight": 1
+      },
+      {
+        "text": "completely",
+        "weight": 1
+      },
+      {
+        "text": "entirely",
+        "weight": 1
+      },
+      {
+        "text": "fully",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:town:n:a1": {
+    "translation": "город (небольшой город)"
+  },
+  "oxford:training:n:a2": {
+    "translation": "обучение (целенаправленная подготовка, отработка навыков)"
+  },
+  "oxford:tree:n:a1": {
+    "translation": "дерево (живое растение со стволом)"
+  },
+  "oxford:trouble:v:b2": {
+    "translation": "беспокоить (причинять тревогу или затруднения)"
+  },
+  "oxford:trousers:n:a1": {
+    "translation": "брюки (британский вариант для брюк)",
+    "answers": [
+      {
+        "text": "trousers",
+        "weight": 1
+      },
+      {
+        "text": "pants",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:truck:n:a2": {
+    "translation": "грузовик (грузовой автомобиль; американский вариант)",
+    "answers": [
+      {
+        "text": "truck",
+        "weight": 1
+      },
+      {
+        "text": "lorry",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:truly:adv:b2": {
+    "translation": "действительно (истинно, искренне)"
+  },
+  "oxford:typically:adv:b1": {
+    "translation": "обычно (характерно для такого случая)"
+  },
+  "oxford:understanding:n:a2": {
+    "translation": "понимание (знание смысла или устройства)"
+  },
+  "oxford:unfortunately:adv:a2": {
+    "translation": "к сожалению (указывает на неблагоприятное обстоятельство)"
+  },
+  "oxford:until:conj-prep:a1": {
+    "translation": "пока (до определённого момента)"
+  },
+  "oxford:up:adv-prep:a1": {
+    "translation": "вверх (к более высокой точке)"
+  },
+  "oxford:upon:prep:b2": {
+    "translation": "на (на поверхности; формальное или литературное)"
+  },
+  "oxford:upwards:adv:b2": {
+    "translation": "вверх (движение в более высоком направлении)"
+  },
+  "oxford:us:pron:a1": {
+    "translation": "нас; нам (получатель действия)"
+  },
+  "oxford:useful:adj:a1": {
+    "translation": "полезный (пригодный для цели, приносящий пользу)"
+  },
+  "oxford:usual:adj:a2": {
+    "translation": "обычный (привычный для данного случая)"
+  },
+  "oxford:usually:adv:a1": {
+    "translation": "обычно (как правило, по привычке)"
+  },
+  "oxford:value:v:b2": {
+    "translation": "ценить (придавать значение, высоко ставить)"
+  },
+  "oxford:vary:v:b2": {
+    "translation": "варьироваться (изменяться, быть разным)"
+  },
+  "oxford:vast:adj:b2": {
+    "translation": "огромный (очень большой по площади или охвату)"
+  },
+  "oxford:via:prep:b2": {
+    "translation": "через (через промежуточное место или средство)"
+  },
+  "oxford:victory:n:b2": {
+    "translation": "победа (успех над соперником, победа)"
+  },
+  "oxford:violent:adj:b1": {
+    "translation": "жестокий (связанный с физическим насилием)"
+  },
+  "oxford:wait:n:a2": {
+    "translation": "ожидание (время, проведённое в ожидании)"
+  },
+  "oxford:way:adv:b2": {
+    "translation": "намного (усиливает сравнение, наречие)"
+  },
+  "oxford:way:n:a1": {
+    "translation": "путь (маршрут или способ)"
+  },
+  "oxford:we:pron:a1": {
+    "translation": "мы (кто выполняет действие)"
+  },
+  "oxford:wealthy:adj:b2": {
+    "translation": "богатый (обладающий большим состоянием)",
+    "answers": [
+      {
+        "text": "wealthy",
+        "weight": 1
+      },
+      {
+        "text": "rich",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:weapon:n:b1": {
+    "translation": "оружие (отдельный предмет для нападения или защиты)"
+  },
+  "oxford:web:n:a2": {
+    "translation": "сеть (паутина или всемирная система веб-страниц)"
+  },
+  "oxford:welcome:exclam-v-adj:a1": {
+    "translation": "добро пожаловать; приветствовать; желанный (радушный приём)"
+  },
+  "oxford:wherever:conj:b2": {
+    "translation": "где угодно (в любом месте, где; связывает части предложения)"
+  },
+  "oxford:wide:adj:a2": {
+    "translation": "широкий (с большим расстоянием между краями)"
+  },
+  "oxford:win:n:b1": {
+    "translation": "победа (выигрыш, случай победы)"
+  },
+  "oxford:wish:v-n:a2": {
+    "translation": "желание; желать (пожелание или желание)"
+  },
+  "oxford:within:prep:b1": {
+    "translation": "внутри (в пределах границ или срока)"
+  },
+  "oxford:wood:n:a2": {
+    "translation": "дерево (древесина, материал)"
+  },
+  "oxford:world:n:a1": {
+    "translation": "мир (Земля, всё человечество)"
+  },
+  "oxford:writing:n:a1": {
+    "translation": "письмо (процесс письма или письменный текст)"
+  },
+  "oxford:yeah:exclam:a1": {
+    "translation": "да (разговорное согласие)",
+    "answers": [
+      {
+        "text": "yeah",
+        "weight": 1
+      },
+      {
+        "text": "yes",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:yes:exclam:a1": {
+    "translation": "да (согласие, утвердительный ответ)",
+    "answers": [
+      {
+        "text": "yes",
+        "weight": 1
+      },
+      {
+        "text": "yeah",
+        "weight": 1
+      }
+    ]
+  },
+  "oxford:yet:adv:a2": {
+    "translation": "еще (до сих пор; в отрицаниях и вопросах)"
+  },
+  "oxford:yet:conj:b2": {
+    "translation": "однако (противопоставление, союз)"
+  }
+}

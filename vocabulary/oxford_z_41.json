@@ -1,0 +1,211 @@
+{
+  "id": "oxford-extra-41",
+  "collection": "Oxford 3000",
+  "topic": "Описание и оценка",
+  "subtopic": "Обстоятельства K–O",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:largely:adv:b2",
+      "word": "largely",
+      "translation": "в основном (в значительной степени)",
+      "answer": "largely",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:later:adv:a1",
+      "word": "later",
+      "translation": "позже",
+      "answer": "later",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:little:adv:a2",
+      "word": "little",
+      "translation": "мало (в небольшой степени, наречие)",
+      "answer": "little",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:loudly:adv:a2",
+      "word": "loudly",
+      "translation": "громко",
+      "answer": "loudly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:mainly:adv:b1",
+      "word": "mainly",
+      "translation": "главным образом",
+      "answer": "mainly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:maybe:adv:a1",
+      "word": "maybe",
+      "translation": "может быть (возможно, наречие)",
+      "answer": "maybe",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:meanwhile:adv:b1",
+      "word": "meanwhile",
+      "translation": "тем временем",
+      "answer": "meanwhile",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:mostly:adv:a2",
+      "word": "mostly",
+      "translation": "в основном (по большей части)",
+      "answer": "mostly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:naturally:adv:b1",
+      "word": "naturally",
+      "translation": "естественно",
+      "answer": "naturally",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:nearly:adv:a2",
+      "word": "nearly",
+      "translation": "почти (чуть меньше полного значения)",
+      "answer": "nearly",
+      "level": "A2",
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "nearly",
+          "weight": 1
+        },
+        {
+          "text": "almost",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "oxford:necessarily:adv:b1",
+      "word": "necessarily",
+      "translation": "обязательно",
+      "answer": "necessarily",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:neither:adv:b1",
+      "word": "neither",
+      "translation": "ни один из двух",
+      "answer": "neither",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:nevertheless:adv:b2",
+      "word": "nevertheless",
+      "translation": "тем не менее",
+      "answer": "nevertheless",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:normally:adv:a2",
+      "word": "normally",
+      "translation": "обычно (при нормальных условиях)",
+      "answer": "normally",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:not:adv:a1",
+      "word": "not",
+      "translation": "не",
+      "answer": "not",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:nowhere:adv:a2",
+      "word": "nowhere",
+      "translation": "нигде",
+      "answer": "nowhere",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:obviously:adv:b1",
+      "word": "obviously",
+      "translation": "очевидно",
+      "answer": "obviously",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:occasionally:adv:b2",
+      "word": "occasionally",
+      "translation": "иногда (изредка, от случая к случаю)",
+      "answer": "occasionally",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:once:adv:a1",
+      "word": "once",
+      "translation": "однажды",
+      "answer": "once",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:originally:adv:b1",
+      "word": "originally",
+      "translation": "изначально (в исходном виде или по первоначальному замыслу)",
+      "answer": "originally",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:otherwise:adv:b2",
+      "word": "otherwise",
+      "translation": "иначе",
+      "answer": "otherwise",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:outdoors:adv:b1",
+      "word": "outdoors",
+      "translation": "на открытом воздухе",
+      "answer": "outdoors",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:outside:adv:a1",
+      "word": "outside",
+      "translation": "снаружи",
+      "answer": "outside",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:o-clock:adv:a1",
+      "word": "o’clock",
+      "translation": "час (при указании точного времени на часах)",
+      "answer": "o’clock",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    }
+  ]
+}

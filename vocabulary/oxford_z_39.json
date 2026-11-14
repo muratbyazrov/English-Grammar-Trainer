@@ -1,0 +1,497 @@
+{
+  "id": "oxford-extra-39",
+  "collection": "Oxford 3000",
+  "topic": "Описание и оценка",
+  "subtopic": "Обстоятельства A–E",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:absolutely:adv:b1",
+      "word": "absolutely",
+      "translation": "абсолютно",
+      "answer": "absolutely",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:actually:adv:a2",
+      "word": "actually",
+      "translation": "на самом деле",
+      "answer": "actually",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:afterwards:adv:b2",
+      "word": "afterwards",
+      "translation": "потом",
+      "answer": "afterwards",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:ago:adv:a1",
+      "word": "ago",
+      "translation": "назад (сколько времени прошло с события)",
+      "answer": "ago",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:ahead:adv:b1",
+      "word": "ahead",
+      "translation": "впереди",
+      "answer": "ahead",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:all:adv:a2",
+      "word": "all",
+      "translation": "весь; все",
+      "answer": "all",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:almost:adv:a2",
+      "word": "almost",
+      "translation": "почти (чуть меньше полного значения)",
+      "answer": "almost",
+      "level": "A2",
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "almost",
+          "weight": 1
+        },
+        {
+          "text": "nearly",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "oxford:also:adv:a1",
+      "word": "also",
+      "translation": "также",
+      "answer": "also",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:any:adv:a2",
+      "word": "any",
+      "translation": "любой; какой-либо",
+      "answer": "any",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:any-more:adv:a2",
+      "word": "any more",
+      "translation": "больше",
+      "answer": "any more",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:anyway:adv:a2",
+      "word": "anyway",
+      "translation": "в любом случае",
+      "answer": "anyway",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:apart:adv:b1",
+      "word": "apart",
+      "translation": "отдельно",
+      "answer": "apart",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:apparently:adv:b2",
+      "word": "apparently",
+      "translation": "видимо",
+      "answer": "apparently",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:approximately:adv:b1",
+      "word": "approximately",
+      "translation": "примерно",
+      "answer": "approximately",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:away:adv:a1",
+      "word": "away",
+      "translation": "прочь",
+      "answer": "away",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:backwards:adv:b1",
+      "word": "backwards",
+      "translation": "назад (в обратном направлении)",
+      "answer": "backwards",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:badly:adv:a2",
+      "word": "badly",
+      "translation": "плохо",
+      "answer": "badly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:basically:adv:b2",
+      "word": "basically",
+      "translation": "в основном (по сути, в своей основе)",
+      "answer": "basically",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:best:adv-n:a2",
+      "word": "best",
+      "translation": "лучший",
+      "answer": "best",
+      "level": "A2",
+      "partOfSpeech": "нареч., сущ."
+    },
+    {
+      "id": "oxford:better:adv:a2",
+      "word": "better",
+      "translation": "лучше; более хороший",
+      "answer": "better",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:between:adv:a2",
+      "word": "between",
+      "translation": "между",
+      "answer": "between",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:by:adv:b1",
+      "word": "by",
+      "translation": "у; возле; с помощью",
+      "answer": "by",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:carefully:adv:a2",
+      "word": "carefully",
+      "translation": "тщательно",
+      "answer": "carefully",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:certainly:adv:a2",
+      "word": "certainly",
+      "translation": "конечно (безусловно, несомненно)",
+      "answer": "certainly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:clearly:adv:a2",
+      "word": "clearly",
+      "translation": "ясно",
+      "answer": "clearly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:close:adv:b1",
+      "word": "close",
+      "translation": "близко",
+      "answer": "close",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:closely:adv:b2",
+      "word": "closely",
+      "translation": "внимательно",
+      "answer": "closely",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:commonly:adv:b2",
+      "word": "commonly",
+      "translation": "обычно (распространено среди многих)",
+      "answer": "commonly",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:completely:adv:a2",
+      "word": "completely",
+      "translation": "полностью (в полной мере)",
+      "answer": "completely",
+      "level": "A2",
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "completely",
+          "weight": 1
+        },
+        {
+          "text": "entirely",
+          "weight": 1
+        },
+        {
+          "text": "fully",
+          "weight": 1
+        },
+        {
+          "text": "totally",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "oxford:constantly:adv:b2",
+      "word": "constantly",
+      "translation": "постоянно",
+      "answer": "constantly",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:correctly:adv:a2",
+      "word": "correctly",
+      "translation": "правильно",
+      "answer": "correctly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:currently:adv:b1",
+      "word": "currently",
+      "translation": "в настоящее время",
+      "answer": "currently",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:deep:adv:b1",
+      "word": "deep",
+      "translation": "глубокий",
+      "answer": "deep",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:deeply:adv:b2",
+      "word": "deeply",
+      "translation": "глубоко",
+      "answer": "deeply",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:definitely:adv:a2",
+      "word": "definitely",
+      "translation": "определенно",
+      "answer": "definitely",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:deliberately:adv:b2",
+      "word": "deliberately",
+      "translation": "намеренно",
+      "answer": "deliberately",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:differently:adv:a2",
+      "word": "differently",
+      "translation": "по-другому",
+      "answer": "differently",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:directly:adv:b1",
+      "word": "directly",
+      "translation": "напрямую",
+      "answer": "directly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:downstairs:adv:a1",
+      "word": "downstairs",
+      "translation": "внизу",
+      "answer": "downstairs",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:downwards:adv:b2",
+      "word": "downwards",
+      "translation": "вниз (движение в более низком направлении)",
+      "answer": "downwards",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:easily:adv:a2",
+      "word": "easily",
+      "translation": "легко",
+      "answer": "easily",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:effectively:adv:b1",
+      "word": "effectively",
+      "translation": "эффективно",
+      "answer": "effectively",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:else:adv:a1",
+      "word": "else",
+      "translation": "еще (дополнительно, помимо названного)",
+      "answer": "else",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:elsewhere:adv:b2",
+      "word": "elsewhere",
+      "translation": "в другом месте",
+      "answer": "elsewhere",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:entirely:adv:b2",
+      "word": "entirely",
+      "translation": "полностью (целиком, без исключений)",
+      "answer": "entirely",
+      "level": "B2",
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "entirely",
+          "weight": 1
+        },
+        {
+          "text": "completely",
+          "weight": 1
+        },
+        {
+          "text": "fully",
+          "weight": 1
+        },
+        {
+          "text": "totally",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "oxford:equally:adv:b1",
+      "word": "equally",
+      "translation": "поровну",
+      "answer": "equally",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:especially:adv:a2",
+      "word": "especially",
+      "translation": "особенно (в особенности)",
+      "answer": "especially",
+      "level": "A2",
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "especially",
+          "weight": 1
+        },
+        {
+          "text": "particularly",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "oxford:even:adv:a1",
+      "word": "even",
+      "translation": "даже",
+      "answer": "even",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:eventually:adv:b1",
+      "word": "eventually",
+      "translation": "в конце концов",
+      "answer": "eventually",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:ever:adv:a1",
+      "word": "ever",
+      "translation": "когда-либо",
+      "answer": "ever",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:everywhere:adv:a2",
+      "word": "everywhere",
+      "translation": "везде",
+      "answer": "everywhere",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:exactly:adv:a2",
+      "word": "exactly",
+      "translation": "точно",
+      "answer": "exactly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:extra:n-adv:b1",
+      "word": "extra",
+      "translation": "доплата; дополнительно (то, что сверх обычного)",
+      "answer": "extra",
+      "level": "B1",
+      "partOfSpeech": "сущ., нареч."
+    },
+    {
+      "id": "oxford:extremely:adv:a2",
+      "word": "extremely",
+      "translation": "чрезвычайно",
+      "answer": "extremely",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    }
+  ]
+}

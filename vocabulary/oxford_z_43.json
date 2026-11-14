@@ -1,0 +1,97 @@
+{
+  "id": "oxford-extra-43",
+  "collection": "Oxford 3000",
+  "topic": "Описание и оценка",
+  "subtopic": "Обстоятельства U–Z",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:ultimately:adv:b2",
+      "word": "ultimately",
+      "translation": "в конечном итоге",
+      "answer": "ultimately",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:unfortunately:adv:a2",
+      "word": "unfortunately",
+      "translation": "к сожалению (указывает на неблагоприятное обстоятельство)",
+      "answer": "unfortunately",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:upstairs:adv:a1",
+      "word": "upstairs",
+      "translation": "наверху",
+      "answer": "upstairs",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:upwards:adv:b2",
+      "word": "upwards",
+      "translation": "вверх (движение в более высоком направлении)",
+      "answer": "upwards",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:very:adv:a1",
+      "word": "very",
+      "translation": "очень",
+      "answer": "very",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:way:adv:b2",
+      "word": "way",
+      "translation": "намного (усиливает сравнение, наречие)",
+      "answer": "way",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:why:adv:a1",
+      "word": "why",
+      "translation": "почему",
+      "answer": "why",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:widely:adv:b2",
+      "word": "widely",
+      "translation": "широко",
+      "answer": "widely",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:worse:adv:b1",
+      "word": "worse",
+      "translation": "хуже",
+      "answer": "worse",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:worst:adv:b1",
+      "word": "worst",
+      "translation": "худший",
+      "answer": "worst",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:wrong:adv:b1",
+      "word": "wrong",
+      "translation": "неправильный",
+      "answer": "wrong",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    }
+  ]
+}

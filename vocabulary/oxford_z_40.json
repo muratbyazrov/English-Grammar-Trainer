@@ -1,0 +1,243 @@
+{
+  "id": "oxford-extra-40",
+  "collection": "Oxford 3000",
+  "topic": "Описание и оценка",
+  "subtopic": "Обстоятельства F–J",
+  "source": "https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000_by_CEFR_level.pdf",
+  "words": [
+    {
+      "id": "oxford:fairly:adv:b1",
+      "word": "fairly",
+      "translation": "довольно",
+      "answer": "fairly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:far:adv:a1",
+      "word": "far",
+      "translation": "далёкий; далеко",
+      "answer": "far",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:firstly:adv:a2",
+      "word": "firstly",
+      "translation": "во-первых",
+      "answer": "firstly",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:forever:adv:b1",
+      "word": "forever",
+      "translation": "навсегда",
+      "answer": "forever",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:fortunately:adv:a2",
+      "word": "fortunately",
+      "translation": "к счастью",
+      "answer": "fortunately",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:forward:adv:a2",
+      "word": "forward",
+      "translation": "вперед",
+      "answer": "forward",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:free:adv:a2",
+      "word": "free",
+      "translation": "свободный; бесплатный",
+      "answer": "free",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:fully:adv:b2",
+      "word": "fully",
+      "translation": "полностью (в полной мере)",
+      "answer": "fully",
+      "level": "B2",
+      "partOfSpeech": "нареч.",
+      "answers": [
+        {
+          "text": "fully",
+          "weight": 1
+        },
+        {
+          "text": "completely",
+          "weight": 1
+        },
+        {
+          "text": "entirely",
+          "weight": 1
+        },
+        {
+          "text": "totally",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "oxford:further:adv:b1",
+      "word": "further",
+      "translation": "дальше",
+      "answer": "further",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:furthermore:adv:b2",
+      "word": "furthermore",
+      "translation": "кроме того",
+      "answer": "furthermore",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:generally:adv:b1",
+      "word": "generally",
+      "translation": "вообще",
+      "answer": "generally",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:gradually:adv:b2",
+      "word": "gradually",
+      "translation": "постепенно",
+      "answer": "gradually",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:happily:adv:a2",
+      "word": "happily",
+      "translation": "счастливо",
+      "answer": "happily",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:hardly:adv:b1",
+      "word": "hardly",
+      "translation": "вряд ли",
+      "answer": "hardly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:heavily:adv:b1",
+      "word": "heavily",
+      "translation": "сильно (интенсивно, с большой нагрузкой)",
+      "answer": "heavily",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:here:adv:a1",
+      "word": "here",
+      "translation": "здесь",
+      "answer": "here",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:high:adv:a2",
+      "word": "high",
+      "translation": "высоко (далеко вверх от уровня земли)",
+      "answer": "high",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:highly:adv:b1",
+      "word": "highly",
+      "translation": "весьма",
+      "answer": "highly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:how:adv:a1",
+      "word": "how",
+      "translation": "как",
+      "answer": "how",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:however:adv:a1",
+      "word": "however",
+      "translation": "однако",
+      "answer": "however",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:increasingly:adv:b2",
+      "word": "increasingly",
+      "translation": "все больше",
+      "answer": "increasingly",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:incredibly:adv:b1",
+      "word": "incredibly",
+      "translation": "невероятно",
+      "answer": "incredibly",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:indeed:adv:b1",
+      "word": "indeed",
+      "translation": "действительно (подтверждает сказанное, «и правда»)",
+      "answer": "indeed",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:indoors:adv:b1",
+      "word": "indoors",
+      "translation": "в помещении",
+      "answer": "indoors",
+      "level": "B1",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:initially:adv:b2",
+      "word": "initially",
+      "translation": "изначально (в самом начале процесса)",
+      "answer": "initially",
+      "level": "B2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:instead:adv:a2",
+      "word": "instead",
+      "translation": "вместо этого",
+      "answer": "instead",
+      "level": "A2",
+      "partOfSpeech": "нареч."
+    },
+    {
+      "id": "oxford:just:adv:a1",
+      "word": "just",
+      "translation": "просто (только, всего лишь)",
+      "answer": "just",
+      "level": "A1",
+      "partOfSpeech": "нареч."
+    }
+  ]
+}
