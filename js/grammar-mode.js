@@ -6,7 +6,6 @@ window.Trainer.createGrammarMode = function ({
   allLevels,
   cancelPendingActivity,
   fillPromptWithAnswer,
-  flashCorrect,
   grammarState,
   hideSessionComplete,
   isAnswerMatch,
@@ -409,7 +408,7 @@ window.Trainer.createGrammarMode = function ({
     refs.grammarTheoryOpen.disabled = !q || !(GRAMMAR_TOPICS[currentLevel()] || [])
       .some(topic => q.id >= topic.from && q.id <= topic.to);
     if (!q) {
-      refs.questionText.textContent = "Вопросы не найдены.";
+      renderQuestionText("Вопросы не найдены.");
       setQuestionTranslation("");
       setSelectedSentenceForSpeech("");
       return;
@@ -419,8 +418,7 @@ window.Trainer.createGrammarMode = function ({
     refs.correctCount.textContent = String(grammarState.correct);
     refs.wrongCount.textContent = String(grammarState.wrong);
     refs.questionId.textContent = String(q.id);
-    refs.speakWordBtn.textContent = 'Озвучить предложение';
-    renderQuestionText(q.prompt);
+    renderQuestionText(q.prompt, true);
     setQuestionTranslation("");
     setSelectedSentenceForSpeech(fillPromptWithAnswer(q.prompt, q.answer));
     refs.optionA.textContent = `a) ${q.options.a}`;
@@ -428,7 +426,9 @@ window.Trainer.createGrammarMode = function ({
     refs.optionC.textContent = `c) ${q.options.c}`;
 
     refs.answerInput.value = "";
-    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+    if (!refs.answerInput.classList.contains('answer-input--inline')) {
+      refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+    }
     refs.answerInput.focus();
     setFeedback("", null);
     grammarState.checkedCurrent = false;
@@ -474,9 +474,9 @@ window.Trainer.createGrammarMode = function ({
         refs.correctCount.textContent = String(grammarState.correct);
       }
       grammarState.checkedCurrent = true;
+      refs.answerInput.dataset.answerState = 'correct';
       setFeedback("Верно!", true);
       playCorrectSound();
-      flashCorrect();
       queueNextQuestionAfterCorrect(q);
     } else {
       if (!grammarState.wrongCounted) {
@@ -487,7 +487,12 @@ window.Trainer.createGrammarMode = function ({
       setFeedback(`Почти. Правильный ответ: ${q.answer}`, false);
       playWrongSound();
       refs.answerInput.value = '';
+      refs.answerInput.dispatchEvent(new Event('input'));
       refs.answerInput.focus();
+      refs.answerInput.dataset.answerState = 'wrong';
+      activity.schedule('grammar-answer-feedback', () => {
+        refs.answerInput.dataset.answerState = '';
+      }, 650);
     }
 
     rememberGrammarOutcome(q, grammarState.outcomes[q.id]);

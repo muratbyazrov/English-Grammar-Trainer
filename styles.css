@@ -282,20 +282,6 @@ button:hover {
   color: var(--muted);
 }
 
-.speak-word-btn {
-  flex: 0 0 auto;
-  padding: 5px 10px;
-}
-
-.speak-word-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-}
-
-.speak-word-btn:disabled:hover {
-  transform: none;
-}
-
 .options {
   margin: 6px 0 10px;
   padding: 8px 10px;
@@ -320,6 +306,42 @@ button:hover {
 #answer-input {
   width: 100%;
   margin: 6px 0 8px;
+}
+
+.grammar-answer-slot {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
+#answer-input.answer-input--inline {
+  --answer-border-color: #9aa4af;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.22em 0.2em;
+  border: 1px solid var(--answer-border-color);
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  caret-color: #808080;
+  font: inherit;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: baseline;
+  transition: border-color 140ms ease;
+}
+
+#answer-input.answer-input--inline:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--answer-border-color);
+}
+
+#answer-input.answer-input--inline[data-answer-state="correct"] {
+  --answer-border-color: var(--ok);
+}
+
+#answer-input.answer-input--inline[data-answer-state="wrong"] {
+  --answer-border-color: var(--danger);
 }
 
 .buttons {

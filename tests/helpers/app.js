@@ -27,10 +27,18 @@ class Element {
     };
   }
   get options() { return this.children; }
-  set textContent(value) { this.text = String(value); this.children = []; }
+  set textContent(value) {
+    this.text = String(value);
+    this.children.forEach(child => { child.parentNode = null; });
+    this.children = [];
+  }
   get textContent() { return this.text || this.children.map(child => child.textContent).join(''); }
   set innerHTML(value) { this.textContent = value; if (this.tag === 'select') this.value = ''; }
   appendChild(child) {
+    if (child.parentNode) {
+      child.parentNode.children = child.parentNode.children.filter(item => item !== child);
+    }
+    child.parentNode = this;
     this.children.push(child);
     if (this.tag === 'select' && this.children.length === 1) this.value = child.value;
     return child;

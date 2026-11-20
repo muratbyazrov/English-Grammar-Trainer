@@ -579,7 +579,6 @@ window.Trainer.createVocabularyMode = function ({
       tag.textContent = part;
       refs.vocabModeLabel.appendChild(tag);
     });
-    refs.speakWordBtn.textContent = 'Озвучить ответ';
     renderQuestionText(w.translation);
     renderVocabExample(w);
     setSelectedSentenceForSpeech(primaryAnswerText(answerOptionsForVocabItem(w)) || w.infinitive || w.word);

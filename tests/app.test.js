@@ -16,6 +16,84 @@ function answerVocab(app) {
   app.answer(word.answers?.[0]?.text || word.infinitive || word.word.split('/')[0]);
 }
 
+test('grammar answer stays inside the gap through checking, navigation and reload', () => {
+  const app = createApp({ speech: false });
+  const input = app.el('answer-input');
+  assert.equal(input.parentNode.parentNode, app.el('question-text'));
+  assert.equal(app.el('answer-field').hidden, true);
+  assert.equal(input.placeholder, '');
+  assert.equal(input.dataset.answerState, '');
+  app.answer('incorrect answer');
+  assert.equal(input.dataset.answerState, 'wrong');
+  assert.equal(input.value, '');
+  assert.equal(input.style.width, '8ch');
+  const id = Number(app.el('question-id').textContent);
+  const q = app.window.GRAMMAR_QUESTIONS['A1-A2'].find(question => question.id === id);
+  input.value = q.answer;
+  input.dispatchEvent({ type: 'input' });
+  assert.equal(input.style.width, `${Math.max(8, Math.min(24, q.answer.length + 2))}ch`);
+  input.dispatchEvent({ type: 'keydown', key: 'Enter' });
+  assert.equal(app.el('feedback').textContent, 'Верно!');
+  assert.equal(input.dataset.answerState, 'correct');
+  app.advance(450);
+  assert.equal(input.dataset.answerState, '');
+  assert.equal(input.parentNode.parentNode, app.el('question-text'));
+  assert.equal(input.parentNode.children.filter(child => child === input).length, 1);
+  const reload = createApp({ speech: false, saved: app.snapshot() });
+  assert.equal(reload.el('answer-input').parentNode.parentNode, reload.el('question-text'));
+  assert.equal(reload.el('position').textContent, app.el('position').textContent);
+});
+
+test('grammar error border resets after a pause and cannot overwrite a corrected answer or another mode', () => {
+  const app = createApp();
+  const input = app.el('answer-input');
+  app.answer('incorrect answer');
+  app.advance(400);
+  assert.equal(input.dataset.answerState, 'wrong');
+  app.answer('another incorrect answer');
+  app.advance(400);
+  assert.equal(input.dataset.answerState, 'wrong');
+  app.advance(250);
+  assert.equal(input.dataset.answerState, '');
+
+  app.answer('incorrect answer');
+  answerGrammar(app);
+  app.advance(1000);
+  assert.equal(input.dataset.answerState, 'correct');
+
+  app.click('next-btn');
+  assert.equal(input.dataset.answerState, '');
+  app.answer('incorrect answer');
+  app.click('tab-vocab');
+  app.advance(1000);
+  assert.equal(input.dataset.answerState, '');
+});
+
+test('moving the answer into grammar preserves vocabulary layout and gap-free questions', () => {
+  const app = createApp();
+  const input = app.el('answer-input');
+  assert.equal(app.el('speak-word-btn'), undefined);
+  app.click('tab-vocab');
+  assert.equal(input.parentNode, app.el('answer-field'));
+  assert.equal(app.el('answer-field').hidden, false);
+  assert.equal(input.classList.contains('answer-input--inline'), false);
+  assert.equal(input.placeholder, 'Например: helps');
+  answerVocab(app);
+  assert.equal(app.el('feedback').textContent, 'Верно!');
+  app.click('tab-shadowing');
+  assert.equal(input.parentNode, app.el('answer-field'));
+  assert.equal(app.el('answer-field').hidden, true);
+  app.click('tab-grammar');
+  assert.equal(input.parentNode.parentNode, app.el('question-text'));
+
+  const noGap = createApp({ grammar: { 'A1-A2': [{
+    id: 1, prompt: 'Choose the correct answer: I am a developer.', answer: 'am',
+    options: { a: 'am', b: 'is', c: 'are' },
+  }] } });
+  assert.equal(noGap.el('answer-input').parentNode, noGap.el('answer-field'));
+  assert.equal(noGap.el('answer-field').hidden, false);
+});
+
 test('vocabulary settings close on Escape and backdrop clicks, while inside clicks keep them open', () => {
   const app = createApp();
   app.click('tab-vocab');
@@ -32,6 +110,35 @@ test('vocabulary settings close on Escape and backdrop clicks, while inside clic
   app.click('vocab-settings-open');
   app.window.dispatchEvent({ type: 'keydown', key: 'Escape', preventDefault() {} });
   assert.equal(dialog.open, false);
+});
+
+test('grammar settings close without restarting and preserve independent speech preferences', () => {
+  const app = createApp();
+  const dialog = app.el('grammar-settings');
+  dialog.getBoundingClientRect = () => ({ left: 100, right: 500, top: 100, bottom: 400 });
+  const position = app.el('position').textContent;
+  app.click('grammar-settings-open');
+  assert.equal(dialog.open, true);
+  app.change('auto-speak-correct', false);
+  assert.equal(app.snapshot().autoSpeakCorrect, false);
+  assert.equal(app.snapshot().vocabulary.autoSpeakCorrect, true);
+  dialog.dispatchEvent({ type: 'click', target: dialog, clientX: 150, clientY: 120 });
+  assert.equal(dialog.open, true);
+  dialog.dispatchEvent({ type: 'click', target: dialog, clientX: 90, clientY: 120 });
+  assert.equal(dialog.open, false);
+  app.click('grammar-settings-open');
+  app.window.dispatchEvent({ type: 'keydown', key: 'Escape', preventDefault() {} });
+  assert.equal(dialog.open, false);
+  app.click('grammar-settings-open');
+  app.click('grammar-settings-close');
+  assert.equal(dialog.open, false);
+  assert.equal(app.el('position').textContent, position);
+  app.click('grammar-settings-open');
+  app.click('tab-vocab');
+  assert.equal(dialog.open, false);
+  const reload = createApp({ saved: app.snapshot() });
+  assert.equal(reload.el('auto-speak-correct').checked, false);
+  assert.equal(reload.el('auto-speak-correct-vocab').checked, true);
 });
 
 test('results close on Escape, backdrop and close button, while clicks inside preserve the popup and scores', () => {

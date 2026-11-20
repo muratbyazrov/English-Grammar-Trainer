@@ -53,15 +53,15 @@ test('sentence punctuation survives filling and speech, while normal ellipses ar
     [1133, 'If he really wanted it, he would behave differently.'],
   ]) {
     const app = openQuestion(id);
-    app.click('speak-word-btn');
+    app.answer(questions.find(question => question.id === id).answer);
     assert.equal(app.spoken.at(-1).textContent, expected);
   }
-  assert.equal(openQuestion(933).el('question-text').textContent, 'The sentence ____. You deserve a candy.');
+  assert.equal(openQuestion(933).el('question-text').textContent, 'The sentence . You deserve a candy.');
 });
 
 test('full-sentence exercises speak the chosen sentence', () => {
   const app = openQuestion(1025);
-  app.click('speak-word-btn');
+  app.answer(questions.find(question => question.id === 1025).answer);
   assert.equal(app.spoken.at(-1).textContent, 'Did they replace that worker?');
 });
 

@@ -25,6 +25,9 @@
     grammarTopicGroups: document.getElementById("grammar-topic-groups"),
     grammarTopicClose: document.getElementById("grammar-topic-close"),
     newSession: document.getElementById("new-session"),
+    grammarSettings: document.getElementById('grammar-settings'),
+    grammarSettingsOpen: document.getElementById('grammar-settings-open'),
+    grammarSettingsClose: document.getElementById('grammar-settings-close'),
     position: document.getElementById("position"),
     correctCount: document.getElementById("correct-count"),
     wrongCount: document.getElementById("wrong-count"),
@@ -35,8 +38,8 @@
     shadowingInlineTranslation: document.getElementById("shadowing-inline-translation"),
     questionTranslation: document.getElementById("question-translation"),
     questionTranslationRow: document.getElementById("question-translation-row"),
-    speakWordBtn: document.getElementById("speak-word-btn"),
     answerInput: document.getElementById("answer-input"),
+    answerField: document.getElementById("answer-field"),
     checkBtn: document.getElementById("check-btn"),
     prevBtn: document.getElementById("prev-btn"),
     nextBtn: document.getElementById("next-btn"),
@@ -469,6 +472,7 @@
 
   function cancelPendingActivity() {
     activity.cancelAll();
+    if (refs.answerInput.dataset.answerState === 'wrong') refs.answerInput.dataset.answerState = '';
     stopSpeech();
   }
 
@@ -541,8 +545,41 @@
     return resolvedAnswer;
   }
 
-  function renderQuestionText(prompt) {
-    refs.questionText.textContent = displayPrompt(prompt);
+  function resetAnswerField() {
+    refs.answerField.appendChild(refs.answerInput);
+    refs.answerField.hidden = currentMode === 'shadowing';
+    refs.answerInput.classList.remove('answer-input--inline');
+    refs.answerInput.dataset.answerState = '';
+    refs.answerInput.style.width = '';
+    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+  }
+
+  function renderQuestionText(prompt, inlineAnswer = false) {
+    resetAnswerField();
+    const text = displayPrompt(prompt);
+    const gap = inlineAnswer && /_{2,}/.exec(text);
+    refs.questionText.textContent = '';
+    if (!gap) {
+      refs.questionText.textContent = text;
+      return;
+    }
+    refs.answerField.hidden = true;
+    refs.answerInput.classList.add('answer-input--inline');
+    refs.answerInput.placeholder = '';
+    refs.answerInput.value = '';
+    resizeInlineAnswer();
+    const answerSlot = document.createElement('span');
+    answerSlot.className = 'grammar-answer-slot';
+    answerSlot.appendChild(refs.answerInput);
+    refs.questionText.appendChild(document.createTextNode(text.slice(0, gap.index)));
+    refs.questionText.appendChild(answerSlot);
+    refs.questionText.appendChild(document.createTextNode(text.slice(gap.index + gap[0].length)));
+  }
+
+  function resizeInlineAnswer() {
+    if (refs.answerInput.classList.contains('answer-input--inline')) {
+      refs.answerInput.style.width = `${Math.max(8, Math.min(24, refs.answerInput.value.length + 2))}ch`;
+    }
   }
 
   function setQuestionTranslation(text) {
@@ -552,7 +589,6 @@
   function setSelectedSentenceForSpeech(sentence) {
     const normalized = String(sentence || "").trim();
     viewState.selectedSentenceForSpeech = normalized;
-    refs.speakWordBtn.disabled = !normalized;
   }
 
   function speakSelectedSentence() {
@@ -805,12 +841,16 @@
   });
 
   function switchMode(mode) {
+    [refs.grammarSettings, refs.vocabSettings].forEach(dialog => {
+      if (dialog.open) dialog.close();
+    });
     if (refs.grammarTheoryDialog.open) refs.grammarTheoryDialog.close();
     cancelPendingActivity();
     hideVocabAlternatives();
     stopShadowingAttempt();
     viewState.sentenceTranslationRequestId += 1;
     currentMode = mode;
+    resetAnswerField();
     [refs.answerInput, refs.checkBtn, refs.nextBtn, refs.prevBtn].forEach(element => {
       element.disabled = false;
     });
@@ -836,7 +876,6 @@
     refs.shadowingPanel.hidden = mode !== 'shadowing';
     refs.shadowingInlineTranslation.hidden = mode !== 'shadowing';
     refs.questionTranslationRow.hidden = mode === 'shadowing';
-    refs.speakWordBtn.hidden = mode === 'shadowing';
     refs.answerLabel.hidden = mode === 'shadowing';
     refs.answerInput.hidden = mode === 'shadowing';
     refs.checkBtn.hidden = mode === 'shadowing';
@@ -931,7 +970,7 @@
         return;
       } else {
         vocabState.emptyEnterPromptIdx = -1;
-        refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+        if (currentMode === 'vocabulary') refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
       }
       refs.checkBtn.click();
     }
@@ -939,11 +978,8 @@
 
   refs.answerInput.addEventListener("input", () => {
     vocabState.emptyEnterPromptIdx = -1;
-    refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
-  });
-
-  refs.speakWordBtn.addEventListener("click", () => {
-    speakSelectedSentence();
+    if (currentMode === 'vocabulary') refs.answerInput.placeholder = DEFAULT_ANSWER_PLACEHOLDER;
+    resizeInlineAnswer();
   });
 
   refs.autoSpeakCorrect.addEventListener("change", () => {
@@ -975,14 +1011,19 @@
   refs.tabShadowing.addEventListener('click', () => switchMode('shadowing'));
 
   refs.vocabNewSession.addEventListener('click', startVocabSession);
-  refs.vocabSettingsOpen.addEventListener('click', () => refs.vocabSettings.showModal());
-  refs.vocabSettingsClose.addEventListener('click', () => refs.vocabSettings.close());
-  refs.vocabSettings.addEventListener('click', (event) => {
-    if (event.target !== refs.vocabSettings) return;
-    const { left, right, top, bottom } = refs.vocabSettings.getBoundingClientRect();
-    if (event.clientX < left || event.clientX >= right || event.clientY < top || event.clientY >= bottom) {
-      refs.vocabSettings.close();
-    }
+  [
+    [refs.grammarSettings, refs.grammarSettingsOpen, refs.grammarSettingsClose],
+    [refs.vocabSettings, refs.vocabSettingsOpen, refs.vocabSettingsClose],
+  ].forEach(([dialog, openButton, closeButton]) => {
+    openButton.addEventListener('click', () => dialog.showModal());
+    closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target !== dialog) return;
+      const { left, right, top, bottom } = dialog.getBoundingClientRect();
+      if (event.clientX < left || event.clientX >= right || event.clientY < top || event.clientY >= bottom) {
+        dialog.close();
+      }
+    });
   });
 
   refs.vocabShowList.addEventListener('click', () => {
@@ -1060,9 +1101,9 @@
       if (refs.grammarTheoryDialog.open) {
         event.preventDefault();
         closeGrammarTheory();
-      } else if (refs.vocabSettings.open) {
+      } else if (refs.grammarSettings.open || refs.vocabSettings.open) {
         event.preventDefault();
-        refs.vocabSettings.close();
+        (refs.grammarSettings.open ? refs.grammarSettings : refs.vocabSettings).close();
       } else if (!refs.sessionComplete.hidden) {
         hideSessionComplete();
       } else if (!refs.grammarTopicOverlay.hidden) {

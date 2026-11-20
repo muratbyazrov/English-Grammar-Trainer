@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=61" />
+    <link rel="stylesheet" href="./styles.css?v=72" />
   </head>
   <body>
     <main id="trainer-app" class="app">
@@ -59,11 +59,8 @@
             <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
           </button>
         </span>
-        <label class="toggle-option" for="auto-speak-correct">
-          <input id="auto-speak-correct" type="checkbox" checked />
-          Озвучка
-        </label>
         <button id="new-session" type="button">Начать заново</button>
+        <button id="grammar-settings-open" class="vocab-settings-trigger" type="button" aria-label="Настройки грамматики" title="Настройки грамматики" aria-haspopup="dialog" aria-controls="grammar-settings"><span aria-hidden="true">⚙︎</span></button>
       </section>
 
       <section id="controls-vocab" class="controls" hidden>
@@ -144,9 +141,6 @@
           <p id="shadowing-inline-translation" class="shadowing-inline-translation" hidden></p>
           <div id="question-translation-row" class="question-translation-row">
             <p id="question-translation" class="question-translation"></p>
-            <button id="speak-word-btn" type="button" class="speak-word-btn" disabled>
-              Озвучить предложение
-            </button>
           </div>
 
           <div class="options" id="options-section">
@@ -158,13 +152,16 @@
             </ul>
           </div>
 
-          <label id="answer-label" for="answer-input">Твой ответ</label>
-          <input
-            id="answer-input"
-            type="text"
-            autocomplete="off"
-            placeholder="Например: helps"
-          />
+          <div id="answer-field">
+            <label id="answer-label" for="answer-input">Твой ответ</label>
+            <input
+              id="answer-input"
+              type="text"
+              autocomplete="off"
+              aria-label="Твой ответ"
+              placeholder="Например: helps"
+            />
+          </div>
 
           <div class="buttons">
             <button id="prev-btn" type="button">← Предыдущий</button>
@@ -252,6 +249,21 @@
         <button id="vocab-alternatives-continue" type="button">ОК, дальше</button>
       </section>
     </div>
+
+    <dialog id="grammar-settings" class="vocab-list-modal vocab-settings-modal" aria-labelledby="grammar-settings-title">
+      <header class="vocab-settings-header">
+        <h2 id="grammar-settings-title">Настройки грамматики</h2>
+        <button id="grammar-settings-close" type="button" class="vocab-list-close" aria-label="Закрыть настройки">×</button>
+      </header>
+      <div class="vocab-settings-body">
+        <label class="vocab-settings-audio" for="auto-speak-correct">
+          <span id="grammar-settings-audio-title">Озвучка</span>
+          <small id="grammar-settings-audio-help">Предложение после правильного ответа</small>
+          <input id="auto-speak-correct" class="vocab-settings-switch" type="checkbox" role="switch" aria-labelledby="grammar-settings-audio-title" aria-describedby="grammar-settings-audio-help" checked />
+          <span class="vocab-settings-switch-track" aria-hidden="true"></span>
+        </label>
+      </div>
+    </dialog>
 
     <dialog id="vocab-settings" class="vocab-list-modal vocab-settings-modal" aria-labelledby="vocab-settings-title">
       <header class="vocab-settings-header">
@@ -407,12 +419,12 @@
     <script src="./js/speech.js?v=3"></script>
     <script src="./js/progress.js?v=3"></script>
     <script src="./js/session-results.js?v=5"></script>
-    <script src="./js/grammar-mode.js?v=7"></script>
+    <script src="./js/grammar-mode.js?v=12"></script>
     <script src="./js/vocabulary-catalog.js?v=2"></script>
     <script src="./js/vocabulary-picker.js?v=4"></script>
-    <script src="./js/vocabulary-mode.js?v=29"></script>
+    <script src="./js/vocabulary-mode.js?v=30"></script>
     <script src="./js/shadowing-mode.js?v=10"></script>
     <script src="./js/theory-mode.js?v=17"></script>
-    <script src="./app.js?v=66"></script>
+    <script src="./app.js?v=78"></script>
   </body>
 </html>

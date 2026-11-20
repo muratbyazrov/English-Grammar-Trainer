@@ -118,6 +118,13 @@ function mistakes(app) {
   return new Map(app.snapshot().vocabulary.mistakes);
 }
 
+function speakHint(app) {
+  app.el('answer-input').value = '';
+  app.el('answer-input').dispatchEvent({ type: 'input' });
+  enter(app);
+  enter(app);
+}
+
 function enter(app) {
   app.el('answer-input').dispatchEvent({ type: 'keydown', key: 'Enter', preventDefault() {} });
 }
@@ -316,7 +323,7 @@ test('an almost completed topic picks the last unseen word on restart and when a
 
 test('Oxford hint stays red through correction, then one clean answer turns it green and survives reload', () => {
   let app = start();
-  app.click('speak-word-btn');
+  speakHint(app);
   app.answer('tea');
   app.click('vocab-topic-trigger');
   assert.deepEqual(progressSegments(app, 'cafe'), ['0%', '100%']);
@@ -460,7 +467,7 @@ test('IT repetition progress survives reload and skips, and resets after an erro
   app.answer('deploy');
   assert.equal(mistakes(app).get(key), 1);
   app.click('vocab-new-session');
-  app.click('speak-word-btn');
+  speakHint(app);
   app.answer('deploy');
   assert.equal(mistakes(app).get(key), 0);
 });
@@ -520,7 +527,7 @@ test('Oxford empty Enter prompts once, then records one hint mistake and prevent
 
 test('speaker hints and wrong answers share one mistake; speech after a correct answer is free', () => {
   const app = start();
-  app.click('speak-word-btn');
+  speakHint(app);
   app.answer('wrong');
   app.answer('wrong again');
   assert.deepEqual(app.snapshot().vocabulary.mistakes, [['tea', 0]]);
@@ -530,10 +537,10 @@ test('speaker hints and wrong answers share one mistake; speech after a correct 
   app.click('vocab-new-session');
   app.answer('tea');
   assert.equal(mistakes(app).has('tea'), false);
-  app.click('speak-word-btn');
+  speakHint(app);
   assert.equal(mistakes(app).has('tea'), false);
   const reload = createApp({ vocabulary, saved: app.snapshot() });
-  reload.click('speak-word-btn');
+  speakHint(reload);
   assert.equal(mistakes(reload).has('tea'), false);
   assert.equal(reload.snapshot().vocabulary.wrong, 0);
 });
@@ -618,7 +625,7 @@ for (const trigger of ['answer', 'hint']) {
     app.answer('tea');
     assert.equal(mistakes(app).has('tea'), false);
     app.click('vocab-new-session');
-    if (trigger === 'hint') app.click('speak-word-btn');
+    if (trigger === 'hint') speakHint(app);
     else app.answer('wrong');
     assert.equal(mistakes(app).get('tea'), 0);
     app.answer('tea');
@@ -643,7 +650,7 @@ test('IT shares hint tracking, red progress and one-answer review without mixing
   enter(app);
   assert.equal(mistakes(app).size, 0);
   enter(app);
-  app.click('speak-word-btn');
+  speakHint(app);
   assert.deepEqual([...mistakes(app)], [[key, 0]]);
   assert.equal(app.snapshot().vocabulary.wrong, 1);
   app.answer('deploy');
@@ -658,7 +665,7 @@ test('IT shares hint tracking, red progress and one-answer review without mixing
   assert.equal(app.snapshot().vocabulary.reviewMistakes, true);
   app.answer('deploy');
   assert.equal(mistakes(app).size, 0);
-  app.click('speak-word-btn');
+  speakHint(app);
   assert.equal(mistakes(app).size, 0);
   app.advance(500);
   assert.equal(app.el('next-session-btn').disabled, true);
