@@ -859,8 +859,8 @@
         {
           title: "Главная идея",
           items: [
-            "В обычном вопросе мы спрашиваем про действие или обстоятельство: нужен вспомогательный глагол и обратный порядок слов.",
-            "Если вопрос про того, кто или что совершает действие, вспомогательный глагол обычно не нужен. Порядок слов прямой, как в утверждении; в Present Simple часто используется форма 3 лица единственного числа.",
+            "Сравни: Who knows you? — «Кто тебя знает?» (кто выполняет действие неизвестно). Who do you know? — «Кого ты знаешь?» (действие выполняет you, спрашиваем о другом человеке).",
+            "Если who / what само выполняет действие, в обычном вопросе без отрицания в Present / Past Simple не добавляем do / does / did. Порядок слов прямой, как в утверждении; в Present Simple глагол обычно получает -s. Если действие выполняет отдельное подлежащее (you, he и т. п.), с обычным глаголом нужны do / does / did. Формы be, Continuous и Perfect сохраняют свои глаголы be / have.",
           ],
           examples: [
             ["What did you deploy?", "Обычный вопрос: что ты задеплоил?"],
@@ -1246,7 +1246,8 @@
     },
     'subject-questions': {
       cards: [
-        theoryBriefCard('Кто / что совершает действие?', 'Who / what заменяет подлежащее. В утвердительном вопросе не добавляем do / does / did.', 'Who / What + глагол', 'What broke the build?', 'Что сломало билд?'),
+        theoryBriefCard('Кто / что совершает действие?', 'Who / what само выполняет действие и заменяет подлежащее. В обычном вопросе без отрицания не добавляем do / does / did.', 'Who / What + глагол', 'Who knows you?', 'Кто тебя знает? Who — тот, кто знает.'),
+        theoryBriefCard('Who не всегда означает «кто»', 'Если действие выполняет отдельное подлежащее, who может означать «кого / кому». В Present Simple с обычным глаголом тогда нужен do / does.', 'Who + do / does + подлежащее + V?', 'Who do you know?', 'Кого ты знаешь? Действие выполняешь ты (you).'),
         theoryBriefCard('Форма глагола сохраняется', 'В Present Simple обычно -s. В Continuous и Perfect остаются is / was / has: они часть формы.', 'Who knows …? · What is causing …? · Who has …?', 'Who has pushed to main?', 'Кто запушил в main?'),
       ],
     },
@@ -1273,6 +1274,343 @@
       note: 'После модального глагола — V1 без to и -s. Для вопроса ставим модальный глагол вперёд; do / does не нужны.',
     },
   };
+
+  // Краткие правила для каждой темы тренировки. Один источник для вкладки и окна.
+  const GRAMMAR_THEORY_BRIEFS = {
+    'present-simple-positive': {
+      title: 'Когда добавить -s?',
+      rule: 'Так говорят о привычках и фактах. С he, she, it или именем одного человека добавь -s или -es. С I, you, we, they оставь глагол как есть.',
+      examples: [
+        ['I work here. Anna works here.', 'Я работаю здесь. Анна работает здесь.'],
+        ['They go home. He goes home.', 'Они идут домой. Он идёт домой.'],
+      ],
+    },
+    'present-simple-negative': {
+      title: 'Don’t или doesn’t?',
+      rule: 'С he, she, it ставь doesn’t. С I, you, we, they — don’t. После обоих глагол идёт без -s.',
+      examples: [
+        ['I don’t work on Sundays.', 'Я не работаю по воскресеньям.'],
+        ['She doesn’t work on Sundays.', 'Она не работает по воскресеньям.'],
+      ],
+    },
+    'present-simple-yes-no': {
+      title: 'Начать вопрос с do или does?',
+      rule: 'Поставь перед he, she, it слово does, а перед I, you, we, they — do. Глагол дальше идёт без -s.',
+      examples: [
+        ['Do they live here? — Yes, they do.', 'Они здесь живут? — Да.'],
+        ['Does Tom live here? — No, he doesn’t.', 'Том здесь живёт? — Нет.'],
+      ],
+    },
+    'present-simple-special': {
+      title: 'Кто знает? Или кого ты знаешь?',
+      rule: '«Кто?» — сразу ставь глагол после who. «Кого ты…?» — действие выполняешь ты, поэтому ставь do you. С he или she используй does.',
+      examples: [
+        ['Who knows you?', 'Кто тебя знает?'],
+        ['Who do you know?', 'Кого ты знаешь?'],
+        ['Where does she live?', 'Где она живёт?'],
+      ],
+    },
+    'to-be-present': {
+      title: 'I am · he is · they are',
+      rule: 'С I ставь am, с he, she, it — is, с you, we, they — are. Для вопроса перенеси это слово в начало, для отрицания добавь not.',
+      examples: [
+        ['I am ready. She is ready.', 'Я готов. Она готова.'],
+        ['Are they ready? — No, they aren’t.', 'Они готовы? — Нет.'],
+      ],
+    },
+    'past-simple-irregular': {
+      title: 'Went или go?',
+      rule: 'В прошлом go меняется на went, see на saw. Если уже есть did или didn’t, ставь начальную форму — go, see.',
+      examples: [
+        ['She went home.', 'Она пошла домой.'],
+        ['Did she go home? — No, she didn’t.', 'Она пошла домой? — Нет.'],
+      ],
+    },
+    'to-be-past': {
+      title: '«Был» и «были»',
+      rule: 'I, he, she, it → was. You, we, they → were. Для вопроса поставь was или were в начало.',
+      examples: [
+        ['He was at home. We were at work.', 'Он был дома. Мы были на работе.'],
+        ['Were you at home? — No, I wasn’t.', 'Ты был дома? — Нет.'],
+      ],
+    },
+    'future-simple': {
+      title: 'Сделаю или не сделаю',
+      rule: 'Для обещания, решения сейчас или прогноза ставь will перед глаголом. Отрицание — won’t. После обоих глагол в начальной форме.',
+      examples: [
+        ['I’ll call you. I won’t forget.', 'Я тебе позвоню. Я не забуду.'],
+        ['Will you call me?', 'Ты мне позвонишь?'],
+      ],
+    },
+    'present-continuous': {
+      title: 'Что происходит сейчас?',
+      rule: 'Если действие идёт сейчас, поставь am, is или are перед глаголом с -ing. Для вопроса вынеси am, is или are вперёд.',
+      examples: [
+        ['She is reading now.', 'Она сейчас читает.'],
+        ['Are you reading?', 'Ты сейчас читаешь?'],
+      ],
+    },
+    'present-simple-vs-continuous': {
+      title: 'Обычно или прямо сейчас?',
+      rule: 'Для привычки выбирай Simple. Для действия в процессе — am, is или are и глагол с -ing. Слова know и want обычно стоят в Simple.',
+      examples: [
+        ['I walk to work every day.', 'Я каждый день хожу на работу пешком.'],
+        ['I’m walking to work now.', 'Я сейчас иду на работу пешком.'],
+      ],
+    },
+    'so-such': {
+      title: 'Так трудно или такая трудная задача?',
+      rule: 'Перед признаком ставь so. Если дальше назван предмет, ставь such. Для одного исчисляемого предмета после such нужен a или an.',
+      examples: [
+        ['It’s so hard!', 'Это так трудно!'],
+        ['It’s such a hard task!', 'Это такая трудная задача!'],
+      ],
+    },
+    'verb-patterns-like-want': {
+      title: 'Хочу сделать или люблю делать?',
+      rule: 'После want и would like ставь to перед действием. После like подходят обе формы — swimming и to swim.',
+      examples: [
+        ['I want to swim. I’d like to swim.', 'Я хочу поплавать. Я хотел бы поплавать.'],
+        ['I like swimming.', 'Я люблю плавать.'],
+      ],
+    },
+    'demonstrative-pronouns': {
+      title: 'Близко или далеко? Один или несколько?',
+      rule: 'На один предмет укажи словом this вблизи и that вдали. Для нескольких возьми these вблизи и those вдали.',
+      examples: [
+        ['this cup · these cups', 'эта чашка · эти чашки'],
+        ['that cup · those cups', 'та чашка · те чашки'],
+      ],
+    },
+    'have-have-got': {
+      title: 'Два способа сказать «у него есть»',
+      rule: 'He has и he has got означают одно и то же. В вопросе с have используй do или does. Если есть got, вынеси have или has вперёд.',
+      examples: [
+        ['Does he have a car? — No, he doesn’t.', 'У него есть машина? — Нет.'],
+        ['Has he got a car? — No, he hasn’t.', 'У него есть машина? — Нет.'],
+      ],
+    },
+    'modals-can-must': {
+      title: 'Могу, должен или нельзя?',
+      rule: 'Can — «могу, умею», must — «должен», mustn’t — «нельзя». После них ставь глагол как в словаре, без to.',
+      examples: [
+        ['She can drive.', 'Она умеет водить.'],
+        ['You must stop here. You mustn’t park here.', 'Здесь нужно остановиться. Здесь нельзя парковаться.'],
+      ],
+    },
+    'have-to-could-may': {
+      title: 'Нужно, стоит или возможно?',
+      rule: 'Have to означает «нужно», don’t have to — «необязательно». Should даёт совет. Could выражает умение в прошлом или вежливую просьбу. May и might означают «возможно».',
+      examples: [
+        ['I have to go. You should rest.', 'Мне нужно идти. Тебе стоит отдохнуть.'],
+        ['Could you help? It might rain.', 'Не мог бы ты помочь? Возможно, пойдёт дождь.'],
+      ],
+    },
+    'passive-present': {
+      title: 'Письма отправляют',
+      rule: 'Если что-то делают с предметом, поставь am, is или are и третью форму глагола (send → sent). Для прошлого выбери was или were.',
+      examples: [
+        ['The letters are sent every day.', 'Письма отправляют каждый день.'],
+        ['The letters were sent yesterday.', 'Письма отправили вчера.'],
+      ],
+    },
+    'passive-past': {
+      title: 'Что сделали с предметом?',
+      rule: 'Один предмет — was, несколько — were. Дальше нужна третья форма глагола, например sent от send. В вопросе was или were ставь в начало.',
+      examples: [
+        ['The letter was sent yesterday.', 'Письмо отправили вчера.'],
+        ['Were the letters sent?', 'Письма отправили?'],
+      ],
+    },
+    'passive-future': {
+      title: 'Что сделают с предметом?',
+      rule: 'Если с предметом что-то сделают, ставь will be и третью форму глагола (send → sent). Для отрицания возьми won’t be.',
+      examples: [
+        ['The letter will be sent tomorrow.', 'Письмо отправят завтра.'],
+        ['The letter won’t be sent today.', 'Сегодня письмо не отправят.'],
+      ],
+    },
+    'time-clauses': {
+      title: '«Позвоню, когда приду»',
+      rule: 'После when («когда») и if («если») ставь настоящее время, даже если речь о будущем. Will ставь в той части, где говоришь о результате.',
+      examples: [
+        ['I’ll call when I get home.', 'Я позвоню, когда приду домой.'],
+        ['If she calls, I’ll answer.', 'Если она позвонит, я отвечу.'],
+      ],
+    },
+    'conditionals': {
+      title: '«Если будет» или «если бы»?',
+      rule: 'Реальное условие — после if настоящее, в результате will. Воображаемое — после if прошедшая форма, в результате would («бы») или could («смог бы»).',
+      examples: [
+        ['If I have time, I’ll help.', 'Если у меня будет время, я помогу.'],
+        ['If I had time, I would help.', 'Если бы у меня было время, я бы помог.'],
+      ],
+    },
+    'imperatives-there-be': {
+      title: 'Просьба или сообщение о том, что где-то есть?',
+      rule: 'Просьбу начинай с глагола, запрет — с don’t. «Есть» — there is для одного предмета и there are для нескольких. «Был / были» — there was / were.',
+      examples: [
+        ['Open the box. Don’t open the door.', 'Открой коробку. Не открывай дверь.'],
+        ['There are two keys in the box.', 'В коробке два ключа.'],
+      ],
+    },
+    'there-will-be-going-to': {
+      title: '«Будет» или «собираюсь»?',
+      rule: 'There will be — о будущем событии. Для плана используй am/is/are going to. Если это был план в прошлом, бери was/were going to.',
+      examples: [
+        ['There will be a meeting.', 'Будет встреча.'],
+        ['I’m going to call. I was going to call.', 'Я собираюсь позвонить. Я собирался позвонить.'],
+      ],
+    },
+    'make-do-short-answers': {
+      title: 'Make a plan, do the work',
+      rule: 'Make a plan — составить план, do the work — выполнить работу. Для короткого ответа возьми вспомогательный глагол из вопроса.',
+      examples: [
+        ['Did you make a plan? — Yes, I did.', 'Ты составил план? — Да.'],
+        ['Do you do the shopping? — Yes, I do.', 'Ты ходишь за покупками? — Да.'],
+      ],
+    },
+    'verb-patterns-want-object': {
+      title: 'Хочу, чтобы кто-то сделал',
+      rule: 'После want назови того, от кого ждёшь действия (me, you, him, her, us, them). Затем поставь to и глагол.',
+      examples: [
+        ['I want to stay.', 'Я хочу остаться.'],
+        ['I want him to stay.', 'Я хочу, чтобы он остался.'],
+      ],
+    },
+    'pronouns-possessives': {
+      title: 'Она, её книга или книга её?',
+      rule: 'She выполняет действие. Her перед предметом показывает, чей он. Если предмет уже назван, используй hers.',
+      examples: [
+        ['She lost her keys.', 'Она потеряла свои ключи.'],
+        ['These keys are hers.', 'Эти ключи — её.'],
+      ],
+    },
+    'quantifiers': {
+      title: 'Можно посчитать по одному?',
+      rule: 'Много книг — many, много воды — much. Для «мало» бери few с тем, что можно посчитать, и little с тем, что измеряют.',
+      examples: [
+        ['How many books? How much water?', 'Сколько книг? Сколько воды?'],
+        ['few books · a few books', 'мало книг · несколько книг'],
+        ['little water · a little water', 'мало воды · немного воды'],
+      ],
+    },
+    'adjectives-adverbs': {
+      title: 'Какой он? Как он это делает?',
+      rule: 'Прилагательное отвечает на «какой?». Чтобы сказать, как выполняют действие, часто добавляют -ly. Запомни особую пару good («хороший») и well («хорошо»).',
+      examples: [
+        ['She is a careful driver.', 'Она осторожный водитель.'],
+        ['She drives carefully.', 'Она водит осторожно.'],
+      ],
+    },
+    'comparatives': {
+      title: 'Сравниваем двоих',
+      rule: 'К короткому слову обычно добавляй -er, перед длинным ставь more. «Чем» — than. Запомни две особые формы — better («лучше») и worse («хуже»).',
+      examples: [
+        ['This bag is smaller than mine.', 'Эта сумка меньше моей.'],
+        ['This bag is more expensive than mine.', 'Эта сумка дороже моей.'],
+      ],
+    },
+    'superlatives': {
+      title: 'Самый в группе',
+      rule: 'Для «самый» обычно нужны the и -est у коротких слов, the most у длинных. Если перед словом уже есть my или your, артикль пропусти.',
+      examples: [
+        ['the smallest room · the most expensive room', 'самая маленькая комната · самая дорогая комната'],
+        ['She is my best friend.', 'Она моя лучшая подруга.'],
+      ],
+    },
+    'comparative-as-like': {
+      title: 'Такой же или похож на?',
+      rule: '«Такой же высокий» — as tall as. «Похож на кого-то» — like перед именем или названием.',
+      examples: [
+        ['She is as tall as her sister.', 'Она такого же роста, как её сестра.'],
+        ['She looks like her sister.', 'Она похожа на свою сестру.'],
+      ],
+    },
+    'object-possessive-pronouns': {
+      title: 'Сравниваешь с человеком или с его вещью?',
+      rule: 'Для «чем я, он, мы» после than подойдут me, him, us. Если сравниваешь вещи, mine, hers или ours заменяет уже названную вещь.',
+      examples: [
+        ['Tom is taller than me.', 'Том выше меня.'],
+        ['Tom’s bike is bigger than mine.', 'Велосипед Тома больше моего.'],
+      ],
+    },
+    'adverbs-too-enough': {
+      title: 'Слишком или достаточно?',
+      rule: 'Too ставь перед признаком, enough — после него. Если речь о количестве, enough идёт перед предметом.',
+      examples: [
+        ['too hot · warm enough', 'слишком горячо · достаточно тепло'],
+        ['We have enough time.', 'У нас достаточно времени.'],
+      ],
+    },
+    'articles-time-prepositions': {
+      title: 'Как назвать предмет, время или место?',
+      rule: 'A/an — один из многих, the — конкретный, my — мой. Для времени бери at с часом, on с днём, in с месяцем. Перед next week предлог пропусти.',
+      examples: [
+        ['a room · the first room · my room', 'комната · первая комната · моя комната'],
+        ['at five · on Friday · in June · next week', 'в пять · в пятницу · в июне · на следующей неделе'],
+        ['at work · in the room · on the desk · to work', 'на работе · в комнате · на столе · на работу'],
+      ],
+    },
+    'adjective-prepositions': {
+      title: 'Какой предлог идёт после слова?',
+      rule: 'Учи слово вместе с предлогом. Например, после wait нужен for, хотя по-русски мы просто говорим «ждать кого-то».',
+      examples: [
+        ['wait for a friend · listen to music', 'ждать друга · слушать музыку'],
+        ['good at tennis · interested in music · afraid of dogs', 'хорош в теннисе · увлечён музыкой · боится собак'],
+      ],
+    },
+    'tag-questions-present': {
+      title: 'Как добавить «правда?»',
+      rule: 'После утверждения хвостик отрицательный, после отрицания — положительный. Для is или are повтори тот же глагол. Для likes, works и других действий возьми do или does.',
+      examples: [
+        ['Anna works here, doesn’t she?', 'Анна здесь работает, правда?'],
+        ['The shops aren’t open, are they?', 'Магазины закрыты, правда?'],
+      ],
+    },
+    'tag-questions-past': {
+      title: 'Как переспросить о прошлом?',
+      rule: 'После was или were повтори их в хвостике. Для остальных глаголов в Past Simple используй did. Утверждение получает хвостик с отрицанием, отрицание — без.',
+      examples: [
+        ['Tom was late, wasn’t he?', 'Том опоздал, правда?'],
+        ['Tom didn’t call, did he?', 'Том не звонил, верно?'],
+      ],
+    },
+    'tag-questions-future': {
+      title: 'Придёт, правда?',
+      rule: 'Если в основной части will, добавь won’t и местоимение. Если там won’t, в хвостике будет will.',
+      examples: [
+        ['Anna will come, won’t she?', 'Анна придёт, правда?'],
+        ['You won’t leave, will you?', 'Ты ведь не уйдёшь?'],
+      ],
+    },
+    'tag-questions-have-modals': {
+      title: 'Какой глагол повторить в хвостике?',
+      rule: 'При have got повтори have или has. При can, must, should повтори этот же глагол. После утверждения добавь отрицание, после отрицания убери его.',
+      examples: [
+        ['He’s got a car, hasn’t he?', 'У него есть машина, правда?'],
+        ['She can’t swim, can she?', 'Она ведь не умеет плавать?'],
+      ],
+    },
+    'infinitive-gerund': {
+      title: 'To read или reading?',
+      rule: 'Смотри на первый глагол. После promise, agree и decide ставь to. После enjoy и finish добавляй к следующему глаголу -ing. После like возможны обе формы.',
+      examples: [
+        ['I promised to read it.', 'Я обещал это прочитать.'],
+        ['I finished reading it.', 'Я закончил это читать.'],
+      ],
+    },
+  };
+  const GRAMMAR_THEORY_TOPICS = Object.entries(GRAMMAR_TOPICS).flatMap(([level, topics]) =>
+    topics.map((topic) => ({
+      id: `grammar-${topic.id}`,
+      grammarTopicId: topic.id,
+      level,
+      title: topic.title,
+      sections: [],
+      brief: { cards: [GRAMMAR_THEORY_BRIEFS[topic.id]] },
+    }))
+  );
 
   const SHADOWING_TOPICS = [
     {
@@ -1496,5 +1834,5 @@
     "This service has a hard dependency on the auth service.": "Этот сервис жёстко зависит от сервиса аутентификации.",
   };
 
-  window.TrainerData = { ALL_GRAMMAR_TOPICS_VALUE, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES, THEORY_TOPICS, THEORY_BRIEF_TOPICS, SHADOWING_TOPICS, SHADOWING_TRANSLATIONS };
+  window.TrainerData = { ALL_GRAMMAR_TOPICS_VALUE, GRAMMAR_TOPICS, GRAMMAR_TOPIC_GROUPS, QUESTION_TRANSLATION_OVERRIDES, THEORY_TOPICS, THEORY_BRIEF_TOPICS, GRAMMAR_THEORY_TOPICS, SHADOWING_TOPICS, SHADOWING_TRANSLATIONS };
 })();

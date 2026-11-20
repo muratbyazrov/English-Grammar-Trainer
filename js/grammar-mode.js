@@ -395,12 +395,19 @@ window.Trainer.createGrammarMode = function ({
     }, AUTO_NEXT_DELAY_MS);
   }
 
+  function resumeGrammarAfterTheory() {
+    const question = currentQuestion();
+    if (question && grammarState.checkedCurrent) queueNextQuestionAfterCorrect(question);
+  }
+
   function renderGrammar() {
     hideSessionComplete();
     cancelPendingActivity();
     viewState.sentenceTranslationRequestId += 1;
 
     const q = currentQuestion();
+    refs.grammarTheoryOpen.disabled = !q || !(GRAMMAR_TOPICS[currentLevel()] || [])
+      .some(topic => q.id >= topic.from && q.id <= topic.to);
     if (!q) {
       refs.questionText.textContent = "Вопросы не найдены.";
       setQuestionTranslation("");
@@ -494,6 +501,7 @@ window.Trainer.createGrammarMode = function ({
   });
 
   return {
+    resumeGrammarAfterTheory,
     restoreGrammarProgress,
     currentLevel,
     questionTranslationOverride,

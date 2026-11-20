@@ -197,8 +197,8 @@ window.Trainer.createVocabularyMode = function ({
     }
     refs.vocabTopic.value = node.value;
     vocabState.reviewMistakes = true;
-    startVocabSession();
     hideVocabTopicPicker();
+    startVocabSession();
   }
 
   function reviewCurrentVocabMistakes() {

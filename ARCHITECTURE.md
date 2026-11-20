@@ -22,7 +22,8 @@
 | Озвучка / отмена таймеров | `js/speech.js` / `js/activity.js` |
 | Принятие вариантов ответов, нормализация ввода | `app.js` → `getAnswerMatch`, `normalize` |
 | Исходные словарные слова и переводы | `vocabulary/*.json`, затем `npm run build-vocab` |
-| Теоретические материалы | `js/learning-data.js` |
+| Теоретические материалы | `js/learning-data.js`: `THEORY_TOPICS` — общие темы; `GRAMMAR_THEORY_BRIEFS` / `GRAMMAR_THEORY_TOPICS` — краткие правила всех тем тренировки |
+| Вкладки теории и окно из грамматики | `js/theory-mode.js`: вкладки категорий в окне выбора темы, общий `renderTheoryContent`; `showGrammarTheory` выбирает тему по уровню и ID текущего вопроса. `app.js` связывает окно; `resumeGrammarAfterTheory` возобновляет автопереход после закрытия |
 
 ## Подход и результаты
 

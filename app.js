@@ -124,6 +124,16 @@
     vocabAlternativesContinue: document.getElementById('vocab-alternatives-continue'),
     statsSection: document.getElementById('stats-section'),
     cardContent: document.getElementById('card-content'),
+    theoryCategoryGeneral: document.getElementById('theory-category-general'),
+    theoryCategoryGrammar: document.getElementById('theory-category-grammar'),
+    theoryTopicContent: document.getElementById('theory-topic-content'),
+    theoryViewSwitch: document.getElementById('theory-view-switch'),
+    grammarTheoryOpen: document.getElementById('grammar-theory-open'),
+    grammarTheoryDialog: document.getElementById('grammar-theory-dialog'),
+    grammarTheoryTitle: document.getElementById('grammar-theory-title'),
+    grammarTheoryBody: document.getElementById('grammar-theory-body'),
+    grammarTheoryClose: document.getElementById('grammar-theory-close'),
+    grammarTheoryContinue: document.getElementById('grammar-theory-continue'),
     theoryPanel: document.getElementById('theory-panel'),
     theoryTitle: document.getElementById('theory-title'),
     theoryViewShort: document.getElementById('theory-view-short'),
@@ -643,6 +653,7 @@
 
   const {
     currentLevel,
+    resumeGrammarAfterTheory,
     restoreGrammarProgress,
     questionTranslationOverride,
     currentGrammarTopic,
@@ -777,6 +788,8 @@
   });
 
   const {
+    setTheoryCategory,
+    showGrammarTheory,
     ensureTheoryTopicOptions,
     nextTheoryTopic,
     showTheoryTopicPicker,
@@ -792,6 +805,7 @@
   });
 
   function switchMode(mode) {
+    if (refs.grammarTheoryDialog.open) refs.grammarTheoryDialog.close();
     cancelPendingActivity();
     hideVocabAlternatives();
     stopShadowingAttempt();
@@ -807,11 +821,13 @@
     refs.vocabTabGroup.classList.toggle('vocab-active', mode === 'vocabulary');
     refs.controlsGrammar.hidden = mode !== 'grammar';
     refs.controlsTheory.hidden = mode !== 'theory';
+    refs.theoryNextTopic.hidden = mode !== 'theory';
     refs.controlsVocab.hidden = mode !== 'vocabulary';
     refs.controlsShadowing.hidden = mode !== 'shadowing';
     refs.statsSection.hidden = mode === 'theory';
     refs.cardContent.hidden = mode === 'theory';
     refs.theoryPanel.hidden = mode !== 'theory';
+    refs.grammarTheoryOpen.hidden = mode !== 'grammar';
     refs.optionsSection.hidden = mode !== 'grammar';
     refs.questionMeta.hidden = mode !== 'grammar';
     refs.vocabModeLabel.hidden = mode !== 'vocabulary';
@@ -1041,7 +1057,10 @@
 
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-      if (refs.vocabSettings.open) {
+      if (refs.grammarTheoryDialog.open) {
+        event.preventDefault();
+        closeGrammarTheory();
+      } else if (refs.vocabSettings.open) {
         event.preventDefault();
         refs.vocabSettings.close();
       } else if (!refs.sessionComplete.hidden) {
@@ -1088,6 +1107,50 @@
     shadowingState.checkedCurrent = false;
     renderShadowing();
     saveProgress();
+  });
+
+  function closeGrammarTheory() {
+    if (!refs.grammarTheoryDialog.open) return;
+    refs.grammarTheoryDialog.close();
+    if (currentMode === 'grammar') {
+      refs.grammarTheoryOpen.focus();
+      resumeGrammarAfterTheory();
+    }
+  }
+
+  refs.grammarTheoryOpen.addEventListener('click', () => {
+    if (currentMode !== 'grammar') return;
+    const question = grammarState.session[grammarState.idx];
+    if (question) showGrammarTheory(currentLevel(), question.id);
+  });
+  refs.grammarTheoryClose.addEventListener('click', closeGrammarTheory);
+  refs.grammarTheoryContinue.addEventListener('click', closeGrammarTheory);
+  refs.grammarTheoryDialog.addEventListener('cancel', event => {
+    event.preventDefault();
+    closeGrammarTheory();
+  });
+  refs.grammarTheoryDialog.addEventListener('click', event => {
+    if (event.target !== refs.grammarTheoryDialog) return;
+    const rect = refs.grammarTheoryDialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) {
+      closeGrammarTheory();
+    }
+  });
+  [['general', refs.theoryCategoryGeneral], ['grammar', refs.theoryCategoryGrammar]].forEach(([category, button]) => {
+    button.addEventListener('click', () => {
+      setTheoryCategory(category);
+      saveProgress();
+    });
+    button.addEventListener('keydown', event => {
+      if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+        event.preventDefault();
+        const next = event.key === 'Home' ? refs.theoryCategoryGeneral
+          : event.key === 'End' ? refs.theoryCategoryGrammar
+          : category === 'general' ? refs.theoryCategoryGrammar : refs.theoryCategoryGeneral;
+        next.click();
+        next.focus();
+      }
+    });
   });
 
   refs.theoryNextTopic.addEventListener('click', nextTheoryTopic);

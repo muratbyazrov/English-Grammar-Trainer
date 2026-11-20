@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=58" />
+    <link rel="stylesheet" href="./styles.css?v=61" />
   </head>
   <body>
     <main id="trainer-app" class="app">
@@ -21,7 +21,6 @@
         <div class="theory-tab-group" id="theory-tab-group">
           <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
           <span id="controls-theory" class="theory-topic-control" hidden>
-            <button id="theory-next-topic" class="theory-next-topic" type="button" aria-label="Следующая тема теории">След. тема →</button>
             <select id="theory-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
             <button
               id="theory-topic-trigger"
@@ -37,6 +36,7 @@
               <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
             </button>
           </span>
+          <button id="theory-next-topic" class="theory-next-topic" type="button" hidden aria-label="Следующая тема теории">След. тема →</button>
         </div>
       </nav>
 
@@ -133,6 +133,7 @@
 
       <section class="card">
         <div id="card-content">
+          <button id="grammar-theory-open" class="grammar-theory-open" type="button" aria-haspopup="dialog" aria-controls="grammar-theory-dialog">Посмотреть теорию</button>
           <div id="question-meta" class="question-meta">Вопрос №<span id="question-id">1</span></div>
           <div id="vocab-mode-label" class="vocab-mode-label" hidden>Переведите на английский</div>
           <p id="question-text" class="question-text">Загрузка...</p>
@@ -196,7 +197,7 @@
 
         <article id="theory-panel" class="theory-panel" hidden>
           <h2 id="theory-title"></h2>
-          <div class="theory-view-switch" role="group" aria-label="Режим теории">
+          <div id="theory-view-switch" class="theory-view-switch" role="group" aria-label="Режим теории">
             <button id="theory-view-short" class="theory-view-button" type="button" aria-pressed="true" aria-controls="theory-body">Коротко</button>
             <button id="theory-view-detailed" class="theory-view-button" type="button" aria-pressed="false" aria-controls="theory-body">Подробно</button>
           </div>
@@ -380,23 +381,38 @@
             ×
           </button>
         </header>
-        <div id="theory-topic-grid" class="vocab-topic-grid theory-topic-grid" role="listbox" aria-labelledby="theory-topic-modal-title"></div>
+        <div class="theory-view-switch theory-category-switch" role="tablist" aria-label="Раздел теории">
+          <button id="theory-category-general" class="theory-view-button" type="button" role="tab" aria-selected="true" aria-controls="theory-topic-content">Общие темы</button>
+          <button id="theory-category-grammar" class="theory-view-button" type="button" role="tab" aria-selected="false" aria-controls="theory-topic-content">Грамматика</button>
+        </div>
+        <div id="theory-topic-content" class="theory-topic-content" role="tabpanel" aria-labelledby="theory-category-general">
+          <div id="theory-topic-grid" class="vocab-topic-grid theory-topic-grid" role="listbox" aria-labelledby="theory-topic-modal-title"></div>
+        </div>
       </div>
     </div>
 
-    <script src="./questions.js?v=2"></script>
+    <dialog id="grammar-theory-dialog" class="grammar-theory-dialog" aria-labelledby="grammar-theory-title">
+      <header class="vocab-list-header">
+        <h2 id="grammar-theory-title"></h2>
+        <button id="grammar-theory-close" class="vocab-list-close" type="button" aria-label="Закрыть теорию">✕</button>
+      </header>
+      <div id="grammar-theory-body" class="grammar-theory-body"></div>
+      <button id="grammar-theory-continue" class="grammar-theory-continue" type="button">Продолжить тренировку</button>
+    </dialog>
+
+    <script src="./questions.js?v=3"></script>
     <script src="./vocabulary.js?v=32"></script>
-    <script src="./js/learning-data.js?v=15"></script>
+    <script src="./js/learning-data.js?v=18"></script>
     <script src="./js/activity.js?v=1"></script>
     <script src="./js/speech.js?v=3"></script>
     <script src="./js/progress.js?v=3"></script>
     <script src="./js/session-results.js?v=5"></script>
-    <script src="./js/grammar-mode.js?v=6"></script>
+    <script src="./js/grammar-mode.js?v=7"></script>
     <script src="./js/vocabulary-catalog.js?v=2"></script>
     <script src="./js/vocabulary-picker.js?v=4"></script>
-    <script src="./js/vocabulary-mode.js?v=28"></script>
+    <script src="./js/vocabulary-mode.js?v=29"></script>
     <script src="./js/shadowing-mode.js?v=10"></script>
-    <script src="./js/theory-mode.js?v=14"></script>
-    <script src="./app.js?v=64"></script>
+    <script src="./js/theory-mode.js?v=17"></script>
+    <script src="./app.js?v=66"></script>
   </body>
 </html>

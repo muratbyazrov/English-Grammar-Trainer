@@ -4,8 +4,24 @@ window.Trainer.createTheoryMode = function ({
   hideSessionComplete,
   refs
 }) {
-  const { THEORY_TOPICS, THEORY_BRIEF_TOPICS } = window.TrainerData;
+  const { THEORY_TOPICS, THEORY_BRIEF_TOPICS, GRAMMAR_THEORY_TOPICS } = window.TrainerData;
   let theoryView = 'short';
+  let theoryCategory = 'general';
+  const selectedTopics = { general: THEORY_TOPICS[0]?.id, grammar: GRAMMAR_THEORY_TOPICS[0]?.id };
+
+  function categoryTopics() {
+    return theoryCategory === 'grammar' ? GRAMMAR_THEORY_TOPICS : THEORY_TOPICS;
+  }
+
+  function setTheoryCategory(category) {
+    selectedTopics[theoryCategory] = refs.theoryTopic.value;
+    theoryCategory = category === 'grammar' ? 'grammar' : 'general';
+    ensureTheoryTopicOptions();
+    refs.theoryTopic.value = selectedTopics[theoryCategory];
+    renderTheory();
+    if (!refs.theoryTopicOverlay.hidden) renderTheoryTopicCards();
+  }
+
   function normalizeTheoryView(view) {
     return ['short', 'detailed'].includes(view) ? view : 'short';
   }
@@ -20,6 +36,15 @@ window.Trainer.createTheoryMode = function ({
   }
 
   function syncTheoryViewControls() {
+    refs.theoryViewSwitch.hidden = theoryCategory === 'grammar';
+    refs.theoryCategoryGrammar.textContent = `Грамматика · ${GRAMMAR_THEORY_TOPICS.length} тем`;
+    refs.theoryTopicContent.setAttribute('aria-labelledby', `theory-category-${theoryCategory}`);
+    [['general', refs.theoryCategoryGeneral], ['grammar', refs.theoryCategoryGrammar]].forEach(([category, button]) => {
+      const selected = theoryCategory === category;
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      button.classList.toggle('theory-view-button--active', selected);
+    });
     [['short', refs.theoryViewShort], ['detailed', refs.theoryViewDetailed]].forEach(([view, button]) => {
       button.setAttribute('aria-pressed', theoryView === view ? 'true' : 'false');
       button.classList.toggle('theory-view-button--active', theoryView === view);
@@ -47,7 +72,7 @@ window.Trainer.createTheoryMode = function ({
   }
 
   function syncTheoryTopicTrigger() {
-    const topic = THEORY_TOPICS.find((item) => item.id === refs.theoryTopic.value);
+    const topic = categoryTopics().find((item) => item.id === refs.theoryTopic.value);
     if (!topic) return;
     refs.theoryTopicTriggerIcon.textContent = theoryTopicIcon(topic);
     refs.theoryTopicTriggerText.textContent = topic.title;
@@ -55,16 +80,16 @@ window.Trainer.createTheoryMode = function ({
   }
 
   function nextTheoryTopic() {
-    if (!THEORY_TOPICS.length) return;
-    const index = THEORY_TOPICS.findIndex((topic) => topic.id === refs.theoryTopic.value);
-    refs.theoryTopic.value = THEORY_TOPICS[(index + 1) % THEORY_TOPICS.length].id;
+    if (!categoryTopics().length) return;
+    const index = categoryTopics().findIndex((topic) => topic.id === refs.theoryTopic.value);
+    refs.theoryTopic.value = categoryTopics()[(index + 1) % categoryTopics().length].id;
     refs.theoryTopic.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
-  function showTheoryTopicPicker() {
+  function renderTheoryTopicCards() {
     ensureTheoryTopicOptions();
     refs.theoryTopicGrid.innerHTML = '';
-    THEORY_TOPICS.forEach((topic) => {
+    categoryTopics().forEach((topic) => {
       const isSelected = topic.id === refs.theoryTopic.value;
       const card = document.createElement('button');
       card.type = 'button';
@@ -83,7 +108,7 @@ window.Trainer.createTheoryMode = function ({
       const title = document.createElement('strong');
       title.textContent = topic.title;
       const description = document.createElement('span');
-      description.textContent = topic.subtitle || topic.sections.map((section) => section.title).join(' · ');
+      description.textContent = topic.brief?.cards[0]?.title || topic.subtitle || topic.sections.map((section) => section.title).join(' · ');
       copy.appendChild(title);
       copy.appendChild(description);
 
@@ -103,7 +128,13 @@ window.Trainer.createTheoryMode = function ({
       });
       refs.theoryTopicGrid.appendChild(card);
     });
-    refs.theoryTopicModalSubtitle.textContent = `${THEORY_TOPICS.length} тем · правила, схемы и примеры`;
+    refs.theoryTopicModalSubtitle.textContent = `${categoryTopics().length} тем · правила, схемы и примеры`;
+    refs.theoryTopicGrid.scrollTop = 0;
+  }
+
+  function showTheoryTopicPicker() {
+    syncTheoryViewControls();
+    renderTheoryTopicCards();
     refs.theoryTopicOverlay.hidden = false;
     refs.theoryTopicTrigger.setAttribute('aria-expanded', 'true');
     const selectedCard = refs.theoryTopicGrid.querySelector('.vocab-topic-card--selected');
@@ -117,8 +148,10 @@ window.Trainer.createTheoryMode = function ({
   }
 
   function ensureTheoryTopicOptions() {
-    if (refs.theoryTopic.options.length === 0) {
-      THEORY_TOPICS.forEach((topic) => {
+    if (refs.theoryTopic.dataset.category !== theoryCategory) {
+      refs.theoryTopic.innerHTML = '';
+      refs.theoryTopic.dataset.category = theoryCategory;
+      categoryTopics().forEach((topic) => {
         const opt = document.createElement('option');
         opt.value = topic.id;
         opt.textContent = topic.title;
@@ -129,8 +162,9 @@ window.Trainer.createTheoryMode = function ({
   }
 
   function restoreTheoryProgress(saved) {
-    ensureTheoryTopicOptions();
     if (!saved || typeof saved !== "object") return false;
+    theoryCategory = GRAMMAR_THEORY_TOPICS.some(topic => topic.id === saved.topic) ? 'grammar' : 'general';
+    ensureTheoryTopicOptions();
     theoryView = normalizeTheoryView(saved.view);
 
     const topicValue = String(saved.topic || "");
@@ -355,8 +389,8 @@ window.Trainer.createTheoryMode = function ({
     });
   }
 
-  function renderBriefTheory(topic) {
-    const brief = THEORY_BRIEF_TOPICS[topic.id];
+  function renderBriefTheory(topic, body) {
+    const brief = topic.brief || THEORY_BRIEF_TOPICS[topic.id];
     if (!brief) return false;
     const grid = document.createElement('div');
     grid.className = 'theory-brief-grid';
@@ -379,12 +413,12 @@ window.Trainer.createTheoryMode = function ({
       appendTheoryExamples(block, card.examples);
       grid.appendChild(block);
     });
-    refs.theoryBody.appendChild(grid);
+    body.appendChild(grid);
     if (brief.note) {
       const note = document.createElement('p');
       note.className = 'theory-brief-note';
       note.textContent = brief.note;
-      refs.theoryBody.appendChild(note);
+      body.appendChild(note);
     }
     return true;
   }
@@ -395,7 +429,7 @@ window.Trainer.createTheoryMode = function ({
     ensureTheoryTopicOptions();
     syncTheoryViewControls();
 
-    const topic = THEORY_TOPICS.find((item) => item.id === refs.theoryTopic.value) || THEORY_TOPICS[0];
+    const topic = categoryTopics().find((item) => item.id === refs.theoryTopic.value) || categoryTopics()[0];
     if (!topic) {
       refs.theoryTitle.textContent = 'Теория не найдена';
       refs.theoryBody.textContent = '';
@@ -405,35 +439,49 @@ window.Trainer.createTheoryMode = function ({
     refs.theoryTopic.value = topic.id;
     syncTheoryTopicTrigger();
     refs.theoryTitle.textContent = topic.title;
-    refs.theoryBody.innerHTML = '';
+    renderTheoryContent(topic, refs.theoryBody, theoryView);
+  }
 
+  // Both surfaces render the same topic data with the same presentation.
+  function renderTheoryContent(topic, body, view = 'short') {
+    body.innerHTML = '';
     if (topic.subtitle) {
       const subtitle = document.createElement('p');
       subtitle.className = 'theory-subtitle';
       subtitle.textContent = topic.subtitle;
-      refs.theoryBody.appendChild(subtitle);
+      body.appendChild(subtitle);
     }
-
-    if (theoryView === 'short' && renderBriefTheory(topic)) return;
-
+    if ((topic.brief || view === 'short') && renderBriefTheory(topic, body)) return;
     topic.sections.forEach((section) => {
       const block = document.createElement('section');
       block.className = 'theory-section';
-
       const heading = document.createElement('h3');
       heading.textContent = section.title;
       block.appendChild(heading);
-
       if (section.table) appendTheoryTable(block, section.table);
       if (section.items) appendTheoryList(block, section.items);
       if (section.schemes) appendTheorySchemes(block, section.schemes);
       if (section.examples) appendTheoryExamples(block, section.examples, topic.examplesStyle);
-
-      refs.theoryBody.appendChild(block);
+      body.appendChild(block);
     });
   }
 
+  function showGrammarTheory(level, questionId) {
+    const grammarTopic = (window.TrainerData.GRAMMAR_TOPICS[level] || [])
+      .find(topic => questionId >= topic.from && questionId <= topic.to);
+    const topic = GRAMMAR_THEORY_TOPICS.find(item => item.level === level && item.grammarTopicId === grammarTopic?.id);
+    if (!topic) return false;
+    cancelPendingActivity();
+    refs.grammarTheoryTitle.textContent = topic.title;
+    renderTheoryContent(topic, refs.grammarTheoryBody);
+    refs.grammarTheoryDialog.showModal();
+    refs.grammarTheoryClose.focus();
+    return true;
+  }
+
   return {
+    setTheoryCategory,
+    showGrammarTheory,
     ensureTheoryTopicOptions,
     nextTheoryTopic,
     showTheoryTopicPicker,
