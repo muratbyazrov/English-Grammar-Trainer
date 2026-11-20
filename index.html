@@ -3,42 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>English Grammar Trainer</title>
-    <link rel="stylesheet" href="./styles.css?v=72" />
+    <title>English Booster</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/english_booster.svg" />
+    <link rel="stylesheet" href="./styles.css?v=77" />
   </head>
   <body>
     <main id="trainer-app" class="app">
       <header class="topbar">
-        <h1>English Booster</h1>
-      </header>
+        <h1>
+          <img class="app-wordmark" src="./assets/english-booster-wordmark.svg?v=3" width="280" height="67" alt="English Booster" />
+        </h1>
 
-      <nav class="mode-tabs">
-        <button id="tab-grammar" class="mode-tab mode-tab--active" type="button">Грамматика</button>
-        <div class="vocab-tab-group" id="vocab-tab-group">
-          <button id="tab-vocab" class="mode-tab vocab-tab-main" type="button">Словарь</button>
-        </div>
-        <button id="tab-shadowing" class="mode-tab" type="button">Shadowing</button>
-        <div class="theory-tab-group" id="theory-tab-group">
-          <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
-          <span id="controls-theory" class="theory-topic-control" hidden>
-            <select id="theory-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
-            <button
-              id="theory-topic-trigger"
-              class="vocab-topic-trigger"
-              type="button"
-              aria-label="Выберите тему теории"
-              aria-haspopup="dialog"
-              aria-controls="theory-topic-overlay"
-              aria-expanded="false"
-            >
-              <span id="theory-topic-trigger-icon" class="vocab-topic-trigger-icon" aria-hidden="true">📚</span>
-              <span id="theory-topic-trigger-text" class="vocab-topic-trigger-text">Выберите тему</span>
-              <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
-            </button>
-          </span>
-          <button id="theory-next-topic" class="theory-next-topic" type="button" hidden aria-label="Следующая тема теории">След. тема →</button>
-        </div>
-      </nav>
+        <nav class="mode-tabs" aria-label="Режимы тренировки">
+          <button id="tab-grammar" class="mode-tab mode-tab--active" type="button">Грамматика</button>
+          <div class="vocab-tab-group" id="vocab-tab-group">
+            <button id="tab-vocab" class="mode-tab vocab-tab-main" type="button">Словарь</button>
+          </div>
+          <button id="tab-shadowing" class="mode-tab" type="button">Shadowing</button>
+          <div class="theory-tab-group" id="theory-tab-group">
+            <button id="tab-theory" class="mode-tab theory-tab-main" type="button">Теория</button>
+            <span id="controls-theory" class="theory-topic-control" hidden>
+              <select id="theory-topic" class="native-topic-select" tabindex="-1" aria-hidden="true"></select>
+              <button
+                id="theory-topic-trigger"
+                class="vocab-topic-trigger"
+                type="button"
+                aria-label="Выберите тему теории"
+                aria-haspopup="dialog"
+                aria-controls="theory-topic-overlay"
+                aria-expanded="false"
+              >
+                <span id="theory-topic-trigger-icon" class="vocab-topic-trigger-icon" aria-hidden="true">📚</span>
+                <span id="theory-topic-trigger-text" class="vocab-topic-trigger-text">Выберите тему</span>
+                <span class="vocab-topic-trigger-chevron" aria-hidden="true">⌄</span>
+              </button>
+            </span>
+            <button id="theory-next-topic" class="theory-next-topic" type="button" hidden aria-label="Следующая тема теории">След. тема →</button>
+          </div>
+        </nav>
+      </header>
 
       <section id="controls-grammar" class="controls">
         <label for="level-select">Уровень</label>

@@ -41,9 +41,29 @@ body {
   overflow: hidden;
 }
 
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
 .topbar h1 {
-  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 0 auto;
+  flex-shrink: 0;
+  white-space: nowrap;
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.app-wordmark {
+  display: block;
+  flex-shrink: 0;
+  width: clamp(220px, 25vw, 280px);
+  max-width: 100%;
+  height: auto;
 }
 
 .topbar p {
@@ -462,7 +482,9 @@ button:hover {
   flex-wrap: wrap;
   gap: 6px;
   margin: 4px 0;
-  flex-shrink: 0;
+  order: -1;
+  flex: 1;
+  min-width: 0;
 }
 
 .mode-tab {
@@ -1957,6 +1979,19 @@ button:hover {
 .sc-next-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(42, 157, 143, 0.45);
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .topbar .mode-tabs {
+    order: 0;
+    flex: auto;
+  }
 }
 
 @media (max-width: 640px) {
